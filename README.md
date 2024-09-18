@@ -37,9 +37,13 @@ projects:
   link: /laravel-aruba-sms
   type: Laravel
   details: This package makes it easy to send SMS notifications using Aruba SMS API with Laravel.
-- title: 
+- title: laravel-email-chef
   link: 
-  details: 
+  details: A simple Laravel integration with Email chef.
+  type: Laravel
+- title: laravel-bank-of-italy
+  link: https://github.com/offline-agency/laravel-bank-of-italy
+  details: A simple Laravel package to retrieve information from the bank of italy
   type: Laravel
 gitName:
 ---

@@ -359,7 +359,7 @@ tracker.
 - [Offline Agency](https://github.com/offline-agency)
 - [Giacomo Fabbian](https://github.com/Giacomo92)
 - [Nicolas Sanavia](https://github.com/SanaviaNicolas)
-- [All Contributors](../../contributors)
+- [All Contributors](https://github.com/offline-agency/laravel-fatture-in-cloud-v2/graphs/contributors)
 
 ## About us
 
