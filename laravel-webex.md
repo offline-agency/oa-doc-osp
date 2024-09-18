@@ -24,7 +24,7 @@ Run the Composer require command from the Terminal:
 
 ```bash
 composer require offline-agency/laravel-webex
-```[images](assets%2Fimages)
+```
 
 You should publish config file with:
 
@@ -1820,7 +1820,7 @@ tracker.
 - [Offline Agency](https://github.com/offline-agency)
 - [Giacomo Fabbian](https://github.com/Giacomo92)
 - [Nicolas Sanavia](https://github.com/SanaviaNicolas)
-- [All Contributors](../../contributors)
+- [All Contributors](https://github.com/offline-agency/laravel-webex/graphs/contributors)
 
 ## About us
 

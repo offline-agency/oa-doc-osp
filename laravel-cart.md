@@ -520,7 +520,7 @@ If you discover any security-related issues, please email <support@offlineagency
 ## Credits
 
 - [Giacomo Fabbian](https://github.com/Giacomo92)
-- [All Contributors](../../contributors)
+- [All Contributors](https://github.com/offline-agency/laravel-cart/graphs/contributors)
 
 ## About us
 

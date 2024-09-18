@@ -5,10 +5,6 @@ meta:
 gitName: laravel-email-chef
 ---
 
-::: tip
-
-:::
-
 # laravel-email-chef
 
 Email Chef is a project that helps you create and send beautiful newsletters with features that make your work easier.
@@ -31,7 +27,7 @@ Placeholder
 You can install this package via composer using:
 
 ``` bash 
-composer require offline-agency/laravel-fatture-in-cloud
+composer require offline-agency/laravel-email-chef
 ```
 
 The package will automatically register its service provider.
@@ -39,7 +35,7 @@ The package will automatically register its service provider.
 To publish the config file to `config/backup.php` run:
 
 ``` bash 
-php artisan vendor:publish --provider="OfflineAgency\FattureInCloud\FattureInCloudServiceProvider" --tag="config"    
+php artisan vendor:publish --provider="OfflineAgency\EmailChef\EmailChefServiceProvider" --tag="config"    
 ```
 
 
@@ -59,14 +55,14 @@ Each response entity has this prefix on the namespace: `\OfflineAgency\LaravelFa
 #### Account
 | Done | Endpoint        | Type                      | Response |
 |------|-----------------|--------------------------|----------|
-| ❌    | account         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | -        |
-| ❌    | get instance    | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | -        |
-| ❌    | update instance | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | -        |
+| ✅    | account         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | -        |
+| ✅    | get instance    | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | -        |
+| ✅    | update instance | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | -        |
 
 #### Subscription
 | Done | Endpoint     | Type                                                                                   | Response |
 | ---- |--------------|----------------------------------------------------------------------------------------| -------- |
-| ❌ | subscription | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | subscription | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
 
 #### Lists
 | Done | Endpoint        | Type                                                                                    | Response |
@@ -92,83 +88,81 @@ Each response entity has this prefix on the namespace: `\OfflineAgency\LaravelFa
 #### Predefined Fields
 | Done | Endpoint        | Type                | Response |
 | ---- |-----------------|---------------------| -------- |
-| ❌ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
 
 #### Custom fields
 | Done | Endpoint        | Type                 | Response |
 | ---- |-----------------|---------------------| -------- |
-| ❌ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get instance    | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get count       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | create instance | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
-| ❌ | update instance | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]() | - |
-| ❌ | delete instance | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
+| ✅ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get instance    | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get count       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | create instance | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| ✅ | update instance | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]() | - |
+| ✅ | delete instance | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
 
 #### Blockings
 | Done | Endpoint        | Type                 | Response |
 | ---- |-----------------|---------------------| -------- |
-| ❌ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get count       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | create instance | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
-| ❌ | delete instance | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
+| ✅ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get count       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | create instance | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| ✅ | delete instance | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
 
 
 #### Import Tasks
-| Done | Endpoint        | Type                 | Response |
-| ---- |-----------------|----------------------| -------- |
-| ❌ | get collection  | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get instance (a.k.a. “single task instant status”)   | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | create instance (a.k.a. “import contacts”)| [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| Done | Endpoint                                           | Type                 | Response |
+| ---- |----------------------------------------------------|----------------------| -------- |
+| ✅ | get collection                                     | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get instance (a.k.a. “single task instant status”) | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | create instance (a.k.a. “import contacts”)         | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
 
 #### Segments
 | Done | Endpoint             | Type                 | Response |
 | ---- |----------------------|---------------------| -------- |
-| ❌ | get collection       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get instance         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get count            | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get contacts counter | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | create instance      | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
-| ❌ | update instance      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | delete instance      | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
+| ✅ | get collection       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get instance         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get count            | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get contacts counter | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | create instance      | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| ✅ | update instance      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | delete instance      | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
 
 #### Campaigns
 | Done | Endpoint             | Type                 | Response |
-| ---- |----------------------|---------------------| -------- |
-| ❌ | get count            | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get collection       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get instance         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | create instance      | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
-| ❌ | update instance      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | delete instance      | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
-| ❌ | send test email      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | send campaign        | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | schedule             | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | cancel scheduling    | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | archive              | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | unarchive            | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | clone                | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
-| ❌ | get links collection | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| - |----------------------|---------------------| -------- |
+| ✅ | get count            | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get collection       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get instance         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | create instance      | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| ✅ | update instance      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | delete instance      | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
+| ✅ | schedule             | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | cancel scheduling    | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | archive              | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | unarchive            | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | clone                | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| ✅ | get links collection | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
 
 #### Autoresponders
 | Done | Endpoint             | Type                 | Response |
 | ---- |----------------------|---------------------| -------- |
-| ❌ | get count            | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get collection       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | get instance         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
-| ❌ | create instance      | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
-| ❌ | update instance      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | get count            | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get collection       | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | get instance         | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | create instance      | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]() | - |
+| ✅ | update instance      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
 | ❌ | delete instance      | [![DELETE method](https://img.shields.io/static/v1.svg?label=&message=DELETE&color=red)]() | - |
-| ❌ | send test email      | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | activate             | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | deactivate           | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
-| ❌ | clone                | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]() | - |
-| ❌ | get links collection | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
+| ✅ | squend test email    | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | activate             | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | deactivate           | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]()  | - |
+| ✅ | clone                | [![PUT method](https://img.shields.io/static/v1.svg?label=&message=PUT&color=violet)]() | - |
+| ✅ | get links collection | [![GET method](https://img.shields.io/static/v1.svg?label=&message=GET&color=green)]() | - |
 
 
 #### Send Mail
 | Done | Endpoint  | Type                | Response |
 | ---- |-----------|---------------------| -------- |
-| ❌ | send mail | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]()  | - |
+| ✅ | send mail | [![POST method](https://img.shields.io/static/v1.svg?label=&message=POST&color=blue)]()  | - |
 
 #### SMS
 | Done | Endpoint                  | Type                 | Response |
