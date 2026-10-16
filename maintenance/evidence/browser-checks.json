@@ -46,24 +46,32 @@
     "search": {
       "VAT": [
         "/laravel-cart/legacy/#cart-vat",
-        "/laravel-cart/money-and-tax/"
+        "/laravel-cart/money-and-tax/",
+        "/laravel-cart/4.0.3/money-and-tax/"
       ],
       "wishlist": [
-        "/laravel-cart/variants-and-wishlist/"
+        "/laravel-cart/variants-and-wishlist/",
+        "/laravel-cart/4.0.3/variants-and-wishlist/"
       ],
       "Webex": [
         "/laravel-webex/coverage/",
-        "/laravel-webex/"
+        "/laravel-webex/",
+        "/laravel-webex/2.0.0/coverage/",
+        "/laravel-webex/2.0.0/"
       ],
       "Aruba": [
-        "/laravel-aruba-sms/"
+        "/laravel-aruba-sms/",
+        "/laravel-aruba-sms/1.1.0/"
       ],
       "pagination": [
+        "/laravel-webex/#pagination",
         "/laravel-fatture-in-cloud-v2/#pagination",
-        "/laravel-webex/#pagination"
+        "/laravel-fatture-in-cloud-v2/3.0.1/#pagination",
+        "/laravel-webex/2.0.0/#pagination"
       ]
     },
     "keyboardSearch": "/laravel-cart/money-and-tax/",
+    "versionSelector": "Current and pinned release, matching page, sidebar, direct refresh",
     "notFound": 404
   },
   "mobile": {
@@ -304,10 +312,11 @@
           "overflow": "auto"
         }
       ]
-    }
+    },
+    "versionSelector": "Native keyboard selection to Mongo 3.1.1, no horizontal page overflow"
   },
   "screenshotsSaved": false,
   "serverRenderedContentWithoutJS": true,
-  "generatedHttpPages": 21,
+  "generatedHttpPages": 38,
   "runtimeErrors": []
 }

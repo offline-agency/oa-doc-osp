@@ -1,0 +1,280 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.0.3",
+      "commit": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.0.3",
+        "sourceReference": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+        "distReference": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-cart/4.0.3/",
+      "pages": [
+        {
+          "source": "laravel-cart.md",
+          "file": "versioned/laravel-cart/4.0.3/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/4.0.3/",
+          "title": "Laravel Cart — stable 4.0.3"
+        },
+        {
+          "source": "laravel-cart/authentication.md",
+          "file": "versioned/laravel-cart/4.0.3/authentication.md",
+          "currentRoute": "/laravel-cart/authentication/",
+          "route": "/laravel-cart/4.0.3/authentication/",
+          "title": "Authentication and guest carts"
+        },
+        {
+          "source": "laravel-cart/installation.md",
+          "file": "versioned/laravel-cart/4.0.3/installation.md",
+          "currentRoute": "/laravel-cart/installation/",
+          "route": "/laravel-cart/4.0.3/installation/",
+          "title": "Installation and configuration"
+        },
+        {
+          "source": "laravel-cart/integrations.md",
+          "file": "versioned/laravel-cart/4.0.3/integrations.md",
+          "currentRoute": "/laravel-cart/integrations/",
+          "route": "/laravel-cart/4.0.3/integrations/",
+          "title": "API, Livewire and Inertia recipes"
+        },
+        {
+          "source": "laravel-cart/money-and-tax.md",
+          "file": "versioned/laravel-cart/4.0.3/money-and-tax.md",
+          "currentRoute": "/laravel-cart/money-and-tax/",
+          "route": "/laravel-cart/4.0.3/money-and-tax/",
+          "title": "Money, VAT, coupons and rounding"
+        },
+        {
+          "source": "laravel-cart/quick-start.md",
+          "file": "versioned/laravel-cart/4.0.3/quick-start.md",
+          "currentRoute": "/laravel-cart/quick-start/",
+          "route": "/laravel-cart/4.0.3/quick-start/",
+          "title": "Quick start and core operations"
+        },
+        {
+          "source": "laravel-cart/reference.md",
+          "file": "versioned/laravel-cart/4.0.3/reference.md",
+          "currentRoute": "/laravel-cart/reference/",
+          "route": "/laravel-cart/4.0.3/reference/",
+          "title": "Full API reference and limitations"
+        },
+        {
+          "source": "laravel-cart/storage.md",
+          "file": "versioned/laravel-cart/4.0.3/storage.md",
+          "currentRoute": "/laravel-cart/storage/",
+          "route": "/laravel-cart/4.0.3/storage/",
+          "title": "Storage, ownership, TTL and snapshots"
+        },
+        {
+          "source": "laravel-cart/support.md",
+          "file": "versioned/laravel-cart/4.0.3/support.md",
+          "currentRoute": "/laravel-cart/support/",
+          "route": "/laravel-cart/4.0.3/support/",
+          "title": "Troubleshooting, tests and support"
+        },
+        {
+          "source": "laravel-cart/upgrading.md",
+          "file": "versioned/laravel-cart/4.0.3/upgrading.md",
+          "currentRoute": "/laravel-cart/upgrading/",
+          "route": "/laravel-cart/4.0.3/upgrading/",
+          "title": "Upgrade guide"
+        },
+        {
+          "source": "laravel-cart/variants-and-wishlist.md",
+          "file": "versioned/laravel-cart/4.0.3/variants-and-wishlist.md",
+          "currentRoute": "/laravel-cart/variants-and-wishlist/",
+          "route": "/laravel-cart/4.0.3/variants-and-wishlist/",
+          "title": "Variants, wishlist and Buyable models"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-webex",
+      "version": "2.0.0",
+      "commit": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+      "repository": "https://github.com/offline-agency/laravel-webex",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "ext-json": "*",
+        "laravel/framework": "^12.69.2 || ^13.32"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+        "distReference": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-webex.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-webex/2.0.0/",
+      "pages": [
+        {
+          "source": "laravel-webex.md",
+          "file": "versioned/laravel-webex/2.0.0/index.md",
+          "currentRoute": "/laravel-webex/",
+          "route": "/laravel-webex/2.0.0/",
+          "title": "Laravel Webex"
+        },
+        {
+          "source": "laravel-webex/coverage.md",
+          "file": "versioned/laravel-webex/2.0.0/coverage.md",
+          "currentRoute": "/laravel-webex/coverage/",
+          "route": "/laravel-webex/2.0.0/coverage/",
+          "title": "Laravel Webex implemented API reference"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "3.0.1",
+      "commit": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/container": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.0.1",
+        "sourceReference": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+        "distReference": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/3.0.1/",
+      "pages": [
+        {
+          "source": "laravel-fatture-in-cloud-v2.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/3.0.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/3.0.1/",
+          "title": "Laravel Fatture in Cloud API v2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-aruba-sms",
+      "version": "1.1.0",
+      "commit": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+      "repository": "https://github.com/offline-agency/laravel-aruba-sms",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/notifications": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.1.0",
+        "sourceReference": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+        "distReference": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-aruba-sms.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-aruba-sms/1.1.0/",
+      "pages": [
+        {
+          "source": "laravel-aruba-sms.md",
+          "file": "versioned/laravel-aruba-sms/1.1.0/index.md",
+          "currentRoute": "/laravel-aruba-sms/",
+          "route": "/laravel-aruba-sms/1.1.0/",
+          "title": "Laravel Aruba SMS"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "3.1.1",
+      "commit": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/events": "^5.0|^6.0|^7.0|^8.0",
+        "jenssegers/mongodb": "^3.6|^3.7|^3.8"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.1",
+        "sourceReference": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+        "distReference": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-mongo-auto-sync/3.1.1/",
+      "pages": [
+        {
+          "source": "laravel-mongo-auto-sync.md",
+          "file": "versioned/laravel-mongo-auto-sync/3.1.1/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/3.1.1/",
+          "title": "Laravel MongoDB Relationships"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.8",
+      "commit": "b37155297538fa3dcbbcb16d633d926091734690",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.8",
+        "sourceReference": "b37155297538fa3dcbbcb16d633d926091734690",
+        "distReference": "b37155297538fa3dcbbcb16d633d926091734690",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.8/",
+      "pages": [
+        {
+          "source": "laravel-fatture-in-cloud.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.8/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.8/",
+          "title": "Fatture in Cloud API v1 — historical integration"
+        }
+      ]
+    }
+  ]
+}

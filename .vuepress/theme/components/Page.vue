@@ -2,6 +2,7 @@
   <main class="page">
     <slot name="top" />
 
+    <DocumentationVersion />
     <Content class="theme-default-content" />
     <PageEdit />
 
@@ -18,9 +19,10 @@
 import PageEdit from '@theme/components/PageEdit.vue'
 import PageNav from '@theme/components/PageNav.vue'
 import Footer from '@theme/components/Footer.vue'
+import DocumentationVersion from '@theme/components/DocumentationVersion.vue'
 
 export default {
-  components: { PageEdit, PageNav, Footer },
+  components: { PageEdit, PageNav, Footer, DocumentationVersion },
   props: ['sidebarItems']
 }
 </script>

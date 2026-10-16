@@ -81,3 +81,32 @@ Descrizione proposta:
 ## Correzione della classificazione Mongo Auto Sync
 
 Su indicazione del maintainer, Mongo Auto Sync è classificato tra i package correnti, non legacy. Allineati catalogo, navigazione, manifest e descrizioni. I requisiti della release3.1.1 restano quelli verificati nel Composer; non sono una classificazione dello stato del progetto. La demo Laravel6 resta una risorsa storica separata.
+
+## Versionamento della documentazione
+
+Aggiunto su richiesta del maintainer un versionamento indipendente per release dei package PHP. Gli URL esistenti restano la guida corrente; le copie fissate sono:
+
+| Package | Guida versionata |
+| --- | --- |
+| Cart | `/laravel-cart/4.0.3/` e10 sottopagine |
+| Webex | `/laravel-webex/2.0.0/` e riferimento coverage |
+| FIC APIv2 | `/laravel-fatture-in-cloud-v2/3.0.1/` |
+| Aruba SMS | `/laravel-aruba-sms/1.1.0/` |
+| Mongo Auto Sync | `/laravel-mongo-auto-sync/3.1.1/` |
+| FIC APIv1 (Legacy) | `/laravel-fatture-in-cloud/2.2.8/` |
+
+`versioned/` contiene17 pagine snapshot generate, con permalink espliciti e link interni allo stesso package riscritti conservando gli anchor. `maintenance/documentation-versions.json` registra SHA, tag, Composer/distribuzione verificati e mappa pagine. Moneta, archivio Cart non attribuito a una release e mappa URL del sito non sono versioni di package. Nessuna documentazione3.x o release futura inventata. Mongo resta corrente, il gruppo ritirato resta Legacy.
+
+`npm run docs:version -- --package laravel-cart` crea lo snapshot della release selezionata; dopo verifica e aggiornamento del manifest di una release nuova, aggiunge la versione mantenendo le precedenti. `--refresh` aggiorna solo la documentazione della release corrente, senza cambiare SHA o rigenerare vecchie versioni da codice nuovo. `npm run docs:version -- --check` controlla provenienza e drift; integrato in `docs:check`, quindi nella CI esistente. Nessun download durante build, nuova dipendenza o lockfile alternativo.
+
+Aggiunti selettore nativo accessibile, link statici a versione/corrente utilizzabili senzaJS e sidebar versionate. Corretto il resolver del tema perché riconosca il permalink pubblico anche quando diverso dal percorso sorgente. Il postbuild verifica anche la presenza della navigazione statica su tutte le17 pagine versionate. Corretta una precedente frase della mappa URL che prometteva redirect `.html`/canonical non generati da questo branch.
+
+La prima build versionata ha esposto il resolver del vecchio tema, poi corretto con test rosso/verde. Un successivo controllo HTML ha rilevato che VuePress1 applica i permalink dopo `extendPageData`: il contesto versione ora usa il permalink frontmatter quando presente. Questi fallimenti sono stati corretti prima della verifica finale.
+
+Verifica finale del versionamento: `npm run docs:verify` con23 test Node (9 nuovi per snapshot/link/provenienza/contesto/drift,1 regressione sidebar), build produzione e controlli interni; nessun cambiamento ai vincoli PHP documentati. Il riproduttore browser comprende selezione corrente↔release sulla stessa sottopagina Cart, sidebar confinata alla release, refresh diretto e selezione Mongo con tastiera mobile, oltre alle38 pagine servite senzaJS. Esiti e comandi finali nel rapporto `evidence/browser-checks.json` e nel log locale `/private/tmp/oa-doc-versioning-build.log`. Nessuna CI remota o pubblicazione dichiarata.
+
+La revisione indipendente ha rilevato due casi di promozione: la presenza di nuove guide non ancora registrate nello snapshot e il link corrente di una vecchia pagina rimossa. Corretti entrambi, con regressioni mirate e controlli HTML coerenti con il fallback del selettore.
+
+La prova browser ha rilevato che il nuovo selettore poteva finire sotto la navbar fissa: corretto lo spazio superiore del componente su desktop/mobile e il margine iniziale del contenuto. L’opzione selezionata viene anche marcata esplicitamente nell’HTML per la lettura senzaJavaScript.
+
+Eseguito anche un test CLI completo in directory temporanea: creazione di una versione sintetica, rifiuto dell’overwrite implicito, promozione a una seconda versione con pagina corrente rimossa e verifica che lo snapshot precedente resti byte-per-byte invariato. Probe reale di una nuova guida annidata nella worktree: `--check` rifiuta la guida senza snapshot; dopo rimozione del probe torna verde. Nessun contenuto sintetico entra nel sito.

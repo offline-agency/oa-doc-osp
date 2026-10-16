@@ -15,7 +15,7 @@ npm run docs:preview
 
 The output is `.vuepress/dist/`; preview is http://127.0.0.1:4175. The preview serves real files and returns HTTP 404 for missing paths. `docs:dev` also uses the root. Do not run `npm install --force`, `--legacy-peer-deps` or a permanent OpenSSL legacy-provider workaround.
 
-`docs:verify` checks frontmatter, the six nonempty catalog cards, release provenance, 13 Node regression tests, production rendering, seven existing landing pages, 232 historical anchor IDs, internal links and assets. PHP fixtures are deliberately outside this JavaScript dependency graph. Each `fixtures/*/README.md` describes its isolated dependencies and limitations; no real provider requests are required.
+`docs:verify` checks frontmatter, the six nonempty catalog cards, release provenance, 23 Node regression tests, production rendering, seven existing landing pages, 232 historical anchor IDs, internal links and assets. PHP fixtures are deliberately outside this JavaScript dependency graph. Each `fixtures/*/README.md` describes its isolated dependencies and limitations; no real provider requests are required.
 
 ## Release evidence and updates
 
@@ -50,3 +50,28 @@ The GitHub Pages API did not establish deployment ownership. DNS/public content 
 VuePress **1.9.10** is the npm `latest` stable release observed on 16 October 2026. VuePress 2 is `2.0.0-rc.31` under `next`, a prerelease. The v1 update preserves the Vue 2 custom theme and fixes the Node 24 build; it does not make Vue 2 maintained. The audit reports **121 dependency findings: 6 low, 73 moderate, 37 high, 5 critical** (including transitive/metavulnerability entries), in the build/development tree. No claim of a clean security audit or production readiness is made. See [the concrete migration proposal](vuepress-migration.md). Do not apply npm's suggested VuePress downgrade blindly.
 
 Publication is a separate owner action after review, CI and the hosting/security decision. No package release must precede publication of these stable guides; development features remain excluded. Promoting a future Cart/Mongo/FIC release requires the evidence/update process above, not removal of an “unreleased” label alone.
+
+## Documentation versions
+
+Each verified package release has a checked-in snapshot under `versioned/PACKAGE/TAG/` and a public `/PACKAGE/TAG/` route. Current root sources and their old public routes remain the authoring entry point/current aliases. The native version selector preserves the corresponding page, falling back to the selected release landing if a page does not exist there. Static version/current links work without JavaScript. Only six actual releases are currently available; no invented older major or development release is selectable. Mongo remains current; API v1 remains under Legacy. Moneta, the undated Cart archive and the site-specific route map have no package-release selector.
+
+`documentation-versions.json` records the package tag/SHA, verified Composer/distribution metadata and current/snapshot page mapping for each release. `docs:check` verifies provenance and deterministic equality between current authoring files and the selected release's snapshots. Build and CI do not fetch upstream or refresh historical content.
+
+For documentation corrections to an existing current release:
+
+```bash
+# Edit current root/package Markdown first.
+npm run docs:version -- --package laravel-cart --refresh
+npm run docs:verify
+```
+
+For a newly verified release, first update `package-sources.json`, all current package frontmatter and English guidance against its actual code/distribution, then:
+
+```bash
+npm run docs:version -- --package laravel-cart
+npm run docs:verify
+```
+
+The command adds the new selected tag and leaves previous snapshots intact. It refuses to overwrite an existing release without `--refresh`, or reassign a release to another package SHA. `--refresh` affects the current selected release only; it never regenerates older versions from newer source. Historical documentation corrections belong to their own versioned files and must still match that release's API/provenance. Internal package links in snapshots are rewritten to versioned routes, retaining fragments; explicit historical and cross-package links remain deliberate references.
+
+Run `npm run docs:version -- --check` to verify snapshots alone. To refresh all currently selected snapshots after a coordinated documentation correction, use `npm run docs:version -- --refresh`. No package installation, network access, new runtime dependency, tag/release or deployment is involved.

@@ -66,7 +66,7 @@ export function resolvePage (pages, rawPath, base) {
   }
   const path = normalize(rawPath)
   for (let i = 0; i < pages.length; i++) {
-    if (normalize(pages[i].regularPath) === path) {
+    if (normalize(pages[i].path || pages[i].regularPath) === path || normalize(pages[i].regularPath) === path) {
       return Object.assign({}, pages[i], {
         type: 'page',
         path: ensureExt(pages[i].path)

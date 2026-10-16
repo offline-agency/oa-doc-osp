@@ -9,3 +9,15 @@ for (const [route, ids] of Object.entries(inventory.routes)) {
   }
 }
 console.log(`Legacy routes: ${Object.keys(inventory.routes).length} landing pages and ${anchors} original anchors retained.`);
+
+const versions = JSON.parse(await readFile('maintenance/documentation-versions.json','utf8'));
+const sources = JSON.parse(await readFile('maintenance/package-sources.json','utf8'));
+const { versionContext } = await import('./documentation-versions.cjs');
+let snapshots = 0;
+for (const release of versions.releases) for (const page of release.pages) {
+  const html = await readFile(`.vuepress/dist${page.route}index.html`,'utf8');
+  const currentRoute = versionContext(page.route,versions.releases,sources.packages).currentRoute;
+  if (!html.includes('aria-label="Documentation versions"') || (currentRoute && !html.includes(`href="${currentRoute}"`))) throw new Error(`Missing version navigation: ${page.route}`);
+  snapshots++;
+}
+console.log(`Versioned HTML: ${versions.releases.length} releases and ${snapshots} pages contain static version navigation.`);

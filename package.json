@@ -6,9 +6,10 @@
     "test": "node --test scripts/*.test.mjs",
     "docs:dev": "vuepress dev .",
     "docs:build": "vuepress build . && node scripts/postbuild.mjs",
-    "docs:check": "node scripts/check-content.mjs",
+    "docs:check": "node scripts/check-content.mjs && node scripts/version-docs.mjs --check",
     "docs:verify": "npm run docs:check && npm test && npm run docs:build && node scripts/check-site.mjs",
-    "docs:preview": "node scripts/preview.mjs"
+    "docs:preview": "node scripts/preview.mjs",
+    "docs:version": "node scripts/version-docs.mjs"
   },
   "repository": {
     "type": "git",

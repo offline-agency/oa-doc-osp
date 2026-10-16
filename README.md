@@ -42,3 +42,5 @@ projects:
 ---
 
 The [unverified Moneta reference](/laravel-moneta-online/) is retained for historical inbound links and is not part of the recommended package catalog.
+
+Each package guide offers a documentation version selector. Existing package URLs show the current documented release; fixed release URLs, such as [/laravel-cart/4.0.3/](/laravel-cart/4.0.3/), preserve that version’s guide. Version numbers refer to the PHP packages.

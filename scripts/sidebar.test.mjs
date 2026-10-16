@@ -15,3 +15,7 @@ test('package landing uses its clean URL to choose package navigation', () => {
   const result = resolveSidebarItems(page, page.regularPath, {pages,themeConfig:{sidebar:{'/laravel-cart/':['/laravel-cart/'],'/':'auto'}}}, '/');
   assert.equal(result[0].path,'/laravel-cart/');
 });
+test('version permalinks resolve even when their source directory has a different URL',()=>{
+  const snapshot={regularPath:'/versioned/cart/4.0.3/',path:'/cart/4.0.3/',title:'Cart 4.0.3',headers:[]};
+  assert.equal(resolvePage([snapshot],'/cart/4.0.3/').path,'/cart/4.0.3/');
+});

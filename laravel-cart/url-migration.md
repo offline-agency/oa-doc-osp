@@ -6,9 +6,9 @@ permalink: /laravel-cart/url-migration/
 
 # Route and anchor migration map
 
-The original `/laravel-cart/` remains the stable entry point. Every original heading anchor is present there as a section or explicit shim linking to its historical content. No server rewrite rule is required. `/laravel-cart.html` is a generated static redirect retaining the hash with a fallback link.
+The original `/laravel-cart/` remains the stable entry point. Every original heading anchor is present there as a section or explicit shim linking to its historical content. No server rewrite rule is required for these preserved routes and anchors.
 
-The historical page preserves the old API text and its own canonical URL. This archive is a website revision, not a claimed package-major documentation version. Sibling package routes are unchanged.
+The historical page preserves the old API text at its own URL. This archive is a website revision, not a claimed package-major documentation version. Sibling package routes are unchanged.
 
 | Original link | Historical destination |
 | --- | --- |
@@ -44,3 +44,7 @@ The historical page preserves the old API text and its own canonical URL. This a
 | `/laravel-cart/#credits` | [/laravel-cart/legacy/#credits](/laravel-cart/legacy/#credits) |
 | `/laravel-cart/#about-us` | [/laravel-cart/legacy/#about-us](/laravel-cart/legacy/#about-us) |
 | `/laravel-cart/#license` | [/laravel-cart/legacy/#license](/laravel-cart/legacy/#license) |
+
+## Release-versioned documentation
+
+The current guide remains at [/laravel-cart/](/laravel-cart/). The fixed release guide is [/laravel-cart/4.0.3/](/laravel-cart/4.0.3/), with nested pages such as [/laravel-cart/4.0.3/storage/](/laravel-cart/4.0.3/storage/). The version selector keeps the corresponding page where available. Only verified releases with real content appear; the historical site archive is not a claimed v3 release.

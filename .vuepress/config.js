@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const sources = require('../maintenance/package-sources.json')
+const versions = require('../maintenance/documentation-versions.json')
+const { versionContext } = require('../scripts/documentation-versions.cjs')
 const current = sources.packages.filter(item => item.status === 'current-release').map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
 const historical = sources.packages.filter(item => item.status === 'historical-integration').map(item => ({ text: item.name.replace('offline-agency/', '') + ' (retired API)', link: item.route }))
 const cartOrder = ['installation', 'quick-start', 'variants-and-wishlist', 'money-and-tax', 'storage', 'authentication', 'integrations', 'upgrading', 'reference', 'support', 'url-migration']
@@ -8,6 +10,8 @@ const cartPages = () => fs.readdirSync(path.resolve(__dirname, '../laravel-cart'
   const rank = file => { const index = cartOrder.indexOf(file.replace(/\.md$/, '')); return index < 0 ? cartOrder.length : index }
   return rank(a) - rank(b)
 }).map(file => ['/laravel-cart/' + file.replace(/\.md$/, '') + '/', file.replace(/\.md$/, '').replace(/-/g, ' ')])
+
+const versionSidebars = Object.fromEntries(versions.releases.map(release => [release.route, release.pages.map(page => [page.route, page.title])]))
 
 module.exports = {
   title: 'Documentation | OFFLINE Agency',
@@ -24,6 +28,7 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/offline-agency' },
     ],
     sidebar: {
+      ...versionSidebars,
       '/laravel-cart/': [['/laravel-cart/', 'Overview — 4.0.3'], ...cartPages(), ['/laravel-cart/legacy/', 'Historical site archive']],
       '/laravel-webex/': [['/laravel-webex/', 'Guide — 2.0.0'], ['/laravel-webex/coverage/', 'Implemented API coverage']],
       '/': 'auto',
@@ -40,6 +45,7 @@ module.exports = {
     ['vuepress-plugin-container', { type: 'tip', defaultTitle: { '/': 'TIP' } }],
     ['@vuepress/last-updated'],
     { name: 'page-descriptions', extendPageData(page) {
+      page.documentationVersion = versionContext(page.frontmatter.permalink || page.path, versions.releases, sources.packages)
       const data = page.frontmatter
       if (data.description && !(data.meta || []).some(meta => meta.name === 'description')) data.meta = [...(data.meta || []), { name: 'description', content: data.description }]
     } },
