@@ -78,19 +78,28 @@ function versionContext(path, releases, sources) {
   if (!currentRelease) return null;
   const source=sources.find(source=>source.name===currentRelease.name);
   const page=currentRelease.pages.find(item=>item.route===path || item.currentRoute===path);
-  const candidates=releases.filter(release=>release.name===currentRelease.name).sort((a,b)=>development(a)!==development(b)?development(a)?1:-1:development(a)?0:compareVersions(b.version,a.version));
+  const equivalentPage = release => {
+    const direct=release.pages.find(item=>item.currentRoute===page.currentRoute);
+    if(direct)return direct;
+    const root=source?.route || `/${currentRelease.name.split('/')[1]}/`;
+    const suffix=page.currentRoute.slice(root.length).replace(/\/$/,'');
+    const alias=source?.documentation?.topicAliases?.[suffix];
+    return alias ? release.pages.find(item=>item.currentRoute===root+alias+'/') : undefined;
+  };
+  const candidates=releases.filter(release=>release.name===currentRelease.name && (!release.archive || release===selectedRelease)).sort((a,b)=>development(a)!==development(b)?development(a)?1:-1:development(a)?0:compareVersions(b.version,a.version));
   const latest=candidates.find(release=>sourceVersion(source || {})===release.version);
-  const currentPage=latest?.pages.find(item=>item.currentRoute===page.currentRoute);
+  const currentPage=latest && equivalentPage(latest);
   const scoped=!!currentRelease.documentationKey;
-  const currentRoute=latest ? scoped ? currentPage?.route || latest.route : currentPage?.currentRoute || latest.pages[0].currentRoute : undefined;
-  const options=currentRoute && !scoped ? [{label:`Current (${latest.version})`,route:currentRoute}] : [];
+  const latestScoped=!!latest?.documentationKey;
+  const currentRoute=latest ? latestScoped ? currentPage?.route || latest.route : currentPage?.currentRoute || latest.pages[0].currentRoute : undefined;
+  const options=currentRoute && !scoped && !latestScoped ? [{label:`Current (${latest.version})`,route:currentRoute}] : [];
   for (const release of candidates) {
-    const matching=release.pages.find(item=>item.currentRoute===page.currentRoute), route=matching?.route || release.route;
+    const matching=equivalentPage(release), route=matching?.route || release.route;
     const missingTopic=!matching;
-    const label=release.documentationKey ? development(release)?'next — development':`${releaseKey(release)} — ${release.version}` : release.version;
+    const label=release.archive ? `Archived ${release.version}` : release.documentationKey ? development(release)?'next — development':`${releaseKey(release)} — ${release.version}` : release.version;
     options.push({label:label+(missingTopic?' — overview (topic unavailable)':''),route,missingTopic,href:missingTopic?`${route}?missing-topic=${encodeURIComponent(page.title)}`:route});
   }
-  return {package:currentRelease.name.replace('offline-agency/',''),commit:currentRelease.commit,version:currentRelease.version,key:releaseKey(currentRelease),selected:path,options,currentRoute,pinnedRoute:page.route,snapshot:!!selectedRelease,channel:development(currentRelease)?'next':'stable',supportStatus:scoped?currentRelease.supportStatus || source?.documentation?.supportStatus || 'Support status not documented.':undefined,preOne:parseVersion(currentRelease.version)?.major===0,topic:page.title};
+  return {package:currentRelease.name.replace('offline-agency/',''),commit:currentRelease.commit,version:currentRelease.version,key:releaseKey(currentRelease),selected:path,options,currentRoute,pinnedRoute:page.route,snapshot:!!selectedRelease,archive:!!currentRelease.archive,channel:development(currentRelease)?'next':'stable',supportStatus:currentRelease.archive ? currentRelease.supportStatus : scoped?currentRelease.supportStatus || source?.documentation?.supportStatus || 'Support status not documented.':undefined,preOne:parseVersion(currentRelease.version)?.major===0,topic:page.title};
 }
 function validateSnapshots(releases, sources, read, currentPages = {}) {
   const errors = [], seen = new Set();

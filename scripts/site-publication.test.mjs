@@ -16,3 +16,10 @@ test('SEO transform writes exactly one canonical and robots tag',()=>{
  const result=withSeo('<html><head><link rel="canonical" href="https://old.invalid"><meta name="robots" content="index"></head></html>',pagePolicy('/pgr/v0.1/',null));
  assert.equal((result.match(/rel="canonical"/g)||[]).length,1);assert.equal((result.match(/name="robots"/g)||[]).length,1);
 });
+
+test('sitemap lastmod comes only from recorded content dates, never the build clock',()=>{
+ const policy=pagePolicy('/cart/v4/',null);
+ const without=sitemap({'/cart/v4/':policy});assert.ok(!without.includes('lastmod'));
+ const dated=sitemap({'/cart/v4/':policy},{'/cart/v4/':{changedOn:'2026-10-15'}});
+ assert.ok(dated.includes('<lastmod>2026-10-15</lastmod>'));assert.ok(!dated.includes(new Date().toISOString()));
+});

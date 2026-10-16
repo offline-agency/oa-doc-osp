@@ -1,52 +1,83 @@
 ---
-title: "Variants, wishlist and Buyable models"
-description: "Released Laravel Cart 4.0.3: variants, wishlist and buyable models."
-permalink: /laravel-cart/variants-and-wishlist/
-packageVersion: "4.0.3"
-cartRelease: "4.0.3"
-sourceCommit: 60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16
+title: Variants, wishlist and Buyable models
+description: Validated options, product identity, wishlist instances and the released 4.1.0 Buyable contract.
+packageVersion: '4.1.0'
+sourceCommit: b89d3219202703203453890e2e46467e79ad415d
 ---
 
 # Variants, wishlist and Buyable models
 
-## Options identify variants
+Requires PHP 8.4/8.5, BCMath and supported Laravel 12/13 dependencies:
 
-```php
-use OfflineAgency\LaravelCart\Facades\Cart;
-
-$medium = Cart::instance('shopping')->add([
-    'id' => 'shirt', 'name' => 'Shirt', 'qty' => 1, 'price' => 20.0,
-    'options' => ['size' => 'M', 'weight' => 0.25],
-]);
-$large = Cart::add([
-    'id' => 'shirt', 'name' => 'Shirt', 'qty' => 2, 'price' => 20.0,
-    'options' => ['size' => 'L', 'weight' => 0.25],
-]);
-// Distinct rowIds; count() = 3; uniqueCount() = 2; weight() = 0.75.
+```sh
+composer require offline-agency/laravel-cart:4.1.0
 ```
 
-Derive allowed variant combinations and prices from your server catalog. Normalize option values consistently; row identity uses serialized options and only top-level key sorting. Name, price and associated model do not distinguish variants. Changing options can change the row ID and merge rows; use the returned updated item.
+Default session storage needs no package tables. For database carts, [publish the live-cart migrations](/laravel-cart/installation/).
 
-## Wishlist recipe
+## Product id and row id are different
 
-This is application scaffolding using stable public APIs, not a package-supplied wishlist UI or inventory workflow.
+Use real server catalog product ids. A row id derives from the product id plus options; the same product in M and L is two rows. Do not invent string product ids to simulate variants. Normalize allowed options consistently: top-level keys are sorted for identity, but nested option structures are not recursively canonicalized. Name, amount and associated model do not distinguish rows.
+
+Using the complete, authenticated synthetic catalog service from [integrations](/laravel-cart/integrations/#trusted-server-mutation), this server-side illustration adds two validated variants:
 
 ```php
-Cart::instance('wishlist')->add([
-    'id' => $product->getKey(),
-    'name' => $product->name,
+use App\Services\DemoCart;
+use OfflineAgency\LaravelCart\Cart;
+
+$service = app(DemoCart::class);
+$medium = $service->add(['product_id' => 101, 'size' => 'M', 'qty' => 1]);
+$large = $service->add(['product_id' => 101, 'size' => 'L', 'qty' => 2]);
+$cart = app(Cart::class)->instance('shopping');
+// On an initially empty shopping cart:
+$cart->count();       // 3 units
+$cart->uniqueCount(); // 2 rows, though there is only one catalog product
+$cart->content()->pluck('id')->unique()->count(); // 1 distinct product id
+```
+
+`update($rowId, ['options' => ...])` can change the row id and merge with an existing row. Resolve the original row from the current authorized owner's cart, validate its new variant and quantity, and use the returned item's row id. In 4.1.0, `sync()` preserves variants by product id plus options and rejects duplicate row identities. Existing sync rows receive absolute quantities while retaining their stored prices; use explicit updates to reprice.
+
+## Wishlist instance
+
+`instance()` switches the shared Cart object for later calls in the same request/job. Select the instance explicitly at each boundary. The package supplies instances, not wishlist UI or a stock workflow:
+
+```php
+use App\Services\DemoCart;
+use OfflineAgency\LaravelCart\Cart;
+
+$service = app(DemoCart::class);
+$wish = $service->add(['product_id' => 101, 'size' => 'M', 'qty' => 1], 'wishlist');
+app(Cart::class)->instance('shopping');
+```
+
+To move an existing selection, take its row id from the authenticated customer's wishlist and load fresh authorized catalog data. This application fragment uses the same synthetic service, which validates the product and variant again:
+
+```php
+use App\Services\DemoCart;
+use OfflineAgency\LaravelCart\Cart;
+
+abort_unless(auth()->check(), 401);
+$cart = app(Cart::class);
+$selection = $cart->instance('wishlist')->get($validatedRowId);
+app(DemoCart::class)->add([
+    'product_id' => $selection->id,
+    'size' => $selection->options->size,
     'qty' => 1,
-    'price' => (float) $product->price,
-    'options' => ['size' => $validatedSize],
 ]);
-Cart::instance('shopping');
+$cart->instance('wishlist')->remove($selection->rowId);
+$cart->instance('shopping');
 ```
 
-To move a wishlist selection to shopping, authorize the selection and resolve its current catalog price, VAT, stock and options on the server; add a fresh shopping item and remove the wishlist row only after the add succeeds. The two operations are not an atomic transfer API in 4.0.3. Do not use `store()` / `restore()` as an implicit wishlist move.
+Here `$validatedRowId` is an application-validated string from the request, used only to look up a row in the current owner's wishlist. Each mutation is atomic under the built-in 4.1.0 mutation contract, but the add-plus-remove sequence is not a package atomic transfer API. If removal fails after add, reconcile rather than blindly repeating the add; design idempotency/transaction behavior for your app. Do not use snapshot `store()`/`restore()` to imply a wishlist move.
 
-## Eloquent Buyable
+## Buyable getters and model attributes
+
+For an application Eloquent product model:
 
 ```php
+<?php
+namespace App\Models;
+
 use Illuminate\Database\Eloquent\Model;
 use OfflineAgency\LaravelCart\CanBeBought;
 use OfflineAgency\LaravelCart\Contracts\Buyable;
@@ -57,22 +88,23 @@ class Product extends Model implements Buyable
 }
 ```
 
-The trait reads model attributes such as `id`, `name`, `price`, `vat`, `cartOptions` and `weight`. It does not validate your catalog. The getter-only contract requires `getId()`, `getName(): string`, `getSubtitle(): string`, `getQty(): int`, `getPrice(): float`, `getTotalPrice(): float`, `getVat(): float`, `getUrlImg(): string`, `getOptions(): array`, `getWeight(): float`.
+`CanBeBought` reads `getKey()` for the id; name falls back to title; subtitle falls back to description. It reads net `price`, per-unit `vat`, image fields, `cartOptions`, and `weight`; `getTotalPrice()` computes `getPrice() + getVat()`. Validate and authorize the product before adding it. The trait is not a catalog policy.
+
+The getter-only `Buyable` interface requires `getId()` (documented `int|string`), `getName(): string`, `getSubtitle(): string`, `getQty(): int`, `getPrice(): float`, `getTotalPrice(): float`, `getVat(): float`, `getUrlImg(): string`, `getOptions(): array` and `getWeight(): float`. Setters are available on the trait but are not required by the interface. Do not copy another library's `getBuyableIdentifier()` contract; the similarly named trait methods are deprecated compatibility helpers.
+
+After your application's policy and catalog validation have produced `$product`, `$validatedSize` and `$validatedQuantity`:
 
 ```php
-$product->cartOptions = ['size' => $validatedSize, 'weight' => (float) $product->weight];
-$item = Cart::instance('shopping')->add($product, 2);
-// Argument two selects quantity (default 1), overriding getQty().
-// The model is automatically associated.
+use OfflineAgency\LaravelCart\Facades\Cart;
+
+$product->setOptions(['size' => $validatedSize, 'weight' => (float) $product->weight]);
+$item = Cart::instance('shopping')->add($product, $validatedQuantity);
 ```
 
-Do not pass options as a positional third argument: v4's third parameter is `subtitle`. Supply model `getOptions()`/`cartOptions`, or an item array. Do not copy `getBuyableIdentifier()` contracts from other cart libraries.
+The second argument selects quantity (default 1), overriding `getQty()`. Options must come from `getOptions()`/`cartOptions` or an item attributes array; the third positional parameter is `subtitle`, not options. Adding a Buyable automatically associates its model, but association does not authorize access or keep amounts synchronized with the catalog. Existing-row adds retain stored base prices; explicit Buyable/array `update()` reprices in 4.1.0 and retains row coupons.
 
-A Buyable's `getVat()` returns a float. Zero means explicit zero VAT and does not trigger automatic default-rate tax. `Cart::weight()` uses `options['weight'] * qty`; it does not call `getWeight()` itself. Adopt one weight unit across your catalog.
+`getVat()` returns an explicit float: zero VAT does not invoke the automatic default tax rate. `Cart::weight()` sums `options['weight'] * qty`; it does not call `getWeight()` automatically. Use one catalog weight unit. Implement `FiscalBuyable` for `getVatFcCode()` and `getProductFcCode()` if fiscal fields are required; a plain Buyable produces empty fiscal codes.
 
-For fiscal codes implement `FiscalBuyable`, which extends Buyable, with `getVatFcCode()` and `getProductFcCode()`; `Traits\HasFiscalCodes` can supply them. A plain Buyable produces empty fiscal codes. `associate($rowId, Product::class)` is model association, not ownership validation or a guarantee that catalog fields will refresh automatically.
+Recheck current authorization, variant availability, stock, prices, tax and coupons at checkout. The package reserves no inventory. Cart-level coupons are not allocated into VAT buckets, and amounts are floats; see [money and tax](/laravel-cart/money-and-tax/).
 
-
----
-
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source: [Buyable contract](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/Contracts/Buyable.php), [CanBeBought getters](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/CanBeBought.php), [variant and repricing regressions](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Regression/MutationCorrectnessTest.php), [options tests](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Feature/CartOptionsTest.php).

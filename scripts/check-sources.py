@@ -44,7 +44,7 @@ for url in sorted(urls):
   remaining.append(url); continue
  package=packages[match[1]]; ref=match[3]; path=urllib.parse.unquote(match[4])
  repo=a.cart_reference if match[1].endswith('/laravel-cart') else a.references/match[1].split('/')[1]
- if ref not in (package['commit'],package.get('selectedTag')):
+ if ref not in (package['commit'],package.get('selectedTag')) and not re.fullmatch(r'[a-f0-9]{40}',ref):
   source.append({'url':url,'status':'moving-or-other-reference'}); continue
  result=subprocess.run(['git','-C',str(repo),'cat-file','-e',ref+':'+path],capture_output=True)
  source.append({'url':url,'status':'ok' if result.returncode==0 else 'missing-source'})

@@ -1,60 +1,52 @@
 ---
-title: "Storage, ownership, TTL and snapshots"
-description: "Released Laravel Cart 4.0.3: storage, ownership, ttl and snapshots."
+title: "Storage and mutation guarantees"
+description: "Persistent database and session carts: owner isolation, TTL, atomic mutation, PostgreSQL/MySQL concurrency and snapshots."
+packageVersion: "4.1.0"
+sourceCommit: b89d3219202703203453890e2e46467e79ad415d
 permalink: /laravel-cart/storage/
-packageVersion: "4.0.3"
-cartRelease: "4.0.3"
-sourceCommit: 60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16
 ---
 
-# Storage, ownership, TTL and snapshots
+# Storage and mutation guarantees
 
-## Session storage
+> **Release 4.1.0.** This guide describes the selected `4.1.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. These guarantees must not be assumed for the earlier 4.0.3 release. See [storage](/laravel-cart/storage/), [money and tax](/laravel-cart/money-and-tax/) and [authentication](/laravel-cart/authentication/). Public amounts remain floats; cart coupons do not allocate post-discount VAT per tax rate.
 
-Default `CART_STORAGE_DRIVER=session` uses Laravel sessions. Start the session before cart access. Requests sharing the session can overwrite read/modify/write state; use Laravel session blocking for routes that mutate the same cart and configure a lock-capable backend. This does not reserve stock or serialize separate authenticated sessions automatically.
+Session carts live under session keys. Database live carts use normalized `carts`
+and `cart_items`, keyed by owner plus instance; guests use `session_id`, users the
+configured owner column. Numeric, UUID and ULID owner types are configurable.
+TTL purges expired live database carts on access; it is not a snapshot retention policy.
+Bindings are request/job scoped, and Cart reloads coupons after owner changes/expiry.
 
-A Laravel session stored in Redis is **still the session cart driver**:
+`store($identifier)` and `restore($identifier)` are explicit saved snapshots in the
+separate `cart` table, not login migration of the live guest cart. Callers must
+authorize snapshot identifiers. Restore retains the existing snapshot format and
+migration behavior; automatic driver migration does not infer ownership for old snapshots.
 
-```dotenv
-SESSION_DRIVER=redis
-CART_STORAGE_DRIVER=session
-```
+Built-in logical live mutations (including multi-add, batch and sync) stage detached
+state, validate, persist, then publish successful events. Failure before commit
+leaves state and held item references untouched. Session writes are staged in memory;
+use Laravel session blocking if several requests can write the same session.
+Database mutations lock owner/instance before reading, through commit, and include
+items, coupons, options and metadata. Accepted concurrent adds accumulate instead of
+last-committed-write-wins replacement. Transactions retry concurrency errors at most
+three attempts using fresh state and no duplicate events; exhaustion raises the
+underlying database concurrency exception (for example DeadlockException or QueryException) with the connection/SQL failure. Direct raw writes and
+DatabaseStorage::put() still replace supplied values; they do not gain merge semantics.
 
-Configure Laravel's Redis connection and session locks in your app. The package's built-in drivers are only `session` and `database`; it does not ship a dedicated Redis cart driver. Custom implementations of CartStorage must define their own ownership, validation, locking and persistence behavior.
+Database mutation events wait for an application-owned outer transaction to commit.
+Outer rollback discards queued events. A listener throwing after commit does not undo
+the write or arbitrary external side effects. Use an outbox for stronger delivery needs.
+Saved snapshot store/restore operations coordinate their SQL write with staged built-in
+state, preserving the existing snapshot format and replacement/merge policy. Their
+events also wait for outer SQL commit. Session memory is not enlisted in an
+application-owned outer SQL transaction: if your application rolls back after a
+successful session restore, manage that session state in the application as well.
 
-## Live database storage
-
-Use the `cart-database-migrations` tag for `carts` and `cart_items`. The driver resolves an authenticated owner from `auth()->id()`, otherwise a guest owner from the Laravel session ID. Owner and cart instance both scope reads. Never accept an owner ID directly from an untrusted payload.
-
-`cart.ttl` is minutes or null (no expiry). In 4.0.3 the database driver's `expires_at` is set when the cart is created; writes do **not** slide the expiry. Reading an expired cart removes it and treats it as missing. `CartExpiredException` is defined but is not thrown by this expiration path. Session expiry follows Laravel's own configuration; legacy snapshots have no automatic TTL.
-
-## Concurrency and raw writes
-
-4.0.3 database writes use transactions/locks while replacing the item collection, but a full cart read/modify/write operation is not serialized end to end. Concurrent mutations can lose an update. Do not advertise atomic batches, safe concurrent coupon/limit validation or checkout inventory locking for this release. PR #50's stronger built-in mutation guarantees are unreleased.
-
-Serialize competing requests under a common application lock where required, re-read state inside that boundary, and enforce inventory/checkout constraints separately. Direct SQL changes, raw driver writes, mutated CartItems and custom drivers bypass assumptions or cached reads. Avoid using them as supported public mutation guarantees.
-
-## Legacy store and restore snapshots
-
-These use the separate `cart.database.table` (default `cart`), even when the live driver is session. Publish the `migrations` tag only for a fresh snapshot table; use the column-only upgrade tag for an existing one.
-
-```php
-use OfflineAgency\LaravelCart\Facades\Cart;
-
-// $snapshotKey is derived and authorized by the application, never raw request input.
-Cart::instance('shopping')->store($snapshotKey, overwrite: true);
-Cart::restore($snapshotKey, mergeOnRestore: false, keepStored: false);
-```
-
-`store()` saves items, cart coupons and meta when supported columns exist. It does not save cart options. `overwrite: false` throws when that identifier/instance already exists. `restore()` normally consumes/deletes the snapshot; a missing snapshot is a no-op. It can fall back to a stored instance for the identifier, temporarily switch to it and switch back.
-
-Merge is a union by row ID: an existing row wins without adding quantities. Restored cart coupons merge by hash; empty snapshot coupon/meta fields do not necessarily clear existing state. Do not promise a complete whole-state replacement.
-
-Snapshot lookups do **not** authorize ownership. Authorize identifier and instance in your application; never expose arbitrary `restore($request->id)`. Restrict database write access. Serialized/base64 payloads are not encrypted or signed, and allowed model classes may have unserialization behavior.
-
-`Cart::snapshot()` is different: it returns an in-memory array with timestamp and cart data. It neither creates a legacy database snapshot nor grants authorization to restore one.
-
+Custom drivers implement the unchanged CartStorage interface. Candidate preparation
+is detached and validation failures are atomic, but multiple writes cannot be promised
+transactional for arbitrary custom drivers. Optionally implement AtomicCartStorage
+with a read/write boundary and afterCommit callback. Never mutate returned CartItem
+properties directly for concurrent persistence; use the Cart mutation API.
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Imported from [docs/v4/storage.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/storage.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.

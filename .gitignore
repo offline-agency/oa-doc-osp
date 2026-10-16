@@ -5,6 +5,8 @@
 # Recommended template: Node.gitignore
 
 .vuepress/dist
+.vuepress/.temp
+.vuepress/.cache
 node_modules/
 .idea/.gitignore
 .idea/misc.xml

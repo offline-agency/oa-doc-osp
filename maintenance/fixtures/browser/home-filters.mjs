@@ -15,12 +15,13 @@ for(const [state,ecosystem,count] of cases){
  await status.selectOption(state);await technology.selectOption(ecosystem);
  await page.waitForFunction(expected=>document.querySelectorAll('.project').length===expected,count,{timeout:5000}).catch(async error=>{console.error(JSON.stringify({state,ecosystem,expected:count,actual:await page.locator('.project').count(),text:await page.locator('.project-filters').innerText(),errors}));throw error});
  assert.equal(await page.locator('.project').count(),count);
+ assert.ok((await page.locator('.project-type > h2').allTextContents()).every(title=>['Current project','Legacy'].includes(title.trim())));
  assert.equal((await page.getByRole('status').innerText()).trim(),`${count} of 12 projects`);
  assert.equal(await page.locator('.empty-projects').count(),count?0:1);
- assert.ok((await page.locator('.projectsType').evaluateAll(nodes=>nodes.map(node=>node.querySelectorAll('.project').length))).every(count=>count>0));
- if(state==='legacy' && ecosystem==='php')assert.match(await page.locator('.project h2').innerText(),/^laravel-fatture-in-cloud$/);
- if(ecosystem==='postgresql' && count)assert.equal(await page.locator('.project h2').innerText(),'pgr_dmmsy');
- if(state==='next' && count)assert.equal(await page.locator('.project h2').innerText(),'Braintree Vue 3');
+ assert.ok((await page.locator('.project-type').evaluateAll(nodes=>nodes.map(node=>node.querySelectorAll('.project').length))).every(count=>count>0));
+ if(state==='legacy' && ecosystem==='php')assert.match(await page.locator('.project h2, .project h3').innerText(),/^laravel-fatture-in-cloud$/);
+ if(ecosystem==='postgresql' && count)assert.equal(await page.locator('.project h2, .project h3').innerText(),'pgr_dmmsy');
+ if(state==='next' && count)assert.equal(await page.locator('.project h2, .project h3').innerText(),'Braintree Vue 3');
  checks.push({status:state,technology:ecosystem,count});
 }
 await reset.focus();await reset.press('Space');await page.waitForFunction(()=>document.querySelectorAll('.project').length===12);assert.equal(await reset.isDisabled(),true);

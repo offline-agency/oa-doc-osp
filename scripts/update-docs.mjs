@@ -27,6 +27,7 @@ if(process.argv[1] && import.meta.url===pathToFileURL(resolve(process.argv[1])).
  const sources=JSON.parse(read('maintenance/package-sources.json')).packages;
  function argument(flag){const index=args.indexOf(flag);return index<0?undefined:args[index+1]}
  if(args.includes('--check')){
+  execFileSync(process.execPath,[resolve(root,'scripts/content-history.mjs')],{cwd:root,stdio:'inherit'});
   execFileSync(process.execPath,[resolve(root,'scripts/catalog.mjs'),'--check'],{cwd:root,stdio:'inherit'});
   for(const source of sources.filter(item=>item.documentation?.importer))execFileSync(process.execPath,[resolve(root,source.documentation.importer),'--check'],{cwd:root,stdio:'inherit'});
   console.log('Pinned imports: committed generated content checked without network or reference clones.');
@@ -45,6 +46,7 @@ if(process.argv[1] && import.meta.url===pathToFileURL(resolve(process.argv[1])).
    if(source.documentation?.importer)execFileSync(process.execPath,[resolve(root,source.documentation.importer),'--reference',resolve(reference)],{cwd:root,stdio:'inherit'});
    execFileSync(process.execPath,[resolve(root,'scripts/version-docs.mjs'),'--package',source.name,'--refresh'],{cwd:root,stdio:'inherit'});
    execFileSync(process.execPath,[resolve(root,'scripts/catalog.mjs')],{cwd:root,stdio:'inherit'});
+   execFileSync(process.execPath,[resolve(root,'scripts/content-history.mjs'),'--update'],{cwd:root,stdio:'inherit'});
    const registry=JSON.parse(read('maintenance/documentation-versions.json'));
    const entry=registry.releases.find(item=>item.name===source.name && (item.documentationKey || item.version)===key);
    report.generatedPages=entry.pages.map(page=>({path:page.file,route:page.route,sha256:createHash('sha256').update(read(page.file)).digest('hex')}));

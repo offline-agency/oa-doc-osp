@@ -5,7 +5,7 @@ permalink: /laravel-cart/legacy/
 ---
 
 ::: warning Historical website archive — June 2024
-This preserves the old website at site commit `6404296f0dd38b1243e15ac1c444a505c2ece667`. It is not a verified documentation version for a particular package tag. Its positional signatures and behavior can be incompatible with v4. Use the [released 4.0.3 guide](/laravel-cart/) for current installation/API guidance. Obsolete badges were removed and asset/license links repaired and whitespace normalized; historical API text is retained.
+This preserves the old website at site commit `6404296f0dd38b1243e15ac1c444a505c2ece667`. It is not a verified documentation version for a particular package tag. Its positional signatures and behavior can be incompatible with v4. Use the [released v4 guide (4.1.0)](/laravel-cart/v4/) for current installation/API guidance. Obsolete badges were removed and asset/license links repaired and whitespace normalized; historical API text is retained.
 :::
 
 # laravel-cart

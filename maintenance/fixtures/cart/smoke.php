@@ -11,7 +11,6 @@ $loader->setPsr4('OfflineAgency\\LaravelCart\\', $source.'/src');
 use Illuminate\Config\Repository;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Foundation\Application;
-use Illuminate\Session\SessionManager;
 use Illuminate\Support\Facades\Facade;
 use Illuminate\Translation\ArrayLoader;
 use Illuminate\Translation\Translator;
@@ -27,10 +26,15 @@ use OfflineAgency\LaravelCart\Storage\SessionStorage;
 
 $app = new Application(sys_get_temp_dir());
 $config = require $source.'/config/cart.php';
-$app->instance('config', new Repository(['cart' => $config, 'session' => ['driver' => 'array', 'lifetime' => 120, 'serialization' => 'php']]));
+$app->instance('config', new Repository(['cart' => $config, 'session' => ['driver' => 'array', 'lifetime' => 120, 'serialization' => 'php', 'path' => '/', 'domain' => null, 'secure' => false]]));
 $app->instance('events', new Dispatcher($app));
+$app['config']->set('auth', ['defaults' => ['guard' => 'web'], 'guards' => ['web' => ['driver' => 'session', 'provider' => 'users']], 'providers' => ['users' => ['driver' => 'eloquent', 'model' => Illuminate\Foundation\Auth\User::class]]]);
+$app->instance('request', Illuminate\Http\Request::create('/'));
+$app->register(Illuminate\Hashing\HashServiceProvider::class);
+$app->register(Illuminate\Auth\AuthServiceProvider::class);
 $app->instance('translator', new Translator(new ArrayLoader(), 'en'));
-$app->singleton('session', fn ($app) => new SessionManager($app));
+$app->register(Illuminate\Cookie\CookieServiceProvider::class);
+$app->register(Illuminate\Session\SessionServiceProvider::class);
 $app->singleton('cart', fn ($app) => new OfflineAgency\LaravelCart\Cart(new SessionStorage($app['session']), $app['events']));
 Facade::setFacadeApplication($app);
 $app['session']->start();
@@ -88,14 +92,24 @@ Cart::instance('meta'); Cart::forgetMeta('delivery'); check(Cart::meta() === [],
 Cart::instance('sync'); Cart::add(['id' => 'A', 'name' => 'Original', 'qty' => 1, 'price' => 10.0, 'options' => ['size' => 'M']]);
 Cart::add(['id' => 'A', 'name' => 'Variant', 'qty' => 2, 'price' => 10.0, 'options' => ['size' => 'L']]);
 Cart::sync([['id' => 'A', 'name' => 'Replacement', 'qty' => 4, 'price' => 999.0]]);
-check(Cart::uniqueCount() === 2 && Cart::content()->first()->qty === 4 && Cart::content()->last()->qty === 2 && Cart::content()->first()->name === 'Original', 'Sync first product match, not full reconciliation');
+check(Cart::uniqueCount() === 1 && Cart::content()->first()->qty === 4 && Cart::content()->first()->name === 'Replacement', 'Sync uses product/options identity and removes absent variants');
 Cart::instance('limits'); config(['cart.limits.max_items' => 1]);
 Cart::add(['id' => 'one', 'name' => 'One', 'qty' => 1, 'price' => 1.0]);
 try { Cart::add(['id' => 'two', 'name' => 'Two', 'qty' => 1, 'price' => 1.0]); throw new RuntimeException('Limit accepted'); }
-catch (CartLimitExceededException $exception) { /* Do not infer whole-operation rollback. */ }
+catch (CartLimitExceededException $exception) { check(Cart::count() === 1 && Cart::uniqueCount() === 1, 'Limit rollback'); }
 config(['cart.limits.max_items' => null, 'cart.limits.min_total' => 10.0]);
 check(!Cart::meetsMinimum(), 'Minimum queried separately');
 config(['cart.limits.min_total' => null]);
+
+Cart::instance('scalar-string');
+$item = Cart::add(id: 'SKU-STRING', name: 'String identifier', qty: 2, price: 10.0, totalPrice: 12.2, vat: 2.2);
+check($item->id === 'SKU-STRING', 'Scalar string product id');
+Cart::addItemCoupon($item->rowId, 'ROW10', 'percentage', 10.0);
+Cart::update($item->rowId, ['price' => 20.0]);
+amount(Cart::total(), 46.36, 'Retained tax rate and once-per-row coupon after net repricing');
+try { Cart::update($item->rowId, ['price' => 20.0, 'vat' => 1.0, 'totalPrice' => 99.0]); throw new RuntimeException('Contradictory amounts accepted'); }
+catch (InvalidArgumentException $exception) { amount(Cart::total(), 46.36, 'Contradictory repricing rollback'); }
+Cart::detachCoupon($item->rowId, 'ROW10'); amount(Cart::total(), 48.8, 'Detach restores repriced base');
 
 $fake = Cart::fake(); Cart::instance('fake-test');
 $item = Cart::add(['id' => 'fake', 'name' => 'Fake test', 'qty' => 1, 'price' => 10.0]);
@@ -104,4 +118,4 @@ $fake->assertDispatchedTimes(CartItemAdded::class, 1); $fake->assertNotDispatche
 Cart::update($item->rowId, 2); Cart::remove($item->rowId);
 $fake->assertDispatchedTimes(CartItemUpdated::class, 1); $fake->assertDispatchedTimes(CartItemRemoved::class, 1);
 check(count($fake->recorder()->recorded(CartItemAdded::class)) === 1, 'Recorder');
-echo 'PASS: release source, SessionStorage array driver, quickstart20, item-coupon280, tax122, rounding4modes+TowardsZero, meta/snapshot, sync, limits, CartFake typed events; cart coupons '.$couponStatus.'. PHP '.PHP_VERSION.'; Laravel '.Composer\InstalledVersions::getPrettyVersion('laravel/framework')."\n";
+echo 'PASS: release source, SessionStorage array driver, quickstart20, item-coupon280, tax122, rounding4modes+TowardsZero, meta/snapshot, sync variants, atomic limits, scalar string id, retained VAT/coupon repricing and contradictory update rollback, CartFake typed events; cart coupons '.$couponStatus.'. PHP '.PHP_VERSION.'; Laravel '.Composer\InstalledVersions::getPrettyVersion('laravel/framework')."\n";

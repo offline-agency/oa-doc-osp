@@ -28,11 +28,18 @@
       "options": [
         "/braintree-vue3/next/"
       ]
+    },
+    {
+      "route": "/laravel-cart/v4/",
+      "version": "4.1.0",
+      "options": [
+        "/laravel-cart/v4/"
+      ]
     }
   ],
   "screenshotsSaved": false,
   "spaSeo": true,
-  "redirects": 17,
+  "redirects": 38,
   "runtimeErrors": [],
   "mobileKeyboard": true,
   "search": true,

@@ -9,12 +9,13 @@
       "route": "/laravel-cart/",
       "repository": "https://github.com/offline-agency/laravel-cart",
       "defaultBranch": "main",
-      "selectedTag": "4.0.3",
-      "commit": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+      "selectedTag": "4.1.0",
+      "commit": "b89d3219202703203453890e2e46467e79ad415d",
       "status": "current-release",
       "verifiedOn": "2026-10-16",
       "composerRequirements": {
         "php": "~8.4.0 || ~8.5.0",
+        "ext-bcmath": "*",
         "illuminate/auth": "^12.69.2 || ^13.32",
         "illuminate/console": "^12.69.2 || ^13.32",
         "illuminate/contracts": "^12.69.2 || ^13.32",
@@ -28,9 +29,9 @@
       },
       "distribution": {
         "registry": "Packagist",
-        "version": "4.0.3",
-        "sourceReference": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
-        "distReference": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+        "version": "4.1.0",
+        "sourceReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "distReference": "b89d3219202703203453890e2e46467e79ad415d",
         "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
         "verifiedOn": "2026-10-16"
       },
@@ -45,6 +46,23 @@
         "UPGRADE.md",
         "composer.json",
         "config/cart.php",
+        "docs/v4/agents.md",
+        "docs/v4/alternatives.md",
+        "docs/v4/authentication.md",
+        "docs/v4/configuration.md",
+        "docs/v4/coupons.md",
+        "docs/v4/index.md",
+        "docs/v4/installation.md",
+        "docs/v4/money-and-tax.md",
+        "docs/v4/reference.md",
+        "docs/v4/storage.md",
+        "docs/v4/testing.md",
+        "docs/v4/troubleshooting.md",
+        "docs/v4/upgrading.md",
+        "docs/v4/usage.md",
+        "examples/quick-start.php",
+        "scripts/consumer-smoke.mjs",
+        "scripts/docs.mjs",
         "src/CanBeBought.php",
         "src/Cart.php",
         "src/CartCoupon.php",
@@ -92,6 +110,7 @@
         "src/Resources/CartResource.php",
         "src/Storage/DatabaseStorage.php",
         "src/Storage/SessionStorage.php",
+        "src/Storage/StagedStorage.php",
         "src/Support/CartConfig.php",
         "src/Support/CartContentCodec.php",
         "src/Support/Coerce.php",
@@ -132,6 +151,9 @@
         "tests/Feature/CartRoundingModeTest.php",
         "tests/Feature/CartSyncTest.php",
         "tests/Feature/CartUtilityMethodsTest.php",
+        "tests/Feature/DocumentationExamplesTest.php",
+        "tests/Feature/GuestTransferPolicyTest.php",
+        "tests/Feature/GuestTransferTest.php",
         "tests/FeatureTestCase.php",
         "tests/Fixtures/BareBuyable.php",
         "tests/Fixtures/BuyableProduct.php",
@@ -144,6 +166,7 @@
         "tests/Fixtures/PromoModel.php",
         "tests/Pest.php",
         "tests/Regression/CartLimitAtomicityTest.php",
+        "tests/Regression/CartReferenceOwnerTest.php",
         "tests/Regression/DatabaseStorageAtomicityTest.php",
         "tests/Regression/DatabaseStorageCacheTest.php",
         "tests/Regression/DatabaseStorageOwnerTest.php",
@@ -152,8 +175,11 @@
         "tests/Regression/Issue35MinimalItemTest.php",
         "tests/Regression/LegacyCartContentCodecTest.php",
         "tests/Regression/LegacyStoreInstancesTest.php",
+        "tests/Regression/MutationCorrectnessTest.php",
         "tests/Regression/PruneInstanceFilterTest.php",
         "tests/Regression/PublishedMigrationsTest.php",
+        "tests/Regression/ServerConcurrencyTest.php",
+        "tests/Regression/SnapshotMutationAtomicityTest.php",
         "tests/Regression/TypedBoundariesTest.php",
         "tests/Unit/CartCouponTest.php",
         "tests/Unit/CouponTypeTest.php",
@@ -166,14 +192,69 @@
         "sourceTree": "https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16"
       },
       "unavailableChecks": [
-        "Full upstream CI matrix not re-executed in this documentation change"
+        "No certified post-cart-discount VAT allocation API in release4.1.0.",
+        "Livewire/Inertia UI and external mobile/Redis integration are application scaffolding; scalar string product IDs were verified in released source."
       ],
       "catalog": {
         "title": "laravel-cart",
-        "details": "Session or database carts with variants, item and cart coupons, VAT fields and explicit checkout limitations. Released package 4.0.3.",
-        "category": "Current projects",
+        "details": "Laravel 12/13 shopping carts with VAT, coupons, atomic database mutations and opt-in guest transfer. Released package 4.1.0; checkout tax limits documented.",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "landing": "static-redirect",
+        "supportStatus": "Current stable documentation. Package support window is not documented.",
+        "importer": "scripts/import-cart.mjs",
+        "discoveryEvidence": "maintenance/evidence/cart41-release.json",
+        "provenanceDate": "2026-10-16",
+        "availability": {
+          "atomicMutations": "4.1.0",
+          "databaseConcurrency": "4.1.0",
+          "optInGuestTransfer": "4.1.0",
+          "repricingCorrections": "4.1.0"
+        },
+        "topicAliases": {
+          "quick-start": "usage",
+          "support": "troubleshooting"
+        },
+        "anchorTargets": {
+          "": {
+            "laravel-cart": "/laravel-cart/legacy/#laravel-cart",
+            "installation": "/laravel-cart/legacy/#installation",
+            "overview": "/laravel-cart/legacy/#overview",
+            "usage": "/laravel-cart/legacy/#usage",
+            "cart-add": "/laravel-cart/legacy/#cart-add",
+            "cart-update": "/laravel-cart/legacy/#cart-update",
+            "cart-remove": "/laravel-cart/legacy/#cart-remove",
+            "cart-get": "/laravel-cart/legacy/#cart-get",
+            "cart-content": "/laravel-cart/legacy/#cart-content",
+            "cart-destroy": "/laravel-cart/legacy/#cart-destroy",
+            "cart-total": "/laravel-cart/legacy/#cart-total",
+            "cart-vat": "/laravel-cart/legacy/#cart-vat",
+            "cart-subtotal": "/laravel-cart/legacy/#cart-subtotal",
+            "cart-count": "/laravel-cart/legacy/#cart-count",
+            "cart-search": "/laravel-cart/legacy/#cart-search",
+            "collections": "/laravel-cart/legacy/#collections",
+            "instances": "/laravel-cart/legacy/#instances",
+            "models": "/laravel-cart/legacy/#models",
+            "database": "/laravel-cart/legacy/#database",
+            "configuration": "/laravel-cart/legacy/#configuration",
+            "storing-the-cart": "/laravel-cart/legacy/#storing-the-cart",
+            "restoring-the-cart": "/laravel-cart/legacy/#restoring-the-cart",
+            "add-a-coupon-to-cart-instance-for-a-specific-cart-item": "/laravel-cart/legacy/#add-a-coupon-to-cart-instance-for-a-specific-cart-item",
+            "exceptions": "/laravel-cart/legacy/#exceptions",
+            "events": "/laravel-cart/legacy/#events",
+            "example": "/laravel-cart/legacy/#example",
+            "testing": "/laravel-cart/legacy/#testing",
+            "contributing": "/laravel-cart/legacy/#contributing",
+            "security": "/laravel-cart/legacy/#security",
+            "credits": "/laravel-cart/legacy/#credits",
+            "about-us": "/laravel-cart/legacy/#about-us",
+            "license": "/laravel-cart/legacy/#license"
+          }
+        }
       }
     },
     {
@@ -420,7 +501,7 @@
       "catalog": {
         "title": "laravel-webex",
         "details": "Implemented Webex Meetings and Messaging APIs with per-request bearer tokens, typed results and guarded pagination. Release 2.0.0.",
-        "category": "Current projects",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
       }
@@ -698,7 +779,7 @@
       "catalog": {
         "title": "laravel-fatture-in-cloud-v2",
         "details": "Fatture in Cloud API v2 wrapper, package 3.0.1. Company configuration, typed results and implemented endpoint coverage.",
-        "category": "Current projects",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
       }
@@ -776,7 +857,7 @@
       "catalog": {
         "title": "laravel-aruba-sms",
         "details": "Aruba SMS notification channel, message builder, sandbox mode and credit monitoring. Release 1.1.0.",
-        "category": "Current projects",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
       }
@@ -876,7 +957,7 @@
       "catalog": {
         "title": "laravel-mongo-auto-sync",
         "details": "Synchronize configured embedded copies between MongoDB documents through explicit CRUD methods. Documented release 3.1.1; see its declared framework requirements.",
-        "category": "Current projects",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
       }
@@ -1030,7 +1111,7 @@
       "catalog": {
         "title": "laravel-bank-of-italy",
         "details": "Retrieve Bank of Italy exchange-rate data through the released CSV API wrapper. Version 1.0.1, with explicit query and error handling.",
-        "category": "Current projects",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
       }
@@ -1107,7 +1188,7 @@
       "catalog": {
         "title": "ODPS Validator",
         "details": "Standalone JSON/YAML validation app with bundled schemas, browser-side results and documented schema limitations. Source release 1.0.1.",
-        "category": "Current projects",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "javascript"
       }
@@ -1215,7 +1296,7 @@
       "catalog": {
         "title": "Braintree Vue 3",
         "details": "Vue 3 Braintree composables and hosted fields, documented at a pinned source commit. No verified published package; evaluation guide only.",
-        "category": "Vue / payments",
+        "category": "Current project",
         "maintenanceStatus": "next",
         "ecosystem": "javascript"
       }
@@ -1314,7 +1395,7 @@
       "catalog": {
         "title": "Vue 3 Burger Menu",
         "details": "Off-canvas Vue 3 menus from GitHub release 1.1.2, with explicit source setup and a warning about the incomplete npm artifact.",
-        "category": "Vue / components",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "javascript"
       }
@@ -1396,7 +1477,7 @@
       "catalog": {
         "title": "SPID Laravel Trentino",
         "details": "Laravel login through AAC Trentino OpenID Connect, with PKCE, token middleware and transaction logs. Release v2.3.0.",
-        "category": "Laravel / authentication",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
       }
@@ -1546,7 +1627,7 @@
       "catalog": {
         "title": "pgr_dmmsy",
         "details": "PostgreSQL shortest-path extension for research and evaluation. Release v0.1.0, with explicit targets, build requirements and implementation limits.",
-        "category": "PostgreSQL / routing",
+        "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "postgresql"
       }
@@ -1575,13 +1656,15 @@
   },
   "developmentProposals": {
     "cart50": {
-      "state": "open",
-      "merged_at": null,
+      "state": "merged",
+      "merged_at": "2026-10-16T15:16:40Z",
       "html_url": "https://github.com/offline-agency/laravel-cart/pull/50",
       "created_at": "2026-10-16T07:44:36Z",
       "unavailable": null,
       "head": "131f2e6e00522f97c8f85adf18d3469cf4de527b",
-      "base": "main"
+      "base": "main",
+      "mergeCommit": "b89d3219202703203453890e2e46467e79ad415d",
+      "releasedAs": "4.1.0"
     },
     "mongo40": {
       "state": "open",

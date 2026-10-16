@@ -107,7 +107,9 @@
           "route": "/laravel-cart/4.0.3/variants-and-wishlist/",
           "title": "Variants, wishlist and Buyable models"
         }
-      ]
+      ],
+      "archive": true,
+      "supportStatus": "Archived 4.0.3 documentation; package support window is not documented."
     },
     {
       "name": "offline-agency/laravel-webex",
@@ -720,6 +722,174 @@
           "title": "Venmo"
         }
       ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.1.0",
+      "documentationKey": "v4",
+      "channel": "stable",
+      "supportStatus": "Current stable documentation. Package support window is not documented.",
+      "commit": "b89d3219202703203453890e2e46467e79ad415d",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "ext-bcmath": "*",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.1.0",
+        "sourceReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "distReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-cart/v4/",
+      "pages": [
+        {
+          "source": "laravel-cart.md",
+          "file": "versioned/laravel-cart/v4/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/v4/",
+          "title": "Laravel Cart v4"
+        },
+        {
+          "source": "laravel-cart/agents.md",
+          "file": "versioned/laravel-cart/v4/agents.md",
+          "currentRoute": "/laravel-cart/agents/",
+          "route": "/laravel-cart/v4/agents/",
+          "title": "Laravel Boost and agent guidance"
+        },
+        {
+          "source": "laravel-cart/alternatives.md",
+          "file": "versioned/laravel-cart/v4/alternatives.md",
+          "currentRoute": "/laravel-cart/alternatives/",
+          "route": "/laravel-cart/v4/alternatives/",
+          "title": "Alternatives — checked 2026-10-15"
+        },
+        {
+          "source": "laravel-cart/api-and-mobile.md",
+          "file": "versioned/laravel-cart/v4/api-and-mobile.md",
+          "currentRoute": "/laravel-cart/api-and-mobile/",
+          "route": "/laravel-cart/v4/api-and-mobile/",
+          "title": "API resources and mobile carts"
+        },
+        {
+          "source": "laravel-cart/authentication.md",
+          "file": "versioned/laravel-cart/v4/authentication.md",
+          "currentRoute": "/laravel-cart/authentication/",
+          "route": "/laravel-cart/v4/authentication/",
+          "title": "Authentication and guest transfer"
+        },
+        {
+          "source": "laravel-cart/choosing.md",
+          "file": "versioned/laravel-cart/v4/choosing.md",
+          "currentRoute": "/laravel-cart/choosing/",
+          "route": "/laravel-cart/v4/choosing/",
+          "title": "Choosing Laravel Cart"
+        },
+        {
+          "source": "laravel-cart/configuration.md",
+          "file": "versioned/laravel-cart/v4/configuration.md",
+          "currentRoute": "/laravel-cart/configuration/",
+          "route": "/laravel-cart/v4/configuration/",
+          "title": "Configuration"
+        },
+        {
+          "source": "laravel-cart/coupons.md",
+          "file": "versioned/laravel-cart/v4/coupons.md",
+          "currentRoute": "/laravel-cart/coupons/",
+          "route": "/laravel-cart/v4/coupons/",
+          "title": "Coupons"
+        },
+        {
+          "source": "laravel-cart/installation.md",
+          "file": "versioned/laravel-cart/v4/installation.md",
+          "currentRoute": "/laravel-cart/installation/",
+          "route": "/laravel-cart/v4/installation/",
+          "title": "Installation"
+        },
+        {
+          "source": "laravel-cart/integrations.md",
+          "file": "versioned/laravel-cart/v4/integrations.md",
+          "currentRoute": "/laravel-cart/integrations/",
+          "route": "/laravel-cart/v4/integrations/",
+          "title": "Livewire and Inertia recipes"
+        },
+        {
+          "source": "laravel-cart/money-and-tax.md",
+          "file": "versioned/laravel-cart/v4/money-and-tax.md",
+          "currentRoute": "/laravel-cart/money-and-tax/",
+          "route": "/laravel-cart/v4/money-and-tax/",
+          "title": "Money and tax"
+        },
+        {
+          "source": "laravel-cart/redis-sessions.md",
+          "file": "versioned/laravel-cart/v4/redis-sessions.md",
+          "currentRoute": "/laravel-cart/redis-sessions/",
+          "route": "/laravel-cart/v4/redis-sessions/",
+          "title": "Redis-backed Laravel sessions"
+        },
+        {
+          "source": "laravel-cart/reference.md",
+          "file": "versioned/laravel-cart/v4/reference.md",
+          "currentRoute": "/laravel-cart/reference/",
+          "route": "/laravel-cart/v4/reference/",
+          "title": "Full API reference"
+        },
+        {
+          "source": "laravel-cart/storage.md",
+          "file": "versioned/laravel-cart/v4/storage.md",
+          "currentRoute": "/laravel-cart/storage/",
+          "route": "/laravel-cart/v4/storage/",
+          "title": "Storage and mutation guarantees"
+        },
+        {
+          "source": "laravel-cart/testing.md",
+          "file": "versioned/laravel-cart/v4/testing.md",
+          "currentRoute": "/laravel-cart/testing/",
+          "route": "/laravel-cart/v4/testing/",
+          "title": "Testing and documentation checks"
+        },
+        {
+          "source": "laravel-cart/troubleshooting.md",
+          "file": "versioned/laravel-cart/v4/troubleshooting.md",
+          "currentRoute": "/laravel-cart/troubleshooting/",
+          "route": "/laravel-cart/v4/troubleshooting/",
+          "title": "Troubleshooting"
+        },
+        {
+          "source": "laravel-cart/upgrading.md",
+          "file": "versioned/laravel-cart/v4/upgrading.md",
+          "currentRoute": "/laravel-cart/upgrading/",
+          "route": "/laravel-cart/v4/upgrading/",
+          "title": "Upgrading"
+        },
+        {
+          "source": "laravel-cart/usage.md",
+          "file": "versioned/laravel-cart/v4/usage.md",
+          "currentRoute": "/laravel-cart/usage/",
+          "route": "/laravel-cart/v4/usage/",
+          "title": "Usage"
+        },
+        {
+          "source": "laravel-cart/variants-and-wishlist.md",
+          "file": "versioned/laravel-cart/v4/variants-and-wishlist.md",
+          "currentRoute": "/laravel-cart/variants-and-wishlist/",
+          "route": "/laravel-cart/v4/variants-and-wishlist/",
+          "title": "Variants, wishlist and Buyable models"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -790,6 +960,124 @@
     {
       "route": "/braintree-vue3/venmo/",
       "target": "/braintree-vue3/next/venmo/"
+    },
+    {
+      "route": "/laravel-cart/",
+      "target": "/laravel-cart/v4/",
+      "anchors": {
+        "laravel-cart": "/laravel-cart/legacy/#laravel-cart",
+        "installation": "/laravel-cart/legacy/#installation",
+        "overview": "/laravel-cart/legacy/#overview",
+        "usage": "/laravel-cart/legacy/#usage",
+        "cart-add": "/laravel-cart/legacy/#cart-add",
+        "cart-update": "/laravel-cart/legacy/#cart-update",
+        "cart-remove": "/laravel-cart/legacy/#cart-remove",
+        "cart-get": "/laravel-cart/legacy/#cart-get",
+        "cart-content": "/laravel-cart/legacy/#cart-content",
+        "cart-destroy": "/laravel-cart/legacy/#cart-destroy",
+        "cart-total": "/laravel-cart/legacy/#cart-total",
+        "cart-vat": "/laravel-cart/legacy/#cart-vat",
+        "cart-subtotal": "/laravel-cart/legacy/#cart-subtotal",
+        "cart-count": "/laravel-cart/legacy/#cart-count",
+        "cart-search": "/laravel-cart/legacy/#cart-search",
+        "collections": "/laravel-cart/legacy/#collections",
+        "instances": "/laravel-cart/legacy/#instances",
+        "models": "/laravel-cart/legacy/#models",
+        "database": "/laravel-cart/legacy/#database",
+        "configuration": "/laravel-cart/legacy/#configuration",
+        "storing-the-cart": "/laravel-cart/legacy/#storing-the-cart",
+        "restoring-the-cart": "/laravel-cart/legacy/#restoring-the-cart",
+        "add-a-coupon-to-cart-instance-for-a-specific-cart-item": "/laravel-cart/legacy/#add-a-coupon-to-cart-instance-for-a-specific-cart-item",
+        "exceptions": "/laravel-cart/legacy/#exceptions",
+        "events": "/laravel-cart/legacy/#events",
+        "example": "/laravel-cart/legacy/#example",
+        "testing": "/laravel-cart/legacy/#testing",
+        "contributing": "/laravel-cart/legacy/#contributing",
+        "security": "/laravel-cart/legacy/#security",
+        "credits": "/laravel-cart/legacy/#credits",
+        "about-us": "/laravel-cart/legacy/#about-us",
+        "license": "/laravel-cart/legacy/#license"
+      }
+    },
+    {
+      "route": "/laravel-cart/agents/",
+      "target": "/laravel-cart/v4/agents/"
+    },
+    {
+      "route": "/laravel-cart/alternatives/",
+      "target": "/laravel-cart/v4/alternatives/"
+    },
+    {
+      "route": "/laravel-cart/api-and-mobile/",
+      "target": "/laravel-cart/v4/api-and-mobile/"
+    },
+    {
+      "route": "/laravel-cart/authentication/",
+      "target": "/laravel-cart/v4/authentication/"
+    },
+    {
+      "route": "/laravel-cart/choosing/",
+      "target": "/laravel-cart/v4/choosing/"
+    },
+    {
+      "route": "/laravel-cart/configuration/",
+      "target": "/laravel-cart/v4/configuration/"
+    },
+    {
+      "route": "/laravel-cart/coupons/",
+      "target": "/laravel-cart/v4/coupons/"
+    },
+    {
+      "route": "/laravel-cart/installation/",
+      "target": "/laravel-cart/v4/installation/"
+    },
+    {
+      "route": "/laravel-cart/integrations/",
+      "target": "/laravel-cart/v4/integrations/"
+    },
+    {
+      "route": "/laravel-cart/money-and-tax/",
+      "target": "/laravel-cart/v4/money-and-tax/"
+    },
+    {
+      "route": "/laravel-cart/redis-sessions/",
+      "target": "/laravel-cart/v4/redis-sessions/"
+    },
+    {
+      "route": "/laravel-cart/reference/",
+      "target": "/laravel-cart/v4/reference/"
+    },
+    {
+      "route": "/laravel-cart/storage/",
+      "target": "/laravel-cart/v4/storage/"
+    },
+    {
+      "route": "/laravel-cart/testing/",
+      "target": "/laravel-cart/v4/testing/"
+    },
+    {
+      "route": "/laravel-cart/troubleshooting/",
+      "target": "/laravel-cart/v4/troubleshooting/"
+    },
+    {
+      "route": "/laravel-cart/upgrading/",
+      "target": "/laravel-cart/v4/upgrading/"
+    },
+    {
+      "route": "/laravel-cart/usage/",
+      "target": "/laravel-cart/v4/usage/"
+    },
+    {
+      "route": "/laravel-cart/variants-and-wishlist/",
+      "target": "/laravel-cart/v4/variants-and-wishlist/"
+    },
+    {
+      "route": "/laravel-cart/quick-start/",
+      "target": "/laravel-cart/v4/usage/"
+    },
+    {
+      "route": "/laravel-cart/support/",
+      "target": "/laravel-cart/v4/troubleshooting/"
     }
   ]
 }

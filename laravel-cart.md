@@ -1,180 +1,68 @@
 ---
-title: "Laravel Cart — stable 4.0.3"
-description: "Released Laravel Cart 4.0.3: laravel cart — stable 4.0.3."
+title: "Laravel Cart v4"
+description: "Laravel 12/13 shopping cart for PHP 8.4/8.5: installation, VAT, coupons, persistent carts and released 4.1 guarantees."
+packageVersion: "4.1.0"
+sourceCommit: b89d3219202703203453890e2e46467e79ad415d
 permalink: /laravel-cart/
-packageVersion: "4.0.3"
-cartRelease: "4.0.3"
-sourceCommit: 60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16
 ---
 
-# Laravel Cart
+# Laravel Cart v4
 
-A server-side shopping cart for Laravel, with session or database persistence, product variants, coupons and VAT fields. **This is the released package 4.0.3 guide.** The version number refers to the PHP package.
+> **Release 4.1.0.** This guide describes the selected `4.1.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. These guarantees must not be assumed for the earlier 4.0.3 release. See [storage](/laravel-cart/storage/), [money and tax](/laravel-cart/money-and-tax/) and [authentication](/laravel-cart/authentication/). Public amounts remain floats; cart coupons do not allocate post-discount VAT per tax rate.
 
-[Release 4.0.3](https://github.com/offline-agency/laravel-cart/releases/tag/4.0.3) · [Packagist](https://packagist.org/packages/offline-agency/laravel-cart) · [Unreleased PR #50 preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical documentation](/laravel-cart/legacy/)
+A Laravel shopping cart with VAT, item/cart coupons, session or database persistence,
+resources and testing helpers. It fits applications that own their catalog and checkout.
+Choose a full commerce framework when you also need inventory, orders, payments,
+shipping or a redemption ledger. No production adoption or comparative performance is claimed.
 
-::: warning Checkout and tax boundary
-Cart-level coupons reduce the payable total but are **not allocated into VAT**. `vatBreakdown()` describes amounts before cart-level discounts. The package is not a certified tax engine, payment gateway, inventory reservation system or exact multi-currency ledger. Recheck prices, tax treatment, stock and coupon eligibility against your trusted server catalog before checkout.
-:::
+- [Installation](/laravel-cart/installation/) and [configuration](/laravel-cart/configuration/)
+- [Usage and executable example](/laravel-cart/usage/), [full API reference](/laravel-cart/reference/)
+- [Money and tax](/laravel-cart/money-and-tax/), [coupons](/laravel-cart/coupons/)
+- [Storage and atomic mutations](/laravel-cart/storage/), [authentication](/laravel-cart/authentication/)
+- [Testing](/laravel-cart/testing/), [upgrading](/laravel-cart/upgrading/), [troubleshooting](/laravel-cart/troubleshooting/)
+- [Agent integration](/laravel-cart/agents/), [dated alternatives](/laravel-cart/alternatives/)
 
-## Overview
+These pages document released Laravel Cart `4.1.0` from the pinned tag. The public documentation website is maintained separately from the package release.
 
-[Historical overview section](/laravel-cart/legacy/#overview).
 
-Use it for guest session carts, authenticated database carts, separate wishlist instances and JSON-backed application interfaces. Your application supplies the catalog, authorization, checkout and UI. No Livewire, Inertia, Vue or AI dependency is required by the PHP package.
+- [Historical site documentation](/laravel-cart/legacy/)
+- [Archived 4.0.3 release documentation](/laravel-cart/4.0.3/)
+- [Site URL migration map](/laravel-cart/url-migration/)
 
-## Installation
 
-[Historical installation section](/laravel-cart/legacy/#installation).
+## Install and try it
 
-The exact constraints are PHP `~8.4.0 || ~8.5.0` and Illuminate components `^12.69.2 || ^13.32`. Enable BCMath when using cart-level coupons; 4.0.3 calls it at runtime although Composer does not declare `ext-bcmath`.
+Requires PHP `~8.4.0 || ~8.5.0`, BCMath and Illuminate `^12.69.2 || ^13.32`.
 
 ```sh
-composer require offline-agency/laravel-cart:4.0.3
+composer require offline-agency/laravel-cart:4.1.0
 ```
 
-This command pins the contract described here. Evaluate later release notes before changing your constraint. See [installation and migration choices](/laravel-cart/installation/).
+In a configured Laravel application, use an isolated demo instance with synthetic trusted catalog values. The snippet below is extracted from the released executable example; its two-driver test verifies the expected total.
 
-## Start here
+```php
+use OfflineAgency\LaravelCart\CartCoupon;
 
-| Goal | Guide |
-| --- | --- |
-| Add, update and remove products | [Quick start](/laravel-cart/quick-start/) |
-| Sizes, wishlist and Eloquent models | [Variants and Buyable](/laravel-cart/variants-and-wishlist/) |
-| Net/gross, VAT, coupons and rounding | [Money and tax](/laravel-cart/money-and-tax/) |
-| Ownership, sessions, database and snapshots | [Storage](/laravel-cart/storage/) |
-| Login and guest carts | [Authentication](/laravel-cart/authentication/) |
-| JSON resources, mobile, Livewire and Inertia | [Integration recipes](/laravel-cart/integrations/) |
-| Upgrade existing applications | [Upgrade guide](/laravel-cart/upgrading/) |
-| Methods, events and errors | [Full reference](/laravel-cart/reference/) |
-| Diagnose limitations and contribute | [Troubleshooting and support](/laravel-cart/support/) |
-| Old inbound links | [Route and anchor map](/laravel-cart/url-migration/) |
+$cart = app('cart')->instance('documentation-example');
+$cart->destroy(); // Reset only this isolated demo instance.
+$item = $cart->add(id: 1, name: 'Widget', qty: 2, price: 10.00, totalPrice: 12.20, vat: 2.20);
+$cart->addItemCoupon($item->rowId, 'ROW10', 'percentage', 10.0);
+$cart->update($item->rowId, ['price' => 20.00]);
+// Two units at 24.40, with 2.44 discounted once per row: 46.36.
+$cart->addCoupon(new CartCoupon(hash: 'welcome', code: 'WELCOME', type: 'fixed', value: 1.00));
+$payable = $cart->total(); // 45.36; item tax breakdown is before this cart coupon.
+```
 
-## Release availability
+[Executable example](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/examples/quick-start.php) · [Session and database assertions](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Feature/DocumentationExamplesTest.php)
 
-PR #50 remains open at `131f2e6e00522f97c8f85adf18d3469cf4de527b`, verified 16 October 2026. Its corrected repricing, atomic mutation guarantees and explicit opt-in guest transfer are **unreleased**, and absent from 4.0.3. Read them only in the [preview](https://github.com/offline-agency/laravel-cart/pull/50). A merge alone does not make those features available through Composer.
+## Choose a practical guide
 
+- [Choosing Laravel Cart: fit, limitations and alternatives](/laravel-cart/choosing/)
+- [Product variants, wishlist and Buyable models](/laravel-cart/variants-and-wishlist/)
+- [Livewire and Inertia/Vue application scaffolding](/laravel-cart/integrations/)
+- [Authenticated API and mobile carts](/laravel-cart/api-and-mobile/)
+- [Redis-backed Laravel sessions versus a cart driver](/laravel-cart/redis-sessions/)
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
-
-## Historical links
-
-Old anchors below lead to the archived explanation; they do not redefine historical APIs as v4 APIs.
-
-<span id="usage"></span>
-
-[Historical: usage](/laravel-cart/legacy/#usage).
-
-<span id="cart-add"></span>
-
-[Historical: cart add](/laravel-cart/legacy/#cart-add).
-
-<span id="cart-update"></span>
-
-[Historical: cart update](/laravel-cart/legacy/#cart-update).
-
-<span id="cart-remove"></span>
-
-[Historical: cart remove](/laravel-cart/legacy/#cart-remove).
-
-<span id="cart-get"></span>
-
-[Historical: cart get](/laravel-cart/legacy/#cart-get).
-
-<span id="cart-content"></span>
-
-[Historical: cart content](/laravel-cart/legacy/#cart-content).
-
-<span id="cart-destroy"></span>
-
-[Historical: cart destroy](/laravel-cart/legacy/#cart-destroy).
-
-<span id="cart-total"></span>
-
-[Historical: cart total](/laravel-cart/legacy/#cart-total).
-
-<span id="cart-vat"></span>
-
-[Historical: cart vat](/laravel-cart/legacy/#cart-vat).
-
-<span id="cart-subtotal"></span>
-
-[Historical: cart subtotal](/laravel-cart/legacy/#cart-subtotal).
-
-<span id="cart-count"></span>
-
-[Historical: cart count](/laravel-cart/legacy/#cart-count).
-
-<span id="cart-search"></span>
-
-[Historical: cart search](/laravel-cart/legacy/#cart-search).
-
-<span id="collections"></span>
-
-[Historical: collections](/laravel-cart/legacy/#collections).
-
-<span id="instances"></span>
-
-[Historical: instances](/laravel-cart/legacy/#instances).
-
-<span id="models"></span>
-
-[Historical: models](/laravel-cart/legacy/#models).
-
-<span id="database"></span>
-
-[Historical: database](/laravel-cart/legacy/#database).
-
-<span id="configuration"></span>
-
-[Historical: configuration](/laravel-cart/legacy/#configuration).
-
-<span id="storing-the-cart"></span>
-
-[Historical: storing the cart](/laravel-cart/legacy/#storing-the-cart).
-
-<span id="restoring-the-cart"></span>
-
-[Historical: restoring the cart](/laravel-cart/legacy/#restoring-the-cart).
-
-<span id="add-a-coupon-to-cart-instance-for-a-specific-cart-item"></span>
-
-[Historical: add a coupon to cart instance for a specific cart item](/laravel-cart/legacy/#add-a-coupon-to-cart-instance-for-a-specific-cart-item).
-
-<span id="exceptions"></span>
-
-[Historical: exceptions](/laravel-cart/legacy/#exceptions).
-
-<span id="events"></span>
-
-[Historical: events](/laravel-cart/legacy/#events).
-
-<span id="example"></span>
-
-[Historical: example](/laravel-cart/legacy/#example).
-
-<span id="testing"></span>
-
-[Historical: testing](/laravel-cart/legacy/#testing).
-
-<span id="contributing"></span>
-
-[Historical: contributing](/laravel-cart/legacy/#contributing).
-
-<span id="security"></span>
-
-[Historical: security](/laravel-cart/legacy/#security).
-
-<span id="credits"></span>
-
-[Historical: credits](/laravel-cart/legacy/#credits).
-
-<span id="about-us"></span>
-
-[Historical: about us](/laravel-cart/legacy/#about-us).
-
-<span id="license"></span>
-
-[Historical: license](/laravel-cart/legacy/#license).
+Imported from [docs/v4/index.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/index.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.

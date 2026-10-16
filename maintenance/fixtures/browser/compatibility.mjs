@@ -17,7 +17,10 @@ for(const release of releases){
  const options=await page.locator('.documentation-version option').evaluateAll(nodes=>nodes.map(node=>node.value));
  assert.ok(options.every(route=>route.startsWith('/'+release.name.split('/')[1]+'/')));
  assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),release.version==='next'?'noindex, follow':'index, follow');
- assert.ok((await page.locator('.sidebar a.sidebar-link').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')))).every(route=>route.startsWith(release.route)));
+ assert.ok(await page.locator('.vp-sidebar a.vp-sidebar-item').count()>0);
+ const sidebarLinks=await page.locator('.vp-sidebar a.vp-sidebar-item').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')));
+ assert.ok(sidebarLinks.every(route=>new URL(route,page.url()).pathname.startsWith(release.route)),JSON.stringify({release:release.route,sidebarLinks}));
+ for(const href of sidebarLinks){const target=new URL(href,page.url());if(target.pathname===release.route && target.hash)assert.ok(await page.evaluate(id=>!!document.getElementById(id),decodeURIComponent(target.hash.slice(1))));}
  results.packages.push({route:release.route,version:release.version,options});
 }
 const redirects=await (await fetch(base+'/redirects.json')).json();
@@ -29,10 +32,10 @@ for(const redirect of redirects){
 }
 await page.goto(base+'/spid-laravel-trentino/v2/?missing-topic=Old%20topic',{waitUntil:'networkidle'});
 assert.match(await page.getByRole('status').innerText(),/Old topic.*unavailable/);
-const link=page.locator('.theme-default-content a[href^="/spid-laravel-trentino/v2/"]').first();
+const link=page.locator('[vp-content] a[href^="/spid-laravel-trentino/v2/"]').first();
 if(await link.count()){await link.click();await page.waitForLoadState('networkidle');assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://docs.offlineagency.com'+new URL(page.url()).pathname);}
 await page.goto(base+'/braintree-vue3/next/',{waitUntil:'networkidle'});
-await page.locator('.theme-default-content a[href="/braintree-vue3/next/installation/"]').first().click();await page.waitForURL('**/braintree-vue3/next/installation/');
+await page.locator('[vp-content] a[href="/braintree-vue3/next/installation/"]').first().click();await page.waitForURL('**/braintree-vue3/next/installation/');
 assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://docs.offlineagency.com/braintree-vue3/next/installation/');assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'noindex, follow');
 await page.goto(base+'/');
 const search=page.locator('.search-box input');await search.fill('Braintree');await page.locator('.suggestion').first().waitFor();assert.ok((await page.locator('.suggestion a').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')))).every(route=>route.startsWith('/braintree-vue3/next/')));

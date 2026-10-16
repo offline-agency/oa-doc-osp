@@ -1,14 +1,5 @@
 import { readFile } from 'node:fs/promises';
 const inventory = JSON.parse(await readFile('maintenance/legacy-anchors.json', 'utf8'));
-let anchors = 0;
-for (const [route, ids] of Object.entries(inventory.routes)) {
-  const html = await readFile(`.vuepress/dist${route}index.html`, 'utf8');
-  for (const id of ids) {
-    if (!html.includes(`id="${id}"`)) throw new Error(`Legacy anchor missing: ${route}#${id}`);
-    anchors++;
-  }
-}
-console.log(`Legacy routes: ${Object.keys(inventory.routes).length} landing pages and ${anchors} original anchors retained.`);
 
 const versions = JSON.parse(await readFile('maintenance/documentation-versions.json','utf8'));
 const sources = JSON.parse(await readFile('maintenance/package-sources.json','utf8'));
@@ -44,8 +35,9 @@ for(const redirect of versions.redirects || []){
  const destination=new URL(redirect.target,'https://docs.offlineagency.com');
  if(!bodies.has(destination.pathname))throw new Error(`Redirect target missing: ${redirect.target}`);
  const release=versions.releases.find(release=>release.pages.some(page=>page.route===destination.pathname));
- const anchors=Object.create(null);
+ const anchors=Object.assign(Object.create(null),redirect.anchors || {});
  for(const id of new Set([...(oldAnchors[redirect.route] || []),...ids(bodies.get(redirect.route) || '')])){
+  if(Object.prototype.hasOwnProperty.call(anchors,id))continue;
   if(ids(bodies.get(destination.pathname)).has(id))anchors[id]=destination.pathname+destination.search+'#'+id;
   else{
    const matching=release?.pages.find(page=>ids(bodies.get(page.route) || '').has(id));
@@ -59,6 +51,23 @@ for(const redirect of versions.redirects || []){
 }
 await writeFile(root+'/seo.json',JSON.stringify(policies,null,2)+'\n');
 await writeFile(root+'/redirects.json',JSON.stringify(mappings,null,2)+'\n');
-await writeFile(root+'/sitemap.xml',sitemap(policies));
+const {checkHistory,pageSources}=await import('./content-history.mjs');
+const history=checkHistory(process.cwd());
+await writeFile(root+'/sitemap.xml',sitemap(policies,history));
+const index=pageSources(process.cwd()).filter(page=>policies[page.route]?.robots.startsWith('index,') && policies[page.route].canonical==='https://docs.offlineagency.com'+page.route).map(page=>{
+ const version=versions.releases.find(release=>release.pages.some(item=>item.route===page.route));
+ return {url:policies[page.route].canonical,title:version?.archive?'Archived '+version.version+' — '+page.title:page.title,description:page.description,changedOn:history[page.route].changedOn,...(version?{package:version.name,documentationKey:version.documentationKey || version.version,packageVersion:version.version,status:version.archive?'archived':'stable',sourceCommit:version.commit}:{})};
+});
+await writeFile(root+'/documentation-index.json',JSON.stringify({schemaVersion:1,pages:index},null,2)+'\n');
 await writeFile(root+'/robots.txt','User-agent: *\nAllow: /\nSitemap: https://docs.offlineagency.com/sitemap.xml\n');
 console.log(`Publication: ${mappings.length} static redirects, self/alias canonical policy, next noindex, sitemap and robots generated.`);
+
+let anchors = 0;
+for (const [route, ids] of Object.entries(inventory.routes)) {
+  const html = await readFile(`.vuepress/dist${route}index.html`, 'utf8');
+  for (const id of ids) {
+    if (!html.includes(`id="${id}"`)) throw new Error(`Legacy anchor missing: ${route}#${id}`);
+    anchors++;
+  }
+}
+console.log(`Legacy routes: ${Object.keys(inventory.routes).length} landing pages and ${anchors} original anchors retained.`);

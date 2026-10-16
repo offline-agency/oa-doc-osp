@@ -25,7 +25,7 @@ For an update:
 
 1. Refresh GitHub latest release, default branch and relevant proposal state using read-only GitHub API requests. Resolve the release tag to a commit. Independently retrieve `https://repo.packagist.org/p2/offline-agency/PACKAGE.json` and compare version/source/dist references. A merged PR is insufficient.
 2. Fetch the tag into an external reference clone. Inspect its manifest, provider/config, signatures, tests, upgrade guide and workflow. Do not modify that package repository. Review proposal branches separately.
-3. Update the selected manifest entry, page frontmatter and English examples together. These are site-authored guides, not a copy of a moving upstream README. Importing future maintained upstream docs requires an explicit pinned source/transform; never fetch `main` during the production build.
+3. Update the selected manifest entry, page frontmatter and English examples together. These are site-authored guides, not a copy of a moving upstream README. Cart and Braintree use explicit pinned import transforms; maintain site adaptations separately. Never fetch `main` during the production build.
 4. Run the isolated fixtures against that exact source and compatible external dependencies, then the following drift/source checks. Update the verification date only after performing verification. Record unavailable checks instead of assuming success.
 
 ```bash
@@ -39,7 +39,7 @@ npm run docs:verify
 
 Reference clones use the package repository basename under `--references`; Cart may be elsewhere. This command verifies every selected tag or source commit, the appropriate recorded manifests and immutable GitHub file links with Git, then optionally checks public links with read-only HTTP HEAD requests. HTTP 401/403/429/network failures are unavailable checks; actual 404s fail. It never contacts authenticated service endpoints or mutates external resources. Fresh release and registry discovery remains a deliberate maintainer step.
 
-Keep existing landing routes and `legacy-anchors.json`. Add compatibility anchors when moving headings; do not replace historical API semantics silently. Cart's detailed route map is `/laravel-cart/url-migration/`; its June 2024 site archive is historical documentation, not an independently verified package 3.x tag.
+Keep existing landing routes and `legacy-anchors.json`. Cart root and topics redirect to `/laravel-cart/v4/`; old original root anchors explicitly link to the historical site text. The exact4.0.3 archive retains its original API and a visible archival notice. Add compatibility anchors when moving headings; do not replace historical API semantics silently. Cart's detailed route map is `/laravel-cart/url-migration/`; its June 2024 site archive is historical documentation, not an independently verified package 3.x tag.
 
 ## CI, hosting and security debt
 
@@ -47,24 +47,25 @@ Keep existing landing routes and `legacy-anchors.json`. Add compatibility anchor
 
 The GitHub Pages API did not establish deployment ownership. DNS/public content and the old Bitbucket file do not prove which service publishes the domain. `bitbucket-pipelines.yml` is left unchanged pending confirmation of its operational role; its Node 10 configuration is **obsolete and not the intended build procedure**. The verified intended build is the Node 24 GitHub workflow above. Before publication the owner must confirm the active host, build command, root source/base `/`, artifact directory and production 404 handling, then either retire or update the legacy Bitbucket job. No credentials or hosting settings were changed.
 
-VuePress **1.9.10** is the npm `latest` stable release observed on 16 October 2026. VuePress 2 is `2.0.0-rc.31` under `next`, a prerelease. The v1 update preserves the Vue 2 custom theme and fixes the Node 24 build; it does not make Vue 2 maintained. The audit reports **121 dependency findings: 6 low, 73 moderate, 37 high, 5 critical** (including transitive/metavulnerability entries), in the build/development tree. No claim of a clean security audit or production readiness is made. See [the concrete migration proposal](vuepress-migration.md). Do not apply npm's suggested VuePress downgrade blindly.
+The site now uses **VuePress 2.0.0-rc.31 / Vue 3.5.44** with compatible exact theme/bundler/plugin pins. VuePress 2 is explicitly a release candidate, not the npm latest stable release (1.9.10). The migration removes the unsupported Vue 2 runtime while preserving the brand, filters and routes. The audit reports **30 moderate, zero high/critical findings**, propagated from one unpatched sprintf-js advisory. This is not a clean audit claim. See the [migration assessment](vuepress-migration.md) and [actual toolchain findings](cart41-toolchain-findings.md); do not force an unsafe downgrade to hide the advisory.
 
 Publication is a separate owner action after review, CI and the hosting/security decision. No package release must precede publication of these stable guides; development features remain excluded. Promoting a future Cart/Mongo/FIC release requires the evidence/update process above, not removal of an “unreleased” label alone.
 
 ## Independent documentation versions
 
-The registry `package-sources.json` drives homepage cards/categories, navigation, pinned source metadata and import adapters. `documentation-versions.json` drives version routes, sidebars, selectors and redirects. The four projects added in this extension use compatibility lines:
+The registry `package-sources.json` drives homepage cards/categories, navigation, pinned source metadata and import adapters. `documentation-versions.json` drives version routes, sidebars, selectors and redirects. Laravel Cart and the four added projects use independent compatibility lines:
 
 | Project | Documentation key | Exact source | Policy |
 | --- | --- | --- | --- |
+| Laravel Cart | `v4` | `4.1.0` | Current stable; since4.1 guarantees explicit |
 | SPID Laravel Trentino | `v2` | `v2.3.0` | Latest verified stable release in major 2 |
 | Vue 3 Burger Menu | `v1` | `1.1.2` | Source release; npm artifact warning remains |
 | pgr_dmmsy | `v0.1` | `v0.1.0` | Pre-1.0 minor compatibility line |
 | Braintree Vue 3 | `next` | Immutable commit in manifest | Unreleased; noindex, excluded from sitemap |
 
-No earlier major is invented. Existing Cart and sibling release routes retain their exact-tag scheme. Every tree displays its exact source release/SHA and support status; tag existence does not establish a support policy. A selector lists only that project's actual content, preserves a matching topic and links to the target overview with an explicit `missing-topic` notice when absent.
+No earlier major is invented. The existing Cart4.0.3 tree remains a frozen, visibly archived reference with its own canonical; it is not a second current v4 tree. Other sibling release routes retain their exact-tag scheme. Every tree displays its exact source release/SHA and support status; tag existence does not establish a support policy. A selector lists only that project's actual content, preserves a matching topic and links to the target overview with an explicit `missing-topic` notice when absent.
 
-The four unversioned roots and their former exact-tag routes are **generated static HTML redirects**, including canonical/noindex metadata and fallback links for captured anchors. They require no server rewrite configuration. `compatibility-route-anchors.json` records previous anchors; `.vuepress/dist/redirects.json` is the complete generated route/anchor migration map. Pages self-canonicalize within their version; older sibling current aliases canonicalize only to their identical selected snapshot. No historical API page is canonicalized to unrelated current content.
+The compatibility-line projects’ unversioned roots and appropriate former exact-tag routes are **generated static HTML redirects**, including canonical/noindex metadata and fallback links for captured anchors. They require no server rewrite configuration. `compatibility-route-anchors.json` records previous anchors; `.vuepress/dist/redirects.json` is the complete generated route/anchor migration map. Pages self-canonicalize within their version; older sibling current aliases canonicalize only to their identical selected snapshot. No historical API page is canonicalized to unrelated current content.
 
 ### Intentional update versus frozen build
 
@@ -78,7 +79,7 @@ npm run docs:update -- --package spid-laravel-trentino --reference /path/to/read
 npm run docs:verify
 ```
 
-`--apply` checks the exact tag's peeled commit, never substitutes HEAD, hashes recorded inputs and saves a deterministic report under `update-provenance/`. Builds and `docs:update --check` use committed snapshots only; they never fetch moving branches, install upstream dependencies or select “latest”. Braintree's adapter imports its complete upstream guides and an export index, retaining pinned raw inputs for offline drift checks. Site-specific corrections are explicit transforms/integration notes.
+`--apply` checks the exact tag's peeled commit, never substitutes HEAD, hashes recorded inputs and saves a deterministic report under `update-provenance/`. Builds and `docs:update --check` use committed snapshots only; they never fetch moving branches, install upstream dependencies or select “latest”. Cart's adapter imports all14 docs/v4 guides and the marked executable example from the published4.1 tag, plus five explicit site recipes; it corrects two verified upstream wording defects. Braintree's adapter imports its complete upstream guides and an export index. Both retain pinned raw inputs for offline drift checks. Site-specific corrections are explicit transforms/integration notes.
 
 For a **minor/patch release**, verify publication, update that project's selected tag/SHA, distribution evidence, verification date, root frontmatter and source-based guidance; then run the command above. It refreshes the same compatibility tree and records previous pins. A same-version tag cannot silently move to another SHA. Existing historical major trees stay frozen.
 
@@ -92,7 +93,7 @@ The low-level `docs:version -- --package NAME --refresh` remains available for s
 
 ## Mixed project types and source references
 
-The catalog now includes Laravel packages, Vue libraries, a Next.js application and a PostgreSQL extension. `Current projects` identifies released project guides, `Legacy` retains the retired provider integration, and `Source references` identifies Braintree's unreleased pinned source. Dependency age alone does not classify a project as legacy.
+The catalog includes Laravel packages, Vue libraries, a Next.js application and a PostgreSQL extension. The homepage has exactly two sections: `Current project` and `Legacy`. Braintree remains visibly Next/unreleased within the former; filtering does not relabel it as a published release. Dependency age alone does not classify a project as legacy.
 
 Composer releases use independently checked Packagist source/dist references. ODPS and Burger guides use their GitHub source release: their `package.json` versions differ, and a GitHub release does not establish a usable npm artifact. Braintree has no verified release/tag/npm distribution, so its selector contains only the explicitly labeled next source snapshot. Source checks compare appropriate Composer metadata or immutable npm/C manifest hashes and all recorded source files. Version snapshots preserve that project-specific provenance.
 
@@ -103,3 +104,15 @@ Fixtures for the six added projects live under `maintenance/fixtures/`; the PHP 
 Each promoted source's `catalog` record defines `maintenanceStatus` (`maintained`, `legacy`, `next`) and `ecosystem` (`php`, `javascript`, `postgresql`). These are editorial catalog filters: `maintained` groups the current released projects requested for the home; it does not add a publisher support window or override the separately recorded support policy. Unreleased Braintree stays under `next`; the retired API v1 integration stays under `legacy`. Mongo remains in the maintained group. PostgreSQL is a separate technology, not a JavaScript/PHP package.
 
 After editing catalog metadata, run `node scripts/catalog.mjs`; frozen checks reject invalid filter metadata or homepage drift. The home combines both native select controls, hides empty categories, announces the result count and supports reset/empty states. All cards remain in static HTML without JavaScript. `fixtures/browser/home-filters.mjs` verifies the actual UI combinations, keyboard reset, mobile layout and no-JavaScript fallback.
+
+## Cart 4.1 source updates and publication
+
+Current release evidence, runtime matrix and known upstream wording issues are recorded in `evidence/cart41-release.json`, `evidence/cart41-runtime.json` and `cart41-upstream-findings.md`. Root `/laravel-cart/` redirects to canonical `/laravel-cart/v4/`; the 4.0.3 archive and June2024 site archive remain separate. The package owns executable PHP/API guarantees; this repository owns presentation/import adapters, recipes and deployment configuration.
+
+Run `npm run docs:update -- --package laravel-cart --reference /read-only/laravel-cart-clone --plan` then `--apply` after review. The source must contain the exact selected tag. `--apply` verifies it, imports documents/adapters, snapshots the current major, refreshes registry-driven cards, records input/output provenance and updates `content-history.json` only when Markdown hashes change. Builds never update dates. For non-imported site edits such as home copy or URL migration notes, run `node scripts/content-history.mjs --update` after review. Frozen checks reject stale dates/imports.
+
+The production artifact contains `documentation-index.json` (canonical pages, descriptions, package/source metadata), `redirects.json` (route/anchor map), `sitemap.xml` (real content dates) and `robots.txt`. Next remains noindex and is omitted from the canonical index/sitemap; archives self-canonicalize. All files must be published together.
+
+Public HEAD exposes Netlify Edge and Cloudflare; GitHub Pages lookup returns404. Project/account, connected branch and build settings remain unknown. See `evidence/cart41-hosting.json`. The owner must confirm Node24/npm11, `npm ci`, `npm run docs:verify`, source root/base `/`, `.vuepress/dist`, and real404 handling before publication. Do not reactivate Node10. No hosting/account changes or deploy were performed.
+
+Post-publication discovery measurement: `cart-discovery-measurement.md`/JSON retain the user-provided baseline9/20 and7/8 high-fit counts without a probability/improvement claim. Original benchmark prompt identifiers/raw sessions are unavailable; recover them before a comparable rerun, rather than inventing IDs.

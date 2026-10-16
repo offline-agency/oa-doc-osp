@@ -19,3 +19,18 @@ test('release routes support an underscore repository name and a real v-prefixed
  assert.deepEqual(validateRelease(sql),[]);
  assert.ok(validateRelease({...sql,name:'offline-agency/../pgr_dmmsy'}).length);
 });
+
+test('frozen patch archives are not duplicate major choices on current pages',()=>{
+ const current={name:'offline-agency/cart',version:'4.1.0',documentationKey:'v4',commit:'b'.repeat(40),route:'/cart/v4/',pages:[{currentRoute:'/cart/',route:'/cart/v4/',title:'Overview'}]};
+ const archive={...current,version:'4.0.3',documentationKey:undefined,commit:'a'.repeat(40),route:'/cart/4.0.3/',archive:true,pages:[{currentRoute:'/cart/',route:'/cart/4.0.3/',title:'Overview'}]};
+ const sources=[{name:current.name,selectedTag:'4.1.0',documentation:{strategy:'compatibility'}}];
+ const active=versionContext('/cart/v4/',[archive,current],sources);assert.deepEqual(active.options.map(option=>option.route),['/cart/v4/']);
+ const historical=versionContext('/cart/4.0.3/',[archive,current],sources);assert.equal(historical.archive,true);assert.ok(historical.options.some(option=>option.label==='Archived 4.0.3'));assert.ok(historical.options.some(option=>option.route==='/cart/v4/'));
+});
+
+test('version switching follows a deliberately renamed equivalent topic',()=>{
+ const old={...release,archive:true,pages:[...release.pages,{source:'cart/quick-start.md',file:'versioned/cart/4.0.3/quick-start.md',currentRoute:'/cart/quick-start/',route:'/cart/4.0.3/quick-start/',title:'Quick start'}]};
+ const current={...release,documentationKey:'v4',version:'4.1.0',route:'/cart/v4/',pages:[{currentRoute:'/cart/',route:'/cart/v4/',title:'Overview'},{currentRoute:'/cart/usage/',route:'/cart/v4/usage/',title:'Usage'}]};
+ const context=versionContext('/cart/4.0.3/quick-start/',[old,current],[{name:release.name,route:'/cart/',selectedTag:'4.1.0',documentation:{strategy:'compatibility',topicAliases:{'quick-start':'usage'}}}]);
+ assert.ok(context.options.some(option=>option.route==='/cart/v4/usage/' && !option.missingTopic));
+});

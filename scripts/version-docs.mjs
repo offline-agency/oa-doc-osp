@@ -31,7 +31,7 @@ if(args.includes('--check')){
   const slug=source.name.split('/')[1], version=sourceVersion(source), strategy=source.documentation?.strategy || 'exact';
   const key=documentationKey(source.selectedTag,strategy);
   const existing=registry.releases.find(release=>release.name===source.name && releaseKey(release)===key);
-  const migrations=registry.releases.filter(release=>release.name===source.name && strategy==='compatibility' && !release.documentationKey && documentationKey(release.version,'compatibility')===key);
+  const migrations=registry.releases.filter(release=>release.name===source.name && !release.archive && strategy==='compatibility' && !release.documentationKey && documentationKey(release.version,'compatibility')===key);
   const previous=[...(existing?[existing]:[]),...migrations];
   if(existing && !args.includes('--refresh')) throw new Error(`${slug} ${version} already exists; use --refresh for documentation corrections`);
   if(existing && existing.version===version && version!=='next' && existing.commit!==source.commit) throw new Error('A version cannot be reassigned to a different package commit');
@@ -58,6 +58,16 @@ if(args.includes('--check')){
     const matching=pages.find(page=>page.currentRoute===old.currentRoute);
     if(strategy!=='exact' && !matching)redirect(old.currentRoute,release.route+'?missing-topic='+encodeURIComponent(old.title));
     if(!matching || old.route!==matching.route)redirect(old.route,matching?.route || release.route+'?missing-topic='+encodeURIComponent(old.title));
+  }
+  for(const [suffix,target] of Object.entries(source.documentation?.topicAliases || {})){
+    const page=pages.find(page=>page.currentRoute===source.route+target+'/');
+    if(!page)throw new Error('Topic alias target missing: '+target);
+    redirect(source.route+suffix+'/',page.route);
+  }
+  for(const [suffix,anchors] of Object.entries(source.documentation?.anchorTargets || {})){
+    const entry=registry.redirects.find(item=>item.route===source.route+(suffix?suffix+'/':''));
+    if(!entry)throw new Error('Anchor alias route missing: '+suffix);
+    entry.anchors=anchors;
   }
   if(existing && (existing.version!==version || existing.commit!==source.commit))release.pinHistory=[...(existing.pinHistory || []),{version:existing.version,commit:existing.commit,verifiedOn:existing.verifiedOn}];
   else if(existing?.pinHistory)release.pinHistory=existing.pinHistory;
