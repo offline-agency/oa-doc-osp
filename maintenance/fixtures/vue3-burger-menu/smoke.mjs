@@ -2,14 +2,17 @@ import assert from 'node:assert/strict'
 import { readFileSync, existsSync } from 'node:fs'
 import vm from 'node:vm'
 import { execFileSync } from 'node:child_process'
-const [root, artifact] = process.argv.slice(2)
+const [root, artifact, tag = "1.1.2"] = process.argv.slice(2)
 if (!root || !artifact) throw new Error('Pass pinned source checkout and extracted npm package paths')
 assert.equal(execFileSync('git', ['-C', root, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(), '27ed3fe184f55de51401590f3975011c4131f65a')
 assert.equal(execFileSync('git', ['-C', root, 'diff', 'HEAD', '--', 'src'], { encoding: 'utf8' }), '')
 const manifest = JSON.parse(readFileSync(`${artifact}/package.json`))
 assert.equal(manifest.version, '1.0.0')
 assert.equal(existsSync(`${artifact}/${manifest.main}`), false)
-const source = readFileSync(`${root}/src/components/Menu.vue`, 'utf8')
+assert.ok(['1.0.0', '1.1.2'].includes(tag))
+const commit = execFileSync('git', ['-C', root, 'rev-parse', `${tag}^{commit}`], { encoding: 'utf8' }).trim()
+assert.equal(commit, '27ed3fe184f55de51401590f3975011c4131f65a')
+const source = execFileSync('git', ['-C', root, 'show', `${tag}:src/components/Menu.vue`], { encoding: 'utf8' })
 const script = source.match(/<script>([\s\S]*?)<\/script>/)[1]
 const mounted = [], unmount = [], events = [], listeners = new Map(), classes = new Set()
 const component = vm.runInNewContext(script.replace(/import .* from 'vue';/, '').replace('export default', 'result ='), {
@@ -31,4 +34,4 @@ assert.equal(classes.has('bm-overlay'), false)
 assert.deepEqual(events, ['openMenu', 'closeMenu'])
 unmount.forEach(fn => fn())
 assert.equal(listeners.size, 0)
-console.log(JSON.stringify({ result: 'passed', checks: ['published main missing (confirmed defect)', 'source open/close events', 'pixel width', 'Escape', 'overlay', 'listener cleanup'], runtime: 'synthetic DOM/Vue boundaries; no browser rendering', node: process.version }, null, 2))
+console.log(JSON.stringify({ result: 'passed', tag, commit, checks: ['published main missing (confirmed defect)', 'source open/close events', 'pixel width', 'Escape', 'overlay', 'listener cleanup'], runtime: 'synthetic DOM/Vue boundaries; no browser rendering', node: process.version }, null, 2))

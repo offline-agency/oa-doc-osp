@@ -118,13 +118,23 @@ export default {
     }
   },
 
+  watch: { '$route.path' () { this.$nextTick(this.updateSeo) } },
+
   mounted () {
+    this.updateSeo()
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
   },
 
   methods: {
+    updateSeo () {
+      const policy = this.$page.documentationSeo
+      if (!policy) return
+      // Load the generated static redirect so its recorded anchor map also applies
+      // when an alias was reached through Vue Router instead of a direct request.
+      if (policy.redirect) { window.location.replace(this.$route.fullPath); return }
+    },
     toggleSidebar (to) {
       this.isSidebarOpen = typeof to === 'boolean' ? to : !this.isSidebarOpen
       this.$emit('toggle-sidebar', this.isSidebarOpen)

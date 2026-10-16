@@ -1,14 +1,50 @@
 {
-  "result": "passed",
-  "checks": [
-    "published main missing (confirmed defect)",
-    "source open/close events",
-    "pixel width",
-    "Escape",
-    "overlay",
-    "listener cleanup"
+  "verifiedOn": "2026-10-16",
+  "sourceTags": [
+    {
+      "result": "passed",
+      "tag": "1.0.0",
+      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "checks": [
+        "published main missing (confirmed defect)",
+        "source open/close events",
+        "pixel width",
+        "Escape",
+        "overlay",
+        "listener cleanup"
+      ],
+      "runtime": "synthetic DOM/Vue boundaries; no browser rendering",
+      "node": "v24.13.0"
+    },
+    {
+      "result": "passed",
+      "tag": "1.1.2",
+      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "checks": [
+        "published main missing (confirmed defect)",
+        "source open/close events",
+        "pixel width",
+        "Escape",
+        "overlay",
+        "listener cleanup"
+      ],
+      "runtime": "synthetic DOM/Vue boundaries; no browser rendering",
+      "node": "v24.13.0"
+    }
   ],
-  "runtime": "synthetic DOM/Vue boundaries; no browser rendering",
-  "node": "v24.13.0",
-  "verifiedOn": "2026-10-16"
+  "sameCommit": true,
+  "exampleCompilation": {
+    "result": "passed",
+    "compiler": "@vue/compiler-sfc@3.5.22",
+    "examples": 2,
+    "checks": [
+      "SFC parse",
+      "compileScript",
+      "compileTemplate"
+    ],
+    "limitations": [
+      "No package import resolution, TypeScript typecheck, browser mounting or hydration"
+    ],
+    "node": "v24.13.0"
+  }
 }

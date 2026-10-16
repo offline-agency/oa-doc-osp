@@ -7,7 +7,8 @@ export function validateCatalog(homepage, packages) {
     if (!['title','link','details','type'].every(key => nonempty(card[key]))) { errors.push('Empty or incomplete project card'); continue; }
     const source = packages.find(entry => entry.route === card.link);
     if (!source || !groupFor[source.status]) { errors.push(`Unverified catalog entry: ${card.title}`); continue; }
-    if (!groups.has(card.type) || card.type !== groupFor[source.status]) errors.push(`${source.name}: ${source.status} belongs in ${groupFor[source.status]}`);
+    const category=source.status==='historical-integration' ? 'Legacy' : source.catalog?.category || groupFor[source.status];
+    if (!groups.has(card.type) || card.type !== category) errors.push(`${source.name}: ${source.status} requires catalog category ${category}`);
     if (used.has(card.link)) errors.push(`Duplicate catalog route: ${card.link}`);
     used.add(card.link);
   }

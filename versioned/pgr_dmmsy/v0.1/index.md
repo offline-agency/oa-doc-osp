@@ -1,20 +1,30 @@
 ---
-title: pgr_dmmsy — v0.1.0
+title: pgr_dmmsy — v0.1 · v0.1.0
 description: >-
   Build and evaluate the pgr_dmmsy PostgreSQL shortest-path extension with typed
   edge queries and explicit targets.
 gitName: pgr_dmmsy
 packageVersion: v0.1.0
 sourceCommit: 86b21b8efd8edd0c2851ba2b433b4481d0c37de9
-permalink: /pgr_dmmsy/v0.1.0/
+permalink: /pgr_dmmsy/v0.1/
 documentationSnapshot: true
+documentationKey: v0.1
+documentationChannel: stable
 ---
 
 # pgr_dmmsy
 
 `pgr_dmmsy` is a C extension for PostgreSQL exposing a shortest-path SQL function for graphs with non-negative edge costs. It depends on pgRouting and explores ideas from the DMMSY directed single-source shortest-path algorithm. The upstream project describes it as research and evaluation software.
 
-This guide documents [release v0.1.0](https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0), checked on 16 October 2026. The default `main` branch contains later changes; those changes are outside this release guide. The paper's theoretical complexity and the upstream README's benchmark numbers were not established for this implementation by these checks.
+This **v0.1 compatibility-line guide** documents its latest stable [release v0.1.0](https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0), checked on 16 October 2026. The default `main` branch contains later changes; those changes are outside this release guide. The paper's theoretical complexity and the upstream README's benchmark numbers were not established for this implementation by these checks.
+
+## Versions and compatibility
+
+| Documentation line | Latest stable | Status |
+| --- | --- | --- |
+| [v0.1](/pgr_dmmsy/v0.1/) | `v0.1.0` | Pre-1.0 research/evaluation release; maintenance/support duration is not documented |
+
+The complete GitHub tag/release lists contain only `v0.1.0`, marked neither draft nor prerelease; no higher major or other stable/prerelease line was found. A stable GitHub release flag does not make a pre-1.0 API production-ready. This page groups the `0.1.x` line; future `0.2.x` changes require a separate compatibility review. No upgrade scripts or documented compatibility/migration policy were found at this tag.
 
 ## Requirements and distribution
 
@@ -28,7 +38,7 @@ The release has three actual downloadable assets:
 | `pgr_dmmsy-v0.1.0-macos-arm64.tar.gz` | `aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc` |
 | `pgr_dmmsy-v0.1.0-source.tar.gz` | `e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8` |
 
-All three were downloaded and their checksums matched GitHub's asset metadata. The two binary archives contain the library, control file and extension SQL. Their loadability was not tested. Release notes mention Windows, but no Windows asset was present. There is no Composer or npm package in the selected source; distribute it as a PostgreSQL extension.
+All three were downloaded and their checksums matched GitHub's asset metadata. The two binary archives contain the library, control file and extension SQL. Their loadability was not tested; the SQL check below compiled the tagged source instead. Release notes mention Windows, but no Windows asset was present. There is no Composer or npm package in the selected source; distribute it as a PostgreSQL extension.
 
 ## Build and install
 
@@ -90,7 +100,16 @@ ORDER BY path_seq;
 ROLLBACK;
 ```
 
-For this graph the core path reconstruction selects nodes `1, 2, 3` with aggregate costs `0, 1, 2`. Each row's `edge` and `cost` describe the outgoing path segment; the destination has edge `-1` and cost `0`. This SQL example was reviewed against source; a live PostgreSQL extension execution was not performed in this documentation pass.
+The example ran successfully with the tagged source built in a disposable PostgreSQL 17.11 / PostGIS 3.5.7 / pgRouting 4.0.1 Linux arm64 container:
+
+```text
+seq | path_seq | node | edge | cost | agg_cost
+  1 |        1 |    1 |    1 |    1 |        0
+  2 |        2 |    2 |    2 |    1 |        1
+  3 |        3 |    3 |   -1 |    0 |        2
+```
+
+Each row's `edge` and `cost` describe the outgoing path segment; the destination has edge `-1` and cost `0`. The fixture also asserted that reverse traversal is unreachable with `directed => true` and returns nodes `3, 2, 1` with aggregate costs `0, 1, 2` with `directed => false`. This single pgRouting 4 runtime is additional observed evidence; the declared pgRouting 3.x matrix and PostgreSQL 14–16 were not executed here.
 
 For an undirected traversal pass `directed => false`. This adds a reverse edge with the same cost; there is no `reverse_cost` input contract. Keep the edge query under application control and bind external source/target values through your database driver. Do not concatenate untrusted input into `edges_sql`.
 
@@ -123,7 +142,7 @@ RETURNS TABLE (
 | `directed` | `false` also adds the reverse of each input edge |
 | `output_predecessors` | Present in the signature and passed to the core; it does not change the six output columns |
 | `max_levels` | Limits processing phases, not path hops; NULL/negative is unlimited, `0` stops immediately |
-| `param_k`, `param_t` | Positive overrides for core processing parameters; NULL/non-positive values use automatic calculation |
+| `param_k`, `param_t` | Positive overrides: Bellman–Ford rounds per phase and block-width exponent respectively; NULL/non-positive values use automatic calculation. The released core applies no positive-value cap; avoid extreme values |
 | `constant_degree` | Accepted and passed into the parameter structure; the released core does not read it |
 
 Supply finite, non-negative costs and non-null values. The parser explicitly rejects negative costs and null fields; it does not provide a complete SQL type or finite-value validation layer. Graph memory is built in process, so evaluate representative data sizes before adopting it.
@@ -147,7 +166,7 @@ cd test/c
 make run
 ```
 
-Upstream also supplies `make installcheck`, SQL comparison suites under `verify/`, and a Docker workflow. Those database suites and CI outcomes were not verified here. Use a disposable database for them; the repository's convenience scripts create schemas and test data.
+Upstream also supplies `make installcheck`, SQL comparison suites under `verify/`, and a Docker workflow. The focused documentation SQL fixture compiled and loaded the pinned source and checked the output above, omitted/NULL target, unreachable target, directed/undirected traversal and `max_levels => 0`. It used temporary data in a newly initialized container database, exposed no ports and ran without network. The broader upstream database suites and CI outcomes were not verified here. Use a disposable database for them; the repository's convenience scripts create schemas and test data.
 
 If PostgreSQL cannot locate the extension, compare the installation's `pg_config` paths with the running server. If `CREATE EXTENSION` reports a missing dependency, install and enable PostGIS and then pgRouting in the same database first. For empty results, check reachability, explicit target and `max_levels`; for input errors, check column order, explicit casts, nulls and costs.
 

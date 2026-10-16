@@ -12,7 +12,7 @@ packages={x['repository'].removeprefix('https://github.com/'):x for x in m['pack
 drift=[]
 for package in packages.values():
  repo=a.cart_reference if package['name'].endswith('/laravel-cart') else a.references/package['name'].split('/')[1]
- resolved=subprocess.check_output(['git','-C',str(repo),'rev-parse',package.get('selectedTag',package['commit'])+'^{commit}'],text=True).strip()
+ resolved=subprocess.check_output(['git','-C',str(repo),'rev-parse',(package.get('releaseRef') or package.get('selectedTag') or package['commit'])+'^{commit}'],text=True).strip()
  assert resolved==package['commit'], package['name']+' source reference changed'
  if package.get('manifestFiles'):
   for file,expected in package['manifestFiles'].items():
@@ -31,7 +31,11 @@ for package in packages.values():
   subprocess.run(['git','-C',str(repo),'cat-file','-e',package['commit']+':'+file],check=True,capture_output=True)
  drift.append({'package':package['name'],'status':'ok'})
 urls=set()
-for f in list(root.glob('*.md'))+list((root/'laravel-cart').glob('*.md'))+list((root/'laravel-webex').glob('*.md')):
+public_markdown=list(root.glob('*.md'))
+for package in packages.values():
+ directory=root/package['name'].split('/')[1]
+ if directory.is_dir(): public_markdown.extend(directory.rglob('*.md'))
+for f in public_markdown:
  urls.update(re.findall(r'\]\((https://[^\s)]+)\)',f.read_text()))
 source=[]; remaining=[]
 for url in sorted(urls):

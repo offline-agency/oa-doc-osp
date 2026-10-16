@@ -363,60 +363,11 @@
       ]
     },
     {
-      "name": "offline-agency/vue3-burger-menu",
-      "version": "1.1.2",
-      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
-      "repository": "https://github.com/offline-agency/vue3-burger-menu",
-      "verifiedOn": "2026-10-16",
-      "projectType": "vue-library",
-      "npmRequirements": {
-        "dependencies": {
-          "vue": "^3.0.0-0"
-        },
-        "devDependencies": {
-          "@vue/cli-plugin-babel": "^4.5.0",
-          "@vue/cli-plugin-eslint": "^4.5.0",
-          "@vue/cli-service": "^4.5.0",
-          "@vue/compiler-sfc": "^3.0.0-0",
-          "babel-eslint": "^10.1.0",
-          "eslint": "^6.7.2",
-          "eslint-plugin-vue": "^7.0.0-0",
-          "less": "^3.8.1",
-          "less-loader": "^4.1.0"
-        }
-      },
-      "packageManifest": {
-        "name": "@offlineagency/vue3-burger-menu",
-        "version": "1.0.0",
-        "engines": null
-      },
-      "manifestFiles": {
-        "package.json": {
-          "sha256": "7fbef42fbdc06ec19de7defcc817431ee654025db1f597f2a0219c661c11abf9"
-        }
-      },
-      "distribution": {
-        "registry": "GitHub Releases (source)",
-        "version": "1.1.2",
-        "sourceReference": "27ed3fe184f55de51401590f3975011c4131f65a",
-        "distReference": "27ed3fe184f55de51401590f3975011c4131f65a",
-        "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
-        "verifiedOn": "2026-10-16"
-      },
-      "route": "/vue3-burger-menu/1.1.2/",
-      "pages": [
-        {
-          "source": "vue3-burger-menu.md",
-          "file": "versioned/vue3-burger-menu/1.1.2/index.md",
-          "currentRoute": "/vue3-burger-menu/",
-          "route": "/vue3-burger-menu/1.1.2/",
-          "title": "Vue 3 Burger Menu"
-        }
-      ]
-    },
-    {
       "name": "offline-agency/spid-laravel-trentino",
       "version": "v2.3.0",
+      "documentationKey": "v2",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
       "commit": "0fdb1e870606e471a39d35c144cde58158e023d6",
       "repository": "https://github.com/offline-agency/spid-laravel-trentino",
       "verifiedOn": "2026-10-16",
@@ -447,13 +398,13 @@
         "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
         "verifiedOn": "2026-10-16"
       },
-      "route": "/spid-laravel-trentino/v2.3.0/",
+      "route": "/spid-laravel-trentino/v2/",
       "pages": [
         {
           "source": "spid-laravel-trentino.md",
-          "file": "versioned/spid-laravel-trentino/v2.3.0/index.md",
+          "file": "versioned/spid-laravel-trentino/v2/index.md",
           "currentRoute": "/spid-laravel-trentino/",
-          "route": "/spid-laravel-trentino/v2.3.0/",
+          "route": "/spid-laravel-trentino/v2/",
           "title": "SPID Laravel Trentino"
         }
       ]
@@ -461,6 +412,9 @@
     {
       "name": "offline-agency/pgr_dmmsy",
       "version": "v0.1.0",
+      "documentationKey": "v0.1",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
       "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
       "repository": "https://github.com/offline-agency/pgr_dmmsy",
       "verifiedOn": "2026-10-16",
@@ -562,16 +516,280 @@
         "url": "https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0",
         "verifiedOn": "2026-10-16"
       },
-      "route": "/pgr_dmmsy/v0.1.0/",
+      "route": "/pgr_dmmsy/v0.1/",
       "pages": [
         {
           "source": "pgr_dmmsy.md",
-          "file": "versioned/pgr_dmmsy/v0.1.0/index.md",
+          "file": "versioned/pgr_dmmsy/v0.1/index.md",
           "currentRoute": "/pgr_dmmsy/",
-          "route": "/pgr_dmmsy/v0.1.0/",
+          "route": "/pgr_dmmsy/v0.1/",
           "title": "pgr_dmmsy"
         }
       ]
+    },
+    {
+      "name": "offline-agency/vue3-burger-menu",
+      "version": "1.1.2",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
+      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "repository": "https://github.com/offline-agency/vue3-burger-menu",
+      "verifiedOn": "2026-10-16",
+      "projectType": "vue-library",
+      "npmRequirements": {
+        "dependencies": {
+          "vue": "^3.0.0-0"
+        },
+        "devDependencies": {
+          "@vue/cli-plugin-babel": "^4.5.0",
+          "@vue/cli-plugin-eslint": "^4.5.0",
+          "@vue/cli-service": "^4.5.0",
+          "@vue/compiler-sfc": "^3.0.0-0",
+          "babel-eslint": "^10.1.0",
+          "eslint": "^6.7.2",
+          "eslint-plugin-vue": "^7.0.0-0",
+          "less": "^3.8.1",
+          "less-loader": "^4.1.0"
+        }
+      },
+      "packageManifest": {
+        "name": "@offlineagency/vue3-burger-menu",
+        "version": "1.0.0",
+        "engines": null
+      },
+      "manifestFiles": {
+        "package.json": {
+          "sha256": "7fbef42fbdc06ec19de7defcc817431ee654025db1f597f2a0219c661c11abf9"
+        }
+      },
+      "distribution": {
+        "registry": "GitHub Releases (source)",
+        "version": "1.1.2",
+        "sourceReference": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "distReference": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/vue3-burger-menu/v1/",
+      "pages": [
+        {
+          "source": "vue3-burger-menu.md",
+          "file": "versioned/vue3-burger-menu/v1/index.md",
+          "currentRoute": "/vue3-burger-menu/",
+          "route": "/vue3-burger-menu/v1/",
+          "title": "Vue 3 Burger Menu"
+        },
+        {
+          "source": "vue3-burger-menu/reference.md",
+          "file": "versioned/vue3-burger-menu/v1/reference.md",
+          "currentRoute": "/vue3-burger-menu/reference/",
+          "route": "/vue3-burger-menu/v1/reference/",
+          "title": "Burger Menu component source reference"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/braintree-vue3",
+      "version": "next",
+      "documentationKey": "next",
+      "channel": "next",
+      "supportStatus": "Support status not documented.",
+      "commit": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+      "repository": "https://github.com/offline-agency/braintree-vue3",
+      "verifiedOn": "2026-10-16",
+      "projectType": "vue-library",
+      "npmRequirements": {
+        "peerDependencies": {
+          "braintree-web": "^3.x",
+          "vue": "^3.3.0"
+        },
+        "devDependencies": {
+          "@arethetypeswrong/cli": "^0.18.2",
+          "@commitlint/cli": "^19.0.0",
+          "@commitlint/config-conventional": "^19.0.0",
+          "@semantic-release/changelog": "^6.0.0",
+          "@semantic-release/commit-analyzer": "^13.0.0",
+          "@semantic-release/exec": "^6.0.0",
+          "@semantic-release/git": "^10.0.0",
+          "@semantic-release/github": "^10.0.0",
+          "@semantic-release/npm": "^12.0.0",
+          "@semantic-release/release-notes-generator": "^14.0.0",
+          "@types/braintree-web": "^3.96.17",
+          "@vitejs/plugin-vue": "^5.0.0",
+          "@vitest/coverage-v8": "^2.0.0",
+          "@vitest/ui": "^2.0.0",
+          "@vue/test-utils": "^2.4.0",
+          "braintree-web": "^3.138.0",
+          "conventional-changelog-conventionalcommits": "^8.0.0",
+          "jsdom": "^25.0.0",
+          "publint": "^0.3.0",
+          "semantic-release": "^24.0.0",
+          "typedoc": "^0.28.0",
+          "typedoc-plugin-markdown": "^4.2.0",
+          "typedoc-vitepress-theme": "^1.0.0",
+          "typescript": "^5.5.0",
+          "vite": "^6.0.0",
+          "vite-plugin-dts": "^4.0.0",
+          "vitepress": "^1.4.0",
+          "vitest": "^2.0.0",
+          "vue": "^3.5.0",
+          "vue-tsc": "^2.0.0"
+        }
+      },
+      "packageManifest": {
+        "name": "braintree-vue3",
+        "version": "0.1.0",
+        "engines": null
+      },
+      "manifestFiles": {
+        "package.json": {
+          "sha256": "6bd09040f0e6a4a883293044fca2add6630c21c9c779eeeb10b2b9ff728059e3"
+        }
+      },
+      "route": "/braintree-vue3/next/",
+      "pages": [
+        {
+          "source": "braintree-vue3.md",
+          "file": "versioned/braintree-vue3/next/index.md",
+          "currentRoute": "/braintree-vue3/",
+          "route": "/braintree-vue3/next/",
+          "title": "Braintree Vue 3"
+        },
+        {
+          "source": "braintree-vue3/api.md",
+          "file": "versioned/braintree-vue3/next/api.md",
+          "currentRoute": "/braintree-vue3/api/",
+          "route": "/braintree-vue3/next/api/",
+          "title": "Public API source index"
+        },
+        {
+          "source": "braintree-vue3/data-collector.md",
+          "file": "versioned/braintree-vue3/next/data-collector.md",
+          "currentRoute": "/braintree-vue3/data-collector/",
+          "route": "/braintree-vue3/next/data-collector/",
+          "title": "Data Collector"
+        },
+        {
+          "source": "braintree-vue3/getting-started.md",
+          "file": "versioned/braintree-vue3/next/getting-started.md",
+          "currentRoute": "/braintree-vue3/getting-started/",
+          "route": "/braintree-vue3/next/getting-started/",
+          "title": "Getting Started"
+        },
+        {
+          "source": "braintree-vue3/hosted-fields.md",
+          "file": "versioned/braintree-vue3/next/hosted-fields.md",
+          "currentRoute": "/braintree-vue3/hosted-fields/",
+          "route": "/braintree-vue3/next/hosted-fields/",
+          "title": "Hosted Fields"
+        },
+        {
+          "source": "braintree-vue3/installation.md",
+          "file": "versioned/braintree-vue3/next/installation.md",
+          "currentRoute": "/braintree-vue3/installation/",
+          "route": "/braintree-vue3/next/installation/",
+          "title": "Installation"
+        },
+        {
+          "source": "braintree-vue3/integration.md",
+          "file": "versioned/braintree-vue3/next/integration.md",
+          "currentRoute": "/braintree-vue3/integration/",
+          "route": "/braintree-vue3/next/integration/",
+          "title": "Braintree Vue 3 integration notes"
+        },
+        {
+          "source": "braintree-vue3/paypal.md",
+          "file": "versioned/braintree-vue3/next/paypal.md",
+          "currentRoute": "/braintree-vue3/paypal/",
+          "route": "/braintree-vue3/next/paypal/",
+          "title": "PayPal Checkout"
+        },
+        {
+          "source": "braintree-vue3/three-d-secure.md",
+          "file": "versioned/braintree-vue3/next/three-d-secure.md",
+          "currentRoute": "/braintree-vue3/three-d-secure/",
+          "route": "/braintree-vue3/next/three-d-secure/",
+          "title": "3D Secure"
+        },
+        {
+          "source": "braintree-vue3/venmo.md",
+          "file": "versioned/braintree-vue3/next/venmo.md",
+          "currentRoute": "/braintree-vue3/venmo/",
+          "route": "/braintree-vue3/next/venmo/",
+          "title": "Venmo"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "route": "/spid-laravel-trentino/",
+      "target": "/spid-laravel-trentino/v2/"
+    },
+    {
+      "route": "/spid-laravel-trentino/v2.3.0/",
+      "target": "/spid-laravel-trentino/v2/"
+    },
+    {
+      "route": "/pgr_dmmsy/",
+      "target": "/pgr_dmmsy/v0.1/"
+    },
+    {
+      "route": "/pgr_dmmsy/v0.1.0/",
+      "target": "/pgr_dmmsy/v0.1/"
+    },
+    {
+      "route": "/vue3-burger-menu/",
+      "target": "/vue3-burger-menu/v1/"
+    },
+    {
+      "route": "/vue3-burger-menu/1.1.2/",
+      "target": "/vue3-burger-menu/v1/"
+    },
+    {
+      "route": "/braintree-vue3/",
+      "target": "/braintree-vue3/next/"
+    },
+    {
+      "route": "/vue3-burger-menu/reference/",
+      "target": "/vue3-burger-menu/v1/reference/"
+    },
+    {
+      "route": "/braintree-vue3/api/",
+      "target": "/braintree-vue3/next/api/"
+    },
+    {
+      "route": "/braintree-vue3/data-collector/",
+      "target": "/braintree-vue3/next/data-collector/"
+    },
+    {
+      "route": "/braintree-vue3/getting-started/",
+      "target": "/braintree-vue3/next/getting-started/"
+    },
+    {
+      "route": "/braintree-vue3/hosted-fields/",
+      "target": "/braintree-vue3/next/hosted-fields/"
+    },
+    {
+      "route": "/braintree-vue3/installation/",
+      "target": "/braintree-vue3/next/installation/"
+    },
+    {
+      "route": "/braintree-vue3/integration/",
+      "target": "/braintree-vue3/next/integration/"
+    },
+    {
+      "route": "/braintree-vue3/paypal/",
+      "target": "/braintree-vue3/next/paypal/"
+    },
+    {
+      "route": "/braintree-vue3/three-d-secure/",
+      "target": "/braintree-vue3/next/three-d-secure/"
+    },
+    {
+      "route": "/braintree-vue3/venmo/",
+      "target": "/braintree-vue3/next/venmo/"
     }
   ]
 }

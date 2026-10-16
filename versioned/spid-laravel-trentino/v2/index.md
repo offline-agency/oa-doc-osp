@@ -1,20 +1,39 @@
 ---
-title: SPID Laravel Trentino — v2.3.0
+title: SPID Laravel Trentino — v2 · v2.3.0
 description: >-
   Configure AAC Trentino OpenID Connect login, Laravel user mapping, token
   middleware and transaction logs.
 gitName: spid-laravel-trentino
 packageVersion: v2.3.0
 sourceCommit: 0fdb1e870606e471a39d35c144cde58158e023d6
-permalink: /spid-laravel-trentino/v2.3.0/
+permalink: /spid-laravel-trentino/v2/
 documentationSnapshot: true
+documentationKey: v2
+documentationChannel: stable
 ---
 
 # SPID Laravel Trentino
 
 Add SPID login to a Laravel application through AAC Trentino using OpenID Connect authorization code flow with PKCE. The package maps the AAC identity to a local Eloquent user, stores tokens in the Laravel session, and provides token refresh and validation middleware.
 
-This guide covers [v2.3.0](https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.3.0), checked on 16 October 2026. [Packagist](https://packagist.org/packages/offline-agency/spid-laravel-trentino) source and dist references match the source commit above.
+This is the **v2 compatibility-line guide**, verified against its latest stable release [v2.3.0](https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.3.0), checked on 16 October 2026. [Packagist](https://packagist.org/packages/offline-agency/spid-laravel-trentino) source and dist references match the source commit above.
+
+## Versions and compatibility
+
+| Documentation line | Latest stable | Status |
+| --- | --- | --- |
+| [v2](/spid-laravel-trentino/v2/) | `v2.3.0` | Released; upstream maintenance/support duration is not documented |
+
+GitHub's complete tag/release lists and Packagist contain `v2.0.0`, `v2.1.0`, `v2.2.0` and `v2.3.0`. No published v1 tag or Packagist release was found; the release number alone does not establish a documented v1 API. Prereleases were checked and none were listed. The page follows the latest stable release in major 2 rather than creating a page for every patch.
+
+| Available since | APIs and behavior |
+| --- | --- |
+| `v2.0.0` | OIDC/PKCE, provider discovery, login/callback/local logout routes, DTO, user mapping, middleware, mock client, config/views/user migration publishing |
+| `v2.1.0` | Opt-in `session_fallback` / `SPID_TRENTINO_SESSION_FALLBACK` recovery |
+| `v2.2.0` | Transaction-log migration/model/service, `transaction_log` settings and `spid:prune-logs`; adds Illuminate console/encryption requirements |
+| `v2.3.0` | `transaction_log.fail_closed`, `SPID_TRENTINO_TRANSACTION_LOG_FAIL_CLOSED`, `TransactionLogUnavailable` and `spid:check-logs` |
+
+When upgrading within v2, compare and merge the published config instead of assuming `vendor:publish` replaces it. From 2.0/2.1, publish the new transaction-log migration and review/run it before relying on 2.2+ logging. From 2.2, add the optional fail-closed setting and monitoring command if needed. All four tagged manifests retain the PHP/Illuminate version constraints below. No upstream end-of-life policy was found.
 
 ## Requirements
 
@@ -28,7 +47,7 @@ php artisan vendor:publish --tag=spid-laravel-trentino-config
 php artisan vendor:publish --tag=spid-laravel-trentino-migrations
 ```
 
-Laravel discovers the service provider and facade. Review the published migrations against your user schema before running `php artisan migrate`: the package adds a unique nullable `fiscal_code`, profile columns and `spid_profile`, makes `email` and `password` nullable, and creates the transaction log table. The user migration targets `users`; selecting another auth model does not rename this migration's table.
+Laravel discovers `SpidTrentinoServiceProvider` and the `SpidTrentino` facade. The provider binds the OIDC client and scoped service, registers middleware, loads the namespaced views and optionally the routes. To customize the Blade button, publish `--tag=spid-laravel-trentino-views`. Review the published migrations against your user schema before running `php artisan migrate`: the package adds a unique nullable `fiscal_code`, profile columns and `spid_profile`, makes `email` and `password` nullable, and creates the transaction log table. The user migration targets `users`; selecting another auth model does not rename this migration's table.
 
 Configure your application's `.env` with the AAC-issued client credentials:
 
@@ -114,7 +133,7 @@ Keys below are relative to `spid-laravel-trentino` in the published config file.
 | `redirect_uri` | Configured callback URL, otherwise generated from `routes.callback` |
 | `scopes` | `openid profile.codicefiscale.me email offline_access`; `openid` is always added |
 | `cache_ttl` | `3600` seconds for discovery/JWKS caching; `0` disables caching |
-| `session_fallback` | `false`; `SPID_TRENTINO_SESSION_FALLBACK` enables one-use cached login recovery bound to IP and user agent |
+| `session_fallback` (2.1+) | `false`; `SPID_TRENTINO_SESSION_FALLBACK` enables one-use cached login recovery bound to IP and user agent |
 | `register_routes` | `true`; set false when supplying your own named routes |
 | `routes.login`, `routes.callback`, `routes.logout` | Paths in the route table above |
 | `auth_controller` | `OfflineAgency\SpidLaravelTrentino\Http\Controllers\SpidAuthController` |
@@ -125,7 +144,11 @@ Read the pinned [security guide](https://github.com/offline-agency/spid-laravel-
 
 ## Tokens, identity and events
 
-`spid.refresh` refreshes tokens nearing expiry; `spid.valid` rejects an invalid or expired SPID session. Use them together in the order shown. These middleware complement application authentication and authorization; app permissions still belong to your application.
+The provider sets PKCE to `S256`. The client stores state, nonce and verifier in Laravel's session; the callback consumes that state and delegates signature/claim validation to Jumbojett with package checks for issuer/subject types, client audience and integer ID-token expiry. This is the source contract, not a live AAC interoperability certification. Avoid bypassing the normal callback with DTO construction.
+
+For custom local account mapping, extend `Http\Controllers\SpidAuthController`, override the protected `authenticateFromSpid(SpidTrentinoUser $spidUser): void` hook, and set `auth_controller` to your class. `redirectTo()` and `spidLoginFailed(OpenIDConnectClientException $exception)` are also protected hooks. Preserve the application's account-linking rules and session regeneration in a replacement authentication hook.
+
+`spid.refresh` refreshes tokens expiring within 60 seconds when a refresh token exists. A failed refresh forgets the tokens so the following `spid.valid` can end the session. `spid.valid` requires stored identity and access token plus an unexpired local expiry; it redirects HTML requests to login and returns HTTP 419 for JSON requests. It does not introspect the provider token on every request. Use them together in the order shown. These middleware complement application authentication and authorization; app permissions still belong to your application.
 
 The `OfflineAgency\SpidLaravelTrentino\SpidTrentino` service exposes `redirectToLogin()`, `handleCallback()`, `refreshAccessToken()`, `logout()` and `getUserInfo()`. `handleCallback()` returns a `SpidTrentinoUser` and dispatches `Events\SpidTrentinoLoggedIn`; the controller subsequently authenticates the local user. Do not assume a logged-in local user inside that event listener. `Events\SpidTrentinoLoggedOut` is dispatched after local logout when an identity was present. These event classes use the package namespace.
 
@@ -149,7 +172,7 @@ Hydrating a DTO does not authenticate an identity. The normal callback validates
 
 ## Transaction logs
 
-Logging is enabled by default. Payloads are encrypted using Laravel's application key and carry an HMAC; searchable metadata, including some identity and request fields, remain in clear database columns. Access and refresh token payload values are hashed. See the [source transaction-log guide](https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/transaction-log.md) for the exact recorded fields.
+Transaction logs are available since **v2.2.0**; fail-closed and `spid:check-logs` require **v2.3.0**. Logging is enabled by default. Payloads are encrypted using Laravel's application key and carry an HMAC; searchable metadata, including some identity and request fields, remain in clear database columns. Access and refresh token payload values are hashed. See the [source transaction-log guide](https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/transaction-log.md) for the exact recorded fields.
 
 | Environment variable | Default |
 | --- | --- |
@@ -171,7 +194,7 @@ Keep application keys and retained logs together in your recovery plan. In v2.3.
 
 ## Testing and troubleshooting
 
-The documentation fixture exercises DTO claims/JSON, keyed log redaction, normalized token responses and session expiry with PHP 8.5.10 and Laravel 13.35.0. It sends no identity, login or other HTTP request and uses no database. The complete package test suite, CI outcomes and live AAC interoperability were not verified here.
+The documentation fixture passed against both v2.0.0 and v2.3.0 with PHP 8.5.10 and Laravel 13.35.0. It exercises DTO claims/JSON, keyed log redaction, normalized token responses and session expiry. It sends no identity, login or other HTTP request and uses no database. The complete package test suite, CI outcomes and live AAC interoperability were not verified here.
 
 Application tests can bind the included `Testing\MockOpenIDConnectClient` to `OpenIdConnect\LaravelOpenIDConnectClient`; it uses fixed tokens and mock claims without HTTP. This tests application behavior, not real token signature validation. See [upstream testing instructions](https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/development.md).
 

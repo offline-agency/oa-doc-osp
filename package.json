@@ -6,10 +6,11 @@
     "test": "node --test scripts/*.test.mjs",
     "docs:dev": "vuepress dev .",
     "docs:build": "vuepress build . && node scripts/postbuild.mjs",
-    "docs:check": "node scripts/check-content.mjs && node scripts/version-docs.mjs --check",
+    "docs:check": "node scripts/check-content.mjs && node scripts/version-docs.mjs --check && node scripts/update-docs.mjs --check",
     "docs:verify": "npm run docs:check && npm test && npm run docs:build && node scripts/check-site.mjs",
     "docs:preview": "node scripts/preview.mjs",
-    "docs:version": "node scripts/version-docs.mjs"
+    "docs:version": "node scripts/version-docs.mjs",
+    "docs:update": "node scripts/update-docs.mjs"
   },
   "repository": {
     "type": "git",

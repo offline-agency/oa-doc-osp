@@ -52,46 +52,39 @@
       "h1": "#\nODPS Validator"
     },
     "/braintree-vue3/": {
-      "title": "Braintree Vue 3 | Documentation | OFFLINE Agency",
+      "title": "Braintree Vue 3 — next · ff99c39 | Documentation | OFFLINE Agency",
       "h1": "#\nBraintree Vue 3"
     },
     "/vue3-burger-menu/": {
-      "title": "Vue 3 Burger Menu | Documentation | OFFLINE Agency",
+      "title": "Vue 3 Burger Menu — v1 · 1.1.2 | Documentation | OFFLINE Agency",
       "h1": "#\nVue 3 Burger Menu"
     },
     "/spid-laravel-trentino/": {
-      "title": "SPID Laravel Trentino | Documentation | OFFLINE Agency",
+      "title": "SPID Laravel Trentino — v2 · v2.3.0 | Documentation | OFFLINE Agency",
       "h1": "#\nSPID Laravel Trentino"
     },
     "/pgr_dmmsy/": {
-      "title": "pgr_dmmsy | Documentation | OFFLINE Agency",
+      "title": "pgr_dmmsy — v0.1 · v0.1.0 | Documentation | OFFLINE Agency",
       "h1": "#\npgr_dmmsy"
     },
     "search": {
       "VAT": [
-        "/laravel-cart/money-and-tax/",
-        "/laravel-cart/legacy/#cart-vat",
-        "/laravel-cart/4.0.3/money-and-tax/"
+        "/laravel-cart/4.0.3/money-and-tax/",
+        "/laravel-cart/legacy/#cart-vat"
       ],
       "wishlist": [
-        "/laravel-cart/variants-and-wishlist/",
         "/laravel-cart/4.0.3/variants-and-wishlist/"
       ],
       "Webex": [
-        "/laravel-webex/coverage/",
-        "/laravel-webex/",
         "/laravel-webex/2.0.0/coverage/",
         "/laravel-webex/2.0.0/"
       ],
       "Aruba": [
-        "/laravel-aruba-sms/",
         "/laravel-aruba-sms/1.1.0/"
       ],
       "pagination": [
-        "/laravel-fatture-in-cloud-v2/#pagination",
-        "/laravel-webex/#pagination",
-        "/laravel-webex/2.0.0/#pagination",
-        "/laravel-fatture-in-cloud-v2/3.0.1/#pagination"
+        "/laravel-fatture-in-cloud-v2/3.0.1/#pagination",
+        "/laravel-webex/2.0.0/#pagination"
       ]
     },
     "keyboardSearch": "/laravel-cart/legacy/#cart-vat",
@@ -341,6 +334,6 @@
   },
   "screenshotsSaved": false,
   "serverRenderedContentWithoutJS": true,
-  "generatedHttpPages": 49,
+  "generatedHttpPages": 73,
   "runtimeErrors": []
 }

@@ -167,7 +167,12 @@
       },
       "unavailableChecks": [
         "Full upstream CI matrix not re-executed in this documentation change"
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-cart",
+        "details": "Session or database carts with variants, item and cart coupons, VAT fields and explicit checkout limitations. Released package 4.0.3.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/laravel-webex",
@@ -409,7 +414,12 @@
       },
       "unavailableChecks": [
         "Full upstream CI matrix not re-executed in this documentation change"
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-webex",
+        "details": "Implemented Webex Meetings and Messaging APIs with per-request bearer tokens, typed results and guarded pagination. Release 2.0.0.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/laravel-fatture-in-cloud-v2",
@@ -680,7 +690,12 @@
       },
       "unavailableChecks": [
         "Full upstream CI matrix not re-executed in this documentation change"
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-fatture-in-cloud-v2",
+        "details": "Fatture in Cloud API v2 wrapper, package 3.0.1. Company configuration, typed results and implemented endpoint coverage.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/laravel-aruba-sms",
@@ -751,7 +766,12 @@
       },
       "unavailableChecks": [
         "Full upstream CI matrix not re-executed in this documentation change"
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-aruba-sms",
+        "details": "Aruba SMS notification channel, message builder, sandbox mode and credit monitoring. Release 1.1.0.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/laravel-mongo-auto-sync",
@@ -844,7 +864,12 @@
       },
       "unavailableChecks": [
         "Full upstream CI matrix not re-executed in this documentation change"
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-mongo-auto-sync",
+        "details": "Synchronize configured embedded copies between MongoDB documents through explicit CRUD methods. Documented release 3.1.1; see its declared framework requirements.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/laravel-fatture-in-cloud",
@@ -921,7 +946,12 @@
       },
       "unavailableChecks": [
         "Full upstream CI matrix not re-executed in this documentation change"
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-fatture-in-cloud",
+        "details": "Historical 2.2.8 wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.",
+        "category": "Legacy"
+      }
     },
     {
       "name": "laravel-moneta-online",
@@ -984,7 +1014,12 @@
       ],
       "unavailableChecks": [
         "Full upstream suite, provider live API and remote CI not executed."
-      ]
+      ],
+      "catalog": {
+        "title": "laravel-bank-of-italy",
+        "details": "Retrieve Bank of Italy exchange-rate data through the released CSV API wrapper. Version 1.0.1, with explicit query and error handling.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/odps-validator",
@@ -1054,7 +1089,12 @@
       "unavailableChecks": [
         "No upstream test script or tests directory in the selected release.",
         "Configured deployment workflow is not evidence of an available hosted application."
-      ]
+      ],
+      "catalog": {
+        "title": "ODPS Validator",
+        "details": "Standalone JSON/YAML validation app with bundled schemas, browser-side results and documented schema limitations. Source release 1.0.1.",
+        "category": "Current projects"
+      }
     },
     {
       "name": "offline-agency/braintree-vue3",
@@ -1142,10 +1182,25 @@
         "githubTags": []
       },
       "unavailableChecks": [
-        "No public npm distribution or GitHub release/tag exists at verification date.",
-        "No upstream dependency installation, build or complete test suite was run.",
-        "No payment provider contacted; no live tokens, payment calls, PayPal/Venmo/3DS/data collection or browser integration tested."
-      ]
+        "No public npm distribution or GitHub release/tag established on verification date.",
+        "Complete upstream Vitest suite and production build not run; source and selected integration SFC vue-tsc checks passed with isolated locked tools.",
+        "Locked TypeDoc attempt exits 3: TS2307 resolving BraintreeProvider.vue and BraintreeHostedFields.vue. Export inventory is not full TypeDoc output.",
+        "Mocked lifecycle/Hosted Fields checks do not verify live payment, PayPal, Venmo, 3DS, data collection, iframe mounting or SSR integration."
+      ],
+      "documentation": {
+        "strategy": "development",
+        "category": "Vue / payments",
+        "supportStatus": "Support status not documented.",
+        "landing": "static-redirect",
+        "importer": "scripts/import-braintree.mjs",
+        "discoveryEvidence": "maintenance/evidence/braintree-import.json",
+        "provenanceDate": "2026-10-16"
+      },
+      "catalog": {
+        "title": "Braintree Vue 3",
+        "details": "Vue 3 Braintree composables and hosted fields, documented at a pinned source commit. No verified published package; evaluation guide only.",
+        "category": "Vue / payments"
+      }
     },
     {
       "name": "offline-agency/vue3-burger-menu",
@@ -1228,6 +1283,20 @@
         "distReference": "27ed3fe184f55de51401590f3975011c4131f65a",
         "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
         "verifiedOn": "2026-10-16"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "Vue / components",
+        "supportStatus": "Support status not documented.",
+        "landing": "static-redirect",
+        "importer": "scripts/import-burger.mjs",
+        "discoveryEvidence": "maintenance/evidence/burger-lines.json",
+        "provenanceDate": "2026-10-16"
+      },
+      "catalog": {
+        "title": "Vue 3 Burger Menu",
+        "details": "Off-canvas Vue 3 menus from GitHub release 1.1.2, with explicit source setup and a warning about the incomplete npm artifact.",
+        "category": "Vue / components"
       }
     },
     {
@@ -1295,6 +1364,19 @@
         "distReference": "0fdb1e870606e471a39d35c144cde58158e023d6",
         "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
         "verifiedOn": "2026-10-16"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "Laravel / authentication",
+        "supportStatus": "Support status not documented.",
+        "landing": "static-redirect",
+        "discoveryEvidence": "maintenance/evidence/spid-pgr-lines.json",
+        "provenanceDate": "2026-10-16"
+      },
+      "catalog": {
+        "title": "SPID Laravel Trentino",
+        "details": "Laravel login through AAC Trentino OpenID Connect, with PKCE, token middleware and transaction logs. Release v2.3.0.",
+        "category": "Laravel / authentication"
       }
     },
     {
@@ -1330,8 +1412,9 @@
         "docker/initdb/01_extensions.sql"
       ],
       "unavailableChecks": [
-        "GitHub Actions outcomes not queried",
-        "Complete upstream suites and coverage not executed"
+        "Complete upstream SQL suites and benchmarks not executed.",
+        "Disposable SQL fixture verified on PostgreSQL 17.11 arm64 / PostGIS 3.5.7 / pgRouting 4.0.1; other supported/asset platforms not executed.",
+        "Tagged source contains no standalone license file; no license invented."
       ],
       "buildRequirements": {
         "postgresql": "14+ declared build prerequisite",
@@ -1429,7 +1512,20 @@
             "pgr_dmmsy-0.1.0/COMPILE.md"
           ]
         }
-      ]
+      ],
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "PostgreSQL / routing",
+        "supportStatus": "Support status not documented.",
+        "landing": "static-redirect",
+        "discoveryEvidence": "maintenance/evidence/spid-pgr-lines.json",
+        "provenanceDate": "2026-10-16"
+      },
+      "catalog": {
+        "title": "pgr_dmmsy",
+        "details": "PostgreSQL shortest-path extension for research and evaluation. Release v0.1.0, with explicit targets, build requirements and implementation limits.",
+        "category": "PostgreSQL / routing"
+      }
     }
   ],
   "historicalDemo": {

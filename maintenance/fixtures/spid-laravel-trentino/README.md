@@ -1,6 +1,6 @@
-# Fixture SPID v2.3.0
+# Fixture SPID v2 compatibility line
 
-Verifica offline del checkout `0fdb1e870606e471a39d35c144cde58158e023d6`: mapping claim DTO, serializzazione JSON, claim malformati, pseudonimizzazione con chiave, normalizzazione risposta token e scadenza sessione. Nessun client OIDC viene istanziato, nessuna richiesta identità/login/HTTP, nessun database persistente.
+Verifica offline passata sia con v2.0.0 (`28944c619e1f2c78370676405772a9a669185eba`) sia con v2.3.0 (`0fdb1e870606e471a39d35c144cde58158e023d6`): mapping claim DTO, serializzazione JSON, claim malformati, pseudonimizzazione con chiave, normalizzazione risposta token e scadenza sessione. Nessun client OIDC viene istanziato, nessuna richiesta identità/login/HTTP, nessun database persistente.
 
 ```bash
 SPID_SOURCE=/path/to/spid-laravel-trentino \

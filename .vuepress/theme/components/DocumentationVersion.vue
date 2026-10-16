@@ -7,16 +7,22 @@
         <option v-for="option in version.options" :key="option.route" :value="option.route" :selected="option.route === version.selected">{{ option.label }}</option>
       </select>
     </label>
-    <a v-if="version.snapshot && version.currentRoute" :href="version.currentRoute">Current documentation</a>
+    <p v-if="missingTopic" class="version-notice" role="status">The topic “{{ missingTopic }}” is unavailable in this documentation version. Showing its overview.</p>
+    <a v-if="version.snapshot && version.currentRoute && version.currentRoute !== version.selected" :href="version.currentRoute">Current documentation</a>
     <a v-else :href="version.pinnedRoute">Version permalink</a>
-    <span v-if="version.snapshot" class="release-note">Release {{ version.version }}</span>
+    <span v-if="version.snapshot" class="release-note">{{ version.channel === 'next' ? 'Development · ' + version.commit.slice(0, 7) : 'Documented release ' + version.version }}</span>
+    <span v-if="version.preOne">Pre-1.0 compatibility line {{ version.key }}.</span>
+    <span v-if="version.supportStatus">{{ version.supportStatus }}</span>
+    <ul class="version-links" aria-label="Available versions"><li v-for="option in version.options" :key="option.route"><a :href="option.href || option.route">{{ option.label }}</a></li></ul>
   </nav>
 </template>
 
 <script>
 export default {
-  computed: { version () { return this.$page.documentationVersion } },
-  methods: { navigate (route) { if (route !== this.$route.path) this.$router.push(route) } }
+  data () { return { hydrated: false } },
+  mounted () { this.hydrated = true },
+  computed: { version () { return this.$page.documentationVersion }, missingTopic () { return this.hydrated ? this.$route.query['missing-topic'] : null } },
+  methods: { navigate (route) { const option=this.version.options.find(item=>item.route===route); const target=option?.href || route; if (target !== this.$route.fullPath) this.$router.push(target) } }
 }
 </script>
 
@@ -46,6 +52,16 @@ export default {
     max-width 100%
   .release-note
     color $textColor
+  .version-links
+    width 100%
+    display flex
+    gap 1rem
+    flex-wrap wrap
+    padding 0
+    margin 0
+    list-style none
+  .version-notice
+    width 100%
 .page .documentation-version + .theme-default-content > :first-child
   margin-top 0
 @media (max-width: $MQMobile)

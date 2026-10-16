@@ -2,10 +2,13 @@ const fs = require('fs')
 const path = require('path')
 const sources = require('../maintenance/package-sources.json')
 const versions = require('../maintenance/documentation-versions.json')
+const { pagePolicy } = require('../scripts/site-publication.mjs')
 const { versionContext } = require('../scripts/documentation-versions.cjs')
-const current = sources.packages.filter(item => item.status === 'current-release').map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
+const categoryProjects = sources.packages.filter(item => item.documentation?.category)
+const current = sources.packages.filter(item => item.status === 'current-release' && !item.documentation?.category).map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
+const categories = [...new Set(categoryProjects.map(item => item.documentation.category))].map(text => ({text, items: categoryProjects.filter(item => item.documentation.category === text).map(item => ({text: item.catalog?.title || item.name.replace('offline-agency/', ''),link:item.route}))}))
 const historical = sources.packages.filter(item => item.status === 'historical-integration').map(item => ({ text: item.name.replace('offline-agency/', '') + ' (retired API)', link: item.route }))
-const sourceReferences = sources.packages.filter(item => item.status === 'source-reference').map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
+const sourceReferences = sources.packages.filter(item => item.status === 'source-reference' && !item.documentation?.category).map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
 const cartOrder = ['installation', 'quick-start', 'variants-and-wishlist', 'money-and-tax', 'storage', 'authentication', 'integrations', 'upgrading', 'reference', 'support', 'url-migration']
 const cartPages = () => fs.readdirSync(path.resolve(__dirname, '../laravel-cart')).filter(file => file.endsWith('.md') && file !== 'legacy.md').sort((a,b) => {
   const rank = file => { const index = cartOrder.indexOf(file.replace(/\.md$/, '')); return index < 0 ? cartOrder.length : index }
@@ -23,7 +26,7 @@ module.exports = {
   themeConfig: {
     logo: '/oa-eb.png',
     nav: [
-      { text: 'Projects', items: current },
+      { text: 'Projects', items: [{text:'Current projects',items:current},...categories] },
       { text: 'Legacy', items: historical },
       ...(sourceReferences.length ? [{text: 'Source references', items: sourceReferences}] : []),
       { text: 'OA', link: 'https://offlineagency.it' },
@@ -49,6 +52,13 @@ module.exports = {
     { name: 'page-descriptions', extendPageData(page) {
       page.documentationVersion = versionContext(page.frontmatter.permalink || page.path, versions.releases, sources.packages)
       const data = page.frontmatter
+      const route=data.permalink || page.path
+      page.documentationSeo=pagePolicy(route,page.documentationVersion,versions.redirects || [])
+      data.canonicalUrl=page.documentationSeo.canonical
+      data.meta=[...(data.meta || []).filter(meta=>meta.name!=='robots'),{name:'robots',content:page.documentationSeo.robots}]
+      const context=page.documentationVersion
+      const active=context && sources.packages.find(source=>source.name==='offline-agency/'+context.package)
+      page.documentationSearchRank=context?.channel==='next' ? 3 : context?.snapshot ? active?.selectedTag===context.version && active?.commit===context.commit ? 0 : 1 : 2
       if (data.description && !(data.meta || []).some(meta => meta.name === 'description')) data.meta = [...(data.meta || []), { name: 'description', content: data.description }]
     } },
   ],

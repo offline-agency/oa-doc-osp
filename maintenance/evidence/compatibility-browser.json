@@ -1,0 +1,40 @@
+{
+  "verifiedOn": "2026-10-16",
+  "packages": [
+    {
+      "route": "/spid-laravel-trentino/v2/",
+      "version": "v2.3.0",
+      "options": [
+        "/spid-laravel-trentino/v2/"
+      ]
+    },
+    {
+      "route": "/pgr_dmmsy/v0.1/",
+      "version": "v0.1.0",
+      "options": [
+        "/pgr_dmmsy/v0.1/"
+      ]
+    },
+    {
+      "route": "/vue3-burger-menu/v1/",
+      "version": "1.1.2",
+      "options": [
+        "/vue3-burger-menu/v1/"
+      ]
+    },
+    {
+      "route": "/braintree-vue3/next/",
+      "version": "next",
+      "options": [
+        "/braintree-vue3/next/"
+      ]
+    }
+  ],
+  "screenshotsSaved": false,
+  "spaSeo": true,
+  "redirects": 17,
+  "runtimeErrors": [],
+  "mobileKeyboard": true,
+  "search": true,
+  "canonicalSitemap": true
+}

@@ -7,7 +7,7 @@ async function walk(root) {
   const entries = await readdir(root, { withFileTypes: true });
   return (await Promise.all(entries.map(entry => entry.isDirectory() ? walk(join(root, entry.name)) : [join(root, entry.name)]))).flat();
 }
-export async function checkSite(root) {
+export async function checkSite(root, policies = {}) {
   root = resolve(root);
   const files = await walk(root), html = new Map();
   const errors = [];
@@ -21,7 +21,7 @@ export async function checkSite(root) {
     if (canonical.length > 1) errors.push(`${name}: duplicate canonical`);
     if (canonical.length && name !== '404.html') {
       const href = canonical[0][0].match(/\bhref=["']([^"']+)["']/)?.[1];
-      if (href !== base.href) errors.push(`${name}: canonical ${href} must be ${base.href}`);
+      if (href !== (policies[pagePath]?.canonical || base.href)) errors.push(`${name}: canonical ${href} must be ${base.href}`);
     }
     for (const tag of body.matchAll(/<(?:a|img|script|link|source)\b[^>]*>/g)) {
       const attribute = tag[0].match(/\b(?:href|src)=["']([^"']+)["']/);
@@ -43,7 +43,9 @@ export async function checkSite(root) {
   return [...new Set(errors)];
 }
 if (process.argv[1] && import.meta.url === pathToFileURL(resolve(process.argv[1])).href) {
-  const errors = await checkSite(process.argv[2] || '.vuepress/dist');
+  const root=process.argv[2] || '.vuepress/dist';
+  let policies={};try{policies=JSON.parse(await readFile(join(root,'seo.json'),'utf8'))}catch{}
+  const errors = await checkSite(root,policies);
   if (errors.length) { console.error(errors.join('\n')); process.exitCode = 1; }
   else console.log('Static site: internal links, fragments, assets and any declared canonical targets resolve.');
 }

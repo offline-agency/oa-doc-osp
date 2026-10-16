@@ -12,11 +12,17 @@ An off-canvas Vue 3 menu with CSS transition wrappers and a default slot for nav
 
 [Release](https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2) · [Pinned source](https://github.com/offline-agency/vue3-burger-menu/tree/27ed3fe184f55de51401590f3975011c4131f65a) · [npm metadata](https://registry.npmjs.org/@offlineagency%2fvue3-burger-menu)
 
+## Release line and support
+
+Only major **v1** is released for the Offline Agency fork. The complete GitHub tag list is `1.0.0` and `1.1.2`; both lightweight tags resolve to the **same source commit**. `1.1.2` is the only GitHub release and the latest stable source release. No prereleases, v2 release, release assets, support window or end-of-life policy were found in the repository/release metadata and README. Maintenance status is **not documented**; an old release date does not establish end of support.
+
+The API below is present at both tags, so it is available in tagged source since `1.0.0`. Moving from source tag `1.0.0` to `1.1.2` introduces no source/API changes. This does not imply that scoped npm `1.0.0` is the same build: its recorded source differs and its bundle is absent. No cross-major migration path is currently applicable.
+
 ## Distribution and requirements
 
 **The published npm artifact cannot currently be imported.** The only scoped registry version is `@offlineagency/vue3-burger-menu@1.0.0`. Its tarball contains only `package.json`, `README.md` and `LICENSE`; the declared `main`, `dist/vue3-burger-menu.common.js`, is missing. `npm install` can download it, but does not produce a usable library bundle.
 
-The GitHub tag is `1.1.2`, while its package manifest says `1.0.0`. Registry `1.0.0` records `gitHead` `e19adffec7e1603544b2c847f6aff5d02c7a5658`, a different commit from the release. There is no verified npm `1.1.2`. Use the scoped name above; the upstream README's unscoped import is inconsistent with its manifest.
+The GitHub tag is `1.1.2`, while its package manifest says `1.0.0`. Registry `1.0.0` records `gitHead` `e19adffec7e1603544b2c847f6aff5d02c7a5658`, a different commit from the release. There is no verified npm `1.1.2`. Use the scoped name above. The unscoped `vue3-burger-menu` package exists (latest `1.1.1`), but its metadata points to `mkdillard/vue3-burger-menu` and publisher `mkdillard`, not this Offline Agency fork. Its versions are not releases of this scoped package; switching names is a separate dependency migration.
 
 The source declares runtime dependency `vue: ^3.0.0-0`, Vue CLI `^4.5.0` and `@vue/compiler-sfc: ^3.0.0-0` for development. It declares no Node engine and has no lockfile. These older constraints do not establish a current runtime/build compatibility matrix or, by themselves, make the project legacy.
 
@@ -78,9 +84,32 @@ const isOpen = ref(false)
 
 The example uses a native external button because the built-in burger/cross controls are clickable `div`/`span` elements without keyboard button semantics. Add and test focus management, focus restoration, appropriate navigation labelling and keyboard behavior for your application. The component does not provide a focus trap or a complete accessible-dialog implementation.
 
+## SSR integration
+
+Keep this component out of server rendering: setup registers a `document` listener. In a Vue 3 SSR application, load your menu component only after mount. Put the complete example above in `NavigationMenu.vue`, then use this parent boundary:
+
+```vue
+<script setup>
+import { shallowRef, markRaw, onMounted } from 'vue'
+
+const ClientMenu = shallowRef(null)
+onMounted(async () => {
+  const { default: menu } = await import('./NavigationMenu.vue')
+  ClientMenu.value = markRaw(menu)
+})
+</script>
+
+<template>
+  <component :is="ClientMenu" v-if="ClientMenu" />
+  <a v-else href="/">Home</a>
+</template>
+```
+
+The server and initial hydration render the same fallback; the package is imported only in the client lifecycle. Close an open menu before removing this boundary. This pattern is for your Vue 3 application; the VuePress documentation displays code fences and does not mount the Vue 3 component in its documentation runtime. Compilation of both snippets was checked with an isolated Vue 3 compiler; no SSR hydration/browser execution is claimed.
+
 ## Props, events and slot
 
-Wrapper components forward attributes to the shared `Menu`. Source prop names below can be written in kebab case in templates.
+See the [generated source reference](/vue3-burger-menu/reference/) for the complete prop declarations, exports and event sites pinned to this commit. Wrapper components forward attributes to the shared `Menu`. The following notes explain behavior beyond those declarations; source prop names can be written in kebab case in templates.
 
 | Prop | Type / default | Behavior |
 | --- | --- | --- |
@@ -116,4 +145,4 @@ This component accesses `document` directly during setup; mount it on the client
 
 The right-position watcher passes `right.value` rather than a reactive source to `watch`, so Vue can warn and dynamic positioning is unreliable. There is no structured error event or recovery API; handle prerequisites in your application. Browser claims in the upstream README were not reproduced; reduced motion, mobile layout, keyboard navigation, visual animation and SSR behavior require application testing.
 
-The repository has no test script or test files. Local Node 25 checks executed the actual released `Menu.vue` setup/methods against synthetic Vue/DOM boundaries: pixel width, open/close events, overlay, Escape and listener cleanup passed. Tarball inspection independently confirmed its missing main entry. No browser rendering, production bundle build or full upstream compatibility test was performed. The project includes the MIT license with attribution to Mohit Bajoria.
+The repository has no test script or test files. Local Node 24.13.0 checks for both `1.0.0` and `1.1.2` (identical source SHA) executed the actual released `Menu.vue` setup/methods against synthetic Vue/DOM boundaries: pixel width, open/close events, overlay, Escape and listener cleanup passed. Tarball inspection independently confirmed its missing main entry. Both Vue examples passed parse, script and template compilation with isolated Vue 3 tooling. No browser rendering, TypeScript package typecheck, production bundle build or full upstream compatibility test was performed. The project includes the MIT license with attribution to Mohit Bajoria.

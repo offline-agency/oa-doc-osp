@@ -21,3 +21,44 @@ for (const release of versions.releases) for (const page of release.pages) {
   snapshots++;
 }
 console.log(`Versioned HTML: ${versions.releases.length} releases and ${snapshots} pages contain static version navigation.`);
+
+// Static publication metadata and redirects are generated without host rewrite rules.
+const {readdir,writeFile,mkdir}=await import('node:fs/promises');
+const {dirname}=await import('node:path');
+const {pagePolicy,withSeo,redirectHtml,sitemap}=await import('./site-publication.mjs');
+const root='.vuepress/dist';
+const files=(await readdir(root,{recursive:true})).filter(file=>file.endsWith('.html'));
+const bodies=new Map();
+for(const file of files)bodies.set('/'+file.replace(/index\.html$/,''),await readFile(root+'/'+file,'utf8'));
+const policies={};
+for(const [route,html] of bodies){
+ const policy=pagePolicy(route,versionContext(route,versions.releases,sources.packages),versions.redirects || []);
+ policies[route]=policy;
+ const file=root+route+(route.endsWith('/')?'index.html':'');
+ await writeFile(file,withSeo(html,policy));
+}
+const oldAnchors=JSON.parse(await readFile('maintenance/compatibility-route-anchors.json','utf8')).routes;
+const ids=html=>new Set([...html.matchAll(/\bid="([^"]+)"/g)].map(match=>match[1]));
+const mappings=[];
+for(const redirect of versions.redirects || []){
+ const destination=new URL(redirect.target,'https://docs.offlineagency.com');
+ if(!bodies.has(destination.pathname))throw new Error(`Redirect target missing: ${redirect.target}`);
+ const release=versions.releases.find(release=>release.pages.some(page=>page.route===destination.pathname));
+ const anchors=Object.create(null);
+ for(const id of new Set([...(oldAnchors[redirect.route] || []),...ids(bodies.get(redirect.route) || '')])){
+  if(ids(bodies.get(destination.pathname)).has(id))anchors[id]=destination.pathname+destination.search+'#'+id;
+  else{
+   const matching=release?.pages.find(page=>ids(bodies.get(page.route) || '').has(id));
+   anchors[id]=matching?matching.route+'#'+id:destination.pathname+'?missing-topic='+encodeURIComponent(id);
+  }
+ }
+ const file=root+redirect.route+(redirect.route.endsWith('/')?'index.html':'');await mkdir(dirname(file),{recursive:true});
+ await writeFile(file,redirectHtml({...redirect,anchors}));
+ policies[redirect.route]=pagePolicy(redirect.route,null,[redirect]);
+ mappings.push({...redirect,anchors});
+}
+await writeFile(root+'/seo.json',JSON.stringify(policies,null,2)+'\n');
+await writeFile(root+'/redirects.json',JSON.stringify(mappings,null,2)+'\n');
+await writeFile(root+'/sitemap.xml',sitemap(policies));
+await writeFile(root+'/robots.txt','User-agent: *\nAllow: /\nSitemap: https://docs.offlineagency.com/sitemap.xml\n');
+console.log(`Publication: ${mappings.length} static redirects, self/alias canonical policy, next noindex, sitemap and robots generated.`);
