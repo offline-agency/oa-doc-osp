@@ -18,6 +18,16 @@ const root = resolve(directory, '..')
 const sources = JSON.parse(readFileSync(resolve(root, 'maintenance/package-sources.json'), 'utf8'))
 const versions = JSON.parse(readFileSync(resolve(root, 'maintenance/documentation-versions.json'), 'utf8'))
 const history = JSON.parse(readFileSync(resolve(root, 'maintenance/content-history.json'), 'utf8')).pages
+// Full-page loader for the first load only (route changes use the theme's progress bar).
+// The class is set by script, so pages without JavaScript never show it; a timeout guarantees it clears.
+const pageLoader = [
+  ['style', {}, 'html.oa-loading body::before{content:"";position:fixed;inset:0;z-index:9999;background:#fff;transition:opacity .3s}'
+    + '@media (prefers-color-scheme:dark){html.oa-loading:not(.light) body::before{background:#1b1b1f}}html.dark.oa-loading body::before{background:#1b1b1f}'
+    + 'html.oa-loading body::after{content:"";position:fixed;top:50%;left:50%;z-index:10000;width:40px;height:40px;margin:-20px 0 0 -20px;box-sizing:border-box;border:3px solid rgba(53,112,112,.25);border-top-color:#357070;border-radius:50%;animation:oa-spin .8s linear infinite;transition:opacity .3s}'
+    + 'html.oa-loaded body::before,html.oa-loaded body::after{opacity:0;pointer-events:none}'
+    + '@keyframes oa-spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){html.oa-loading body::after{animation:none}}'],
+  ['script', {}, '(function(){var h=document.documentElement;h.classList.add("oa-loading");var done=function(){if(!h.classList.contains("oa-loading")||h.classList.contains("oa-loaded"))return;h.classList.add("oa-loaded");setTimeout(function(){h.classList.remove("oa-loading","oa-loaded")},300)};window.addEventListener("load",done,{once:true});setTimeout(done,10000)})()'],
+]
 const label = source => source.catalog?.title || source.name.replace('offline-agency/', '')
 const project = source => ({ text: label(source), link: source.route })
 const current = sources.packages.filter(source => ['current-release', 'source-reference'].includes(source.status)).map(source => ({...project(source),text:label(source)+(source.status==='source-reference'?' (next)':'')}))
@@ -71,7 +81,7 @@ export default defineUserConfig({
   lang: 'en', title: 'Documentation | OFFLINE Agency',
   description: siteDescription,
   base: '/',
-  head: [['link', { rel: 'icon', href: '/favicon.png' }]],
+  head: [['link', { rel: 'icon', href: '/favicon.png' }], ...pageLoader],
   pagePatterns: ['**/*.md', '!node_modules/**', '!maintenance/**', '!scripts/**', '!**/AGENTS.md'],
   bundler: viteBundler(),
   alias: {
