@@ -27,17 +27,41 @@
       </p>
     </div>
 
-    <div v-if="data.projectTypes && data.projectTypes.length">
+    <form class="project-filters" aria-label="Filter projects" @submit.prevent>
+      <label for="project-status">Status
+        <select id="project-status" v-model="selectedStatus">
+          <option value="all">All statuses</option>
+          <option value="maintained">Maintained</option>
+          <option value="legacy">Legacy</option>
+          <option value="next">Next / unreleased</option>
+        </select>
+      </label>
+      <label for="project-ecosystem">Technology
+        <select id="project-ecosystem" v-model="selectedEcosystem">
+          <option value="all">All technologies</option>
+          <option value="php">PHP</option>
+          <option value="javascript">JavaScript</option>
+          <option value="postgresql">PostgreSQL</option>
+        </select>
+      </label>
+      <button type="button" @click="resetFilters" :disabled="selectedStatus === 'all' && selectedEcosystem === 'all'">Reset filters</button>
+      <p class="filter-count" role="status" aria-live="polite">{{ filteredProjects.length }} of {{ projects.length }} projects</p>
+    </form>
+    <noscript>All projects are listed below. Enable JavaScript to use the filters.</noscript>
+    <p v-if="!filteredProjects.length" class="empty-projects">No projects match these filters. Try another combination or reset the filters.</p>
+
+    <div v-if="visibleGroups.length">
       <div class="projectsType"
-           v-for="(projectType, index) in data.projectTypes"
-           :key="index">
+           v-for="projectType in visibleGroups"
+           :key="projectType.title">
         <h2>{{ projectType.title }}</h2>
         <div class="projects"
-             v-if="data.projects && data.projects.length">
+             v-if="projectType.projects.length">
           <div class="project"
-               v-for="(project, index) in data.projects"
-               :key="index" v-if="projectType.title === project.type">
+               v-for="project in projectType.projects"
+               :key="project.link">
             <h2><a :href="project.link">{{ project.title }}</a></h2>
+            <p class="project-labels"><span>{{ ecosystemLabels[project.ecosystem] }}</span><span>{{ statusLabels[project.maintenanceStatus] }}</span></p>
             <p>{{ project.details }}</p>
           </div>
         </div>
@@ -54,10 +78,25 @@ import NavLink from '@theme/components/NavLink.vue'
 
 export default {
   components: {NavLink},
+  data () {
+    return {
+      selectedStatus: 'all', selectedEcosystem: 'all',
+      ecosystemLabels: {php: 'PHP', javascript: 'JavaScript', postgresql: 'PostgreSQL'},
+      statusLabels: {maintained: 'Maintained', legacy: 'Legacy', next: 'Next / unreleased'}
+    }
+  },
+  methods: { resetFilters () { this.selectedStatus = 'all'; this.selectedEcosystem = 'all' } },
 
   computed: {
     data() {
       return this.$page.frontmatter
+    },
+    projects () { return this.data.projects || [] },
+    filteredProjects () {
+      return this.projects.filter(project => (this.selectedStatus === 'all' || project.maintenanceStatus === this.selectedStatus) && (this.selectedEcosystem === 'all' || project.ecosystem === this.selectedEcosystem))
+    },
+    visibleGroups () {
+      return (this.data.projectTypes || []).map(group => ({...group, projects: this.filteredProjects.filter(project => project.type === group.title)})).filter(group => group.projects.length)
     },
 
     actionLink() {
@@ -121,7 +160,7 @@ export default {
     color $accentColor
 
   .projectCat
-    margin-bottom 5rem
+    margin-bottom 2rem
 
     h2
       border-bottom none
@@ -129,6 +168,51 @@ export default {
       text-align: left
       margin: 0 0 3rem
       font-size 1.1rem
+
+  .project-filters
+    display flex
+    flex-wrap wrap
+    align-items flex-end
+    gap 1rem
+    margin 0 0 2rem
+    padding 1.25rem
+    border 1px solid $borderColor
+    border-radius 6px
+    label
+      display flex
+      flex-direction column
+      gap .4rem
+      font-weight 600
+      flex 1 1 12rem
+    select, button
+      font inherit
+      color $textColor
+      background white
+      border 1px solid #767676
+      border-radius 4px
+      padding .6rem .75rem
+      min-height 44px
+    button
+      cursor pointer
+      &:disabled
+        opacity .55
+        cursor default
+    select:focus-visible, button:focus-visible
+      outline 3px solid $accentColor
+      outline-offset 3px
+    .filter-count
+      width 100%
+      margin .25rem 0 0
+  .project-labels
+    display flex
+    flex-wrap wrap
+    gap .4rem
+    span
+      padding .2rem .5rem
+      border 1px solid $borderColor
+      border-radius 4px
+      font-size .8rem
+      color $textColor
 
   .projectsType
     margin-bottom 5vh

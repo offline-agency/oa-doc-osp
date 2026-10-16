@@ -171,7 +171,9 @@
       "catalog": {
         "title": "laravel-cart",
         "details": "Session or database carts with variants, item and cart coupons, VAT fields and explicit checkout limitations. Released package 4.0.3.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -418,7 +420,9 @@
       "catalog": {
         "title": "laravel-webex",
         "details": "Implemented Webex Meetings and Messaging APIs with per-request bearer tokens, typed results and guarded pagination. Release 2.0.0.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -694,7 +698,9 @@
       "catalog": {
         "title": "laravel-fatture-in-cloud-v2",
         "details": "Fatture in Cloud API v2 wrapper, package 3.0.1. Company configuration, typed results and implemented endpoint coverage.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -770,7 +776,9 @@
       "catalog": {
         "title": "laravel-aruba-sms",
         "details": "Aruba SMS notification channel, message builder, sandbox mode and credit monitoring. Release 1.1.0.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -868,7 +876,9 @@
       "catalog": {
         "title": "laravel-mongo-auto-sync",
         "details": "Synchronize configured embedded copies between MongoDB documents through explicit CRUD methods. Documented release 3.1.1; see its declared framework requirements.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -950,7 +960,9 @@
       "catalog": {
         "title": "laravel-fatture-in-cloud",
         "details": "Historical 2.2.8 wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.",
-        "category": "Legacy"
+        "category": "Legacy",
+        "maintenanceStatus": "legacy",
+        "ecosystem": "php"
       }
     },
     {
@@ -1018,7 +1030,9 @@
       "catalog": {
         "title": "laravel-bank-of-italy",
         "details": "Retrieve Bank of Italy exchange-rate data through the released CSV API wrapper. Version 1.0.1, with explicit query and error handling.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -1093,7 +1107,9 @@
       "catalog": {
         "title": "ODPS Validator",
         "details": "Standalone JSON/YAML validation app with bundled schemas, browser-side results and documented schema limitations. Source release 1.0.1.",
-        "category": "Current projects"
+        "category": "Current projects",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "javascript"
       }
     },
     {
@@ -1199,7 +1215,9 @@
       "catalog": {
         "title": "Braintree Vue 3",
         "details": "Vue 3 Braintree composables and hosted fields, documented at a pinned source commit. No verified published package; evaluation guide only.",
-        "category": "Vue / payments"
+        "category": "Vue / payments",
+        "maintenanceStatus": "next",
+        "ecosystem": "javascript"
       }
     },
     {
@@ -1296,7 +1314,9 @@
       "catalog": {
         "title": "Vue 3 Burger Menu",
         "details": "Off-canvas Vue 3 menus from GitHub release 1.1.2, with explicit source setup and a warning about the incomplete npm artifact.",
-        "category": "Vue / components"
+        "category": "Vue / components",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "javascript"
       }
     },
     {
@@ -1376,7 +1396,9 @@
       "catalog": {
         "title": "SPID Laravel Trentino",
         "details": "Laravel login through AAC Trentino OpenID Connect, with PKCE, token middleware and transaction logs. Release v2.3.0.",
-        "category": "Laravel / authentication"
+        "category": "Laravel / authentication",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
       }
     },
     {
@@ -1524,7 +1546,9 @@
       "catalog": {
         "title": "pgr_dmmsy",
         "details": "PostgreSQL shortest-path extension for research and evaluation. Release v0.1.0, with explicit targets, build requirements and implementation limits.",
-        "category": "PostgreSQL / routing"
+        "category": "PostgreSQL / routing",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "postgresql"
       }
     }
   ],

@@ -1,0 +1,33 @@
+import assert from 'node:assert/strict';
+import {writeFile} from 'node:fs/promises';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const base=process.env.PREVIEW_URL || 'http://127.0.0.1:4175';
+const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_EXECUTABLE});
+const page=await browser.newPage({viewport:{width:1440,height:1000}});
+await page.context().route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
+const errors=[];page.on('pageerror',error=>errors.push(error.message));
+page.on('console',message=>{if(message.type()==='error' && !message.text().includes('Failed to load resource'))errors.push(message.text())});
+await page.goto(base,{waitUntil:'networkidle'});
+const status=page.getByRole('combobox',{name:'Status',exact:true}),technology=page.getByRole('combobox',{name:'Technology',exact:true}),reset=page.getByRole('button',{name:'Reset filters'});
+const cases=[['all','all',12],['maintained','all',10],['legacy','all',1],['next','all',1],['all','php',8],['all','javascript',3],['all','postgresql',1],['maintained','php',7],['maintained','javascript',2],['maintained','postgresql',1],['legacy','php',1],['legacy','javascript',0],['legacy','postgresql',0],['next','php',0],['next','javascript',1],['next','postgresql',0]];
+const checks=[];
+for(const [state,ecosystem,count] of cases){
+ await status.selectOption(state);await technology.selectOption(ecosystem);
+ await page.waitForFunction(expected=>document.querySelectorAll('.project').length===expected,count,{timeout:5000}).catch(async error=>{console.error(JSON.stringify({state,ecosystem,expected:count,actual:await page.locator('.project').count(),text:await page.locator('.project-filters').innerText(),errors}));throw error});
+ assert.equal(await page.locator('.project').count(),count);
+ assert.equal((await page.getByRole('status').innerText()).trim(),`${count} of 12 projects`);
+ assert.equal(await page.locator('.empty-projects').count(),count?0:1);
+ assert.ok((await page.locator('.projectsType').evaluateAll(nodes=>nodes.map(node=>node.querySelectorAll('.project').length))).every(count=>count>0));
+ if(state==='legacy' && ecosystem==='php')assert.match(await page.locator('.project h2').innerText(),/^laravel-fatture-in-cloud$/);
+ if(ecosystem==='postgresql' && count)assert.equal(await page.locator('.project h2').innerText(),'pgr_dmmsy');
+ if(state==='next' && count)assert.equal(await page.locator('.project h2').innerText(),'Braintree Vue 3');
+ checks.push({status:state,technology:ecosystem,count});
+}
+await reset.focus();await reset.press('Space');await page.waitForFunction(()=>document.querySelectorAll('.project').length===12);assert.equal(await reset.isDisabled(),true);
+await status.focus();await status.press('Tab');assert.equal(await technology.evaluate(node=>node===document.activeElement),true);
+const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mobile.context().route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
+await mobile.goto(base,{waitUntil:'networkidle'});await mobile.getByRole('combobox',{name:'Technology',exact:true}).selectOption('postgresql');assert.equal(await mobile.locator('.project').count(),1);assert.ok(await mobile.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await mobile.getByRole('button',{name:'Reset filters'}).click();assert.equal(await mobile.locator('.project').count(),12);
+const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());const staticPage=await nojs.newPage();await staticPage.goto(base);assert.equal(await staticPage.locator('.project').count(),12);assert.match(await staticPage.locator('noscript').innerText(),/All projects are listed/);
+assert.deepEqual(errors,[]);
+const result={verifiedOn:'2026-10-16',result:'PASS',combinations:checks,keyboard:'Tab order and Space reset',mobile:'PostgreSQL selection and reset; no page overflow',noJavaScriptCards:12,runtimeErrors:errors,screenshotsSaved:false};
+await writeFile(new URL('../../evidence/home-filters-browser.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({result:result.result,combinations:checks.length,mobile:true,noJavaScriptCards:12,errors}));await browser.close();

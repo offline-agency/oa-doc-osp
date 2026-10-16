@@ -9,6 +9,7 @@ export function validateCatalog(homepage, packages) {
     if (!source || !groupFor[source.status]) { errors.push(`Unverified catalog entry: ${card.title}`); continue; }
     const category=source.status==='historical-integration' ? 'Legacy' : source.catalog?.category || groupFor[source.status];
     if (!groups.has(card.type) || card.type !== category) errors.push(`${source.name}: ${source.status} requires catalog category ${category}`);
+    if (source.catalog && (!['maintained','legacy','next'].includes(card.maintenanceStatus) || !['php','javascript','postgresql'].includes(card.ecosystem) || card.maintenanceStatus !== source.catalog.maintenanceStatus || card.ecosystem !== source.catalog.ecosystem)) errors.push(`${source.name}: invalid catalog filters`);
     if (used.has(card.link)) errors.push(`Duplicate catalog route: ${card.link}`);
     used.add(card.link);
   }

@@ -1,0 +1,91 @@
+{
+  "verifiedOn": "2026-10-16",
+  "result": "PASS",
+  "combinations": [
+    {
+      "status": "all",
+      "technology": "all",
+      "count": 12
+    },
+    {
+      "status": "maintained",
+      "technology": "all",
+      "count": 10
+    },
+    {
+      "status": "legacy",
+      "technology": "all",
+      "count": 1
+    },
+    {
+      "status": "next",
+      "technology": "all",
+      "count": 1
+    },
+    {
+      "status": "all",
+      "technology": "php",
+      "count": 8
+    },
+    {
+      "status": "all",
+      "technology": "javascript",
+      "count": 3
+    },
+    {
+      "status": "all",
+      "technology": "postgresql",
+      "count": 1
+    },
+    {
+      "status": "maintained",
+      "technology": "php",
+      "count": 7
+    },
+    {
+      "status": "maintained",
+      "technology": "javascript",
+      "count": 2
+    },
+    {
+      "status": "maintained",
+      "technology": "postgresql",
+      "count": 1
+    },
+    {
+      "status": "legacy",
+      "technology": "php",
+      "count": 1
+    },
+    {
+      "status": "legacy",
+      "technology": "javascript",
+      "count": 0
+    },
+    {
+      "status": "legacy",
+      "technology": "postgresql",
+      "count": 0
+    },
+    {
+      "status": "next",
+      "technology": "php",
+      "count": 0
+    },
+    {
+      "status": "next",
+      "technology": "javascript",
+      "count": 1
+    },
+    {
+      "status": "next",
+      "technology": "postgresql",
+      "count": 0
+    }
+  ],
+  "keyboard": "Tab order and Space reset",
+  "mobile": "PostgreSQL selection and reset; no page overflow",
+  "noJavaScriptCards": 12,
+  "runtimeErrors": [],
+  "screenshotsSaved": false
+}
