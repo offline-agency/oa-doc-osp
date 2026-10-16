@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Verify pinned GitHub file links offline; optional read-only HTTP link audit."""
-import argparse, concurrent.futures, datetime, json, pathlib, re, subprocess, urllib.request, urllib.error, urllib.parse
+import argparse, concurrent.futures, datetime, hashlib, json, pathlib, re, subprocess, urllib.request, urllib.error, urllib.parse
 p=argparse.ArgumentParser()
 p.add_argument('--references', type=pathlib.Path, required=True)
 p.add_argument('--cart-reference', type=pathlib.Path, required=True)
@@ -12,10 +12,23 @@ packages={x['repository'].removeprefix('https://github.com/'):x for x in m['pack
 drift=[]
 for package in packages.values():
  repo=a.cart_reference if package['name'].endswith('/laravel-cart') else a.references/package['name'].split('/')[1]
- resolved=subprocess.check_output(['git','-C',str(repo),'rev-parse',package['selectedTag']+'^{commit}'],text=True).strip()
- composer=json.loads(subprocess.check_output(['git','-C',str(repo),'show',package['commit']+':composer.json'],text=True))
- assert resolved==package['commit'], package['name']+' tag moved'
- assert composer['require']==package['composerRequirements'], package['name']+' Composer manifest drift'
+ resolved=subprocess.check_output(['git','-C',str(repo),'rev-parse',package.get('selectedTag',package['commit'])+'^{commit}'],text=True).strip()
+ assert resolved==package['commit'], package['name']+' source reference changed'
+ if package.get('manifestFiles'):
+  for file,expected in package['manifestFiles'].items():
+   content=subprocess.check_output(['git','-C',str(repo),'show',package['commit']+':'+file])
+   assert hashlib.sha256(content).hexdigest()==expected['sha256'], package['name']+' manifest drift: '+file
+ elif package.get('projectType')=='web-application':
+  npm=json.loads(subprocess.check_output(['git','-C',str(repo),'show',package['commit']+':package.json'],text=True))
+  assert npm['dependencies']==package['npmRequirements'], package['name']+' npm manifest drift'
+  assert npm['name']==package['packageManifest']['name'] and npm['version']==package['packageManifest']['version'], package['name']+' package identity drift'
+  lock=subprocess.check_output(['git','-C',str(repo),'show',package['commit']+':'+package['lockfile']['path']])
+  assert hashlib.sha256(lock).hexdigest()==package['lockfile']['sha256'], package['name']+' lockfile drift'
+ elif package.get('composerRequirements'):
+  composer=json.loads(subprocess.check_output(['git','-C',str(repo),'show',package['commit']+':composer.json'],text=True))
+  assert composer['require']==package['composerRequirements'], package['name']+' Composer manifest drift'
+ for file in package.get('sourcePaths',[]):
+  subprocess.run(['git','-C',str(repo),'cat-file','-e',package['commit']+':'+file],check=True,capture_output=True)
  drift.append({'package':package['name'],'status':'ok'})
 urls=set()
 for f in list(root.glob('*.md'))+list((root/'laravel-cart').glob('*.md'))+list((root/'laravel-webex').glob('*.md')):
@@ -27,7 +40,7 @@ for url in sorted(urls):
   remaining.append(url); continue
  package=packages[match[1]]; ref=match[3]; path=urllib.parse.unquote(match[4])
  repo=a.cart_reference if match[1].endswith('/laravel-cart') else a.references/match[1].split('/')[1]
- if ref not in (package['commit'],package['selectedTag']):
+ if ref not in (package['commit'],package.get('selectedTag')):
   source.append({'url':url,'status':'moving-or-other-reference'}); continue
  result=subprocess.run(['git','-C',str(repo),'cat-file','-e',ref+':'+path],capture_output=True)
  source.append({'url':url,'status':'ok' if result.returncode==0 else 'missing-source'})
@@ -39,7 +52,7 @@ def request(url):
  except Exception as error: return {'url':url,'status':'unavailable','reason':str(error)}
  return {'url':url,'httpStatus':status,'status':'ok' if 200<=status<400 else 'missing' if status==404 else 'unavailable'}
 http=list(concurrent.futures.ThreadPoolExecutor(max_workers=6).map(request,remaining)) if a.http else []
-report={'verifiedOn':datetime.datetime.now(datetime.timezone.utc).date().isoformat(),'releaseManifestChecks':drift,'pinnedSourceLinks':source,'externalLinks':http,'httpRequested':a.http}
+report={'verifiedOn':datetime.datetime.now(datetime.timezone.utc).date().isoformat(),'sourceManifestChecks':drift,'pinnedSourceLinks':source,'externalLinks':http,'httpRequested':a.http}
 if a.output: a.output.write_text(json.dumps(report,indent=2)+'\n')
 from collections import Counter
 print(json.dumps({'sources':dict(Counter(x['status'] for x in source)),'http':dict(Counter(x['status'] for x in http))},indent=2))

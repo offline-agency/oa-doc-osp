@@ -1,6 +1,9 @@
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 import assert from 'node:assert/strict';
-import { writeFile, readdir } from 'node:fs/promises';
+import { writeFile, readdir, readFile } from 'node:fs/promises';
+const sources=JSON.parse(await readFile(new URL('../../package-sources.json',import.meta.url),'utf8'));
+const versions=JSON.parse(await readFile(new URL('../../documentation-versions.json',import.meta.url),'utf8'));
+const snapshotRoutes=new Set(versions.releases.flatMap(release=>release.pages.map(page=>page.route)));
 const root=process.env.PREVIEW_URL || 'http://127.0.0.1:4175';
 const localOnly=route => new URL(route.request().url()).origin === root ? route.continue() : route.abort();
 const browser=await chromium.launch({headless:true,executablePath:process.env.CHROMIUM_EXECUTABLE});
@@ -11,13 +14,14 @@ page.setDefaultTimeout(15000);page.setDefaultNavigationTimeout(15000);
 const errors=[];page.on('pageerror',e=>errors.push(e.message));
 const results={verifiedOn:'2026-10-16',desktop:{},mobile:{},screenshotsSaved:false};
 await page.goto(root,{waitUntil:'networkidle'});
-assert.equal(await page.locator('.project').count(),6);
-results.desktop.homeCards=6;
-const menu=page.getByRole('button',{name:'Packages',exact:true});
+const catalogCount=sources.packages.filter(source=>['current-release','historical-integration','source-reference'].includes(source.status)).length;
+assert.equal(await page.locator('.project').count(),catalogCount);
+results.desktop.homeCards=catalogCount;
+const menu=page.getByRole('button',{name:'Projects',exact:true});
 await menu.focus();await menu.press('Enter');assert.equal(await menu.getAttribute('aria-expanded'),'true');
 await menu.press('Escape');assert.equal(await menu.getAttribute('aria-expanded'),'false');
 results.desktop.keyboardDropdown='Enter/Escape passed';
-const routes=['/laravel-cart/','/laravel-cart/money-and-tax/','/laravel-cart/legacy/','/laravel-webex/','/laravel-webex/coverage/','/laravel-fatture-in-cloud-v2/','/laravel-aruba-sms/','/laravel-mongo-auto-sync/','/laravel-fatture-in-cloud/','/laravel-moneta-online/'];
+const routes=[...new Set(['/laravel-cart/','/laravel-cart/money-and-tax/','/laravel-cart/legacy/','/laravel-webex/','/laravel-webex/coverage/','/laravel-fatture-in-cloud-v2/','/laravel-aruba-sms/','/laravel-mongo-auto-sync/','/laravel-fatture-in-cloud/','/laravel-moneta-online/',...sources.packages.filter(source=>source.commit).map(source=>source.route)])];
 for(const route of routes){const response=await page.goto(root+route,{waitUntil:'networkidle'});assert.equal(response.status(),200);await page.reload({waitUntil:'networkidle'});assert.ok((await page.locator('h1').first().innerText()).length); results.desktop[route]={title:await page.title(),h1:await page.locator('h1').first().innerText()};}
 await page.goto(root+'/laravel-cart/',{waitUntil:'networkidle'});
 const search=page.locator('.search-box input');results.desktop.search={};
@@ -51,7 +55,7 @@ const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.route(
 const generated=new URL('../../../.vuepress/dist/',import.meta.url);
 const html=(await readdir(generated,{recursive:true})).filter(file=>file.endsWith('.html') && file!=='404.html');
 results.generatedHttpPages=0;
-for(const file of html){const route='/'+file.replace(/index\.html$/, '');const response=await staticPage.goto(root+route);assert.equal(response.status(),200,route);assert.ok((await staticPage.locator('body').innerText()).length>20,route);if(file.includes('/4.0.3/') || file.includes('/2.0.0/') || file.includes('/3.0.1/') || file.includes('/1.1.0/') || file.includes('/3.1.1/') || file.includes('/2.2.8/')){assert.equal(await staticPage.getByRole('link',{name:'Current documentation',exact:true}).count(),1,route+' no-JS current version link');assert.equal(await staticPage.getByRole('combobox',{name:'Documentation version'}).inputValue(),route,route+' no-JS selected version');}results.generatedHttpPages++;}
+for(const file of html){const route='/'+file.replace(/index\.html$/, '');const response=await staticPage.goto(root+route);assert.equal(response.status(),200,route);assert.ok((await staticPage.locator('body').innerText()).length>20,route);if(snapshotRoutes.has(route)){assert.equal(await staticPage.getByRole('link',{name:'Current documentation',exact:true}).count(),1,route+' no-JS current version link');assert.equal(await staticPage.getByRole('combobox',{name:'Documentation version'}).inputValue(),route,route+' no-JS selected version');}results.generatedHttpPages++;}
 for(const entry of Object.values(results.mobile)){if(typeof entry!=='object') continue;for(const block of [...(entry.codeBlocks||[]),...(entry.tables||[])]){if(block.scrollWidth>block.width+1)assert.match(block.overflow,/auto|scroll/);}}
 assert.deepEqual(errors,[]);results.runtimeErrors=errors;
 await writeFile(new URL('../../evidence/browser-checks.json',import.meta.url),JSON.stringify(results,null,2)+'\n');console.log(JSON.stringify({result:'PASS',routes:routes.length,searchTopics:5,mobile:true,noJavaScript:true,errors}));await browser.close();

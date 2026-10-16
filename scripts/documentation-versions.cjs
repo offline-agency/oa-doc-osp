@@ -2,7 +2,7 @@ const matter = require('gray-matter');
 function validateRelease(release) {
   const errors = [];
   const slug = release.name?.split('/')[1];
-  if (!/^offline-agency\/[a-z0-9-]+$/.test(release.name || '') || !/^v?\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(release.version || '') || !/^[a-f0-9]{40}$/.test(release.commit || '')) errors.push('Invalid version provenance');
+  if (!/^offline-agency\/[a-z0-9_-]+$/.test(release.name || '') || !/^v?\d+\.\d+\.\d+(?:-[\w.-]+)?$/.test(release.version || '') || !/^[a-f0-9]{40}$/.test(release.commit || '')) errors.push('Invalid version provenance');
   const root = `/${slug}/${release.version}/`;
   if (release.route !== root) errors.push('Incorrect version root');
   const routes = new Set(), files = new Set(), current = new Set();

@@ -1,7 +1,7 @@
 {
   "verifiedOn": "2026-10-16",
   "desktop": {
-    "homeCards": 6,
+    "homeCards": 12,
     "keyboardDropdown": "Enter/Escape passed",
     "/laravel-cart/": {
       "title": "Laravel Cart — stable 4.0.3 | Documentation | OFFLINE Agency",
@@ -43,10 +43,34 @@
       "title": "Laravel Moneta Online — unverified reference | Documentation | OFFLINE Agency",
       "h1": "#\nLaravel Moneta Online"
     },
+    "/laravel-bank-of-italy/": {
+      "title": "Laravel Bank of Italy | Documentation | OFFLINE Agency",
+      "h1": "#\nLaravel Bank of Italy"
+    },
+    "/odps-validator/": {
+      "title": "ODPS Validator | Documentation | OFFLINE Agency",
+      "h1": "#\nODPS Validator"
+    },
+    "/braintree-vue3/": {
+      "title": "Braintree Vue 3 | Documentation | OFFLINE Agency",
+      "h1": "#\nBraintree Vue 3"
+    },
+    "/vue3-burger-menu/": {
+      "title": "Vue 3 Burger Menu | Documentation | OFFLINE Agency",
+      "h1": "#\nVue 3 Burger Menu"
+    },
+    "/spid-laravel-trentino/": {
+      "title": "SPID Laravel Trentino | Documentation | OFFLINE Agency",
+      "h1": "#\nSPID Laravel Trentino"
+    },
+    "/pgr_dmmsy/": {
+      "title": "pgr_dmmsy | Documentation | OFFLINE Agency",
+      "h1": "#\npgr_dmmsy"
+    },
     "search": {
       "VAT": [
-        "/laravel-cart/legacy/#cart-vat",
         "/laravel-cart/money-and-tax/",
+        "/laravel-cart/legacy/#cart-vat",
         "/laravel-cart/4.0.3/money-and-tax/"
       ],
       "wishlist": [
@@ -64,13 +88,13 @@
         "/laravel-aruba-sms/1.1.0/"
       ],
       "pagination": [
-        "/laravel-webex/#pagination",
         "/laravel-fatture-in-cloud-v2/#pagination",
-        "/laravel-fatture-in-cloud-v2/3.0.1/#pagination",
-        "/laravel-webex/2.0.0/#pagination"
+        "/laravel-webex/#pagination",
+        "/laravel-webex/2.0.0/#pagination",
+        "/laravel-fatture-in-cloud-v2/3.0.1/#pagination"
       ]
     },
-    "keyboardSearch": "/laravel-cart/money-and-tax/",
+    "keyboardSearch": "/laravel-cart/legacy/#cart-vat",
     "versionSelector": "Current and pinned release, matching page, sidebar, direct refresh",
     "notFound": 404
   },
@@ -317,6 +341,6 @@
   },
   "screenshotsSaved": false,
   "serverRenderedContentWithoutJS": true,
-  "generatedHttpPages": 38,
+  "generatedHttpPages": 49,
   "runtimeErrors": []
 }

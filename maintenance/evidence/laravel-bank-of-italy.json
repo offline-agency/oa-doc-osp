@@ -1,0 +1,100 @@
+{
+  "package": "offline-agency/laravel-bank-of-italy",
+  "tag": "1.0.1",
+  "commit": "8b4ae70b92d0b802139138e70367d789d80251af",
+  "checkedAt": "2026-10-16",
+  "composerRequirements": {
+    "php": ">=8.0",
+    "ext-json": "*",
+    "illuminate/support": "^8.0|^9.0",
+    "guzzlehttp/guzzle": "7.0.1|^7.2",
+    "illuminate/container": "^8.0|^9.0",
+    "illuminate/http": "^8.0|^9.0"
+  },
+  "distribution": {
+    "version": "1.0.1",
+    "sourceRef": "8b4ae70b92d0b802139138e70367d789d80251af",
+    "distRef": "8b4ae70b92d0b802139138e70367d789d80251af",
+    "url": "https://api.github.com/repos/offline-agency/laravel-bank-of-italy/zipball/8b4ae70b92d0b802139138e70367d789d80251af",
+    "publishedAt": "2025-04-09T08:13:42+00:00",
+    "checkedAt": "2026-10-16",
+    "metadataEvidence": "fresh Packagist metadata; aggregate source manifest maintained by coordinator",
+    "actualDistVerification": "not duplicated in this subtask"
+  },
+  "sourcePaths": [
+    ".github/workflows/main.yml",
+    "CONTRIBUTING.md",
+    "LICENSE.md",
+    "README.md",
+    "composer.json",
+    "config/bank-of-italy.php",
+    "src/Api/Api.php",
+    "src/Api/ExchangeRate.php",
+    "src/Entities/AbstractEntity.php",
+    "src/Entities/Error.php",
+    "src/Entities/ExchangeRate/ExchangeRate.php",
+    "src/Entities/ExchangeRate/ExchangeRates.php",
+    "src/LaravelBankOfItaly.php",
+    "src/LaravelBankOfItalyFacade.php",
+    "src/LaravelBankOfItalyServiceProvider.php",
+    "tests/Feature/ExchangeRateTest.php",
+    "tests/TestCase.php"
+  ],
+  "checks": {
+    "reproducer": "maintenance/fixtures/bank-of-italy/verify.php",
+    "results": "maintenance/fixtures/bank-of-italy/results.json",
+    "runtime": {
+      "php": "8.1.34",
+      "dependencies": {
+        "illuminate/http": "v9.52.16",
+        "illuminate/support": "v9.52.16",
+        "illuminate/container": "v9.52.16",
+        "illuminate/validation": "v9.52.16",
+        "guzzlehttp/guzzle": "7.15.5",
+        "nesbot/carbon": "2.73.0"
+      },
+      "network": "HTTP fakes only",
+      "checks": 21,
+      "passed": [
+        "success entity",
+        "one synthetic row",
+        "rate remains string",
+        "date passed through",
+        "default query captured",
+        "configured defaults and rolling dates",
+        "custom query captured",
+        "overrides, unknown-key filtering and no date-order validation",
+        "five validation errors",
+        "no requests recorded",
+        "validation prevents HTTP",
+        "non-200 raw body error",
+        "one request recorded",
+        "one request without package retry",
+        "204 also error",
+        "200 JSON silently yields empty collection",
+        "short rows skipped, extra columns ignored",
+        "setItems replaces collection",
+        "nullable query captured",
+        "nullable dates default; nullable currencies do not restore defaults",
+        "connection exception propagates"
+      ]
+    },
+    "upstreamSuiteRun": false,
+    "liveProviderRun": false,
+    "fullFrameworkBoot": false,
+    "phpSnippetsLinted": 3,
+    "diffCheck": "passed"
+  },
+  "CIchecksUnavailable": [
+    "upstream suite not executed (live provider calls)",
+    "full Laravel framework boot/discovery/publish not executed",
+    "Laravel/PHP compatibility matrix not executed",
+    "current CI results not verified",
+    "coverage and analyzers not executed",
+    "actual live provider response format not verified"
+  ],
+  "officialSources": [
+    "https://tassidicambio.bancaditalia.it/terzevalute-wf-ui-web/assets/files/Operating_Instructions.pdf",
+    "https://www.bancaditalia.it/compiti/operazioni-cambi/portale-tassi/index.html?com.dotmarketing.htmlpage.language=1"
+  ]
+}

@@ -1,34 +1,40 @@
 {
   "verifiedOn": "2026-10-16",
-  "releaseManifestChecks": [
-    {
-      "package": "offline-agency/laravel-cart",
-      "status": "ok"
-    },
-    {
-      "package": "offline-agency/laravel-webex",
-      "status": "ok"
-    },
-    {
-      "package": "offline-agency/laravel-fatture-in-cloud-v2",
-      "status": "ok"
-    },
-    {
-      "package": "offline-agency/laravel-aruba-sms",
-      "status": "ok"
-    },
-    {
-      "package": "offline-agency/laravel-mongo-auto-sync",
-      "status": "ok"
-    },
-    {
-      "package": "offline-agency/laravel-fatture-in-cloud",
-      "status": "ok"
-    }
-  ],
   "pinnedSourceLinks": [
     {
+      "url": "https://github.com/offline-agency/braintree-vue3/blob/ff99c39e9fd45e6fe43440f8c3b7bcda58e01775/package.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/braintree-vue3/blob/ff99c39e9fd45e6fe43440f8c3b7bcda58e01775/src/index.ts",
+      "status": "ok"
+    },
+    {
       "url": "https://github.com/offline-agency/laravel-aruba-sms/blob/b090caba23f4882486619f2eaed90dfa9b7a2014/LICENSE",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/CONTRIBUTING.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/src/Api/ExchangeRate.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/src/Entities/ExchangeRate/ExchangeRates.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/src/LaravelBankOfItalyServiceProvider.php",
       "status": "ok"
     },
     {
@@ -398,9 +404,86 @@
     {
       "url": "https://github.com/offline-agency/laravel-webex/tree/c4aec48c1c416676cc411936fe7e905398f66b8c/tests",
       "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/LICENSE",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/next.config.js",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/pages/index.js",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/public/schemas/v3.0/odps.yaml",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/public/schemas/v3.1/odps.yaml",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/COMPILE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/Makefile",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/sql/pgr_dmmsy--0.1.0.sql",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/src/dmmsy.c",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/SECURITY.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/development.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/known-issues.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/security.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/transaction-log.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/troubleshooting.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/user-dto.md",
+      "status": "ok"
     }
   ],
   "externalLinks": [
+    {
+      "url": "https://ajv.js.org/guide/formats.html",
+      "httpStatus": 200,
+      "status": "ok"
+    },
     {
       "url": "https://developers.fattureincloud.it/",
       "httpStatus": 200,
@@ -437,6 +520,11 @@
       "status": "ok"
     },
     {
+      "url": "https://github.com/offline-agency/braintree-vue3/tree/ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
       "url": "https://github.com/offline-agency/laravel-aruba-sms",
       "httpStatus": 200,
       "status": "ok"
@@ -453,6 +541,16 @@
     },
     {
       "url": "https://github.com/offline-agency/laravel-aruba-sms/releases/tag/1.1.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/releases/tag/1.0.1",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/tree/8b4ae70b92d0b802139138e70367d789d80251af",
       "httpStatus": 200,
       "status": "ok"
     },
@@ -567,17 +665,57 @@
       "status": "ok"
     },
     {
-      "url": "https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square",
+      "url": "https://github.com/offline-agency/odps-validator/issues",
       "httpStatus": 200,
       "status": "ok"
     },
     {
-      "url": "https://img.shields.io/packagist/dt/offline-agency/laravel-cart.svg?style=flat-square",
+      "url": "https://github.com/offline-agency/odps-validator/releases/tag/1.0.1",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/tree/bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.3.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/vue3-burger-menu/tree/27ed3fe184f55de51401590f3975011c4131f65a",
       "httpStatus": 200,
       "status": "ok"
     },
     {
       "url": "https://laravel.com/docs/13.x/releases",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://nextjs.org/docs/pages/guides/static-exports",
       "httpStatus": 200,
       "status": "ok"
     },
@@ -602,6 +740,11 @@
       "status": "ok"
     },
     {
+      "url": "https://packagist.org/packages/offline-agency/laravel-bank-of-italy",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
       "url": "https://packagist.org/packages/offline-agency/laravel-cart",
       "httpStatus": 200,
       "status": "ok"
@@ -617,7 +760,22 @@
       "status": "ok"
     },
     {
-      "url": "https://poser.pugx.org/offline-agency/laravel-cart/v/stable",
+      "url": "https://packagist.org/packages/offline-agency/spid-laravel-trentino",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://registry.npmjs.org/@offlineagency%2fvue3-burger-menu",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://tassidicambio.bancaditalia.it/terzevalute-wf-ui-web/assets/files/Operating_Instructions.pdf",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/portale-tassi/index.html?com.dotmarketing.htmlpage.language=1",
       "httpStatus": 200,
       "status": "ok"
     },
@@ -627,5 +785,55 @@
       "status": "ok"
     }
   ],
-  "httpRequested": true
+  "httpRequested": true,
+  "sourceManifestChecks": [
+    {
+      "package": "offline-agency/laravel-cart",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-webex",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-fatture-in-cloud-v2",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-aruba-sms",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-mongo-auto-sync",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-fatture-in-cloud",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-bank-of-italy",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/odps-validator",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/braintree-vue3",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/vue3-burger-menu",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/spid-laravel-trentino",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/pgr_dmmsy",
+      "status": "ok"
+    }
+  ]
 }

@@ -9,7 +9,7 @@
     </label>
     <a v-if="version.snapshot && version.currentRoute" :href="version.currentRoute">Current documentation</a>
     <a v-else :href="version.pinnedRoute">Version permalink</a>
-    <span v-if="version.snapshot" class="release-note">Released package {{ version.version }}</span>
+    <span v-if="version.snapshot" class="release-note">Release {{ version.version }}</span>
   </nav>
 </template>
 

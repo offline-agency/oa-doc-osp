@@ -275,6 +275,303 @@
           "title": "Fatture in Cloud API v1 — historical integration"
         }
       ]
+    },
+    {
+      "name": "offline-agency/laravel-bank-of-italy",
+      "version": "1.0.1",
+      "commit": "8b4ae70b92d0b802139138e70367d789d80251af",
+      "repository": "https://github.com/offline-agency/laravel-bank-of-italy",
+      "verifiedOn": "2026-10-16",
+      "projectType": "composer-package",
+      "composerRequirements": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "illuminate/support": "^8.0|^9.0",
+        "guzzlehttp/guzzle": "7.0.1|^7.2",
+        "illuminate/container": "^8.0|^9.0",
+        "illuminate/http": "^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.1",
+        "sourceReference": "8b4ae70b92d0b802139138e70367d789d80251af",
+        "distReference": "8b4ae70b92d0b802139138e70367d789d80251af",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-bank-of-italy.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-bank-of-italy/1.0.1/",
+      "pages": [
+        {
+          "source": "laravel-bank-of-italy.md",
+          "file": "versioned/laravel-bank-of-italy/1.0.1/index.md",
+          "currentRoute": "/laravel-bank-of-italy/",
+          "route": "/laravel-bank-of-italy/1.0.1/",
+          "title": "Laravel Bank of Italy"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/odps-validator",
+      "version": "1.0.1",
+      "commit": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+      "repository": "https://github.com/offline-agency/odps-validator",
+      "verifiedOn": "2026-10-16",
+      "projectType": "web-application",
+      "npmRequirements": {
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "bootstrap": "^5.0.0",
+        "js-yaml": "^4.1.0",
+        "ajv": "^8.12.0"
+      },
+      "packageManifest": {
+        "name": "nextjs-odps-validator",
+        "version": "1.0.0",
+        "engines": null
+      },
+      "lockfile": {
+        "path": "package-lock.json",
+        "lockfileVersion": 3,
+        "sha256": "7f569b90f269c6740b70267bb2f1886661475b675a08cc38b08c4afe3e3c0b15",
+        "resolvedVersions": {
+          "next": "15.3.2",
+          "react": "19.1.0",
+          "react-dom": "19.1.0",
+          "bootstrap": "5.3.6",
+          "js-yaml": "4.1.0",
+          "ajv": "8.17.1"
+        }
+      },
+      "distribution": {
+        "registry": "GitHub Releases (source)",
+        "version": "1.0.1",
+        "sourceReference": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+        "distReference": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+        "url": "https://github.com/offline-agency/odps-validator/releases/tag/1.0.1",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/odps-validator/1.0.1/",
+      "pages": [
+        {
+          "source": "odps-validator.md",
+          "file": "versioned/odps-validator/1.0.1/index.md",
+          "currentRoute": "/odps-validator/",
+          "route": "/odps-validator/1.0.1/",
+          "title": "ODPS Validator"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/vue3-burger-menu",
+      "version": "1.1.2",
+      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "repository": "https://github.com/offline-agency/vue3-burger-menu",
+      "verifiedOn": "2026-10-16",
+      "projectType": "vue-library",
+      "npmRequirements": {
+        "dependencies": {
+          "vue": "^3.0.0-0"
+        },
+        "devDependencies": {
+          "@vue/cli-plugin-babel": "^4.5.0",
+          "@vue/cli-plugin-eslint": "^4.5.0",
+          "@vue/cli-service": "^4.5.0",
+          "@vue/compiler-sfc": "^3.0.0-0",
+          "babel-eslint": "^10.1.0",
+          "eslint": "^6.7.2",
+          "eslint-plugin-vue": "^7.0.0-0",
+          "less": "^3.8.1",
+          "less-loader": "^4.1.0"
+        }
+      },
+      "packageManifest": {
+        "name": "@offlineagency/vue3-burger-menu",
+        "version": "1.0.0",
+        "engines": null
+      },
+      "manifestFiles": {
+        "package.json": {
+          "sha256": "7fbef42fbdc06ec19de7defcc817431ee654025db1f597f2a0219c661c11abf9"
+        }
+      },
+      "distribution": {
+        "registry": "GitHub Releases (source)",
+        "version": "1.1.2",
+        "sourceReference": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "distReference": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/vue3-burger-menu/1.1.2/",
+      "pages": [
+        {
+          "source": "vue3-burger-menu.md",
+          "file": "versioned/vue3-burger-menu/1.1.2/index.md",
+          "currentRoute": "/vue3-burger-menu/",
+          "route": "/vue3-burger-menu/1.1.2/",
+          "title": "Vue 3 Burger Menu"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/spid-laravel-trentino",
+      "version": "v2.3.0",
+      "commit": "0fdb1e870606e471a39d35c144cde58158e023d6",
+      "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+      "verifiedOn": "2026-10-16",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/auth": "^12.69|^13.30",
+        "illuminate/cache": "^12.69|^13.30",
+        "illuminate/config": "^12.69|^13.30",
+        "illuminate/console": "^12.69|^13.30",
+        "illuminate/contracts": "^12.69|^13.30",
+        "illuminate/database": "^12.69|^13.30",
+        "illuminate/encryption": "^12.69|^13.30",
+        "illuminate/events": "^12.69|^13.30",
+        "illuminate/http": "^12.69|^13.30",
+        "illuminate/log": "^12.69|^13.30",
+        "illuminate/routing": "^12.69|^13.30",
+        "illuminate/session": "^12.69|^13.30",
+        "illuminate/support": "^12.69|^13.30",
+        "illuminate/view": "^12.69|^13.30",
+        "jumbojett/openid-connect-php": "^1.0.2"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "v2.3.0",
+        "sourceReference": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "distReference": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/spid-laravel-trentino/v2.3.0/",
+      "pages": [
+        {
+          "source": "spid-laravel-trentino.md",
+          "file": "versioned/spid-laravel-trentino/v2.3.0/index.md",
+          "currentRoute": "/spid-laravel-trentino/",
+          "route": "/spid-laravel-trentino/v2.3.0/",
+          "title": "SPID Laravel Trentino"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/pgr_dmmsy",
+      "version": "v0.1.0",
+      "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+      "repository": "https://github.com/offline-agency/pgr_dmmsy",
+      "verifiedOn": "2026-10-16",
+      "projectType": "postgresql-extension",
+      "manifestFiles": {
+        "pgr_dmmsy.control": {
+          "sha256": "d7184fa1135e1258962a6285b5fcd54fedf2cbf2b7c845cf1407752ccb8caf38"
+        },
+        "Makefile": {
+          "sha256": "456cf4a36db65037aebae44fe2f820be2c60a251c4713e75bbbdff1128ba7c84"
+        },
+        "sql/pgr_dmmsy--0.1.0.sql": {
+          "sha256": "a8b4f9f8b3f37ac86687234b85ed3cf08a91e66fa6018273845cbeb5e93d3ab4"
+        }
+      },
+      "buildRequirements": {
+        "postgresql": "14+ declared build prerequisite",
+        "pgrouting": "3.x declared build prerequisite; required extension dependency",
+        "build": "C compiler, make, PostgreSQL server headers and PGXS",
+        "postgis": "Required by pgRouting; available and enabled before pgrouting in a fresh database"
+      },
+      "releaseAssets": [
+        {
+          "name": "pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+          "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+          "bytes": 53878,
+          "sha256": "78346bbc7c2ee1ea6687da3112bbcf5149a78878803d1eb0bf042aaf1cead7e1",
+          "downloadVerified": true,
+          "githubDigestMatched": true,
+          "archiveContents": [
+            ".",
+            "./pgr_dmmsy.control",
+            "./pgr_dmmsy.so",
+            "./pgr_dmmsy--0.1.0.sql"
+          ]
+        },
+        {
+          "name": "pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+          "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+          "bytes": 7774,
+          "sha256": "aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc",
+          "downloadVerified": true,
+          "githubDigestMatched": true,
+          "archiveContents": [
+            ".",
+            "./pgr_dmmsy.control",
+            "./pgr_dmmsy--0.1.0.sql",
+            "./pgr_dmmsy.dylib"
+          ]
+        },
+        {
+          "name": "pgr_dmmsy-v0.1.0-source.tar.gz",
+          "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-source.tar.gz",
+          "bytes": 32003,
+          "sha256": "e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8",
+          "downloadVerified": true,
+          "githubDigestMatched": true,
+          "archiveContents": [
+            "pgr_dmmsy-0.1.0/src",
+            "pgr_dmmsy-0.1.0/src/minheap.h",
+            "pgr_dmmsy-0.1.0/src/dmmsy.c",
+            "pgr_dmmsy-0.1.0/src/dmmsy.h",
+            "pgr_dmmsy-0.1.0/src/ds_blocklist.c",
+            "pgr_dmmsy-0.1.0/src/graph.c",
+            "pgr_dmmsy-0.1.0/src/minheap.c",
+            "pgr_dmmsy-0.1.0/src/dmmsy_algorithm.c",
+            "pgr_dmmsy-0.1.0/src/graph.h",
+            "pgr_dmmsy-0.1.0/src/ds_blocklist.h",
+            "pgr_dmmsy-0.1.0/sql",
+            "pgr_dmmsy-0.1.0/sql/pgr_dmmsy--0.1.0.sql",
+            "pgr_dmmsy-0.1.0/verify",
+            "pgr_dmmsy-0.1.0/verify/tests",
+            "pgr_dmmsy-0.1.0/verify/tests/03_negative.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/run_all.sh",
+            "pgr_dmmsy-0.1.0/verify/tests/06_performance.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/05_weights.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/04_topology.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/01_correctness.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/08_invariants.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/07_integration.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/09_api_contract.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/02_predecessors.sql",
+            "pgr_dmmsy-0.1.0/verify/sql",
+            "pgr_dmmsy-0.1.0/verify/sql/00_setup.sql",
+            "pgr_dmmsy-0.1.0/verify/sql/01_generators.sql",
+            "pgr_dmmsy-0.1.0/verify/sql/02_stub.sql",
+            "pgr_dmmsy-0.1.0/Makefile",
+            "pgr_dmmsy-0.1.0/pgr_dmmsy.control",
+            "pgr_dmmsy-0.1.0/README.md",
+            "pgr_dmmsy-0.1.0/COMPILE.md"
+          ]
+        }
+      ],
+      "distribution": {
+        "registry": "GitHub Releases (source and assets)",
+        "version": "v0.1.0",
+        "sourceReference": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+        "distReference": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+        "url": "https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/pgr_dmmsy/v0.1.0/",
+      "pages": [
+        {
+          "source": "pgr_dmmsy.md",
+          "file": "versioned/pgr_dmmsy/v0.1.0/index.md",
+          "currentRoute": "/pgr_dmmsy/",
+          "route": "/pgr_dmmsy/v0.1.0/",
+          "title": "pgr_dmmsy"
+        }
+      ]
     }
   ]
 }

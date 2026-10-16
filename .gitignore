@@ -11,3 +11,6 @@ node_modules/
 .idea/modules.xml
 .idea/oa-doc-out.iml
 .idea/vcs.xml
+
+# Reproducibility inputs for isolated PHP fixtures, not site dependencies.
+!maintenance/fixtures/**/composer.lock

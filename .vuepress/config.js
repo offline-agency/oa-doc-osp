@@ -5,6 +5,7 @@ const versions = require('../maintenance/documentation-versions.json')
 const { versionContext } = require('../scripts/documentation-versions.cjs')
 const current = sources.packages.filter(item => item.status === 'current-release').map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
 const historical = sources.packages.filter(item => item.status === 'historical-integration').map(item => ({ text: item.name.replace('offline-agency/', '') + ' (retired API)', link: item.route }))
+const sourceReferences = sources.packages.filter(item => item.status === 'source-reference').map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
 const cartOrder = ['installation', 'quick-start', 'variants-and-wishlist', 'money-and-tax', 'storage', 'authentication', 'integrations', 'upgrading', 'reference', 'support', 'url-migration']
 const cartPages = () => fs.readdirSync(path.resolve(__dirname, '../laravel-cart')).filter(file => file.endsWith('.md') && file !== 'legacy.md').sort((a,b) => {
   const rank = file => { const index = cartOrder.indexOf(file.replace(/\.md$/, '')); return index < 0 ? cartOrder.length : index }
@@ -22,8 +23,9 @@ module.exports = {
   themeConfig: {
     logo: '/oa-eb.png',
     nav: [
-      { text: 'Packages', items: current },
+      { text: 'Projects', items: current },
       { text: 'Legacy', items: historical },
+      ...(sourceReferences.length ? [{text: 'Source references', items: sourceReferences}] : []),
       { text: 'OA', link: 'https://offlineagency.it' },
       { text: 'GitHub', link: 'https://github.com/offline-agency' },
     ],

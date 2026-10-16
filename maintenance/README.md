@@ -1,6 +1,6 @@
 # Site maintenance
 
-The public source is the repository root, not `docs/`. This directory is excluded from VuePress pages. English guides describe released code; evidence and handoff notes are kept here. The default branch is `master`.
+The public source is the repository root, not `docs/`. This directory is excluded from VuePress pages. English guides describe verified releases or explicitly identified source revisions; evidence and handoff notes are kept here. The default branch is `master`.
 
 ## Build and preview
 
@@ -15,7 +15,7 @@ npm run docs:preview
 
 The output is `.vuepress/dist/`; preview is http://127.0.0.1:4175. The preview serves real files and returns HTTP 404 for missing paths. `docs:dev` also uses the root. Do not run `npm install --force`, `--legacy-peer-deps` or a permanent OpenSSL legacy-provider workaround.
 
-`docs:verify` checks frontmatter, the six nonempty catalog cards, release provenance, 23 Node regression tests, production rendering, seven existing landing pages, 232 historical anchor IDs, internal links and assets. PHP fixtures are deliberately outside this JavaScript dependency graph. Each `fixtures/*/README.md` describes its isolated dependencies and limitations; no real provider requests are required.
+`docs:verify` checks frontmatter, the nonempty catalog cards, release provenance, 26 Node regression tests, production rendering, seven existing landing pages, 232 historical anchor IDs, internal links and assets. PHP fixtures are deliberately outside this JavaScript dependency graph. Each `fixtures/*/README.md` describes its isolated dependencies and limitations; no real provider requests are required.
 
 ## Release evidence and updates
 
@@ -37,7 +37,7 @@ npm ci
 npm run docs:verify
 ```
 
-Reference clones use the package repository basename under `--references`; Cart may be elsewhere. This command verifies all six tags/Composer manifests and immutable GitHub file links with Git, then optionally checks public links with read-only HTTP HEAD requests. HTTP 401/403/429/network failures are unavailable checks; actual 404s fail. It never contacts authenticated service endpoints or mutates external resources. Fresh release/Packagist discovery remains a deliberate maintainer step.
+Reference clones use the package repository basename under `--references`; Cart may be elsewhere. This command verifies every selected tag or source commit, the appropriate recorded manifests and immutable GitHub file links with Git, then optionally checks public links with read-only HTTP HEAD requests. HTTP 401/403/429/network failures are unavailable checks; actual 404s fail. It never contacts authenticated service endpoints or mutates external resources. Fresh release and registry discovery remains a deliberate maintainer step.
 
 Keep existing landing routes and `legacy-anchors.json`. Add compatibility anchors when moving headings; do not replace historical API semantics silently. Cart's detailed route map is `/laravel-cart/url-migration/`; its June 2024 site archive is historical documentation, not an independently verified package 3.x tag.
 
@@ -53,7 +53,7 @@ Publication is a separate owner action after review, CI and the hosting/security
 
 ## Documentation versions
 
-Each verified package release has a checked-in snapshot under `versioned/PACKAGE/TAG/` and a public `/PACKAGE/TAG/` route. Current root sources and their old public routes remain the authoring entry point/current aliases. The native version selector preserves the corresponding page, falling back to the selected release landing if a page does not exist there. Static version/current links work without JavaScript. Only six actual releases are currently available; no invented older major or development release is selectable. Mongo remains current; API v1 remains under Legacy. Moneta, the undated Cart archive and the site-specific route map have no package-release selector.
+Each verified package release has a checked-in snapshot under `versioned/PACKAGE/TAG/` and a public `/PACKAGE/TAG/` route. Current root sources and their old public routes remain the authoring entry point/current aliases. The native version selector preserves the corresponding page, falling back to the selected release landing if a page does not exist there. Static version/current links work without JavaScript. Only verified releases with real content are selectable; source-only projects show a pinned commit, not a version inferred from package.json. Mongo remains current; API v1 remains under Legacy. Moneta, the undated Cart archive and the site-specific route map have no package-release selector.
 
 `documentation-versions.json` records the package tag/SHA, verified Composer/distribution metadata and current/snapshot page mapping for each release. `docs:check` verifies provenance and deterministic equality between current authoring files and the selected release's snapshots. Build and CI do not fetch upstream or refresh historical content.
 
@@ -75,3 +75,11 @@ npm run docs:verify
 The command adds the new selected tag and leaves previous snapshots intact. It refuses to overwrite an existing release without `--refresh`, or reassign a release to another package SHA. `--refresh` affects the current selected release only; it never regenerates older versions from newer source. Historical documentation corrections belong to their own versioned files and must still match that release's API/provenance. Internal package links in snapshots are rewritten to versioned routes, retaining fragments; explicit historical and cross-package links remain deliberate references.
 
 Run `npm run docs:version -- --check` to verify snapshots alone. To refresh all currently selected snapshots after a coordinated documentation correction, use `npm run docs:version -- --refresh`. No package installation, network access, new runtime dependency, tag/release or deployment is involved.
+
+## Mixed project types and source references
+
+The catalog now includes Laravel packages, Vue libraries, a Next.js application and a PostgreSQL extension. `Current projects` identifies released project guides, `Legacy` retains the retired provider integration, and `Source references` identifies Braintree's unreleased pinned source. Dependency age alone does not classify a project as legacy.
+
+Composer releases use independently checked Packagist source/dist references. ODPS and Burger guides use their GitHub source release: their `package.json` versions differ, and a GitHub release does not establish a usable npm artifact. Braintree has no verified release/tag/npm distribution, so it has a source-reference guide without a fabricated version selector. Source checks compare appropriate Composer metadata or immutable npm/C manifest hashes and all recorded source files. Version snapshots preserve that project-specific provenance.
+
+Fixtures for the six added projects live under `maintenance/fixtures/`; the PHP dependency locks are intentionally tracked despite common global ignore rules. PHP, application dependencies, source builds and compiled test output stay outside the documentation dependency tree. Scripts and fixtures never require production credentials, login/payment requests, a running production PostgreSQL database or deployment.

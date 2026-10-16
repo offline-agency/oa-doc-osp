@@ -40,7 +40,7 @@ if(args.includes('--check')){
    const suffix=currentRoute.slice(source.route.length);
    return {source:file,file:`versioned/${slug}/${version}/${suffix ? suffix.replace(/\/$/,'') : 'index'}.md`,currentRoute,route:`/${slug}/${version}/${suffix}`,title:data.title};
   });
-  const release={name:source.name,version,commit:source.commit,repository:source.repository,verifiedOn:source.verifiedOn,composerRequirements:source.composerRequirements,distribution:source.distribution,route:`/${slug}/${version}/`,pages};
+  const release={name:source.name,version,commit:source.commit,repository:source.repository,verifiedOn:source.verifiedOn,projectType:source.projectType,composerRequirements:source.composerRequirements,npmRequirements:source.npmRequirements,packageManifest:source.packageManifest,lockfile:source.lockfile,manifestFiles:source.manifestFiles,buildRequirements:source.buildRequirements,releaseAssets:source.releaseAssets,distribution:source.distribution,route:`/${slug}/${version}/`,pages};
   const errors=validateRelease(release);if(errors.length) throw new Error(errors.join('\n'));
   if(existing)for(const old of existing.pages)if(!pages.some(page=>page.file===old.file))throw new Error(`Removed version page needs an explicit route decision: ${old.route}`);
   const snapshots=pages.map(page=>({page,text:snapshotMarkdown(read(page.source),release,page)}));

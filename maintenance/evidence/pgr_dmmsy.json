@@ -1,0 +1,163 @@
+{
+  "checkedAt": "2026-10-16",
+  "status": "released",
+  "checksUnavailable": [
+    "GitHub Actions outcomes not queried",
+    "Complete upstream suites and coverage not executed"
+  ],
+  "name": "offline-agency/pgr_dmmsy",
+  "docsPage": "pgr_dmmsy.md",
+  "route": "/pgr_dmmsy.html",
+  "repository": "https://github.com/offline-agency/pgr_dmmsy",
+  "defaultBranch": "main",
+  "selectedTag": "v0.1.0",
+  "tag": "v0.1.0",
+  "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+  "projectType": "postgresql-extension",
+  "manifests": [
+    "pgr_dmmsy.control",
+    "Makefile",
+    "sql/pgr_dmmsy--0.1.0.sql"
+  ],
+  "dependencies": {
+    "postgresql": "14+ declared build prerequisite",
+    "pgrouting": "3.x declared build prerequisite; required extension dependency",
+    "build": "C compiler, make, PostgreSQL server headers and PGXS"
+  },
+  "sourcePaths": [
+    "README.md",
+    "COMPILE.md",
+    "INSTALL.md",
+    "pgr_dmmsy.control",
+    "Makefile",
+    "sql/pgr_dmmsy--0.1.0.sql",
+    "src/dmmsy.c",
+    "src/dmmsy_algorithm.c",
+    "src/graph.c",
+    "src/minheap.c",
+    "src/ds_blocklist.c",
+    "test/c/Makefile",
+    "test/c/test_graph.c",
+    "test/c/test_minheap.c",
+    "test/c/test_algorithm.c",
+    "test/c/test_edge_cases.c",
+    ".github/workflows/ci.yml",
+    ".github/workflows/release.yml"
+  ],
+  "github": {
+    "latestRelease": "v0.1.0",
+    "head": "f8de14341094b1e2d74ed48d4d76a19e66c4cf36",
+    "releasedHeadDiffers": true
+  },
+  "distribution": {
+    "type": "github-release-assets",
+    "release": "v0.1.0",
+    "publishedAt": "2026-03-01T20:28:10Z",
+    "assets": [
+      {
+        "name": "pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+        "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+        "bytes": 53878,
+        "sha256": "78346bbc7c2ee1ea6687da3112bbcf5149a78878803d1eb0bf042aaf1cead7e1",
+        "downloadVerified": true,
+        "githubDigestMatched": true,
+        "archiveContents": [
+          ".",
+          "./pgr_dmmsy.control",
+          "./pgr_dmmsy.so",
+          "./pgr_dmmsy--0.1.0.sql"
+        ]
+      },
+      {
+        "name": "pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+        "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+        "bytes": 7774,
+        "sha256": "aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc",
+        "downloadVerified": true,
+        "githubDigestMatched": true,
+        "archiveContents": [
+          ".",
+          "./pgr_dmmsy.control",
+          "./pgr_dmmsy--0.1.0.sql",
+          "./pgr_dmmsy.dylib"
+        ]
+      },
+      {
+        "name": "pgr_dmmsy-v0.1.0-source.tar.gz",
+        "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-source.tar.gz",
+        "bytes": 32003,
+        "sha256": "e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8",
+        "downloadVerified": true,
+        "githubDigestMatched": true,
+        "archiveContents": [
+          "pgr_dmmsy-0.1.0/src",
+          "pgr_dmmsy-0.1.0/src/minheap.h",
+          "pgr_dmmsy-0.1.0/src/dmmsy.c",
+          "pgr_dmmsy-0.1.0/src/dmmsy.h",
+          "pgr_dmmsy-0.1.0/src/ds_blocklist.c",
+          "pgr_dmmsy-0.1.0/src/graph.c",
+          "pgr_dmmsy-0.1.0/src/minheap.c",
+          "pgr_dmmsy-0.1.0/src/dmmsy_algorithm.c",
+          "pgr_dmmsy-0.1.0/src/graph.h",
+          "pgr_dmmsy-0.1.0/src/ds_blocklist.h",
+          "pgr_dmmsy-0.1.0/sql",
+          "pgr_dmmsy-0.1.0/sql/pgr_dmmsy--0.1.0.sql",
+          "pgr_dmmsy-0.1.0/verify",
+          "pgr_dmmsy-0.1.0/verify/tests",
+          "pgr_dmmsy-0.1.0/verify/tests/03_negative.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/run_all.sh",
+          "pgr_dmmsy-0.1.0/verify/tests/06_performance.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/05_weights.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/04_topology.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/01_correctness.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/08_invariants.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/07_integration.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/09_api_contract.sql",
+          "pgr_dmmsy-0.1.0/verify/tests/02_predecessors.sql",
+          "pgr_dmmsy-0.1.0/verify/sql",
+          "pgr_dmmsy-0.1.0/verify/sql/00_setup.sql",
+          "pgr_dmmsy-0.1.0/verify/sql/01_generators.sql",
+          "pgr_dmmsy-0.1.0/verify/sql/02_stub.sql",
+          "pgr_dmmsy-0.1.0/Makefile",
+          "pgr_dmmsy-0.1.0/pgr_dmmsy.control",
+          "pgr_dmmsy-0.1.0/README.md",
+          "pgr_dmmsy-0.1.0/COMPILE.md"
+        ]
+      }
+    ],
+    "missingAdvertisedAsset": "Windows x86_64 is mentioned in release notes but not present in the release asset list",
+    "composerOrNpmManifest": false
+  },
+  "license": {
+    "detected": null,
+    "note": "No LICENSE at selected tag; README links to a missing file"
+  },
+  "checks": {
+    "fixture": "passed",
+    "fixturePath": "maintenance/fixtures/pgr_dmmsy/verify.sh",
+    "compiler": "Apple Clang via system gcc",
+    "standaloneCChecks": 38,
+    "suites": {
+      "graph": 8,
+      "minheap": 8,
+      "algorithm": 11,
+      "edgeCases": 11
+    },
+    "database": "No PostgreSQL extension install/load/database execution",
+    "network": "Only public source and release downloads"
+  },
+  "limitations": [
+    "NULL/omitted target returns no rows in released C wrapper",
+    "Use positional BIGINT/BIGINT/BIGINT/FLOAT8 edge columns",
+    "max_levels counts phases, not hops",
+    "constant_degree accepted but unused by released core",
+    "Theoretical complexity and README benchmarks not verified"
+  ],
+  "unavailableChecks": [
+    "PostgreSQL binary build/load and release binary compatibility",
+    "SQL quickstart execution",
+    "PGXS installcheck and SQL verify suites",
+    "Performance benchmarks and sanitizers",
+    "Complete PostgreSQL version matrix"
+  ]
+}

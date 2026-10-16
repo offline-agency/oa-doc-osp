@@ -1,5 +1,5 @@
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
-const groupFor = { 'current-release': 'Current integrations', 'historical-integration': 'Legacy' };
+const groupFor = { 'current-release': 'Current projects', 'historical-integration': 'Legacy', 'source-reference': 'Source references' };
 export function validateCatalog(homepage, packages) {
   const errors = [], used = new Set();
   const groups = new Set((homepage.projectTypes || []).map(group => group.title));
@@ -19,6 +19,10 @@ export function validateDocument(data, source) {
   if (!nonempty(data.title) || !nonempty(data.description)) errors.push(`${source.name}: missing title or description`);
   if (source.status === 'unverified-placeholder') {
     if (data.packageStatus !== source.status || data.packageVersion || data.sourceCommit) errors.push(`${source.name}: unverified page claims a release`);
+    return errors;
+  }
+  if (source.status === 'source-reference') {
+    if (data.packageVersion || data.sourceCommit !== source.commit || source.selectedTag) errors.push(`${source.name}: source reference claims a release or mismatches its commit`);
     return errors;
   }
   if (String(data.packageVersion) !== source.selectedTag || data.sourceCommit !== source.commit) errors.push(`${source.name}: page release/SHA differs from manifest`);

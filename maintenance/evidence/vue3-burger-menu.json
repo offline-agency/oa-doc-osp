@@ -1,0 +1,79 @@
+{
+  "verifiedOn": "2026-10-16",
+  "projectType": "vue-library",
+  "ciClaim": "Workflow/source inspection only; no remote CI success claim.",
+  "lockfile": null,
+  "name": "vue3-burger-menu",
+  "package": "@offlineagency/vue3-burger-menu",
+  "docsPage": "vue3-burger-menu.md",
+  "route": "/vue3-burger-menu/",
+  "repository": "https://github.com/offline-agency/vue3-burger-menu",
+  "defaultBranch": "main",
+  "selectedTag": "1.1.2",
+  "tag": "1.1.2",
+  "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+  "status": "current",
+  "releaseUrl": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
+  "releasePublishedAt": "2023-02-07T11:21:40Z",
+  "manifestVersion": "1.0.0",
+  "packageManifest": "package.json",
+  "npmRequirements": {
+    "vue": "^3.0.0-0"
+  },
+  "dependencies": {
+    "dependencies": {
+      "vue": "^3.0.0-0"
+    }
+  },
+  "sourcePaths": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "vue.config.js",
+    "src/components/index.js",
+    "src/components/Menu.vue",
+    "src/components/Menu/slide.vue",
+    "src/components/Menu/push.vue",
+    "src/components/Menu/reveal.vue",
+    "src/components/Menu/pushRotate.vue",
+    "src/components/Menu/scaleDown.vue",
+    "src/components/Menu/scaleRotate.vue"
+  ],
+  "distribution": {
+    "kind": "npm",
+    "registry": "https://registry.npmjs.org/@offlineagency%2fvue3-burger-menu",
+    "version": "1.0.0",
+    "sourceRef": "e19adffec7e1603544b2c847f6aff5d02c7a5658",
+    "distRef": "sha1:161137e9d41c13bf8b0b91fb423977921ddda577",
+    "tarball": "https://registry.npmjs.org/@offlineagency/vue3-burger-menu/-/vue3-burger-menu-1.0.0.tgz",
+    "integrity": "sha512-UeER7cylg7dd4fQZsGT11rKrDIN7orvupcsFqQBfNxywzzttStqFCuR1rdKsmT0tq+oaTp7mij6uynJgpSAHMA==",
+    "verifiedOn": "2026-10-16",
+    "files": [
+      "LICENSE",
+      "package.json",
+      "README.md"
+    ],
+    "declaredMain": "./dist/vue3-burger-menu.common.js",
+    "mainExists": false,
+    "releaseSourceMatches": false
+  },
+  "localVerification": {
+    "fixture": "maintenance/fixtures/vue3-burger-menu/smoke.mjs",
+    "results": "maintenance/fixtures/vue3-burger-menu/results.json",
+    "node": "25.0.0",
+    "exampleSyntax": "Vue SFC parse, compileScript and compileTemplate passed using existing docs compiler; no package import/typecheck/browser assertion.",
+    "network": "none; synthetic DOM and Vue boundaries",
+    "result": "passed; missing-main defect confirmed",
+    "finalNode": "24.13.0"
+  },
+  "license": {
+    "manifest": "MIT",
+    "file": "LICENSE"
+  },
+  "unavailable": [
+    "Published artifact has no bundle or CSS; normal npm import cannot work.",
+    "Source build, browser animation, accessibility, mobile behavior and SSR integration not exercised.",
+    "Upstream repository has no test files or test script."
+  ],
+  "notes": "Release GitHub 1.1.2 e manifest/npm1.0.0 distinti; npm gitHead diverso dal tag. Export default oggetto, non named exports; props reali disableEsc e width stringa numerica; onStateChange mai chiamato."
+}
