@@ -4,10 +4,12 @@ import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
 import matter from 'gray-matter';
+// Site-authored pages outside the package registry.
+export const sitePages=['open-source-philosophy.md'];
 export function pageSources(root){
  const sources=JSON.parse(readFileSync(resolve(root,'maintenance/package-sources.json'))).packages;
  const versions=JSON.parse(readFileSync(resolve(root,'maintenance/documentation-versions.json'))).releases;
- const files=new Set(['README.md',...sources.map(source=>source.docsPage),...versions.flatMap(version=>version.pages.map(page=>page.file))]);
+ const files=new Set(['README.md',...sitePages,...sources.map(source=>source.docsPage),...versions.flatMap(version=>version.pages.map(page=>page.file))]);
  for(const source of sources){const slug=source.name.split('/').at(-1),directory=resolve(root,slug);if(existsSync(directory))for(const file of readdirSync(directory,{recursive:true}).filter(file=>file.endsWith('.md')))files.add(slug+'/'+file);}
  return [...files].filter(file=>existsSync(resolve(root,file))).map(file=>{
   const text=readFileSync(resolve(root,file),'utf8'),{data}=matter(text);

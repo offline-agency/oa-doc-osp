@@ -116,6 +116,15 @@ for (const path of guides) {
   if (path === 'docs/v4/reference.md') {
     const old = 'Rows whose id is not in the list are removed, existing ids get the new quantity, and new ids are added.'
     if (!body.includes(old)) throw new Error('Review upstream sync identity correction')
+    // The retained upstream README starts with its own H1; keep one page H1 by
+    // demoting every later heading outside fenced code. Heading IDs are unchanged.
+    let fenced = false, first = true
+    body = body.split('\n').map(line => {
+      if (/^(```|~~~)/.test(line)) fenced = !fenced
+      if (fenced || !/^#{1,5} /.test(line)) return line
+      if (first && line.startsWith('# ')) { first = false; return line }
+      return '#' + line
+    }).join('\n')
     body = body.replace(old, 'Sync identifies rows by product ID **and options**, not product ID alone. Matching rows receive the new quantity and keep existing prices; absent variants are removed and new variants are added. Supplying an ID without its previous options replaces that variant. Duplicate target identities are rejected. See [variants and wishlist](/laravel-cart/variants-and-wishlist/) and the [released mutation tests](' + sourceURL('tests/Regression/MutationCorrectnessTest.php') + ').')
   }
   if (path === 'docs/v4/index.md') {

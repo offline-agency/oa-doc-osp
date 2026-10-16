@@ -16,7 +16,7 @@ console.log(`Versioned HTML: ${versions.releases.length} releases and ${snapshot
 // Static publication metadata and redirects are generated without host rewrite rules.
 const {readdir,writeFile,mkdir}=await import('node:fs/promises');
 const {dirname}=await import('node:path');
-const {pagePolicy,withSeo,redirectHtml,sitemap}=await import('./site-publication.mjs');
+const {pagePolicy,withSeo,redirectHtml,sitemap,llmsTxt}=await import('./site-publication.mjs');
 const root='.vuepress/dist';
 const files=(await readdir(root,{recursive:true})).filter(file=>file.endsWith('.html'));
 const bodies=new Map();
@@ -59,8 +59,11 @@ const index=pageSources(process.cwd()).filter(page=>policies[page.route]?.robots
  return {url:policies[page.route].canonical,title:version?.archive?'Archived '+version.version+' — '+page.title:page.title,description:page.description,changedOn:history[page.route].changedOn,...(version?{package:version.name,documentationKey:version.documentationKey || version.version,packageVersion:version.version,status:version.archive?'archived':'stable',sourceCommit:version.commit}:{})};
 });
 await writeFile(root+'/documentation-index.json',JSON.stringify({schemaVersion:1,pages:index},null,2)+'\n');
+// llms.txt reuses each page's generated <title>, without the brand suffix.
+const headTitle=route=>(bodies.get(route)||'').match(/<title>([^<]*)<\/title>/)?.[1]?.replace(/ \| OFFLINE Agency$/,'').replaceAll('&amp;','&');
+await writeFile(root+'/llms.txt',llmsTxt(index.map(page=>({...page,title:headTitle(new URL(page.url).pathname)||page.title}))));
 await writeFile(root+'/robots.txt','User-agent: *\nAllow: /\nSitemap: https://docs.offlineagency.com/sitemap.xml\n');
-console.log(`Publication: ${mappings.length} static redirects, self/alias canonical policy, next noindex, sitemap and robots generated.`);
+console.log(`Publication: ${mappings.length} static redirects, self/alias canonical policy, next noindex, sitemap, robots and llms.txt generated.`);
 
 let anchors = 0;
 for (const [route, ids] of Object.entries(inventory.routes)) {

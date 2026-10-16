@@ -197,10 +197,12 @@
       ],
       "catalog": {
         "title": "laravel-cart",
-        "details": "Laravel 12/13 shopping carts with VAT, coupons, atomic database mutations and opt-in guest transfer. Released package 4.1.0; checkout tax limits documented.",
+        "details": "Shopping carts with VAT, coupons, atomic database mutations and opt-in guest transfer. Checkout tax limits documented.",
+        "requirements": "Laravel 12 / 13",
         "category": "Current project",
         "maintenanceStatus": "maintained",
-        "ecosystem": "php"
+        "ecosystem": "php",
+        "seoTitle": "Laravel Cart v4: VAT, coupons and persistent carts"
       },
       "documentation": {
         "strategy": "compatibility",
@@ -255,6 +257,27 @@
             "license": "/laravel-cart/legacy/#license"
           }
         }
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-cart/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": "SECURITY.md",
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": {
+          "status": "passed",
+          "checkedOn": "2026-10-16",
+          "url": "https://github.com/offline-agency/laravel-cart/actions/runs/38922612753",
+          "summary": "CI workflow passed on the release commit (PHP 8.4/8.5, Laravel 12/13, MySQL 8.4, PostgreSQL 17)"
+        },
+        "supportPolicy": null
       }
     },
     {
@@ -500,10 +523,26 @@
       ],
       "catalog": {
         "title": "laravel-webex",
-        "details": "Implemented Webex Meetings and Messaging APIs with per-request bearer tokens, typed results and guarded pagination. Release 2.0.0.",
+        "details": "Webex Meetings and Messaging APIs with per-request bearer tokens, typed results and guarded pagination.",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-webex/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": "SECURITY.md",
+        "privateVulnerabilityReporting": true,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -778,10 +817,27 @@
       ],
       "catalog": {
         "title": "laravel-fatture-in-cloud-v2",
-        "details": "Fatture in Cloud API v2 wrapper, package 3.0.1. Company configuration, typed results and implemented endpoint coverage.",
+        "details": "Fatture in Cloud API v2 wrapper. Company configuration, typed results and implemented endpoint coverage.",
+        "requirements": "API v2",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": ".github/SECURITY.md",
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -856,10 +912,26 @@
       ],
       "catalog": {
         "title": "laravel-aruba-sms",
-        "details": "Aruba SMS notification channel, message builder, sandbox mode and credit monitoring. Release 1.1.0.",
+        "details": "Aruba SMS notification channel, message builder, sandbox mode and credit monitoring.",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-aruba-sms/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE"
+        },
+        "changelog": null,
+        "contributing": "CONTRIBUTING.md",
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -956,10 +1028,27 @@
       ],
       "catalog": {
         "title": "laravel-mongo-auto-sync",
-        "details": "Synchronize configured embedded copies between MongoDB documents through explicit CRUD methods. Documented release 3.1.1; see its declared framework requirements.",
+        "details": "Synchronize configured embedded copies between MongoDB documents through explicit CRUD methods.",
+        "requirements": "See requirements",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-mongo-auto-sync/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": null,
+        "contributing": "CONTRIBUTING.md",
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1040,10 +1129,26 @@
       ],
       "catalog": {
         "title": "laravel-fatture-in-cloud",
-        "details": "Historical 2.2.8 wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.",
+        "details": "Wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.",
         "category": "Legacy",
         "maintenanceStatus": "legacy",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-fatture-in-cloud/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": null,
+        "contributing": "CONTRIBUTING.md",
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1110,10 +1215,26 @@
       ],
       "catalog": {
         "title": "laravel-bank-of-italy",
-        "details": "Retrieve Bank of Italy exchange-rate data through the released CSV API wrapper. Version 1.0.1, with explicit query and error handling.",
+        "details": "Bank of Italy exchange-rate data through the released CSV API wrapper, with explicit query and error handling.",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-bank-of-italy/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1187,10 +1308,27 @@
       ],
       "catalog": {
         "title": "ODPS Validator",
-        "details": "Standalone JSON/YAML validation app with bundled schemas, browser-side results and documented schema limitations. Source release 1.0.1.",
+        "details": "Standalone JSON/YAML validation app with bundled schemas, browser-side results and documented schema limitations.",
+        "requirements": "Source release",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "javascript"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/odps-validator/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE"
+        },
+        "changelog": null,
+        "contributing": null,
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1295,10 +1433,24 @@
       },
       "catalog": {
         "title": "Braintree Vue 3",
-        "details": "Vue 3 Braintree composables and hosted fields, documented at a pinned source commit. No verified published package; evaluation guide only.",
+        "details": "Vue 3 Braintree composables and hosted fields. No verified published package.",
+        "requirements": "Evaluation only",
         "category": "Current project",
         "maintenanceStatus": "next",
         "ecosystem": "javascript"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/braintree-vue3/issues",
+        "license": null,
+        "changelog": "CHANGELOG.md",
+        "contributing": null,
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1394,10 +1546,27 @@
       },
       "catalog": {
         "title": "Vue 3 Burger Menu",
-        "details": "Off-canvas Vue 3 menus from GitHub release 1.1.2, with explicit source setup and a warning about the incomplete npm artifact.",
+        "details": "Off-canvas Vue 3 menus with explicit source setup and a warning about the incomplete npm artifact.",
+        "requirements": "GitHub release",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "javascript"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/vue3-burger-menu/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE"
+        },
+        "changelog": null,
+        "contributing": null,
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": null,
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1476,10 +1645,26 @@
       },
       "catalog": {
         "title": "SPID Laravel Trentino",
-        "details": "Laravel login through AAC Trentino OpenID Connect, with PKCE, token middleware and transaction logs. Release v2.3.0.",
+        "details": "Laravel login through AAC Trentino OpenID Connect, with PKCE, token middleware and transaction logs.",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/spid-laravel-trentino/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": "SECURITY.md",
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     },
     {
@@ -1626,10 +1811,24 @@
       },
       "catalog": {
         "title": "pgr_dmmsy",
-        "details": "PostgreSQL shortest-path extension for research and evaluation. Release v0.1.0, with explicit targets, build requirements and implementation limits.",
+        "details": "PostgreSQL shortest-path extension with explicit targets, build requirements and implementation limits.",
+        "requirements": "Research use",
         "category": "Current project",
         "maintenanceStatus": "maintained",
         "ecosystem": "postgresql"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-16",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/pgr_dmmsy/issues",
+        "license": null,
+        "changelog": null,
+        "contributing": ".github/CONTRIBUTING.md",
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": null
       }
     }
   ],

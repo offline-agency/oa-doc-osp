@@ -83,7 +83,7 @@
       "count": 0
     }
   ],
-  "keyboard": "Tab order and Space reset",
+  "keyboard": "Tab order, Space reset and search",
   "mobile": "PostgreSQL selection and reset; no page overflow",
   "noJavaScriptCards": 12,
   "runtimeErrors": [],

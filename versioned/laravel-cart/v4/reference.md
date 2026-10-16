@@ -19,18 +19,18 @@ This is the expanded v4 reference retained from the README. For updated guarante
 read [money and tax](/laravel-cart/v4/money-and-tax/), [storage](/laravel-cart/v4/storage/), and
 [authentication](/laravel-cart/v4/authentication/). The runnable [usage example](/laravel-cart/v4/usage/) is canonical.
 
-# Laravel Cart
+## Laravel Cart
 
 
 ---
 
-## Overview
+### Overview
 
 `offline-agency/laravel-cart` is a Laravel shopping cart with first-class VAT and fiscal support. It was forked from `Crinsane/LaravelShoppingcart` and re-namespaced under `OfflineAgency\LaravelCart`. It provides session and database storage drivers, item-level and cart-level coupons, tax breakdowns, Artisan commands, API resources and a testing fake.
 
 ---
 
-## Compatibility
+### Compatibility
 
 | PHP / Laravel | 12.x | 13.x |
 |:---:|:---:|:---:|
@@ -44,7 +44,7 @@ read [money and tax](/laravel-cart/v4/money-and-tax/), [storage](/laravel-cart/v
 
 ---
 
-## Installation
+### Installation
 
 ```bash
 composer require offline-agency/laravel-cart:4.1.0
@@ -72,7 +72,7 @@ You only need the migrations for the features you use.
 
 ---
 
-## Quick Start
+### Quick Start
 
 ```php
 use OfflineAgency\LaravelCart\Facades\Cart;
@@ -93,7 +93,7 @@ Explicit input amounts are per unit; computed item subtotal/total/taxTotal repre
 
 ---
 
-## Configuration Reference
+### Configuration Reference
 
 After publishing, the file is `config/cart.php`.
 
@@ -131,9 +131,9 @@ One more key is read but not present in the published file:
 
 ---
 
-## Usage
+### Usage
 
-### Adding items
+#### Adding items
 
 **Scalar arguments:**
 
@@ -179,7 +179,7 @@ Cart::add(id: 1, name: 'T-shirt', qty: 1, price: 20.00, totalPrice: 24.40, vat: 
 Cart::get($rowId)->options->size; // "L"
 ```
 
-### Updating items
+#### Updating items
 
 ```php
 Cart::update($rowId, 5);                                    // set the quantity
@@ -189,14 +189,14 @@ Cart::update($rowId, $product);                             // from a Buyable (i
 
 `update()` returns the updated `CartItem`, or `null` when the quantity drops to zero or below (the row is removed). Changing `id` or `options` with the array form changes the row id; if the new row id already exists, the quantities are merged.
 
-### Removing items
+#### Removing items
 
 ```php
 Cart::remove($rowId);
 Cart::destroy(); // empties the current instance, including cart-level coupons, metadata and cart options
 ```
 
-### Retrieving content
+#### Retrieving content
 
 ```php
 Cart::content();      // Collection<string, CartItem>, keyed by row id
@@ -210,7 +210,7 @@ Cart::isNotEmpty();
 Cart::sum('qty');     // sum of any item attribute
 ```
 
-### Multiple instances
+#### Multiple instances
 
 ```php
 Cart::instance('wishlist')->add($product);
@@ -220,7 +220,7 @@ Cart::instance()->content(); // back to "default"
 
 `instance()` switches the shared cart object, so later `Cart::` calls in the same request or job stay on that instance until you switch again.
 
-### Model association
+#### Model association
 
 ```php
 $item = Cart::add(id: 1, name: 'Shirt', qty: 1, price: 29.99, totalPrice: 36.59, vat: 6.60);
@@ -232,7 +232,7 @@ Cart::get($item->rowId)->model;           // what was passed to associate()
 
 Adding a `Buyable` associates the model instance automatically. Associating a class name that does not exist throws `UnknownModelException`.
 
-### Search
+#### Search
 
 ```php
 Cart::search(fn ($item) => $item->id === 1);           // Collection
@@ -240,7 +240,7 @@ Cart::isAlreadyAdded(1, \App\Models\Product::class);   // bool (id + associated 
 Cart::searchById(1, \App\Models\Product::class);       // ?CartItem
 ```
 
-### Serialization
+#### Serialization
 
 ```php
 Cart::toArray();   // instance, items, count, uniqueCount, subtotal, vat, total, discount, coupons, meta, isEmpty
@@ -248,7 +248,7 @@ Cart::toJson();
 Cart::snapshot();  // toArray() plus an ISO 8601 "timestamp"
 ```
 
-### Metadata and cart options
+#### Metadata and cart options
 
 ```php
 Cart::setMeta('notes', 'Leave at door');
@@ -263,7 +263,7 @@ Cart::getOptionsByKey('gift');   // true
 
 Metadata and options are stored per instance by the active storage driver and are cleared by `destroy()`.
 
-### Limits
+#### Limits
 
 ```php
 // config/cart.php
@@ -295,7 +295,7 @@ try {
 Cart::meetsMinimum(); // bool, compares the total before cart-level coupons
 ```
 
-### Weight
+#### Weight
 
 `Cart::weight()` sums the `weight` item option multiplied by the quantity:
 
@@ -306,7 +306,7 @@ Cart::weight(); // 3.0
 
 `Buyable::getWeight()` is not read automatically. To use it, pass it as the `weight` option (for example from your model's `getOptions()`).
 
-### Syncing with a list
+#### Syncing with a list
 
 ```php
 Cart::sync([
@@ -319,9 +319,9 @@ Sync identifies rows by product ID **and options**, not product ID alone. Matchi
 
 ---
 
-## Tax and Rounding
+### Tax and Rounding
 
-### How VAT is computed
+#### How VAT is computed
 
 When you pass a `vat` amount, it is used as is and the rate is derived from it (`vatRate = 100 * vat / price`).
 
@@ -347,7 +347,7 @@ Cart::add(id: 1, name: 'Standard', qty: 1, price: 81.97, totalPrice: 100.00, vat
 Cart::add(id: 2, name: 'Reduced', qty: 1, price: 90.91, totalPrice: 100.00, vat: 9.09);   // ~10%
 ```
 
-### Totals
+#### Totals
 
 ```php
 Cart::subtotal();       // net total of the items
@@ -364,7 +364,7 @@ Every amount is rounded with `format.decimals` and `format.rounding_mode`. The t
 Cart::numberFormat(Cart::total(), null, null, null); // "1,234.50" with the configured format
 ```
 
-### VAT breakdown (fiscal receipts)
+#### VAT breakdown (fiscal receipts)
 
 ```php
 Cart::vatBreakdown();
@@ -374,7 +374,7 @@ Cart::vatBreakdown();
 
 Amounts are formatted strings. The breakdown includes item-level coupons but not cart-level coupons (see below).
 
-### Configuration examples
+#### Configuration examples
 
 ```php
 // EU, VAT included at 22%
@@ -389,7 +389,7 @@ Amounts are formatted strings. The breakdown includes item-level coupons but not
 
 To rename the tax (e.g. "GST"), publish the translations and change `tax_name` in `lang/vendor/laravel-cart/{locale}/cart.php`.
 
-### Buyable and FiscalBuyable
+#### Buyable and FiscalBuyable
 
 `Buyable` is a getter-only contract (`getId`, `getName`, `getSubtitle`, `getQty`, `getPrice`, `getTotalPrice`, `getVat`, `getUrlImg`, `getOptions`, `getWeight`). The `CanBeBought` trait implements all of them from common attributes.
 
@@ -414,7 +414,7 @@ $item->productFcCode;
 
 ---
 
-## Coupons and Discounts
+### Coupons and Discounts
 
 There are two independent kinds of coupon.
 
@@ -425,7 +425,7 @@ There are two independent kinds of coupon.
 | Reflected in `subtotal()`, `vat()`, `vatBreakdown()` | Yes | No |
 | Listed by | `coupons()`, `getCoupons()`, `hasCoupon()` | `listCoupons()`, `getGlobalCoupons()`, `hasCartCoupon()` |
 
-### Item-level coupons
+#### Item-level coupons
 
 ```php
 $item = Cart::add(id: 1, name: 'Shirt', qty: 3, price: 81.97, totalPrice: 100.00, vat: 18.03);
@@ -441,7 +441,7 @@ Cart::removeAllCoupons();                    // detaches every item-level coupon
 - The discount is applied once per row: the cart counts the first unit at the discounted price and the remaining units at the original price.
 - Passing `null` as the row id falls back to the deprecated `applyGlobalCoupon()`, which adds a negative `discountCartItem` row. Use cart-level coupons instead.
 
-### Cart-level coupons
+#### Cart-level coupons
 
 ```php
 use OfflineAgency\LaravelCart\CartCoupon;
@@ -475,7 +475,7 @@ Cart::removeCartCoupon('SAVE10');      // by hash or code
 $removedCodes = Cart::syncCoupons();
 ```
 
-### Eloquent coupons: Couponable and HasDiscount
+#### Eloquent coupons: Couponable and HasDiscount
 
 ```php
 use Illuminate\Database\Eloquent\Model;
@@ -494,18 +494,18 @@ Cart::addCoupon(Promo::find(1));
 
 ---
 
-## Storage
+### Storage
 
 There are two separate persistence mechanisms:
 
 1. **The storage driver** (`storage.driver`) holds the live cart, read and written by every cart call.
 2. **`store()` / `restore()`** save and reload an explicit snapshot in the `cart` table under an identifier you choose. This works the same with either driver.
 
-### Session driver (default)
+#### Session driver (default)
 
 No setup. Each instance is kept in the session under `cart.{instance}`, together with its cart-level coupons, cart options and metadata. The cart lives as long as the session.
 
-### Database driver
+#### Database driver
 
 ```bash
 php artisan vendor:publish --provider="OfflineAgency\LaravelCart\CartServiceProvider" --tag=cart-database-migrations
@@ -541,11 +541,11 @@ The user column is nullable and indexed. Its schema type comes from `cart.users.
 
 **Read cache.** Within one request or job, reads are cached per owner and instance. The cache re-checks the TTL before it is used.
 
-### Lifetime of the cart object
+#### Lifetime of the cart object
 
 `CartStorage` and the `cart` binding (the facade root) are registered as **scoped** bindings. You get one instance per HTTP request, per queued job and per Octane request. The current instance name, the loaded cart-level coupons and the read cache never leak between users on a long-running worker. Inside a single request, calls through the facade share the same object.
 
-### Custom drivers
+#### Custom drivers
 
 Implement `OfflineAgency\LaravelCart\Contracts\CartStorage`:
 
@@ -567,7 +567,7 @@ The keys are `cart.{instance}` (a `Collection` of `CartItem`) and the same key w
 $this->app->scoped(CartStorage::class, RedisCartStorage::class);
 ```
 
-### Saving and restoring carts (`store()` / `restore()`)
+#### Saving and restoring carts (`store()` / `restore()`)
 
 ```bash
 php artisan vendor:publish --provider="OfflineAgency\LaravelCart\CartServiceProvider" --tag=migrations
@@ -598,11 +598,11 @@ Cart::restore($identifier, keepStored: true);                 // do not delete t
 
 ---
 
-## Middleware
+### Middleware
 
 Both middleware work on `store()` / `restore()` snapshots whose identifier is the user's auth identifier (`$user->getAuthIdentifier()`). Both swallow restore errors.
 
-### CartMergeMiddleware
+#### CartMergeMiddleware
 
 ```php
 'middleware' => ['merge_on_login' => true],
@@ -610,7 +610,7 @@ Both middleware work on `store()` / `restore()` snapshots whose identifier is th
 
 After the response has been produced, for an authenticated user, it restores the snapshot stored under the user's id with `mergeOnRestore: true` and `keepStored: true`. Rows already in the current cart win. This runs at most once per session id, tracked with a `cart_guest_merged_{sessionId}` session flag. It does not move a guest cart of the database driver (see [Guest to login](/laravel-cart/v4/reference/#database-driver)).
 
-### CartRestoreMiddleware
+#### CartRestoreMiddleware
 
 ```php
 'middleware' => ['auto_restore' => true],
@@ -618,7 +618,7 @@ After the response has been produced, for an authenticated user, it restores the
 
 Before the request is handled, for an authenticated user whose current cart is empty, it restores the snapshot stored under the user's id (merge, keep stored).
 
-### Registration
+#### Registration
 
 ```php
 // bootstrap/app.php
@@ -635,7 +635,7 @@ use OfflineAgency\LaravelCart\Http\Middleware\CartRestoreMiddleware;
 
 ---
 
-## Events
+### Events
 
 Successful live mutation events follow persistence, and database outer transactions defer them until final commit. A listener throwing after commit does not undo the write. All typed events are `final readonly` classes in `OfflineAgency\LaravelCart\Events`:
 
@@ -662,7 +662,7 @@ Unless `cart.use_legacy_events` is `false`, the string events from the 3.x API a
 
 ---
 
-## Artisan Commands
+### Artisan Commands
 
 Unless noted, the commands work on the `store()` / `restore()` table (`cart.database.table`).
 
@@ -678,7 +678,7 @@ Unless noted, the commands work on the `store()` / `restore()` table (`cart.data
 
 ---
 
-## API Resources
+### API Resources
 
 ```php
 use OfflineAgency\LaravelCart\Resources\CartItemResource;
@@ -690,7 +690,7 @@ return CartItemResource::collection(Cart::content()); // CartItem::toArray() for
 
 ---
 
-## Localization
+### Localization
 
 Translations ship for English (`en`) and Italian (`it`) under the `laravel-cart` namespace.
 
@@ -702,7 +702,7 @@ Edit `lang/vendor/laravel-cart/{locale}/cart.php`, or copy the `en` folder to ad
 
 ---
 
-## Testing
+### Testing
 
 `Cart::fake()` swaps the facade for a `CartFake` that records the typed events dispatched through it:
 
@@ -733,7 +733,7 @@ The fake always uses session storage, whatever driver is configured. Events stil
 
 ---
 
-## Development
+### Development
 
 ```bash
 composer install
@@ -748,19 +748,19 @@ See [CONTRIBUTING.md](https://github.com/offline-agency/laravel-cart/blob/b89d32
 
 ---
 
-## Releases
+### Releases
 
 Every pull request merged into `main` gets its own SemVer tag (unprefixed, e.g. `4.0.0`) and GitHub Release once CI has passed on its merge commit. The bump comes from a `release:major|minor|patch` label or the Conventional Commit title. See [.github/RELEASING.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/.github/RELEASING.md). Changes are listed in [CHANGELOG.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/CHANGELOG.md).
 
 ---
 
-## Upgrading
+### Upgrading
 
 See [UPGRADE.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/UPGRADE.md) for upgrading from 3.x to 4.x.
 
 ---
 
-## License
+### License
 
 Open-source software licensed under the [MIT License](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE).
 

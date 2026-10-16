@@ -4,7 +4,12 @@
   "pages": {
     "/": {
       "file": "README.md",
-      "sha256": "2efee1fa89a26a8e1e112d29c26841ef47a783db0f2d7ba1b98c903799d2974e",
+      "sha256": "68cb26e217b93ba5508ddedc84834f31930d7ab0027eb00be30778d0aa21d6ce",
+      "changedOn": "2026-10-16"
+    },
+    "/open-source-philosophy/": {
+      "file": "open-source-philosophy.md",
+      "sha256": "442eff9293484c65ed646cda1fffaaa8d9cfc13ff82732dc3ee4c9c353be29de",
       "changedOn": "2026-10-16"
     },
     "/laravel-cart/": {
@@ -299,7 +304,7 @@
     },
     "/laravel-cart/v4/reference/": {
       "file": "versioned/laravel-cart/v4/reference.md",
-      "sha256": "63b7d6197ad03a092412f44f7cd62751b851050d7e90b2804db54397cdd4d7fc",
+      "sha256": "c80280f0c74f0659c1cc59fb0829e2bdc7837d3b5923166ae8a1cf3c0e04ab30",
       "changedOn": "2026-10-16"
     },
     "/laravel-cart/v4/storage/": {
@@ -394,7 +399,7 @@
     },
     "/laravel-cart/reference/": {
       "file": "laravel-cart/reference.md",
-      "sha256": "0d152c56094202ab598ef5328b27aaba743ccd5353381122573f41943b2a1159",
+      "sha256": "26aca4571f090301d8c2f066df02b26623cc277693e0fe3c90737718a139b770",
       "changedOn": "2026-10-16"
     },
     "/laravel-cart/storage/": {
