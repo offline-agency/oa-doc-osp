@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar">
+  <aside id="docs-navigation" class="sidebar" aria-label="Package navigation">
     <NavLinks/>
     <slot name="top"/>
     <SidebarLinks :depth="0" :items="items"/>

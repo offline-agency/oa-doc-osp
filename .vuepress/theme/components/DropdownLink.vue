@@ -3,8 +3,11 @@
     class="dropdown-wrapper"
     :class="{ open }"
   >
-    <a
+    <button
+      type="button"
       class="dropdown-title"
+      :aria-expanded="open ? 'true' : 'false'"
+      @keydown.esc="open = false"
       @click="toggle"
     >
       <span class="title">{{ item.text }}</span>
@@ -12,7 +15,7 @@
         class="arrow"
         :class="open ? 'down' : 'right'"
       ></span>
-    </a>
+    </button>
 
     <DropdownTransition>
       <ul
@@ -81,6 +84,12 @@ export default {
   cursor pointer
   .dropdown-title
     display block
+    border 0
+    padding 0
+    background transparent
+    font inherit
+    color inherit
+    cursor pointer
     &:hover
       border-color transparent
     .arrow

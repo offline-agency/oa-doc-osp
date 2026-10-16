@@ -1,738 +1,309 @@
 ---
+title: Laravel MongoDB Relationships
+description: Configure legacy MongoDB embedded relationship synchronization with Laravel Mongo Auto Sync 3.1.1.
 meta:
   - name: description
-    content: This package provides a better support for MongoDB relationships in Laravel Projects.
+    content: Configure legacy MongoDB embedded relationship synchronization with Laravel Mongo Auto Sync 3.1.1.
 gitName: laravel-mongo-auto-sync
+packageVersion: '3.1.1'
+sourceCommit: 487a622ab48017f8839f4b90a0844d5c8fcbae7f
 ---
 
 # Laravel MongoDB Relationships
-This package provides a better support for [MongoDB](https://www.mongodb.com) relationships in [Laravel](https://laravel.com/) Projects.
-At low level all CRUD operations has been handled by [jenssegers/laravel-mongodb](https://github.com/jenssegers/laravel-mongodb)
 
+`offline-agency/laravel-mongo-auto-sync` adds explicit CRUD methods for synchronizing configured embedded copies between MongoDB documents. This guide describes published [3.1.1](https://github.com/offline-agency/laravel-mongo-auto-sync/releases/tag/3.1.1), checked against its [released source](https://github.com/offline-agency/laravel-mongo-auto-sync/tree/487a622ab48017f8839f4b90a0844d5c8fcbae7f) and [Packagist distribution](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync) on 16 October 2026.
 
-[![Github](./assets/icon/github.svg "Github Icon")](https://github.com/offline-agency/laravel-mongo-auto-sync)
-[![Latest Stable Version](https://poser.pugx.org/offline-agency/laravel-mongo-auto-sync/v/stable)](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync)
-[![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/laravel-mongo-auto-sync.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync)
-[![Build Status](https://img.shields.io/github/workflow/status/offline-agency/laravel-mongo-auto-sync/CI)](https://github.com/offline-agency/laravel-mongo-auto-sync/actions)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Quality Score](https://img.shields.io/scrutinizer/g/offline-agency/laravel-mongo-auto-sync.svg?style=flat-square)](https://scrutinizer-ci.com/g/offline-agency/laravel-mongo-auto-sync)
-[![StyleCI](https://github.styleci.io/repos/167277388/shield)](https://styleci.io/repos/167277388)
-[![codecov](https://codecov.io/gh/offline-agency/laravel-mongo-auto-sync/branch/master/graph/badge.svg?token=0BHADJQYAW)](https://codecov.io/gh/offline-agency/laravel-mongo-auto-sync)
+::: warning Legacy integration
+The stable release uses `Jenssegers\Mongodb\Eloquent\Model` and Illuminate 5–8 constraints. It is not a Laravel 12/13 integration. Development proposals, including a possible 4.x API, are not part of this release.
+:::
 
 ## Installation
 
-```bash
-composer require offlineagency/laravel-mongo-auto-sync
-```
-
 ### Prerequisites
-Make sure you have the MongoDB PHP driver installed. You can find installation instructions at [http://php.net/manual/en/mongodb.installation.php](http://php.net/manual/en/mongodb.installation.php)
+
+Install the [MongoDB PHP extension](https://www.php.net/manual/en/mongodb.installation.php), JSON support and a MongoDB server accessible from your application. Use an isolated development database for the examples.
 
 ### Package version Compatibility
 
-| This package | Laravel | Laravel MongoDB |
-| ------------ | ------- | --------------- |
-| 1.x          | 5.8.x   | 3.5.x           |
-| 1.x          | 6.x     | 3.6.x           |
-| 2.x          | 5.8.x   | 3.5.x           |
-| 2.x          | 6.x     | 3.6.x           |
-| 2.x          | 7.x     | 3.7.x           |
-| 2.x          | 8.x     | 3.8.x           |
-| 2.x          | 9.x     | 3.9.x           |
+These are the constraints in the released `composer.json`, rather than a tested combination matrix:
+
+| Dependency | Declared requirement in 3.1.1 |
+| --- | --- |
+| PHP | `>=7.4` |
+| Extensions | `ext-json`, `ext-mongodb` |
+| Illuminate Support, Container, Database, Events | `^5.0|^6.0|^7.0|^8.0` |
+| `jenssegers/mongodb` | `^3.6|^3.7|^3.8` |
 
 ### PHP Version Compatibility
-- Version 1: PHP 7.1, 7.2, 7.3
-- Version 2: PHP 7.4+
+
+A PHP lower bound does not ensure that every newer PHP runtime can resolve and run the legacy dependency stack. The checked workflow defines PHP 7.4, 8.0 and 8.1 against MongoDB 3.6, 4.0, 4.2, 5.0, 6.0 and 7.0. Current passing results for that matrix were not verified. No PHP 8.5 database execution was performed for this documentation.
+
+Install the exact documented release in a compatible application:
+
+```bash
+composer require offline-agency/laravel-mongo-auto-sync:3.1.1
+```
+
+The Composer vendor name contains a hyphen: `offline-agency`. Laravel discovers the service provider automatically.
 
 ## Features
-- Sync changes between collection with relationships after CRUD operations
-    - EmbedsOne & EmbedsMany 
-    
-#### Example without our package
-  
-  ``` php
-  //create a new Article with title "Game of Thrones" with Category "TV Series"
-  //assign data to $article       
-  $article->save();
-  /*
-  Article::class {
-    'title' => 'Game of Thrones',
-    'category' => Category::class {
-        'name' => 'TV Series'
-     }
-  }
-  */
-  
-  //Retrieve 'TV Series' category
-  $category = Category::where('name', 'TV Series')->first();
-  /*
-    Category::class {
-        'name' => 'Game of Thrones',
-        'articles' => null
-    }
-  */ 
-  ```
-  
-The sub document article has not been updated with the new article. So you will need some extra code to write in order to see the new article it in the category page. The number of sync depends on the number of the relationships and on the number of the entry in every single EmbedsMany relationships.
-  
-Total updates = ∑ (entry in all EmbedsMany relationships) + ∑ (EmbedsOne relationships)
-  
-As you can see the lines of extra code can rapidly increase, and you will write many redundant code.
- 
-#### Example with our package
-  
-  ``` php
-  //create a new Article with title "Game of Thrones" with Category "TV Series"
-  $article->storeWithSync($request);
-  /*
-  Article::class {
-    'title' => 'Game of Thrones',
-    'category' => Category::class {
-        'name' => 'TV Series'
-    }
-  }
-   */
-  //Retrieve 'TV Series' category
-  $category = Category::where('name', 'TV Series')->first();   
- /*
-  Category::class {
-    'name' => 'Game of Thrones',
-    'articles' => Article::class {
-        'title' => 'Game of Thrones'
-    }
-  }
-  */ 
-  ```
-The sub document article has been updated with the new article, with no need of extra code :tada: 
 
-You can see the new article on the category page because the package synchronizes the information for you by reading the Model Setup.
-  
-**These example can be applied for all write operations on the database.**
-- Referenced sub documents <Badge text="TO DO" type="error"/> 
-- Handle sub document as Model in order to exploit Laravel ORM support during write operation (without sync feature)<Badge text="TO BE TEST" type="warning"/> 
-- Handle referenced sub document as Model in order to exploit Laravel ORM support during write operation (without sync feature)<Badge text="TO DO" type="error"/> 
-- Advance cast field support
+The implemented synchronization paths cover `EmbedsOne` and `EmbedsMany`. You describe scalar fields in `$items`, embedded fields in `$mongoRelation`, and explicitly call `storeWithSync()`, `updateWithSync()` or `destroyWithSync()`. Ordinary `save()` calls do not acquire the package's synchronization workflow.
+
+<a id="example-without-our-package"></a>
+Without synchronization, changing a source document leaves manually duplicated embedded fields to application code.
+
+<a id="example-with-our-package"></a>
+With configured target relationships, these methods write the current document and update selected embedded copies on related documents. These are sequential writes: they do not provide atomic cross-collection updates, foreign-key enforcement or a general cascade-delete guarantee. An exception can leave earlier writes applied.
 
 ## Use cases
-- Blog: see demo [here](https://github.com/offline-agency/laravel-mongodb-blog)
-- Ecommerce
-- API System for mobile application o for generated static site
-- Any projects that require fast read operations and (slow) write operations that can be run on background
 
-### Before starting 
+The package targets applications that deliberately duplicate selected fields to make reads simpler, such as articles containing category summaries and categories containing article summaries. Consider the write cost and repair strategy for those copies before adopting it.
 
-To understand how the package works we see an example based on the following Model:
-- [Article](https://github.com/offline-agency/laravel-mongodb-blog/blob/master/app/Models/Article.php)
-- [Category](https://github.com/offline-agency/laravel-mongodb-blog/blob/master/app/Models/Category.php)
-- PrimaryCategory
+### Before starting
 
-and the following [MongoDB relationships](https://docs.mongodb.com/manual/applications/data-models-relationships/):
+Configure a connection named `mongodb` in your application's `config/database.php`; `MDModel` selects that connection by default. For example, merge this connection into the existing configuration:
 
-- Article [EmbedsMany](https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/) Category
-- Category [EmbedsMany](https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/) Article
-- Article [EmbedsOne](https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-one-relationships-between-documents/) PrimaryCategory
-- PrimaryCategory [EmbedsMany](https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/) Article
+```php
+return [
+    'connections' => [
+        'mongodb' => [
+            'driver' => 'mongodb',
+            'host' => env('MONGO_HOST', '127.0.0.1'),
+            'port' => (int) env('MONGO_PORT', 27017),
+            'database' => env('MONGO_DATABASE', 'mongo_sync_example'),
+        ],
+    ],
+];
+```
+
+This is application connection configuration. The environment names above are conventions chosen by your application, not package-specific settings. Configure authentication and connection options as required by your MongoDB server and the installed Jenssegers driver.
 
 ## Model setup
 
-Your model has to extend our [MDModel](https://github.com/offline-agency/laravel-mongo-auto-sync/blob/master/src/Http/Models/MDModel.php) class in order to use our extended methods for CRUD operations.
+Extend `OfflineAgency\MongoAutoSync\Http\Models\MDModel`, which extends the legacy Jenssegers model. The following minimal model has no relationships, so it demonstrates the CRUD contract without requiring counterpart collections. Save it as `app/Models/Article.php`:
 
-``` php
+```php
+namespace App\Models;
+
+use OfflineAgency\MongoAutoSync\Http\Models\MDModel;
+
 class Article extends MDModel
 {
-    //
+    protected $collection = 'articles';
+
+    protected $items = [
+        'title' => [],
+        'code' => ['is-editable' => false],
+    ];
+
+    protected $mongoRelation = [];
 }
 ```
 
 ### Fields
 
-Add ```$items``` attribute on your model class and fill it with a key-value array. 
-The key indicates the name of the field and the value contain its configuration parameters. 
-
-Below is a list of all possible configurations:
-
- [Field Types](#field-types)<br>
- [Editable](#editable-is-editable)<br>
- [Default value](#default-value)<br>
+Each `$items` key names a request field. Values are option arrays. Validate and authorize incoming data before invoking the package; the options do not replace Laravel validation.
 
 #### Field Types
 
-Below is a list of all possible field types:
+| Option | Behavior observed in 3.1.1 |
+| --- | --- |
+| No flag (`[]`) | Assign the incoming value without a special cast |
+| `is-ml` | Merge the incoming value under `config('app.locale')` |
+| `is-md` | Convert a date string to `MongoDB\BSON\UTCDateTime`; empty/null becomes null |
+| `is-editable` | Default true; false skips assignment on update, while creation still assigns |
+| `is-array` | Used when building target mini-model values; null becomes an empty array |
+| `is-carbon-date` | Used when building target mini-model date values |
 
- [Array](#array-is-array)<br>
- [Boolean](#boolean) <Badge text="TO DO" type="error"/><br>
- [Date](#date)<br>
- [Default](#default)<br>
- [Double](#double) <Badge text="TO DO" type="error"/> <br>
- [GeoJSON Objects](#geojson-objects) <Badge text="TO DO" type="error"/> <br>
- [Int](#int) <Badge text="TO DO" type="error"/> <br>
- [Multi language](#multi-language-is-ml)<br>
- [Slug](#slug) <Badge text="TO DO" type="error"/> <br>
- [String](#string) <Badge text="TO DO" type="error"/> <br>
- 
- **NB:**<br>
- The key is between brackets and the value is in boolean format.<br>
- ex: for Array type the key is ```is-array```
- 
-#### Array (is-array)
-Validation or casting of an array field of any type.
+<a id="array-is-array"></a>
+`is-array` is not a general validation/casting rule for ordinary `$items`: the plain-field writer only branches on `is-ml` and `is-md`.
 
-#### Boolean <Badge text="TO DO" type="error"/>
-Validation or casting in to a boolean value.
+<a id="date"></a>
+Date handling differs between plain fields and generated mini-models; use the flags only on the path for which they are implemented.
 
-#### Date
+<a id="multi-language-is-ml"></a>
+Multilingual values use the configured application locale as their array key; the package does not translate text.
 
- - **String (is-md)**<br> 
-Validation or casting a date in a string format and save it in [UTC Mongo date time](https://www.php.net/manual/en/class.mongodb-bson-utcdatetime.php). 
+<a id="editable-is-editable"></a>
+A non-editable field can still be required in a full update request: request presence is checked before editability. Use an explicit partial request when omitting it.
 
-- **Carbon (is-carbon-date)**<br>
-Validation or casting a [Carbon](https://carbon.nesbot.com/) instance date field and save it in [UTC Mongo date time](https://www.php.net/manual/en/class.mongodb-bson-utcdatetime.php). 
+<a id="default"></a>
+An empty option array means pass-through assignment, not a default value.
 
-#### Default 
-This is the default value that is assigned if no field type is defined. No validation or casting will be applied with this field type.
- 
-#### Double <Badge text="TO DO" type="error"/>
-Validation or casting in to a double value.
-
-#### GeoJSON Objects <Badge text="TO DO" type="error"/>
-Validation or casting in to [GeoJSON Objects](https://docs.mongodb.com/manual/reference/geojson/).
-
-#### Int <Badge text="TO DO" type="error"/>
-Validation or casting in to an int value.
-
-#### Multi language (is-ml)
-Save an array structure with where the key is the current language [^1] and the value is the string passed.
-
-[^1]: See Laravel docs here to understand how localization works. 
-
-
-``` php
-  /*
-  Article::class {
-    'title' => [
-        'en_EN' => 'Today news',
-        'es_ES' => 'Noticias de hoy',
-        'it_IT' => 'Notizie di oggi',
-        
-        .        
-        .
-        .
-
-        'zh_CN'=> '今天新闻'
-     }
-  }
-  */
-  ```
-
-#### Slug <Badge text="TO DO" type="error"/>
-Validation or casting in to a slugified string value.
-
-#### String <Badge text="TO DO" type="error"/>
-Validation or casting in to a string value.
-
-#### Editable (is-editable)
-This feature prevents unexpected field update.<br>
-Common use case: slug field of an article.
-
- **NB:**<br>
- The key is between brackets, and the value is in the boolean format.<br>
- ex: for Editable the key is ```is-array```
- 
-#### Default Value <Badge text="TO DO" type="error"/>
-This feature allows the setting of a default value when null is passed.
+<a id="boolean"></a>
+<a id="double"></a>
+<a id="geojson-objects"></a>
+<a id="int"></a>
+<a id="slug"></a>
+<a id="string"></a>
+<a id="default-value"></a>
+Dedicated boolean, double, GeoJSON, integer, slug, string and default-value field features advertised as TODO in older documentation are not implemented as general field flags. Prepare and validate those values in application code.
 
 ### Relationship
 
-``` php 
-class Article extends MDModel
+Mini-models describe the fields embedded into a parent. Extend `DefaultMini` for the conventional `ref_id` primary key and declare its `$items`. In a relationship with targets, `ref_id` identifies an existing target document; it does not create the target automatically.
+
+This is the shape of a targeted relationship configuration, based on the release's [Article and Category test models](https://github.com/offline-agency/laravel-mongo-auto-sync/tree/487a622ab48017f8839f4b90a0844d5c8fcbae7f/tests/Models). It is an extension to a fully configured model pair, not a standalone model:
+
+```php
+class Article extends \OfflineAgency\MongoAutoSync\Http\Models\MDModel
 {
-    {...}
-    
+    protected $items = ['title' => []];
+
     protected $mongoRelation = [
         'categories' => [
             'type' => 'EmbedsMany',
             'model' => 'App\Models\MiniCategory',
             'modelTarget' => 'App\Models\Category',
-            'methodOnTarget' => 'articlelist',
+            'methodOnTarget' => 'articles',
             'modelOnTarget' => 'App\Models\MiniArticle',
-        ]
+            'typeOnTarget' => 'EmbedsMany',
+        ],
     ];
-}
-```
 
-This is the possible configurations:
-
-- **key**: This is the relation name on the current collection
-
-- **type**: indicate the type of the relationship, and it can be [EmbedsOne](#embedsone) or [EmbedsMany](#embedsmany)
-
-- **mode**: (optional) currently not used
-
-- **model**: is the MiniModel of current collection
-
-- **modelTarget**: is the Model of the related collection
-
-- **methodOnTarget**: is the relation name on the model of the related collection
-
-- **modelOnTarget**: is the MiniModel of sub document of the target collection
-
-If you want to exploit all the benefits of Laravel ORM you have to define the relationships this way:
-
-``` php
-<?php
-
-class Article extends MDModel
-{
-    {...}
-
-    public function category()
+    public function categories()
     {
-        return $this->embedsOne('App\Models\MiniCategory'];
+        return $this->embedsMany('App\Models\MiniCategory');
     }
-
 }
-
-```
-So now when you dump ```$article->category``` you will get an instance of ```MiniCategory``` instead of an array.
-For more information about this feature you can check [here](https://github.com/jenssegers/laravel-mongodb#basic-usage-1)
-
-### Utilities
-
-#### Generate Model Documentation
-
-I suggest you to generate the PHP doc that takes to do a check when you save or update an object. To do it use [GenerateModelDocumentation](#generatemodeldocumentation) command. Run in your terminal:
-
-``` bash
-php artisan model-doc:generate {collection_name}
 ```
 
-::: tip
-You can write the collection_name with capital letter or small letter
-::: 
+| Key | Meaning |
+| --- | --- |
+| Relationship array key | Embedded attribute/method on the current model |
+| `type` | `EmbedsOne` or `EmbedsMany` |
+| `model` | Mini-model embedded into the current document |
+| `has-target` | Defaults to true; set false for an embed without target synchronization |
+| `modelTarget` | Model class used to find related documents by `ref_id` |
+| `methodOnTarget` | Embedded attribute/method to update on that target |
+| `modelOnTarget` | Mini-model representing the current document inside the target |
+| `typeOnTarget` | Target embed type; defaults to `EmbedsMany` |
 
-The generated doc will be like this:
+Declare matching `embedsOne()`/`embedsMany()` methods so embedded data is returned as models. Initialize target embed attributes and provide every field declared by the relevant mini-model. The target writer rejects missing/uninitialized attributes in some paths; a missing target document is skipped. `mode` does not control synchronization in this implementation.
 
-``` php
-/**
- *
- * Plain Fields
- *
- * @property string $id
- * @property array $title
- * @property string $slug
- * @property array $content
- * @property $planned_date
- *
- * Relationship
- *
- * @property MiniCategory
- *
- **/
-```
-
-The command checks if the model exist in your project and if it doesn’t, it will print an error message like this:
-`Error: <collection_name> Model not found`
-
-You can also change your model path in this file `config\laravel-mongo-auto-sync.php`: 
-
-``` php
-<?php
-
-return [
-    'model_path' => app_path() . '/Models',
-    'model_namespace' => 'App\Models',
-    'other_models' => [
-        'user' => [
-            'model_path' => app_path(),
-            'model_namespace' => 'App'
-        ]
-    ]
-];
-```
-
-It allows you to keep the current project structure.
-
-#### Drop Collection
-
-If you need to drop a collection you can use [DropCollection](#dropcollection) command. Run in your terminal:
-
-``` bash
-drop:collection {collection_name}
-```
-
-::: tip
-You can write the collection_name with capital letter or small letter
-::: 
-
-The command checks if the model exist in your project and if it doesn’t it print an error message like this:
-`Error: collection_name Model not found`
-
-You can also change your model path in this file `config\laravel-mongo-auto-sync.php`: 
-
-``` php
-<?php
-
-return [
-    'model_path' => app_path() . '/Models',
-    'model_namespace' => 'App\Models',
-    'other_models' => [
-        'user' => [
-            'model_path' => app_path(),
-            'model_namespace' => 'App'
-        ]
-    ]
-];
-```
-
-It allows you to keep the current project structure.
-
-#### Check DB consistency <Badge text="TO DO" type="error"/> 
-
-This command, which will be added probably in the next release (see [Roadmap](#roadmap) section), allow you to check if the relations will be saved in the right way. It makes sure the sub document exist in the current collection and on the related collection.
+`HasOne` and `HasMany` synchronization branches remain TODO. Nested target propagation beyond one level is also TODO. For target `EmbedsOne`, the delete helper explicitly does nothing; do not assume deleting a source clears every inverse single embed.
 
 ## Operations
 
 ### Store
 
-#### Usage
+<a id="usage"></a>
+Run the following application code against your development connection after creating the minimal `Article` model above:
 
-First of all you have to create a function `store()` where you receive a `$request` in input.
+```php
+use App\Models\Article;
+use Illuminate\Http\Request;
 
-Now you have to declare a new article instance.
+$article = (new Article)->storeWithSync(new Request([
+    'title' => 'First article',
+    'code' => 'article-001',
+]));
 
-``` php
-<?php
-
-namespace App\Controller;
-
-use App\Http\Controllers\Controller;
-use App\Models\Aticle;
-
-class ArticleController extends Controller
-{
-    public function store($request)
-    {
-        $article = new Article;
-
-        $additional_parameters = [
-           'slug' => Str::slug($request->input('title'))
-        ];
-
-        $options = [];
-
-        $article->storeWithSync($request, $additional_parameters, $options);
-    }
+if ($article === null) {
+    throw new \RuntimeException('The stored article could not be reloaded.');
 }
+
+$id = $article->id;
 ```
-You can pass to storeWithSync() two parameters:
-- **$request** that is an instance of Request. If your request key is present on the $items array (see [Model Setup](#fields) section) the value will be stored to database with no extra code.
-- **$additional_parameters** is an (optional) key-value array. You can pass here other fields, that can be stored to database. 
-- **$options** this is an (optional) key-value array. You can pass here advance options. This is the possibile values:
-    - 'partial-request' boolean
+
+The signatures are `storeWithSync(Request $request, array $additionalData = [], array $options = [], array $target_additional_data = [])` and the same arguments for `updateWithSync()`. Additional data is merged into the supplied request, overriding matching request keys; it is still processed through model configuration. The fourth argument can override fields used to generate target mini-models, keyed by their class name. Store and update return `fresh()` (a reloaded model or `null`), rather than a boolean.
 
 #### Store Relationships
 
-Now you have to add the relationships. 
+Relationship request fields contain JSON strings encoding an **array of objects**, including for `EmbedsOne`. Every object must include the fields expected by its mini-model. A typical `EmbedsMany` value is:
 
-You need a json that contains: 
-
-- **EmbedsOne:** an array with an object that has all the fields of the [MiniModel](#minimodel);
-- **EmbedsMany:** an array with an object for each, in this case, category that contains all the fields of the [MiniModel](#minimodel).
-
-We choose Json format to ease integration with frontend. 
-
-For example, you can create new functions called `getCategories` and `getPrimaryCategory` as following:
-
-``` php
-<?php
-
-namespace App\Controller;
-
-use DateTime;
-use App\Models\Article;
-use App\Models\Category;
-use Illuminate\Support\Str;
-use MongoDB\BSON\UTCDateTime;
-use App\Http\Controllers\Controller;
-use stdClass;
-
-class ArticleController extends Controller
-{
-    public function store($request)
-    {
-        $article = new Article;
-
-        $arr = [
-            'slug' => Str::slug($request->input('title')),
-            'creation_date' => new UTCDateTime(new DateTime('now')),
-            'categories' => $this->getCategories($request->categories_id),
-            'primaryCategory' => $this->getPrimaryCategories($request->categories_id)
-        ];
-        $article->storeWithSync($request, $arr);
-    }
-
-    public function getCategories($categories_id)
-    {
-        $arr = [];
-        $i = 0;
-
-        if ($categories_id != null) {
-            foreach ($categories_id as $category_id) {
-                $category = Category::find($category_id);
-
-                $newCategory = new stdClass();
-                $newCategory->ref_id = $category->id;
-                $newCategory->name = $category->name[cl()];
-                $newCategory->description = $category->description[cl()];
-
-                $arr[$i] = $newCategory;
-                $i++;
-            }
-            return json_encode($arr);
-        } else {
-            return null;
-        }
-    }
-
-    public function getPrimaryCategories($categories_id)
-    {
-        if ($categories_id != null && count($categories_id) > 0) {
-            $category = Category::find($categories_id[0]);
-
-            $newCategory = new stdClass();
-            $newCategory->ref_id = $category->id;
-            $newCategory->name = $category->name[cl()];
-            $newCategory->description = $category->description[cl()];
-
-            return json_encode($newCategory);
-        }else {
-            return null;
-        }
-    }
-}
+```json
+[{"ref_id":"existing-category-id","name":"News"}]
 ```
 
+Encode with `json_encode()` before adding the field to an Illuminate request. Define all participating classes/configuration first; copying this payload into the relation-free quickstart does not create a relationship.
 
 ### Update
 
-#### Usage 
+<a id="usage-2"></a>
+<a id="field"></a>
+Full requests require declared fields to be present. For the model above, use the saved ID to reload it and supply a partial request:
 
-#### Field
-
-First of all you have to create an `update()` function where you receive `$request` and `$id` in input.
-After that you can search the article passing the `$id` as parameter on `find()` method.
-
-If you want to edit an extra field you can create an array which contains this fields:
-
-``` php
-<?php
-
-namespace App\Controllers;
-
-use App\Http\Controllers\Controller;
-use App\Models\Article;
-
-class ArticleController extends Controller
-{
-    public function update($id, $request)
-    {
-        $article = Article::find($id);
-        
-        $arr = [
-            'slug' => Str::slug($request->input('title'))
-        ];
-    }
-}
-```
-
-#### Update a Relationships
-
-This is the supported relationships type: 
- - **EmbedsOne:** an array with an object that has all the fields of the [MiniModel](#minimodel);
- - **EmbedsMany:** an array with an object for each, in this case, category that contains all the fields of the [MiniModel](#minimodel).
- 
- We choose Json format to ease integration with frontend. 
- 
- For example, you can create new functions called `getCategories` and `getPrimaryCategory` as following:
- 
- ``` php
- <?php
- 
- namespace App\Controller;
- 
- use App\Models\Article;
- use App\Models\Category;
- use Illuminate\Support\Str;
- use MongoDB\BSON\UTCDateTime;
- use App\Http\Controllers\Controller;
- use stdClass;
- 
- class ArticleController extends Controller
- {
-     public function update($request)
-     {
-         $article = Article::find($id);
- 
-         $arr = [
-             'slug' => Str::slug($request->input('title')),
-             'categories' => $this->getCategories($request->categories_id),
-             'primaryCategory' => $this->getPrimaryCategories($request->categories_id)
-         ];
-         $article->updateWithSync($request, $arr);
-     }
- 
-     public function getCategories($categories_id)
-     {
-         $arr = [];
-         $i = 0;
- 
-         if ($categories_id != null) {
-             foreach ($categories_id as $category_id) {
-                 $category = Category::find($category_id);
- 
-                 $newCategory = new stdClass();
-                 $newCategory->ref_id = $category->id;
-                 $newCategory->name = $category->name[cl()];
-                 $newCategory->description = $category->description[cl()];
- 
-                 $arr[$i] = $newCategory;
-                 $i++;
-             }
-             return json_encode($arr);
-         } else {
-             return null;
-         }
-     }
- 
-     public function getPrimaryCategories($categories_id)
-     {
-         if ($categories_id != null && count($categories_id) > 0) {
-             $category = Category::find($categories_id[0]);
- 
-             $newCategory = new stdClass();
-             $newCategory->ref_id = $category->id;
-             $newCategory->name = $category->name[cl()];
-             $newCategory->description = $category->description[cl()];
- 
-             return json_encode($newCategory);
-         }else {
-             return null;
-         }
-     }
- }
- ```
 #### Update With Partial Request
 
-If you need to edit only a partition of items and relationships you can pass `'request_type' => 'partial'` on the `$options` to the `updateWithsSync()` method. 
-This configuration will disable all exceptions triggered by a missing field, and it will skip the field/relationships processing. 
+```php
+$article = \App\Models\Article::findOrFail($id);
+$article = $article->updateWithSync(
+    new \Illuminate\Http\Request(['title' => 'Revised article']),
+    [],
+    ['request_type' => 'partial']
+);
 
-``` php
-<?php
-
-namespace App\Controllers;
-
-use App\Http\Controllers\Controller;
-use App\Models\Article;
-
-class ArticleController extends Controller
-{
-    public function update($id, $request)
-    {
-        $article = Article::find($id);
-        
-        $arr = [
-            'slug' => Str::slug($request->input('title')) . '-updated'
-        ];
-
-        $options = [
-            'request_type' => 'partial'
-        ];
-    }
+if ($article === null) {
+    throw new \RuntimeException('The updated article could not be reloaded.');
 }
 ```
 
-Now you can save your changes:
+The option is exactly `request_type => partial`. Absent scalar fields are skipped. This is not a blanket suppression of errors or relationship processing.
 
-``` php
-<?php
-
-namespace App\Controllers;
-
-use App\Http\Controllers\Controller;
-use App\Models\Article;
-
-class ArticleController extends Controller
-{
-    public function update($id, $request)
-    {
-        $article = Article::find($id);
-        
-        $arr = [
-            'slug' => Str::slug($request->input('title')) . '-updated'
-        ];
-
-        $options = [
-            'request_type' => 'partial'
-        ];
-
-        $article->updateWithSync($request, $arr, $options);
-    }
-}
-```
+<a id="update-a-relationships"></a>
+For relationships, absent values are skipped only when there is no target (`has-target => false`). Targeted relationships may still be processed from generated request data containing existing references, so changed scalar data can propagate to target mini-models. Explicit relationship updates can replace current embeds and remove/rebuild target entries. Review [the partial-update tests](https://github.com/offline-agency/laravel-mongo-auto-sync/blob/487a622ab48017f8839f4b90a0844d5c8fcbae7f/tests/UpdateWithSyncTest.php) for the configured relationship patterns before using this on existing collections.
 
 ### Destroy
 
-#### Usage
+<a id="usage-3"></a>
+Delete only the development record created in the example:
 
-First of all you have to create an `destroy()` function where you receive `$id` in input.
-After that you can search the article passing the `$id` as parameter on `find()` method.
-With the `destroyWithSync()` method you will remove the current instance from database and it will also search for any sub documents in other collection. 
- 
- If you are familiar with Mysql you can find this feature similar to [ON DELETE CASCADE](https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html).
-``` php
-<?php
-
-namespace App\Controller;
-
-use App\Http\Controllers\Controller;
-use App\Models\Aticle;
-
-class ArticleController extends Controller
-{
-    public function destroy($id)
-    {
-        $article = new Article;
-        $article = $article->find($id);
-        $article->destroyWithSync();
-    }
-}
+```php
+$article = \App\Models\Article::findOrFail($id);
+$deletedArticle = $article->destroyWithSync();
 ```
 
- 
+`destroyWithSync()` attempts configured target cleanup, deletes the current record, and returns that deleted instance. It does not return a count. Its cleanup scope is the configured relationships, with the target `EmbedsOne` limitation described above.
 
-## Roadmap :rocket:
-- Refactor target synchronization to Observer pattern, so all this operation can be run on background using [Laravel Queue System](https://laravel.com/docs/5.8/queues). This will also speed up all the operations in the collection that is primary involved in write operations.
-- Command Analyse Database: This command will analyse the database in order to find some relationship error. 
-Ex: An article with a category associated that is not present on the Category's sub document.
-- Refactor **save()** method in order to handle CRUD operation on relationship also without sync.
-- Support for [referenced relationships](https://docs.mongodb.com/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/).
-- Better support for all field types.
-- DestroyWithSync() without delete sub documents on other collections.
-- Add more tests.
-- Nested relationships.
-- Benchmark MongoDB vs Mysql (write and read operation).
-- Fix typo errors.
+## Utilities
+
+The provider merges `config/laravel-mongo-auto-sync.php` under the `laravel-mongo-auto-sync` key. It registers **no publish tag**. To override model discovery, create that configuration file in your application manually:
+
+```php
+return [
+    'model_path' => app_path('Models'),
+    'model_namespace' => 'App\Models',
+    'other_models' => [
+        'user' => [
+            'model_path' => app_path(),
+            'model_namespace' => 'App',
+        ],
+    ],
+];
+```
+
+#### Generate Model Documentation
+
+```bash
+php artisan model-doc:generate Article
+```
+
+The command prints a PHPDoc block derived from `$items` and `$mongoRelation`; it does not edit your model. Discovery uses the configured paths/namespaces and can throw when a model cannot be found.
+
+#### Drop Collection
+
+The registered signature is `drop:collection {collection_name}`. `php artisan drop:collection Article` loads all matching model records and invokes `destroyWithSync()` on each. This deletes data and can modify configured target documents; it does not simply drop the underlying MongoDB collection. It is not part of the quickstart.
+
+<a id="check-db-consistency"></a>
+A database-consistency checker is not implemented in this release.
+
+## Historical demo
+
+The [Laravel MongoDB blog demo](https://github.com/offline-agency/laravel-mongodb-blog/tree/802f653ed4bbd9fdf33d5ff482fb56b961d12a97) is historical reference material. Its checked `master` commit is `802f653ed4bbd9fdf33d5ff482fb56b961d12a97`; no GitHub release was found. Its manifest requires PHP `^7.2`, Laravel `^6.20` and Mongo Auto Sync `^1.0`. It is not a current quickstart for 3.1.1, and it has not been upgraded or executed here.
+
+<a id="roadmap"></a>
+Proposed work in [PR #40](https://github.com/offline-agency/laravel-mongo-auto-sync/pull/40), [PR #99](https://github.com/offline-agency/laravel-mongo-auto-sync/pull/99) and [PR #100](https://github.com/offline-agency/laravel-mongo-auto-sync/pull/100) was open when checked. It does not establish released support for new Laravel versions or a published 4.x API.
+
+## Verification
+
+PHP examples were syntax-checked and compared with the released methods and tests. A compatible legacy runtime/dependency/database fixture was unavailable locally, so these CRUD examples and the upstream suite were not executed against MongoDB. No database performance, atomicity or passing CI claim is made.
 
 ## Questions & issues
 
-Find yourself stuck using the package? Found a bug? Do you have general questions or suggestions for improving the package? Feel free to create an issue on [GitHub](https://github.com/offline-agency/laravel-mongo-auto-sync/issues), we’ll try to address it as soon as possible.
-
-If you’ve found a bug regarding security please mail <support@offlineagency.com> instead of using the issue tracker.
+Use [GitHub issues](https://github.com/offline-agency/laravel-mongo-auto-sync/issues) for package questions. Report security issues privately to support@offlineagency.com.
 
 ## About Us
 
-[[Offline Agency](https://offlineagency.it) is an agency based in Padua, Italy.
-
-Open source software is used in all projects we deliver. This is just a few of the free pieces of software we use every single day. For this, we are very grateful. When we feel we have solved a problem in a way that can help other developers, we release our code as open source software on [GitHub](https://github.com/offline-agency).
-
-This package was made by [Giacomo Fabbian](https://github.com/Giacomo92). There are [many other contributors](https://github.com/offline-agency/laravel-mongo-auto-sync/graphs/contributors) who devoted time and effort to make this package better.
+[Offline Agency](https://offlineagency.it) maintains the package with its [contributors](https://github.com/offline-agency/laravel-mongo-auto-sync/graphs/contributors). The released package uses the [MIT license](https://github.com/offline-agency/laravel-mongo-auto-sync/blob/487a622ab48017f8839f4b90a0844d5c8fcbae7f/LICENSE.md).

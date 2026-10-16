@@ -1,45 +1,45 @@
 ---
 home: true
 pageClass: index
-heroImage: 
+title: Offline Agency package documentation
+description: Released Laravel package guides, legacy integrations and verified source versions from Offline Agency.
+heroImage:
 heroText: Docs
-tagline: Documentation for our comprehensive packages
-actionText: 
-actionLink: 
+tagline: Released package guides, with explicit compatibility and historical context.
+actionText:
+actionLink:
 cat1Title: Open source packages
-cat1DescriptionL1: We like to use Laravel for most of our projects and love to contribute to the Laravel ecosystem.
-cat1DescriptionL2: Since 2016 we have been building Laravel and PHP packages for our client work. When we discover functionality in client projects that is useful for others, we extract it to an open source package.
-
-projectTypes: 
-- title: Laravel
+cat1DescriptionL1: We publish Laravel and PHP packages extracted from our application work. Each guide identifies its selected release and source.
+cat1DescriptionL2: Choose current integrations for supported application platforms. Legacy packages and retired provider APIs are separated below; Composer compatibility alone is not a promise of current platform support.
+projectTypes:
+- title: Current integrations
+- title: Legacy packages
+- title: Historical integrations
 projects:
-- title: laravel-mongo-auto-sync
-  link: /laravel-mongo-auto-sync
-  details: A package that allow to sync changes between collections on MongoDB project.
-  type: Laravel
-- title: laravel-fatture-in-cloud-v2
-  link: /laravel-fatture-in-cloud-v2
-  type: Laravel
-  details: A wrapper plugin with Fatture in Cloud Api V2 written in Laravel PHP.
-- title: laravel-fatture-in-cloud
-  link: /laravel-fatture-in-cloud
-  type: Laravel
-  details: An integration plugin with Fatture in Cloud Api written in Laravel PHP.
 - title: laravel-cart
-  link: /laravel-cart
-  type: Laravel
-  details: A simple cart implementation for Laravel with fiscal support.
+  link: /laravel-cart/
+  details: Session or database carts with variants, item and cart coupons, VAT fields and explicit checkout limitations. Released package 4.0.3.
+  type: Current integrations
 - title: laravel-webex
-  link: /laravel-webex
-  type: Laravel
-  details: A simple Laravel integration with Webex.
+  link: /laravel-webex/
+  details: Implemented Webex Meetings and Messaging APIs with per-request bearer tokens, typed results and guarded pagination. Release 2.0.0.
+  type: Current integrations
+- title: laravel-fatture-in-cloud-v2
+  link: /laravel-fatture-in-cloud-v2/
+  details: Fatture in Cloud API v2 wrapper, package 3.0.1. Company configuration, typed results and implemented endpoint coverage.
+  type: Current integrations
 - title: laravel-aruba-sms
-  link: /laravel-aruba-sms
-  type: Laravel
-  details: This package makes it easy to send SMS notifications using Aruba SMS API with Laravel.
-- title: 
-  link: 
-  details: 
-  type: Laravel
-gitName:
+  link: /laravel-aruba-sms/
+  details: Aruba SMS notification channel, message builder, sandbox mode and credit monitoring. Release 1.1.0.
+  type: Current integrations
+- title: laravel-mongo-auto-sync
+  link: /laravel-mongo-auto-sync/
+  details: Legacy 3.1.1 synchronization of configured MongoDB embedded models on the Jenssegers/Laravel 5–8 stack. Not a modern Laravel recommendation.
+  type: Legacy packages
+- title: laravel-fatture-in-cloud
+  link: /laravel-fatture-in-cloud/
+  details: Historical 2.2.8 wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.
+  type: Historical integrations
 ---
+
+The [unverified Moneta reference](/laravel-moneta-online/) is retained for historical inbound links and is not part of the recommended package catalog.

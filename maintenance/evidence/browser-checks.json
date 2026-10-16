@@ -1,0 +1,313 @@
+{
+  "verifiedOn": "2026-10-16",
+  "desktop": {
+    "homeCards": 6,
+    "keyboardDropdown": "Enter/Escape passed",
+    "/laravel-cart/": {
+      "title": "Laravel Cart — stable 4.0.3 | Documentation | OFFLINE Agency",
+      "h1": "#\nLaravel Cart"
+    },
+    "/laravel-cart/money-and-tax/": {
+      "title": "Money, VAT, coupons and rounding | Documentation | OFFLINE Agency",
+      "h1": "#\nMoney, VAT, coupons and rounding"
+    },
+    "/laravel-cart/legacy/": {
+      "title": "Historical Laravel Cart site documentation | Documentation | OFFLINE Agency",
+      "h1": "#\nlaravel-cart"
+    },
+    "/laravel-webex/": {
+      "title": "Laravel Webex | Documentation | OFFLINE Agency",
+      "h1": "#\nLaravel Webex"
+    },
+    "/laravel-webex/coverage/": {
+      "title": "Laravel Webex implemented API reference | Documentation | OFFLINE Agency",
+      "h1": "#\nImplemented API reference"
+    },
+    "/laravel-fatture-in-cloud-v2/": {
+      "title": "Laravel Fatture in Cloud API v2 | Documentation | OFFLINE Agency",
+      "h1": "#\nlaravel-fatture-in-cloud-v2"
+    },
+    "/laravel-aruba-sms/": {
+      "title": "Laravel Aruba SMS | Documentation | OFFLINE Agency",
+      "h1": "#\nLaravel Aruba SMS"
+    },
+    "/laravel-mongo-auto-sync/": {
+      "title": "Laravel MongoDB Relationships | Documentation | OFFLINE Agency",
+      "h1": "#\nLaravel MongoDB Relationships"
+    },
+    "/laravel-fatture-in-cloud/": {
+      "title": "Fatture in Cloud API v1 — historical integration | Documentation | OFFLINE Agency",
+      "h1": "#\nFatture in Cloud API v1"
+    },
+    "/laravel-moneta-online/": {
+      "title": "Laravel Moneta Online — unverified reference | Documentation | OFFLINE Agency",
+      "h1": "#\nLaravel Moneta Online"
+    },
+    "search": {
+      "VAT": [
+        "/laravel-cart/legacy/#cart-vat",
+        "/laravel-cart/money-and-tax/"
+      ],
+      "wishlist": [
+        "/laravel-cart/variants-and-wishlist/"
+      ],
+      "Webex": [
+        "/laravel-webex/coverage/",
+        "/laravel-webex/"
+      ],
+      "Aruba": [
+        "/laravel-aruba-sms/"
+      ],
+      "pagination": [
+        "/laravel-fatture-in-cloud-v2/#pagination",
+        "/laravel-webex/#pagination"
+      ]
+    },
+    "keyboardSearch": "/laravel-cart/money-and-tax/",
+    "notFound": 404
+  },
+  "mobile": {
+    "keyboardMenu": "Enter, Escape, Space, route closes menu",
+    "/": {
+      "dimensions": {
+        "viewport": 390,
+        "document": 390
+      },
+      "codeBlocks": [],
+      "tables": []
+    },
+    "/laravel-webex/coverage/": {
+      "dimensions": {
+        "viewport": 413,
+        "document": 413
+      },
+      "codeBlocks": [],
+      "tables": [
+        {
+          "width": 342,
+          "scrollWidth": 693,
+          "overflow": "auto"
+        },
+        {
+          "width": 342,
+          "scrollWidth": 415,
+          "overflow": "auto"
+        },
+        {
+          "width": 342,
+          "scrollWidth": 464,
+          "overflow": "auto"
+        },
+        {
+          "width": 342,
+          "scrollWidth": 423,
+          "overflow": "auto"
+        },
+        {
+          "width": 342,
+          "scrollWidth": 496,
+          "overflow": "auto"
+        }
+      ]
+    },
+    "/laravel-fatture-in-cloud-v2/": {
+      "dimensions": {
+        "viewport": 390,
+        "document": 390
+      },
+      "codeBlocks": [
+        {
+          "width": 390,
+          "scrollWidth": 998,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 646,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 580,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 539,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 580,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 720,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 539,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 629,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 613,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 646,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 908,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 826,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 638,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 809,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 629,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 646,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 629,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 621,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 580,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 621,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 736,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 719,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 390,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 564,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 654,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 687,
+          "overflow": "auto"
+        }
+      ],
+      "tables": [
+        {
+          "width": 342,
+          "scrollWidth": 348,
+          "overflow": "auto"
+        },
+        {
+          "width": 342,
+          "scrollWidth": 590,
+          "overflow": "auto"
+        }
+      ]
+    },
+    "/laravel-cart/money-and-tax/": {
+      "dimensions": {
+        "viewport": 390,
+        "document": 390
+      },
+      "codeBlocks": [
+        {
+          "width": 390,
+          "scrollWidth": 728,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 687,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 556,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 662,
+          "overflow": "auto"
+        },
+        {
+          "width": 390,
+          "scrollWidth": 605,
+          "overflow": "auto"
+        }
+      ],
+      "tables": [
+        {
+          "width": 342,
+          "scrollWidth": 342,
+          "overflow": "auto"
+        }
+      ]
+    }
+  },
+  "screenshotsSaved": false,
+  "serverRenderedContentWithoutJS": true,
+  "generatedHttpPages": 21,
+  "runtimeErrors": []
+}

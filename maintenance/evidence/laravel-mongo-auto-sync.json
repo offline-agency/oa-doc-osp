@@ -1,0 +1,152 @@
+{
+  "package": "offline-agency/laravel-mongo-auto-sync",
+  "tag": "3.1.1",
+  "commit": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+  "checkedAt": "2026-10-16",
+  "composerRequirements": {
+    "php": ">=7.4",
+    "ext-json": "*",
+    "ext-mongodb": "*",
+    "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+    "illuminate/container": "^5.0|^6.0|^7.0|^8.0",
+    "illuminate/database": "^5.0|^6.0|^7.0|^8.0",
+    "illuminate/events": "^5.0|^6.0|^7.0|^8.0",
+    "jenssegers/mongodb": "^3.6|^3.7|^3.8"
+  },
+  "distribution": {
+    "version": "3.1.1",
+    "sourceRef": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+    "distRef": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+    "url": "https://api.github.com/repos/offline-agency/laravel-mongo-auto-sync/zipball/487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+    "publishedAt": "2024-09-27T15:19:47+00:00",
+    "checkedAt": "2026-10-16",
+    "metadataEvidence": "maintenance/package-sources.json",
+    "actualDistVerification": "verifica aggregata; nessun download duplicato in questa sottotask"
+  },
+  "github": {
+    "latestRelease": "3.1.1",
+    "defaultBranch": "master",
+    "latestReleasePublishedAt": "2024-09-27T15:19:44Z"
+  },
+  "sourcePaths": [
+    ".github/workflows/build-ci.yml",
+    "CONTRIBUTING.md",
+    "LICENSE.md",
+    "README.md",
+    "composer.json",
+    "config/laravel-mongo-auto-sync.php",
+    "src/Console/DropCollection.php",
+    "src/Console/GenerateModelDocumentation.php",
+    "src/Extensions/MongoCollection.php",
+    "src/Http/Models/DefaultGeo.php",
+    "src/Http/Models/DefaultMini.php",
+    "src/Http/Models/MDModel.php",
+    "src/Http/Models/MSModel.php",
+    "src/MongoAutoSyncServiceProvider.php",
+    "src/Traits/Helper.php",
+    "src/Traits/MainMongoTrait.php",
+    "src/Traits/ModelAdditionalMethod.php",
+    "src/Traits/PlainMongoTrait.php",
+    "src/Traits/RelationshipMongoTrait.php",
+    "src/syncUtils.php",
+    "tests/BrowserKitTestCase.php",
+    "tests/CreatesApplication.php",
+    "tests/DropCollectionTest.php",
+    "tests/GenerateModelDocumentationTest.php",
+    "tests/HelperTest.php",
+    "tests/MDModelTest.php",
+    "tests/MainMongoTraitTest.php",
+    "tests/ModelAdditionalMethodTest.php",
+    "tests/Models/Article.php",
+    "tests/Models/Category.php",
+    "tests/Models/Item.php",
+    "tests/Models/MiniArticle.php",
+    "tests/Models/MiniCategory.php",
+    "tests/Models/MiniItem.php",
+    "tests/Models/MiniNavigation.php",
+    "tests/Models/MiniPermission.php",
+    "tests/Models/MiniRole.php",
+    "tests/Models/MiniSubItem.php",
+    "tests/Models/MiniUser.php",
+    "tests/Models/Navigation.php",
+    "tests/Models/Permission.php",
+    "tests/Models/Role.php",
+    "tests/Models/SubItem.php",
+    "tests/Models/User.php",
+    "tests/MongoCollectionTest.php",
+    "tests/MongoSyncTraitTest.php",
+    "tests/SimpleTestCase.php",
+    "tests/StoreWIthSyncTest.php",
+    "tests/SyncTestCase.php",
+    "tests/SyncUtilsTest.php",
+    "tests/TestCase.php",
+    "tests/UpdateWithSyncTest.php",
+    "tests/config/database.php",
+    "tests/config/queue.php"
+  ],
+  "ci": {
+    "declaredPhp": [
+      "7.4",
+      "8.0",
+      "8.1"
+    ],
+    "declaredMongoDB": [
+      "3.6",
+      "4.0",
+      "4.2",
+      "5.0",
+      "6.0",
+      "7.0"
+    ],
+    "passingResultsVerified": false
+  },
+  "developmentProposals": {
+    "pr40": {
+      "state": "open",
+      "head": "2f7ce7aed0d8ee152ac1e29fe2757b74f2ee3166"
+    },
+    "pr99": {
+      "state": "open",
+      "base": "develop"
+    },
+    "pr100": {
+      "state": "open",
+      "base": "develop"
+    },
+    "publishedAsStable": false
+  },
+  "historicalDemo": {
+    "repository": "https://github.com/offline-agency/laravel-mongodb-blog",
+    "branch": "master",
+    "commit": "802f653ed4bbd9fdf33d5ff482fb56b961d12a97",
+    "release": null,
+    "composerRequirements": {
+      "php": "^7.2",
+      "laravel/framework": "^6.20",
+      "offline-agency/laravel-mongo-auto-sync": "^1.0"
+    },
+    "sourcePaths": [
+      "composer.json",
+      ".github/workflows/laravel.yml"
+    ],
+    "executed": false,
+    "modified": false
+  },
+  "checks": {
+    "sourceAndSyntax": "passed",
+    "reproducer": "maintenance/fixtures/mongo/verify.py",
+    "phpSnippetsLinted": 7,
+    "legacyAnchorsPreserved": 44,
+    "phpRuntime": "8.5.10",
+    "mongodbExtension": "2.5.2",
+    "crudExecuted": false,
+    "diffCheck": "passed"
+  },
+  "CIchecksUnavailable": [
+    "runtime legacy con dipendenze e database compatibili non disponibile",
+    "CRUD e suite upstream non eseguiti",
+    "matrice CI e risultati GitHub Actions correnti non verificati",
+    "coverage/analyzer/audit non eseguiti",
+    "demo storico non eseguito"
+  ]
+}

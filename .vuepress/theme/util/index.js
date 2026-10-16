@@ -7,6 +7,7 @@ export function normalize (path) {
   return decodeURI(path)
     .replace(hashRE, '')
     .replace(extRE, '')
+    .replace(endingSlashRE, '') || '/'
 }
 
 export function getHash (path) {
@@ -36,7 +37,7 @@ export function ensureExt (path) {
   const hash = hashMatch ? hashMatch[0] : ''
   const normalized = normalize(path)
 
-  if (endingSlashRE.test(normalized)) {
+  if (endingSlashRE.test(path.replace(hashRE, ''))) {
     return path
   }
   return normalized + '.html' + hash
@@ -137,7 +138,8 @@ export function resolveSidebarItems (page, regularPath, site, localePath) {
   if (!sidebarConfig) {
     return []
   } else {
-    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
+    const { base, config } = resolveMatchingConfig(page.path || regularPath, sidebarConfig)
+    if (config === 'auto') return resolveHeaders(page)
     return config
       ? config.map(item => resolveItem(item, pages, base))
       : []

@@ -2,10 +2,12 @@
   <div
     class="theme-container"
     :class="pageClasses"
+    @keydown.esc="toggleSidebar(false)"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd"
   >
     <Navbar
+      :sidebar-open="isSidebarOpen"
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"
     />

@@ -1,6 +1,6 @@
 <template>
   <header class="navbar">
-    <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
+    <SidebarButton :expanded="sidebarOpen" @toggle-sidebar="$emit('toggle-sidebar')"/>
 
     <router-link
       :to="$localePath"
@@ -44,6 +44,7 @@ import NavLinks from '@theme/components/NavLinks.vue'
 
 export default {
   components: { SidebarButton, NavLinks, SearchBox, AlgoliaSearchBox },
+  props: { sidebarOpen: Boolean },
 
   data () {
     return {

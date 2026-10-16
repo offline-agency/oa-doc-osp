@@ -1,0 +1,33 @@
+{
+  "verifiedOn": "2026-10-16",
+  "command": "npm audit --json",
+  "exitCode": 1,
+  "node": "24.13.0",
+  "npm": "11.6.2",
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 6,
+      "moderate": 73,
+      "high": 37,
+      "critical": 5,
+      "total": 121
+    },
+    "dependencies": {
+      "prod": 1,
+      "dev": 1493,
+      "optional": 33,
+      "peer": 7,
+      "peerOptional": 0,
+      "total": 1493
+    }
+  },
+  "criticalEntries": [
+    "@vuepress/core",
+    "form-data",
+    "loader-utils",
+    "request",
+    "vuepress-html-webpack-plugin"
+  ],
+  "scope": "Build/development dependencies; findings include npm metavulnerability entries; no clean-security claim."
+}
