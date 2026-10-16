@@ -19,7 +19,7 @@ module.exports = {
     logo: '/oa-eb.png',
     nav: [
       { text: 'Packages', items: current },
-      { text: 'Historical', items: historical },
+      { text: 'Legacy', items: historical },
       { text: 'OA', link: 'https://offlineagency.it' },
       { text: 'GitHub', link: 'https://github.com/offline-agency' },
     ],

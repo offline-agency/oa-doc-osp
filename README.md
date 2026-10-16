@@ -13,7 +13,7 @@ cat1DescriptionL1: We publish Laravel and PHP packages extracted from our applic
 cat1DescriptionL2: Compare each release’s declared requirements with your application platform. Retired provider APIs are listed separately; Composer compatibility alone is not a promise of current platform support.
 projectTypes:
 - title: Current integrations
-- title: Historical integrations
+- title: Legacy
 projects:
 - title: laravel-cart
   link: /laravel-cart/
@@ -38,7 +38,7 @@ projects:
 - title: laravel-fatture-in-cloud
   link: /laravel-fatture-in-cloud/
   details: Historical 2.2.8 wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.
-  type: Historical integrations
+  type: Legacy
 ---
 
 The [unverified Moneta reference](/laravel-moneta-online/) is retained for historical inbound links and is not part of the recommended package catalog.
