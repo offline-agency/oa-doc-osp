@@ -2,7 +2,7 @@
 home: true
 pageClass: index
 title: Offline Agency package documentation
-description: Released Laravel package guides, legacy integrations and verified source versions from Offline Agency.
+description: Released Laravel package guides, historical integrations and verified source versions from Offline Agency.
 heroImage:
 heroText: Docs
 tagline: Released package guides, with explicit compatibility and historical context.
@@ -10,10 +10,9 @@ actionText:
 actionLink:
 cat1Title: Open source packages
 cat1DescriptionL1: We publish Laravel and PHP packages extracted from our application work. Each guide identifies its selected release and source.
-cat1DescriptionL2: Choose current integrations for supported application platforms. Legacy packages and retired provider APIs are separated below; Composer compatibility alone is not a promise of current platform support.
+cat1DescriptionL2: Compare each release’s declared requirements with your application platform. Retired provider APIs are listed separately; Composer compatibility alone is not a promise of current platform support.
 projectTypes:
 - title: Current integrations
-- title: Legacy packages
 - title: Historical integrations
 projects:
 - title: laravel-cart
@@ -34,8 +33,8 @@ projects:
   type: Current integrations
 - title: laravel-mongo-auto-sync
   link: /laravel-mongo-auto-sync/
-  details: Legacy 3.1.1 synchronization of configured MongoDB embedded models on the Jenssegers/Laravel 5–8 stack. Not a modern Laravel recommendation.
-  type: Legacy packages
+  details: Synchronize configured embedded copies between MongoDB documents through explicit CRUD methods. Documented release 3.1.1; see its declared framework requirements.
+  type: Current integrations
 - title: laravel-fatture-in-cloud
   link: /laravel-fatture-in-cloud/
   details: Historical 2.2.8 wrapper for API v1, retired by the provider from 31 January 2023. Migration reference only; use the API v2 guide for new work.

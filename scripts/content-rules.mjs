@@ -1,5 +1,5 @@
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
-const groupFor = { 'current-release': 'Current integrations', 'legacy-release': 'Legacy packages', 'historical-integration': 'Historical integrations' };
+const groupFor = { 'current-release': 'Current integrations', 'historical-integration': 'Historical integrations' };
 export function validateCatalog(homepage, packages) {
   const errors = [], used = new Set();
   const groups = new Set((homepage.projectTypes || []).map(group => group.title));

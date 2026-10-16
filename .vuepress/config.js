@@ -2,7 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const sources = require('../maintenance/package-sources.json')
 const current = sources.packages.filter(item => item.status === 'current-release').map(item => ({ text: item.name.replace('offline-agency/', ''), link: item.route }))
-const historical = sources.packages.filter(item => ['legacy-release', 'historical-integration'].includes(item.status)).map(item => ({ text: item.name.replace('offline-agency/', '') + (item.status === 'legacy-release' ? ' (legacy)' : ' (retired API)'), link: item.route }))
+const historical = sources.packages.filter(item => item.status === 'historical-integration').map(item => ({ text: item.name.replace('offline-agency/', '') + ' (retired API)', link: item.route }))
 const cartOrder = ['installation', 'quick-start', 'variants-and-wishlist', 'money-and-tax', 'storage', 'authentication', 'integrations', 'upgrading', 'reference', 'support', 'url-migration']
 const cartPages = () => fs.readdirSync(path.resolve(__dirname, '../laravel-cart')).filter(file => file.endsWith('.md') && file !== 'legacy.md').sort((a,b) => {
   const rank = file => { const index = cartOrder.indexOf(file.replace(/\.md$/, '')); return index < 0 ? cartOrder.length : index }

@@ -761,7 +761,7 @@
       "defaultBranch": "master",
       "selectedTag": "3.1.1",
       "commit": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
-      "status": "legacy-release",
+      "status": "current-release",
       "verifiedOn": "2026-10-16",
       "composerRequirements": {
         "php": ">=7.4",

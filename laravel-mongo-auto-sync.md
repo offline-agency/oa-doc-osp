@@ -1,9 +1,9 @@
 ---
 title: Laravel MongoDB Relationships
-description: Configure legacy MongoDB embedded relationship synchronization with Laravel Mongo Auto Sync 3.1.1.
+description: Configure MongoDB embedded relationship synchronization with Laravel Mongo Auto Sync 3.1.1.
 meta:
   - name: description
-    content: Configure legacy MongoDB embedded relationship synchronization with Laravel Mongo Auto Sync 3.1.1.
+    content: Configure MongoDB embedded relationship synchronization with Laravel Mongo Auto Sync 3.1.1.
 gitName: laravel-mongo-auto-sync
 packageVersion: '3.1.1'
 sourceCommit: 487a622ab48017f8839f4b90a0844d5c8fcbae7f
@@ -13,7 +13,7 @@ sourceCommit: 487a622ab48017f8839f4b90a0844d5c8fcbae7f
 
 `offline-agency/laravel-mongo-auto-sync` adds explicit CRUD methods for synchronizing configured embedded copies between MongoDB documents. This guide describes published [3.1.1](https://github.com/offline-agency/laravel-mongo-auto-sync/releases/tag/3.1.1), checked against its [released source](https://github.com/offline-agency/laravel-mongo-auto-sync/tree/487a622ab48017f8839f4b90a0844d5c8fcbae7f) and [Packagist distribution](https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync) on 16 October 2026.
 
-::: warning Legacy integration
+::: warning Documented release compatibility
 The stable release uses `Jenssegers\Mongodb\Eloquent\Model` and Illuminate 5–8 constraints. It is not a Laravel 12/13 integration. Development proposals, including a possible 4.x API, are not part of this release.
 :::
 
@@ -36,7 +36,7 @@ These are the constraints in the released `composer.json`, rather than a tested 
 
 ### PHP Version Compatibility
 
-A PHP lower bound does not ensure that every newer PHP runtime can resolve and run the legacy dependency stack. The checked workflow defines PHP 7.4, 8.0 and 8.1 against MongoDB 3.6, 4.0, 4.2, 5.0, 6.0 and 7.0. Current passing results for that matrix were not verified. No PHP 8.5 database execution was performed for this documentation.
+A PHP lower bound does not ensure that every newer PHP runtime can resolve and run the 3.1.1 dependency stack. The checked workflow defines PHP 7.4, 8.0 and 8.1 against MongoDB 3.6, 4.0, 4.2, 5.0, 6.0 and 7.0. Current passing results for that matrix were not verified. No PHP 8.5 database execution was performed for this documentation.
 
 Install the exact documented release in a compatible application:
 
@@ -81,7 +81,7 @@ This is application connection configuration. The environment names above are co
 
 ## Model setup
 
-Extend `OfflineAgency\MongoAutoSync\Http\Models\MDModel`, which extends the legacy Jenssegers model. The following minimal model has no relationships, so it demonstrates the CRUD contract without requiring counterpart collections. Save it as `app/Models/Article.php`:
+Extend `OfflineAgency\MongoAutoSync\Http\Models\MDModel`, which extends the Jenssegers model. The following minimal model has no relationships, so it demonstrates the CRUD contract without requiring counterpart collections. Save it as `app/Models/Article.php`:
 
 ```php
 namespace App\Models;
@@ -298,7 +298,7 @@ Proposed work in [PR #40](https://github.com/offline-agency/laravel-mongo-auto-s
 
 ## Verification
 
-PHP examples were syntax-checked and compared with the released methods and tests. A compatible legacy runtime/dependency/database fixture was unavailable locally, so these CRUD examples and the upstream suite were not executed against MongoDB. No database performance, atomicity or passing CI claim is made.
+PHP examples were syntax-checked and compared with the released methods and tests. A compatible runtime/dependency/database fixture for 3.1.1 was unavailable locally, so these CRUD examples and the upstream suite were not executed against MongoDB. No database performance, atomicity or passing CI claim is made.
 
 ## Questions & issues
 

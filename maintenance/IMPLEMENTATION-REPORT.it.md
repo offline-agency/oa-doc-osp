@@ -12,7 +12,7 @@ Tutte le sei release sono state ricontrollate su GitHub e su metadata freschi Pa
 | Laravel Webex | 2.0.0 / `c4aec48c1c416676cc411936fe7e905398f66b8c` | `laravel-webex.md` e `laravel-webex/coverage.md`: casing namespace, bearer/resolver, responsabilità OAuth, eventi, errori, retry, paginazione/origin guard e 52 accessor realmente registrati. | HTTP fake, nessun OAuth/provider reale o promessa di copertura completa. |
 | Fatture in Cloud API v2 | package 3.0.1 / `04360c77c68e4d481f5a4943ffc2541f26b19767` | `laravel-fatture-in-cloud-v2.md`: API v2 ≠ major package; classi e readonly entity, aziende/config, payload, Error/MessageBag, paginazione, retry effettivi, URL a scadenza. `binDetail()` distinto da `bin()`. | Fixture list/create/edit/errore/validazione; nessuna chiamata reale, nessun retry infinito eseguito. PR88 esclusa. |
 | Aruba SMS | 1.1.0 / `b090caba23f4882486619f2eaed90dfa9b7a2014` | `laravel-aruba-sms.md`: tag/config corretti, fluent message, notifica/client/facade, telefono, eventi/eccezioni, comandi, sandbox e 401. | Successo/errore con fake; nessun SMS/email reale e nessuna suite completa. |
-| Mongo Auto Sync | 3.1.1 / `487a622ab48017f8839f4b90a0844d5c8fcbae7f` | `laravel-mongo-auto-sync.md`: slug Composer corretto, dipendenze legacy e base Jenssegers, CRUD/relazioni/partial request/limiti; demo Laravel6 marcata storica. | Sorgente e lint di 7 snippet; nessun database legacy eseguito. PR40/99/100 non sono release e non forniscono API stabili. |
+| Mongo Auto Sync | 3.1.1 / `487a622ab48017f8839f4b90a0844d5c8fcbae7f` | `laravel-mongo-auto-sync.md`: slug Composer corretto, vincoli Illuminate5–8 e base Jenssegers, CRUD/relazioni/partial request/limiti; demo Laravel6 marcata storica. | Sorgente e lint di 7 snippet; nessun database legacy eseguito. PR40/99/100 non sono release e non forniscono API stabili. |
 | Fatture in Cloud API v1 | storico 2.2.8 / `b37155297538fa3dcbbcb16d633d926091734690` | `laravel-fatture-in-cloud.md`: avviso API ritirata dal31/01/2023, configurazione reale, snippet solo storici e migrazione autentica ad APIv2. | API ritirata, non eseguita. Nessuna deduzione “repository archived”. |
 | Moneta Online | non verificabile / nessuno SHA | `laravel-moneta-online.md`: stato onesto, frontmatter riparato, nessun comando/API inventato, route conservata. | Repository presunto restituisce404: identità/distribuzione non accertate, non prova di cancellazione. |
 
@@ -20,7 +20,7 @@ PHP/Laravel dichiarati dal Composer sono separati dai runtime effettivamente pro
 
 ## File e comportamento del sito
 
-- `README.md`: stessa home/custom frontmatter e identità OA; sei card valide, quattro attuali, Mongo legacy e FICv1 storica. Rimossa card vuota; Moneta non promossa.
+- `README.md`: stessa home/custom frontmatter e identità OA; sei card valide, cinque attuali inclusa Mongo Auto Sync e FICv1 storica. Rimossa card vuota; Moneta non promossa.
 - Guide root inglesi e riferimenti Cart/Webex: sostituiti esempi obsoleti, checklist speculative, badge/link errati e boilerplate. Licenze e contributi puntano ai file effettivi dei commit selezionati. Mantenute sette route originarie e **232 anchor** tramite heading/shim, con mappa Cart esplicita.
 - `maintenance/`: manifest, evidenze, fixture isolate, limiti/upstream handoff, istruzioni di aggiornamento e proposta di migrazione engine. Esclusa dalla pubblicazione.
 - `.vuepress/config.js`: lingua `en-US`, descrizioni, navigazione attuali/storici, sidebar Cart/Webex, nessun vecchio Universal Analytics; footnote, container e last-updated conservati.
@@ -62,7 +62,7 @@ Nessun repository package è stato modificato; questi sono handoff concreti, non
 - Webex2.0.0: riepilogo coverage upstream sovrastima accessor esposti; qui inventario52 confrontato con registro reale. Creazione client/evento non certifica token valido. OAuth applicativo rimane esterno.
 - FICv2 3.0.1: retry403/429 ricorsivo senza limite, unità commentate ms ma passate a `usleep` in microsecondi; paginazione helper può perdere connector azienda/token; changelog contiene voce futura non prova di release. Documentati limiti, nessun fix PHP surrettizio.
 - Aruba1.1.0: comando notification usa solo primo `--phoneNumber`; raw credit ritorna invece di stampare; sandbox SMS non impedisce eventuale email soglia, valore credito casuale. Documentati limiti senza invii.
-- Mongo3.1.1: dipendenze legacy, nessuna garanzia atomica inter-collection, relazione one-to-one non implementata genericamente. Demo Laravel6/mongo1.x storica. Proposte4.x/geospatial non distribuite.
+- Mongo3.1.1: vincoli Illuminate5–8, nessuna garanzia atomica inter-collection, relazione one-to-one non implementata genericamente. Demo Laravel6/mongo1.x storica. Proposte4.x/geospatial non distribuite.
 - FICv1: ritiro provider, differenze credenziali/payload richiedono migrazione; repository non dichiarato archiviato. Moneta: identità non accertata.
 - Toolchain documentale: Vue2 EOL e vulnerabilità residue; la release npm VuePress2 `next` è prerelease. Proposta separata concreta in `vuepress-migration.md`, senza affermare una migrazione completata.
 
@@ -74,6 +74,10 @@ Titolo proposto: **docs: refresh released package guides and reproducible VuePre
 
 Descrizione proposta:
 
-> Replace stale package guides with release-pinned documentation for Cart4.0.3, Webex2.0.0, FICv2 wrapper3.0.1, Aruba1.1.0 and legacy Mongo3.1.1; mark retired FICv1 and unverified Moneta clearly. Preserve existing landing URLs and232 heading anchors, the OA catalog and copied theme. Add provenance, isolated mocked PHP fixtures, supported Node24 frozen builds, focused content/link tests and read-only GitHub validation.
+> Replace stale package guides with release-pinned documentation for Cart4.0.3, Webex2.0.0, FICv2 wrapper3.0.1, Aruba1.1.0 and Mongo3.1.1; mark retired FICv1 and unverified Moneta clearly. Preserve existing landing URLs and232 heading anchors, the OA catalog and copied theme. Add provenance, isolated mocked PHP fixtures, supported Node24 frozen builds, focused content/link tests and read-only GitHub validation.
 >
-> Local verification: npm ci,13 Node tests, production build/internal links,93 pinned source links,45 external URLs and mocked success/error fixtures passed; desktop/mobile browser report included. Vue2 EOL/npm audit debt, legacy Mongo execution and unknown production ownership remain explicitly documented. No deployment or package changes.
+> Local verification: npm ci,13 Node tests, production build/internal links,93 pinned source links,45 external URLs and mocked success/error fixtures passed; desktop/mobile browser report included. Vue2 EOL/npm audit debt, Mongo3.1.1 database execution and unknown production ownership remain explicitly documented. No deployment or package changes.
+
+## Correzione della classificazione Mongo Auto Sync
+
+Su indicazione del maintainer, Mongo Auto Sync è classificato tra i package correnti, non legacy. Allineati catalogo, navigazione, manifest e descrizioni. I requisiti della release3.1.1 restano quelli verificati nel Composer; non sono una classificazione dello stato del progetto. La demo Laravel6 resta una risorsa storica separata.
