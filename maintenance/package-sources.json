@@ -1830,6 +1830,97 @@
         "ciResult": null,
         "supportPolicy": null
       }
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "docsPage": "filament-spid.md",
+      "route": "/filament-spid/",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "defaultBranch": "main",
+      "selectedTag": "1.0.0",
+      "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+      "status": "current-release",
+      "projectType": "composer-library",
+      "verifiedOn": "2026-10-18",
+      "composerRequirements": {
+        "php": "^8.3",
+        "filament/filament": "^3.0|^4.0|^5.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "italia/spid-laravel": "^2.1.0-beta",
+        "spatie/laravel-package-tools": "^1.93"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-18"
+      },
+      "sourcePaths": [
+        "composer.json",
+        "README.md",
+        "config/filament-spid.php",
+        "docs/snippets/quickstart.sh",
+        "docs/installation.md",
+        "docs/configuration.md",
+        "docs/diagnostics.md",
+        "docs/troubleshooting.md",
+        "docs/production-checklist.md",
+        "docs/testing/agid.md",
+        "docs/testing/evidence.md",
+        "src/Commands/InstallCommand.php",
+        "src/Commands/DoctorCommand.php",
+        "src/Commands/MetadataValidateCommand.php",
+        "resources/boost/guidelines/core.blade.php",
+        "LICENSE.md",
+        "SECURITY.md",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md"
+      ],
+      "sourceLinks": {
+        "release": "https://github.com/offline-agency/filament-spid/releases/tag/1.0.0",
+        "manifest": "https://github.com/offline-agency/filament-spid/blob/99f80235a6be15b6365840f46f160476e2fdb38e/composer.json",
+        "sourceTree": "https://github.com/offline-agency/filament-spid/tree/99f80235a6be15b6365840f46f160476e2fdb38e"
+      },
+      "unavailableChecks": [
+        "Fresh application Composer resolution and real identity login not executed in this documentation update.",
+        "Hosted AgID Validator and formal SPID acceptance not performed.",
+        "Release-wide CI outcomes not independently audited in this documentation update."
+      ],
+      "catalog": {
+        "title": "Filament SPID",
+        "details": "SPID SAML login for Filament panels, with a pinned patched upstream dependency, installer, diagnostics and local metadata validation.",
+        "requirements": "PHP 8.3+ / Laravel 12–13 / Filament 3–5",
+        "category": "Current project",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php",
+        "seoTitle": "Filament SPID v1: installation, diagnostics and metadata validation"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "landing": "static-redirect",
+        "category": "Laravel / authentication",
+        "supportStatus": "Stable 1.x; 0.1.x is no longer maintained per SECURITY.md.",
+        "discoveryEvidence": "maintenance/evidence/filament-spid/verification.json",
+        "provenanceDate": "2026-10-18"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-18",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/filament-spid/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": "SECURITY.md",
+        "privateVulnerabilityReporting": null,
+        "workflows": ".github/workflows",
+        "ciResult": null,
+        "supportPolicy": "SECURITY.md"
+      }
     }
   ],
   "historicalDemo": {

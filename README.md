@@ -156,6 +156,16 @@ projects:
     ecosystem: postgresql
     release: v0.1.0
     requirements: Research use
+  - title: Filament SPID
+    link: /filament-spid/
+    details: >-
+      SPID SAML login for Filament panels, with a pinned patched upstream
+      dependency, installer, diagnostics and local metadata validation.
+    type: Current project
+    maintenanceStatus: maintained
+    ecosystem: php
+    release: v1.0.0
+    requirements: PHP 8.3+ / Laravel 12–13 / Filament 3–5
 ---
 
 <div>

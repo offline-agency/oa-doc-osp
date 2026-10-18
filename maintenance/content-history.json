@@ -4,8 +4,8 @@
   "pages": {
     "/": {
       "file": "README.md",
-      "sha256": "68cb26e217b93ba5508ddedc84834f31930d7ab0027eb00be30778d0aa21d6ce",
-      "changedOn": "2026-10-16"
+      "sha256": "a1de65f807280e48ee70ae0abb599ed421771daa7c2bc69fe2884578f26c07ab",
+      "changedOn": "2026-10-18"
     },
     "/open-source-philosophy/": {
       "file": "open-source-philosophy.md",
@@ -76,6 +76,11 @@
       "file": "pgr_dmmsy.md",
       "sha256": "313c895dd1a3d2a7f520214f6962dd02afa2a3f99c33dec1c576f0e55084e316",
       "changedOn": "2026-10-16"
+    },
+    "/filament-spid/": {
+      "file": "filament-spid.md",
+      "sha256": "79236ba32b3d1741a7692ccf1bdb96ec5b8e34abeb4eae64d1c72755279af0f1",
+      "changedOn": "2026-10-18"
     },
     "/laravel-cart/4.0.3/": {
       "file": "versioned/laravel-cart/4.0.3/index.md",
@@ -337,6 +342,41 @@
       "sha256": "fe9175aa97b5527b82098ab4c013ca2201b53ca86db83d8480a7f7d42eea1cc7",
       "changedOn": "2026-10-16"
     },
+    "/filament-spid/v1/": {
+      "file": "versioned/filament-spid/v1/index.md",
+      "sha256": "23f40f3470bc85198edeb1e5d8582eeb4f8d16ae3d3823538b79e5c49b96bbeb",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/v1/agents/": {
+      "file": "versioned/filament-spid/v1/agents.md",
+      "sha256": "535c85b0ed07d0f6fda2840b40a438c2030d9373e3e92a20fd8787f7a2a9a2f3",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/v1/configuration/": {
+      "file": "versioned/filament-spid/v1/configuration.md",
+      "sha256": "5a9151481054fc6c061e8d1be38ce6487bd6c7b852d4a9a1cdd464ba7d831ae2",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/v1/diagnostics/": {
+      "file": "versioned/filament-spid/v1/diagnostics.md",
+      "sha256": "d99ac7df609d4501da636b243adb56d352f8562ab29ac523cb4cc3c95a8b6aaf",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/v1/installation/": {
+      "file": "versioned/filament-spid/v1/installation.md",
+      "sha256": "8c818636d8b7761f0a108d08249648baac5d440e45d4508b6837c04158dd06f3",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/v1/security/": {
+      "file": "versioned/filament-spid/v1/security.md",
+      "sha256": "323bb66bbb60dafaea3b04a55b640ecb13b68b3f893c37a33df40be775ff1597",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/v1/troubleshooting/": {
+      "file": "versioned/filament-spid/v1/troubleshooting.md",
+      "sha256": "a856bbd5a40a0f11482254c5edc11aa648b0efa7fb6196885b07a09b2fdae4cd",
+      "changedOn": "2026-10-18"
+    },
     "/laravel-cart/agents/": {
       "file": "laravel-cart/agents.md",
       "sha256": "4481d4b79c9ef5cbe28d01cb13133711e9506668ef8462262b513f4868214a81",
@@ -491,6 +531,36 @@
       "file": "vue3-burger-menu/reference.md",
       "sha256": "6da793c05b049d2392d8a8b3416b8ed545ce9087139f4d6e5154e126e7ace30f",
       "changedOn": "2026-10-16"
+    },
+    "/filament-spid/agents/": {
+      "file": "filament-spid/agents.md",
+      "sha256": "a8e1661a56cc08992a9b59b6077d45dfb0d4337d390304272d7a875a249e6bad",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/configuration/": {
+      "file": "filament-spid/configuration.md",
+      "sha256": "9940698a27285676783c5b9b7b6eb4907035576e545eafe4d2ad8144e47e2339",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/diagnostics/": {
+      "file": "filament-spid/diagnostics.md",
+      "sha256": "f2a3f1808a87bc34fedbe8e81885183a09b318b5267a92102f69e9b110b9ee5b",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/installation/": {
+      "file": "filament-spid/installation.md",
+      "sha256": "83a83d169aa468fe386aef869c79b616ed90899ada35433ef1c6349081d46fdc",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/security/": {
+      "file": "filament-spid/security.md",
+      "sha256": "b2cf866d95565b44e44dc28d87ea4aa2c9c6452206b77a9e3e819e80bcedb89b",
+      "changedOn": "2026-10-18"
+    },
+    "/filament-spid/troubleshooting/": {
+      "file": "filament-spid/troubleshooting.md",
+      "sha256": "981dd2739e4221b33eaeb0092c5c20a9071dd34e60aa5d0a37f00652888b0b03",
+      "changedOn": "2026-10-18"
     }
   }
 }
