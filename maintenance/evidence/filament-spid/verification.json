@@ -1,0 +1,90 @@
+{
+  "checkedOn": "2026-10-18",
+  "releaseUrl": "https://github.com/offline-agency/filament-spid/releases/tag/1.0.0",
+  "tag": "1.0.0",
+  "peeledCommit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+  "packagistUrl": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+  "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+  "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+  "upstreamIssue": "https://github.com/offline-agency/filament-spid/issues/16",
+  "upstreamIssueState": "open",
+  "scope": "Registry metadata and pinned source review; not a fresh consumer install, runtime test or SPID acceptance.",
+  "sourceFiles": [
+    {
+      "path": "composer.json",
+      "sha256": "e75672f8af75a4006fdacc38adadd2a0619a02b00e0137fb5ca9b8917f145d9c"
+    },
+    {
+      "path": "README.md",
+      "sha256": "44928f8acd07e17650c992a05e73b79ad4f3386e284f2606232bcbc0199d4865"
+    },
+    {
+      "path": "config/filament-spid.php",
+      "sha256": "c314ec3f9ef79fb86906fd555390cc3c76ba3fe60ce5e4c01d34c33bca1a82fc"
+    },
+    {
+      "path": "docs/snippets/quickstart.sh",
+      "sha256": "d5f539438cbe4ae956bc715fa30a9a3b0fc2aa37af7fe882c9f3e3746815024a"
+    },
+    {
+      "path": "docs/installation.md",
+      "sha256": "ba500e5d44d7f284e0c2d18325606b71c9283f80c7ad98c3c8cec8cfb6027e3c"
+    },
+    {
+      "path": "docs/configuration.md",
+      "sha256": "9edc1dcff1348134901d0c482a5b9d3a6c70fb441346400e40cbcc7d5a3a513e"
+    },
+    {
+      "path": "docs/diagnostics.md",
+      "sha256": "a5552fdcbf8ea48d83c442ad838278feb393aeaa10ed31e8ad7993ebc973f3cc"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "sha256": "3bb475a1e404f4fcb1384a0453fc85e76c8a451b1bb18f898ce41e103aaafcb5"
+    },
+    {
+      "path": "docs/production-checklist.md",
+      "sha256": "7769b1bcc6e91199a4998556a7031ec56b8407f6157f0ab8562adf62babc3b04"
+    },
+    {
+      "path": "docs/testing/agid.md",
+      "sha256": "db7a71d83d4964b5ddb38228cee2a2f9fdcc8914b5675a5f78b3ca70af71744c"
+    },
+    {
+      "path": "docs/testing/evidence.md",
+      "sha256": "ca465f362c617273e38dbc05f960421fe045126952e0d55a44c735f1448d6227"
+    },
+    {
+      "path": "src/Commands/InstallCommand.php",
+      "sha256": "d33bd3abb1719d6474f1c0c7acdb841fb3ff6dbbc12832ce8c50779a815a1b34"
+    },
+    {
+      "path": "src/Commands/DoctorCommand.php",
+      "sha256": "defafbda0c6047bd6fa71d15ee5f3acc41936e2d4f1e7ecee460dd7f3a74fcad"
+    },
+    {
+      "path": "src/Commands/MetadataValidateCommand.php",
+      "sha256": "080b9d927b2f9840b767c7dc971804457c4087c2bdae4c51209e0f3cdaf03e41"
+    },
+    {
+      "path": "resources/boost/guidelines/core.blade.php",
+      "sha256": "1c96c8fc7e0834b4d70258affbdc1315c211afda50561cbe3cbfab7fe58cfcec"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "96b119f2f39bb3ea7eade03ead977c2aea543ccd3ac836b0a8e68258914b8117"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "203b0b0e9dbcdbe682bbe12316dbfee49d5f020b701ed2842ce27fb209ddf5b0"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "9a21e770d30fbfb96138c882ac85281c5a8884568bd145087c4264bdd955c84a"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "de068bd4e156b54cacdf9c33ee517d784d85f009d8a6bae557387cfb5423258e"
+    }
+  ]
+}

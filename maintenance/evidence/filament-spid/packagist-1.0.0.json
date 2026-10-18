@@ -1,0 +1,92 @@
+{
+  "name": "offline-agency/filament-spid",
+  "description": "SPID (Italian public digital identity) SAML 2.0 login for Filament panels, built on italia/spid-laravel",
+  "keywords": [
+    "Authentication",
+    "laravel",
+    "single-sign-on",
+    "saml",
+    "SAML2",
+    "SPiD",
+    "italia",
+    "agid",
+    "filament",
+    "filament-plugin"
+  ],
+  "homepage": "https://github.com/offline-agency/filament-spid",
+  "version": "1.0.0",
+  "version_normalized": "1.0.0.0",
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Offline Agency",
+      "email": "support@offlineagency.it",
+      "homepage": "https://offlineagency.it",
+      "role": "Developer"
+    }
+  ],
+  "source": {
+    "url": "https://github.com/offline-agency/filament-spid.git",
+    "type": "git",
+    "reference": "99f80235a6be15b6365840f46f160476e2fdb38e"
+  },
+  "dist": {
+    "url": "https://api.github.com/repos/offline-agency/filament-spid/zipball/99f80235a6be15b6365840f46f160476e2fdb38e",
+    "type": "zip",
+    "shasum": "",
+    "reference": "99f80235a6be15b6365840f46f160476e2fdb38e"
+  },
+  "type": "library",
+  "support": {
+    "docs": "https://github.com/offline-agency/filament-spid#readme",
+    "issues": "https://github.com/offline-agency/filament-spid/issues",
+    "security": "https://github.com/offline-agency/filament-spid/blob/main/SECURITY.md",
+    "source": "https://github.com/offline-agency/filament-spid"
+  },
+  "funding": [
+    {
+      "url": "https://github.com/OfflineAgency",
+      "type": "github"
+    }
+  ],
+  "time": "2026-10-16T18:17:09+00:00",
+  "published-time": "2026-10-16T18:17:23+00:00",
+  "autoload": {
+    "psr-4": {
+      "OfflineAgency\\FilamentSpid\\": "src/",
+      "OfflineAgency\\FilamentSpid\\Database\\Factories\\": "database/factories/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "OfflineAgency\\FilamentSpid\\FilamentSpidServiceProvider"
+      ]
+    }
+  },
+  "require": {
+    "php": "^8.3",
+    "filament/filament": "^3.0|^4.0|^5.0",
+    "illuminate/contracts": "^12.0|^13.0",
+    "italia/spid-laravel": "^2.1.0-beta",
+    "spatie/laravel-package-tools": "^1.93"
+  },
+  "require-dev": {
+    "larastan/larastan": "^3.0",
+    "laravel/pint": "^1.14",
+    "nunomaduro/collision": "^8.0|^9.0",
+    "orchestra/testbench": "^10.0|^11.0",
+    "pestphp/pest": "^3.0|^4.0",
+    "pestphp/pest-plugin-arch": "^3.0|^4.0",
+    "pestphp/pest-plugin-laravel": "^3.0|^4.0",
+    "phpstan/extension-installer": "^1.3",
+    "phpstan/phpstan-deprecation-rules": "^2.0",
+    "phpstan/phpstan-phpunit": "^2.0",
+    "ryangjchandler/blade-capture-directive": "^1.1"
+  },
+  "conflict": {
+    "onelogin/php-saml": "<4.3.1"
+  }
+}

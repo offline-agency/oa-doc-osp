@@ -890,6 +890,84 @@
           "title": "Variants, wishlist and Buyable models"
         }
       ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "1.0.0",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Stable 1.x; 0.1.x is no longer maintained per SECURITY.md.",
+      "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-10-18",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.3",
+        "filament/filament": "^3.0|^4.0|^5.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "italia/spid-laravel": "^2.1.0-beta",
+        "spatie/laravel-package-tools": "^1.93"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-18"
+      },
+      "route": "/filament-spid/v1/",
+      "pages": [
+        {
+          "source": "filament-spid.md",
+          "file": "versioned/filament-spid/v1/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/v1/",
+          "title": "Filament SPID"
+        },
+        {
+          "source": "filament-spid/agents.md",
+          "file": "versioned/filament-spid/v1/agents.md",
+          "currentRoute": "/filament-spid/agents/",
+          "route": "/filament-spid/v1/agents/",
+          "title": "Filament SPID AI agent reference"
+        },
+        {
+          "source": "filament-spid/configuration.md",
+          "file": "versioned/filament-spid/v1/configuration.md",
+          "currentRoute": "/filament-spid/configuration/",
+          "route": "/filament-spid/v1/configuration/",
+          "title": "Configure Filament SPID"
+        },
+        {
+          "source": "filament-spid/diagnostics.md",
+          "file": "versioned/filament-spid/v1/diagnostics.md",
+          "currentRoute": "/filament-spid/diagnostics/",
+          "route": "/filament-spid/v1/diagnostics/",
+          "title": "Filament SPID diagnostics"
+        },
+        {
+          "source": "filament-spid/installation.md",
+          "file": "versioned/filament-spid/v1/installation.md",
+          "currentRoute": "/filament-spid/installation/",
+          "route": "/filament-spid/v1/installation/",
+          "title": "Install Filament SPID"
+        },
+        {
+          "source": "filament-spid/security.md",
+          "file": "versioned/filament-spid/v1/security.md",
+          "currentRoute": "/filament-spid/security/",
+          "route": "/filament-spid/v1/security/",
+          "title": "Filament SPID security and acceptance"
+        },
+        {
+          "source": "filament-spid/troubleshooting.md",
+          "file": "versioned/filament-spid/v1/troubleshooting.md",
+          "currentRoute": "/filament-spid/troubleshooting/",
+          "route": "/filament-spid/v1/troubleshooting/",
+          "title": "Filament SPID troubleshooting"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -1078,6 +1156,34 @@
     {
       "route": "/laravel-cart/support/",
       "target": "/laravel-cart/v4/troubleshooting/"
+    },
+    {
+      "route": "/filament-spid/",
+      "target": "/filament-spid/v1/"
+    },
+    {
+      "route": "/filament-spid/agents/",
+      "target": "/filament-spid/v1/agents/"
+    },
+    {
+      "route": "/filament-spid/configuration/",
+      "target": "/filament-spid/v1/configuration/"
+    },
+    {
+      "route": "/filament-spid/diagnostics/",
+      "target": "/filament-spid/v1/diagnostics/"
+    },
+    {
+      "route": "/filament-spid/installation/",
+      "target": "/filament-spid/v1/installation/"
+    },
+    {
+      "route": "/filament-spid/security/",
+      "target": "/filament-spid/v1/security/"
+    },
+    {
+      "route": "/filament-spid/troubleshooting/",
+      "target": "/filament-spid/v1/troubleshooting/"
     }
   ]
 }
