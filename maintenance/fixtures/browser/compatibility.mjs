@@ -8,7 +8,7 @@ const page=await browser.newPage({viewport:{width:1440,height:1000}});
 await page.context().route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
 const errors=[];page.on('pageerror',error=>errors.push(error.message));page.on('console',message=>{if(message.type()==='error' && !message.text().includes('Failed to load resource'))errors.push(message.text())});
 const releases=registry.releases.filter(item=>item.documentationKey);
-const results={verifiedOn:'2026-10-16',packages:[],screenshotsSaved:false};
+const results={verifiedOn:'2026-10-20',packages:[],screenshotsSaved:false};
 for(const release of releases){
  await page.goto(base+release.route,{waitUntil:'networkidle'});await page.reload({waitUntil:'networkidle'});
  assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://docs.offlineagency.com'+release.route);
@@ -17,8 +17,8 @@ for(const release of releases){
  const options=await page.locator('.documentation-version option').evaluateAll(nodes=>nodes.map(node=>node.value));
  assert.ok(options.every(route=>route.startsWith('/'+release.name.split('/')[1]+'/')));
  assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),release.version==='next'?'noindex, follow':'index, follow');
- assert.ok(await page.locator('.vp-sidebar a.vp-sidebar-item').count()>0);
- const sidebarLinks=await page.locator('.vp-sidebar a.vp-sidebar-item').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')));
+ assert.ok(await page.locator('.doc-sidebar a.doc-nav-item').count()>0);
+ const sidebarLinks=await page.locator('.doc-sidebar a.doc-nav-item').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')));
  assert.ok(sidebarLinks.every(route=>new URL(route,page.url()).pathname.startsWith(release.route)),JSON.stringify({release:release.route,sidebarLinks}));
  for(const href of sidebarLinks){const target=new URL(href,page.url());if(target.pathname===release.route && target.hash)assert.ok(await page.evaluate(id=>!!document.getElementById(id),decodeURIComponent(target.hash.slice(1))));}
  results.packages.push({route:release.route,version:release.version,options});
@@ -39,7 +39,7 @@ await page.locator('[vp-content] a[href="/braintree-vue3/next/installation/"]').
 assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://docs.offlineagency.com/braintree-vue3/next/installation/');assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'noindex, follow');
 await page.goto(base+'/');
 const search=page.locator('.search-box input');await search.fill('Braintree');await page.locator('.suggestion').first().waitFor();assert.ok((await page.locator('.suggestion a').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')))).every(route=>route.startsWith('/braintree-vue3/next/')));
-await search.fill('SPID');await page.locator('.suggestion').first().waitFor();assert.match(await page.locator('.suggestion a').first().innerText(),/v2/);
+await search.fill('Trentino');await page.locator('.suggestion').first().waitFor();assert.match(await page.locator('.suggestion a').first().innerText(),/v2/);
 const selected=await page.locator('.suggestion a').first().getAttribute('href');await page.locator('.suggestion').first().dispatchEvent('mousedown');await page.waitForURL(url=>url.pathname+url.hash===selected);
 assert.equal(await page.locator('link[rel="canonical"]').getAttribute('href'),'https://docs.offlineagency.com'+new URL(page.url()).pathname);assert.equal(await page.locator('meta[name="robots"]').getAttribute('content'),'index, follow');results.spaSeo=true;
 const sitemap=await (await fetch(base+'/sitemap.xml')).text();assert.ok(!sitemap.includes('/braintree-vue3/'));for(const release of releases.filter(item=>item.version!=='next'))assert.ok(sitemap.includes('https://docs.offlineagency.com'+release.route));

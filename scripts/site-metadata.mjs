@@ -69,7 +69,25 @@ export function projectFacts(route, context, releases, sources, history = {}) {
     ciResult: trust.ciResult && pinned === source.commit ? trust.ciResult : null,
     verifiedOn: trust.verifiedOn,
     revisedOn: history[route]?.changedOn || null,
+    heading: baseTitle(release.pages[0].title),
+    status: release.commit === source.commit ? statusLabels[source.catalog?.maintenanceStatus] || null : 'Older release',
+    technology: technologyLabels[source.catalog?.ecosystem] || null,
+    php: release.composerRequirements?.php || null,
+    laravel: laravelLines(release.composerRequirements),
+    packagist: source.distribution?.registry === 'Packagist' ? source.name : null,
+    github: source.repository.replace('https://github.com/', ''),
   };
+}
+
+const statusLabels = { maintained: 'Maintained', next: 'Unreleased', legacy: 'Legacy' };
+const technologyLabels = { php: 'PHP', javascript: 'JavaScript', postgresql: 'PostgreSQL' };
+// "^11.0|^12.0" -> ['11', '12']; reads laravel/framework, else any illuminate/* constraint.
+export function laravelLines(requirements = {}) {
+  const constraint = requirements['laravel/framework'] || Object.entries(requirements).find(([name]) => name.startsWith('illuminate/'))?.[1];
+  if (!constraint) return null;
+  const lines = constraint.split(/\|\|?/).map(part => part.trim().replace(/^[\^~>=<\s]+/, '').split('.')).filter(([major]) => /^\d+$/.test(major))
+    .map(([major, minor]) => Number(major) < 6 && minor && minor !== '0' && minor !== '*' ? `${major}.${minor}` : major);
+  return lines.length ? [...new Set(lines)] : null;
 }
 
 const programmingLanguage = { php: 'PHP', javascript: 'JavaScript' };

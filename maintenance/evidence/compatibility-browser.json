@@ -1,5 +1,5 @@
 {
-  "verifiedOn": "2026-10-16",
+  "verifiedOn": "2026-10-20",
   "packages": [
     {
       "route": "/spid-laravel-trentino/v2/",
@@ -35,11 +35,57 @@
       "options": [
         "/laravel-cart/v4/"
       ]
+    },
+    {
+      "route": "/filament-spid/v1/",
+      "version": "1.0.0",
+      "options": [
+        "/filament-spid/v1/",
+        "/filament-spid/v0.1/"
+      ]
+    },
+    {
+      "route": "/filament-spid/v0.1/",
+      "version": "0.1.8",
+      "options": [
+        "/filament-spid/v1/",
+        "/filament-spid/v0.1/"
+      ]
+    },
+    {
+      "route": "/image-puzzle/v1/",
+      "version": "1.0.0",
+      "options": [
+        "/image-puzzle/v1/"
+      ]
+    },
+    {
+      "route": "/laravel-email-chef/v1/",
+      "version": "1.0.5",
+      "options": [
+        "/laravel-email-chef/v2/",
+        "/laravel-email-chef/v1/"
+      ]
+    },
+    {
+      "route": "/laravel-email-chef/v2/",
+      "version": "2.0.0",
+      "options": [
+        "/laravel-email-chef/v2/",
+        "/laravel-email-chef/v1/"
+      ]
+    },
+    {
+      "route": "/aws-blockchain-laravel/v0.0/",
+      "version": "0.0.4",
+      "options": [
+        "/aws-blockchain-laravel/v0.0/"
+      ]
     }
   ],
   "screenshotsSaved": false,
   "spaSeo": true,
-  "redirects": 38,
+  "redirects": 42,
   "runtimeErrors": [],
   "mobileKeyboard": true,
   "search": true,

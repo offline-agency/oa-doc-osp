@@ -1,78 +1,92 @@
 {
-  "verifiedOn": "2026-10-16",
+  "verifiedOn": "2026-10-20",
   "desktop": {
-    "homeCards": 12,
-    "keyboardDropdown": "Enter/Escape passed",
+    "homeCards": 16,
+    "headerNavigation": "Site links visible; menu toggle hidden on desktop",
     "/laravel-cart/": {
-      "title": "Laravel Cart v4 — v4 · 4.1.0 | Documentation | OFFLINE Agency",
+      "title": "Laravel Cart v4: VAT, coupons and persistent carts | OFFLINE Agency",
       "h1": "Laravel Cart v4"
     },
     "/laravel-cart/money-and-tax/": {
-      "title": "Money and tax — v4 · 4.1.0 | Documentation | OFFLINE Agency",
+      "title": "Money and tax — Laravel Cart v4 | OFFLINE Agency",
       "h1": "Money and tax"
     },
     "/laravel-cart/legacy/": {
-      "title": "Historical Laravel Cart site documentation | Documentation | OFFLINE Agency",
+      "title": "Historical Laravel Cart site documentation | OFFLINE Agency",
       "h1": "laravel-cart"
     },
     "/laravel-webex/": {
-      "title": "Laravel Webex | Documentation | OFFLINE Agency",
+      "title": "Laravel Webex | OFFLINE Agency",
       "h1": "Laravel Webex"
     },
     "/laravel-webex/coverage/": {
-      "title": "Laravel Webex implemented API reference | Documentation | OFFLINE Agency",
+      "title": "Laravel Webex implemented API reference | OFFLINE Agency",
       "h1": "Implemented API reference"
     },
     "/laravel-fatture-in-cloud-v2/": {
-      "title": "Laravel Fatture in Cloud API v2 | Documentation | OFFLINE Agency",
+      "title": "Laravel Fatture in Cloud API v2 | OFFLINE Agency",
       "h1": "laravel-fatture-in-cloud-v2"
     },
     "/laravel-aruba-sms/": {
-      "title": "Laravel Aruba SMS | Documentation | OFFLINE Agency",
+      "title": "Laravel Aruba SMS | OFFLINE Agency",
       "h1": "Laravel Aruba SMS"
     },
     "/laravel-mongo-auto-sync/": {
-      "title": "Laravel MongoDB Relationships | Documentation | OFFLINE Agency",
+      "title": "Laravel MongoDB Relationships | OFFLINE Agency",
       "h1": "Laravel MongoDB Relationships"
     },
     "/laravel-fatture-in-cloud/": {
-      "title": "Fatture in Cloud API v1 — historical integration | Documentation | OFFLINE Agency",
+      "title": "Fatture in Cloud API v1 — historical integration | OFFLINE Agency",
       "h1": "Fatture in Cloud API v1"
     },
     "/laravel-moneta-online/": {
-      "title": "Laravel Moneta Online — unverified reference | Documentation | OFFLINE Agency",
+      "title": "Laravel Moneta Online — unverified reference | OFFLINE Agency",
       "h1": "Laravel Moneta Online"
     },
+    "/aws-blockchain-laravel/": {
+      "title": "AWS Blockchain Laravel v0.0 documentation | OFFLINE Agency",
+      "h1": "AWS Blockchain Laravel"
+    },
     "/laravel-bank-of-italy/": {
-      "title": "Laravel Bank of Italy | Documentation | OFFLINE Agency",
+      "title": "Laravel Bank of Italy | OFFLINE Agency",
       "h1": "Laravel Bank of Italy"
     },
     "/odps-validator/": {
-      "title": "ODPS Validator | Documentation | OFFLINE Agency",
+      "title": "ODPS Validator | OFFLINE Agency",
       "h1": "ODPS Validator"
     },
     "/braintree-vue3/": {
-      "title": "Braintree Vue 3 — next · ff99c39 | Documentation | OFFLINE Agency",
+      "title": "Braintree Vue 3 next documentation | OFFLINE Agency",
       "h1": "Braintree Vue 3"
     },
     "/vue3-burger-menu/": {
-      "title": "Vue 3 Burger Menu — v1 · 1.1.2 | Documentation | OFFLINE Agency",
+      "title": "Vue 3 Burger Menu v1 documentation | OFFLINE Agency",
       "h1": "Vue 3 Burger Menu"
     },
     "/spid-laravel-trentino/": {
-      "title": "SPID Laravel Trentino — v2 · v2.3.0 | Documentation | OFFLINE Agency",
+      "title": "SPID Laravel Trentino v2 documentation | OFFLINE Agency",
       "h1": "SPID Laravel Trentino"
     },
+    "/filament-spid/": {
+      "title": "Filament SPID v1 documentation | OFFLINE Agency",
+      "h1": "Filament SPID"
+    },
+    "/laravel-email-chef/": {
+      "title": "Laravel Email Chef v2 documentation | OFFLINE Agency",
+      "h1": "Laravel Email Chef"
+    },
+    "/image-puzzle/": {
+      "title": "Image Puzzle v1 documentation | OFFLINE Agency",
+      "h1": "Image Puzzle"
+    },
     "/pgr_dmmsy/": {
-      "title": "pgr_dmmsy — v0.1 · v0.1.0 | Documentation | OFFLINE Agency",
+      "title": "pgr_dmmsy v0.1 documentation | OFFLINE Agency",
       "h1": "pgr_dmmsy"
     },
     "search": {
       "VAT": [
         "/laravel-cart/v4/",
         "/laravel-cart/v4/money-and-tax/",
-        "/laravel-cart/v4/reference/#how-vat-is-computed",
-        "/laravel-cart/v4/reference/#vat-breakdown-fiscal-receipts",
         "/laravel-cart/v4/troubleshooting/",
         "/laravel-cart/4.0.3/money-and-tax/",
         "/laravel-cart/legacy/#cart-vat"
@@ -115,28 +129,28 @@
       "codeBlocks": [],
       "tables": [
         {
-          "width": 342,
-          "scrollWidth": 702,
+          "width": 356,
+          "scrollWidth": 616,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 416,
+          "width": 356,
+          "scrollWidth": 365,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 468,
+          "width": 356,
+          "scrollWidth": 406,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 425,
+          "width": 356,
+          "scrollWidth": 372,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 500,
+          "width": 356,
+          "scrollWidth": 439,
           "overflow": "auto"
         }
       ]
@@ -148,150 +162,150 @@
       },
       "codeBlocks": [
         {
-          "width": 342,
-          "scrollWidth": 1011,
+          "width": 358,
+          "scrollWidth": 1008,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 347,
+          "width": 358,
+          "scrollWidth": 368,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 649,
+          "width": 358,
+          "scrollWidth": 660,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 582,
+          "width": 358,
+          "scrollWidth": 595,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 540,
+          "width": 358,
+          "scrollWidth": 554,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 582,
+          "width": 358,
+          "scrollWidth": 595,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 725,
+          "width": 358,
+          "scrollWidth": 732,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 540,
+          "width": 358,
+          "scrollWidth": 554,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 633,
+          "width": 358,
+          "scrollWidth": 643,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 616,
+          "width": 358,
+          "scrollWidth": 627,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 649,
+          "width": 358,
+          "scrollWidth": 659,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 918,
+          "width": 358,
+          "scrollWidth": 919,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 834,
+          "width": 358,
+          "scrollWidth": 838,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 641,
+          "width": 358,
+          "scrollWidth": 651,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 817,
+          "width": 358,
+          "scrollWidth": 821,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 633,
+          "width": 358,
+          "scrollWidth": 643,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 649,
+          "width": 358,
+          "scrollWidth": 659,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 633,
+          "width": 358,
+          "scrollWidth": 643,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 624,
+          "width": 358,
+          "scrollWidth": 635,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 582,
+          "width": 358,
+          "scrollWidth": 595,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 624,
+          "width": 358,
+          "scrollWidth": 635,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 742,
+          "width": 358,
+          "scrollWidth": 749,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 725,
+          "width": 358,
+          "scrollWidth": 732,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 342,
+          "width": 358,
+          "scrollWidth": 358,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 565,
+          "width": 358,
+          "scrollWidth": 578,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 658,
+          "width": 358,
+          "scrollWidth": 668,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 691,
+          "width": 358,
+          "scrollWidth": 700,
           "overflow": "auto"
         }
       ],
       "tables": [
         {
-          "width": 342,
-          "scrollWidth": 342,
+          "width": 356,
+          "scrollWidth": 356,
           "overflow": "auto"
         },
         {
-          "width": 342,
-          "scrollWidth": 597,
+          "width": 356,
+          "scrollWidth": 524,
           "overflow": "auto"
         }
       ]
@@ -304,8 +318,8 @@
       "codeBlocks": [],
       "tables": [
         {
-          "width": 342,
-          "scrollWidth": 494,
+          "width": 356,
+          "scrollWidth": 417,
           "overflow": "auto"
         }
       ]
@@ -314,6 +328,6 @@
   },
   "screenshotsSaved": false,
   "serverRenderedContentWithoutJS": true,
-  "generatedHttpPages": 102,
+  "generatedHttpPages": 113,
   "runtimeErrors": []
 }

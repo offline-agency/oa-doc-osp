@@ -3,9 +3,11 @@ import {resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import matter from 'gray-matter';
 // Card release labels come from the verified tag; source references never claim one.
+// Live download/star counts are fetched in the browser from these public identifiers.
+const stats=source=>({...(source.repository?.startsWith('https://github.com/')?{github:source.repository.replace('https://github.com/','')}:{}),...(source.distribution?.registry==='Packagist'?{packagist:source.name}:{})});
 export const releaseLabel=source=>source.selectedTag ? `v${String(source.selectedTag).replace(/^v/,'')}` : 'Pinned commit';
 export function catalog(packages){
- const projects=packages.filter(source=>source.catalog).map(source=>({title:source.catalog.title,link:source.route,details:source.catalog.details,type:source.catalog.category,maintenanceStatus:source.catalog.maintenanceStatus,ecosystem:source.catalog.ecosystem,release:releaseLabel(source),...(source.catalog.requirements?{requirements:source.catalog.requirements}:{})}));
+ const projects=packages.filter(source=>source.catalog).map(source=>({title:source.catalog.title,link:source.route,details:source.catalog.details,type:source.catalog.category,maintenanceStatus:source.catalog.maintenanceStatus,ecosystem:source.catalog.ecosystem,release:releaseLabel(source),...(source.catalog.requirements?{requirements:source.catalog.requirements}:{}),...stats(source)}));
  return {projects,projectTypes:[...new Set(projects.map(card=>card.type))].map(title=>({title}))};
 }
 if(process.argv[1] && import.meta.url===pathToFileURL(resolve(process.argv[1])).href){

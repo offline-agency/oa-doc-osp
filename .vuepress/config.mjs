@@ -26,13 +26,15 @@ const pageLoader = [
     + 'html.oa-loading body::after{content:"";position:fixed;top:50%;left:50%;z-index:10000;width:40px;height:40px;margin:-20px 0 0 -20px;box-sizing:border-box;border:3px solid rgba(53,112,112,.25);border-top-color:#357070;border-radius:50%;animation:oa-spin .8s linear infinite;transition:opacity .3s}'
     + 'html.oa-loaded body::before,html.oa-loaded body::after{opacity:0;pointer-events:none}'
     + '@keyframes oa-spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){html.oa-loading body::after{animation:none}}'],
-  ['script', {}, '(function(){var h=document.documentElement;h.classList.add("oa-loading");var done=function(){if(!h.classList.contains("oa-loading")||h.classList.contains("oa-loaded"))return;h.classList.add("oa-loaded");setTimeout(function(){h.classList.remove("oa-loading","oa-loaded")},300)};window.addEventListener("load",done,{once:true});setTimeout(done,10000)})()'],
+  ['script', {}, '(function(){var h=document.documentElement;h.classList.add("oa-js","oa-loading");var done=function(){if(!h.classList.contains("oa-loading")||h.classList.contains("oa-loaded"))return;h.classList.add("oa-loaded");setTimeout(function(){h.classList.remove("oa-loading","oa-loaded")},300)};window.addEventListener("load",done,{once:true});setTimeout(done,10000)})()'],
 ]
-const label = source => source.catalog?.title || source.name.replace('offline-agency/', '')
-const project = source => ({ text: label(source), link: source.route })
-const current = sources.packages.filter(source => ['current-release', 'source-reference'].includes(source.status)).map(source => ({...project(source),text:label(source)+(source.status==='source-reference'?' (next)':'')}))
-const historical = sources.packages.filter(source => source.status === 'historical-integration').map(source => ({ text: `${label(source)} (retired API)`, link: source.route }))
 const versionSidebars = Object.fromEntries(versions.releases.map(release => [release.route, release.pages.map(page => ({ text: page.title, link: page.route }))]))
+// Sidebar pages for the documentation layout; the longest matching prefix wins.
+const sidebars = {
+  ...versionSidebars,
+  '/laravel-cart/': [{ text: 'Historical site archive', link: '/laravel-cart/legacy/' }, { text: 'Site URL migration', link: '/laravel-cart/url-migration/' }],
+  '/laravel-webex/': [{ text: 'Guide — 2.0.0', link: '/laravel-webex/' }, { text: 'Implemented API coverage', link: '/laravel-webex/coverage/' }],
+}
 const siteDescription = 'Release-pinned guides to OFFLINE Agency open-source packages, with explicit historical and unavailable references.'
 const escape = info => info.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
 const publication = {
@@ -66,6 +68,13 @@ const publication = {
     page.data.headTitle = title
     page.data.breadcrumbs = crumbs
     page.data.projectFacts = facts
+    // Sidebar pages, edit target and revision date for the documentation layout.
+    const key = Object.keys(sidebars).filter(prefix => route.startsWith(prefix)).sort((a, b) => b.length - a.length)[0]
+    page.data.docNav = key ? sidebars[key] : null
+    const releasePage = release?.pages.find(item => item.route === route)
+    page.data.editPath = releasePage ? (release.commit === source?.commit ? releasePage.source : releasePage.file) : page.filePathRelative
+    page.data.revisedOn = history[route]?.changedOn || null
+    page.data.headers = page.headers
     if (!policy.redirect && route !== '/404.html') {
       page.frontmatter.head.push(...socialHead({ canonical: policy.canonical, title, description, home: route === '/' }))
       page.frontmatter.head.push(['script', { type: 'application/ld+json' }, jsonLd(structuredData(page, { canonical: policy.canonical, title, description, crumbs, facts, context, release, source, revisedOn: history[route]?.changedOn }))])
@@ -84,29 +93,15 @@ export default defineUserConfig({
   head: [['link', { rel: 'icon', href: '/favicon.png' }], ...pageLoader],
   pagePatterns: ['**/*.md', '!node_modules/**', '!maintenance/**', '!scripts/**', '!**/AGENTS.md'],
   bundler: viteBundler(),
-  alias: {
-    '@theme/VPHome.vue': resolve(directory, 'components/BrandHome.vue'),
-    '@theme/VPToggleSidebarButton.vue': resolve(directory, 'components/SidebarToggle.vue'),
-    '@theme/VPNavbarDropdown.vue': resolve(directory, 'components/NavbarDropdown.vue'),
-  },
   theme: defaultTheme({
     logo: '/oa-eb.png', colorMode: 'light', colorModeSwitch: false,
     repo: 'offline-agency/oa-doc-osp', editLink: false, contributors: false, lastUpdated: true,
-    navbar: [
-      { text: 'Current project', children: current },
-      { text: 'Legacy', children: historical },
-      { text: 'Open source philosophy', link: '/open-source-philosophy/' },
-      { text: 'OA', link: 'https://offlineagency.it' },
-      { text: 'GitHub', link: 'https://github.com/offline-agency' },
-    ],
-    sidebar: {
-      ...versionSidebars,
-      '/laravel-cart/': [{ text: 'Historical site archive', link: '/laravel-cart/legacy/' }, { text: 'Site URL migration', link: '/laravel-cart/url-migration/' }],
-      '/laravel-webex/': [{ text: 'Guide — 2.0.0', link: '/laravel-webex/' }, { text: 'Implemented API coverage', link: '/laravel-webex/coverage/' }],
-      '/': 'heading',
-    },
+    // Header, sidebar and home come from .vuepress/layouts/Layout.vue; the theme still renders the 404 page.
+    navbar: false, sidebar: false,
     // Publication metadata is provided by the shared registry/postbuild contract.
-    themePlugins: { linksCheck: false, seo: false, sitemap: false },
+    // copyCode stays registered (disabling it breaks the theme's Sass imports) but matches no block:
+    // client.mjs adds the template's labelled Copy button instead.
+    themePlugins: { linksCheck: false, seo: false, sitemap: false, copyCode: { selector: '[data-oa-copy-code-plugin]' }, prismjs: { theme: 'one-dark', lineNumbers: false } },
   }),
   plugins: [
     publication,
@@ -118,5 +113,17 @@ export default defineUserConfig({
     markdownContainerPlugin({ type: 'right', before: () => '<div class="custom-block right">', after: () => '</div>' }),
     markdownContainerPlugin({ type: 'theorem', before: info => `<div class="custom-block theorem"><p class="custom-block-title">${escape(info)}</p>`, after: () => '</div>' }),
   ],
-  extendsMarkdown: md => md.use(footnote),
+  extendsMarkdown: md => {
+    md.use(footnote)
+    // Render the code-block Copy button at build time so hydration matches; client.mjs handles the click.
+    const fence = md.renderer.rules.fence
+    md.renderer.rules.fence = (...args) => fence(...args).replace(/^(<div class="language-[^>]*>)/, '$1<button type="button" class="copy-code" aria-label="Copy code">Copy</button>')
+    // Package overviews render their H1 in the page hero; drop the Markdown one so each page keeps exactly one H1.
+    md.core.ruler.push('overview-heading', state => {
+      const frontmatter = state.env.frontmatter || {}
+      if (!frontmatter.documentationSnapshot || !/^\/[^/]+\/[^/]+\/$/.test(frontmatter.permalink || '')) return
+      const index = state.tokens.findIndex(token => token.type === 'heading_open' && token.tag === 'h1')
+      if (index >= 0) state.tokens.splice(index, 3)
+    })
+  },
 })
