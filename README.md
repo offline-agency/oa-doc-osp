@@ -146,6 +146,16 @@ projects:
     maintenanceStatus: maintained
     ecosystem: php
     release: v2.3.0
+  - title: Filament SPID
+    link: /filament-spid/
+    details: >-
+      SPID SAML 2.0 login for Filament panels, with an installer, a doctor
+      command and a metadata validator adapter.
+    type: Current project
+    maintenanceStatus: maintained
+    ecosystem: php
+    release: v1.0.0
+    requirements: Filament 3–5 · Laravel 12 / 13
   - title: pgr_dmmsy
     link: /pgr_dmmsy/
     details: >-

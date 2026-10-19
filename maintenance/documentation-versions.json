@@ -890,6 +890,42 @@
           "title": "Variants, wishlist and Buyable models"
         }
       ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "1.0.0",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Latest 1.x release supported per the upstream security policy; 0.1.x unsupported.",
+      "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.3",
+        "filament/filament": "^3.0|^4.0|^5.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "italia/spid-laravel": "^2.1.0-beta",
+        "spatie/laravel-package-tools": "^1.93"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/filament-spid/v1/",
+      "pages": [
+        {
+          "source": "filament-spid.md",
+          "file": "versioned/filament-spid/v1/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/v1/",
+          "title": "Filament SPID"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -1078,6 +1114,10 @@
     {
       "route": "/laravel-cart/support/",
       "target": "/laravel-cart/v4/troubleshooting/"
+    },
+    {
+      "route": "/filament-spid/",
+      "target": "/filament-spid/v1/"
     }
   ]
 }

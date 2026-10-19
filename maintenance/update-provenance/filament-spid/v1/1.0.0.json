@@ -1,0 +1,146 @@
+{
+  "name": "offline-agency/filament-spid",
+  "repository": "https://github.com/offline-agency/filament-spid",
+  "reference": "1.0.0",
+  "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+  "version": "1.0.0",
+  "documentationKey": "v1",
+  "verifiedOn": "2026-10-19",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "44928f8acd07e17650c992a05e73b79ad4f3386e284f2606232bcbc0199d4865"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "e75672f8af75a4006fdacc38adadd2a0619a02b00e0137fb5ca9b8917f145d9c"
+    },
+    {
+      "path": "config/filament-spid.php",
+      "sha256": "c314ec3f9ef79fb86906fd555390cc3c76ba3fe60ce5e4c01d34c33bca1a82fc"
+    },
+    {
+      "path": "src/SpidPlugin.php",
+      "sha256": "b9729863a6b66a06edd702abf2bfda3926a5cbe9e2bda2263693dbc1aa80a4ff"
+    },
+    {
+      "path": "src/FilamentSpidServiceProvider.php",
+      "sha256": "75e93cb6ac24ae1f2e082959312a6d64c4cf04188bd8f6ec4fe25620f39bb2e7"
+    },
+    {
+      "path": "src/Commands/InstallCommand.php",
+      "sha256": "d33bd3abb1719d6474f1c0c7acdb841fb3ff6dbbc12832ce8c50779a815a1b34"
+    },
+    {
+      "path": "src/Commands/DoctorCommand.php",
+      "sha256": "defafbda0c6047bd6fa71d15ee5f3acc41936e2d4f1e7ecee460dd7f3a74fcad"
+    },
+    {
+      "path": "src/Commands/MetadataValidateCommand.php",
+      "sha256": "080b9d927b2f9840b767c7dc971804457c4087c2bdae4c51209e0f3cdaf03e41"
+    },
+    {
+      "path": "src/Events/SpidUserProvisioning.php",
+      "sha256": "5788e59b2a31257175fe8811572d4e7610a068d077f3ae2ac5d988c222927a08"
+    },
+    {
+      "path": "src/Events/SpidUserCreated.php",
+      "sha256": "30afd84532c5b4731599e0068dab948a6b15b8cb3ef599b56890cc0c1a1df62f"
+    },
+    {
+      "path": "src/Events/SpidUserUpdated.php",
+      "sha256": "6b16f611ab0146a3d9484b8eecf6f852b0146b856dee8225213403e90ea30e23"
+    },
+    {
+      "path": "src/Events/SpidAuthenticationSucceeded.php",
+      "sha256": "0db49b41fd48625a2aab0c1cdc9c9c58618cbab61423a6e11c82ae36fdb68798"
+    },
+    {
+      "path": "src/Events/SpidAuthenticationFailed.php",
+      "sha256": "d8fcb755489300897405280c544c0a3d583dd017624f34b7e68d43ad2776670b"
+    },
+    {
+      "path": "src/Mapping/FullName.php",
+      "sha256": "a442491c814f3c25c97aa15d62566b1614488084f99a7398c9c8b4ce056bdc8d"
+    },
+    {
+      "path": "src/Mapping/EmailOrFallback.php",
+      "sha256": "a2265f92147e9928ac0436d5f06f335ba3485f606946832bd9fe26b889774683"
+    },
+    {
+      "path": "src/Mapping/RandomPassword.php",
+      "sha256": "3a2119b48e5047ef866ac7d5ce86512ab6ba71983c1a283b3338166d75ad0a16"
+    },
+    {
+      "path": "docs/installation.md",
+      "sha256": "ba500e5d44d7f284e0c2d18325606b71c9283f80c7ad98c3c8cec8cfb6027e3c"
+    },
+    {
+      "path": "docs/configuration.md",
+      "sha256": "9edc1dcff1348134901d0c482a5b9d3a6c70fb441346400e40cbcc7d5a3a513e"
+    },
+    {
+      "path": "docs/authentication.md",
+      "sha256": "82b26e641b2430c3f8726f452002863459b90504c88aa4f9ce50d7e9243fcb79"
+    },
+    {
+      "path": "docs/diagnostics.md",
+      "sha256": "a5552fdcbf8ea48d83c442ad838278feb393aeaa10ed31e8ad7993ebc973f3cc"
+    },
+    {
+      "path": "docs/production-checklist.md",
+      "sha256": "7769b1bcc6e91199a4998556a7031ec56b8407f6157f0ab8562adf62babc3b04"
+    },
+    {
+      "path": "docs/troubleshooting.md",
+      "sha256": "3bb475a1e404f4fcb1384a0453fc85e76c8a451b1bb18f898ce41e103aaafcb5"
+    },
+    {
+      "path": "docs/faq.md",
+      "sha256": "974331d422b17d1403debc067580854707ba2b99dedb53ee8d5efbe383fdb80c"
+    },
+    {
+      "path": "docs/upgrading.md",
+      "sha256": "eb0d51e76d39e16b850a6d8034ec010a29159ab9ad55f3a0622faa634647a9f8"
+    },
+    {
+      "path": "docs/testing/agid.md",
+      "sha256": "db7a71d83d4964b5ddb38228cee2a2f9fdcc8914b5675a5f78b3ca70af71744c"
+    },
+    {
+      "path": "docs/testing/evidence.md",
+      "sha256": "ca465f362c617273e38dbc05f960421fe045126952e0d55a44c735f1448d6227"
+    },
+    {
+      "path": "examples/setup.public.json",
+      "sha256": "c19c207cbbed299c42866522d07dc778047d2460e9704f7b2afa7517fd0510d3"
+    },
+    {
+      "path": "examples/setup.private.json",
+      "sha256": "4c4e7be38efcc1a4763ae0490ae92d0f87d656ef7a56fcf335721c817213551e"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "9a21e770d30fbfb96138c882ac85281c5a8884568bd145087c4264bdd955c84a"
+    },
+    {
+      "path": "SECURITY.md",
+      "sha256": "203b0b0e9dbcdbe682bbe12316dbfee49d5f020b701ed2842ce27fb209ddf5b0"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "de068bd4e156b54cacdf9c33ee517d784d85f009d8a6bae557387cfb5423258e"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "96b119f2f39bb3ea7eade03ead977c2aea543ccd3ac836b0a8e68258914b8117"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/filament-spid/v1/index.md",
+      "route": "/filament-spid/v1/",
+      "sha256": "0c9571a5403623be3e4fa18c82a58edd21668d08ba0396b114a4d43d21e798ef"
+    }
+  ]
+}

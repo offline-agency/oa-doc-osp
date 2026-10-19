@@ -1,16 +1,16 @@
 {
-  "verifiedOn": "2026-10-16",
+  "verifiedOn": "2026-10-19",
   "result": "PASS",
   "combinations": [
     {
       "status": "all",
       "technology": "all",
-      "count": 12
+      "count": 13
     },
     {
       "status": "maintained",
       "technology": "all",
-      "count": 10
+      "count": 11
     },
     {
       "status": "legacy",
@@ -25,7 +25,7 @@
     {
       "status": "all",
       "technology": "php",
-      "count": 8
+      "count": 9
     },
     {
       "status": "all",
@@ -40,7 +40,7 @@
     {
       "status": "maintained",
       "technology": "php",
-      "count": 7
+      "count": 8
     },
     {
       "status": "maintained",
@@ -85,7 +85,7 @@
   ],
   "keyboard": "Tab order, Space reset and search",
   "mobile": "PostgreSQL selection and reset; no page overflow",
-  "noJavaScriptCards": 12,
+  "noJavaScriptCards": 13,
   "runtimeErrors": [],
   "screenshotsSaved": false
 }

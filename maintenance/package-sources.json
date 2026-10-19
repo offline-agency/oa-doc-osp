@@ -1668,6 +1668,108 @@
       }
     },
     {
+      "name": "offline-agency/filament-spid",
+      "docsPage": "filament-spid.md",
+      "route": "/filament-spid/",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "defaultBranch": "main",
+      "selectedTag": "1.0.0",
+      "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+      "status": "current-release",
+      "projectType": "composer-library",
+      "verifiedOn": "2026-10-19",
+      "sourcePaths": [
+        "README.md",
+        "composer.json",
+        "config/filament-spid.php",
+        "src/SpidPlugin.php",
+        "src/FilamentSpidServiceProvider.php",
+        "src/Commands/InstallCommand.php",
+        "src/Commands/DoctorCommand.php",
+        "src/Commands/MetadataValidateCommand.php",
+        "src/Events/SpidUserProvisioning.php",
+        "src/Events/SpidUserCreated.php",
+        "src/Events/SpidUserUpdated.php",
+        "src/Events/SpidAuthenticationSucceeded.php",
+        "src/Events/SpidAuthenticationFailed.php",
+        "src/Mapping/FullName.php",
+        "src/Mapping/EmailOrFallback.php",
+        "src/Mapping/RandomPassword.php",
+        "docs/installation.md",
+        "docs/configuration.md",
+        "docs/authentication.md",
+        "docs/diagnostics.md",
+        "docs/production-checklist.md",
+        "docs/troubleshooting.md",
+        "docs/faq.md",
+        "docs/upgrading.md",
+        "docs/testing/agid.md",
+        "docs/testing/evidence.md",
+        "examples/setup.public.json",
+        "examples/setup.private.json",
+        "CHANGELOG.md",
+        "SECURITY.md",
+        "CONTRIBUTING.md",
+        "LICENSE.md"
+      ],
+      "unavailableChecks": [
+        "No site-owned PHP fixture: the guide relies on the upstream CI run on the release commit",
+        "Hosted AgID Validator and formal AgID acceptance not run (also stated upstream)"
+      ],
+      "composerRequirements": {
+        "php": "^8.3",
+        "filament/filament": "^3.0|^4.0|^5.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "italia/spid-laravel": "^2.1.0-beta",
+        "spatie/laravel-package-tools": "^1.93"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "Laravel / Filament / authentication",
+        "supportStatus": "Latest 1.x release supported per the upstream security policy; 0.1.x unsupported.",
+        "landing": "static-redirect",
+        "discoveryEvidence": "maintenance/evidence/filament-spid-1.0.0.json",
+        "provenanceDate": "2026-10-19"
+      },
+      "catalog": {
+        "title": "Filament SPID",
+        "details": "SPID SAML 2.0 login for Filament panels, with an installer, a doctor command and a metadata validator adapter.",
+        "requirements": "Filament 3–5 · Laravel 12 / 13",
+        "category": "Current project",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-19",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/filament-spid/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": "SECURITY.md",
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": {
+          "status": "passed",
+          "checkedOn": "2026-10-19",
+          "url": "https://github.com/offline-agency/filament-spid/actions/runs/38946163154",
+          "summary": "run-tests, PHPStan, code style and the SPID lab workflow passed on the release commit (PHP 8.3–8.5, Laravel 12/13, Filament 3–5)"
+        },
+        "supportPolicy": null
+      }
+    },
+    {
       "name": "offline-agency/pgr_dmmsy",
       "docsPage": "pgr_dmmsy.md",
       "route": "/pgr_dmmsy/",

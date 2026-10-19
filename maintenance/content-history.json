@@ -4,8 +4,8 @@
   "pages": {
     "/": {
       "file": "README.md",
-      "sha256": "68cb26e217b93ba5508ddedc84834f31930d7ab0027eb00be30778d0aa21d6ce",
-      "changedOn": "2026-10-16"
+      "sha256": "3a5fd4d50e4b480de7ca6913cf9d0fcfc4c8a622072010d35dfc4ccf8a5a8fe3",
+      "changedOn": "2026-10-19"
     },
     "/open-source-philosophy/": {
       "file": "open-source-philosophy.md",
@@ -71,6 +71,11 @@
       "file": "spid-laravel-trentino.md",
       "sha256": "e08fc7663392faeed2b096a7281e8e38a4f8087446b9d0ea897fc2db7e60a1ec",
       "changedOn": "2026-10-16"
+    },
+    "/filament-spid/": {
+      "file": "filament-spid.md",
+      "sha256": "0d993e8ade9e29f60b6eec52adfdf6cd67da6c34da7be19d186b9e9b0cbad744",
+      "changedOn": "2026-10-19"
     },
     "/pgr_dmmsy/": {
       "file": "pgr_dmmsy.md",
@@ -336,6 +341,11 @@
       "file": "versioned/laravel-cart/v4/variants-and-wishlist.md",
       "sha256": "fe9175aa97b5527b82098ab4c013ca2201b53ca86db83d8480a7f7d42eea1cc7",
       "changedOn": "2026-10-16"
+    },
+    "/filament-spid/v1/": {
+      "file": "versioned/filament-spid/v1/index.md",
+      "sha256": "0c9571a5403623be3e4fa18c82a58edd21668d08ba0396b114a4d43d21e798ef",
+      "changedOn": "2026-10-19"
     },
     "/laravel-cart/agents/": {
       "file": "laravel-cart/agents.md",

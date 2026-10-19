@@ -14,6 +14,7 @@ const ICONS = {
   'braintree-vue3': { d: ['M3 6h18v12H3z', 'M3 10h18'], bar: true },
   'vue3-burger-menu': { lines: [[5, 7, 19], [5, 12, 19], [5, 17, 19]], loop: 'burger' },
   'spid-laravel-trentino': { d: ['M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z', 'M12 9.5a1.6 1.6 0 1 0 0.01 0', 'M12 11.5v3'], loop: 'pulse' },
+  'filament-spid': { d: ['M3 5h18v14H3z', 'M3 9h18', 'M12 12a1.8 1.8 0 1 0 0.01 0', 'M8.8 17.2c.7-1.5 1.8-2.2 3.2-2.2s2.5.7 3.2 2.2'] },
   pgr_dmmsy: { d: ['M5 18L10 8L16 14L19 5'], nodes: [[5, 18], [10, 8], [16, 14], [19, 5]] },
   'laravel-fatture-in-cloud': { d: ['M6 3h9l4 4v14H6z', 'M15 3v4h4', 'M9.5 11.5l5 5', 'M14.5 11.5l-5 5'] },
 }
