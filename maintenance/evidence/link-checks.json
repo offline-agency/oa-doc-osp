@@ -1,0 +1,839 @@
+{
+  "verifiedOn": "2026-10-16",
+  "pinnedSourceLinks": [
+    {
+      "url": "https://github.com/offline-agency/braintree-vue3/blob/ff99c39e9fd45e6fe43440f8c3b7bcda58e01775/package.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/braintree-vue3/blob/ff99c39e9fd45e6fe43440f8c3b7bcda58e01775/src/index.ts",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-aruba-sms/blob/b090caba23f4882486619f2eaed90dfa9b7a2014/LICENSE",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/CONTRIBUTING.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/src/Api/ExchangeRate.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/src/Entities/ExchangeRate/ExchangeRates.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/blob/8b4ae70b92d0b802139138e70367d789d80251af/src/LaravelBankOfItalyServiceProvider.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/.github/workflows/ci.yml",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/CONTRIBUTING.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/LICENSE",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/UPGRADE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/UPGRADE.md#1-buyable-interface-getter-only-new-getweight",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Cart.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/CartCoupon.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/CartItem.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Console/CartMigrateDriverCommand.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Contracts/Buyable.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Contracts/CartStorage.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Contracts/Couponable.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Contracts/FiscalBuyable.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Resources/CartItemResource.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Resources/CartResource.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Exceptions",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/blob/04360c77c68e4d481f5a4943ffc2541f26b19767/CHANGELOG.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/blob/04360c77c68e4d481f5a4943ffc2541f26b19767/CONTRIBUTING.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/blob/04360c77c68e4d481f5a4943ffc2541f26b19767/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/tree/04360c77c68e4d481f5a4943ffc2541f26b19767/src/Api",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/CONTRIBUTING.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/config/fatture-in-cloud.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/src/Auth.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/src/FattureInCloudServiceProvider.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/tree/b37155297538fa3dcbbcb16d633d926091734690/src/Entities",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/tree/b37155297538fa3dcbbcb16d633d926091734690/src/Requests",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/blob/487a622ab48017f8839f4b90a0844d5c8fcbae7f/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/blob/487a622ab48017f8839f4b90a0844d5c8fcbae7f/tests/UpdateWithSyncTest.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/tree/487a622ab48017f8839f4b90a0844d5c8fcbae7f/tests/Models",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/CONTRIBUTING.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/SECURITY.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/UPGRADE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/WEBEX_ENDPOINT_COVERAGE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/AdminAuditEvents.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/HybridClusters.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/HybridConnectors.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/Licenses.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/Locations.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/Organizations.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/ReportTemplates.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/Reports.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/ResourceGroupMemberships.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/ResourceGroups.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/Roles.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/SpaceClassifications.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/WorkspaceLocations.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/WorkspaceMetrics.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Admin/Workspaces.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Calling/BroadWorksEnterprises.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Calling/BroadWorksSubscribers.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Calling/CallControls.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Calling/VoiceMessaging.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Devices/DeviceConfigurations.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Devices/Devices.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Devices/WorkspaceLocations.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Devices/WorkspaceMetrics.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Devices/Workspaces.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Devices/Xapi.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/Meeting.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingChats.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingClosedCaptions.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingInvitee.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingMessages.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingParticipant.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingPolls.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingPreferences.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingQAndA.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingQualities.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingTranscripts.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/MeetingsSummaryReport.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/People.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/RecordingReport.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/Recordings.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/SessionTypes.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/TrackingCodes.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/VideoMesh.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Meetings/Webhooks.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/AttachmentActions.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/Events.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/Memberships.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/Messages.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/RoomTabs.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/Rooms.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/TeamMemberships.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/Api/Messages/Teams.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/blob/c4aec48c1c416676cc411936fe7e905398f66b8c/src/LaravelWebex.php",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/tree/c4aec48c1c416676cc411936fe7e905398f66b8c/tests",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/LICENSE",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/next.config.js",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/pages/index.js",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/public/schemas/v3.0/odps.yaml",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/blob/bed32b74b2cf353bfebb134aab9dfb41ac033d81/public/schemas/v3.1/odps.yaml",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/COMPILE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/Makefile",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/sql/pgr_dmmsy--0.1.0.sql",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/blob/86b21b8efd8edd0c2851ba2b433b4481d0c37de9/src/dmmsy.c",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/LICENSE.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/SECURITY.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/composer.json",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/development.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/known-issues.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/security.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/transaction-log.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/troubleshooting.md",
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/blob/0fdb1e870606e471a39d35c144cde58158e023d6/docs/user-dto.md",
+      "status": "ok"
+    }
+  ],
+  "externalLinks": [
+    {
+      "url": "https://ajv.js.org/guide/formats.html",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.fattureincloud.it/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.fattureincloud.it/blog/url-expiration/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.fattureincloud.it/blog/v1-deprecation/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://developers.fattureincloud.it/docs/api-v2-migration/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://getcomposer.org/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/Giacomo92",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/braintree-vue3/tree/ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-aruba-sms",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-aruba-sms/graphs/contributors",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-aruba-sms/releases",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-aruba-sms/releases/tag/1.1.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/releases/tag/1.0.1",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-bank-of-italy/tree/8b4ae70b92d0b802139138e70367d789d80251af",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/graphs/contributors",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/issues",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/pull/50",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/releases/tag/4.0.3",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/graphs/contributors",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/issues",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/security/policy",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/tree/04360c77c68e4d481f5a4943ffc2541f26b19767",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/releases/tag/2.2.8",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-fatture-in-cloud/tree/b37155297538fa3dcbbcb16d633d926091734690",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/graphs/contributors",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/issues",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/pull/100",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/pull/40",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/pull/99",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/releases/tag/3.1.1",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongo-auto-sync/tree/487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-mongodb-blog/tree/802f653ed4bbd9fdf33d5ff482fb56b961d12a97",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/graphs/contributors",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-webex/releases/tag/2.0.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/issues",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/releases/tag/1.0.1",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/odps-validator/tree/bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.3.0",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://github.com/offline-agency/vue3-burger-menu/tree/27ed3fe184f55de51401590f3975011c4131f65a",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://laravel.com/docs/13.x/releases",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://nextjs.org/docs/pages/guides/static-exports",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://offlineagency.com/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://offlineagency.it",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://offlineagency.it/",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://packagist.org/packages/offline-agency/laravel-aruba-sms",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://packagist.org/packages/offline-agency/laravel-bank-of-italy",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://packagist.org/packages/offline-agency/laravel-cart",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://packagist.org/packages/offline-agency/laravel-mongo-auto-sync",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://packagist.org/packages/offline-agency/laravel-webex",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://packagist.org/packages/offline-agency/spid-laravel-trentino",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://registry.npmjs.org/@offlineagency%2fvue3-burger-menu",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://tassidicambio.bancaditalia.it/terzevalute-wf-ui-web/assets/files/Operating_Instructions.pdf",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.bancaditalia.it/compiti/operazioni-cambi/portale-tassi/index.html?com.dotmarketing.htmlpage.language=1",
+      "httpStatus": 200,
+      "status": "ok"
+    },
+    {
+      "url": "https://www.php.net/manual/en/mongodb.installation.php",
+      "httpStatus": 200,
+      "status": "ok"
+    }
+  ],
+  "httpRequested": true,
+  "sourceManifestChecks": [
+    {
+      "package": "offline-agency/laravel-cart",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-webex",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-fatture-in-cloud-v2",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-aruba-sms",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-mongo-auto-sync",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-fatture-in-cloud",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/laravel-bank-of-italy",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/odps-validator",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/braintree-vue3",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/vue3-burger-menu",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/spid-laravel-trentino",
+      "status": "ok"
+    },
+    {
+      "package": "offline-agency/pgr_dmmsy",
+      "status": "ok"
+    }
+  ]
+}

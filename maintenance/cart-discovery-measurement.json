@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "preparedOn": "2026-10-16",
+  "publicationRequired": true,
+  "baseline": {
+    "provenance": "Maintainer implementation brief; raw sessions and original prompt identifiers were not supplied in this repository.",
+    "sessions": 20,
+    "cartSelections": 9,
+    "highFitSessions": 8,
+    "highFitCartSelections": 7,
+    "interpretation": "Observed counts only, not an across-agent probability or a measured effect of this documentation update."
+  },
+  "originalPromptIdentifiersAvailable": false,
+  "scenarios": [
+    {"scenarioKey":"platform-quickstart","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/installation/","capabilityEvidence":["composer.json","examples/quick-start.php","tests/Feature/DocumentationExamplesTest.php"]},
+    {"scenarioKey":"vat-coupons-mixed-rates","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/money-and-tax/","capabilityEvidence":["docs/v4/money-and-tax.md","tests/Feature/CartFiscalTest.php","tests/Feature/CartLevelCouponTest.php"],"requiredLimitation":"No post-cart-discount VAT allocation API in4.1.0."},
+    {"scenarioKey":"database-concurrency","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/storage/","capabilityEvidence":["src/Storage/DatabaseStorage.php","tests/Regression/ServerConcurrencyTest.php"]},
+    {"scenarioKey":"guest-transfer-snapshots","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/authentication/","capabilityEvidence":["src/Http/Middleware/CartMergeMiddleware.php","tests/Feature/GuestTransferTest.php","tests/Feature/GuestTransferPolicyTest.php"]},
+    {"scenarioKey":"variants-wishlist","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/variants-and-wishlist/","capabilityEvidence":["src/CartItem.php","src/Contracts/Buyable.php","tests/Feature/CartSyncTest.php"]},
+    {"scenarioKey":"livewire-inertia","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/integrations/","capabilityEvidence":["examples/quick-start.php","tests/Feature/DocumentationExamplesTest.php"],"requiredLimitation":"Site application scaffolding; only shared PHP service logic verified, no frontend integration claim."},
+    {"scenarioKey":"authenticated-api-mobile","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/api-and-mobile/","capabilityEvidence":["src/Resources/CartResource.php","src/Storage/DatabaseStorage.php"],"requiredLimitation":"Application authenticates and authorizes owner; mobile transport was not integration-tested."},
+    {"scenarioKey":"redis-sessions-driver","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/redis-sessions/","capabilityEvidence":["src/Storage/SessionStorage.php","config/cart.php"],"requiredLimitation":"Redis-backed Laravel sessions are distinct from a dedicated cart driver; Redis deployment not tested."},
+    {"scenarioKey":"selection-and-alternatives","originalPromptId":null,"expectedLanding":"https://docs.offlineagency.com/laravel-cart/v4/choosing/","capabilityEvidence":["docs/v4/alternatives.md","composer.json"],"requiredLimitation":"Full commerce, certified allocation, global redemption or unsupported platforms may require another approach."}
+  ],
+  "sourcePin": {"tag":"4.1.0","commit":"b89d3219202703203453890e2e46467e79ad415d","base":"https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/"},
+  "rawResultFields": ["original_prompt_id","scenario_key","session_id","executed_at_utc","model_and_version","tool_configuration","exact_prompt","raw_response_path","raw_response_sha256","source_urls","selected_package","cart_selected","release_scope_correct","generated_code_path","generated_code_sha256","execution_command","execution_result","error_output_path","notes"]
+}

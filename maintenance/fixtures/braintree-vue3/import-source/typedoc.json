@@ -1,0 +1,24 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["src/index.ts"],
+  "tsconfig": "tsconfig.app.json",
+  "out": "docs/api",
+  "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
+  "readme": "none",
+  "excludePrivate": true,
+  "excludeInternal": true,
+  "excludeExternals": true,
+  "includeVersion": true,
+  "hidePageTitle": false,
+  "disableSources": false,
+  "sort": ["source-order"],
+  "categorizeByGroup": true,
+  "groupOrder": [
+    "Composables",
+    "Components",
+    "Interfaces",
+    "Type Aliases",
+    "Variables",
+    "*"
+  ]
+}

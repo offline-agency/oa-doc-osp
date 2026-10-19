@@ -1,0 +1,124 @@
+{
+  "package": "offline-agency/laravel-fatture-in-cloud-v2",
+  "tag": "3.0.1",
+  "commit": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+  "checkedOn": "2026-10-16",
+  "composerRequirements": {
+    "php": "^8.4",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.9",
+    "illuminate/container": "^11.0|^12.0|^13.0",
+    "illuminate/http": "^11.0|^12.0|^13.0",
+    "illuminate/support": "^11.0|^12.0|^13.0"
+  },
+  "distribution": {
+    "version": "3.0.1",
+    "sourceRef": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+    "distRef": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+    "registry": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+    "verifiedOn": "2026-10-16"
+  },
+  "defaultBranch": "main",
+  "releaseUrl": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/releases/tag/3.0.1",
+  "releasePublishedAt": "2026-05-25T15:07:45Z",
+  "pullRequest88": {
+    "url": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2/pull/88",
+    "state": "open",
+    "merged": false,
+    "head": "175a3ff7c625cb81f33b20e89dbb7ca7dfda4969",
+    "useAsReleaseSource": false
+  },
+  "sourcePaths": [
+    "composer.json",
+    "config/fatture-in-cloud-v2.php",
+    "src/FattureInCloud.php",
+    "src/LaravelFattureInCloudV2ServiceProvider.php",
+    "src/LaravelFattureInCloudV2Facade.php",
+    "src/Traits/ListTrait.php",
+    "src/Traits/NormalizesDatesTrait.php",
+    "src/Entities/Error.php",
+    "src/Entities/Pagination.php",
+    "src/Entities/Client/Client.php",
+    "src/Entities/Client/ClientList.php",
+    "src/Entities/Client/ClientPagination.php",
+    "src/Entities/Settings/VatType.php",
+    "src/Entities/Settings/PaymentAccount.php",
+    "src/Entities/Settings/PaymentMethod.php",
+    "src/Entities/IssuedDocument/IssuedDocument.php",
+    "CHANGELOG.md",
+    ".github/workflows/main.yml",
+    "tests/Feature/ClientEntityTest.php",
+    "tests/Feature/ListTraitTest.php",
+    "tests/Feature/PaginationTest.php",
+    "src/Api/Api.php",
+    "src/Api/Archive.php",
+    "src/Api/Cashbook.php",
+    "src/Api/Client.php",
+    "src/Api/Company.php",
+    "src/Api/Email.php",
+    "src/Api/Info.php",
+    "src/Api/IssuedDocument.php",
+    "src/Api/IssuedEInvoice.php",
+    "src/Api/PaymentAccount.php",
+    "src/Api/PaymentMethod.php",
+    "src/Api/PriceList.php",
+    "src/Api/Product.php",
+    "src/Api/Receipt.php",
+    "src/Api/ReceivedDocument.php",
+    "src/Api/Situation.php",
+    "src/Api/Supplier.php",
+    "src/Api/Taxes.php",
+    "src/Api/User.php",
+    "src/Api/VatType.php",
+    "src/Api/Webhook.php"
+  ],
+  "ci": {
+    "definition": ".github/workflows/main.yml at pinned commit",
+    "matrix": {
+      "php": [
+        "8.4",
+        "8.5"
+      ],
+      "laravel": [
+        "11.*",
+        "12.*",
+        "13.*"
+      ]
+    },
+    "results": "unavailable/not verified; no remote CI success claim"
+  },
+  "officialSources": [
+    {
+      "url": "https://laravel.com/docs/13.x/releases",
+      "finding": "Laravel 11 security support ended 2026-03-12; recommend security-supported Laravel 12/13 on 2026-10-16",
+      "verifiedOn": "2026-10-16"
+    },
+    {
+      "url": "https://developers.fattureincloud.it/blog/url-expiration/",
+      "finding": "Seven-day URL expiry from retrieval effective 2025-09-10; detail/list can retrieve a fresh document URL",
+      "verifiedOn": "2026-10-16"
+    }
+  ],
+  "localVerification": {
+    "fixture": "maintenance/fixtures/fic-v2/run.php",
+    "php": "8.5.10",
+    "laravel": "13.2.0",
+    "guzzle": "7.10.0",
+    "packageAutoload": "Composer PSR-4 overridden to pinned git archive; ReflectionClass verifies src path",
+    "command": "php /private/tmp/oa-doc-osp-packages/maintenance/fixtures/fic-v2/run.php /Users/gfabbian/projects/laravel-fatture-in-cloud-v2/vendor/autoload.php /private/tmp/fic-v2-release",
+    "network": "Http::preventStrayRequests and Http::fakeSequence; example.invalid only",
+    "result": "passed; list success, HTTP422 Error, local MessageBag, create/edit, four authenticated fake requests"
+  },
+  "unavailable": [
+    "Historical remote CI execution status not verified.",
+    "No live OAuth, customer data, invoice creation or production API requests.",
+    "No full package test suite/matrix or coverage percentage verified.",
+    "No UPGRADE file exists at the pinned release; CHANGELOG and source used."
+  ],
+  "findings": [
+    "403/429 retries recurse without a bound. Config values passed to usleep are microseconds despite ms comment.",
+    "Pagination navigation constructs default API instances and loses a named connector. Use same-instance explicit page requests.",
+    "Info exposes only listVatTypes and listPaymentAccounts despite more entity classes."
+  ],
+  "overlapReview": "docs-pr12.diff reviewed; overlaps badges, APIv2 introduction, URL-expiry warning and replacement of outdated checklists. No README redirect or unverified coverage/badge claims copied."
+}

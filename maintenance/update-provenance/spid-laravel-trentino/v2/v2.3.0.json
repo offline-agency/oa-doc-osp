@@ -1,0 +1,110 @@
+{
+  "name": "offline-agency/spid-laravel-trentino",
+  "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+  "reference": "v2.3.0",
+  "commit": "0fdb1e870606e471a39d35c144cde58158e023d6",
+  "version": "v2.3.0",
+  "documentationKey": "v2",
+  "verifiedOn": "2026-10-16",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "9f687f4eb54f77cd621f47865ead5d606bcb1f3255af458860062598b7c116e4"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "5f13fdc56057034201d0e723f20e84f08748d39d7cd05f6737fbe06f452bce5f"
+    },
+    {
+      "path": "config/spid-laravel-trentino.php",
+      "sha256": "d38d39b2709cafa351745a667ea73cd4be2d73af956351869b09db7da1615845"
+    },
+    {
+      "path": "routes/spid-trentino-auth.php",
+      "sha256": "e532590d8866524ecce61ae7073054a0c94d3b9b4e2ad38f55e8aac9b35e9235"
+    },
+    {
+      "path": "src/SpidTrentinoServiceProvider.php",
+      "sha256": "67d6816a544e725e45613487b41b8f069cf743aef1579195c62026c303a4c810"
+    },
+    {
+      "path": "src/SpidTrentino.php",
+      "sha256": "a2a53b53586a2bb18ed7bfb93d602c115474d4321644cb0b59ccf20e20ae0023"
+    },
+    {
+      "path": "src/SpidTrentinoUser.php",
+      "sha256": "609964ac60a52fd7f69b8c5d4a606a22c38159d1cb5277d686dae03a5d8c27b4"
+    },
+    {
+      "path": "src/Traits/SpidAuthenticatesUsers.php",
+      "sha256": "2ad56ce10facdf2b669f94d394827ec951e7917560fe7d7774c11447afbd8851"
+    },
+    {
+      "path": "src/Http/Controllers/SpidAuthController.php",
+      "sha256": "49a149c1cf517239ac5755347a41f2929f9885737107932c1f272297b09c9da1"
+    },
+    {
+      "path": "src/Http/Middleware/EnsureValidSpidToken.php",
+      "sha256": "1ff46db5483c9bc034dec400ef1417de250769d1b94d8bbbdf68f3e11a202d1f"
+    },
+    {
+      "path": "src/Http/Middleware/RefreshSpidTokenIfNeeded.php",
+      "sha256": "09c361b0355dbcbad507441aa00fcbee93e6b7787075628cd1b28fa2e19b6db7"
+    },
+    {
+      "path": "src/Support/TokenResponse.php",
+      "sha256": "67a640f5f684c03d106fef80a0a8507e1ecf560cd248a9df50ee18287798adaf"
+    },
+    {
+      "path": "src/Support/SessionExpiry.php",
+      "sha256": "a2b3de681b382dade46dd6588dbda0ec890df5201eb8130abc500f65c4812ea1"
+    },
+    {
+      "path": "src/Support/LogRedactor.php",
+      "sha256": "752623c087288a2d1c18e1b3d10e81260a925608994ee82c96ea3f1d89db00c3"
+    },
+    {
+      "path": "src/Console/Commands/CheckSpidTransactionLogs.php",
+      "sha256": "7752f16ec7f122e4d642cc070adef8b0170392b2ade46acc4a67575060e56691"
+    },
+    {
+      "path": "src/Console/Commands/PruneSpidTransactionLogs.php",
+      "sha256": "ea5f3f9c1890724131ae1848efc195135c0daf349a35c9b92ce84b9a8b3c164b"
+    },
+    {
+      "path": "database/migrations/add_spid_trentino_columns_to_users_table.php",
+      "sha256": "1fd9cf1d9c4fe70fe9a9a083133c3534d1d7ef52022fb59ec3f4e4c1f8e6a57b"
+    },
+    {
+      "path": "database/migrations/create_spid_transaction_logs_table.php",
+      "sha256": "89e84245b4cbd21543737f62b647bafdd92c49f10b66e80789f1366d99274165"
+    },
+    {
+      "path": "docs/transaction-log.md",
+      "sha256": "859cd2e3eaecc9562360e940e928a2a99f92f6597d8dc2b9081808f2fe3df232"
+    },
+    {
+      "path": "docs/known-issues.md",
+      "sha256": "ba17375e6623e2249b5c414a51a4fef594050b503c7fb68a6361eba25991dec1"
+    },
+    {
+      "path": "src/Testing/MockOpenIDConnectClient.php",
+      "sha256": "dadbc13bd6f38b6c16cdec70a1b9c8eda9045af3c0c9c488d3cbc9a047bae337"
+    },
+    {
+      "path": "tests/Feature/TransactionLogFailClosedTest.php",
+      "sha256": "b60343263268fea51acd191c0b9119343d2a78bb5b2b5c308e072feb6385dd37"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "826abd51fd2eff106161d85b0fcbec950d40450a75b9e1987f05aae2513c534e"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/spid-laravel-trentino/v2/index.md",
+      "route": "/spid-laravel-trentino/v2/",
+      "sha256": "368e1e17db553a0ea75bf62e7858cdfce4b33c2516ebdef68e6f30653ab70319"
+    }
+  ]
+}

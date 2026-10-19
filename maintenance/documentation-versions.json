@@ -1,0 +1,1314 @@
+{
+  "schemaVersion": 1,
+  "releases": [
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.0.3",
+      "commit": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.0.3",
+        "sourceReference": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+        "distReference": "60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-cart/4.0.3/",
+      "pages": [
+        {
+          "source": "laravel-cart.md",
+          "file": "versioned/laravel-cart/4.0.3/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/4.0.3/",
+          "title": "Laravel Cart — stable 4.0.3"
+        },
+        {
+          "source": "laravel-cart/authentication.md",
+          "file": "versioned/laravel-cart/4.0.3/authentication.md",
+          "currentRoute": "/laravel-cart/authentication/",
+          "route": "/laravel-cart/4.0.3/authentication/",
+          "title": "Authentication and guest carts"
+        },
+        {
+          "source": "laravel-cart/installation.md",
+          "file": "versioned/laravel-cart/4.0.3/installation.md",
+          "currentRoute": "/laravel-cart/installation/",
+          "route": "/laravel-cart/4.0.3/installation/",
+          "title": "Installation and configuration"
+        },
+        {
+          "source": "laravel-cart/integrations.md",
+          "file": "versioned/laravel-cart/4.0.3/integrations.md",
+          "currentRoute": "/laravel-cart/integrations/",
+          "route": "/laravel-cart/4.0.3/integrations/",
+          "title": "API, Livewire and Inertia recipes"
+        },
+        {
+          "source": "laravel-cart/money-and-tax.md",
+          "file": "versioned/laravel-cart/4.0.3/money-and-tax.md",
+          "currentRoute": "/laravel-cart/money-and-tax/",
+          "route": "/laravel-cart/4.0.3/money-and-tax/",
+          "title": "Money, VAT, coupons and rounding"
+        },
+        {
+          "source": "laravel-cart/quick-start.md",
+          "file": "versioned/laravel-cart/4.0.3/quick-start.md",
+          "currentRoute": "/laravel-cart/quick-start/",
+          "route": "/laravel-cart/4.0.3/quick-start/",
+          "title": "Quick start and core operations"
+        },
+        {
+          "source": "laravel-cart/reference.md",
+          "file": "versioned/laravel-cart/4.0.3/reference.md",
+          "currentRoute": "/laravel-cart/reference/",
+          "route": "/laravel-cart/4.0.3/reference/",
+          "title": "Full API reference and limitations"
+        },
+        {
+          "source": "laravel-cart/storage.md",
+          "file": "versioned/laravel-cart/4.0.3/storage.md",
+          "currentRoute": "/laravel-cart/storage/",
+          "route": "/laravel-cart/4.0.3/storage/",
+          "title": "Storage, ownership, TTL and snapshots"
+        },
+        {
+          "source": "laravel-cart/support.md",
+          "file": "versioned/laravel-cart/4.0.3/support.md",
+          "currentRoute": "/laravel-cart/support/",
+          "route": "/laravel-cart/4.0.3/support/",
+          "title": "Troubleshooting, tests and support"
+        },
+        {
+          "source": "laravel-cart/upgrading.md",
+          "file": "versioned/laravel-cart/4.0.3/upgrading.md",
+          "currentRoute": "/laravel-cart/upgrading/",
+          "route": "/laravel-cart/4.0.3/upgrading/",
+          "title": "Upgrade guide"
+        },
+        {
+          "source": "laravel-cart/variants-and-wishlist.md",
+          "file": "versioned/laravel-cart/4.0.3/variants-and-wishlist.md",
+          "currentRoute": "/laravel-cart/variants-and-wishlist/",
+          "route": "/laravel-cart/4.0.3/variants-and-wishlist/",
+          "title": "Variants, wishlist and Buyable models"
+        }
+      ],
+      "archive": true,
+      "supportStatus": "Archived 4.0.3 documentation; package support window is not documented."
+    },
+    {
+      "name": "offline-agency/laravel-webex",
+      "version": "2.0.0",
+      "commit": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+      "repository": "https://github.com/offline-agency/laravel-webex",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "ext-json": "*",
+        "laravel/framework": "^12.69.2 || ^13.32"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+        "distReference": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-webex.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-webex/2.0.0/",
+      "pages": [
+        {
+          "source": "laravel-webex.md",
+          "file": "versioned/laravel-webex/2.0.0/index.md",
+          "currentRoute": "/laravel-webex/",
+          "route": "/laravel-webex/2.0.0/",
+          "title": "Laravel Webex"
+        },
+        {
+          "source": "laravel-webex/coverage.md",
+          "file": "versioned/laravel-webex/2.0.0/coverage.md",
+          "currentRoute": "/laravel-webex/coverage/",
+          "route": "/laravel-webex/2.0.0/coverage/",
+          "title": "Laravel Webex implemented API reference"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "3.0.1",
+      "commit": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/container": "^11.0|^12.0|^13.0",
+        "illuminate/http": "^11.0|^12.0|^13.0",
+        "illuminate/support": "^11.0|^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.0.1",
+        "sourceReference": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+        "distReference": "04360c77c68e4d481f5a4943ffc2541f26b19767",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/3.0.1/",
+      "pages": [
+        {
+          "source": "laravel-fatture-in-cloud-v2.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/3.0.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/3.0.1/",
+          "title": "Laravel Fatture in Cloud API v2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-aruba-sms",
+      "version": "1.1.0",
+      "commit": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+      "repository": "https://github.com/offline-agency/laravel-aruba-sms",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/notifications": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.1.0",
+        "sourceReference": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+        "distReference": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-aruba-sms.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-aruba-sms/1.1.0/",
+      "pages": [
+        {
+          "source": "laravel-aruba-sms.md",
+          "file": "versioned/laravel-aruba-sms/1.1.0/index.md",
+          "currentRoute": "/laravel-aruba-sms/",
+          "route": "/laravel-aruba-sms/1.1.0/",
+          "title": "Laravel Aruba SMS"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "3.1.1",
+      "commit": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/events": "^5.0|^6.0|^7.0|^8.0",
+        "jenssegers/mongodb": "^3.6|^3.7|^3.8"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.1",
+        "sourceReference": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+        "distReference": "487a622ab48017f8839f4b90a0844d5c8fcbae7f",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-mongo-auto-sync/3.1.1/",
+      "pages": [
+        {
+          "source": "laravel-mongo-auto-sync.md",
+          "file": "versioned/laravel-mongo-auto-sync/3.1.1/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/3.1.1/",
+          "title": "Laravel MongoDB Relationships"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.8",
+      "commit": "b37155297538fa3dcbbcb16d633d926091734690",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.8",
+        "sourceReference": "b37155297538fa3dcbbcb16d633d926091734690",
+        "distReference": "b37155297538fa3dcbbcb16d633d926091734690",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.8/",
+      "pages": [
+        {
+          "source": "laravel-fatture-in-cloud.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.8/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.8/",
+          "title": "Fatture in Cloud API v1 — historical integration"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-bank-of-italy",
+      "version": "1.0.1",
+      "commit": "8b4ae70b92d0b802139138e70367d789d80251af",
+      "repository": "https://github.com/offline-agency/laravel-bank-of-italy",
+      "verifiedOn": "2026-10-16",
+      "projectType": "composer-package",
+      "composerRequirements": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "illuminate/support": "^8.0|^9.0",
+        "guzzlehttp/guzzle": "7.0.1|^7.2",
+        "illuminate/container": "^8.0|^9.0",
+        "illuminate/http": "^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.1",
+        "sourceReference": "8b4ae70b92d0b802139138e70367d789d80251af",
+        "distReference": "8b4ae70b92d0b802139138e70367d789d80251af",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-bank-of-italy.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-bank-of-italy/1.0.1/",
+      "pages": [
+        {
+          "source": "laravel-bank-of-italy.md",
+          "file": "versioned/laravel-bank-of-italy/1.0.1/index.md",
+          "currentRoute": "/laravel-bank-of-italy/",
+          "route": "/laravel-bank-of-italy/1.0.1/",
+          "title": "Laravel Bank of Italy"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/odps-validator",
+      "version": "1.0.1",
+      "commit": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+      "repository": "https://github.com/offline-agency/odps-validator",
+      "verifiedOn": "2026-10-16",
+      "projectType": "web-application",
+      "npmRequirements": {
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "bootstrap": "^5.0.0",
+        "js-yaml": "^4.1.0",
+        "ajv": "^8.12.0"
+      },
+      "packageManifest": {
+        "name": "nextjs-odps-validator",
+        "version": "1.0.0",
+        "engines": null
+      },
+      "lockfile": {
+        "path": "package-lock.json",
+        "lockfileVersion": 3,
+        "sha256": "7f569b90f269c6740b70267bb2f1886661475b675a08cc38b08c4afe3e3c0b15",
+        "resolvedVersions": {
+          "next": "15.3.2",
+          "react": "19.1.0",
+          "react-dom": "19.1.0",
+          "bootstrap": "5.3.6",
+          "js-yaml": "4.1.0",
+          "ajv": "8.17.1"
+        }
+      },
+      "distribution": {
+        "registry": "GitHub Releases (source)",
+        "version": "1.0.1",
+        "sourceReference": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+        "distReference": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+        "url": "https://github.com/offline-agency/odps-validator/releases/tag/1.0.1",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/odps-validator/1.0.1/",
+      "pages": [
+        {
+          "source": "odps-validator.md",
+          "file": "versioned/odps-validator/1.0.1/index.md",
+          "currentRoute": "/odps-validator/",
+          "route": "/odps-validator/1.0.1/",
+          "title": "ODPS Validator"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/spid-laravel-trentino",
+      "version": "v2.3.0",
+      "documentationKey": "v2",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
+      "commit": "0fdb1e870606e471a39d35c144cde58158e023d6",
+      "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+      "verifiedOn": "2026-10-16",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/auth": "^12.69|^13.30",
+        "illuminate/cache": "^12.69|^13.30",
+        "illuminate/config": "^12.69|^13.30",
+        "illuminate/console": "^12.69|^13.30",
+        "illuminate/contracts": "^12.69|^13.30",
+        "illuminate/database": "^12.69|^13.30",
+        "illuminate/encryption": "^12.69|^13.30",
+        "illuminate/events": "^12.69|^13.30",
+        "illuminate/http": "^12.69|^13.30",
+        "illuminate/log": "^12.69|^13.30",
+        "illuminate/routing": "^12.69|^13.30",
+        "illuminate/session": "^12.69|^13.30",
+        "illuminate/support": "^12.69|^13.30",
+        "illuminate/view": "^12.69|^13.30",
+        "jumbojett/openid-connect-php": "^1.0.2"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "v2.3.0",
+        "sourceReference": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "distReference": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/spid-laravel-trentino/v2/",
+      "pages": [
+        {
+          "source": "spid-laravel-trentino.md",
+          "file": "versioned/spid-laravel-trentino/v2/index.md",
+          "currentRoute": "/spid-laravel-trentino/",
+          "route": "/spid-laravel-trentino/v2/",
+          "title": "SPID Laravel Trentino"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/pgr_dmmsy",
+      "version": "v0.1.0",
+      "documentationKey": "v0.1",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
+      "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+      "repository": "https://github.com/offline-agency/pgr_dmmsy",
+      "verifiedOn": "2026-10-16",
+      "projectType": "postgresql-extension",
+      "manifestFiles": {
+        "pgr_dmmsy.control": {
+          "sha256": "d7184fa1135e1258962a6285b5fcd54fedf2cbf2b7c845cf1407752ccb8caf38"
+        },
+        "Makefile": {
+          "sha256": "456cf4a36db65037aebae44fe2f820be2c60a251c4713e75bbbdff1128ba7c84"
+        },
+        "sql/pgr_dmmsy--0.1.0.sql": {
+          "sha256": "a8b4f9f8b3f37ac86687234b85ed3cf08a91e66fa6018273845cbeb5e93d3ab4"
+        }
+      },
+      "buildRequirements": {
+        "postgresql": "14+ declared build prerequisite",
+        "pgrouting": "3.x declared build prerequisite; required extension dependency",
+        "build": "C compiler, make, PostgreSQL server headers and PGXS",
+        "postgis": "Required by pgRouting; available and enabled before pgrouting in a fresh database"
+      },
+      "releaseAssets": [
+        {
+          "name": "pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+          "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+          "bytes": 53878,
+          "sha256": "78346bbc7c2ee1ea6687da3112bbcf5149a78878803d1eb0bf042aaf1cead7e1",
+          "downloadVerified": true,
+          "githubDigestMatched": true,
+          "archiveContents": [
+            ".",
+            "./pgr_dmmsy.control",
+            "./pgr_dmmsy.so",
+            "./pgr_dmmsy--0.1.0.sql"
+          ]
+        },
+        {
+          "name": "pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+          "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+          "bytes": 7774,
+          "sha256": "aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc",
+          "downloadVerified": true,
+          "githubDigestMatched": true,
+          "archiveContents": [
+            ".",
+            "./pgr_dmmsy.control",
+            "./pgr_dmmsy--0.1.0.sql",
+            "./pgr_dmmsy.dylib"
+          ]
+        },
+        {
+          "name": "pgr_dmmsy-v0.1.0-source.tar.gz",
+          "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-source.tar.gz",
+          "bytes": 32003,
+          "sha256": "e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8",
+          "downloadVerified": true,
+          "githubDigestMatched": true,
+          "archiveContents": [
+            "pgr_dmmsy-0.1.0/src",
+            "pgr_dmmsy-0.1.0/src/minheap.h",
+            "pgr_dmmsy-0.1.0/src/dmmsy.c",
+            "pgr_dmmsy-0.1.0/src/dmmsy.h",
+            "pgr_dmmsy-0.1.0/src/ds_blocklist.c",
+            "pgr_dmmsy-0.1.0/src/graph.c",
+            "pgr_dmmsy-0.1.0/src/minheap.c",
+            "pgr_dmmsy-0.1.0/src/dmmsy_algorithm.c",
+            "pgr_dmmsy-0.1.0/src/graph.h",
+            "pgr_dmmsy-0.1.0/src/ds_blocklist.h",
+            "pgr_dmmsy-0.1.0/sql",
+            "pgr_dmmsy-0.1.0/sql/pgr_dmmsy--0.1.0.sql",
+            "pgr_dmmsy-0.1.0/verify",
+            "pgr_dmmsy-0.1.0/verify/tests",
+            "pgr_dmmsy-0.1.0/verify/tests/03_negative.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/run_all.sh",
+            "pgr_dmmsy-0.1.0/verify/tests/06_performance.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/05_weights.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/04_topology.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/01_correctness.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/08_invariants.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/07_integration.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/09_api_contract.sql",
+            "pgr_dmmsy-0.1.0/verify/tests/02_predecessors.sql",
+            "pgr_dmmsy-0.1.0/verify/sql",
+            "pgr_dmmsy-0.1.0/verify/sql/00_setup.sql",
+            "pgr_dmmsy-0.1.0/verify/sql/01_generators.sql",
+            "pgr_dmmsy-0.1.0/verify/sql/02_stub.sql",
+            "pgr_dmmsy-0.1.0/Makefile",
+            "pgr_dmmsy-0.1.0/pgr_dmmsy.control",
+            "pgr_dmmsy-0.1.0/README.md",
+            "pgr_dmmsy-0.1.0/COMPILE.md"
+          ]
+        }
+      ],
+      "distribution": {
+        "registry": "GitHub Releases (source and assets)",
+        "version": "v0.1.0",
+        "sourceReference": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+        "distReference": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+        "url": "https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/pgr_dmmsy/v0.1/",
+      "pages": [
+        {
+          "source": "pgr_dmmsy.md",
+          "file": "versioned/pgr_dmmsy/v0.1/index.md",
+          "currentRoute": "/pgr_dmmsy/",
+          "route": "/pgr_dmmsy/v0.1/",
+          "title": "pgr_dmmsy"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/vue3-burger-menu",
+      "version": "1.1.2",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
+      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "repository": "https://github.com/offline-agency/vue3-burger-menu",
+      "verifiedOn": "2026-10-16",
+      "projectType": "vue-library",
+      "npmRequirements": {
+        "dependencies": {
+          "vue": "^3.0.0-0"
+        },
+        "devDependencies": {
+          "@vue/cli-plugin-babel": "^4.5.0",
+          "@vue/cli-plugin-eslint": "^4.5.0",
+          "@vue/cli-service": "^4.5.0",
+          "@vue/compiler-sfc": "^3.0.0-0",
+          "babel-eslint": "^10.1.0",
+          "eslint": "^6.7.2",
+          "eslint-plugin-vue": "^7.0.0-0",
+          "less": "^3.8.1",
+          "less-loader": "^4.1.0"
+        }
+      },
+      "packageManifest": {
+        "name": "@offlineagency/vue3-burger-menu",
+        "version": "1.0.0",
+        "engines": null
+      },
+      "manifestFiles": {
+        "package.json": {
+          "sha256": "7fbef42fbdc06ec19de7defcc817431ee654025db1f597f2a0219c661c11abf9"
+        }
+      },
+      "distribution": {
+        "registry": "GitHub Releases (source)",
+        "version": "1.1.2",
+        "sourceReference": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "distReference": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "url": "https://github.com/offline-agency/vue3-burger-menu/releases/tag/1.1.2",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/vue3-burger-menu/v1/",
+      "pages": [
+        {
+          "source": "vue3-burger-menu.md",
+          "file": "versioned/vue3-burger-menu/v1/index.md",
+          "currentRoute": "/vue3-burger-menu/",
+          "route": "/vue3-burger-menu/v1/",
+          "title": "Vue 3 Burger Menu"
+        },
+        {
+          "source": "vue3-burger-menu/reference.md",
+          "file": "versioned/vue3-burger-menu/v1/reference.md",
+          "currentRoute": "/vue3-burger-menu/reference/",
+          "route": "/vue3-burger-menu/v1/reference/",
+          "title": "Burger Menu component source reference"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/braintree-vue3",
+      "version": "next",
+      "documentationKey": "next",
+      "channel": "next",
+      "supportStatus": "Support status not documented.",
+      "commit": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+      "repository": "https://github.com/offline-agency/braintree-vue3",
+      "verifiedOn": "2026-10-16",
+      "projectType": "vue-library",
+      "npmRequirements": {
+        "peerDependencies": {
+          "braintree-web": "^3.x",
+          "vue": "^3.3.0"
+        },
+        "devDependencies": {
+          "@arethetypeswrong/cli": "^0.18.2",
+          "@commitlint/cli": "^19.0.0",
+          "@commitlint/config-conventional": "^19.0.0",
+          "@semantic-release/changelog": "^6.0.0",
+          "@semantic-release/commit-analyzer": "^13.0.0",
+          "@semantic-release/exec": "^6.0.0",
+          "@semantic-release/git": "^10.0.0",
+          "@semantic-release/github": "^10.0.0",
+          "@semantic-release/npm": "^12.0.0",
+          "@semantic-release/release-notes-generator": "^14.0.0",
+          "@types/braintree-web": "^3.96.17",
+          "@vitejs/plugin-vue": "^5.0.0",
+          "@vitest/coverage-v8": "^2.0.0",
+          "@vitest/ui": "^2.0.0",
+          "@vue/test-utils": "^2.4.0",
+          "braintree-web": "^3.138.0",
+          "conventional-changelog-conventionalcommits": "^8.0.0",
+          "jsdom": "^25.0.0",
+          "publint": "^0.3.0",
+          "semantic-release": "^24.0.0",
+          "typedoc": "^0.28.0",
+          "typedoc-plugin-markdown": "^4.2.0",
+          "typedoc-vitepress-theme": "^1.0.0",
+          "typescript": "^5.5.0",
+          "vite": "^6.0.0",
+          "vite-plugin-dts": "^4.0.0",
+          "vitepress": "^1.4.0",
+          "vitest": "^2.0.0",
+          "vue": "^3.5.0",
+          "vue-tsc": "^2.0.0"
+        }
+      },
+      "packageManifest": {
+        "name": "braintree-vue3",
+        "version": "0.1.0",
+        "engines": null
+      },
+      "manifestFiles": {
+        "package.json": {
+          "sha256": "6bd09040f0e6a4a883293044fca2add6630c21c9c779eeeb10b2b9ff728059e3"
+        }
+      },
+      "route": "/braintree-vue3/next/",
+      "pages": [
+        {
+          "source": "braintree-vue3.md",
+          "file": "versioned/braintree-vue3/next/index.md",
+          "currentRoute": "/braintree-vue3/",
+          "route": "/braintree-vue3/next/",
+          "title": "Braintree Vue 3"
+        },
+        {
+          "source": "braintree-vue3/api.md",
+          "file": "versioned/braintree-vue3/next/api.md",
+          "currentRoute": "/braintree-vue3/api/",
+          "route": "/braintree-vue3/next/api/",
+          "title": "Public API source index"
+        },
+        {
+          "source": "braintree-vue3/data-collector.md",
+          "file": "versioned/braintree-vue3/next/data-collector.md",
+          "currentRoute": "/braintree-vue3/data-collector/",
+          "route": "/braintree-vue3/next/data-collector/",
+          "title": "Data Collector"
+        },
+        {
+          "source": "braintree-vue3/getting-started.md",
+          "file": "versioned/braintree-vue3/next/getting-started.md",
+          "currentRoute": "/braintree-vue3/getting-started/",
+          "route": "/braintree-vue3/next/getting-started/",
+          "title": "Getting Started"
+        },
+        {
+          "source": "braintree-vue3/hosted-fields.md",
+          "file": "versioned/braintree-vue3/next/hosted-fields.md",
+          "currentRoute": "/braintree-vue3/hosted-fields/",
+          "route": "/braintree-vue3/next/hosted-fields/",
+          "title": "Hosted Fields"
+        },
+        {
+          "source": "braintree-vue3/installation.md",
+          "file": "versioned/braintree-vue3/next/installation.md",
+          "currentRoute": "/braintree-vue3/installation/",
+          "route": "/braintree-vue3/next/installation/",
+          "title": "Installation"
+        },
+        {
+          "source": "braintree-vue3/integration.md",
+          "file": "versioned/braintree-vue3/next/integration.md",
+          "currentRoute": "/braintree-vue3/integration/",
+          "route": "/braintree-vue3/next/integration/",
+          "title": "Braintree Vue 3 integration notes"
+        },
+        {
+          "source": "braintree-vue3/paypal.md",
+          "file": "versioned/braintree-vue3/next/paypal.md",
+          "currentRoute": "/braintree-vue3/paypal/",
+          "route": "/braintree-vue3/next/paypal/",
+          "title": "PayPal Checkout"
+        },
+        {
+          "source": "braintree-vue3/three-d-secure.md",
+          "file": "versioned/braintree-vue3/next/three-d-secure.md",
+          "currentRoute": "/braintree-vue3/three-d-secure/",
+          "route": "/braintree-vue3/next/three-d-secure/",
+          "title": "3D Secure"
+        },
+        {
+          "source": "braintree-vue3/venmo.md",
+          "file": "versioned/braintree-vue3/next/venmo.md",
+          "currentRoute": "/braintree-vue3/venmo/",
+          "route": "/braintree-vue3/next/venmo/",
+          "title": "Venmo"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.1.0",
+      "documentationKey": "v4",
+      "channel": "stable",
+      "supportStatus": "Current stable documentation. Package support window is not documented.",
+      "commit": "b89d3219202703203453890e2e46467e79ad415d",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-10-16",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "ext-bcmath": "*",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.1.0",
+        "sourceReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "distReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-10-16"
+      },
+      "route": "/laravel-cart/v4/",
+      "pages": [
+        {
+          "source": "laravel-cart.md",
+          "file": "versioned/laravel-cart/v4/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/v4/",
+          "title": "Laravel Cart v4"
+        },
+        {
+          "source": "laravel-cart/agents.md",
+          "file": "versioned/laravel-cart/v4/agents.md",
+          "currentRoute": "/laravel-cart/agents/",
+          "route": "/laravel-cart/v4/agents/",
+          "title": "Laravel Boost and agent guidance"
+        },
+        {
+          "source": "laravel-cart/alternatives.md",
+          "file": "versioned/laravel-cart/v4/alternatives.md",
+          "currentRoute": "/laravel-cart/alternatives/",
+          "route": "/laravel-cart/v4/alternatives/",
+          "title": "Alternatives — checked 2026-10-15"
+        },
+        {
+          "source": "laravel-cart/api-and-mobile.md",
+          "file": "versioned/laravel-cart/v4/api-and-mobile.md",
+          "currentRoute": "/laravel-cart/api-and-mobile/",
+          "route": "/laravel-cart/v4/api-and-mobile/",
+          "title": "API resources and mobile carts"
+        },
+        {
+          "source": "laravel-cart/authentication.md",
+          "file": "versioned/laravel-cart/v4/authentication.md",
+          "currentRoute": "/laravel-cart/authentication/",
+          "route": "/laravel-cart/v4/authentication/",
+          "title": "Authentication and guest transfer"
+        },
+        {
+          "source": "laravel-cart/choosing.md",
+          "file": "versioned/laravel-cart/v4/choosing.md",
+          "currentRoute": "/laravel-cart/choosing/",
+          "route": "/laravel-cart/v4/choosing/",
+          "title": "Choosing Laravel Cart"
+        },
+        {
+          "source": "laravel-cart/configuration.md",
+          "file": "versioned/laravel-cart/v4/configuration.md",
+          "currentRoute": "/laravel-cart/configuration/",
+          "route": "/laravel-cart/v4/configuration/",
+          "title": "Configuration"
+        },
+        {
+          "source": "laravel-cart/coupons.md",
+          "file": "versioned/laravel-cart/v4/coupons.md",
+          "currentRoute": "/laravel-cart/coupons/",
+          "route": "/laravel-cart/v4/coupons/",
+          "title": "Coupons"
+        },
+        {
+          "source": "laravel-cart/installation.md",
+          "file": "versioned/laravel-cart/v4/installation.md",
+          "currentRoute": "/laravel-cart/installation/",
+          "route": "/laravel-cart/v4/installation/",
+          "title": "Installation"
+        },
+        {
+          "source": "laravel-cart/integrations.md",
+          "file": "versioned/laravel-cart/v4/integrations.md",
+          "currentRoute": "/laravel-cart/integrations/",
+          "route": "/laravel-cart/v4/integrations/",
+          "title": "Livewire and Inertia recipes"
+        },
+        {
+          "source": "laravel-cart/money-and-tax.md",
+          "file": "versioned/laravel-cart/v4/money-and-tax.md",
+          "currentRoute": "/laravel-cart/money-and-tax/",
+          "route": "/laravel-cart/v4/money-and-tax/",
+          "title": "Money and tax"
+        },
+        {
+          "source": "laravel-cart/redis-sessions.md",
+          "file": "versioned/laravel-cart/v4/redis-sessions.md",
+          "currentRoute": "/laravel-cart/redis-sessions/",
+          "route": "/laravel-cart/v4/redis-sessions/",
+          "title": "Redis-backed Laravel sessions"
+        },
+        {
+          "source": "laravel-cart/reference.md",
+          "file": "versioned/laravel-cart/v4/reference.md",
+          "currentRoute": "/laravel-cart/reference/",
+          "route": "/laravel-cart/v4/reference/",
+          "title": "Full API reference"
+        },
+        {
+          "source": "laravel-cart/storage.md",
+          "file": "versioned/laravel-cart/v4/storage.md",
+          "currentRoute": "/laravel-cart/storage/",
+          "route": "/laravel-cart/v4/storage/",
+          "title": "Storage and mutation guarantees"
+        },
+        {
+          "source": "laravel-cart/testing.md",
+          "file": "versioned/laravel-cart/v4/testing.md",
+          "currentRoute": "/laravel-cart/testing/",
+          "route": "/laravel-cart/v4/testing/",
+          "title": "Testing and documentation checks"
+        },
+        {
+          "source": "laravel-cart/troubleshooting.md",
+          "file": "versioned/laravel-cart/v4/troubleshooting.md",
+          "currentRoute": "/laravel-cart/troubleshooting/",
+          "route": "/laravel-cart/v4/troubleshooting/",
+          "title": "Troubleshooting"
+        },
+        {
+          "source": "laravel-cart/upgrading.md",
+          "file": "versioned/laravel-cart/v4/upgrading.md",
+          "currentRoute": "/laravel-cart/upgrading/",
+          "route": "/laravel-cart/v4/upgrading/",
+          "title": "Upgrading"
+        },
+        {
+          "source": "laravel-cart/usage.md",
+          "file": "versioned/laravel-cart/v4/usage.md",
+          "currentRoute": "/laravel-cart/usage/",
+          "route": "/laravel-cart/v4/usage/",
+          "title": "Usage"
+        },
+        {
+          "source": "laravel-cart/variants-and-wishlist.md",
+          "file": "versioned/laravel-cart/v4/variants-and-wishlist.md",
+          "currentRoute": "/laravel-cart/variants-and-wishlist/",
+          "route": "/laravel-cart/v4/variants-and-wishlist/",
+          "title": "Variants, wishlist and Buyable models"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "1.0.0",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Latest 1.x release supported per the upstream security policy; 0.1.x unsupported.",
+      "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.3",
+        "filament/filament": "^3.0|^4.0|^5.0",
+        "illuminate/contracts": "^12.0|^13.0",
+        "italia/spid-laravel": "^2.1.0-beta",
+        "spatie/laravel-package-tools": "^1.93"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/filament-spid/v1/",
+      "pages": [
+        {
+          "source": "filament-spid.md",
+          "file": "versioned/filament-spid/v1/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/v1/",
+          "title": "Filament SPID"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.8",
+      "documentationKey": "v0.1",
+      "channel": "stable",
+      "supportStatus": "Unsupported: 0.1.x receives no fixes (upstream security policy) and cannot be installed in a new application.",
+      "commit": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.2|^8.3|^8.4",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "italia/spid-laravel": "dev-feat-add-l12",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.8",
+        "sourceReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+        "distReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/filament-spid/v0.1/",
+      "pages": [
+        {
+          "source": "filament-spid.md",
+          "file": "versioned/filament-spid/v0.1/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/v0.1/",
+          "title": "Filament SPID"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/image-puzzle",
+      "version": "1.0.0",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
+      "commit": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+      "repository": "https://github.com/offline-agency/php-image-puzzle",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-gd": "*"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+        "distReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+        "url": "https://repo.packagist.org/p2/offline-agency/image-puzzle.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/image-puzzle/v1/",
+      "pages": [
+        {
+          "source": "image-puzzle.md",
+          "file": "versioned/image-puzzle/v1/index.md",
+          "currentRoute": "/image-puzzle/",
+          "route": "/image-puzzle/v1/",
+          "title": "Image Puzzle"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.5",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Superseded by 2.0.0; no support policy published. Requires Illuminate 9 or older, which Composer refuses inside a Laravel 9 application by default because of security advisories.",
+      "commit": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.5",
+        "sourceReference": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+        "distReference": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/laravel-email-chef/v1/",
+      "pages": [
+        {
+          "source": "laravel-email-chef.md",
+          "file": "versioned/laravel-email-chef/v1/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/v1/",
+          "title": "Laravel Email Chef"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "2.0.0",
+      "documentationKey": "v2",
+      "channel": "stable",
+      "supportStatus": "Latest release 2.0.0. No support window or supported-versions policy is published.",
+      "commit": "eff422c06f89f61f00eae5293e703e49638285d1",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "eff422c06f89f61f00eae5293e703e49638285d1",
+        "distReference": "eff422c06f89f61f00eae5293e703e49638285d1",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/laravel-email-chef/v2/",
+      "pages": [
+        {
+          "source": "laravel-email-chef.md",
+          "file": "versioned/laravel-email-chef/v2/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/v2/",
+          "title": "Laravel Email Chef"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/aws-blockchain-laravel",
+      "version": "0.0.4",
+      "documentationKey": "v0.0",
+      "channel": "stable",
+      "supportStatus": "Pre-1.0 experimental release; no support policy published. Its AWS Managed Blockchain and QLDB drivers do not work with the current AWS SDK.",
+      "commit": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+      "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/container": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0",
+        "kornrunner/keccak": "^1.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.0.4",
+        "sourceReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+        "distReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+        "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/aws-blockchain-laravel/v0.0/",
+      "pages": [
+        {
+          "source": "aws-blockchain-laravel.md",
+          "file": "versioned/aws-blockchain-laravel/v0.0/index.md",
+          "currentRoute": "/aws-blockchain-laravel/",
+          "route": "/aws-blockchain-laravel/v0.0/",
+          "title": "AWS Blockchain Laravel"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "route": "/spid-laravel-trentino/",
+      "target": "/spid-laravel-trentino/v2/"
+    },
+    {
+      "route": "/spid-laravel-trentino/v2.3.0/",
+      "target": "/spid-laravel-trentino/v2/"
+    },
+    {
+      "route": "/pgr_dmmsy/",
+      "target": "/pgr_dmmsy/v0.1/"
+    },
+    {
+      "route": "/pgr_dmmsy/v0.1.0/",
+      "target": "/pgr_dmmsy/v0.1/"
+    },
+    {
+      "route": "/vue3-burger-menu/",
+      "target": "/vue3-burger-menu/v1/"
+    },
+    {
+      "route": "/vue3-burger-menu/1.1.2/",
+      "target": "/vue3-burger-menu/v1/"
+    },
+    {
+      "route": "/braintree-vue3/",
+      "target": "/braintree-vue3/next/"
+    },
+    {
+      "route": "/vue3-burger-menu/reference/",
+      "target": "/vue3-burger-menu/v1/reference/"
+    },
+    {
+      "route": "/braintree-vue3/api/",
+      "target": "/braintree-vue3/next/api/"
+    },
+    {
+      "route": "/braintree-vue3/data-collector/",
+      "target": "/braintree-vue3/next/data-collector/"
+    },
+    {
+      "route": "/braintree-vue3/getting-started/",
+      "target": "/braintree-vue3/next/getting-started/"
+    },
+    {
+      "route": "/braintree-vue3/hosted-fields/",
+      "target": "/braintree-vue3/next/hosted-fields/"
+    },
+    {
+      "route": "/braintree-vue3/installation/",
+      "target": "/braintree-vue3/next/installation/"
+    },
+    {
+      "route": "/braintree-vue3/integration/",
+      "target": "/braintree-vue3/next/integration/"
+    },
+    {
+      "route": "/braintree-vue3/paypal/",
+      "target": "/braintree-vue3/next/paypal/"
+    },
+    {
+      "route": "/braintree-vue3/three-d-secure/",
+      "target": "/braintree-vue3/next/three-d-secure/"
+    },
+    {
+      "route": "/braintree-vue3/venmo/",
+      "target": "/braintree-vue3/next/venmo/"
+    },
+    {
+      "route": "/laravel-cart/",
+      "target": "/laravel-cart/v4/",
+      "anchors": {
+        "laravel-cart": "/laravel-cart/legacy/#laravel-cart",
+        "installation": "/laravel-cart/legacy/#installation",
+        "overview": "/laravel-cart/legacy/#overview",
+        "usage": "/laravel-cart/legacy/#usage",
+        "cart-add": "/laravel-cart/legacy/#cart-add",
+        "cart-update": "/laravel-cart/legacy/#cart-update",
+        "cart-remove": "/laravel-cart/legacy/#cart-remove",
+        "cart-get": "/laravel-cart/legacy/#cart-get",
+        "cart-content": "/laravel-cart/legacy/#cart-content",
+        "cart-destroy": "/laravel-cart/legacy/#cart-destroy",
+        "cart-total": "/laravel-cart/legacy/#cart-total",
+        "cart-vat": "/laravel-cart/legacy/#cart-vat",
+        "cart-subtotal": "/laravel-cart/legacy/#cart-subtotal",
+        "cart-count": "/laravel-cart/legacy/#cart-count",
+        "cart-search": "/laravel-cart/legacy/#cart-search",
+        "collections": "/laravel-cart/legacy/#collections",
+        "instances": "/laravel-cart/legacy/#instances",
+        "models": "/laravel-cart/legacy/#models",
+        "database": "/laravel-cart/legacy/#database",
+        "configuration": "/laravel-cart/legacy/#configuration",
+        "storing-the-cart": "/laravel-cart/legacy/#storing-the-cart",
+        "restoring-the-cart": "/laravel-cart/legacy/#restoring-the-cart",
+        "add-a-coupon-to-cart-instance-for-a-specific-cart-item": "/laravel-cart/legacy/#add-a-coupon-to-cart-instance-for-a-specific-cart-item",
+        "exceptions": "/laravel-cart/legacy/#exceptions",
+        "events": "/laravel-cart/legacy/#events",
+        "example": "/laravel-cart/legacy/#example",
+        "testing": "/laravel-cart/legacy/#testing",
+        "contributing": "/laravel-cart/legacy/#contributing",
+        "security": "/laravel-cart/legacy/#security",
+        "credits": "/laravel-cart/legacy/#credits",
+        "about-us": "/laravel-cart/legacy/#about-us",
+        "license": "/laravel-cart/legacy/#license"
+      }
+    },
+    {
+      "route": "/laravel-cart/agents/",
+      "target": "/laravel-cart/v4/agents/"
+    },
+    {
+      "route": "/laravel-cart/alternatives/",
+      "target": "/laravel-cart/v4/alternatives/"
+    },
+    {
+      "route": "/laravel-cart/api-and-mobile/",
+      "target": "/laravel-cart/v4/api-and-mobile/"
+    },
+    {
+      "route": "/laravel-cart/authentication/",
+      "target": "/laravel-cart/v4/authentication/"
+    },
+    {
+      "route": "/laravel-cart/choosing/",
+      "target": "/laravel-cart/v4/choosing/"
+    },
+    {
+      "route": "/laravel-cart/configuration/",
+      "target": "/laravel-cart/v4/configuration/"
+    },
+    {
+      "route": "/laravel-cart/coupons/",
+      "target": "/laravel-cart/v4/coupons/"
+    },
+    {
+      "route": "/laravel-cart/installation/",
+      "target": "/laravel-cart/v4/installation/"
+    },
+    {
+      "route": "/laravel-cart/integrations/",
+      "target": "/laravel-cart/v4/integrations/"
+    },
+    {
+      "route": "/laravel-cart/money-and-tax/",
+      "target": "/laravel-cart/v4/money-and-tax/"
+    },
+    {
+      "route": "/laravel-cart/redis-sessions/",
+      "target": "/laravel-cart/v4/redis-sessions/"
+    },
+    {
+      "route": "/laravel-cart/reference/",
+      "target": "/laravel-cart/v4/reference/"
+    },
+    {
+      "route": "/laravel-cart/storage/",
+      "target": "/laravel-cart/v4/storage/"
+    },
+    {
+      "route": "/laravel-cart/testing/",
+      "target": "/laravel-cart/v4/testing/"
+    },
+    {
+      "route": "/laravel-cart/troubleshooting/",
+      "target": "/laravel-cart/v4/troubleshooting/"
+    },
+    {
+      "route": "/laravel-cart/upgrading/",
+      "target": "/laravel-cart/v4/upgrading/"
+    },
+    {
+      "route": "/laravel-cart/usage/",
+      "target": "/laravel-cart/v4/usage/"
+    },
+    {
+      "route": "/laravel-cart/variants-and-wishlist/",
+      "target": "/laravel-cart/v4/variants-and-wishlist/"
+    },
+    {
+      "route": "/laravel-cart/quick-start/",
+      "target": "/laravel-cart/v4/usage/"
+    },
+    {
+      "route": "/laravel-cart/support/",
+      "target": "/laravel-cart/v4/troubleshooting/"
+    },
+    {
+      "route": "/filament-spid/",
+      "target": "/filament-spid/v1/"
+    },
+    {
+      "route": "/image-puzzle/",
+      "target": "/image-puzzle/v1/"
+    },
+    {
+      "route": "/laravel-email-chef/",
+      "target": "/laravel-email-chef/v2/"
+    },
+    {
+      "route": "/aws-blockchain-laravel/",
+      "target": "/aws-blockchain-laravel/v0.0/"
+    }
+  ]
+}

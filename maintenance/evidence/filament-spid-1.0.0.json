@@ -1,0 +1,126 @@
+{
+  "checkedAt": "2026-10-19",
+  "repository": {
+    "fullName": "offline-agency/filament-spid",
+    "url": "https://github.com/offline-agency/filament-spid",
+    "defaultBranch": "main",
+    "archived": false,
+    "license": "MIT (LICENSE.md at the release commit)"
+  },
+  "release": {
+    "tag": "1.0.0",
+    "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+    "commitDate": "2026-10-16",
+    "githubRelease": "https://github.com/offline-agency/filament-spid/releases/tag/1.0.0",
+    "publishedAt": "2026-10-16T18:17:21Z",
+    "otherReleases": [
+      "0.1.1",
+      "0.1.2",
+      "0.1.3",
+      "0.1.4",
+      "0.1.5",
+      "0.1.6",
+      "0.1.7",
+      "0.1.8"
+    ],
+    "prereleases": []
+  },
+  "packagist": {
+    "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+    "version": "1.0.0",
+    "sourceReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+    "distReference": "99f80235a6be15b6365840f46f160476e2fdb38e",
+    "time": "2026-10-16T18:17:09+00:00"
+  },
+  "ci": {
+    "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
+    "runs": [
+      {
+        "workflow": "run-tests",
+        "run": 38946163154,
+        "conclusion": "success",
+        "jobs": "18 PHP 8.3-8.5 x Laravel 12/13 x Filament 3-5 legs, 3 archive install legs, coverage, button script, tests-passed"
+      },
+      {
+        "workflow": "PHPStan",
+        "run": 38946163172,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "code-style",
+        "run": 38946163002,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "spid-validation",
+        "run": 38946163180,
+        "conclusion": "success",
+        "jobs": "SPID lab"
+      }
+    ]
+  },
+  "dependencies": {
+    "italiaSpidLaravelLatestTag": "v2.1.0-beta (2025-12-18)",
+    "forkCommit": "offline-agency/spid-laravel b8dd1a484d8e6551a1a84e90220c2e9dc0d0a0fe (exists, 2026-10-08)",
+    "trackingIssue": "https://github.com/offline-agency/filament-spid/issues/16 (open)"
+  },
+  "repositorySecurity": {
+    "privateVulnerabilityReporting": false,
+    "securityPolicy": "SECURITY.md: latest 1.x supported, 0.1.x unsupported, reports by email"
+  },
+  "verifiedAgainstSource": [
+    "Artisan commands filament-spid:install, filament-spid:doctor, filament-spid:metadata:validate",
+    "Installer options --panel, --input, --dry-run, --migrate",
+    "Publish tags filament-spid-config, filament-spid-migrations, filament-spid-images, spid-assets",
+    "config/filament-spid.php keys and defaults (auto_create_users false, minimum_level SpidL2)",
+    "Five events in src/Events, three mappers in src/Mapping, SpidPlugin methods, registerRoutes default false"
+  ],
+  "upstreamWordingIssues": [
+    "README and docs at the tag say 1.0.0 is not on Packagist yet; Packagist publishes 1.0.0 with matching references. Corrected on main after the tag (e209840).",
+    "CHANGELOG 1.0.0 says beta stability is required; the tagged installation guide (quick start run in CI) keeps minimum-stability unchanged."
+  ],
+  "notRun": [
+    "Site-owned PHP fixture",
+    "Hosted AgID Validator and formal AgID acceptance"
+  ],
+  "olderLine": {
+    "key": "v0.1",
+    "tag": "0.1.8",
+    "commit": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+    "publishedAt": "2025-10-29T06:59:28Z",
+    "packagist": {
+      "sourceReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+      "distReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd"
+    },
+    "spidLaravelConstraintPerTag": {
+      "0.1.1": "^2.0",
+      "0.1.2": "^2.0",
+      "0.1.3": "dev-fix/optimize-error",
+      "0.1.4": "dev-fix/optimize-error",
+      "0.1.5": "dev-feat-add-l12",
+      "0.1.6": "dev-feat-add-l12",
+      "0.1.7": "dev-feat-add-l12",
+      "0.1.8": "dev-feat-add-l12"
+    },
+    "forkBranchesMissing": [
+      "fix/optimize-error",
+      "feat-add-l12"
+    ],
+    "installability": "Composer 2.10.2 dry-run (2026-10-19) of offline-agency/filament-spid 0.1.8 failed on Packagist alone and with https://github.com/offline-agency/spid-laravel as a root VCS repository: no dev-feat-add-l12.",
+    "missingFilesAtTag": [
+      "CHANGELOG.md",
+      "SECURITY.md"
+    ],
+    "verifiedAgainstSource": [
+      "Plugin routes registered by default (registerRoutes true) under the panel path",
+      "redirect_after_login, spid_level, providers read by SpidController",
+      "auto_create_users default true",
+      "fallback email @spid.local",
+      "publish tags filament-spid-config, -migrations, -views, -images"
+    ],
+    "upstreamWordingIssues": [
+      "README lists Laravel 10, manifest allows illuminate/contracts ^11|^12",
+      "1.0 upgrade guide says redirect_after_login, spid_level and providers were never read; 0.1.8 SpidController reads them"
+    ]
+  }
+}

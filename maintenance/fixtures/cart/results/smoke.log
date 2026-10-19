@@ -1,0 +1,2 @@
+Extracted release: /var/folders/dk/8r5ppz290dj18llcqzrbf_kw0000gn/T//cart-doc-release.L8L7E9
+PASS: release source, SessionStorage array driver, quickstart20, item-coupon280, tax122, rounding4modes+TowardsZero, meta/snapshot, sync variants, atomic limits, scalar string id, retained VAT/coupon repricing and contradictory update rollback, CartFake typed events; cart coupons PASS (BCMath enabled). PHP 8.5.10; Laravel v13.35.0

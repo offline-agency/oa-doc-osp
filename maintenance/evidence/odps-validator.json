@@ -1,0 +1,70 @@
+{
+  "name": "offline-agency/odps-validator",
+  "docsPage": "odps-validator.md",
+  "route": "/odps-validator/",
+  "repository": "https://github.com/offline-agency/odps-validator",
+  "defaultBranch": "main",
+  "selectedTag": "1.0.1",
+  "commit": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+  "status": "current-release",
+  "projectType": "web-application",
+  "verifiedOn": "2026-10-16",
+  "npmRequirements": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "bootstrap": "^5.0.0",
+    "js-yaml": "^4.1.0",
+    "ajv": "^8.12.0"
+  },
+  "packageManifest": {
+    "name": "nextjs-odps-validator",
+    "version": "1.0.0",
+    "engines": null
+  },
+  "lockfile": {
+    "path": "package-lock.json",
+    "lockfileVersion": 3,
+    "sha256": "7f569b90f269c6740b70267bb2f1886661475b675a08cc38b08c4afe3e3c0b15",
+    "resolvedVersions": {
+      "next": "15.3.2",
+      "react": "19.1.0",
+      "react-dom": "19.1.0",
+      "bootstrap": "5.3.6",
+      "js-yaml": "4.1.0",
+      "ajv": "8.17.1"
+    }
+  },
+  "distribution": {
+    "registry": "GitHub Releases (source)",
+    "version": "1.0.1",
+    "sourceReference": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+    "distReference": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+    "url": "https://github.com/offline-agency/odps-validator/releases/tag/1.0.1",
+    "verifiedOn": "2026-10-16"
+  },
+  "registryCheck": {
+    "name": "nextjs-odps-validator",
+    "registry": "npm",
+    "status": "not-found",
+    "httpStatus": 404,
+    "verifiedOn": "2026-10-16",
+    "note": "No public package found under the manifest name; installation documented from the immutable source release."
+  },
+  "sourcePaths": [
+    "README.md",
+    "LICENSE",
+    "package.json",
+    "package-lock.json",
+    "next.config.js",
+    "pages/index.js",
+    "pages/_app.js",
+    "public/schemas/v3.0/odps.yaml",
+    "public/schemas/v3.1/odps.yaml",
+    ".github/workflows/deploy.yaml"
+  ],
+  "unavailableChecks": [
+    "No upstream test script or tests directory in the selected release.",
+    "Configured deployment workflow is not evidence of an available hosted application."
+  ]
+}

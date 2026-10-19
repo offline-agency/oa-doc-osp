@@ -1,0 +1,546 @@
+{
+  "schemaVersion": 1,
+  "note": "Dates record reviewed source changes, never build times.",
+  "pages": {
+    "/": {
+      "file": "README.md",
+      "sha256": "886c9a1b51d8e51b7824a130e015f1d9e6e62da3744eeae035e1ec3d72da753c",
+      "changedOn": "2026-10-19"
+    },
+    "/open-source-philosophy/": {
+      "file": "open-source-philosophy.md",
+      "sha256": "442eff9293484c65ed646cda1fffaaa8d9cfc13ff82732dc3ee4c9c353be29de",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/": {
+      "file": "laravel-cart.md",
+      "sha256": "48eb3c67ce258fb0b0bf756c9d9762cc8364cbc2e004b2991b1e73850955764b",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-webex/": {
+      "file": "laravel-webex.md",
+      "sha256": "f4f064696db53ab22217638188df9a12e3efc6bc706424e5cd623cdae6a667ad",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-fatture-in-cloud-v2/": {
+      "file": "laravel-fatture-in-cloud-v2.md",
+      "sha256": "87c819a0fb20dc35be6bc5f349078dcf3a5e818c3109d315009ae3233732ae0c",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-aruba-sms/": {
+      "file": "laravel-aruba-sms.md",
+      "sha256": "c8fffa951a705bda9ed2d0df61c2d7aaf06e821662cf71e36adc204e9019b633",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-mongo-auto-sync/": {
+      "file": "laravel-mongo-auto-sync.md",
+      "sha256": "7c16da58e32ecfeba752ad78b51e4eeb62a611198c33ae90c702fbbc50225ff9",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-fatture-in-cloud/": {
+      "file": "laravel-fatture-in-cloud.md",
+      "sha256": "3d4c690c0b1edccdf431c0bf7cbf9df040ad31c9c899c10ad1c672d881a42595",
+      "changedOn": "2026-10-16"
+    },
+    "/aws-blockchain-laravel/": {
+      "file": "aws-blockchain-laravel.md",
+      "sha256": "906f2bfe413655883fe0d6c576da6769690033ef402ca2dbc72b4d6d743d215f",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-moneta-online/": {
+      "file": "laravel-moneta-online.md",
+      "sha256": "2c4a13259139e8880f6538b50712a3d5122eb5e095aea33b78270037687d7cc7",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-bank-of-italy/": {
+      "file": "laravel-bank-of-italy.md",
+      "sha256": "46321fd30730f8ef85068896bf68c030e6bb34cabd1de9973897336a12a7a6c8",
+      "changedOn": "2026-10-16"
+    },
+    "/odps-validator/": {
+      "file": "odps-validator.md",
+      "sha256": "2ddda24870fbbd0b9a3c2d7a2d5ce7f8eb362a381131dd11b6664dd665b15684",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/": {
+      "file": "braintree-vue3.md",
+      "sha256": "543cbe35a2f116a71dfd155a32c9e963f632f540f164cde8f62c4cd8fe68d727",
+      "changedOn": "2026-10-16"
+    },
+    "/vue3-burger-menu/": {
+      "file": "vue3-burger-menu.md",
+      "sha256": "e7552056ffede554b6299e5cf18121e33bd45fdd63713b44308dbea9ebb9d0b9",
+      "changedOn": "2026-10-16"
+    },
+    "/spid-laravel-trentino/": {
+      "file": "spid-laravel-trentino.md",
+      "sha256": "e08fc7663392faeed2b096a7281e8e38a4f8087446b9d0ea897fc2db7e60a1ec",
+      "changedOn": "2026-10-16"
+    },
+    "/filament-spid/": {
+      "file": "filament-spid.md",
+      "sha256": "c5185a40a9c2b96a05fd73437af1fd893943166d0eb64c1be7da4150ac41ba7b",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-email-chef/": {
+      "file": "laravel-email-chef.md",
+      "sha256": "9547918401676844ef490db2f807e0fa8ccba84cc98891ff7412357d08012a89",
+      "changedOn": "2026-10-19"
+    },
+    "/image-puzzle/": {
+      "file": "image-puzzle.md",
+      "sha256": "f2ae15ca2b562947bbfd06560db72f882e483946950b38c9127374dcc8adbaaa",
+      "changedOn": "2026-10-19"
+    },
+    "/pgr_dmmsy/": {
+      "file": "pgr_dmmsy.md",
+      "sha256": "313c895dd1a3d2a7f520214f6962dd02afa2a3f99c33dec1c576f0e55084e316",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/": {
+      "file": "versioned/laravel-cart/4.0.3/index.md",
+      "sha256": "e00a3d7c4b6ceb3666fc7f2ddbabb96a94c69758edb85ee923d7909280800fe6",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/authentication/": {
+      "file": "versioned/laravel-cart/4.0.3/authentication.md",
+      "sha256": "09d7af7c4f772f78433454bc702477e24dbc406d26f320a97fda87b8980e23d3",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/installation/": {
+      "file": "versioned/laravel-cart/4.0.3/installation.md",
+      "sha256": "7488cd6d5225cc5d0654023cfe9c7fa891ef5c85cf9430652d6ec0f45c79557f",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/integrations/": {
+      "file": "versioned/laravel-cart/4.0.3/integrations.md",
+      "sha256": "23f6c27c1a7470742a36c6a2be05bb2daf2980cc246fe51da45a827dad9f8004",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/money-and-tax/": {
+      "file": "versioned/laravel-cart/4.0.3/money-and-tax.md",
+      "sha256": "01e67ee6facf8c89548dda05225cd03e34bf209abf5cbc1195a9ff63397aeb5d",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/quick-start/": {
+      "file": "versioned/laravel-cart/4.0.3/quick-start.md",
+      "sha256": "a2eea4b3fad206a5ec935d2fc9fe96b77bdc15faa998db9e69ee0d97f43adb53",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/reference/": {
+      "file": "versioned/laravel-cart/4.0.3/reference.md",
+      "sha256": "12db80c86e1d67e15691bab1b8c1e34daaa06c8b2bf12df4be7414f98cb33848",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/storage/": {
+      "file": "versioned/laravel-cart/4.0.3/storage.md",
+      "sha256": "447dfbb110d1bdad53dfcc14efed70ad9ddfc831a799b1441ff8cd86d926da8f",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/support/": {
+      "file": "versioned/laravel-cart/4.0.3/support.md",
+      "sha256": "564bfda0bf7e8da0ece557c7c059fbb08f56b648618c77ec9578cfef59b71e51",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/upgrading/": {
+      "file": "versioned/laravel-cart/4.0.3/upgrading.md",
+      "sha256": "d72b6f6cb66fbe1cea69d5f18ca781ab75c21374dc4cde1c3ad6978db9b7f9ed",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/4.0.3/variants-and-wishlist/": {
+      "file": "versioned/laravel-cart/4.0.3/variants-and-wishlist.md",
+      "sha256": "fe7de691077279662b6f5eb6b206a201c93c8b1c02d05aa51652dfd40de1c501",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-webex/2.0.0/": {
+      "file": "versioned/laravel-webex/2.0.0/index.md",
+      "sha256": "a31dda570495645df19452cb6c91ba9239cf0c667d76352ec6bf1c0be1e22dfb",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-webex/2.0.0/coverage/": {
+      "file": "versioned/laravel-webex/2.0.0/coverage.md",
+      "sha256": "83f6ddb2d17e0892923de400f324b63925262b52331c796d3b5d129d4f59d109",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-fatture-in-cloud-v2/3.0.1/": {
+      "file": "versioned/laravel-fatture-in-cloud-v2/3.0.1/index.md",
+      "sha256": "d8f8acf675a6b2a532e27dd259a5b70220ed1597ae3238aa11930150952a0ca3",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-aruba-sms/1.1.0/": {
+      "file": "versioned/laravel-aruba-sms/1.1.0/index.md",
+      "sha256": "4c93dc9671e9af04c1ee28ef9fa11ab7022035b086d6f3b6b95a2d90c4102f20",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-mongo-auto-sync/3.1.1/": {
+      "file": "versioned/laravel-mongo-auto-sync/3.1.1/index.md",
+      "sha256": "95d60e450a80a55823da9c7e8ffd9747926d95f9acbc485a04e3d4388bfedfda",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-fatture-in-cloud/2.2.8/": {
+      "file": "versioned/laravel-fatture-in-cloud/2.2.8/index.md",
+      "sha256": "8a9b4bb71d4babe555b7f34821a2b11185d3792bcecf7208cb34038876495652",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-bank-of-italy/1.0.1/": {
+      "file": "versioned/laravel-bank-of-italy/1.0.1/index.md",
+      "sha256": "5c139c3497d137faaf35808d0f9f7f6d7bc58d68eac2669998b3197f05258598",
+      "changedOn": "2026-10-16"
+    },
+    "/odps-validator/1.0.1/": {
+      "file": "versioned/odps-validator/1.0.1/index.md",
+      "sha256": "cf9770d9c439fdb481fb927d716002f02b1909d170a159f4c1483c81a3073611",
+      "changedOn": "2026-10-16"
+    },
+    "/spid-laravel-trentino/v2/": {
+      "file": "versioned/spid-laravel-trentino/v2/index.md",
+      "sha256": "368e1e17db553a0ea75bf62e7858cdfce4b33c2516ebdef68e6f30653ab70319",
+      "changedOn": "2026-10-16"
+    },
+    "/pgr_dmmsy/v0.1/": {
+      "file": "versioned/pgr_dmmsy/v0.1/index.md",
+      "sha256": "3186cf03b1657808429b0844f4e5af70a3b30e2145770d862d74b439f012ccde",
+      "changedOn": "2026-10-16"
+    },
+    "/vue3-burger-menu/v1/": {
+      "file": "versioned/vue3-burger-menu/v1/index.md",
+      "sha256": "27389ab5e8f300c906fdb9f86a10ec0af90cd389c61fc5b86ee497fb80358e0a",
+      "changedOn": "2026-10-16"
+    },
+    "/vue3-burger-menu/v1/reference/": {
+      "file": "versioned/vue3-burger-menu/v1/reference.md",
+      "sha256": "93cf42ef06defdc8cdf3f78dabdf0fc777ee520d68334a3e2c65f20b02dd6a91",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/": {
+      "file": "versioned/braintree-vue3/next/index.md",
+      "sha256": "6461ec8be09045635dbd63358224ed7dcbec09b41e8f7029685af145ca43808f",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/api/": {
+      "file": "versioned/braintree-vue3/next/api.md",
+      "sha256": "453e57e3ff2b1308c82e330469fd332c9f8cc4b857a7120dc6ea0ae87702d9e3",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/data-collector/": {
+      "file": "versioned/braintree-vue3/next/data-collector.md",
+      "sha256": "7cf540cced2f24cb9d9e02f470b2effc5b1a3fe9bf7317488a5a6edaf18ed7cf",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/getting-started/": {
+      "file": "versioned/braintree-vue3/next/getting-started.md",
+      "sha256": "fbfe5c10eee7cecb0a2089d53063f528d56015dccb0d798c1b98b1fa8226aef0",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/hosted-fields/": {
+      "file": "versioned/braintree-vue3/next/hosted-fields.md",
+      "sha256": "1d05fa87c433a2745821c1c24e38baad70f3d4396739b8b8669fb43644c662a8",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/installation/": {
+      "file": "versioned/braintree-vue3/next/installation.md",
+      "sha256": "e62091c2a556398d15f74eed7631ee11d50513c04d343d0100d07c00a39a2002",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/integration/": {
+      "file": "versioned/braintree-vue3/next/integration.md",
+      "sha256": "df4ab0a434191ffb5f92ca9dd757b0693e0b612e406235ac340925d5de32841e",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/paypal/": {
+      "file": "versioned/braintree-vue3/next/paypal.md",
+      "sha256": "f5d83c3189c723417841d004fe5f3d967ef969796a08ede05bf917fda7c4b3e0",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/three-d-secure/": {
+      "file": "versioned/braintree-vue3/next/three-d-secure.md",
+      "sha256": "5a9223485bc3d7ecfba3e7243b3e78532de81def9cfd259b0deb8453ab303345",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/next/venmo/": {
+      "file": "versioned/braintree-vue3/next/venmo.md",
+      "sha256": "e17df85b0f36f29265dc551fc19cab32f71b3ed2275353d3a8056476ba3515ab",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/": {
+      "file": "versioned/laravel-cart/v4/index.md",
+      "sha256": "a0ab995d0936e24510bd775b893f5f3a50970a56c3ab643e64a7d8042a2c8c45",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/agents/": {
+      "file": "versioned/laravel-cart/v4/agents.md",
+      "sha256": "180a0b942870b1d620332a538d57ec7d41fd7f37e418b6a4cf31f8920260095e",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/alternatives/": {
+      "file": "versioned/laravel-cart/v4/alternatives.md",
+      "sha256": "3f7e3e7f674c964a79d63ba35a00c1229d63bfc4b5722b243bb82c8a407c1a80",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/api-and-mobile/": {
+      "file": "versioned/laravel-cart/v4/api-and-mobile.md",
+      "sha256": "adfe646e03269f841cddd0f5e4e430313d0c3eb83fc67400d5a87b641de109fb",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/authentication/": {
+      "file": "versioned/laravel-cart/v4/authentication.md",
+      "sha256": "2a8110c79a21638919ec2b88ed84dd763db92d1b827761dcae716da8015af39b",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/choosing/": {
+      "file": "versioned/laravel-cart/v4/choosing.md",
+      "sha256": "2842add42ee8d6dd44b7170a1e78e323457845d0bece1adb796bcbd2a9d34bda",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/configuration/": {
+      "file": "versioned/laravel-cart/v4/configuration.md",
+      "sha256": "b7d5e6c6270a04414a3d21031e21a081ceb4c9e9dceb326ab0d608b5228f0387",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/coupons/": {
+      "file": "versioned/laravel-cart/v4/coupons.md",
+      "sha256": "f7a6cd309ccbc56bbb5634cb1ac7e04dfcedc17c86839fdc3039adf8ec62c324",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/installation/": {
+      "file": "versioned/laravel-cart/v4/installation.md",
+      "sha256": "b0107b1d0b1a156851890e8a681b500d4423e7656ac65a128308b8d449bfe528",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/integrations/": {
+      "file": "versioned/laravel-cart/v4/integrations.md",
+      "sha256": "6cd6d2cc0d59a83ef549f9ec65e1da24bf8a695a60639d5e71aea4f7d993a7d2",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/money-and-tax/": {
+      "file": "versioned/laravel-cart/v4/money-and-tax.md",
+      "sha256": "6e98e6def800d986c774a867e7efa2c3bad24b92d4e3f55b12a3c0d1e049257a",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/redis-sessions/": {
+      "file": "versioned/laravel-cart/v4/redis-sessions.md",
+      "sha256": "6c38b6f8f7471d62c5b9c156ae67936cfffee4f4940ae58aab7a82eada67c354",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/reference/": {
+      "file": "versioned/laravel-cart/v4/reference.md",
+      "sha256": "c80280f0c74f0659c1cc59fb0829e2bdc7837d3b5923166ae8a1cf3c0e04ab30",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/storage/": {
+      "file": "versioned/laravel-cart/v4/storage.md",
+      "sha256": "28faf7d11108a53f57a96accb873e37009fff1072ec1d150a48d91e094b0f488",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/testing/": {
+      "file": "versioned/laravel-cart/v4/testing.md",
+      "sha256": "9ae81a29f1e640382fba4807cce20a60c4974acfd8893b13aefa3ca3da3aff29",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/troubleshooting/": {
+      "file": "versioned/laravel-cart/v4/troubleshooting.md",
+      "sha256": "774f7069752c1866dd9237989cbc6ec9060d5deea88f2a83d0b0750a399f84bf",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/upgrading/": {
+      "file": "versioned/laravel-cart/v4/upgrading.md",
+      "sha256": "5c74f957a22cc22e9ec7b023b33b37919f5435b8c50572a25ff73a3a7d1e035d",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/usage/": {
+      "file": "versioned/laravel-cart/v4/usage.md",
+      "sha256": "026b4be9d7634a5eaa231000584317c9ddac0724c676bce288a3da0c70932223",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/v4/variants-and-wishlist/": {
+      "file": "versioned/laravel-cart/v4/variants-and-wishlist.md",
+      "sha256": "fe9175aa97b5527b82098ab4c013ca2201b53ca86db83d8480a7f7d42eea1cc7",
+      "changedOn": "2026-10-16"
+    },
+    "/filament-spid/v1/": {
+      "file": "versioned/filament-spid/v1/index.md",
+      "sha256": "b2f8a0a0b9859641e54c5df4c831493b99c8627fcedd47ba26e9068747010ae7",
+      "changedOn": "2026-10-19"
+    },
+    "/filament-spid/v0.1/": {
+      "file": "versioned/filament-spid/v0.1/index.md",
+      "sha256": "2c6521f9bfe32e9b3513e5e32490797e3de63a45ed04b557922e789e4648e8a5",
+      "changedOn": "2026-10-19"
+    },
+    "/image-puzzle/v1/": {
+      "file": "versioned/image-puzzle/v1/index.md",
+      "sha256": "14e0aa93b0087e5279f04d4624b134db4ab60ff0a22c3cbbb97a07edf6ec6c99",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-email-chef/v1/": {
+      "file": "versioned/laravel-email-chef/v1/index.md",
+      "sha256": "4149a48527378bd96d16e255f83a9d018f8a30648f3d36201015e8a831cc2be6",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-email-chef/v2/": {
+      "file": "versioned/laravel-email-chef/v2/index.md",
+      "sha256": "a48da855dc74fc566bc716d82b85673ca5e95da290c531b050ffe7d166fcc767",
+      "changedOn": "2026-10-19"
+    },
+    "/aws-blockchain-laravel/v0.0/": {
+      "file": "versioned/aws-blockchain-laravel/v0.0/index.md",
+      "sha256": "0321e3708ebbc44dbae38adf9a22246412cc9d24e2541c8958a30f0cd8ec2d8a",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-cart/agents/": {
+      "file": "laravel-cart/agents.md",
+      "sha256": "4481d4b79c9ef5cbe28d01cb13133711e9506668ef8462262b513f4868214a81",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/alternatives/": {
+      "file": "laravel-cart/alternatives.md",
+      "sha256": "7177ce3feb5165a67a0c802f5bc873e8574a22758fa0fe5e6172e24898353e4a",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/api-and-mobile/": {
+      "file": "laravel-cart/api-and-mobile.md",
+      "sha256": "47c880056c98e5438ac900ef7fe8bf3da3718d39ca8d450e6b593e1ee02d0112",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/authentication/": {
+      "file": "laravel-cart/authentication.md",
+      "sha256": "58d99f27709656e6756aa5bb248d01190a464fbce6e7372d01e4a7a9e0e8c6ee",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/choosing/": {
+      "file": "laravel-cart/choosing.md",
+      "sha256": "8e7e32ca41660978267ae2dbe7ba36ffe515443c04af29d9c58cf77827f8047f",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/configuration/": {
+      "file": "laravel-cart/configuration.md",
+      "sha256": "f6f19a172278143ba2f0d9cb2be1e5f6f18fb5bb31d6e6621b2d554c37e9b0cb",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/coupons/": {
+      "file": "laravel-cart/coupons.md",
+      "sha256": "4069bf22a2082f9715aae562aeea4a836f15bea4663705d19dcaa66435c7914c",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/installation/": {
+      "file": "laravel-cart/installation.md",
+      "sha256": "7ba2e4804f33a86afb6f1d96ef5366d943f77fbe25095c8a38d2f32c347ebf49",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/integrations/": {
+      "file": "laravel-cart/integrations.md",
+      "sha256": "f528b03249fb219ffae27f2bf4e7180b1c8f9ff6fd1c753463b3427964756ca9",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/legacy/": {
+      "file": "laravel-cart/legacy.md",
+      "sha256": "1b8b4d0b5d79f6898d7c0c8c851fdd66a190bd4cb13bb169ace03966bfd7d45f",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/money-and-tax/": {
+      "file": "laravel-cart/money-and-tax.md",
+      "sha256": "6b60e6bdb8afd0828d523501ba33d5265c0c08910324a21ec33763ddb5a60825",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/redis-sessions/": {
+      "file": "laravel-cart/redis-sessions.md",
+      "sha256": "d431063fe15a90754614e0d4d6a4440f35716c47f2cb84426002d53153ab5b20",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/reference/": {
+      "file": "laravel-cart/reference.md",
+      "sha256": "26aca4571f090301d8c2f066df02b26623cc277693e0fe3c90737718a139b770",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/storage/": {
+      "file": "laravel-cart/storage.md",
+      "sha256": "93ad74d987fdf09f91e1ecb3879146d120ac3ce752af10c97171707b76d2acb8",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/testing/": {
+      "file": "laravel-cart/testing.md",
+      "sha256": "fd514264fe97da7347cf8efd0cafa53ab947f813809cbca0b2ea9cd3d4d2533f",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/troubleshooting/": {
+      "file": "laravel-cart/troubleshooting.md",
+      "sha256": "f24921574e00bb77415a631194d34dcd85ee3b97fd9aa8bc296b0f981c60e490",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/upgrading/": {
+      "file": "laravel-cart/upgrading.md",
+      "sha256": "0da91233c18d1a7d2e7855ba8c52931069ef907e9a6378c0c0ed29cb9d2a3da5",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/url-migration/": {
+      "file": "laravel-cart/url-migration.md",
+      "sha256": "94c9fc07eaabe5d829039be6181377dfc814df99d1be972a0d30ad7810b7f9c7",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/usage/": {
+      "file": "laravel-cart/usage.md",
+      "sha256": "ebce592374018ecf1c73df0c1901c0499bbe926576b44fcb5b46914ce4b0728e",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-cart/variants-and-wishlist/": {
+      "file": "laravel-cart/variants-and-wishlist.md",
+      "sha256": "189a45265a15732bfea9c21b264166758d2ee10ef47f6af58c42bc974e7e045e",
+      "changedOn": "2026-10-16"
+    },
+    "/laravel-webex/coverage/": {
+      "file": "laravel-webex/coverage.md",
+      "sha256": "22a320be2e8e8aea89da5c38fca3fa980a9bebce2f875521f1b21e5602fcbfd6",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/api/": {
+      "file": "braintree-vue3/api.md",
+      "sha256": "f532e488bcad655287453c455e26948d5ceb00976b8612aaef5e0cd54cb6e1bb",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/data-collector/": {
+      "file": "braintree-vue3/data-collector.md",
+      "sha256": "395992527af0fb8980a00b0f189dbe0996e20f3bcfca7137e7bcb38cea22ece2",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/getting-started/": {
+      "file": "braintree-vue3/getting-started.md",
+      "sha256": "a7d69faeaa59314fc3197ccc77b1b62f33985a1e47cf65bf7306f70ddbb05fe1",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/hosted-fields/": {
+      "file": "braintree-vue3/hosted-fields.md",
+      "sha256": "1163b4faa92f6baec750a9554ec1b3f484a58735baf26c8091d0fc9349b055aa",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/installation/": {
+      "file": "braintree-vue3/installation.md",
+      "sha256": "8d259a2044df44dbec0dd86cddb1312dae7622195cd4f3a064ec447bf0534b57",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/integration/": {
+      "file": "braintree-vue3/integration.md",
+      "sha256": "a919e3ae943fdc83bbc462590724aa9017ceea14a1e154903ae4b14e5a28823d",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/paypal/": {
+      "file": "braintree-vue3/paypal.md",
+      "sha256": "279374295b58cdd43214a403789a6f7e20153bbe919d950f692a5a9e5406c05b",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/three-d-secure/": {
+      "file": "braintree-vue3/three-d-secure.md",
+      "sha256": "542ab5ae66e00d26a27416d09455c3e6847553be3893633dc53b5cb35c3a95c4",
+      "changedOn": "2026-10-16"
+    },
+    "/braintree-vue3/venmo/": {
+      "file": "braintree-vue3/venmo.md",
+      "sha256": "4a0b01bb928bb70c8ca0f1aba665a139e5a02f16b49b41754526184b1af5c9c0",
+      "changedOn": "2026-10-16"
+    },
+    "/vue3-burger-menu/reference/": {
+      "file": "vue3-burger-menu/reference.md",
+      "sha256": "6da793c05b049d2392d8a8b3416b8ed545ce9087139f4d6e5154e126e7ace30f",
+      "changedOn": "2026-10-16"
+    }
+  }
+}

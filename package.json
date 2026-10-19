@@ -1,28 +1,39 @@
 {
-  "name": "oa-doc-out",
+  "name": "oa-doc-osp",
   "version": "1.0.0",
   "description": "OFFLINE Agency external documentation",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build"
+    "test": "node --test scripts/*.test.mjs",
+    "docs:dev": "vuepress dev .",
+    "docs:build": "vuepress build . && node scripts/postbuild.mjs",
+    "docs:check": "node scripts/check-content.mjs && node scripts/version-docs.mjs --check && node scripts/update-docs.mjs --check",
+    "docs:verify": "npm run docs:check && npm test && npm run docs:build && node scripts/check-site.mjs && node scripts/check-metadata.mjs",
+    "docs:preview": "node scripts/preview.mjs",
+    "docs:version": "node scripts/version-docs.mjs",
+    "docs:update": "node scripts/update-docs.mjs"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/matteogiacomo/oa-doc-out.git"
+    "url": "git+https://github.com/offline-agency/oa-doc-osp.git"
   },
   "author": "OFFLINE Agency",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/matteogiacomo/oa-doc-out#readme",
-  "dependencies": {
-    "@vuepress/plugin-google-analytics": "^1.8.0",
-    "markdown-it-footnote": "^3.0.2",
-    "vue-i18n": "^8.22.4",
-    "vuepress-plugin-clean-urls": "^1.1.2",
-    "vuepress-plugin-container": "^2.1.5"
-  },
+  "homepage": "https://docs.offlineagency.com/",
   "devDependencies": {
-    "vuepress": "^1.8.2"
-  }
+    "vuepress": "2.0.0-rc.31",
+    "@vuepress/bundler-vite": "2.0.0-rc.31",
+    "@vuepress/theme-default": "2.0.0-rc.137",
+    "@vuepress/plugin-search": "2.0.0-rc.137",
+    "@vuepress/plugin-markdown-container": "2.0.0-rc.137",
+    "markdown-it-footnote": "4.0.0",
+    "vue": "3.5.44",
+    "sass": "1.105.0",
+    "gray-matter": "4.0.3"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24.13.0 <25",
+    "npm": ">=11.6.2 <12"
+  },
+  "packageManager": "npm@11.6.2"
 }

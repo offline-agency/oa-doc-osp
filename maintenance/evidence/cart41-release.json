@@ -1,0 +1,116 @@
+{
+  "verifiedOn": "2026-10-16",
+  "repository": "https://github.com/offline-agency/laravel-cart",
+  "defaultBranch": "main",
+  "release": {
+    "tag": "4.1.0",
+    "prerelease": false,
+    "publishedAt": "2026-10-16T15:19:22Z",
+    "url": "https://github.com/offline-agency/laravel-cart/releases/tag/4.1.0",
+    "resolvedCommit": "b89d3219202703203453890e2e46467e79ad415d"
+  },
+  "pr50": {
+    "state": "merged",
+    "merged_at": "2026-10-16T15:16:40Z",
+    "html_url": "https://github.com/offline-agency/laravel-cart/pull/50",
+    "created_at": "2026-10-16T07:44:36Z",
+    "unavailable": null,
+    "head": "131f2e6e00522f97c8f85adf18d3469cf4de527b",
+    "base": "main",
+    "mergeCommit": "b89d3219202703203453890e2e46467e79ad415d",
+    "releasedAs": "4.1.0"
+  },
+  "packagist": {
+    "name": "offline-agency/laravel-cart",
+    "description": "Laravel shopping cart with fiscal support",
+    "keywords": [
+      "cart",
+      "laravel",
+      "shoppingcart"
+    ],
+    "homepage": "",
+    "version": "4.1.0",
+    "version_normalized": "4.1.0.0",
+    "license": [
+      "MIT"
+    ],
+    "authors": [
+      {
+        "name": "Offline Agency",
+        "email": "info@offlineagency.it"
+      }
+    ],
+    "source": {
+      "url": "https://github.com/offline-agency/laravel-cart.git",
+      "type": "git",
+      "reference": "b89d3219202703203453890e2e46467e79ad415d"
+    },
+    "dist": {
+      "url": "https://api.github.com/repos/offline-agency/laravel-cart/zipball/b89d3219202703203453890e2e46467e79ad415d",
+      "type": "zip",
+      "shasum": "",
+      "reference": "b89d3219202703203453890e2e46467e79ad415d"
+    },
+    "type": "library",
+    "support": {
+      "issues": "https://github.com/offline-agency/laravel-cart/issues",
+      "source": "https://github.com/offline-agency/laravel-cart/tree/4.1.0"
+    },
+    "funding": [
+      {
+        "url": "https://github.com/offline-agency",
+        "type": "github"
+      }
+    ],
+    "time": "2026-10-16T15:16:39+00:00",
+    "published-time": "2026-10-16T15:19:25+00:00",
+    "autoload": {
+      "psr-4": {
+        "OfflineAgency\\LaravelCart\\": "src/"
+      }
+    },
+    "extra": {
+      "laravel": {
+        "aliases": {
+          "Cart": "OfflineAgency\\LaravelCart\\Facades\\Cart"
+        },
+        "providers": [
+          "OfflineAgency\\LaravelCart\\CartServiceProvider"
+        ]
+      }
+    },
+    "require": {
+      "php": "~8.4.0 || ~8.5.0",
+      "ext-bcmath": "*",
+      "illuminate/auth": "^12.69.2 || ^13.32",
+      "illuminate/console": "^12.69.2 || ^13.32",
+      "illuminate/contracts": "^12.69.2 || ^13.32",
+      "illuminate/database": "^12.69.2 || ^13.32",
+      "illuminate/events": "^12.69.2 || ^13.32",
+      "illuminate/http": "^12.69.2 || ^13.32",
+      "illuminate/session": "^12.69.2 || ^13.32",
+      "illuminate/support": "^12.69.2 || ^13.32",
+      "nesbot/carbon": "^3.8",
+      "nunomaduro/termwind": "^2.3"
+    },
+    "require-dev": {
+      "larastan/larastan": "^3.13",
+      "laravel/pint": "^1.32",
+      "mockery/mockery": "^1.6.15",
+      "orchestra/testbench": "^10.12 || ^11.3",
+      "pestphp/pest": "^4.7.8 || ^5.3.2",
+      "pestphp/pest-plugin-laravel": "^4.1 || ^5.0.1",
+      "phpstan/phpstan": "^2.3.1"
+    },
+    "conflict": {
+      "symfony/translation": "<7.2"
+    }
+  },
+  "verification": [
+    "git fetch origin --tags",
+    "git rev-parse 4.1.0^{commit}",
+    "gh api repos/offline-agency/laravel-cart/releases/latest",
+    "gh pr view 50 --repo offline-agency/laravel-cart --json state,mergedAt,mergeCommit,headRefOid,baseRefName,url",
+    "curl -fsSL https://repo.packagist.org/p2/offline-agency/laravel-cart.json"
+  ]
+}

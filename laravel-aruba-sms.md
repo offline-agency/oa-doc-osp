@@ -1,341 +1,213 @@
 ---
+title: Laravel Aruba SMS
+description: Send Laravel notifications with Aruba SMS Panel, configure sandbox mode, and monitor SMS credits.
 meta:
   - name: description
-    content: This package makes it easy to send SMS notifications using SMS Aruba API with Laravel.
+    content: Send Laravel notifications with Aruba SMS Panel, configure sandbox mode, and monitor SMS credits.
 gitName: laravel-aruba-sms
+packageVersion: '1.1.0'
+sourceCommit: b090caba23f4882486619f2eaed90dfa9b7a2014
 ---
 
-# laravel-aruba-sms
+# Laravel Aruba SMS
 
-This package makes it easy to send SMS notifications using SMS Aruba API with Laravel.
+Send SMS through a Laravel notification channel or the Aruba SMS Panel API client. This guide covers [release 1.1.0](https://github.com/offline-agency/laravel-aruba-sms/releases/tag/1.1.0), available on [Packagist](https://packagist.org/packages/offline-agency/laravel-aruba-sms), checked on 16 October 2026.
 
-[![Github](./assets/icon/github.svg "Github Icon")](https://github.com/offline-agency/laravel-aruba-sms)
-[![Latest Stable Version](https://poser.pugx.org/offline-agency/laravel-aruba-sms/v/stable)](https://packagist.org/packages/offline-agency/laravel-aruba-sms)
-[![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/laravel-aruba-smsc.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-aruba-sms)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![codecov](https://codecov.io/gh/offline-agency/laravel-aruba-sms/branch/master/graph/badge.svg?token=0BHADJQYAW)](https://codecov.io/gh/offline-agency/laravel-aruba-sms)
+## Requirements
+
+Composer declares PHP `^8.4` and Illuminate HTTP, Notifications and Support `^12.0|^13.0`. The release CI workflow defines PHP 8.4 with Laravel 12 and 13; this configuration does not establish that every compatible version has been tested. The documentation examples were exercised with PHP 8.5.10 and Laravel 13.35.0 using fake HTTP responses.
 
 ## Installation
 
-You can install the package via composer:
-
 ```bash
-composer require offline-agency/laravel-aruba-sms
+composer require offline-agency/laravel-aruba-sms:^1.1
+php artisan vendor:publish --tag=aruba-sms-config
 ```
+
+Laravel discovers the service provider automatically. Publishing creates `config/aruba-sms.php`; configuration keys use the `aruba-sms` namespace, for example `config('aruba-sms.sender')`.
+
+## Configuration
+
+Start with sandbox enabled:
+
+```dotenv
+ARUBA_SMS_ID=your_aruba_username
+ARUBA_SMS_PASSWORD=your_aruba_password
+ARUBA_SMS_SENDER=YourBrand
+ARUBA_SMS_MESSAGE_TYPE=N
+ARUBA_SMS_SANDBOX=true
+ARUBA_SMS_MINIMUM_SMS=50
+ARUBA_SMS_LOW_CREDIT_RECIPIENTS=admin@example.com,ops@example.com
+```
+
+| Environment variable | Configuration key | Default / purpose |
+| --- | --- | --- |
+| `ARUBA_SMS_ID` | `credentials.username` | Empty; Aruba username |
+| `ARUBA_SMS_PASSWORD` | `credentials.password` | Empty; Aruba password |
+| `ARUBA_SMS_BASE_URL` | `base_url` | `https://smspanel.aruba.it/API/v1.0/REST/` |
+| `ARUBA_SMS_SENDER` | `sender` | `YourBrand` |
+| `ARUBA_SMS_MESSAGE_TYPE` | `message_type` | `N` |
+| `ARUBA_SMS_SANDBOX` | `sandbox` | `false`; log message details instead of sending |
+| `ARUBA_SMS_MINIMUM_SMS` | `minimum_sms` | `50`; falls back to legacy `MINIMUM_SMS` |
+| `ARUBA_SMS_LOW_CREDIT_RECIPIENTS` | `low_credit_recipients` | Empty; comma-separated email addresses |
+| `ARUBA_SMS_RETRY_TIMES` | `retry.times` | `3`; HTTP retry setting (`0` disables retries) |
+| `ARUBA_SMS_RETRY_SLEEP_MS` | `retry.sleep_ms` | `100`; delay in milliseconds |
+
+All keys above are relative to `aruba-sms`. Sandbox `sendMessage()` logs recipients and content, returns `null`, makes no HTTP request and emits no `SmsSent`. Status/history client calls still use the API. Set sandbox to `false` when ready to send real SMS using your Aruba account.
 
 ## Usage
 
 ### Notification
 
-Laravel notifications system is a way to notify users via email or SMS.
-Each notification is represented by a single class that is typically stored
-in the ```app/Notifications``` directory.
-
-Here is an example:
+For a single recipient, use the included notification:
 
 ```php
-<?php
+use Illuminate\Support\Facades\Notification;
+use OfflineAgency\ArubaSms\Notifications\SendSmsNotification;
 
-namespace OfflineAgency\LaravelArubaSms\Notifications;
+Notification::route('aruba-sms', null)->notify(
+    new SendSmsNotification('Your order is ready.', '+393331234567')
+);
+```
 
-use Illuminate\Bus\Queueable;
-use Illuminate\Notifications\Messages\MailMessage;
-use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
+The recipient is supplied to `SendSmsNotification`, which accepts a string. The channel reads `toArubaSms()`; it does not infer a phone number from the notification route.
+
+For your own notification, return an `ArubaSmsMessage`:
+
+```php
+namespace App\Notifications;
+
 use Illuminate\Notifications\Notification;
-use Illuminate\Support\Facades\Lang;
+use OfflineAgency\ArubaSms\ArubaSmsMessage;
 
-class SendSmsNotification extends Notification
+class OrderReady extends Notification
 {
-    use Queueable;
-
-    public $message;
-    public $recipient;
-    public $message_type;
-
-    public function __construct(
-        $message,
-        $recipient
-    )
+    public function via(mixed $notifiable): array
     {
-        $this->setMessage(
-            $message
-        );
-
-        $this->setRecipient(
-            $recipient
-        );
-
-        $this->setMessageType();
+        return ['aruba-sms'];
     }
 
-    public function via(
-        $notifiable
-    ): array
+    public function toArubaSms(mixed $notifiable): ArubaSmsMessage
     {
-        return [
-            'aruba-sms'
-        ];
-    }
-
-    public function getMessage()
-    {
-        return $this->message;
-    }
-
-    public function setMessage(
-        $message
-    ): void
-    {
-        $this->message = $message;
-    }
-
-    public function getRecipient()
-    {
-        return $this->recipient;
-    }
-
-    public function setRecipient(
-        $recipient
-    ): void
-    {
-        $this->recipient = $recipient;
-    }
-
-    public function getMessageType()
-    {
-        return $this->message_type;
-    }
-
-    public function setMessageType(): void
-    {
-        $this->message_type = config('aruba.message_type');
+        return (new ArubaSmsMessage)
+            ->content('Your order is ready.')
+            ->to($notifiable->phone_number)
+            ->messageType('N');
     }
 }
 ```
 
-Every notification class has a `via` method that determines on which channels the
-notification will be delivered, in this case `aruba-sms`.
+Call `$user->notify(new \App\Notifications\OrderReady)` on a notifiable model with a `phone_number`. Older notifications may expose public `message`, `recipient` and optional `message_type` properties when `toArubaSms()` is absent. If `toArubaSms()` returns another type, the channel returns `null` without sending.
 
-The `via` method also receives a **$notifiable** instance, which will be an instance of
-the class to which the notification is being sent.
+### Direct client and facade
 
-Then set the two variables in question, **$message** and **$recipient**.
+```php
+use OfflineAgency\ArubaSms\ArubaSmsClient;
+use OfflineAgency\ArubaSms\ArubaSmsMessage;
+
+$message = (new ArubaSmsMessage)
+    ->content('Your order is ready.')
+    ->to(['+393331234567', '+393339876543'])
+    ->messageType('N');
+
+$response = app(ArubaSmsClient::class)->sendMessage($message);
+// Illuminate HTTP Response on HTTP 200/201, or null in sandbox.
+```
+
+The constructor also accepts `new ArubaSmsMessage($content, $recipient, $message_type)`; the recipient can be a string or an array. Messages and the client pass phone numbers through unchanged. Supply complete international numbers yourself. The optional `OfflineAgency\ArubaSms\Support\PhoneNumberFormatter::format()` helper strips literal spaces and adds `+39` only when the number does not start with `+`; it does not validate phone numbers.
+
+The facade resolves the same singleton client:
+
+```php
+use OfflineAgency\ArubaSms\Facades\ArubaSms;
+
+$status = ArubaSms::checkSmsStatus();
+$history = ArubaSms::getSmsHistory('20261001000001', '20261016235959', 1, 20);
+$recipientHistory = ArubaSms::getSmsRecipientHistory(
+    '+393331234567', '20261001000001', null, 1, 20
+);
+```
+
+These methods return an Illuminate HTTP `Response`. `ArubaSms::sendMessage($message)` is also available. The client caches its login session in memory; `clearSession()` forces login on the next request. If an authenticated SMS, status or history request returns HTTP 401, it logs in again and repeats that request once. Configured transient retries cover connection errors and HTTP 5xx.
+
+### Results, events and errors
+
+Successful send responses (HTTP 200 or 201) dispatch `OfflineAgency\ArubaSms\Events\SmsSent`, exposing readonly `message` and `response`. API acceptance does not establish handset delivery.
+
+```php
+use OfflineAgency\ArubaSms\Exceptions\ArubaSmsAuthException;
+use OfflineAgency\ArubaSms\Exceptions\ArubaSmsDeliveryException;
+
+try {
+    $response = app(\OfflineAgency\ArubaSms\ArubaSmsClient::class)
+        ->sendMessage($message);
+} catch (ArubaSmsAuthException $exception) {
+    // Check configured account credentials.
+} catch (ArubaSmsDeliveryException $exception) {
+    $httpStatus = $exception->httpStatus;
+    $apiError = $exception->errorBody;
+    // Also available: recipient (JSON), messageContent and statusInfo.
+}
+```
+
+For a failed send response, the client queries credit status, constructs `ArubaSmsDeliveryException`, dispatches `SmsFailed` with readonly `message` and `exception`, then throws. Authentication or connection failures can interrupt this path before `SmsFailed` is emitted; it is not a catch-all failure event. Transport failures may propagate as Illuminate HTTP exceptions. Exception text and logs can include message content and recipients.
 
 ### Commands
 
-First of all, to create a new command, you may use the `make:command` Artisan command.
+The registered signatures are:
 
-After generating your command, you should define appropriate values for the **signature** and 
-**description** properties of the class.
-
-Let’s take `ArubaSmsCommand` as an example:
-
-```php 
-protected $signature = 'aruba:sms {command_type} {--from=} {--to=} {--pageNumber=} {--pageSize=} {--recipient=} {--phoneNumber=*}';
-
-protected $description = '';
+```text
+aruba:sms {command_type} {--from=} {--to=} {--pageNumber=} {--pageSize=} {--recipient=} {--phoneNumber=*}
+aruba:check-remaining-sms
 ```
 
-The handle method will be called when your command is executed.
-
-```php
-public function handle()
-{
-    $argument = $this->argument('command_type');
-    switch ($argument) {
-        case 'status':
-            $this->checkArubaSmsStatus();
-            break;
-        case 'history':
-            $this->checkArubaSmsHistory();
-            break;
-        case 'recipient-history':
-            $this->checkArubaSmsRecipientHistory();
-            break;
-        case 'notification':
-            $this->testSendSms();
-            break;
-        default:
-            $this->warn('Command type not valid');
-    }
-}
-```
-
-The method to check aruba sms status is as follows:
-
-```php 
-public function checkArubaSmsStatus(): string
-{
-    $aruba_sms_service = new ArubaSmsService;
-
-    $response = $aruba_sms_service->checkSmsStatus();
-
-    return $this->getStatusMessage(
-        $response
-    );
-}
-```
-
-To start the command run:
-
-```php 
+```bash
 php artisan aruba:sms status
+php artisan aruba:sms history --from=20261001000001 --to=20261016235959 --pageNumber=1 --pageSize=20
+php artisan aruba:sms recipient-history --recipient=+393331234567 --from=20261001000001
+php artisan aruba:check-remaining-sms
 ```
 
-The method to check aruba sms history is as follows:
+History commands default `from` to today at `00:00:01`. Low-credit checks use the `GP` quantity and email each configured recipient when it is strictly below `minimum_sms`; configure Laravel mail delivery first. No alert is sent when no GP quantity is available. Schedule the check in your application if needed.
 
-```php 
-public function checkArubaSmsHistory(): string
-{
-    $aruba_sms_service = new LaravelArubaSms;
+To exercise the console notification in sandbox:
 
-    $from = !is_null($this->option('from')) ? $this->option('from') : $this->getFromDate();
-    $to = $this->option('to');
-    $pageNumber = $this->option('pageNumber');
-    $pageSize = $this->option('pageSize');
-
-    $response = $aruba_sms_service->getSmsHistory(
-        $from,
-        $to,
-        $pageNumber,
-        $pageSize
-    );
-
-    $status = $response->status();
-    if ($status === 200) {
-        $message = 'History API return "' . $status . '" - ' . $response->body();
-        $this->info($message);
-    } else {
-        $message = 'History API return "' . $status . '" - ' . $response->body();
-        $this->error($message);
-    }
-
-    return $response->body();
-}
+```bash
+php artisan aruba:sms notification --phoneNumber=+393331234567
 ```
 
-To start the command run:
+This command formats numbers with `PhoneNumberFormatter` and uses fixed text `Sms from console command`. In 1.1.0, although repeated `--phoneNumber` options are accepted, only the first number is sent. Use an `ArubaSmsMessage` recipient array for multiple recipients.
 
-```php 
-php artisan aruba:sms history
-```
-
-The method to check aruba sms recipient-history is as follows:
-
-```php 
-public function checkArubaSmsRecipientHistory()
-{
-    if (!is_null($this->option('recipient'))) {
-        $aruba_sms_service = new LaravelArubaSms;
-
-        $recipient = $this->option('recipient');
-        $from = !is_null($this->option('from')) ? $this->option('from') : $this->getFromDate();
-        $to = $this->option('to');
-        $pageNumber = $this->option('pageNumber');
-        $pageSize = $this->option('pageSize');
-
-        $response = $aruba_sms_service->getSmsRecipientHistory(
-            $recipient,
-            $from,
-            $to,
-            $pageNumber,
-            $pageSize
-        );
-
-        $status = $response->status();
-        if ($status === 200) {
-            $message = 'Recipient History API return "' . $status . '" - ' . $response->body();
-            $this->info($message);
-        } else {
-            $message = 'Recipient History API return "' . $status . '" - ' . $response->body();
-            $this->error($message);
-        }
-    } else {
-        $this->error('Missing require parameter "recipient". Please see project docs.');
-    }
-}
-```
-
-To start the command run:
-
-```php 
-php artisan aruba:sms recipient-history
-```
-
-The method to test the sending of sms is as follows
-
-```php 
-public function testSendSms()
-{
-    if (
-       !is_null($this->option('phoneNumber')) &&
-       !empty($this->option('phoneNumber'))
-    ) {
-        $phoneNumbers = $this->option('phoneNumber');
-        $recipient = [];
-        $message = 'Sms from console command';
-        foreach ($phoneNumbers as $phoneNumber) {
-            $phoneNumber = Str::contains($phoneNumber, '+39') ? $phoneNumber : '+39' . $phoneNumber;
-            if (Str::contains($phoneNumber, ' ')) {
-                $phoneNumber = str_replace(
-                    ' ',
-                    '',
-                    $phoneNumber
-                );
-            }
-            array_push(
-                $recipient,
-                $phoneNumber
-            );
-        }
-
-        $user = new User;
-        Notification::send(
-            $user,
-            new SendSmsNotification(
-                $message,
-                $recipient
-            )
-        );
-    } else {
-        $this->error('Missing require parameter "phoneNumber". Please see project doc.');
-    }
-}
-```
-
-To start the command run:
-
-```php 
-php artisan aruba:sms notification
-```
+`php artisan aruba:sms remaining-credit-raw` returns GP quantity from the handler rather than printing a credit value. Its process exit code is not a reliable credit-reporting API. Use `checkSmsStatus()` and `OfflineAgency\ArubaSms\Support\SmsStatusResponse::fromResponse($response)?->getGpCredits()` instead. In sandbox, this handler and the low-credit check generate a random integer from 0 to 100; the latter can still send low-credit email.
 
 ## Testing
+
+In a checkout of the package release with development dependencies installed:
 
 ```bash
 composer test
 ```
 
+Use Laravel `Http::fake()` and `Http::preventStrayRequests()` for isolated tests. Sandbox protects SMS sends; status and history still need HTTP fakes. The documentation fixture exercises success, notification dispatch, delivery/authentication failures and one-time HTTP 401 reauthentication without real credentials.
+
 ### Changelog
 
-Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
+See [GitHub releases](https://github.com/offline-agency/laravel-aruba-sms/releases).
 
 ## Contributing
 
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+Use the [package repository](https://github.com/offline-agency/laravel-aruba-sms) for source and contributions.
 
 ### Security
 
-If you discover any security related issues, please email support@offlineagency.it instead of using the issue tracker.
+Report security issues privately to support@offlineagency.it.
 
 ## Credits
 
--   [Offline Agency](https://github.com/offline-agency)
--   [All Contributors](../../contributors)
+[Offline Agency](https://github.com/offline-agency) and [package contributors](https://github.com/offline-agency/laravel-aruba-sms/graphs/contributors).
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+[MIT license](https://github.com/offline-agency/laravel-aruba-sms/blob/b090caba23f4882486619f2eaed90dfa9b7a2014/LICENSE).
 
-## Laravel Package Boilerplate
-
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+<a id="laravel-package-boilerplate"></a>

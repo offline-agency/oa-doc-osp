@@ -1,0 +1,228 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-16",
+  "repository": "https://github.com/offline-agency/vue3-burger-menu",
+  "repositoryMetadata": {
+    "defaultBranch": "main",
+    "defaultBranchCommit": "27ed3fe184f55de51401590f3975011c4131f65a",
+    "archived": false,
+    "disabled": false
+  },
+  "discovery": {
+    "tags": {
+      "endpoint": "https://api.github.com/repos/offline-agency/vue3-burger-menu/tags?per_page=100",
+      "pagination": "gh api --paginate --slurp; one complete page, 2 tags"
+    },
+    "releases": {
+      "endpoint": "https://api.github.com/repos/offline-agency/vue3-burger-menu/releases?per_page=100",
+      "pagination": "gh api --paginate --slurp; one complete page, 1 release"
+    },
+    "tagObjectsEndpoint": "https://api.github.com/repos/offline-agency/vue3-burger-menu/git/matching-refs/tags"
+  },
+  "tags": [
+    {
+      "tag": "1.0.0",
+      "objectType": "commit",
+      "objectSha": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "peeledCommit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "annotated": false,
+      "prerelease": false
+    },
+    {
+      "tag": "1.1.2",
+      "objectType": "commit",
+      "objectSha": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "peeledCommit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "annotated": false,
+      "prerelease": false
+    }
+  ],
+  "releases": [
+    {
+      "tag": "1.1.2",
+      "name": "1.1.2 - First Release",
+      "draft": false,
+      "prerelease": false,
+      "publishedAt": "2023-02-07T11:21:40Z",
+      "assets": [],
+      "body": ""
+    }
+  ],
+  "releasedMajors": [
+    {
+      "major": 1,
+      "latestStableSourceTag": "1.1.2",
+      "latestScopedNpmVersion": "1.0.0",
+      "supportStatus": "not documented",
+      "eol": "not documented"
+    }
+  ],
+  "supportPolicy": {
+    "status": "not documented",
+    "checked": [
+      "README.md",
+      "full tracked repository file listing at 27ed3fe184f55de51401590f3975011c4131f65a",
+      "all GitHub release bodies"
+    ],
+    "conclusion": "No declared support window or EOL; release age is not a support policy."
+  },
+  "scopedNpm": {
+    "registry": "https://registry.npmjs.org/@offlineagency%2fvue3-burger-menu",
+    "distTags": {
+      "latest": "1.0.0"
+    },
+    "allVersions": [
+      "1.0.0"
+    ],
+    "distribution": {
+      "kind": "npm",
+      "registry": "https://registry.npmjs.org/@offlineagency%2fvue3-burger-menu",
+      "version": "1.0.0",
+      "sourceRef": "e19adffec7e1603544b2c847f6aff5d02c7a5658",
+      "distRef": "sha1:161137e9d41c13bf8b0b91fb423977921ddda577",
+      "tarball": "https://registry.npmjs.org/@offlineagency/vue3-burger-menu/-/vue3-burger-menu-1.0.0.tgz",
+      "integrity": "sha512-UeER7cylg7dd4fQZsGT11rKrDIN7orvupcsFqQBfNxywzzttStqFCuR1rdKsmT0tq+oaTp7mij6uynJgpSAHMA==",
+      "verifiedOn": "2026-10-16",
+      "files": [
+        "LICENSE",
+        "package.json",
+        "README.md"
+      ],
+      "declaredMain": "./dist/vue3-burger-menu.common.js",
+      "mainExists": false,
+      "releaseSourceMatches": false
+    },
+    "freshTarballVerification": {
+      "sha1": "161137e9d41c13bf8b0b91fb423977921ddda577",
+      "archiveFiles": [
+        "package/LICENSE",
+        "package/package.json",
+        "package/README.md"
+      ],
+      "mainMissing": true
+    }
+  },
+  "unscopedNpm": {
+    "registry": "https://registry.npmjs.org/vue3-burger-menu",
+    "httpStatus": 200,
+    "distTags": {
+      "latest": "1.1.1"
+    },
+    "allVersions": [
+      "1.0.0",
+      "1.0.1",
+      "1.0.2",
+      "1.1.0",
+      "1.1.1"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/mkdillard/vue3-burger-menu.git"
+    },
+    "maintainers": [
+      "mkdillard"
+    ],
+    "versions": {
+      "1.0.0": {
+        "gitHead": "55c694e6a8c32d108bdece5a57a9d569448d2e71",
+        "tarball": "https://registry.npmjs.org/vue3-burger-menu/-/vue3-burger-menu-1.0.0.tgz",
+        "sha1": "b23a3e752c760f86bedf96972581938b81e22e53"
+      },
+      "1.0.1": {
+        "gitHead": "55c694e6a8c32d108bdece5a57a9d569448d2e71",
+        "tarball": "https://registry.npmjs.org/vue3-burger-menu/-/vue3-burger-menu-1.0.1.tgz",
+        "sha1": "30582525edffce3ae98f0080f21dae7fbc48161f"
+      },
+      "1.0.2": {
+        "gitHead": "973c95a4c78cd87edafa95589f03058836b6cab1",
+        "tarball": "https://registry.npmjs.org/vue3-burger-menu/-/vue3-burger-menu-1.0.2.tgz",
+        "sha1": "b62dc3da0106daabfdf35d00bd4bc493d5943d01"
+      },
+      "1.1.0": {
+        "gitHead": "a2cdadb164a90b649cefb1dc80cde1182c802044",
+        "tarball": "https://registry.npmjs.org/vue3-burger-menu/-/vue3-burger-menu-1.1.0.tgz",
+        "sha1": "07e837d3f9e80c293fe1c29b5e44cc53cf9d09a2"
+      },
+      "1.1.1": {
+        "gitHead": "527b7d6437f01f2079d29111942e60de06788a57",
+        "tarball": "https://registry.npmjs.org/vue3-burger-menu/-/vue3-burger-menu-1.1.1.tgz",
+        "sha1": "604c1c0208ae1962650024cdba08da4a9ee248f7"
+      }
+    },
+    "scopeConclusion": "Separate mkdillard repository/publisher; unscoped releases do not establish releases of Offline Agency scoped package. Unscoped tarballs not executed."
+  },
+  "sourceChecks": {
+    "manifestVersion": "1.0.0",
+    "runtimeDependencies": {
+      "vue": "^3.0.0-0"
+    },
+    "nodeEngine": null,
+    "lockfile": null,
+    "typesDeclaration": null,
+    "testScript": null,
+    "sourceBuild": "not executed; unlocked Vue CLI 4 source build is an evaluation procedure, not verified compatibility",
+    "availableSince": {
+      "tag": "1.0.0",
+      "reason": "Both complete tagged source trees equal; git diff 1.0.0 1.1.2 empty"
+    },
+    "exports": "One default object; not named exports or plugin",
+    "generatedReference": "vue3-burger-menu/reference.md",
+    "accessibility": "Source built-in controls are clickable div/span without button roles/tabindex/keyboard handlers. No focus trap/restoration or ARIA labelling implementation. Native example button only supplies toggle semantics; application must supply focus/navigation behavior.",
+    "ssr": "Menu setup accesses document; guide shows onMounted dynamic import client boundary; no runtime SSR claim",
+    "css": "Menu.vue global styles; vue.config.js css.extract false; no CSS/bundle in scoped npm archive"
+  },
+  "actualTests": {
+    "verifiedOn": "2026-10-16",
+    "sourceTags": [
+      {
+        "result": "passed",
+        "tag": "1.0.0",
+        "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "checks": [
+          "published main missing (confirmed defect)",
+          "source open/close events",
+          "pixel width",
+          "Escape",
+          "overlay",
+          "listener cleanup"
+        ],
+        "runtime": "synthetic DOM/Vue boundaries; no browser rendering",
+        "node": "v24.13.0"
+      },
+      {
+        "result": "passed",
+        "tag": "1.1.2",
+        "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+        "checks": [
+          "published main missing (confirmed defect)",
+          "source open/close events",
+          "pixel width",
+          "Escape",
+          "overlay",
+          "listener cleanup"
+        ],
+        "runtime": "synthetic DOM/Vue boundaries; no browser rendering",
+        "node": "v24.13.0"
+      }
+    ],
+    "sameCommit": true,
+    "exampleCompilation": {
+      "result": "passed",
+      "compiler": "@vue/compiler-sfc@3.5.22",
+      "examples": 2,
+      "checks": [
+        "SFC parse",
+        "compileScript",
+        "compileTemplate"
+      ],
+      "limitations": [
+        "No package import resolution, TypeScript typecheck, browser mounting or hydration"
+      ],
+      "node": "v24.13.0"
+    }
+  },
+  "limitations": [
+    "No source bundle build, browser rendering, accessibility audit, SSR hydration test or TypeScript package typecheck.",
+    "Two tag executions verify the same source SHA; they are not evidence of independently different API versions."
+  ]
+}

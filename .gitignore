@@ -5,9 +5,15 @@
 # Recommended template: Node.gitignore
 
 .vuepress/dist
+.vuepress/.temp
+.vuepress/.cache
 node_modules/
 .idea/.gitignore
 .idea/misc.xml
 .idea/modules.xml
 .idea/oa-doc-out.iml
 .idea/vcs.xml
+
+# Reproducibility inputs for isolated fixtures, not site dependencies.
+!maintenance/fixtures/**/composer.lock
+!maintenance/fixtures/**/package-lock.json

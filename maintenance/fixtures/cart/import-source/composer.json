@@ -1,0 +1,94 @@
+{
+    "name": "offline-agency/laravel-cart",
+    "description": "Laravel shopping cart with fiscal support",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "shoppingcart",
+        "cart"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Offline Agency",
+            "email": "info@offlineagency.it"
+        }
+    ],
+    "require": {
+        "php": "~8.4.0 || ~8.5.0",
+        "ext-bcmath": "*",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.13",
+        "laravel/pint": "^1.32",
+        "mockery/mockery": "^1.6.15",
+        "orchestra/testbench": "^10.12 || ^11.3",
+        "pestphp/pest": "^4.7.8 || ^5.3.2",
+        "pestphp/pest-plugin-laravel": "^4.1 || ^5.0.1",
+        "phpstan/phpstan": "^2.3.1"
+    },
+    "conflict": {
+        "symfony/translation": "<7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "OfflineAgency\\LaravelCart\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OfflineAgency\\LaravelCart\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "test:parallel": "pest --parallel",
+        "test:coverage": "pest --coverage --min=100",
+        "lint": "pint",
+        "lint:check": "pint --test",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "stan": "@analyse",
+        "validate:strict": [
+            "@composer validate --strict",
+            "@composer dump-autoload --optimize --strict-psr --strict-ambiguous --dry-run"
+        ],
+        "check": [
+            "@validate:strict",
+            "@lint:check",
+            "@analyse",
+            "@test"
+        ],
+        "docs:check": "node scripts/docs.mjs",
+        "examples:check": "pest tests/Feature/DocumentationExamplesTest.php",
+        "consumer:check": "node scripts/consumer-smoke.mjs"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        },
+        "preferred-install": "dist"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OfflineAgency\\LaravelCart\\CartServiceProvider"
+            ],
+            "aliases": {
+                "Cart": "OfflineAgency\\LaravelCart\\Facades\\Cart"
+            }
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
