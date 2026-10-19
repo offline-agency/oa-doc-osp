@@ -13,7 +13,16 @@
     "commitDate": "2026-10-16",
     "githubRelease": "https://github.com/offline-agency/filament-spid/releases/tag/1.0.0",
     "publishedAt": "2026-10-16T18:17:21Z",
-    "otherReleases": ["0.1.1", "0.1.2", "0.1.3", "0.1.4", "0.1.5", "0.1.6", "0.1.7", "0.1.8"],
+    "otherReleases": [
+      "0.1.1",
+      "0.1.2",
+      "0.1.3",
+      "0.1.4",
+      "0.1.5",
+      "0.1.6",
+      "0.1.7",
+      "0.1.8"
+    ],
     "prereleases": []
   },
   "packagist": {
@@ -26,10 +35,28 @@
   "ci": {
     "commit": "99f80235a6be15b6365840f46f160476e2fdb38e",
     "runs": [
-      { "workflow": "run-tests", "run": 38946163154, "conclusion": "success", "jobs": "18 PHP 8.3-8.5 x Laravel 12/13 x Filament 3-5 legs, 3 archive install legs, coverage, button script, tests-passed" },
-      { "workflow": "PHPStan", "run": 38946163172, "conclusion": "success" },
-      { "workflow": "code-style", "run": 38946163002, "conclusion": "success" },
-      { "workflow": "spid-validation", "run": 38946163180, "conclusion": "success", "jobs": "SPID lab" }
+      {
+        "workflow": "run-tests",
+        "run": 38946163154,
+        "conclusion": "success",
+        "jobs": "18 PHP 8.3-8.5 x Laravel 12/13 x Filament 3-5 legs, 3 archive install legs, coverage, button script, tests-passed"
+      },
+      {
+        "workflow": "PHPStan",
+        "run": 38946163172,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "code-style",
+        "run": 38946163002,
+        "conclusion": "success"
+      },
+      {
+        "workflow": "spid-validation",
+        "run": 38946163180,
+        "conclusion": "success",
+        "jobs": "SPID lab"
+      }
     ]
   },
   "dependencies": {
@@ -55,5 +82,45 @@
   "notRun": [
     "Site-owned PHP fixture",
     "Hosted AgID Validator and formal AgID acceptance"
-  ]
+  ],
+  "olderLine": {
+    "key": "v0.1",
+    "tag": "0.1.8",
+    "commit": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+    "publishedAt": "2025-10-29T06:59:28Z",
+    "packagist": {
+      "sourceReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+      "distReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd"
+    },
+    "spidLaravelConstraintPerTag": {
+      "0.1.1": "^2.0",
+      "0.1.2": "^2.0",
+      "0.1.3": "dev-fix/optimize-error",
+      "0.1.4": "dev-fix/optimize-error",
+      "0.1.5": "dev-feat-add-l12",
+      "0.1.6": "dev-feat-add-l12",
+      "0.1.7": "dev-feat-add-l12",
+      "0.1.8": "dev-feat-add-l12"
+    },
+    "forkBranchesMissing": [
+      "fix/optimize-error",
+      "feat-add-l12"
+    ],
+    "installability": "Composer 2.10.2 dry-run (2026-10-19) of offline-agency/filament-spid 0.1.8 failed on Packagist alone and with https://github.com/offline-agency/spid-laravel as a root VCS repository: no dev-feat-add-l12.",
+    "missingFilesAtTag": [
+      "CHANGELOG.md",
+      "SECURITY.md"
+    ],
+    "verifiedAgainstSource": [
+      "Plugin routes registered by default (registerRoutes true) under the panel path",
+      "redirect_after_login, spid_level, providers read by SpidController",
+      "auto_create_users default true",
+      "fallback email @spid.local",
+      "publish tags filament-spid-config, -migrations, -views, -images"
+    ],
+    "upstreamWordingIssues": [
+      "README lists Laravel 10, manifest allows illuminate/contracts ^11|^12",
+      "1.0 upgrade guide says redirect_after_login, spid_level and providers were never read; 0.1.8 SpidController reads them"
+    ]
+  }
 }

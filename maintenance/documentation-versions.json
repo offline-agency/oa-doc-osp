@@ -926,6 +926,42 @@
           "title": "Filament SPID"
         }
       ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.8",
+      "documentationKey": "v0.1",
+      "channel": "stable",
+      "supportStatus": "Unsupported: 0.1.x receives no fixes (upstream security policy) and cannot be installed in a new application.",
+      "commit": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.2|^8.3|^8.4",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "italia/spid-laravel": "dev-feat-add-l12",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.8",
+        "sourceReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+        "distReference": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/filament-spid/v0.1/",
+      "pages": [
+        {
+          "source": "filament-spid.md",
+          "file": "versioned/filament-spid/v0.1/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/v0.1/",
+          "title": "Filament SPID"
+        }
+      ]
     }
   ],
   "redirects": [

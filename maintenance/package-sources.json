@@ -1766,7 +1766,15 @@
           "url": "https://github.com/offline-agency/filament-spid/actions/runs/38946163154",
           "summary": "run-tests, PHPStan, code style and the SPID lab workflow passed on the release commit (PHP 8.3–8.5, Laravel 12/13, Filament 3–5)"
         },
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "0.1.8": {
+            "verifiedOn": "2026-10-19",
+            "changelog": null,
+            "security": null,
+            "purpose": "Pre-1.0 SPID login for Filament 3 and 4 panels. Unsupported and no longer installable; kept for existing installations."
+          }
+        }
       }
     },
     {

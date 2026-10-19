@@ -74,7 +74,7 @@
     },
     "/filament-spid/": {
       "file": "filament-spid.md",
-      "sha256": "0d993e8ade9e29f60b6eec52adfdf6cd67da6c34da7be19d186b9e9b0cbad744",
+      "sha256": "c5185a40a9c2b96a05fd73437af1fd893943166d0eb64c1be7da4150ac41ba7b",
       "changedOn": "2026-10-19"
     },
     "/pgr_dmmsy/": {
@@ -344,7 +344,12 @@
     },
     "/filament-spid/v1/": {
       "file": "versioned/filament-spid/v1/index.md",
-      "sha256": "0c9571a5403623be3e4fa18c82a58edd21668d08ba0396b114a4d43d21e798ef",
+      "sha256": "b2f8a0a0b9859641e54c5df4c831493b99c8627fcedd47ba26e9068747010ae7",
+      "changedOn": "2026-10-19"
+    },
+    "/filament-spid/v0.1/": {
+      "file": "versioned/filament-spid/v0.1/index.md",
+      "sha256": "2c6521f9bfe32e9b3513e5e32490797e3de63a45ed04b557922e789e4648e8a5",
       "changedOn": "2026-10-19"
     },
     "/laravel-cart/agents/": {

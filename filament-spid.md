@@ -10,6 +10,15 @@ sourceCommit: 99f80235a6be15b6365840f46f160476e2fdb38e
 
 Sign citizens in to [Filament](https://filamentphp.com) panels with [SPID](https://www.spid.gov.it), the Italian public digital identity system, over SAML 2.0. The SAML protocol is handled by [italia/spid-laravel](https://github.com/italia/spid-laravel). The plugin puts the SPID button on the panel login page, turns a validated SPID identity into a login on the panel's guard, and adds an installer, a doctor command and an adapter for AgID's metadata checks.
 
+[![Packagist version](https://img.shields.io/packagist/v/offline-agency/filament-spid.svg?style=flat-square)](https://packagist.org/packages/offline-agency/filament-spid)
+[![Total downloads](https://img.shields.io/packagist/dt/offline-agency/filament-spid.svg?style=flat-square)](https://packagist.org/packages/offline-agency/filament-spid)
+[![Tests](https://img.shields.io/github/actions/workflow/status/offline-agency/filament-spid/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/offline-agency/filament-spid/actions/workflows/run-tests.yml?query=branch%3Amain)
+[![SPID lab](https://img.shields.io/github/actions/workflow/status/offline-agency/filament-spid/spid-validation.yml?branch=main&label=spid%20lab&style=flat-square)](https://github.com/offline-agency/filament-spid/actions/workflows/spid-validation.yml?query=branch%3Amain)
+[![PHPStan](https://img.shields.io/github/actions/workflow/status/offline-agency/filament-spid/phpstan.yml?branch=main&label=phpstan&style=flat-square)](https://github.com/offline-agency/filament-spid/actions/workflows/phpstan.yml?query=branch%3Amain)
+[![License](https://img.shields.io/packagist/l/offline-agency/filament-spid.svg?style=flat-square)](https://github.com/offline-agency/filament-spid/blob/99f80235a6be15b6365840f46f160476e2fdb38e/LICENSE.md)
+
+These badges are live: they show the latest Packagist release and the default branch, not necessarily the release documented here. The results recorded for this release are in [Testing and evidence](#testing-and-evidence).
+
 This is the **v1 compatibility-line guide**, verified against release [1.0.0](https://github.com/offline-agency/filament-spid/releases/tag/1.0.0) on 19 October 2026. [Packagist](https://packagist.org/packages/offline-agency/filament-spid) source and dist references match the source commit above.
 
 It is a community package, not an official Filament plugin and not an AgID product. Installing it does not make a service accredited to SPID: accreditation is AgID's own procedure.
@@ -19,8 +28,9 @@ It is a community package, not an official Filament plugin and not an AgID produ
 | Documentation line | Latest stable | Status |
 | --- | --- | --- |
 | [v1](/filament-spid/v1/) | `1.0.0` | Released; the [security policy](https://github.com/offline-agency/filament-spid/blob/99f80235a6be15b6365840f46f160476e2fdb38e/SECURITY.md) supports the latest 1.x release |
+| [v0.1](/filament-spid/v0.1/) | `0.1.8` | Unsupported; archived reference for existing installations, cannot be installed in a new application |
 
-GitHub releases and tags list `0.1.1` to `0.1.8` and `1.0.0`. The security policy marks 0.1.x as unsupported: it receives no fixes, and its releases resolve `italia/spid-laravel` versions that pin `onelogin/php-saml` 4.1.0 ([CVE-2025-66475](https://github.com/advisories/GHSA-5j8p-438x-rgg5)). This site therefore documents only the v1 line; see [Upgrading from 0.1.x](#upgrading-from-0-1-x).
+GitHub releases and tags list `0.1.1` to `0.1.8` and `1.0.0`. The security policy marks 0.1.x as unsupported: it receives no fixes, and its releases resolve `italia/spid-laravel` versions that pin `onelogin/php-saml` 4.1.0 ([CVE-2025-66475](https://github.com/advisories/GHSA-5j8p-438x-rgg5)). The [v0.1 reference](/filament-spid/v0.1/) describes 0.1.8 for teams still running it; see [Upgrading from 0.1.x](#upgrading-from-0-1-x).
 
 Two upstream wording issues at the `1.0.0` tag, recorded so they do not mislead readers of the tagged files:
 

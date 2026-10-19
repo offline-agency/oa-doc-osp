@@ -59,7 +59,7 @@ The registry `package-sources.json` drives homepage cards/categories, navigation
 | --- | --- | --- | --- |
 | Laravel Cart | `v4` | `4.1.0` | Current stable; since4.1 guarantees explicit |
 | SPID Laravel Trentino | `v2` | `v2.3.0` | Latest verified stable release in major 2 |
-| Filament SPID | `v1` | `1.0.0` | First stable release; 0.1.x unsupported upstream, not documented here |
+| Filament SPID | `v1`, `v0.1` | `1.0.0`, `0.1.8` | v1 current; v0.1 frozen reference for existing installs (unsupported, not installable: its fork branch is gone). `trust.releases` overrides facts missing at 0.1.8 |
 | Vue 3 Burger Menu | `v1` | `1.1.2` | Source release; npm artifact warning remains |
 | pgr_dmmsy | `v0.1` | `v0.1.0` | Pre-1.0 minor compatibility line |
 | Braintree Vue 3 | `next` | Immutable commit in manifest | Unreleased; noindex, excluded from sitemap |

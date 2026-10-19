@@ -1,0 +1,58 @@
+{
+  "name": "offline-agency/filament-spid",
+  "repository": "https://github.com/offline-agency/filament-spid",
+  "reference": "0.1.8",
+  "commit": "c2203534dd8de740c2c6e1421abc0f50e38d6ccd",
+  "version": "0.1.8",
+  "documentationKey": "v0.1",
+  "verifiedOn": "2026-10-19",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "64a17bca6b1138ce4c53b31d2d1b30ee49536aa4b8c7611100371e1197dd624d"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "de950a8495744b4dfa7be40c1d96fe90188c0425c6a22b6a9cdffd00d584f51b"
+    },
+    {
+      "path": "config/filament-spid.php",
+      "sha256": "9d2206ebd84d560408015d1c75610638349b6270e45109629d39ec4d54beac18"
+    },
+    {
+      "path": "src/SpidPlugin.php",
+      "sha256": "e235944eaa9daa3209111c55d10db185db28658e160e0cc5186cad6775c0c506"
+    },
+    {
+      "path": "src/FilamentSpidServiceProvider.php",
+      "sha256": "18eaefce4e8c5f16d2992ec00fe992355d43fbc569ae1febc496847d85c29f3f"
+    },
+    {
+      "path": "src/Http/Controllers/SpidController.php",
+      "sha256": "2549af93ea2bace56ca0a4326b928dc1443ac1471c36080e3fa5f93604b8e290"
+    },
+    {
+      "path": "src/Services/SpidUserService.php",
+      "sha256": "125254b505a3180be63e843f7f885a5e282a7a3a982a2af1790cda7d036b1e07"
+    },
+    {
+      "path": "database/migrations/add_spid_fields_to_users_table.php.stub",
+      "sha256": "f92b6cf3a82941a5adc43fcb27e6a1673ac30fa50819890cbb06c4465b91d05a"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "cf73273d17b902074bc2da3a26535b710e69478b63623aeef4354813217d0d3a"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "96b119f2f39bb3ea7eade03ead977c2aea543ccd3ac836b0a8e68258914b8117"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/filament-spid/v0.1/index.md",
+      "route": "/filament-spid/v0.1/",
+      "sha256": "2c6521f9bfe32e9b3513e5e32490797e3de63a45ed04b557922e789e4648e8a5"
+    }
+  ]
+}

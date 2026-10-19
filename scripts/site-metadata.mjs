@@ -47,11 +47,12 @@ export function projectFacts(route, context, releases, sources, history = {}) {
   if (!release || release.route !== route) return null;
   const source = sources.find(item => item.name === release.name);
   if (!source?.trust) return null;
-  const { trust } = source;
+  // Older lines can lack files the current release has; per-version overrides keep links truthful.
+  const trust = { ...source.trust, ...source.trust.releases?.[release.version] };
   const pinned = release.commit;
   const file = path => path ? `${source.repository}/blob/${pinned}/${path}` : null;
   return {
-    purpose: source.catalog?.details || null,
+    purpose: trust.purpose || source.catalog?.details || null,
     publisher: { name: trust.publisher, url: 'https://github.com/offline-agency' },
     repository: source.repository,
     sourceTree: `${source.repository}/tree/${pinned}`,
