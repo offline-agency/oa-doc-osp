@@ -1,7 +1,6 @@
 name: Documentation validation
+# Pushes to master and develop are verified by pages.yml.
 on:
-  push:
-    branches: [master]
   pull_request:
   workflow_dispatch:
 permissions:
