@@ -1,0 +1,70 @@
+{
+  "name": "offline-agency/laravel-email-chef",
+  "repository": "https://github.com/offline-agency/laravel-email-chef",
+  "reference": "1.0.5",
+  "commit": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+  "version": "1.0.5",
+  "documentationKey": "v1",
+  "verifiedOn": "2026-10-19",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "0169637411a4d7fc31054ff7a6696f60a8c3543b11e498a8a2d5e47fde920907"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "1e8a5e6840c00692e7c6c3ae2260515cfcae97418eb86ae81e44d9176134036a"
+    },
+    {
+      "path": "config/email-chef.php",
+      "sha256": "b4dda829df04c8204f98ea3cc9ee93ae999ebcc98c7ce9a9347ddf2d42261791"
+    },
+    {
+      "path": "src/LaravelEmailChef.php",
+      "sha256": "791477c168b81b19677c748b05a0c38d31d5ee4297469184f1335e755d162290"
+    },
+    {
+      "path": "src/LaravelEmailChefServiceProvider.php",
+      "sha256": "0b0780cf696da2b179aed5814e73feceb544980a32e8fb4146222e11ccecbfd5"
+    },
+    {
+      "path": "src/Api/Api.php",
+      "sha256": "1c6f74a94693d06951cd1d9f7955ea1533ca713f244d058149ed237330c98598"
+    },
+    {
+      "path": "src/Api/Resources/ListsApi.php",
+      "sha256": "e314730f0758d16de78e9d60664280e24718d187c690f96bd1b6274c139029a6"
+    },
+    {
+      "path": "src/Api/Resources/ContactsApi.php",
+      "sha256": "510a6420531588d18a8b9aab12cb09699116c42f3ec9431315977b42416de421"
+    },
+    {
+      "path": "src/Entities/Error.php",
+      "sha256": "4b28cf5512e46df780aec89c6f4fec3830cf998c1ef00cc224a9a0dbb84ecd55"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "a3f923dab971933cfac7100716e460437aa3a8bb702cb11618841fa0ee761f8e"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "46c72d06adb58233966f0e62de921554f7ee511ee252341e22289632f4947b12"
+    },
+    {
+      "path": ".github/SECURITY.md",
+      "sha256": "b923e218b88861953f7d76f3644809f6d41e6b78783fad65332ff3e67fa2e2be"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "5bc3d3806ee3661c4143c9b85bcf33ba89aee7a66decb95d301863784bfa2a2b"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/laravel-email-chef/v1/index.md",
+      "route": "/laravel-email-chef/v1/",
+      "sha256": "4149a48527378bd96d16e255f83a9d018f8a30648f3d36201015e8a831cc2be6"
+    }
+  ]
+}

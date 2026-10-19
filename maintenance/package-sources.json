@@ -1152,6 +1152,100 @@
       }
     },
     {
+      "name": "offline-agency/aws-blockchain-laravel",
+      "docsPage": "aws-blockchain-laravel.md",
+      "route": "/aws-blockchain-laravel/",
+      "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+      "defaultBranch": "main",
+      "selectedTag": "0.0.4",
+      "commit": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+      "status": "historical-integration",
+      "projectType": "composer-library",
+      "verifiedOn": "2026-10-19",
+      "sourcePaths": [
+        "README.md",
+        "composer.json",
+        "config/aws-blockchain-laravel.php",
+        "src/AwsBlockchainServiceProvider.php",
+        "src/BlockchainManager.php",
+        "src/Contracts/BlockchainDriverInterface.php",
+        "src/Facades/Blockchain.php",
+        "src/Drivers/MockDriver.php",
+        "src/Drivers/EvmDriver.php",
+        "src/Drivers/ManagedBlockchainDriver.php",
+        "src/Drivers/QldbDriver.php",
+        "src/Services/EthereumJsonRpcClient.php",
+        "src/Services/ContractDeployer.php",
+        "src/Services/ContractInteractor.php",
+        "src/Services/ContractUpgrader.php",
+        "src/Console/Commands/DeployContractCommand.php",
+        "src/Console/Commands/VerifyContractCommand.php",
+        "database/migrations/2024_01_01_000001_create_blockchain_contracts_table.php",
+        "database/migrations/2024_01_01_000002_create_blockchain_transactions_table.php",
+        ".github/workflows/tests.yml",
+        "LICENSE"
+      ],
+      "unavailableChecks": [
+        "No site-owned PHP fixture; driver behaviour checked with an offline probe against aws/aws-sdk-php 3.401.3 (no AWS request sent)",
+        "No live AWS, Ethereum node or block explorer interaction",
+        "Upstream CI uses mocked AWS clients"
+      ],
+      "composerRequirements": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/container": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0",
+        "kornrunner/keccak": "^1.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.0.4",
+        "sourceReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+        "distReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+        "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "Laravel / blockchain",
+        "supportStatus": "Pre-1.0 experimental release; no support policy published. Its AWS Managed Blockchain and QLDB drivers do not work with the current AWS SDK.",
+        "landing": "static-redirect",
+        "discoveryEvidence": "maintenance/evidence/aws-blockchain-laravel.json",
+        "provenanceDate": "2026-10-19"
+      },
+      "catalog": {
+        "title": "AWS Blockchain Laravel",
+        "details": "Experimental pre-1.0 blockchain drivers and contract commands for Laravel. Only the mock driver works end to end; the AWS drivers target retired or retiring services.",
+        "requirements": "Laravel 11 / 12 · pre-1.0",
+        "category": "Legacy",
+        "maintenanceStatus": "legacy",
+        "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-19",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/aws-blockchain-laravel/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE"
+        },
+        "changelog": null,
+        "contributing": null,
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": {
+          "status": "passed",
+          "checkedOn": "2026-10-19",
+          "url": "https://github.com/offline-agency/aws-blockchain-laravel/actions/runs/19313153502",
+          "summary": "Tests workflow passed on the release commit (PHP 8.3/8.4, Laravel 11/12, static analysis); AWS clients are mocked in these tests"
+        },
+        "supportPolicy": null
+      }
+    },
+    {
       "name": "laravel-moneta-online",
       "docsPage": "laravel-moneta-online.md",
       "route": "/laravel-moneta-online/",
@@ -1775,6 +1869,206 @@
             "purpose": "Pre-1.0 SPID login for Filament 3 and 4 panels. Unsupported and no longer installable; kept for existing installations."
           }
         }
+      }
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "docsPage": "laravel-email-chef.md",
+      "route": "/laravel-email-chef/",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "defaultBranch": "main",
+      "selectedTag": "2.0.0",
+      "commit": "eff422c06f89f61f00eae5293e703e49638285d1",
+      "status": "current-release",
+      "projectType": "composer-library",
+      "verifiedOn": "2026-10-19",
+      "sourcePaths": [
+        "README.md",
+        "composer.json",
+        "config/email-chef.php",
+        ".env.example",
+        "src/LaravelEmailChef.php",
+        "src/LaravelEmailChefServiceProvider.php",
+        "src/LaravelEmailChefFacade.php",
+        "src/Api/Api.php",
+        "src/Api/Resources/AccountApi.php",
+        "src/Api/Resources/AccountInfosApi.php",
+        "src/Api/Resources/AutorespondersApi.php",
+        "src/Api/Resources/BlockingsApi.php",
+        "src/Api/Resources/CampaignsApi.php",
+        "src/Api/Resources/ContactsApi.php",
+        "src/Api/Resources/CustomFieldsApi.php",
+        "src/Api/Resources/ImportTasksApi.php",
+        "src/Api/Resources/ListsApi.php",
+        "src/Api/Resources/PredefinedFieldsApi.php",
+        "src/Api/Resources/SegmentsApi.php",
+        "src/Api/Resources/SendEmailApi.php",
+        "src/Api/Resources/SMSApi.php",
+        "src/Api/Resources/SubscriptionApi.php",
+        "src/Entities/Error.php",
+        "src/Entities/Hydratable.php",
+        "CHANGELOG.md",
+        "CONTRIBUTING.md",
+        ".github/SECURITY.md",
+        "LICENSE.md",
+        ".github/workflows/main.yml"
+      ],
+      "unavailableChecks": [
+        "No site-owned PHP fixture: the guide relies on source review and the upstream CI run on the release commit",
+        "No request was sent to the EmailChef API; live API behaviour not verified"
+      ],
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "eff422c06f89f61f00eae5293e703e49638285d1",
+        "distReference": "eff422c06f89f61f00eae5293e703e49638285d1",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "Laravel / email marketing API",
+        "supportStatus": "Latest release 2.0.0. No support window or supported-versions policy is published.",
+        "landing": "static-redirect",
+        "discoveryEvidence": "maintenance/evidence/laravel-email-chef.json",
+        "provenanceDate": "2026-10-19"
+      },
+      "catalog": {
+        "title": "Laravel Email Chef",
+        "details": "EmailChef API client for Laravel: lists, contacts, campaigns, autoresponders, transactional mail and SMS through typed resource classes.",
+        "requirements": "Laravel 12 / 13",
+        "category": "Current project",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-19",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/laravel-email-chef/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE.md"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": "CONTRIBUTING.md",
+        "security": ".github/SECURITY.md",
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": {
+          "status": "passed",
+          "checkedOn": "2026-10-19",
+          "url": "https://github.com/offline-agency/laravel-email-chef/actions/runs/24078142855",
+          "summary": "run-tests passed on the release commit (PHP 8.4/8.5, Laravel 12/13: Pint, PHPStan, Pest with an 80% coverage gate)"
+        },
+        "supportPolicy": null,
+        "releases": {
+          "1.0.5": {
+            "verifiedOn": "2026-10-19",
+            "purpose": "Superseded 1.x client covering only EmailChef lists and contacts; requires Illuminate 9 or older."
+          }
+        }
+      }
+    },
+    {
+      "name": "offline-agency/image-puzzle",
+      "docsPage": "image-puzzle.md",
+      "route": "/image-puzzle/",
+      "repository": "https://github.com/offline-agency/php-image-puzzle",
+      "defaultBranch": "main",
+      "selectedTag": "1.0.0",
+      "commit": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+      "status": "current-release",
+      "projectType": "composer-library",
+      "verifiedOn": "2026-10-19",
+      "sourcePaths": [
+        "README.md",
+        "composer.json",
+        "CHANGELOG.md",
+        "LICENSE",
+        ".github/workflows/ci.yml",
+        "src/PuzzleGenerator.php",
+        "src/Puzzle.php",
+        "src/Piece.php",
+        "src/PieceContext.php",
+        "src/Exporter.php",
+        "src/ExportOptions.php",
+        "src/ExportResult.php",
+        "src/ImageLoader.php",
+        "src/EdgeStyle/EdgeStyleFactory.php",
+        "src/EdgeStyle/EdgeStyleInterface.php",
+        "src/EdgeStyle/RoundedCornersStyle.php",
+        "src/EdgeStyle/CompositeEdgeStyle.php",
+        "src/EdgeStyle/ResolverEdgeStyle.php",
+        "src/SplitStrategy/DimensionSplitStrategy.php",
+        "src/SplitStrategy/DefaultSplitStrategy.php",
+        "docs/USAGE.md",
+        "docs/EXPORT.md",
+        "docs/EDGE_STYLES.md",
+        "docs/SPLIT_STRATEGY.md",
+        "docs/schemas/manifest.schema.json",
+        "docs/schemas/edge-config.schema.json",
+        "config/edge-config.example.json",
+        "config/edge-config-rounded.example.json",
+        "examples/generate.php"
+      ],
+      "unavailableChecks": [
+        "No site-owned fixture committed: the documented usage was run once against the Packagist 1.0.0 install on PHP 8.4.25 and 8.5.10 (recorded in evidence)",
+        "GitHub tags 1.0.1 and 1.0.2 are not on Packagist; not documented"
+      ],
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-gd": "*"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+        "distReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+        "url": "https://repo.packagist.org/p2/offline-agency/image-puzzle.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "documentation": {
+        "strategy": "compatibility",
+        "category": "PHP / images",
+        "supportStatus": "Support status not documented.",
+        "landing": "static-redirect",
+        "discoveryEvidence": "maintenance/evidence/image-puzzle.json",
+        "provenanceDate": "2026-10-19"
+      },
+      "catalog": {
+        "title": "Image Puzzle",
+        "details": "Split images into puzzle pieces with edge styles and export PNG or JPEG pieces with a JSON manifest.",
+        "requirements": "PHP 8.4+ · ext-gd",
+        "category": "Current project",
+        "maintenanceStatus": "maintained",
+        "ecosystem": "php"
+      },
+      "trust": {
+        "verifiedOn": "2026-10-19",
+        "publisher": "OFFLINE Agency",
+        "issues": "https://github.com/offline-agency/php-image-puzzle/issues",
+        "license": {
+          "spdx": "MIT",
+          "path": "LICENSE"
+        },
+        "changelog": "CHANGELOG.md",
+        "contributing": null,
+        "security": null,
+        "privateVulnerabilityReporting": false,
+        "workflows": ".github/workflows",
+        "ciResult": {
+          "status": "passed",
+          "checkedOn": "2026-10-19",
+          "url": "https://github.com/offline-agency/php-image-puzzle/actions/runs/21573111999",
+          "summary": "CI workflow (Pest tests and PHPStan on PHP 8.4 and 8.5) passed on the release commit"
+        },
+        "supportPolicy": null
       }
     },
     {

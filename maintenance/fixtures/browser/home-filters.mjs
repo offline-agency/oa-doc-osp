@@ -11,7 +11,7 @@ await page.goto(base,{waitUntil:'networkidle'});
 const labels={all:'All',maintained:'Maintained',legacy:'Legacy',next:'Unreleased',php:'PHP',javascript:'JavaScript',postgresql:'PostgreSQL'};
 const chip=(target,group,value)=>target.getByRole('group',{name:group,exact:true}).getByRole('button',{name:labels[value],exact:true});
 const reset=page.locator('.filter-summary').getByRole('button',{name:'Reset filters'}),search=page.getByRole('searchbox',{name:'Search projects'});
-const cases=[['all','all',13],['maintained','all',11],['legacy','all',1],['next','all',1],['all','php',9],['all','javascript',3],['all','postgresql',1],['maintained','php',8],['maintained','javascript',2],['maintained','postgresql',1],['legacy','php',1],['legacy','javascript',0],['legacy','postgresql',0],['next','php',0],['next','javascript',1],['next','postgresql',0]];
+const cases=[['all','all',16],['maintained','all',13],['legacy','all',2],['next','all',1],['all','php',12],['all','javascript',3],['all','postgresql',1],['maintained','php',10],['maintained','javascript',2],['maintained','postgresql',1],['legacy','php',2],['legacy','javascript',0],['legacy','postgresql',0],['next','php',0],['next','javascript',1],['next','postgresql',0]];
 const checks=[];
 for(const [state,ecosystem,count] of cases){
  await chip(page,'Status',state).click();await chip(page,'Technology',ecosystem).click();
@@ -19,20 +19,20 @@ for(const [state,ecosystem,count] of cases){
  await page.waitForFunction(expected=>document.querySelectorAll('.project').length===expected,count,{timeout:5000}).catch(async error=>{console.error(JSON.stringify({state,ecosystem,expected:count,actual:await page.locator('.project').count(),text:await page.locator('.project-filters').innerText(),errors}));throw error});
  assert.equal(await page.locator('.project').count(),count);
  assert.ok((await page.locator('.project-type > h2').allTextContents()).every(title=>/^(Current project \d+|Legacy)$/.test(title.trim())));
- assert.equal((await page.getByRole('status').innerText()).trim(),`${count} of 13 projects`);
+ assert.equal((await page.getByRole('status').innerText()).trim(),`${count} of 16 projects`);
  assert.equal(await page.locator('.empty-projects').count(),count?0:1);
  assert.ok((await page.locator('.project-type').evaluateAll(nodes=>nodes.map(node=>node.querySelectorAll('.project').length))).every(count=>count>0));
- if(state==='legacy' && ecosystem==='php')assert.match(await page.locator('.project .project-title').innerText(),/^laravel-fatture-in-cloud$/);
+ if(state==='legacy' && ecosystem==='php')assert.deepEqual((await page.locator('.project .project-title').allInnerTexts()).sort(),['AWS Blockchain Laravel','laravel-fatture-in-cloud']);
  if(ecosystem==='postgresql' && count)assert.equal(await page.locator('.project .project-title').innerText(),'pgr_dmmsy');
  if(state==='next' && count)assert.equal(await page.locator('.project .project-title').innerText(),'Braintree Vue 3');
  checks.push({status:state,technology:ecosystem,count});
 }
-await reset.focus();await reset.press('Space');await page.waitForFunction(()=>document.querySelectorAll('.project').length===13);assert.equal(await reset.count(),0);
-await search.fill('sms');await page.waitForFunction(()=>document.querySelectorAll('.project').length===1);assert.equal(await page.locator('.project .project-title').innerText(),'laravel-aruba-sms');await search.fill('');
+await reset.focus();await reset.press('Space');await page.waitForFunction(()=>document.querySelectorAll('.project').length===16);assert.equal(await reset.count(),0);
+await search.fill('sms');await page.waitForFunction(()=>document.querySelectorAll('.project').length===2);assert.deepEqual((await page.locator('.project .project-title').allInnerTexts()).sort(),['Laravel Email Chef','laravel-aruba-sms']);await search.fill('');
 await chip(page,'Status','all').focus();await page.keyboard.press('Tab');assert.equal(await chip(page,'Status','maintained').evaluate(node=>node===document.activeElement),true);
 const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await mobile.context().route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());
-await mobile.goto(base,{waitUntil:'networkidle'});await chip(mobile,'Technology','postgresql').click();assert.equal(await mobile.locator('.project').count(),1);assert.ok(await mobile.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await mobile.locator('.filter-summary').getByRole('button',{name:'Reset filters'}).click();assert.equal(await mobile.locator('.project').count(),13);
-const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());const staticPage=await nojs.newPage();await staticPage.goto(base);assert.equal(await staticPage.locator('.project').count(),13);assert.match(await staticPage.locator('noscript').innerText(),/All projects are listed/);
+await mobile.goto(base,{waitUntil:'networkidle'});await chip(mobile,'Technology','postgresql').click();assert.equal(await mobile.locator('.project').count(),1);assert.ok(await mobile.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await mobile.locator('.filter-summary').getByRole('button',{name:'Reset filters'}).click();assert.equal(await mobile.locator('.project').count(),16);
+const nojs=await browser.newContext({javaScriptEnabled:false});await nojs.route('**/*',route=>new URL(route.request().url()).origin===base?route.continue():route.abort());const staticPage=await nojs.newPage();await staticPage.goto(base);assert.equal(await staticPage.locator('.project').count(),16);assert.match(await staticPage.locator('noscript').innerText(),/All projects are listed/);
 assert.deepEqual(errors,[]);
-const result={verifiedOn:'2026-10-19',result:'PASS',combinations:checks,keyboard:'Tab order, Space reset and search',mobile:'PostgreSQL selection and reset; no page overflow',noJavaScriptCards:13,runtimeErrors:errors,screenshotsSaved:false};
-await writeFile(new URL('../../evidence/home-filters-browser.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({result:result.result,combinations:checks.length,mobile:true,noJavaScriptCards:13,errors}));await browser.close();
+const result={verifiedOn:'2026-10-19',result:'PASS',combinations:checks,keyboard:'Tab order, Space reset and search',mobile:'PostgreSQL selection and reset; no page overflow',noJavaScriptCards:16,runtimeErrors:errors,screenshotsSaved:false};
+await writeFile(new URL('../../evidence/home-filters-browser.json',import.meta.url),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify({result:result.result,combinations:checks.length,mobile:true,noJavaScriptCards:16,errors}));await browser.close();

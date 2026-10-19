@@ -1,0 +1,102 @@
+{
+  "name": "offline-agency/aws-blockchain-laravel",
+  "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+  "reference": "0.0.4",
+  "commit": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+  "version": "0.0.4",
+  "documentationKey": "v0.0",
+  "verifiedOn": "2026-10-19",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "b275b045b2018b92731d64f708083f9dabccc68b2b820821aace602159b53175"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "ca4279148ac4e9aec6835554a432c92e63ce91fcb18932696dbe84872f3e7054"
+    },
+    {
+      "path": "config/aws-blockchain-laravel.php",
+      "sha256": "07fca08b807729d6cb876be5150154651de0abfb5d65fe6c766fb5ca77b6d99f"
+    },
+    {
+      "path": "src/AwsBlockchainServiceProvider.php",
+      "sha256": "1cc7be773aad6c89a10a734bc494c2a15c718cd4c51101b7ce8e5b0e7dfa3e86"
+    },
+    {
+      "path": "src/BlockchainManager.php",
+      "sha256": "ca184f486206ff22157a5c26d578b64fade47ce1a9f0e55ccc7736243bb7ab88"
+    },
+    {
+      "path": "src/Contracts/BlockchainDriverInterface.php",
+      "sha256": "00c72485619d4bc51e3ba037df5aadf0c317fbddfdea6911936f99d22f4ea981"
+    },
+    {
+      "path": "src/Facades/Blockchain.php",
+      "sha256": "79f24154b65247ae64e651e38a61489e0330a1ab917ae660222cbac78c3e1a6e"
+    },
+    {
+      "path": "src/Drivers/MockDriver.php",
+      "sha256": "03c4d3cb03fbcc32df29a935f6eb7bc456fc676c66d570b570a0231f6d20bca7"
+    },
+    {
+      "path": "src/Drivers/EvmDriver.php",
+      "sha256": "700c770d4b9802cf009a522f511e7f5d0969dd7e9e05e6cf867e5a94059240e9"
+    },
+    {
+      "path": "src/Drivers/ManagedBlockchainDriver.php",
+      "sha256": "0c5e434b0963a954f505917663bfd3b4e5cef4a8f7cac65e890186cec7f9ac85"
+    },
+    {
+      "path": "src/Drivers/QldbDriver.php",
+      "sha256": "a2ab4d04b6616aa162fab2e80dcf4b6b254888e3e56d6b3dc63c7399932e273b"
+    },
+    {
+      "path": "src/Services/EthereumJsonRpcClient.php",
+      "sha256": "dc0ba14a63f73590192e35bc1accd488f6d8a5f9dd703239827320abf228b7d0"
+    },
+    {
+      "path": "src/Services/ContractDeployer.php",
+      "sha256": "c33a1806e8cd2438851acf2768972bbc892a91b14528c72b102ac61ec6a555a7"
+    },
+    {
+      "path": "src/Services/ContractInteractor.php",
+      "sha256": "a5c86f7e7a4430ea27b21c1d92921b993c59026f10fb608c4b180dce1dc0b8af"
+    },
+    {
+      "path": "src/Services/ContractUpgrader.php",
+      "sha256": "392c0f8be55d2b1e41c790f50b499e188f1eb72b8e13bdf7a17c474545eae8b4"
+    },
+    {
+      "path": "src/Console/Commands/DeployContractCommand.php",
+      "sha256": "13f7ac8c5ca84756035783e5f391ad15bbba7e85c9e85172c745d8ef2ca94836"
+    },
+    {
+      "path": "src/Console/Commands/VerifyContractCommand.php",
+      "sha256": "0cb3a36449d5e484083779be3e39a7e417ff620a84208f81a1fde5fea76787dd"
+    },
+    {
+      "path": "database/migrations/2024_01_01_000001_create_blockchain_contracts_table.php",
+      "sha256": "9a433da8e2a24706c7b74475ad1436d3c94a6154553acfbc9484ea0b6420ee83"
+    },
+    {
+      "path": "database/migrations/2024_01_01_000002_create_blockchain_transactions_table.php",
+      "sha256": "a52ba5f1f51afd561076e2b7fbdc0488ae56b9e0fd60e63a465c01c5b64b8885"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "sha256": "b1043daeb355a4df04b6f580b2c447ff2e419e7cbcb79ec2960801381bf955b9"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "a1d6fbc426ca9241975ba2e5371b9798c3168a7881f8445c8279f2dafe658845"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/aws-blockchain-laravel/v0.0/index.md",
+      "route": "/aws-blockchain-laravel/v0.0/",
+      "sha256": "0321e3708ebbc44dbae38adf9a22246412cc9d24e2541c8958a30f0cd8ec2d8a"
+    }
+  ]
+}

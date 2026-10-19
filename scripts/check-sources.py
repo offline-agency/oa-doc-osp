@@ -11,7 +11,8 @@ m=json.loads((root/'maintenance/package-sources.json').read_text())
 packages={x['repository'].removeprefix('https://github.com/'):x for x in m['packages'] if x.get('commit')}
 drift=[]
 for package in packages.values():
- repo=a.cart_reference if package['name'].endswith('/laravel-cart') else a.references/package['name'].split('/')[1]
+ # Clones are named after the GitHub repository, which can differ from the Composer name.
+ repo=a.cart_reference if package['name'].endswith('/laravel-cart') else a.references/package['repository'].rstrip('/').split('/')[-1]
  resolved=subprocess.check_output(['git','-C',str(repo),'rev-parse',(package.get('releaseRef') or package.get('selectedTag') or package['commit'])+'^{commit}'],text=True).strip()
  assert resolved==package['commit'], package['name']+' source reference changed'
  if package.get('manifestFiles'):

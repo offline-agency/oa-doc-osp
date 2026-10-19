@@ -15,7 +15,10 @@ const ICONS = {
   'vue3-burger-menu': { lines: [[5, 7, 19], [5, 12, 19], [5, 17, 19]], loop: 'burger' },
   'spid-laravel-trentino': { d: ['M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z', 'M12 9.5a1.6 1.6 0 1 0 0.01 0', 'M12 11.5v3'], loop: 'pulse' },
   'filament-spid': { d: ['M3 5h18v14H3z', 'M3 9h18', 'M12 12a1.8 1.8 0 1 0 0.01 0', 'M8.8 17.2c.7-1.5 1.8-2.2 3.2-2.2s2.5.7 3.2 2.2'] },
+  'image-puzzle': { d: ['M4 4h7v4.2a1.6 1.6 0 1 0 0 3.6V16H4z', 'M13 4h7v12h-4.2a1.6 1.6 0 1 0-3.6 0H13z', 'M4 18h16'] },
+  'laravel-email-chef': { d: ['M3 6h18v12H3z', 'M3 7l9 6 9-6', 'M15.5 15.5h4'], dot: [17.5, 15.5] },
   pgr_dmmsy: { d: ['M5 18L10 8L16 14L19 5'], nodes: [[5, 18], [10, 8], [16, 14], [19, 5]] },
+  'aws-blockchain-laravel': { d: ['M3 9h6v6H3z', 'M15 9h6v6h-6z', 'M9 12h6'] },
   'laravel-fatture-in-cloud': { d: ['M6 3h9l4 4v14H6z', 'M15 3v4h4', 'M9.5 11.5l5 5', 'M14.5 11.5l-5 5'] },
 }
 const C = '#22706b'

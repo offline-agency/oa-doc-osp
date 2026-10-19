@@ -962,6 +962,149 @@
           "title": "Filament SPID"
         }
       ]
+    },
+    {
+      "name": "offline-agency/image-puzzle",
+      "version": "1.0.0",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Support status not documented.",
+      "commit": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+      "repository": "https://github.com/offline-agency/php-image-puzzle",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-gd": "*"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+        "distReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+        "url": "https://repo.packagist.org/p2/offline-agency/image-puzzle.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/image-puzzle/v1/",
+      "pages": [
+        {
+          "source": "image-puzzle.md",
+          "file": "versioned/image-puzzle/v1/index.md",
+          "currentRoute": "/image-puzzle/",
+          "route": "/image-puzzle/v1/",
+          "title": "Image Puzzle"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.5",
+      "documentationKey": "v1",
+      "channel": "stable",
+      "supportStatus": "Superseded by 2.0.0; no support policy published. Requires Illuminate 9 or older, which Composer refuses inside a Laravel 9 application by default because of security advisories.",
+      "commit": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.5",
+        "sourceReference": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+        "distReference": "3c8c81bba981d368e6c484d3cc172068e2fd856c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/laravel-email-chef/v1/",
+      "pages": [
+        {
+          "source": "laravel-email-chef.md",
+          "file": "versioned/laravel-email-chef/v1/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/v1/",
+          "title": "Laravel Email Chef"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "2.0.0",
+      "documentationKey": "v2",
+      "channel": "stable",
+      "supportStatus": "Latest release 2.0.0. No support window or supported-versions policy is published.",
+      "commit": "eff422c06f89f61f00eae5293e703e49638285d1",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/contracts": "^12.0|^13.0",
+        "illuminate/http": "^12.0|^13.0",
+        "illuminate/support": "^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "eff422c06f89f61f00eae5293e703e49638285d1",
+        "distReference": "eff422c06f89f61f00eae5293e703e49638285d1",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/laravel-email-chef/v2/",
+      "pages": [
+        {
+          "source": "laravel-email-chef.md",
+          "file": "versioned/laravel-email-chef/v2/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/v2/",
+          "title": "Laravel Email Chef"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/aws-blockchain-laravel",
+      "version": "0.0.4",
+      "documentationKey": "v0.0",
+      "channel": "stable",
+      "supportStatus": "Pre-1.0 experimental release; no support policy published. Its AWS Managed Blockchain and QLDB drivers do not work with the current AWS SDK.",
+      "commit": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+      "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+      "verifiedOn": "2026-10-19",
+      "projectType": "composer-library",
+      "composerRequirements": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/container": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0",
+        "kornrunner/keccak": "^1.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.0.4",
+        "sourceReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+        "distReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+        "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+        "verifiedOn": "2026-10-19"
+      },
+      "route": "/aws-blockchain-laravel/v0.0/",
+      "pages": [
+        {
+          "source": "aws-blockchain-laravel.md",
+          "file": "versioned/aws-blockchain-laravel/v0.0/index.md",
+          "currentRoute": "/aws-blockchain-laravel/",
+          "route": "/aws-blockchain-laravel/v0.0/",
+          "title": "AWS Blockchain Laravel"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -1154,6 +1297,18 @@
     {
       "route": "/filament-spid/",
       "target": "/filament-spid/v1/"
+    },
+    {
+      "route": "/image-puzzle/",
+      "target": "/image-puzzle/v1/"
+    },
+    {
+      "route": "/laravel-email-chef/",
+      "target": "/laravel-email-chef/v2/"
+    },
+    {
+      "route": "/aws-blockchain-laravel/",
+      "target": "/aws-blockchain-laravel/v0.0/"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "pages": {
     "/": {
       "file": "README.md",
-      "sha256": "3a5fd4d50e4b480de7ca6913cf9d0fcfc4c8a622072010d35dfc4ccf8a5a8fe3",
+      "sha256": "79aa8e0be98461b838a07205eb8f948c741bdee0bb250353861a40da4dc5e00f",
       "changedOn": "2026-10-19"
     },
     "/open-source-philosophy/": {
@@ -42,6 +42,11 @@
       "sha256": "3d4c690c0b1edccdf431c0bf7cbf9df040ad31c9c899c10ad1c672d881a42595",
       "changedOn": "2026-10-16"
     },
+    "/aws-blockchain-laravel/": {
+      "file": "aws-blockchain-laravel.md",
+      "sha256": "906f2bfe413655883fe0d6c576da6769690033ef402ca2dbc72b4d6d743d215f",
+      "changedOn": "2026-10-19"
+    },
     "/laravel-moneta-online/": {
       "file": "laravel-moneta-online.md",
       "sha256": "2c4a13259139e8880f6538b50712a3d5122eb5e095aea33b78270037687d7cc7",
@@ -75,6 +80,16 @@
     "/filament-spid/": {
       "file": "filament-spid.md",
       "sha256": "c5185a40a9c2b96a05fd73437af1fd893943166d0eb64c1be7da4150ac41ba7b",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-email-chef/": {
+      "file": "laravel-email-chef.md",
+      "sha256": "9547918401676844ef490db2f807e0fa8ccba84cc98891ff7412357d08012a89",
+      "changedOn": "2026-10-19"
+    },
+    "/image-puzzle/": {
+      "file": "image-puzzle.md",
+      "sha256": "f2ae15ca2b562947bbfd06560db72f882e483946950b38c9127374dcc8adbaaa",
       "changedOn": "2026-10-19"
     },
     "/pgr_dmmsy/": {
@@ -350,6 +365,26 @@
     "/filament-spid/v0.1/": {
       "file": "versioned/filament-spid/v0.1/index.md",
       "sha256": "2c6521f9bfe32e9b3513e5e32490797e3de63a45ed04b557922e789e4648e8a5",
+      "changedOn": "2026-10-19"
+    },
+    "/image-puzzle/v1/": {
+      "file": "versioned/image-puzzle/v1/index.md",
+      "sha256": "14e0aa93b0087e5279f04d4624b134db4ab60ff0a22c3cbbb97a07edf6ec6c99",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-email-chef/v1/": {
+      "file": "versioned/laravel-email-chef/v1/index.md",
+      "sha256": "4149a48527378bd96d16e255f83a9d018f8a30648f3d36201015e8a831cc2be6",
+      "changedOn": "2026-10-19"
+    },
+    "/laravel-email-chef/v2/": {
+      "file": "versioned/laravel-email-chef/v2/index.md",
+      "sha256": "a48da855dc74fc566bc716d82b85673ca5e95da290c531b050ffe7d166fcc767",
+      "changedOn": "2026-10-19"
+    },
+    "/aws-blockchain-laravel/v0.0/": {
+      "file": "versioned/aws-blockchain-laravel/v0.0/index.md",
+      "sha256": "0321e3708ebbc44dbae38adf9a22246412cc9d24e2541c8958a30f0cd8ec2d8a",
       "changedOn": "2026-10-19"
     },
     "/laravel-cart/agents/": {

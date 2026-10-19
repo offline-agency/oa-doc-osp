@@ -98,6 +98,17 @@ projects:
     maintenanceStatus: legacy
     ecosystem: php
     release: v2.2.8
+  - title: AWS Blockchain Laravel
+    link: /aws-blockchain-laravel/
+    details: >-
+      Experimental pre-1.0 blockchain drivers and contract commands for Laravel.
+      Only the mock driver works end to end; the AWS drivers target retired or
+      retiring services.
+    type: Legacy
+    maintenanceStatus: legacy
+    ecosystem: php
+    release: v0.0.4
+    requirements: Laravel 11 / 12 · pre-1.0
   - title: laravel-bank-of-italy
     link: /laravel-bank-of-italy/
     details: >-
@@ -156,6 +167,26 @@ projects:
     ecosystem: php
     release: v1.0.0
     requirements: Filament 3–5 · Laravel 12 / 13
+  - title: Laravel Email Chef
+    link: /laravel-email-chef/
+    details: >-
+      EmailChef API client for Laravel: lists, contacts, campaigns,
+      autoresponders, transactional mail and SMS through typed resource classes.
+    type: Current project
+    maintenanceStatus: maintained
+    ecosystem: php
+    release: v2.0.0
+    requirements: Laravel 12 / 13
+  - title: Image Puzzle
+    link: /image-puzzle/
+    details: >-
+      Split images into puzzle pieces with edge styles and export PNG or JPEG
+      pieces with a JSON manifest.
+    type: Current project
+    maintenanceStatus: maintained
+    ecosystem: php
+    release: v1.0.0
+    requirements: PHP 8.4+ · ext-gd
   - title: pgr_dmmsy
     link: /pgr_dmmsy/
     details: >-

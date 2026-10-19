@@ -53,13 +53,16 @@ Publication is a separate owner action after review, CI and the hosting/security
 
 ## Independent documentation versions
 
-The registry `package-sources.json` drives homepage cards/categories, navigation, pinned source metadata and import adapters. `documentation-versions.json` drives version routes, sidebars, selectors and redirects. Laravel Cart and the five added projects use independent compatibility lines:
+The registry `package-sources.json` drives homepage cards/categories, navigation, pinned source metadata and import adapters. `documentation-versions.json` drives version routes, sidebars, selectors and redirects. Laravel Cart and the added projects use independent compatibility lines:
 
 | Project | Documentation key | Exact source | Policy |
 | --- | --- | --- | --- |
 | Laravel Cart | `v4` | `4.1.0` | Current stable; since4.1 guarantees explicit |
 | SPID Laravel Trentino | `v2` | `v2.3.0` | Latest verified stable release in major 2 |
 | Filament SPID | `v1`, `v0.1` | `1.0.0`, `0.1.8` | v1 current; v0.1 frozen reference for existing installs (unsupported, not installable: its fork branch is gone). `trust.releases` overrides facts missing at 0.1.8 |
+| Laravel Email Chef | `v2`, `v1` | `2.0.0`, `1.0.5` | v2 current; v1 frozen superseded reference (Illuminate 9 or older) |
+| Image Puzzle | `v1` | `1.0.0` | Packagist offers only 1.0.0; GitHub tags 1.0.1/1.0.2 change README/tests only. Repository is `php-image-puzzle` |
+| AWS Blockchain Laravel | `v0.0` | `0.0.4` | Legacy: pre-1.0, only the mock driver works; AWS drivers target retired or retiring services |
 | Vue 3 Burger Menu | `v1` | `1.1.2` | Source release; npm artifact warning remains |
 | pgr_dmmsy | `v0.1` | `v0.1.0` | Pre-1.0 minor compatibility line |
 | Braintree Vue 3 | `next` | Immutable commit in manifest | Unreleased; noindex, excluded from sitemap |
