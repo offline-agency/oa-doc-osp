@@ -1,4 +1,7 @@
+const base = process.env.VUEPRESS_BASE || '/';
+
 module.exports = {
+    base,
     title: 'Documentation | OFFLINE Agency',
     description: 'Documentation for our comprehensive packages.',
     head:[

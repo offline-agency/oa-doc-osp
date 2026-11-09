@@ -37,7 +37,7 @@
           <div class="project"
                v-for="(project, index) in data.projects"
                :key="index" v-if="projectType.title === project.type">
-            <h2><a :href="project.link">{{ project.title }}</a></h2>
+            <h2><a :href="project.link && $withBase(project.link)">{{ project.title }}</a></h2>
             <p>{{ project.details }}</p>
           </div>
         </div>
