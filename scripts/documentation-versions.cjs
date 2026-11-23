@@ -1,8 +1,8 @@
 const matter = require('gray-matter');
 function parseVersion(value) {
-  const match = /^v?(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)(?:-([0-9A-Za-z.-]+))?(?:\+([0-9A-Za-z.-]+))?$/.exec(value || '');
+  const match = /^v?(0|[1-9]\d*)\.(0|[1-9]\d*)(?:\.(0|[1-9]\d*))?(?:-([0-9A-Za-z.-]+))?(?:\+([0-9A-Za-z.-]+))?$/.exec(value || '');
   if (!match) return null;
-  const numbers = match.slice(1,4).map(Number), prerelease = match[4]?.split('.') || [];
+  const numbers = match.slice(1,4).map(value => Number(value ?? 0)), prerelease = match[4]?.split('.') || [];
   if (numbers.some(number => !Number.isSafeInteger(number)) || prerelease.some(part => !part || (/^\d+$/.test(part) && part.length > 1 && part.startsWith('0'))) || match[5]?.split('.').some(part=>!part)) return null;
   return {major:numbers[0],minor:numbers[1],patch:numbers[2],prerelease};
 }
@@ -86,7 +86,7 @@ function versionContext(path, releases, sources) {
     const alias=source?.documentation?.topicAliases?.[suffix];
     return alias ? release.pages.find(item=>item.currentRoute===root+alias+'/') : undefined;
   };
-  const candidates=releases.filter(release=>release.name===currentRelease.name && (!release.archive || release===selectedRelease)).sort((a,b)=>development(a)!==development(b)?development(a)?1:-1:development(a)?0:compareVersions(b.version,a.version));
+  const candidates=releases.filter(release=>release.name===currentRelease.name).sort((a,b)=>development(a)!==development(b)?development(a)?1:-1:development(a)?0:compareVersions(b.version,a.version));
   const latest=candidates.find(release=>sourceVersion(source || {})===release.version);
   const currentPage=latest && equivalentPage(latest);
   const scoped=!!currentRelease.documentationKey;
@@ -99,7 +99,7 @@ function versionContext(path, releases, sources) {
     const label=release.archive ? `Archived ${release.version}` : release.documentationKey ? development(release)?'next — development':`${releaseKey(release)} — ${release.version}` : release.version;
     options.push({label:label+(missingTopic?' — overview (topic unavailable)':''),route,missingTopic,href:missingTopic?`${route}?missing-topic=${encodeURIComponent(page.title)}`:route});
   }
-  return {package:currentRelease.name.replace('offline-agency/',''),commit:currentRelease.commit,version:currentRelease.version,key:releaseKey(currentRelease),selected:path,options,currentRoute,pinnedRoute:page.route,snapshot:!!selectedRelease,archive:!!currentRelease.archive,channel:development(currentRelease)?'next':'stable',supportStatus:currentRelease.archive ? currentRelease.supportStatus : scoped?currentRelease.supportStatus || source?.documentation?.supportStatus || 'Support status not documented.':undefined,preOne:parseVersion(currentRelease.version)?.major===0,topic:page.title};
+  return {package:currentRelease.name.replace('offline-agency/',''),commit:currentRelease.commit,version:currentRelease.version,key:releaseKey(currentRelease),selected:path,options,currentRoute,pinnedRoute:page.route,snapshot:!!selectedRelease,archive:!!currentRelease.archive,archiveNote:currentRelease.archive ? currentRelease.archiveNote || `Archived ${currentRelease.version} documentation.` : undefined,channel:development(currentRelease)?'next':'stable',supportStatus:currentRelease.archive ? currentRelease.supportStatus : scoped?currentRelease.supportStatus || source?.documentation?.supportStatus || 'Support status not documented.':undefined,preOne:parseVersion(currentRelease.version)?.major===0,topic:page.title};
 }
 function validateSnapshots(releases, sources, read, currentPages = {}) {
   const errors = [], seen = new Set();

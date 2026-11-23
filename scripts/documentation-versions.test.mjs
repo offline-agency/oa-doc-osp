@@ -20,11 +20,11 @@ test('release routes support an underscore repository name and a real v-prefixed
  assert.ok(validateRelease({...sql,name:'offline-agency/../pgr_dmmsy'}).length);
 });
 
-test('frozen patch archives are not duplicate major choices on current pages',()=>{
+test('archived tags are listed after the current line on every page',()=>{
  const current={name:'offline-agency/cart',version:'4.1.0',documentationKey:'v4',commit:'b'.repeat(40),route:'/cart/v4/',pages:[{currentRoute:'/cart/',route:'/cart/v4/',title:'Overview'}]};
  const archive={...current,version:'4.0.3',documentationKey:undefined,commit:'a'.repeat(40),route:'/cart/4.0.3/',archive:true,pages:[{currentRoute:'/cart/',route:'/cart/4.0.3/',title:'Overview'}]};
  const sources=[{name:current.name,selectedTag:'4.1.0',documentation:{strategy:'compatibility'}}];
- const active=versionContext('/cart/v4/',[archive,current],sources);assert.deepEqual(active.options.map(option=>option.route),['/cart/v4/']);
+ const active=versionContext('/cart/v4/',[archive,current],sources);assert.deepEqual(active.options.map(option=>option.route),['/cart/v4/','/cart/4.0.3/']);assert.equal(active.options[1].label,'Archived 4.0.3');
  const historical=versionContext('/cart/4.0.3/',[archive,current],sources);assert.equal(historical.archive,true);assert.ok(historical.options.some(option=>option.label==='Archived 4.0.3'));assert.ok(historical.options.some(option=>option.route==='/cart/v4/'));
 });
 

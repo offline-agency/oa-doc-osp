@@ -1,0 +1,220 @@
+---
+title: "AWS Blockchain Laravel — 0.0.1"
+description: "Archived AWS Blockchain Laravel 0.0.1 (commit 1c0f3a4, 2025-11-05): requirements, changes and the README shipped with the tag."
+permalink: /aws-blockchain-laravel/0.0.1/
+packageVersion: "0.0.1"
+sourceCommit: 1c0f3a40f604c0e4b701d2321346ec4593e29546
+documentationSnapshot: true
+documentationArchive: generated-tag
+---
+# AWS Blockchain Laravel 0.0.1
+
+This archived page describes tag `0.0.1` of [offline-agency/aws-blockchain-laravel](https://github.com/offline-agency/aws-blockchain-laravel). It is generated from the repository at that tag: the manifest, the history since the previous tag and the README shipped with the release. It is not a reviewed guide; read the [current documentation](/aws-blockchain-laravel/) for the maintained release (0.0.4).
+
+## Release
+
+| Fact | Value |
+| --- | --- |
+| Tag | [0.0.1](https://github.com/offline-agency/aws-blockchain-laravel/releases/tag/0.0.1) |
+| Commit | [`1c0f3a40f604c0e4b701d2321346ec4593e29546`](https://github.com/offline-agency/aws-blockchain-laravel/tree/1c0f3a40f604c0e4b701d2321346ec4593e29546) |
+| Commit date | 2025-11-05 |
+| Composer package | `offline-agency/aws-blockchain-laravel` |
+| Packagist | Version `0.0.1`, source reference matches this commit (checked 2026-11-23) |
+| Declared license | MIT |
+
+## Requirements
+
+Declared in `composer.json` `require`:
+
+- `php`: `^8.3`
+- `illuminate/support`: `^11.0|^12.0`
+- `illuminate/container`: `^11.0|^12.0`
+- `aws/aws-sdk-php`: `^3.0`
+
+## Changes
+
+First tag of the repository: 10 non-merge commits up to this tag.
+
+## README at 0.0.1
+
+Shipped as [`README.md`](https://github.com/offline-agency/aws-blockchain-laravel/blob/1c0f3a40f604c0e4b701d2321346ec4593e29546/README.md). Headings are shifted one level, HTML markup is reduced to text and images, repository links are kept only when their target exists at this tag, and external links verified as unreachable are shown as text.
+
+::: v-pre
+### AWS Blockchain Laravel Package
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/offline-agency/aws-blockchain-laravel.svg?style=flat-square)](https://packagist.org/packages/offline-agency/aws-blockchain-laravel)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/offline-agency/aws-laravel-blockchain/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/offline-agency/aws-laravel-blockchain/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/offline-agency/aws-laravel-blockchain/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/offline-agency/aws-laravel-blockchain/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/aws-blockchain-laravel.svg?style=flat-square)](https://packagist.org/packages/offline-agency/aws-blockchain-laravel)
+
+A comprehensive Laravel package for AWS blockchain integration, specifically designed for supply chain traceability applications.
+
+#### Features
+
+- **Multiple Blockchain Drivers**: Support for AWS Managed Blockchain, Amazon QLDB, and Mock drivers
+- **Dual Blockchain Architecture**: Separate public and private blockchain operations
+- **Data Separation**: Automatic categorization of public vs private data
+- **Laravel Integration**: Seamless integration with Laravel's service container
+- **Testing Support**: Mock drivers for testing without AWS credentials
+
+#### Installation
+
+This package can be included as a local package in your Laravel project. It's automatically loaded via Composer autoloading.
+
+#### Configuration
+
+The package configuration is published to `config/aws-blockchain-laravel.php`:
+
+```php
+return [
+    'default_driver' => env('BLOCKCHAIN_DRIVER', 'mock'),
+    'public_driver' => env('BLOCKCHAIN_PUBLIC_DRIVER', 'mock'),
+    'private_driver' => env('BLOCKCHAIN_PRIVATE_DRIVER', 'mock'),
+    
+    'drivers' => [
+        'mock' => [
+            'type' => 'mock',
+        ],
+        'managed_blockchain' => [
+            'type' => 'managed_blockchain',
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+            'access_key_id' => env('AWS_ACCESS_KEY_ID'),
+            'secret_access_key' => env('AWS_SECRET_ACCESS_KEY'),
+            'network_id' => env('AWS_BLOCKCHAIN_NETWORK_ID'),
+            'member_id' => env('AWS_BLOCKCHAIN_MEMBER_ID'),
+            'node_id' => env('AWS_BLOCKCHAIN_NODE_ID'),
+            'channel_name' => env('BLOCKCHAIN_CHANNEL_NAME', 'mychannel'),
+            'chaincode_name' => env('BLOCKCHAIN_CHAINCODE_NAME', 'supply-chain'),
+        ],
+        'qldb' => [
+            'type' => 'qldb',
+            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
+            'access_key_id' => env('AWS_ACCESS_KEY_ID'),
+            'secret_access_key' => env('AWS_SECRET_ACCESS_KEY'),
+            'ledger_name' => env('AWS_QLDB_LEDGER_NAME', 'supply-chain-ledger'),
+        ],
+    ],
+];
+```
+
+#### Usage
+
+##### Using the Facade
+
+```php
+use AwsBlockchain\Laravel\Facades\Blockchain;
+
+// Get public driver
+$publicDriver = Blockchain::publicDriver();
+
+// Get private driver
+$privateDriver = Blockchain::privateDriver();
+
+// Record an event
+$eventId = $publicDriver->recordEvent($data);
+
+// Get an event
+$event = $publicDriver->getEvent($eventId);
+
+// Verify integrity
+$isValid = $publicDriver->verifyIntegrity($eventId, $data);
+```
+
+##### Using the Service Container
+
+```php
+// Get the blockchain manager
+$manager = app('blockchain');
+
+// Get specific drivers
+$publicDriver = app('blockchain.public');
+$privateDriver = app('blockchain.private');
+```
+
+#### Drivers
+
+##### MockDriver
+
+Perfect for testing and development. Stores events in memory and provides simulated blockchain operations.
+
+```php
+$driver = new \AwsBlockchain\Laravel\Drivers\MockDriver('mock');
+```
+
+##### ManagedBlockchainDriver
+
+Integrates with AWS Managed Blockchain service for production blockchain operations.
+
+```php
+$driver = new \AwsBlockchain\Laravel\Drivers\ManagedBlockchainDriver($config);
+```
+
+##### QldbDriver
+
+Uses Amazon QLDB for immutable, cryptographically verifiable transaction logs.
+
+```php
+$driver = new \AwsBlockchain\Laravel\Drivers\QldbDriver($config);
+```
+
+#### Data Separation
+
+The package automatically separates data into public and private categories:
+
+**Public Data** (transparent blockchain):
+- Product origin
+- Certifications
+- Public timestamps
+- Quality scores
+
+**Private Data** (confidential blockchain):
+- Supplier details
+- Pricing information
+- Internal notes
+- Sensitive locations
+
+#### Testing
+
+The package includes comprehensive testing support with mock drivers that don't require AWS credentials:
+
+```php
+// In your tests
+$this->app->bind('blockchain.public', function () {
+    return new \AwsBlockchain\Laravel\Drivers\MockDriver('mock');
+});
+```
+
+#### Environment Variables
+
+Add these to your `.env` file for production:
+
+```env
+# AWS Credentials
+AWS_ACCESS_KEY_ID=your_access_key
+AWS_SECRET_ACCESS_KEY=your_secret_key
+AWS_DEFAULT_REGION=us-east-1
+
+# Blockchain Configuration
+BLOCKCHAIN_DRIVER=mock
+BLOCKCHAIN_PUBLIC_DRIVER=mock
+BLOCKCHAIN_PRIVATE_DRIVER=mock
+
+# For production with AWS
+BLOCKCHAIN_PUBLIC_DRIVER=managed_blockchain
+BLOCKCHAIN_PRIVATE_DRIVER=qldb
+
+# AWS Blockchain Settings
+AWS_BLOCKCHAIN_NETWORK_ID=your_network_id
+AWS_BLOCKCHAIN_MEMBER_ID=your_member_id
+AWS_BLOCKCHAIN_NODE_ID=your_node_id
+BLOCKCHAIN_CHANNEL_NAME=mychannel
+BLOCKCHAIN_CHAINCODE_NAME=supply-chain
+
+# QLDB Settings
+AWS_QLDB_LEDGER_NAME=supply-chain-ledger
+```
+
+#### License
+
+MIT License - see LICENSE file for details.
+:::

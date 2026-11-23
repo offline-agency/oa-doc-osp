@@ -9,10 +9,10 @@
       "route": "/laravel-cart/",
       "repository": "https://github.com/offline-agency/laravel-cart",
       "defaultBranch": "main",
-      "selectedTag": "4.1.0",
-      "commit": "b89d3219202703203453890e2e46467e79ad415d",
+      "selectedTag": "4.2.0",
+      "commit": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
       "status": "current-release",
-      "verifiedOn": "2026-10-16",
+      "verifiedOn": "2026-11-23",
       "composerRequirements": {
         "php": "~8.4.0 || ~8.5.0",
         "ext-bcmath": "*",
@@ -29,11 +29,11 @@
       },
       "distribution": {
         "registry": "Packagist",
-        "version": "4.1.0",
-        "sourceReference": "b89d3219202703203453890e2e46467e79ad415d",
-        "distReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "version": "4.2.0",
+        "sourceReference": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
+        "distReference": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
         "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
-        "verifiedOn": "2026-10-16"
+        "verifiedOn": "2026-11-23"
       },
       "sourcePaths": [
         ".github/workflows/ci.yml",
@@ -49,17 +49,28 @@
         "docs/v4/agents.md",
         "docs/v4/alternatives.md",
         "docs/v4/authentication.md",
+        "docs/v4/capabilities.md",
         "docs/v4/configuration.md",
         "docs/v4/coupons.md",
         "docs/v4/index.md",
         "docs/v4/installation.md",
         "docs/v4/money-and-tax.md",
+        "docs/v4/post-discount-tax.md",
+        "docs/v4/recipes/api-mobile.md",
+        "docs/v4/recipes/index.md",
+        "docs/v4/recipes/inertia-vue.md",
+        "docs/v4/recipes/livewire.md",
+        "docs/v4/recipes/redis-sessions.md",
+        "docs/v4/recipes/variants-wishlist.md",
         "docs/v4/reference.md",
         "docs/v4/storage.md",
         "docs/v4/testing.md",
         "docs/v4/troubleshooting.md",
         "docs/v4/upgrading.md",
         "docs/v4/usage.md",
+        "examples/CartActions.php",
+        "examples/RedisSessionExample.php",
+        "examples/payable-tax.php",
         "examples/quick-start.php",
         "scripts/consumer-smoke.mjs",
         "scripts/docs.mjs",
@@ -77,6 +88,7 @@
         "src/Console/CartPruneCommand.php",
         "src/Console/CartStatsCommand.php",
         "src/Console/Concerns/InteractsWithCartDatabase.php",
+        "src/Contracts/AtomicCartStorage.php",
         "src/Contracts/Buyable.php",
         "src/Contracts/CartStorage.php",
         "src/Contracts/Couponable.php",
@@ -90,6 +102,8 @@
         "src/Events/CartStored.php",
         "src/Events/CouponApplied.php",
         "src/Events/CouponRemoved.php",
+        "src/Events/GuestCartTransferFailed.php",
+        "src/Events/GuestCartTransferred.php",
         "src/Exceptions/CartAlreadyStoredException.php",
         "src/Exceptions/CartException.php",
         "src/Exceptions/CartExpiredException.php",
@@ -97,15 +111,18 @@
         "src/Exceptions/CartStorageException.php",
         "src/Exceptions/CouponAlreadyAppliedException.php",
         "src/Exceptions/CouponNotFoundException.php",
+        "src/Exceptions/GuestCartTransferException.php",
         "src/Exceptions/InvalidConfigurationException.php",
         "src/Exceptions/InvalidCouponException.php",
         "src/Exceptions/InvalidCouponHashException.php",
         "src/Exceptions/InvalidDriverException.php",
         "src/Exceptions/InvalidRowIDException.php",
+        "src/Exceptions/TaxAllocationException.php",
         "src/Exceptions/UnknownModelException.php",
         "src/Facades/Cart.php",
         "src/Http/Middleware/CartMergeMiddleware.php",
         "src/Http/Middleware/CartRestoreMiddleware.php",
+        "src/Http/Middleware/TransferGuestCart.php",
         "src/Resources/CartItemResource.php",
         "src/Resources/CartResource.php",
         "src/Storage/DatabaseStorage.php",
@@ -115,6 +132,8 @@
         "src/Support/CartContentCodec.php",
         "src/Support/Coerce.php",
         "src/Support/CouponData.php",
+        "src/Support/TaxAllocator.php",
+        "src/TaxBreakdown.php",
         "src/Testing/CartFake.php",
         "src/Testing/RecordingDispatcher.php",
         "src/Traits/HasDiscount.php",
@@ -136,6 +155,7 @@
         "tests/Coverage/DatabaseStorageTest.php",
         "tests/Coverage/ExceptionsAndResourcesTest.php",
         "tests/Coverage/MiddlewareTest.php",
+        "tests/Feature/AdoptionRecipesTest.php",
         "tests/Feature/CartCommandTest.php",
         "tests/Feature/CartCommandsTest.php",
         "tests/Feature/CartCouponTest.php",
@@ -154,12 +174,14 @@
         "tests/Feature/DocumentationExamplesTest.php",
         "tests/Feature/GuestTransferPolicyTest.php",
         "tests/Feature/GuestTransferTest.php",
+        "tests/Feature/PayableTaxBreakdownTest.php",
         "tests/FeatureTestCase.php",
         "tests/Fixtures/BareBuyable.php",
         "tests/Fixtures/BuyableProduct.php",
         "tests/Fixtures/Codec/CodecModel.php",
         "tests/Fixtures/Codec/ExplodingBuyable.php",
         "tests/Fixtures/Codec/WakeupGadget.php",
+        "tests/Fixtures/LegacyStorage.php",
         "tests/Fixtures/PlainPromo.php",
         "tests/Fixtures/ProductModel.php",
         "tests/Fixtures/ProductWithTrait.php",
@@ -187,12 +209,12 @@
         "tests/phpstan/pest-functions.stub"
       ],
       "sourceLinks": {
-        "release": "https://github.com/offline-agency/laravel-cart/releases/tag/4.0.3",
-        "manifest": "https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/composer.json",
-        "sourceTree": "https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16"
+        "release": "https://github.com/offline-agency/laravel-cart/releases/tag/4.2.0",
+        "manifest": "https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/composer.json",
+        "sourceTree": "https://github.com/offline-agency/laravel-cart/tree/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2"
       },
       "unavailableChecks": [
-        "No certified post-cart-discount VAT allocation API in release4.1.0.",
+        "Post-cart-discount VAT allocation (payableTaxBreakdown) is read-only and additive since 4.2.0; legacy before-cart-coupon tax methods are unchanged.",
         "Livewire/Inertia UI and external mobile/Redis integration are application scaffolding; scalar string product IDs were verified in released source."
       ],
       "catalog": {
@@ -209,13 +231,15 @@
         "landing": "static-redirect",
         "supportStatus": "Current stable documentation. Package support window is not documented.",
         "importer": "scripts/import-cart.mjs",
-        "discoveryEvidence": "maintenance/evidence/cart41-release.json",
-        "provenanceDate": "2026-10-16",
+        "discoveryEvidence": "maintenance/evidence/cart42-release.json",
+        "provenanceDate": "2026-11-23",
         "availability": {
           "atomicMutations": "4.1.0",
           "databaseConcurrency": "4.1.0",
           "optInGuestTransfer": "4.1.0",
-          "repricingCorrections": "4.1.0"
+          "repricingCorrections": "4.1.0",
+          "payableTaxAllocation": "4.2.0",
+          "adoptionRecipes": "4.2.0"
         },
         "topicAliases": {
           "quick-start": "usage",
@@ -259,7 +283,7 @@
         }
       },
       "trust": {
-        "verifiedOn": "2026-10-16",
+        "verifiedOn": "2026-11-23",
         "publisher": "OFFLINE Agency",
         "issues": "https://github.com/offline-agency/laravel-cart/issues",
         "license": {
@@ -273,11 +297,246 @@
         "workflows": ".github/workflows",
         "ciResult": {
           "status": "passed",
-          "checkedOn": "2026-10-16",
-          "url": "https://github.com/offline-agency/laravel-cart/actions/runs/38922612753",
+          "checkedOn": "2026-11-23",
+          "url": "https://github.com/offline-agency/laravel-cart/actions/runs/39325964295",
           "summary": "CI workflow passed on the release commit (PHP 8.4/8.5, Laravel 12/13, MySQL 8.4, PostgreSQL 17)"
         },
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "0.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.5": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.2.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "4.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "4.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "4.0.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "4.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": "SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "4.0.3": {
+            "security": null
+          }
+        }
       }
     },
     {
@@ -542,7 +801,29 @@
         "privateVulnerabilityReporting": true,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -837,7 +1118,129 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "1.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "1.2.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.0.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.0.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.1.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "2.1.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "3.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -931,7 +1334,29 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1048,7 +1473,269 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": null
+          },
+          "1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": null
+          },
+          "1.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.5": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.6": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.7": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.8": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.9": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.10": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.11": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.12": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.13": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.14": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.15": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.16": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.17": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.18": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.19": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.20": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0-alpha.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0-alpha.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "3.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1148,7 +1835,209 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.5": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.6": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.7": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.8.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.5": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.6": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "2.2.7": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1239,10 +2128,33 @@
         "ciResult": {
           "status": "passed",
           "checkedOn": "2026-10-19",
-          "url": "https://github.com/offline-agency/aws-blockchain-laravel/actions/runs/19313153502",
-          "summary": "Tests workflow passed on the release commit (PHP 8.3/8.4, Laravel 11/12, static analysis); AWS clients are mocked in these tests"
+          "url": null,
+          "summary": "Tests workflow passed on the release commit (PHP 8.3/8.4, Laravel 11/12, static analysis); AWS clients are mocked in these tests; GitHub no longer serves run 19313153502"
         },
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "0.0.1": {
+            "license": null,
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.0.2": {
+            "license": null,
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.0.3": {
+            "license": null,
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1328,7 +2240,19 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1422,7 +2346,16 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.0": {
+            "license": null,
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1660,7 +2593,19 @@
         "privateVulnerabilityReporting": false,
         "workflows": null,
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": null,
+            "contributing": null,
+            "security": null,
+            "workflows": null
+          }
+        }
       }
     },
     {
@@ -1758,7 +2703,39 @@
         "privateVulnerabilityReporting": false,
         "workflows": ".github/workflows",
         "ciResult": null,
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "v2.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": "SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "v2.1.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": "SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "v2.2.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": "SECURITY.md",
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {
@@ -1867,6 +2844,76 @@
             "changelog": null,
             "security": null,
             "purpose": "Pre-1.0 SPID login for Filament 3 and 4 panels. Unsupported and no longer installable; kept for existing installations."
+          },
+          "0.1.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.5": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.6": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "0.1.7": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": null,
+            "contributing": "CONTRIBUTING.md",
+            "security": null,
+            "workflows": ".github/workflows"
           }
         }
       }
@@ -1971,6 +3018,56 @@
           "1.0.5": {
             "verifiedOn": "2026-10-19",
             "purpose": "Superseded 1.x client covering only EmailChef lists and contacts; requires Illuminate 9 or older."
+          },
+          "1.0.0": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "1.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "1.0.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "1.0.3": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
+          },
+          "1.0.4": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE.md"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": "CONTRIBUTING.md",
+            "security": ".github/SECURITY.md",
+            "workflows": ".github/workflows"
           }
         }
       }
@@ -2068,7 +3165,29 @@
           "url": "https://github.com/offline-agency/php-image-puzzle/actions/runs/21573111999",
           "summary": "CI workflow (Pest tests and PHPStan on PHP 8.4 and 8.5) passed on the release commit"
         },
-        "supportPolicy": null
+        "supportPolicy": null,
+        "releases": {
+          "1.0.1": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          },
+          "1.0.2": {
+            "license": {
+              "spdx": "MIT",
+              "path": "LICENSE"
+            },
+            "changelog": "CHANGELOG.md",
+            "contributing": null,
+            "security": null,
+            "workflows": ".github/workflows"
+          }
+        }
       }
     },
     {

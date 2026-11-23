@@ -109,7 +109,8 @@
         }
       ],
       "archive": true,
-      "supportStatus": "Archived 4.0.3 documentation; package support window is not documented."
+      "supportStatus": "Archived 4.0.3 documentation; package support window is not documented.",
+      "archiveNote": "Archived 4.0.3 documentation, preserved before release 4.1.0 and corrected against the 4.0.3 source."
     },
     {
       "name": "offline-agency/laravel-webex",
@@ -725,13 +726,13 @@
     },
     {
       "name": "offline-agency/laravel-cart",
-      "version": "4.1.0",
+      "version": "4.2.0",
       "documentationKey": "v4",
       "channel": "stable",
       "supportStatus": "Current stable documentation. Package support window is not documented.",
-      "commit": "b89d3219202703203453890e2e46467e79ad415d",
+      "commit": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
       "repository": "https://github.com/offline-agency/laravel-cart",
-      "verifiedOn": "2026-10-16",
+      "verifiedOn": "2026-11-23",
       "composerRequirements": {
         "php": "~8.4.0 || ~8.5.0",
         "ext-bcmath": "*",
@@ -748,11 +749,11 @@
       },
       "distribution": {
         "registry": "Packagist",
-        "version": "4.1.0",
-        "sourceReference": "b89d3219202703203453890e2e46467e79ad415d",
-        "distReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "version": "4.2.0",
+        "sourceReference": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
+        "distReference": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
         "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
-        "verifiedOn": "2026-10-16"
+        "verifiedOn": "2026-11-23"
       },
       "route": "/laravel-cart/v4/",
       "pages": [
@@ -790,6 +791,13 @@
           "currentRoute": "/laravel-cart/authentication/",
           "route": "/laravel-cart/v4/authentication/",
           "title": "Authentication and guest transfer"
+        },
+        {
+          "source": "laravel-cart/capabilities.md",
+          "file": "versioned/laravel-cart/v4/capabilities.md",
+          "currentRoute": "/laravel-cart/capabilities/",
+          "route": "/laravel-cart/v4/capabilities/",
+          "title": "Capability and availability map"
         },
         {
           "source": "laravel-cart/choosing.md",
@@ -832,6 +840,13 @@
           "currentRoute": "/laravel-cart/money-and-tax/",
           "route": "/laravel-cart/v4/money-and-tax/",
           "title": "Money and tax"
+        },
+        {
+          "source": "laravel-cart/post-discount-tax.md",
+          "file": "versioned/laravel-cart/v4/post-discount-tax.md",
+          "currentRoute": "/laravel-cart/post-discount-tax/",
+          "route": "/laravel-cart/v4/post-discount-tax/",
+          "title": "Post-discount tax allocation"
         },
         {
           "source": "laravel-cart/redis-sessions.md",
@@ -888,6 +903,13 @@
           "currentRoute": "/laravel-cart/variants-and-wishlist/",
           "route": "/laravel-cart/v4/variants-and-wishlist/",
           "title": "Variants, wishlist and Buyable models"
+        }
+      ],
+      "pinHistory": [
+        {
+          "version": "4.1.0",
+          "commit": "b89d3219202703203453890e2e46467e79ad415d",
+          "verifiedOn": "2026-10-16"
         }
       ]
     },
@@ -1105,6 +1127,3942 @@
           "title": "AWS Blockchain Laravel"
         }
       ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "0.1.0",
+      "commit": "1f521df76b569f3f330764c2ab9c2d4c20523fde",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 0.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+        "illuminate/session": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*",
+        "illuminate/events": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*|5.6.*|5.7.*|5.8.*"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.0",
+        "sourceReference": "1f521df76b569f3f330764c2ab9c2d4c20523fde",
+        "distReference": "1f521df76b569f3f330764c2ab9c2d4c20523fde",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/0.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/0.1.0/index.md",
+          "file": "versioned/laravel-cart/0.1.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/0.1.0/",
+          "title": "Laravel Cart v4 — 0.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "0.1.1",
+      "commit": "141d80a01411c0d92a43147bf4eb96c09d9f90b3",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.1, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 0.1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.1",
+        "sourceReference": "141d80a01411c0d92a43147bf4eb96c09d9f90b3",
+        "distReference": "141d80a01411c0d92a43147bf4eb96c09d9f90b3",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/0.1.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/0.1.1/index.md",
+          "file": "versioned/laravel-cart/0.1.1/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/0.1.1/",
+          "title": "Laravel Cart v4 — 0.1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "1.0.0",
+      "commit": "3c02d04e42cf37aa9a2af847be2c73b0fdf61aa6",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "3c02d04e42cf37aa9a2af847be2c73b0fdf61aa6",
+        "distReference": "3c02d04e42cf37aa9a2af847be2c73b0fdf61aa6",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/1.0.0/index.md",
+          "file": "versioned/laravel-cart/1.0.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/1.0.0/",
+          "title": "Laravel Cart v4 — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "1.0.1",
+      "commit": "a3344e91a5b82e75a85968ebf72a3dfa69e499ab",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.1, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 1.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.1",
+        "sourceReference": "a3344e91a5b82e75a85968ebf72a3dfa69e499ab",
+        "distReference": "a3344e91a5b82e75a85968ebf72a3dfa69e499ab",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/1.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/1.0.1/index.md",
+          "file": "versioned/laravel-cart/1.0.1/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/1.0.1/",
+          "title": "Laravel Cart v4 — 1.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "1.0.2",
+      "commit": "ea7d5744893ab25c675add058ef7735a5dcf6950",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.2, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 1.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.2",
+        "sourceReference": "ea7d5744893ab25c675add058ef7735a5dcf6950",
+        "distReference": "ea7d5744893ab25c675add058ef7735a5dcf6950",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/1.0.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/1.0.2/index.md",
+          "file": "versioned/laravel-cart/1.0.2/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/1.0.2/",
+          "title": "Laravel Cart v4 — 1.0.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "1.0.3",
+      "commit": "dfa2a736b2c56102c28558403b74ce89748e9c5f",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.3, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 1.0.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.3",
+        "sourceReference": "dfa2a736b2c56102c28558403b74ce89748e9c5f",
+        "distReference": "dfa2a736b2c56102c28558403b74ce89748e9c5f",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/1.0.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/1.0.3/index.md",
+          "file": "versioned/laravel-cart/1.0.3/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/1.0.3/",
+          "title": "Laravel Cart v4 — 1.0.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "1.0.4",
+      "commit": "4aaa8c025d7067112caefccaaa432250cdc4fc49",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.4, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 1.0.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.4",
+        "sourceReference": "4aaa8c025d7067112caefccaaa432250cdc4fc49",
+        "distReference": "4aaa8c025d7067112caefccaaa432250cdc4fc49",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/1.0.4/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/1.0.4/index.md",
+          "file": "versioned/laravel-cart/1.0.4/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/1.0.4/",
+          "title": "Laravel Cart v4 — 1.0.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "2.0.0",
+      "commit": "350fb97da95604671817ca3ba081bafe6a43c821",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 2.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "350fb97da95604671817ca3ba081bafe6a43c821",
+        "distReference": "350fb97da95604671817ca3ba081bafe6a43c821",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/2.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/2.0.0/index.md",
+          "file": "versioned/laravel-cart/2.0.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/2.0.0/",
+          "title": "Laravel Cart v4 — 2.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "2.0.1",
+      "commit": "a8ca963788a2006495e54679718797a747ab87b1",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.1, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 2.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.1",
+        "sourceReference": "a8ca963788a2006495e54679718797a747ab87b1",
+        "distReference": "a8ca963788a2006495e54679718797a747ab87b1",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/2.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/2.0.1/index.md",
+          "file": "versioned/laravel-cart/2.0.1/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/2.0.1/",
+          "title": "Laravel Cart v4 — 2.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "2.0.2",
+      "commit": "f046c2f32676362e270a037a3761785f7835e129",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.2, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 2.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.2",
+        "sourceReference": "f046c2f32676362e270a037a3761785f7835e129",
+        "distReference": "f046c2f32676362e270a037a3761785f7835e129",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/2.0.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/2.0.2/index.md",
+          "file": "versioned/laravel-cart/2.0.2/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/2.0.2/",
+          "title": "Laravel Cart v4 — 2.0.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.0.0",
+      "commit": "4150de7f14bb528a526ebabae949318ae2a5e2ed",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.0.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.0.0",
+        "sourceReference": "4150de7f14bb528a526ebabae949318ae2a5e2ed",
+        "distReference": "4150de7f14bb528a526ebabae949318ae2a5e2ed",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.0.0/index.md",
+          "file": "versioned/laravel-cart/3.0.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.0.0/",
+          "title": "Laravel Cart v4 — 3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.0.1",
+      "commit": "5783a400397bf0eecafb557e58b3972e56d40160",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.0.1, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/session": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.0.1",
+        "sourceReference": "5783a400397bf0eecafb557e58b3972e56d40160",
+        "distReference": "5783a400397bf0eecafb557e58b3972e56d40160",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.0.1/index.md",
+          "file": "versioned/laravel-cart/3.0.1/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.0.1/",
+          "title": "Laravel Cart v4 — 3.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.1.0",
+      "commit": "6541084367e18eb417419d228822f9c70f719c22",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/session": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/events": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.0",
+        "sourceReference": "6541084367e18eb417419d228822f9c70f719c22",
+        "distReference": "6541084367e18eb417419d228822f9c70f719c22",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.1.0/index.md",
+          "file": "versioned/laravel-cart/3.1.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.1.0/",
+          "title": "Laravel Cart v4 — 3.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.1.1",
+      "commit": "0374f7305fe5c36ecb269c93a9c89f5dbd17733e",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.1, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/session": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/events": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.1",
+        "sourceReference": "0374f7305fe5c36ecb269c93a9c89f5dbd17733e",
+        "distReference": "0374f7305fe5c36ecb269c93a9c89f5dbd17733e",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.1.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.1.1/index.md",
+          "file": "versioned/laravel-cart/3.1.1/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.1.1/",
+          "title": "Laravel Cart v4 — 3.1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.1.2",
+      "commit": "4f4c105a405242c33ca9028147ed5ea00f20fc82",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.2, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.1.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/session": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/events": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.2",
+        "sourceReference": "4f4c105a405242c33ca9028147ed5ea00f20fc82",
+        "distReference": "4f4c105a405242c33ca9028147ed5ea00f20fc82",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.1.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.1.2/index.md",
+          "file": "versioned/laravel-cart/3.1.2/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.1.2/",
+          "title": "Laravel Cart v4 — 3.1.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.1.3",
+      "commit": "23c1278dcbb96495d54ca5371d7624da03e3a42c",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.3, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.1.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/session": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/events": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.3",
+        "sourceReference": "23c1278dcbb96495d54ca5371d7624da03e3a42c",
+        "distReference": "23c1278dcbb96495d54ca5371d7624da03e3a42c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.1.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.1.3/index.md",
+          "file": "versioned/laravel-cart/3.1.3/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.1.3/",
+          "title": "Laravel Cart v4 — 3.1.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.1.4",
+      "commit": "53c4e3e90140b74edab0b87f3dc89449ada7c82b",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.4, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.1.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "illuminate/support": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/session": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/events": "^5.0|^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.4",
+        "sourceReference": "53c4e3e90140b74edab0b87f3dc89449ada7c82b",
+        "distReference": "53c4e3e90140b74edab0b87f3dc89449ada7c82b",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.1.4/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.1.4/index.md",
+          "file": "versioned/laravel-cart/3.1.4/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.1.4/",
+          "title": "Laravel Cart v4 — 3.1.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.1.5",
+      "commit": "a363d0f8d69f5c85d709be3344b30b5b33166244",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.5, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.1.5: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/database": "^10.0|^11.0|^12.0",
+        "illuminate/events": "^10.0|^11.0|^12.0",
+        "illuminate/session": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.5",
+        "sourceReference": "a363d0f8d69f5c85d709be3344b30b5b33166244",
+        "distReference": "a363d0f8d69f5c85d709be3344b30b5b33166244",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.1.5/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.1.5/index.md",
+          "file": "versioned/laravel-cart/3.1.5/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.1.5/",
+          "title": "Laravel Cart v4 — 3.1.5"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "3.2.0",
+      "commit": "278f1136fc30d720fb46cf3b5fb6b455d4b3bf79",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.2.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 3.2.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/database": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/events": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/session": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.2.0",
+        "sourceReference": "278f1136fc30d720fb46cf3b5fb6b455d4b3bf79",
+        "distReference": "278f1136fc30d720fb46cf3b5fb6b455d4b3bf79",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/3.2.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/3.2.0/index.md",
+          "file": "versioned/laravel-cart/3.2.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/3.2.0/",
+          "title": "Laravel Cart v4 — 3.2.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.0.0",
+      "commit": "0e83ed87e464118cb11962d724a7b561871e847b",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 4.0.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 4.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.0.0",
+        "sourceReference": "0e83ed87e464118cb11962d724a7b561871e847b",
+        "distReference": "0e83ed87e464118cb11962d724a7b561871e847b",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/4.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/4.0.0/index.md",
+          "file": "versioned/laravel-cart/4.0.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/4.0.0/",
+          "title": "Laravel Cart v4 — 4.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.0.1",
+      "commit": "8004a18f3c2dc7e803f46b91fd3f857fd1a5e7c3",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 4.0.1, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 4.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.0.1",
+        "sourceReference": "8004a18f3c2dc7e803f46b91fd3f857fd1a5e7c3",
+        "distReference": "8004a18f3c2dc7e803f46b91fd3f857fd1a5e7c3",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/4.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/4.0.1/index.md",
+          "file": "versioned/laravel-cart/4.0.1/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/4.0.1/",
+          "title": "Laravel Cart v4 — 4.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.0.2",
+      "commit": "3992ffb5a4cbb230168448269e84be8ea14a7abe",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 4.0.2, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 4.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.0.2",
+        "sourceReference": "3992ffb5a4cbb230168448269e84be8ea14a7abe",
+        "distReference": "3992ffb5a4cbb230168448269e84be8ea14a7abe",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/4.0.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/4.0.2/index.md",
+          "file": "versioned/laravel-cart/4.0.2/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/4.0.2/",
+          "title": "Laravel Cart v4 — 4.0.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-cart",
+      "version": "4.1.0",
+      "commit": "b89d3219202703203453890e2e46467e79ad415d",
+      "repository": "https://github.com/offline-agency/laravel-cart",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 4.1.0, generated from the repository; superseded by 4.2.0.",
+      "archiveNote": "Archived 4.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "~8.4.0 || ~8.5.0",
+        "ext-bcmath": "*",
+        "illuminate/auth": "^12.69.2 || ^13.32",
+        "illuminate/console": "^12.69.2 || ^13.32",
+        "illuminate/contracts": "^12.69.2 || ^13.32",
+        "illuminate/database": "^12.69.2 || ^13.32",
+        "illuminate/events": "^12.69.2 || ^13.32",
+        "illuminate/http": "^12.69.2 || ^13.32",
+        "illuminate/session": "^12.69.2 || ^13.32",
+        "illuminate/support": "^12.69.2 || ^13.32",
+        "nesbot/carbon": "^3.8",
+        "nunomaduro/termwind": "^2.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "4.1.0",
+        "sourceReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "distReference": "b89d3219202703203453890e2e46467e79ad415d",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-cart.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-cart/4.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-cart/4.1.0/index.md",
+          "file": "versioned/laravel-cart/4.1.0/index.md",
+          "currentRoute": "/laravel-cart/",
+          "route": "/laravel-cart/4.1.0/",
+          "title": "Laravel Cart v4 — 4.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-webex",
+      "version": "1.0.0",
+      "commit": "75ea5384b67ecc2f4566ada54e1df0cf8188598e",
+      "repository": "https://github.com/offline-agency/laravel-webex",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.0|^6.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.0|^6.0|^8.0|^9.0",
+        "illuminate/http": "^5.0|^6.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "75ea5384b67ecc2f4566ada54e1df0cf8188598e",
+        "distReference": "75ea5384b67ecc2f4566ada54e1df0cf8188598e",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-webex.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-webex/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-webex/1.0.0/index.md",
+          "file": "versioned/laravel-webex/1.0.0/index.md",
+          "currentRoute": "/laravel-webex/",
+          "route": "/laravel-webex/1.0.0/",
+          "title": "Laravel Webex — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-webex",
+      "version": "1.1.0",
+      "commit": "8995d958f36b734f60cc925805f8b39479e3c2d7",
+      "repository": "https://github.com/offline-agency/laravel-webex",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.1.0, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.1.0",
+        "sourceReference": "8995d958f36b734f60cc925805f8b39479e3c2d7",
+        "distReference": "8995d958f36b734f60cc925805f8b39479e3c2d7",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-webex.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-webex/1.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-webex/1.1.0/index.md",
+          "file": "versioned/laravel-webex/1.1.0/index.md",
+          "currentRoute": "/laravel-webex/",
+          "route": "/laravel-webex/1.1.0/",
+          "title": "Laravel Webex — 1.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "1.0.0",
+      "commit": "fc2400362442695b8c9ecd43b1c340ea4a0d9dc3",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "fc2400362442695b8c9ecd43b1c340ea4a0d9dc3",
+        "distReference": "fc2400362442695b8c9ecd43b1c340ea4a0d9dc3",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/1.0.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/1.0.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/1.0.0/",
+          "title": "Laravel Fatture in Cloud API v2 — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "1.1.0",
+      "commit": "3a40a37d9b81a54318b51e64df74b817edb6c164",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.1.0, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 1.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.1.0",
+        "sourceReference": "3a40a37d9b81a54318b51e64df74b817edb6c164",
+        "distReference": "3a40a37d9b81a54318b51e64df74b817edb6c164",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/1.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/1.1.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/1.1.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/1.1.0/",
+          "title": "Laravel Fatture in Cloud API v2 — 1.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "1.2.0",
+      "commit": "e46767dd551cb2c08a6f2b87979ccf47e12cd5fd",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.2.0, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 1.2.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.2.0",
+        "sourceReference": "e46767dd551cb2c08a6f2b87979ccf47e12cd5fd",
+        "distReference": "e46767dd551cb2c08a6f2b87979ccf47e12cd5fd",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/1.2.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/1.2.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/1.2.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/1.2.0/",
+          "title": "Laravel Fatture in Cloud API v2 — 1.2.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.0.0",
+      "commit": "87a92907b862a7208cdb6fc15d15dbbe3ebda561",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.0, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.0",
+        "sourceReference": "87a92907b862a7208cdb6fc15d15dbbe3ebda561",
+        "distReference": "87a92907b862a7208cdb6fc15d15dbbe3ebda561",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.0.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.0.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.0.0/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.0.1",
+      "commit": "daca57893a84d43a02cf74927fc36c9c32422132",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.1, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.1",
+        "sourceReference": "daca57893a84d43a02cf74927fc36c9c32422132",
+        "distReference": "daca57893a84d43a02cf74927fc36c9c32422132",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.0.1/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.0.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.0.1/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.0.2",
+      "commit": "40d041698926c37d790d6a6a8a30ae2097c5d268",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.2, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.2",
+        "sourceReference": "40d041698926c37d790d6a6a8a30ae2097c5d268",
+        "distReference": "40d041698926c37d790d6a6a8a30ae2097c5d268",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.0.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.0.2/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.0.2/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.0.2/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.0.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.0.3",
+      "commit": "41b5d6f2f7bc1d48f1e9e8e01ff49f7d9be35a71",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0.3, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.0.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0.3",
+        "sourceReference": "41b5d6f2f7bc1d48f1e9e8e01ff49f7d9be35a71",
+        "distReference": "41b5d6f2f7bc1d48f1e9e8e01ff49f7d9be35a71",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.0.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.0.3/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.0.3/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.0.3/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.0.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.1.0",
+      "commit": "d4ba1904187516ba9ffeba913cda3e63d6d8f2bc",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.1.0, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.1.0",
+        "sourceReference": "d4ba1904187516ba9ffeba913cda3e63d6d8f2bc",
+        "distReference": "d4ba1904187516ba9ffeba913cda3e63d6d8f2bc",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.1.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.1.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.1.0/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.1.1",
+      "commit": "0ad90e740aa8ea57d733487987cd3c5fe71f05c2",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.1.1, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^6.5|7.0.1|^7.2",
+        "illuminate/container": "^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.1.1",
+        "sourceReference": "0ad90e740aa8ea57d733487987cd3c5fe71f05c2",
+        "distReference": "0ad90e740aa8ea57d733487987cd3c5fe71f05c2",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.1.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.1.1/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.1.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.1.1/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.1.2",
+      "commit": "4de15c3c52c595c76d8d693958e64b472d250922",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.1.2, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.1.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.1.2",
+        "sourceReference": "4de15c3c52c595c76d8d693958e64b472d250922",
+        "distReference": "4de15c3c52c595c76d8d693958e64b472d250922",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.1.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.1.2/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.1.2/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.1.2/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.1.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "2.1.3",
+      "commit": "a31b822bbf8d55022e6d5869d70a869e8ef78675",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.1.3, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 2.1.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.3",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0|^10.0|^11.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.1.3",
+        "sourceReference": "a31b822bbf8d55022e6d5869d70a869e8ef78675",
+        "distReference": "a31b822bbf8d55022e6d5869d70a869e8ef78675",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/2.1.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/2.1.3/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/2.1.3/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/2.1.3/",
+          "title": "Laravel Fatture in Cloud API v2 — 2.1.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud-v2",
+      "version": "3.0.0",
+      "commit": "eb25a6a3c3a521f7ea84f866cb1e397597f13b60",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud-v2",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.0.0, generated from the repository; superseded by 3.0.1.",
+      "archiveNote": "Archived 3.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.9",
+        "illuminate/container": "^11.0|^12.0",
+        "illuminate/http": "^11.0|^12.0",
+        "illuminate/support": "^11.0|^12.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.0.0",
+        "sourceReference": "eb25a6a3c3a521f7ea84f866cb1e397597f13b60",
+        "distReference": "eb25a6a3c3a521f7ea84f866cb1e397597f13b60",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud-v2.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud-v2/3.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud-v2/3.0.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud-v2/3.0.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud-v2/",
+          "route": "/laravel-fatture-in-cloud-v2/3.0.0/",
+          "title": "Laravel Fatture in Cloud API v2 — 3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-aruba-sms",
+      "version": "1.0.0",
+      "commit": "9e38dede65f4a1cf2fd74352bf96e330798da664",
+      "repository": "https://github.com/offline-agency/laravel-aruba-sms",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 1.1.0.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/http": "^12.0",
+        "illuminate/notifications": "^12.0",
+        "illuminate/support": "^12.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "9e38dede65f4a1cf2fd74352bf96e330798da664",
+        "distReference": "9e38dede65f4a1cf2fd74352bf96e330798da664",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-aruba-sms.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-aruba-sms/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-aruba-sms/1.0.0/index.md",
+          "file": "versioned/laravel-aruba-sms/1.0.0/index.md",
+          "currentRoute": "/laravel-aruba-sms/",
+          "route": "/laravel-aruba-sms/1.0.0/",
+          "title": "Laravel Aruba SMS — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-aruba-sms",
+      "version": "1.0.1",
+      "commit": "8a32cf0376efdb54066d07d14723654a0a39ac2e",
+      "repository": "https://github.com/offline-agency/laravel-aruba-sms",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.1, generated from the repository; superseded by 1.1.0.",
+      "archiveNote": "Archived 1.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/http": "^12.0",
+        "illuminate/notifications": "^12.0",
+        "illuminate/support": "^12.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.1",
+        "sourceReference": "8a32cf0376efdb54066d07d14723654a0a39ac2e",
+        "distReference": "8a32cf0376efdb54066d07d14723654a0a39ac2e",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-aruba-sms.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-aruba-sms/1.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-aruba-sms/1.0.1/index.md",
+          "file": "versioned/laravel-aruba-sms/1.0.1/index.md",
+          "currentRoute": "/laravel-aruba-sms/",
+          "route": "/laravel-aruba-sms/1.0.1/",
+          "title": "Laravel Aruba SMS — 1.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.0",
+      "commit": "d20ce4213cb5d88ccce267206dfea5fda6829ab6",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "evercode1/trait-maker": "^1.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0",
+        "sourceReference": "d20ce4213cb5d88ccce267206dfea5fda6829ab6",
+        "distReference": "d20ce4213cb5d88ccce267206dfea5fda6829ab6",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.0/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.0/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.0/",
+          "title": "Laravel MongoDB Relationships — 1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.1",
+      "commit": "dd891a5b88bd3747407d1da6bad4c32f34de13c5",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.1, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.1",
+        "sourceReference": "dd891a5b88bd3747407d1da6bad4c32f34de13c5",
+        "distReference": "dd891a5b88bd3747407d1da6bad4c32f34de13c5",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.1/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.1/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.1/",
+          "title": "Laravel MongoDB Relationships — 1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.2",
+      "commit": "0bc9d4af1f43a1e53d6b9b82ae291626e58d4a9e",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.2, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.2",
+        "sourceReference": "0bc9d4af1f43a1e53d6b9b82ae291626e58d4a9e",
+        "distReference": "0bc9d4af1f43a1e53d6b9b82ae291626e58d4a9e",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.2/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.2/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.2/",
+          "title": "Laravel MongoDB Relationships — 1.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.3",
+      "commit": "cbd5282187be213add1340a2665c00954bfd04f9",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.3, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.3",
+        "sourceReference": "cbd5282187be213add1340a2665c00954bfd04f9",
+        "distReference": "cbd5282187be213add1340a2665c00954bfd04f9",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.3/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.3/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.3/",
+          "title": "Laravel MongoDB Relationships — 1.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.4",
+      "commit": "e7c191ea0bbc21330bed682d136571dc76753578",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.4, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.4",
+        "sourceReference": "e7c191ea0bbc21330bed682d136571dc76753578",
+        "distReference": "e7c191ea0bbc21330bed682d136571dc76753578",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.4/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.4/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.4/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.4/",
+          "title": "Laravel MongoDB Relationships — 1.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.5",
+      "commit": "42898a5835295daa6554273931403209ad6bb081",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.5, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.5: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.5",
+        "sourceReference": "42898a5835295daa6554273931403209ad6bb081",
+        "distReference": "42898a5835295daa6554273931403209ad6bb081",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.5/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.5/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.5/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.5/",
+          "title": "Laravel MongoDB Relationships — 1.5"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.6",
+      "commit": "e8c7114cf0ff6c12e0f8c1254df198925cfb0f78",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.6, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.6: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.6",
+        "sourceReference": "e8c7114cf0ff6c12e0f8c1254df198925cfb0f78",
+        "distReference": "e8c7114cf0ff6c12e0f8c1254df198925cfb0f78",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.6/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.6/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.6/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.6/",
+          "title": "Laravel MongoDB Relationships — 1.6"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.7",
+      "commit": "a15d81f2c84e802d5d7b00e1288ff06f5c3cc669",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.7, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.7: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.7",
+        "sourceReference": "a15d81f2c84e802d5d7b00e1288ff06f5c3cc669",
+        "distReference": "a15d81f2c84e802d5d7b00e1288ff06f5c3cc669",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.7/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.7/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.7/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.7/",
+          "title": "Laravel MongoDB Relationships — 1.7"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.8",
+      "commit": "3e7dc71dc3035777dd6527b392f61f007e92b1da",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.8, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.8: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.8",
+        "sourceReference": "3e7dc71dc3035777dd6527b392f61f007e92b1da",
+        "distReference": "3e7dc71dc3035777dd6527b392f61f007e92b1da",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.8/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.8/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.8/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.8/",
+          "title": "Laravel MongoDB Relationships — 1.8"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.9",
+      "commit": "3497b3b893a1ff7cc5e2196f1a68f252fe4a8763",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.9, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.9: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.9",
+        "sourceReference": "3497b3b893a1ff7cc5e2196f1a68f252fe4a8763",
+        "distReference": "3497b3b893a1ff7cc5e2196f1a68f252fe4a8763",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.9/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.9/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.9/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.9/",
+          "title": "Laravel MongoDB Relationships — 1.9"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.10",
+      "commit": "3073da48c0ecdafdade9eb44295f5c34842db200",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.10, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.10: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.10",
+        "sourceReference": "3073da48c0ecdafdade9eb44295f5c34842db200",
+        "distReference": "3073da48c0ecdafdade9eb44295f5c34842db200",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.10/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.10/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.10/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.10/",
+          "title": "Laravel MongoDB Relationships — 1.10"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.11",
+      "commit": "9c939dd1c9ceb230e44d75fefcd3c9320c8e914e",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.11, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.11: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.11",
+        "sourceReference": "9c939dd1c9ceb230e44d75fefcd3c9320c8e914e",
+        "distReference": "9c939dd1c9ceb230e44d75fefcd3c9320c8e914e",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.11/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.11/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.11/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.11/",
+          "title": "Laravel MongoDB Relationships — 1.11"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.12",
+      "commit": "248934d5303e3a5550d46c01994a6e25c32a7d67",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.12, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.12: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.12",
+        "sourceReference": "248934d5303e3a5550d46c01994a6e25c32a7d67",
+        "distReference": "248934d5303e3a5550d46c01994a6e25c32a7d67",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.12/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.12/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.12/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.12/",
+          "title": "Laravel MongoDB Relationships — 1.12"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.13",
+      "commit": "bec53e7259e432aa402e0a1420ec19a603a28f03",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.13, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.13: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.13",
+        "sourceReference": "bec53e7259e432aa402e0a1420ec19a603a28f03",
+        "distReference": "bec53e7259e432aa402e0a1420ec19a603a28f03",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.13/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.13/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.13/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.13/",
+          "title": "Laravel MongoDB Relationships — 1.13"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.14",
+      "commit": "3e4247fd97c37ec837fedd3a2ab27ede9514eb3f",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.14, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.14: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.14",
+        "sourceReference": "3e4247fd97c37ec837fedd3a2ab27ede9514eb3f",
+        "distReference": "3e4247fd97c37ec837fedd3a2ab27ede9514eb3f",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.14/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.14/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.14/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.14/",
+          "title": "Laravel MongoDB Relationships — 1.14"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.15",
+      "commit": "3e4247fd97c37ec837fedd3a2ab27ede9514eb3f",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.15, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.15: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "^3.3"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.15",
+        "sourceReference": "3e4247fd97c37ec837fedd3a2ab27ede9514eb3f",
+        "distReference": "3e4247fd97c37ec837fedd3a2ab27ede9514eb3f",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.15/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.15/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.15/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.15/",
+          "title": "Laravel MongoDB Relationships — 1.15"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.16",
+      "commit": "8a253faf06333bb49f1fef1945f78b1756f8f0af",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.16, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.16: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "3.6.4"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.16",
+        "sourceReference": "8a253faf06333bb49f1fef1945f78b1756f8f0af",
+        "distReference": "8a253faf06333bb49f1fef1945f78b1756f8f0af",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.16/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.16/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.16/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.16/",
+          "title": "Laravel MongoDB Relationships — 1.16"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.17",
+      "commit": "a8e4d483be24c54eee6f1f3429448c2c6da443ba",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.17, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.17: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "3.6.7"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.17",
+        "sourceReference": "a8e4d483be24c54eee6f1f3429448c2c6da443ba",
+        "distReference": "a8e4d483be24c54eee6f1f3429448c2c6da443ba",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.17/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.17/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.17/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.17/",
+          "title": "Laravel MongoDB Relationships — 1.17"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.18",
+      "commit": "81b17d6dc437054aba3118e6ac05eb8826b73997",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.18, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.18: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "3.6.7"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.18",
+        "sourceReference": "81b17d6dc437054aba3118e6ac05eb8826b73997",
+        "distReference": "81b17d6dc437054aba3118e6ac05eb8826b73997",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.18/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.18/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.18/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.18/",
+          "title": "Laravel MongoDB Relationships — 1.18"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.19",
+      "commit": "e4aaafdfa1006c00fa73a763b6cb1668621b2749",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.19, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.19: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.20",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "3.6.7"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.19",
+        "sourceReference": "e4aaafdfa1006c00fa73a763b6cb1668621b2749",
+        "distReference": "e4aaafdfa1006c00fa73a763b6cb1668621b2749",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.19/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.19/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.19/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.19/",
+          "title": "Laravel MongoDB Relationships — 1.19"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "1.20",
+      "commit": "2a7d70828298cf8151df4fd6a997f31e77ec5fb8",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.20, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 1.20: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.20",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "3.6.7"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.20",
+        "sourceReference": "2a7d70828298cf8151df4fd6a997f31e77ec5fb8",
+        "distReference": "2a7d70828298cf8151df4fd6a997f31e77ec5fb8",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/1.20/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/1.20/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/1.20/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/1.20/",
+          "title": "Laravel MongoDB Relationships — 1.20"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "2.0-alpha.1",
+      "commit": "6530d83984ddebab1547d138558b114308bb47c8",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0-alpha.1, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 2.0-alpha.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0",
+        "jenssegers/mongodb": "3.6.4"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0-alpha.1",
+        "sourceReference": "6530d83984ddebab1547d138558b114308bb47c8",
+        "distReference": "6530d83984ddebab1547d138558b114308bb47c8",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/2.0-alpha.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/2.0-alpha.1/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/2.0-alpha.1/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/2.0-alpha.1/",
+          "title": "Laravel MongoDB Relationships — 2.0-alpha.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "2.0-alpha.2",
+      "commit": "88d271ad227fd47f9fbef3c6d783d96f344af9b4",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0-alpha.2, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 2.0-alpha.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.2",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^7.0",
+        "illuminate/container": "^7.0",
+        "illuminate/database": "^7.0",
+        "illuminate/events": "^7.0",
+        "mongodb/mongodb": "^1.6",
+        "jenssegers/mongodb": "4.0.0-alpha.1"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0-alpha.2",
+        "sourceReference": "88d271ad227fd47f9fbef3c6d783d96f344af9b4",
+        "distReference": "88d271ad227fd47f9fbef3c6d783d96f344af9b4",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/2.0-alpha.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/2.0-alpha.2/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/2.0-alpha.2/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/2.0-alpha.2/",
+          "title": "Laravel MongoDB Relationships — 2.0-alpha.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "2.0",
+      "commit": "faab81e3d10d6ad232ee9d0bb6c67b8b5fdea58c",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 2.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/events": "^5.0|^6.0|^7.0|^8.0",
+        "jenssegers/mongodb": "^3.6|^3.7|^3.8"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0",
+        "sourceReference": "faab81e3d10d6ad232ee9d0bb6c67b8b5fdea58c",
+        "distReference": "faab81e3d10d6ad232ee9d0bb6c67b8b5fdea58c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/2.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/2.0/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/2.0/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/2.0/",
+          "title": "Laravel MongoDB Relationships — 2.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "3.0.0",
+      "commit": "3da52d3df23c7d931e1c6f1a7c6449546ec3e173",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.0.0, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 3.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/events": "^5.0|^6.0|^7.0|^8.0",
+        "jenssegers/mongodb": "^3.6|^3.7|^3.8"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.0.0",
+        "sourceReference": "3da52d3df23c7d931e1c6f1a7c6449546ec3e173",
+        "distReference": "3da52d3df23c7d931e1c6f1a7c6449546ec3e173",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/3.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/3.0.0/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/3.0.0/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/3.0.0/",
+          "title": "Laravel MongoDB Relationships — 3.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-mongo-auto-sync",
+      "version": "3.1.0",
+      "commit": "f9575a87c870488e8696c7ad15de47303c9c6042",
+      "repository": "https://github.com/offline-agency/laravel-mongo-auto-sync",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 3.1.0, generated from the repository; superseded by 3.1.1.",
+      "archiveNote": "Archived 3.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "ext-mongodb": "*",
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.0|^6.0|^7.0|^8.0",
+        "illuminate/events": "^5.0|^6.0|^7.0|^8.0",
+        "jenssegers/mongodb": "^3.6|^3.7|^3.8"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "3.1.0",
+        "sourceReference": "f9575a87c870488e8696c7ad15de47303c9c6042",
+        "distReference": "f9575a87c870488e8696c7ad15de47303c9c6042",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-mongo-auto-sync.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-mongo-auto-sync/3.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-mongo-auto-sync/3.1.0/index.md",
+          "file": "versioned/laravel-mongo-auto-sync/3.1.0/index.md",
+          "currentRoute": "/laravel-mongo-auto-sync/",
+          "route": "/laravel-mongo-auto-sync/3.1.0/",
+          "title": "Laravel MongoDB Relationships — 3.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.0",
+      "commit": "8bec9e0d582509d4d986c88e26a8c63c8ece628d",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "8bec9e0d582509d4d986c88e26a8c63c8ece628d",
+        "distReference": "8bec9e0d582509d4d986c88e26a8c63c8ece628d",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.0/",
+          "title": "Fatture in Cloud API v1 — 1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.0.1",
+      "commit": "553043c033fcf089b899228727f5cdbdd9cc380e",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.1, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "ext-json": "*",
+        "php": "^7.2",
+        "illuminate/support": "^6.0",
+        "laravel/passport": "*"
+      },
+      "route": "/laravel-fatture-in-cloud/1.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.0.1/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.0.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.0.1/",
+          "title": "Fatture in Cloud API v1 — 1.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.1",
+      "commit": "8bec9e0d582509d4d986c88e26a8c63c8ece628d",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.1, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "route": "/laravel-fatture-in-cloud/1.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.1/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.1/",
+          "title": "Fatture in Cloud API v1 — 1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.3",
+      "commit": "8bec9e0d582509d4d986c88e26a8c63c8ece628d",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.3, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.0",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "route": "/laravel-fatture-in-cloud/1.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.3/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.3/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.3/",
+          "title": "Fatture in Cloud API v1 — 1.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.4",
+      "commit": "c40a449fef577f6610d2b5f8450ccd010d066af1",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.4, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "route": "/laravel-fatture-in-cloud/1.4/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.4/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.4/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.4/",
+          "title": "Fatture in Cloud API v1 — 1.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.5",
+      "commit": "8dc757253e404c0a242b823f5a0c9a88aab4f982",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.5, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.5: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.5",
+        "sourceReference": "8dc757253e404c0a242b823f5a0c9a88aab4f982",
+        "distReference": "8dc757253e404c0a242b823f5a0c9a88aab4f982",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/1.5/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.5/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.5/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.5/",
+          "title": "Fatture in Cloud API v1 — 1.5"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.6",
+      "commit": "30b62b785aad808bbaf117c519c2efc109e8c108",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.6, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.6: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.6",
+        "sourceReference": "30b62b785aad808bbaf117c519c2efc109e8c108",
+        "distReference": "30b62b785aad808bbaf117c519c2efc109e8c108",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/1.6/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.6/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.6/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.6/",
+          "title": "Fatture in Cloud API v1 — 1.6"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.7",
+      "commit": "d03fe09999dec524c90e3a969303bc52a55053f9",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.7, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.7: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.7",
+        "sourceReference": "d03fe09999dec524c90e3a969303bc52a55053f9",
+        "distReference": "d03fe09999dec524c90e3a969303bc52a55053f9",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/1.7/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.7/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.7/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.7/",
+          "title": "Fatture in Cloud API v1 — 1.7"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "1.8.0",
+      "commit": "f25f7435439eb16f9d1f84b5b70a4bebef41e43f",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.8.0, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 1.8.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0",
+        "illuminate/container": "^5.8|^6.0|^7.0",
+        "illuminate/database": "^5.8|^6.0|^7.0",
+        "illuminate/events": "^5.8|^6.0|^7.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.8",
+        "sourceReference": "f25f7435439eb16f9d1f84b5b70a4bebef41e43f",
+        "distReference": "f25f7435439eb16f9d1f84b5b70a4bebef41e43f",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/1.8.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/1.8.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/1.8.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/1.8.0/",
+          "title": "Fatture in Cloud API v1 — 1.8.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.0",
+      "commit": "285f39010c924199a96148a0c99144ce0dd11835",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.0, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^7.3",
+        "ext-json": "*",
+        "illuminate/container": "^8.9.0",
+        "illuminate/database": "^8.9.0",
+        "illuminate/events": "^8.9.0",
+        "illuminate/support": "^8.9.0",
+        "laravel/legacy-factories": "^1.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.0",
+        "sourceReference": "285f39010c924199a96148a0c99144ce0dd11835",
+        "distReference": "285f39010c924199a96148a0c99144ce0dd11835",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.0/",
+          "title": "Fatture in Cloud API v1 — 2.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.1.0",
+      "commit": "60b060eb63e8fc3e64fe2273e32a7d32a4c243da",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.1.0, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.1.0",
+        "sourceReference": "60b060eb63e8fc3e64fe2273e32a7d32a4c243da",
+        "distReference": "60b060eb63e8fc3e64fe2273e32a7d32a4c243da",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.1.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.1.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.1.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.1.0/",
+          "title": "Fatture in Cloud API v1 — 2.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.1.1",
+      "commit": "7473f9341a8fa3fbc46bac38ec704d325f2d7ab0",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.1.1, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/container": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.20",
+        "illuminate/events": "^5.8|^6.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.1.1",
+        "sourceReference": "7473f9341a8fa3fbc46bac38ec704d325f2d7ab0",
+        "distReference": "7473f9341a8fa3fbc46bac38ec704d325f2d7ab0",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.1.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.1.1/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.1.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.1.1/",
+          "title": "Fatture in Cloud API v1 — 2.1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.0",
+      "commit": "bf12410ac3a06490ade84dfc5a9782b08d310ced",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.0, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.8|^6.20|^7.0|^8.0",
+        "illuminate/events": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.0",
+        "sourceReference": "bf12410ac3a06490ade84dfc5a9782b08d310ced",
+        "distReference": "bf12410ac3a06490ade84dfc5a9782b08d310ced",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.0/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.0/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.0/",
+          "title": "Fatture in Cloud API v1 — 2.2.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.1",
+      "commit": "bfa12ed28b070d163a75f766f5dcf3f9bfbbc7fc",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.1, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.8|^6.20|^7.0|^8.0",
+        "illuminate/events": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.1",
+        "sourceReference": "bfa12ed28b070d163a75f766f5dcf3f9bfbbc7fc",
+        "distReference": "bfa12ed28b070d163a75f766f5dcf3f9bfbbc7fc",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.1/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.1/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.1/",
+          "title": "Fatture in Cloud API v1 — 2.2.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.2",
+      "commit": "71e528cbbe75f555bdf901c7ed4549cfdb3d860d",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.2, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.8|^6.20|^7.0|^8.0",
+        "illuminate/events": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.2",
+        "sourceReference": "71e528cbbe75f555bdf901c7ed4549cfdb3d860d",
+        "distReference": "71e528cbbe75f555bdf901c7ed4549cfdb3d860d",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.2/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.2/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.2/",
+          "title": "Fatture in Cloud API v1 — 2.2.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.3",
+      "commit": "e8435c61a29a762aea1a8acda2e7ff42202e1756",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.3, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/database": "^5.8|^6.20|^7.0|^8.0",
+        "illuminate/events": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.3",
+        "sourceReference": "e8435c61a29a762aea1a8acda2e7ff42202e1756",
+        "distReference": "e8435c61a29a762aea1a8acda2e7ff42202e1756",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.3/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.3/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.3/",
+          "title": "Fatture in Cloud API v1 — 2.2.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.4",
+      "commit": "c228ca4b68df22895b4515404108656a8fb6be3e",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.4, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.4",
+        "sourceReference": "c228ca4b68df22895b4515404108656a8fb6be3e",
+        "distReference": "c228ca4b68df22895b4515404108656a8fb6be3e",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.4/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.4/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.4/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.4/",
+          "title": "Fatture in Cloud API v1 — 2.2.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.5",
+      "commit": "c91c3e067c6b0fbcf37dcdc40326f5e46f85c6d6",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.5, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.5: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.5",
+        "sourceReference": "c91c3e067c6b0fbcf37dcdc40326f5e46f85c6d6",
+        "distReference": "c91c3e067c6b0fbcf37dcdc40326f5e46f85c6d6",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.5/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.5/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.5/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.5/",
+          "title": "Fatture in Cloud API v1 — 2.2.5"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.6",
+      "commit": "dbae7fec587f53306a0e6a64797f4ddc7e131bc5",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.6, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.6: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.6",
+        "sourceReference": "dbae7fec587f53306a0e6a64797f4ddc7e131bc5",
+        "distReference": "dbae7fec587f53306a0e6a64797f4ddc7e131bc5",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.6/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.6/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.6/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.6/",
+          "title": "Fatture in Cloud API v1 — 2.2.6"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-fatture-in-cloud",
+      "version": "2.2.7",
+      "commit": "9d9e69642e7275b6ae3064cb0f9e2be0dc5f732a",
+      "repository": "https://github.com/offline-agency/laravel-fatture-in-cloud",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 2.2.7, generated from the repository; superseded by 2.2.8.",
+      "archiveNote": "Archived 2.2.7: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "2.2.7",
+        "sourceReference": "9d9e69642e7275b6ae3064cb0f9e2be0dc5f732a",
+        "distReference": "9d9e69642e7275b6ae3064cb0f9e2be0dc5f732a",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-fatture-in-cloud.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-fatture-in-cloud/2.2.7/",
+      "pages": [
+        {
+          "source": "versioned/laravel-fatture-in-cloud/2.2.7/index.md",
+          "file": "versioned/laravel-fatture-in-cloud/2.2.7/index.md",
+          "currentRoute": "/laravel-fatture-in-cloud/",
+          "route": "/laravel-fatture-in-cloud/2.2.7/",
+          "title": "Fatture in Cloud API v1 — 2.2.7"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/aws-blockchain-laravel",
+      "version": "0.0.1",
+      "commit": "1c0f3a40f604c0e4b701d2321346ec4593e29546",
+      "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.0.1, generated from the repository; superseded by 0.0.4.",
+      "archiveNote": "Archived 0.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/container": "^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.0.1",
+        "sourceReference": "1c0f3a40f604c0e4b701d2321346ec4593e29546",
+        "distReference": "1c0f3a40f604c0e4b701d2321346ec4593e29546",
+        "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/aws-blockchain-laravel/0.0.1/",
+      "pages": [
+        {
+          "source": "versioned/aws-blockchain-laravel/0.0.1/index.md",
+          "file": "versioned/aws-blockchain-laravel/0.0.1/index.md",
+          "currentRoute": "/aws-blockchain-laravel/",
+          "route": "/aws-blockchain-laravel/0.0.1/",
+          "title": "AWS Blockchain Laravel — 0.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/aws-blockchain-laravel",
+      "version": "0.0.2",
+      "commit": "0f9916252a2d832ae3e81916c0ece1101e446664",
+      "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.0.2, generated from the repository; superseded by 0.0.4.",
+      "archiveNote": "Archived 0.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/container": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0",
+        "kornrunner/keccak": "^1.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.0.2",
+        "sourceReference": "0f9916252a2d832ae3e81916c0ece1101e446664",
+        "distReference": "0f9916252a2d832ae3e81916c0ece1101e446664",
+        "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/aws-blockchain-laravel/0.0.2/",
+      "pages": [
+        {
+          "source": "versioned/aws-blockchain-laravel/0.0.2/index.md",
+          "file": "versioned/aws-blockchain-laravel/0.0.2/index.md",
+          "currentRoute": "/aws-blockchain-laravel/",
+          "route": "/aws-blockchain-laravel/0.0.2/",
+          "title": "AWS Blockchain Laravel — 0.0.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/aws-blockchain-laravel",
+      "version": "0.0.3",
+      "commit": "e722e1c93c8749b8258805329190b9fbe83f1b82",
+      "repository": "https://github.com/offline-agency/aws-blockchain-laravel",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.0.3, generated from the repository; superseded by 0.0.4.",
+      "archiveNote": "Archived 0.0.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.3",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/container": "^11.0|^12.0",
+        "illuminate/console": "^11.0|^12.0",
+        "illuminate/database": "^11.0|^12.0",
+        "aws/aws-sdk-php": "^3.0",
+        "kornrunner/keccak": "^1.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.0.3",
+        "sourceReference": "e722e1c93c8749b8258805329190b9fbe83f1b82",
+        "distReference": "e722e1c93c8749b8258805329190b9fbe83f1b82",
+        "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/aws-blockchain-laravel/0.0.3/",
+      "pages": [
+        {
+          "source": "versioned/aws-blockchain-laravel/0.0.3/index.md",
+          "file": "versioned/aws-blockchain-laravel/0.0.3/index.md",
+          "currentRoute": "/aws-blockchain-laravel/",
+          "route": "/aws-blockchain-laravel/0.0.3/",
+          "title": "AWS Blockchain Laravel — 0.0.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-bank-of-italy",
+      "version": "1.0.0",
+      "commit": "808ee7011e76c5db4f684e112d72fce80b61db26",
+      "repository": "https://github.com/offline-agency/laravel-bank-of-italy",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 1.0.1.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=8.0",
+        "ext-json": "*",
+        "illuminate/support": "^8.0|^9.0",
+        "guzzlehttp/guzzle": "7.0.1|^7.2",
+        "illuminate/container": "^8.0|^9.0",
+        "illuminate/http": "^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "808ee7011e76c5db4f684e112d72fce80b61db26",
+        "distReference": "808ee7011e76c5db4f684e112d72fce80b61db26",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-bank-of-italy.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-bank-of-italy/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-bank-of-italy/1.0.0/index.md",
+          "file": "versioned/laravel-bank-of-italy/1.0.0/index.md",
+          "currentRoute": "/laravel-bank-of-italy/",
+          "route": "/laravel-bank-of-italy/1.0.0/",
+          "title": "Laravel Bank of Italy — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/odps-validator",
+      "version": "1.0.0",
+      "commit": "afd8c834102142091aca3e685f64c6eb35710395",
+      "repository": "https://github.com/offline-agency/odps-validator",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 1.0.1.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "route": "/odps-validator/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/odps-validator/1.0.0/index.md",
+          "file": "versioned/odps-validator/1.0.0/index.md",
+          "currentRoute": "/odps-validator/",
+          "route": "/odps-validator/1.0.0/",
+          "title": "ODPS Validator — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/vue3-burger-menu",
+      "version": "1.0.0",
+      "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+      "repository": "https://github.com/offline-agency/vue3-burger-menu",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 1.1.2.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "route": "/vue3-burger-menu/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/vue3-burger-menu/1.0.0/index.md",
+          "file": "versioned/vue3-burger-menu/1.0.0/index.md",
+          "currentRoute": "/vue3-burger-menu/",
+          "route": "/vue3-burger-menu/1.0.0/",
+          "title": "Vue 3 Burger Menu — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/spid-laravel-trentino",
+      "version": "v2.0.0",
+      "commit": "28944c619e1f2c78370676405772a9a669185eba",
+      "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag v2.0.0, generated from the repository; superseded by v2.3.0.",
+      "archiveNote": "Archived v2.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/auth": "^12.69|^13.30",
+        "illuminate/cache": "^12.69|^13.30",
+        "illuminate/config": "^12.69|^13.30",
+        "illuminate/contracts": "^12.69|^13.30",
+        "illuminate/database": "^12.69|^13.30",
+        "illuminate/events": "^12.69|^13.30",
+        "illuminate/http": "^12.69|^13.30",
+        "illuminate/log": "^12.69|^13.30",
+        "illuminate/routing": "^12.69|^13.30",
+        "illuminate/session": "^12.69|^13.30",
+        "illuminate/support": "^12.69|^13.30",
+        "illuminate/view": "^12.69|^13.30",
+        "jumbojett/openid-connect-php": "^1.0.2"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "v2.0.0",
+        "sourceReference": "28944c619e1f2c78370676405772a9a669185eba",
+        "distReference": "28944c619e1f2c78370676405772a9a669185eba",
+        "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/spid-laravel-trentino/v2.0.0/",
+      "pages": [
+        {
+          "source": "versioned/spid-laravel-trentino/v2.0.0/index.md",
+          "file": "versioned/spid-laravel-trentino/v2.0.0/index.md",
+          "currentRoute": "/spid-laravel-trentino/",
+          "route": "/spid-laravel-trentino/v2.0.0/",
+          "title": "SPID Laravel Trentino — v2.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/spid-laravel-trentino",
+      "version": "v2.1.0",
+      "commit": "3a2f93f119cf4f42de8d84d9dfff212bb6450678",
+      "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag v2.1.0, generated from the repository; superseded by v2.3.0.",
+      "archiveNote": "Archived v2.1.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/auth": "^12.69|^13.30",
+        "illuminate/cache": "^12.69|^13.30",
+        "illuminate/config": "^12.69|^13.30",
+        "illuminate/contracts": "^12.69|^13.30",
+        "illuminate/database": "^12.69|^13.30",
+        "illuminate/events": "^12.69|^13.30",
+        "illuminate/http": "^12.69|^13.30",
+        "illuminate/log": "^12.69|^13.30",
+        "illuminate/routing": "^12.69|^13.30",
+        "illuminate/session": "^12.69|^13.30",
+        "illuminate/support": "^12.69|^13.30",
+        "illuminate/view": "^12.69|^13.30",
+        "jumbojett/openid-connect-php": "^1.0.2"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "v2.1.0",
+        "sourceReference": "3a2f93f119cf4f42de8d84d9dfff212bb6450678",
+        "distReference": "3a2f93f119cf4f42de8d84d9dfff212bb6450678",
+        "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/spid-laravel-trentino/v2.1.0/",
+      "pages": [
+        {
+          "source": "versioned/spid-laravel-trentino/v2.1.0/index.md",
+          "file": "versioned/spid-laravel-trentino/v2.1.0/index.md",
+          "currentRoute": "/spid-laravel-trentino/",
+          "route": "/spid-laravel-trentino/v2.1.0/",
+          "title": "SPID Laravel Trentino — v2.1.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/spid-laravel-trentino",
+      "version": "v2.2.0",
+      "commit": "2b7f3d28c6979bae53034537c5390b6aec05ec8d",
+      "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag v2.2.0, generated from the repository; superseded by v2.3.0.",
+      "archiveNote": "Archived v2.2.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "illuminate/auth": "^12.69|^13.30",
+        "illuminate/cache": "^12.69|^13.30",
+        "illuminate/config": "^12.69|^13.30",
+        "illuminate/console": "^12.69|^13.30",
+        "illuminate/contracts": "^12.69|^13.30",
+        "illuminate/database": "^12.69|^13.30",
+        "illuminate/encryption": "^12.69|^13.30",
+        "illuminate/events": "^12.69|^13.30",
+        "illuminate/http": "^12.69|^13.30",
+        "illuminate/log": "^12.69|^13.30",
+        "illuminate/routing": "^12.69|^13.30",
+        "illuminate/session": "^12.69|^13.30",
+        "illuminate/support": "^12.69|^13.30",
+        "illuminate/view": "^12.69|^13.30",
+        "jumbojett/openid-connect-php": "^1.0.2"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "v2.2.0",
+        "sourceReference": "2b7f3d28c6979bae53034537c5390b6aec05ec8d",
+        "distReference": "2b7f3d28c6979bae53034537c5390b6aec05ec8d",
+        "url": "https://repo.packagist.org/p2/offline-agency/spid-laravel-trentino.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/spid-laravel-trentino/v2.2.0/",
+      "pages": [
+        {
+          "source": "versioned/spid-laravel-trentino/v2.2.0/index.md",
+          "file": "versioned/spid-laravel-trentino/v2.2.0/index.md",
+          "currentRoute": "/spid-laravel-trentino/",
+          "route": "/spid-laravel-trentino/v2.2.0/",
+          "title": "SPID Laravel Trentino — v2.2.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.1",
+      "commit": "45e019db6e441aa398403b2db6e76477e85e300c",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.1, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "italia/spid-laravel": "^2.0",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.1",
+        "sourceReference": "45e019db6e441aa398403b2db6e76477e85e300c",
+        "distReference": "45e019db6e441aa398403b2db6e76477e85e300c",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.1/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.1/index.md",
+          "file": "versioned/filament-spid/0.1.1/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.1/",
+          "title": "Filament SPID — 0.1.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.2",
+      "commit": "3abf8f99c1c81050b83386578593b9cb11ea029b",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.2, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "italia/spid-laravel": "^2.0",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.2",
+        "sourceReference": "3abf8f99c1c81050b83386578593b9cb11ea029b",
+        "distReference": "3abf8f99c1c81050b83386578593b9cb11ea029b",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.2/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.2/index.md",
+          "file": "versioned/filament-spid/0.1.2/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.2/",
+          "title": "Filament SPID — 0.1.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.3",
+      "commit": "c2391d2e4b534e2bf32b063098eb2684923e75f8",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.3, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "italia/spid-laravel": "dev-fix/optimize-error",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.3",
+        "sourceReference": "c2391d2e4b534e2bf32b063098eb2684923e75f8",
+        "distReference": "c2391d2e4b534e2bf32b063098eb2684923e75f8",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.3/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.3/index.md",
+          "file": "versioned/filament-spid/0.1.3/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.3/",
+          "title": "Filament SPID — 0.1.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.4",
+      "commit": "a6c7df87965d91f5874914b08da4bf7bb649b49a",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.4, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "italia/spid-laravel": "dev-fix/optimize-error",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.4",
+        "sourceReference": "a6c7df87965d91f5874914b08da4bf7bb649b49a",
+        "distReference": "a6c7df87965d91f5874914b08da4bf7bb649b49a",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.4/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.4/index.md",
+          "file": "versioned/filament-spid/0.1.4/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.4/",
+          "title": "Filament SPID — 0.1.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.5",
+      "commit": "8c16d31a7b2c1fcdcc88bf55737fa5bdab1150ab",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.5, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.5: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0",
+        "italia/spid-laravel": "dev-feat-add-l12",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.5",
+        "sourceReference": "8c16d31a7b2c1fcdcc88bf55737fa5bdab1150ab",
+        "distReference": "8c16d31a7b2c1fcdcc88bf55737fa5bdab1150ab",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.5/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.5/index.md",
+          "file": "versioned/filament-spid/0.1.5/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.5/",
+          "title": "Filament SPID — 0.1.5"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.6",
+      "commit": "ece2a9ff5b42eefc88099d010c93d635b3e3d1d8",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.6, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.6: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2|^8.3|^8.4",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "italia/spid-laravel": "dev-feat-add-l12",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.6",
+        "sourceReference": "ece2a9ff5b42eefc88099d010c93d635b3e3d1d8",
+        "distReference": "ece2a9ff5b42eefc88099d010c93d635b3e3d1d8",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.6/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.6/index.md",
+          "file": "versioned/filament-spid/0.1.6/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.6/",
+          "title": "Filament SPID — 0.1.6"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/filament-spid",
+      "version": "0.1.7",
+      "commit": "c01d61e938893b13562bde2a5efb41bac0d746ea",
+      "repository": "https://github.com/offline-agency/filament-spid",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 0.1.7, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 0.1.7: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.2|^8.3|^8.4",
+        "filament/filament": "^3.0|^4.0",
+        "illuminate/contracts": "^11.0|^12.0",
+        "italia/spid-laravel": "dev-feat-add-l12",
+        "spatie/laravel-package-tools": "^1.16"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "0.1.7",
+        "sourceReference": "c01d61e938893b13562bde2a5efb41bac0d746ea",
+        "distReference": "c01d61e938893b13562bde2a5efb41bac0d746ea",
+        "url": "https://repo.packagist.org/p2/offline-agency/filament-spid.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/filament-spid/0.1.7/",
+      "pages": [
+        {
+          "source": "versioned/filament-spid/0.1.7/index.md",
+          "file": "versioned/filament-spid/0.1.7/index.md",
+          "currentRoute": "/filament-spid/",
+          "route": "/filament-spid/0.1.7/",
+          "title": "Filament SPID — 0.1.7"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.0",
+      "commit": "5244b9101d561ac3909a919d41f6507e85400eb6",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.0, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.0.0: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.0",
+        "sourceReference": "5244b9101d561ac3909a919d41f6507e85400eb6",
+        "distReference": "5244b9101d561ac3909a919d41f6507e85400eb6",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-email-chef/1.0.0/",
+      "pages": [
+        {
+          "source": "versioned/laravel-email-chef/1.0.0/index.md",
+          "file": "versioned/laravel-email-chef/1.0.0/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/1.0.0/",
+          "title": "Laravel Email Chef — 1.0.0"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.1",
+      "commit": "a8718d54e0abe7af8873709efae2239284b56baf",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.1, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.1",
+        "sourceReference": "a8718d54e0abe7af8873709efae2239284b56baf",
+        "distReference": "a8718d54e0abe7af8873709efae2239284b56baf",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-email-chef/1.0.1/",
+      "pages": [
+        {
+          "source": "versioned/laravel-email-chef/1.0.1/index.md",
+          "file": "versioned/laravel-email-chef/1.0.1/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/1.0.1/",
+          "title": "Laravel Email Chef — 1.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.2",
+      "commit": "7fff0ddd8a2efeff581b893bff9f52f08ba67ff2",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.2, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.2",
+        "sourceReference": "7fff0ddd8a2efeff581b893bff9f52f08ba67ff2",
+        "distReference": "7fff0ddd8a2efeff581b893bff9f52f08ba67ff2",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-email-chef/1.0.2/",
+      "pages": [
+        {
+          "source": "versioned/laravel-email-chef/1.0.2/index.md",
+          "file": "versioned/laravel-email-chef/1.0.2/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/1.0.2/",
+          "title": "Laravel Email Chef — 1.0.2"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.3",
+      "commit": "b60579b80dafe44c9ea49df135be0dce96ec6e8c",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.3, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.0.3: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.3",
+        "sourceReference": "b60579b80dafe44c9ea49df135be0dce96ec6e8c",
+        "distReference": "b60579b80dafe44c9ea49df135be0dce96ec6e8c",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-email-chef/1.0.3/",
+      "pages": [
+        {
+          "source": "versioned/laravel-email-chef/1.0.3/index.md",
+          "file": "versioned/laravel-email-chef/1.0.3/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/1.0.3/",
+          "title": "Laravel Email Chef — 1.0.3"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/laravel-email-chef",
+      "version": "1.0.4",
+      "commit": "69bce04d4299636db5933cf9e4163a8aaccf5731",
+      "repository": "https://github.com/offline-agency/laravel-email-chef",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.4, generated from the repository; superseded by 2.0.0.",
+      "archiveNote": "Archived 1.0.4: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": ">=7.4",
+        "ext-json": "*",
+        "illuminate/support": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "guzzlehttp/guzzle": "^5.8|^6.5|7.0.1|^7.2",
+        "illuminate/container": "^5.8|^6.0|^7.0|^8.0|^9.0",
+        "illuminate/http": "^5.8|^6.0|^7.0|^8.0|^9.0"
+      },
+      "distribution": {
+        "registry": "Packagist",
+        "version": "1.0.4",
+        "sourceReference": "69bce04d4299636db5933cf9e4163a8aaccf5731",
+        "distReference": "69bce04d4299636db5933cf9e4163a8aaccf5731",
+        "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+        "verifiedOn": "2026-11-23"
+      },
+      "route": "/laravel-email-chef/1.0.4/",
+      "pages": [
+        {
+          "source": "versioned/laravel-email-chef/1.0.4/index.md",
+          "file": "versioned/laravel-email-chef/1.0.4/index.md",
+          "currentRoute": "/laravel-email-chef/",
+          "route": "/laravel-email-chef/1.0.4/",
+          "title": "Laravel Email Chef — 1.0.4"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/image-puzzle",
+      "version": "1.0.1",
+      "commit": "61b65940818f4cba52fc35e07c278ade481f9127",
+      "repository": "https://github.com/offline-agency/php-image-puzzle",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.1, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 1.0.1: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-gd": "*"
+      },
+      "route": "/image-puzzle/1.0.1/",
+      "pages": [
+        {
+          "source": "versioned/image-puzzle/1.0.1/index.md",
+          "file": "versioned/image-puzzle/1.0.1/index.md",
+          "currentRoute": "/image-puzzle/",
+          "route": "/image-puzzle/1.0.1/",
+          "title": "Image Puzzle — 1.0.1"
+        }
+      ]
+    },
+    {
+      "name": "offline-agency/image-puzzle",
+      "version": "1.0.2",
+      "commit": "b114a4a2d0cc0b144e1c07b713142fd82717c74e",
+      "repository": "https://github.com/offline-agency/php-image-puzzle",
+      "verifiedOn": "2026-11-23",
+      "archive": true,
+      "archiveKind": "generated-tag",
+      "supportStatus": "Archived tag 1.0.2, generated from the repository; superseded by 1.0.0.",
+      "archiveNote": "Archived 1.0.2: generated from the repository at this tag (manifest, history and README), not a reviewed guide.",
+      "composerRequirements": {
+        "php": "^8.4",
+        "ext-gd": "*"
+      },
+      "route": "/image-puzzle/1.0.2/",
+      "pages": [
+        {
+          "source": "versioned/image-puzzle/1.0.2/index.md",
+          "file": "versioned/image-puzzle/1.0.2/index.md",
+          "currentRoute": "/image-puzzle/",
+          "route": "/image-puzzle/1.0.2/",
+          "title": "Image Puzzle — 1.0.2"
+        }
+      ]
     }
   ],
   "redirects": [
@@ -1309,6 +5267,14 @@
     {
       "route": "/aws-blockchain-laravel/",
       "target": "/aws-blockchain-laravel/v0.0/"
+    },
+    {
+      "route": "/laravel-cart/capabilities/",
+      "target": "/laravel-cart/v4/capabilities/"
+    },
+    {
+      "route": "/laravel-cart/post-discount-tax/",
+      "target": "/laravel-cart/v4/post-discount-tax/"
     }
   ]
 }
