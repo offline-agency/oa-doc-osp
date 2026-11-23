@@ -200,7 +200,7 @@ Use the [package repository](https://github.com/offline-agency/laravel-aruba-sms
 
 ### Security
 
-Report security issues privately to support@offlineagency.it.
+Report security issues privately to support@offlineagency.com, the contact declared in the package `composer.json`; the 1.1.0 release ships no separate security policy.
 
 ## Credits
 

@@ -222,11 +222,12 @@ SpidPlugin::make()
     ->spidButtonIcon('heroicon-o-shield-check')
     ->providers(['poste', 'aruba'])          // optional allowlist over config/spid-idps.php keys
     ->loginView('auth.spid-login')
-    ->credentialsLoginUrl('/staff/login')
-    ->showSpidButton(false);
+    ->credentialsLoginUrl('/staff/login');
 ```
 
-By default the button lists every active real IdP in random order, as the AgID rules require. Its script is a Filament asset with no inline script, so a Content-Security-Policy needs only `script-src 'self'`. Helper routes under the panel path (login redirect, providers endpoint, SP metadata, logout through the IdP) are off until `->registerRoutes(true)`.
+`showSpidButton(false)` opts the panel out of the SPID login page entirely: the panel keeps Filament's own login and the settings above have no effect.
+
+By default the button lists every active real IdP in random order, as the AgID rules require. Its script is a Filament asset with no inline script, so a Content-Security-Policy needs only `'self'` sources (`script-src`, `style-src` and `img-src 'self'`) and no inline scripts. Helper routes under the panel path (login redirect, providers endpoint, SP metadata, logout through the IdP) are off until `->registerRoutes(true)`.
 
 ## How login works
 

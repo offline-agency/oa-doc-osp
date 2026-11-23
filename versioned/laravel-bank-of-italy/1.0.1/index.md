@@ -171,7 +171,7 @@ On HTTP status **exactly 200**, `ExchangeRates` parses the response body and exp
 
 The parser assigns these fields by column position. It does not validate their content, normalize dates, cast rates, or retain other columns. `referenceDate` is returned as received; the `Y-m-d` request validation does not enforce the response's date format.
 
-`ExchangeRates::__construct(string $body)` and `setItems(string $body): void` both parse a body; `setItems()` replaces the existing items. `Error` exposes `getError(): string` and `setError(string $error): void` for the raw response body.
+`ExchangeRates::__construct(string $exchange_rates_response)` and `setItems(string $exchange_rates_response): void` both parse a body; `setItems()` replaces the existing items. `Error` exposes `getError(): string` and `setError(string $error): void` for the raw response body.
 
 ## Errors and transport behavior
 

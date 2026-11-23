@@ -89,7 +89,7 @@ The configuration includes `WEBEX_CLIENT_ID`, `WEBEX_CLIENT_SECRET`, `WEBEX_CLIE
 
 ### Events and the optional auth route
 
-Client construction dispatches `AuthenticationRequested` before building the legacy HTTP builder, then `WebexClientConfigured`, then deprecated `SuccessfulAuthentication`. Their namespace is `Offlineagency\LaravelWebex\Events`. An `AuthenticationRequested` listener can set configuration before client setup. Use the resolver for token refresh before each request; do not refresh tokens in a `SuccessfulAuthentication` listener.
+Client construction dispatches `AuthenticationRequested` before building the legacy HTTP builder, then `WebexClientConfigured`, then deprecated `SuccessfulAuthentication`. Their namespace is `Offlineagency\LaravelWebex\Events`. An `AuthenticationRequested` listener can set the bearer or timeout used by the deprecated legacy HTTP builder; `webex.base_url` is read before the event is dispatched. Use the resolver for token refresh before each request; do not refresh tokens in a `SuccessfulAuthentication` listener.
 
 These events describe local client setup. They do not validate a token with Webex; a rejected request returns an `Error`, normally with status 401.
 

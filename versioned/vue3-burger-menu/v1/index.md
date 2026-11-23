@@ -115,7 +115,7 @@ The server and initial hydration render the same fallback; the package is import
 
 ## Props, events and slot
 
-See the [generated source reference](/vue3-burger-menu/v1/reference/) for the complete prop declarations, exports and event sites pinned to this commit. Wrapper components forward attributes to the shared `Menu`. The following notes explain behavior beyond those declarations; source prop names can be written in kebab case in templates.
+See the [generated source reference](/vue3-burger-menu/v1/reference/) for the complete prop declarations, exports and event sites pinned to this commit. Most wrapper components forward attributes to the shared `Menu` through `$attrs`. The work-in-progress `Stack` and `Elastic` wrappers instead pass a one-time copy of `isOpen`, `right`, `width`, `disableEsc`, `noOverlay` and `onStateChange`: they do not react to later prop changes and do not forward the other props. The following notes explain behavior beyond those declarations; source prop names can be written in kebab case in templates.
 
 | Prop | Type / default | Behavior |
 | --- | --- | --- |
@@ -129,7 +129,7 @@ See the [generated source reference](/vue3-burger-menu/v1/reference/) for the co
 | `closeOnNavigation` | Boolean / false | Closes on a click anywhere inside `.bm-menu`, not only link navigation. |
 | `onStateChange` | Function / unset | Declared but never called by the source; use events. |
 
-`openMenu` and `closeMenu` are emitted without payload. The wrappers forward these notifications; they are not guaranteed to indicate an actual state transition, because methods emit even when called repeatedly. The default slot is rendered inside `nav.bm-item-list`; there are no named or scoped slots.
+`openMenu` and `closeMenu` are emitted without payload. Wrappers that spread `$attrs` can deliver each notification twice, and `Stack`/`Elastic` do not forward `openMenu`. Treat them as idempotent notifications, not state transitions: methods emit even when called repeatedly. The default slot is rendered inside `nav.bm-item-list`; there are no named or scoped slots.
 
 ## Animations and layout
 

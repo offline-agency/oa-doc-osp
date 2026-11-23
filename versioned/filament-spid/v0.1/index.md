@@ -64,7 +64,9 @@ public function panel(Panel $panel): Panel
 
 Plugin methods in 0.1.8: `loginView()`, `showSpidButton()`, `spidButtonLabel()`, `spidButtonIcon()`, `providers()`, `registerRoutes()`, and route-name setters `loginRoute()`, `logoutRoute()`, `acsRoute()`, `metadataRoute()`, `providersRoute()`.
 
-**Routes are on by default.** Unless `registerRoutes(false)` is called, the plugin registers its own routes under the panel path with the `web` middleware: `GET spid/login`, `GET spid/providers`, `POST spid/logout`, `POST spid/acs` and `GET spid/metadata`. Its `spid/acs` handler reads the SPID user from the library, finds or creates the account, logs it in on the current panel's guard, regenerates the session and redirects to `redirect_after_login`.
+In 0.1.8 `loginView()`, `showSpidButton()`, `spidButtonLabel()`, `spidButtonIcon()` and `providers()` only store values: no page or view reads them. The login page always uses the stock `filament-spid::login` view, the button label "Entra con SPID" and every IdP in `config('spid-idps')`, so the `spidButtonLabel()` and `providers()` calls in the example above have no effect.
+
+**Routes are on by default.** Unless `registerRoutes(false)` is called, the plugin registers its own routes under the panel path with the `web` middleware: `GET spid/login`, `GET spid/providers`, `POST spid/logout`, `POST spid/acs` and `GET spid/metadata`. Its `spid/acs` handler reads the SPID user from the library, finds or creates the account, logs it in on the current panel's guard, regenerates the session and redirects to `redirect_after_login`. The stock button form posts to the library's `spid-auth_do-login` route, so this `spid/login` → `spid/acs` path is used only when you link to `route('spid.login')`. The service provider also replaces Laravel's `VerifyCsrfToken` binding with one that exempts `*/spid/*` and `/spid/*`, including logout, from CSRF verification.
 
 **Publish tags.** `filament-spid-config` (the plugin config, plus the library's `spid-auth.php` and `spid-idps.php`), `filament-spid-migrations`, `filament-spid-views` and `filament-spid-images`. On boot the service provider also copies the library's config files into `config/` when they are missing.
 
@@ -81,7 +83,7 @@ The migration adds a unique nullable `fiscal_code` and a JSON `spid_data` column
 | `spid_level` | `SPID_LEVEL` | SpidL2 URI | The plugin's login route, as the default when the request has no `level` |
 | `auto_create_users` | `SPID_AUTO_CREATE_USERS` | **`true`** | User service |
 | `update_user_data` | `SPID_UPDATE_USER_DATA` | `true` | User service |
-| `providers` | | `[]` | Providers route and plugin |
+| `providers` | | `[]` | Not read by any class (the providers route reads `spid-idps`) |
 | `cache.providers_ttl` | `FILAMENT_SPID_PROVIDERS_TTL` | `3600` | Providers route |
 | `field_mapping` | | Closures for name, email, fiscal code | User service |
 | `create_user_callback`, `update_user_callback` | | `null` | User service |
@@ -93,7 +95,7 @@ Points that differ from 1.x and matter for a running 0.1.8 installation:
 - **Fallback email** is `<fiscalNumber>@spid.local`; 1.0 uses `@spid.invalid`.
 - **Closures in `field_mapping`** prevent `php artisan config:cache`.
 
-The 1.0 upgrade guide describes `redirect_after_login`, `spid_level` and `providers` as never read. In the 0.1.8 source they are read by the plugin's own controller routes listed above, which are registered by default.
+The 1.0 upgrade guide describes `redirect_after_login`, `spid_level` and `providers` as never read. In the 0.1.8 source `redirect_after_login` and `spid_level` are read by the plugin's own controller routes listed above, which are registered by default; `providers` is indeed never read.
 
 ## Upgrading
 
@@ -101,4 +103,4 @@ Upgrade to 1.x: it requires PHP 8.3+, Laravel 12 or 13, and the pinned fork setu
 
 ## Source, support and license
 
-0.1.8 contains no `CHANGELOG.md` and no `SECURITY.md`, although its README links to both. Release notes for 0.1.8 contain only the [compare link](https://github.com/offline-agency/filament-spid/compare/0.1.7...0.1.8). Report security issues as described in the [current security policy](https://github.com/offline-agency/filament-spid/blob/99f80235a6be15b6365840f46f160476e2fdb38e/SECURITY.md), which also states that 0.1.x is unsupported. The package is distributed under the [MIT license](https://github.com/offline-agency/filament-spid/blob/c2203534dd8de740c2c6e1421abc0f50e38d6ccd/LICENSE.md).
+0.1.8 contains no `CHANGELOG.md` and no `SECURITY.md`, although its README links to `CHANGELOG.md` and to the repository's security-policy page. Release notes for 0.1.8 contain only the [compare link](https://github.com/offline-agency/filament-spid/compare/0.1.7...0.1.8). Report security issues as described in the [current security policy](https://github.com/offline-agency/filament-spid/blob/99f80235a6be15b6365840f46f160476e2fdb38e/SECURITY.md), which also states that 0.1.x is unsupported. The package is distributed under the [MIT license](https://github.com/offline-agency/filament-spid/blob/c2203534dd8de740c2c6e1421abc0f50e38d6ccd/LICENSE.md).

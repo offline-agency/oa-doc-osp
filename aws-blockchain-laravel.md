@@ -91,7 +91,7 @@ The Managed Blockchain and QLDB drivers log the full event `data` array at info 
 
 ## Contract commands
 
-The provider registers these commands when running in the console. They obtain the driver with `app('blockchain')->driver()`, the configured default driver, regardless of `--network`:
+The provider registers these commands when running in the console. The deploy, call, upgrade, rollback, test and watch commands obtain the driver with `app('blockchain')->driver()`, the configured default driver, regardless of `--network`; compile, list, status and verify use no driver:
 
 | Command | Arguments and options |
 | --- | --- |
@@ -123,7 +123,7 @@ Behaviour to know before relying on them:
 
 ## Testing and evidence
 
-On the release commit `d06245a`, the upstream [Tests workflow](https://github.com/offline-agency/aws-blockchain-laravel/actions/runs/19313153502) (PHP 8.3 and 8.4 with Laravel 11 and 12, static analysis and a security check) and the code style workflow passed (checked 19 October 2026). These tests inject mocked AWS clients, so they do not show that the AWS drivers work.
+On the release commit `d06245a`, the upstream Tests workflow (run 19313153502, which GitHub no longer serves) (PHP 8.3 and 8.4 with Laravel 11 and 12, static analysis and a security check) and the code style workflow passed (checked 19 October 2026). These tests inject mocked AWS clients, so they do not show that the AWS drivers work.
 
 For this page the drivers were also exercised offline against `aws/aws-sdk-php` 3.401.3 with dummy credentials; the SDK rejected the Managed Blockchain operations before sending any request. No AWS account, Ethereum node or block explorer was used.
 

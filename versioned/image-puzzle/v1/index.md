@@ -28,7 +28,7 @@ GitHub also has tags and releases `1.0.1` and `1.0.2`, but Packagist offers only
 
 ## Requirements
 
-The [Composer manifest](https://github.com/offline-agency/php-image-puzzle/blob/e1c0138e92debd07f8a60f8648479f8dbe627dab/composer.json) requires PHP `^8.4` and `ext-gd`, and suggests `ext-pcntl` for parallel export from the CLI. Supported input types are PNG, JPEG and GIF (as detected by GD); output is PNG or JPEG. CI on the release commit ran on PHP 8.4 and 8.5.
+The [Composer manifest](https://github.com/offline-agency/php-image-puzzle/blob/e1c0138e92debd07f8a60f8648479f8dbe627dab/composer.json) requires PHP `^8.4` and `ext-gd`, and suggests `ext-pcntl` for parallel export from the CLI. Supported input types are PNG, JPEG and GIF, detected with `exif_imagetype()`: although the manifest declares only `ext-gd`, loading from a file also needs `ext-exif`; output is PNG or JPEG. CI on the release commit ran on PHP 8.4 and 8.5.
 
 On PHP 8.5, export prints a `Function imagedestroy() is deprecated` notice for every piece written; the files are still produced. PHP 8.4 prints no notice.
 
@@ -107,7 +107,7 @@ $result = $puzzle->export('/path/to/output_dir', $options);
 | `format` | `png` | PNG keeps transparency (needed by shaped edges); JPEG does not |
 | `quality` | `9` | PNG compression 0–9 or JPEG quality 0–100 |
 | `filenamePattern` | `piece_{row}_{col}.png` | Placeholders `{row}`, `{col}`, `{index}`, `{rows}`, `{cols}`; with JPEG a pattern ending in `.png` becomes `.jpg` |
-| `overwrite` | `true` | `false` keeps existing piece files; the manifest is still written |
+| `overwrite` | `true` | `false` keeps existing piece files in sequential export (parallel workers always rewrite them); the manifest is still written |
 | `manifestFilename` | `manifest.json` | |
 | `onPieceBeforeSave`, `onPieceAfterSave` | `null` | `fn (Piece $piece, string $filepath): void` |
 | `onManifestBuild` | `null` | `fn (array $manifest): array`; return the manifest to write |
@@ -123,7 +123,7 @@ Options are immutable; `withFormat()`, `withQuality()`, `withFilenamePattern()`,
 | Style | Config `type` | Shape |
 | --- | --- | --- |
 | `NoEdgeStyle` (default) | `no_edge` | Unchanged rectangle |
-| `RoundedCornersStyle($radius = 4)` | `rounded_corners` with `options.radius` | Transparent rounded corners; radius clamped to half the shorter side |
+| `RoundedCornersStyle($radius = 4)` | `rounded_corners` with `options.radius` | Transparent rounded corners; a radius of at least half the shorter side leaves the piece unrounded, and a radius below 1 throws `InvalidArgumentException` |
 | `LineStyle` | `line` | Straight edges |
 | `JigsawStyle` | `jigsaw` | Classic tab and socket |
 | `ArcStyle` | `arc` | Arc-shaped tab and socket |

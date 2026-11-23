@@ -59,7 +59,7 @@ Every resource class extends `OfflineAgency\LaravelEmailChef\Api\Api`. Its const
 
 - Missing `username` or `password` throws an `Exception` ("Missing Credentials!") from the constructor.
 - A login answered with `error_credential_wrong` throws an `Exception` ("Auth Error! Wrong Credentials."). Other login failures are not checked by 2.0.0.
-- API errors are **returned, not thrown**: a non-200 response returns an `OfflineAgency\LaravelEmailChef\Entities\Error` object whose `error` property holds the decoded body.
+- API errors are **returned, not thrown**: a non-200 response returns an `OfflineAgency\LaravelEmailChef\Entities\Error` object whose `error` property holds the `error` object of the decoded body (null when the body has none). A non-object `error` value or a top-level JSON array raises a `TypeError` in 2.0.0.
 - Methods that validate input (for example `ListsApi::create()`, `ContactsApi::create()`) return Laravel validation errors (a `MessageBag`) instead of calling the API when validation fails.
 
 Check the type of every result:
@@ -136,10 +136,12 @@ use Illuminate\Support\Facades\Http;
 
 Http::fake([
     'app.emailchef.com/api/login' => Http::response(['message' => 'ok', 'authkey' => 'test-key']),
-    'app.emailchef.com/apps/api/v1/*' => Http::response([]),
+    'app.emailchef.com/apps/api/v1/*' => Http::response(['id' => '1']),
 ]);
 config(['email-chef.username' => 'test', 'email-chef.password' => 'test']);
 ```
+
+Return an object-shaped JSON body matching the endpoint you call: single-entity methods hydrate an object and raise a `TypeError` for an empty JSON array, which only collection methods accept.
 
 On the release commit, the [run-tests workflow](https://github.com/offline-agency/laravel-email-chef/actions/runs/24078142855) passed for PHP 8.4/8.5 with Laravel 12/13, including Pint, PHPStan and Pest with an 80% coverage gate (checked 19 October 2026). This site sent no request to the EmailChef API.
 
@@ -147,7 +149,7 @@ On the release commit, the [run-tests workflow](https://github.com/offline-agenc
 
 - **Platform.** 1.x allows PHP 7.4+ with Illuminate 5.8 to 9; 2.0.0 requires PHP 8.4 and Laravel 12 or 13.
 - **Coverage.** 1.0.5 has only `ListsApi` and `ContactsApi`; 2.0.0 adds the twelve other resource classes above, plus `ListsApi::subscribe()` and `ContactsApi::delete()`.
-- **IDs.** `ContactsApi::count()`, `getCollection()`, `getInstance()`, `update()` and `ListsApi::getInstance()` took `int` IDs in 1.0.5 and take `string` IDs in 2.0.0, under `declare(strict_types=1)`. Pass strings.
+- **IDs.** `ContactsApi::count()`, `getCollection()`, `getInstance()`, `update()` and `ListsApi::getInstance()` took `int` IDs in 1.0.5 and take `string` IDs in 2.0.0. Calling files that declare `strict_types=1` get a `TypeError` for `int` IDs; pass strings.
 - **Configuration.** Add the `limits` keys to a published `config/email-chef.php`: 1.0.5 read them but did not ship them. The publish tag is still `config`.
 - **Dependencies.** `guzzlehttp/guzzle` and `illuminate/container` are no longer direct requirements.
 
