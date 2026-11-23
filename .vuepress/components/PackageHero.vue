@@ -19,7 +19,7 @@ const badges = computed(() => {
     f.laravel && { label: 'laravel', value: f.laravel.join(' · ') },
     f.license && { label: 'license', value: f.license.spdx, href: f.license.url },
     f.packagist && { label: 'downloads', value: formatCount(live.downloads), href: packagistUrl.value, live: true },
-    { label: 'stars', value: formatCount(live.stars), href: `${github.value}/stargazers`, live: true },
+    { label: 'stars', value: formatCount(live.stars), href: github.value, live: true },
     { label: 'open issues', value: formatCount(live.issues), href: `${github.value}/issues`, live: true },
     { label: 'open PRs', value: formatCount(live.prs), href: `${github.value}/pulls`, live: true },
     { label: 'last release', value: formatDate(live.released), href: `${github.value}/releases`, live: true },

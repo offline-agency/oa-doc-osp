@@ -17,8 +17,11 @@ const home = computed(() => !!frontmatter.value.home)
 const open = ref(false)
 function followAlias() {
   // Load the generated redirect document so historic anchors use the same map
-  // for a direct request and SPA navigation.
-  if (page.value.documentationSeo?.redirect) window.location.replace(route.fullPath)
+  // for a direct request and SPA navigation. The dev server has no generated
+  // redirect documents (postbuild writes them), so reloading would serve this
+  // same page again in a loop: go straight to the versioned target instead.
+  const target = page.value.documentationSeo?.redirect
+  if (target) window.location.replace(import.meta.env.DEV ? target + window.location.hash : route.fullPath)
 }
 const closeOnEscape = event => { if (event.key === 'Escape' && open.value) open.value = false }
 onMounted(() => { followAlias(); document.addEventListener('keydown', closeOnEscape) })

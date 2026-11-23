@@ -51,7 +51,7 @@ const facts = computed(() => page.value.projectFacts)
       <div>
         <dt>Automated checks</dt>
         <dd>
-          <template v-if="facts.ciResult"><a :href="facts.ciResult.url">{{ facts.ciResult.summary }}</a> (checked {{ facts.ciResult.checkedOn }})</template>
+          <template v-if="facts.ciResult"><a v-if="facts.ciResult.url" :href="facts.ciResult.url">{{ facts.ciResult.summary }}</a><template v-else>{{ facts.ciResult.summary }}</template> (checked {{ facts.ciResult.checkedOn }})</template>
           <template v-else-if="facts.workflows"><a :href="facts.workflows">Workflow definitions</a>; results not checked for this documentation</template>
           <template v-else>No workflow definitions in the documented source</template>
         </dd>
