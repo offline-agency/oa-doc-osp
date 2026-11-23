@@ -12,7 +12,7 @@ documentationSnapshot: true
 
 A server-side shopping cart for Laravel, with session or database persistence, product variants, coupons and VAT fields. **This is the released package 4.0.3 guide.** The version number refers to the PHP package.
 
-[Release 4.0.3](https://github.com/offline-agency/laravel-cart/releases/tag/4.0.3) · [Packagist](https://packagist.org/packages/offline-agency/laravel-cart) · [Unreleased PR #50 preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical documentation](/laravel-cart/legacy/)
+[Release 4.0.3](https://github.com/offline-agency/laravel-cart/releases/tag/4.0.3) · [Packagist](https://packagist.org/packages/offline-agency/laravel-cart) · [PR #50, released in 4.1.0](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical documentation](/laravel-cart/legacy/)
 
 ::: warning Checkout and tax boundary
 Cart-level coupons reduce the payable total but are **not allocated into VAT**. `vatBreakdown()` describes amounts before cart-level discounts. The package is not a certified tax engine, payment gateway, inventory reservation system or exact multi-currency ledger. Recheck prices, tax treatment, stock and coupon eligibility against your trusted server catalog before checkout.
@@ -53,12 +53,12 @@ This command pins the contract described here. Evaluate later release notes befo
 
 ## Release availability
 
-PR #50 remains open at `131f2e6e00522f97c8f85adf18d3469cf4de527b`, verified 16 October 2026. Its corrected repricing, atomic mutation guarantees and explicit opt-in guest transfer are **unreleased**, and absent from 4.0.3. Read them only in the [preview](https://github.com/offline-agency/laravel-cart/pull/50). A merge alone does not make those features available through Composer.
+PR #50 was merged and released in [4.1.0](https://github.com/offline-agency/laravel-cart/releases/tag/4.1.0) (`b89d321`, 16 October 2026). Its corrected repricing, atomic mutation guarantees and explicit opt-in guest transfer are **absent from 4.0.3**; read them in the [current 4.x documentation](/laravel-cart/v4/), which describes a later release.
 
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).
 
 ## Historical links
 

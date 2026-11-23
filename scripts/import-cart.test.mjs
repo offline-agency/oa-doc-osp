@@ -36,33 +36,33 @@ test('changed source pin requires explicit source refresh', () => fixture(dir =>
   writeFileSync(path, JSON.stringify(data))
   assert.match(run(dir, '--check').stderr, /Source commit changed/)
 }))
-test('all 14 upstream guides retain English metadata and immutable source links', () => {
+test('all 16 upstream guides retain English metadata and immutable source links', () => {
   const evidence = JSON.parse(readFileSync(resolve(root, 'maintenance/evidence/cart-import.json'), 'utf8'))
   const guides = evidence.outputs.filter(p => p.sourcePath?.startsWith('docs/v4/'))
-  assert.equal(guides.length, 14)
+  assert.equal(guides.length, 16)
   for (const item of guides) {
     const body = readFileSync(resolve(root, item.path), 'utf8')
     assert.match(body, /^---\ntitle: /)
-    assert.match(body, /packageVersion: "4\.1\.0"/)
-    assert.match(body, /sourceCommit: b89d3219202703203453890e2e46467e79ad415d/)
+    assert.match(body, /packageVersion: "4\.2\.0"/)
+    assert.match(body, /sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/)
     assert.doesNotMatch(body, /\]\((?:\.\.?\/|[a-z-]+\.md|#)/)
     assert.doesNotMatch(body, /proposed next v4 release|Public website deployment is pending/)
   }
   const usage = readFileSync(resolve(root, 'laravel-cart/usage.md'), 'utf8')
-  assert.match(usage, /blob\/b89d3219202703203453890e2e46467e79ad415d\/examples\/quick-start.php/)
+  assert.match(usage, /blob\/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2\/examples\/quick-start.php/)
   assert.match(readFileSync(resolve(root, 'laravel-cart.md'), 'utf8'), /Since 4\.1\.0/)
 })
 test('changed release tag is rejected without refreshing source', () => fixture(dir => {
   const path = resolve(dir, 'maintenance/package-sources.json')
   const data = JSON.parse(readFileSync(path, 'utf8'))
-  data.packages.find(p => p.docsPage === 'laravel-cart.md').selectedTag = '4.1.1'
+  data.packages.find(p => p.docsPage === 'laravel-cart.md').selectedTag = '4.2.1'
   writeFileSync(path, JSON.stringify(data))
   assert.match(run(dir, '--check').stderr, /Source release metadata changed/)
 }))
 test('explicit reference refuses tag and manifest commit disagreement', () => fixture(dir => {
   const repo = resolve(dir, 'wrong-reference')
   mkdirSync(repo)
-  for (const args of [['init', '-q'], ['-c', 'user.name=Importer Test', '-c', 'user.email=importer@example.invalid', 'commit', '--allow-empty', '-qm', 'fixture'], ['tag', '4.1.0']]) {
+  for (const args of [['init', '-q'], ['-c', 'user.name=Importer Test', '-c', 'user.email=importer@example.invalid', 'commit', '--allow-empty', '-qm', 'fixture'], ['tag', '4.2.0']]) {
     const result = spawnSync('git', ['-C', repo, ...args], { encoding: 'utf8' })
     assert.equal(result.status, 0, result.stderr)
   }

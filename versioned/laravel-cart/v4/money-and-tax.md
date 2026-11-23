@@ -1,10 +1,10 @@
 ---
-title: Money and tax — v4 · 4.1.0
+title: Money and tax — v4 · 4.2.0
 description: >-
-  Net, gross, VAT, rounding and mixed tax rates; cart-coupon discounts are not
-  allocated to payable VAT.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+  Net, gross, VAT, rounding and mixed tax rates; legacy VAT methods precede cart
+  coupons, payableTaxBreakdown() allocates them since 4.2.0.
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/money-and-tax/
 documentationSnapshot: true
 documentationKey: v4
@@ -13,7 +13,10 @@ documentationChannel: stable
 
 # Money and tax
 
-> **Release 4.1.0.** This guide describes the selected `4.1.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. These guarantees must not be assumed for the earlier 4.0.3 release. See [storage](/laravel-cart/v4/storage/), [money and tax](/laravel-cart/v4/money-and-tax/) and [authentication](/laravel-cart/v4/authentication/). Public amounts remain floats; cart coupons do not allocate post-discount VAT per tax rate.
+> **Release 4.2.0.** This guide describes the selected `4.2.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. **Since 4.2.0:** read-only [payableTaxBreakdown()](/laravel-cart/v4/post-discount-tax/) post-discount allocation per row and VAT rate, and executable adoption recipes. These guarantees must not be assumed for the earlier 4.0.3 release. See the [capability map](/laravel-cart/v4/capabilities/), [storage](/laravel-cart/v4/storage/), [money and tax](/laravel-cart/v4/money-and-tax/) and [authentication](/laravel-cart/v4/authentication/). Public amounts remain floats; legacy VAT methods still precede cart coupons, and the allocation is not fiscal certification.
+
+Release 4.2.0 documentation: see the [capability map](/laravel-cart/v4/capabilities/) for the release
+that introduced each feature.
 
 The normalized database schema uses DECIMAL(12,4); keep persisted unit amounts within
 that range and use at most four decimal places. Public amounts remain floats, rounded using `cart.format.decimals` (default 2)
@@ -50,8 +53,9 @@ cart coupons; they are not the final payable tax breakdown. With cart coupons:
 `total() = max(0, subtotal() + vat() - discount())` for normal positive rows,
 subject to configured rounding. Legacy discount rows have separate historical
 subtotal semantics. Do not print vatBreakdown as a final fiscal allocation when
-cart coupons are present. A post-discount mixed-rate allocation API is roadmap work.
+cart coupons are present. Since 4.2.0, the additive [payableTaxBreakdown()](/laravel-cart/v4/post-discount-tax/) exposes a
+separate deterministic post-discount allocation without changing those methods.
 
 ---
 
-Imported from [docs/v4/money-and-tax.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/money-and-tax.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/money-and-tax.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/money-and-tax.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

@@ -31,7 +31,7 @@ Use the `cart-database-migrations` tag for `carts` and `cart_items`. The driver 
 
 ## Concurrency and raw writes
 
-4.0.3 database writes use transactions/locks while replacing the item collection, but a full cart read/modify/write operation is not serialized end to end. Concurrent mutations can lose an update. Do not advertise atomic batches, safe concurrent coupon/limit validation or checkout inventory locking for this release. PR #50's stronger built-in mutation guarantees are unreleased.
+4.0.3 database writes use transactions/locks while replacing the item collection, but a full cart read/modify/write operation is not serialized end to end. Concurrent mutations can lose an update. Do not advertise atomic batches, safe concurrent coupon/limit validation or checkout inventory locking for this release. The stronger built-in mutation guarantees of PR #50 were released in 4.1.0 and are absent from 4.0.3.
 
 Serialize competing requests under a common application lock where required, re-read state inside that boundary, and enforce inventory/checkout constraints separately. Direct SQL changes, raw driver writes, mutated CartItems and custom drivers bypass assumptions or cached reads. Avoid using them as supported public mutation guarantees.
 
@@ -47,7 +47,7 @@ Cart::instance('shopping')->store($snapshotKey, overwrite: true);
 Cart::restore($snapshotKey, mergeOnRestore: false, keepStored: false);
 ```
 
-`store()` saves items, cart coupons and meta when supported columns exist. It does not save cart options. `overwrite: false` throws when that identifier/instance already exists. `restore()` normally consumes/deletes the snapshot; a missing snapshot is a no-op. It can fall back to a stored instance for the identifier, temporarily switch to it and switch back.
+`store()` saves items and cart coupons (the `coupons` column is required) and saves meta only when the `meta` column exists. It does not save cart options. `overwrite: false` throws when that identifier/instance already exists. `restore()` normally consumes/deletes the snapshot; a missing snapshot is a no-op. It can fall back to a stored instance for the identifier, temporarily switch to it and switch back.
 
 Merge is a union by row ID: an existing row wins without adding quantities. Restored cart coupons merge by hash; empty snapshot coupon/meta fields do not necessarily clear existing state. Do not promise a complete whole-state replacement.
 
@@ -58,4 +58,4 @@ Snapshot lookups do **not** authorize ownership. Authorize identifier and instan
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).

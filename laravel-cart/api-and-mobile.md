@@ -1,8 +1,8 @@
 ---
 title: API resources and mobile carts
-description: Authenticated owner selection, trusted catalog mutations and JSON resources in Laravel Cart 4.1.0.
-packageVersion: '4.1.0'
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+description: Authenticated owner selection, trusted catalog mutations and JSON resources in Laravel Cart 4.2.0.
+packageVersion: '4.2.0'
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 ---
 
 # API resources and mobile carts
@@ -10,7 +10,7 @@ sourceCommit: b89d3219202703203453890e2e46467e79ad415d
 Requires PHP 8.4/8.5, BCMath and supported Laravel 12/13 dependencies; start with:
 
 ```sh
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 ```
 
 For token-authenticated devices, use the database live driver and [publish its migrations](/laravel-cart/installation/). Set `CART_STORAGE_DRIVER=database`. The package resolves the owner with Laravel's active `auth()->id()`; configure your token middleware/guard so that this is the same authenticated user as `$request->user()`. There is no package method for selecting an arbitrary user's live cart from a request payload.
@@ -65,6 +65,6 @@ For update/remove, accept a row id and resolve it only through `Cart::instance('
 
 `CartResource` delegates to `Cart::toArray()`: `instance`, `items`, `count`, `uniqueCount`, `subtotal`, `vat`, `total`, `discount`, `coupons`, `meta`, `isEmpty`. `CartItemResource` wraps an individual row. Laravel's configured resource wrapping determines whether an outer `data` key appears. Filter sensitive catalog/options/metadata through an application resource when needed; the stock resource is serialization, not a visibility policy.
 
-4.1.0 database package mutations lock the owner/instance before reading and persist their candidate state atomically. This protects accepted package mutations across device sessions, but does not reserve stock or make your inventory/payment workflow atomic. Session blocking applies to a shared browser session, not independently authenticated mobile sessions. Recheck current authorization, prices, stock, variants, taxes and coupons when creating the order; return a review/reprice response when anything changes. Cart-level discounts are not allocated into VAT buckets, and amount fields are floats.
+Since 4.1.0, database package mutations lock the owner/instance before reading and persist their candidate state atomically. This protects accepted package mutations across device sessions, but does not reserve stock or make your inventory/payment workflow atomic. Session blocking applies to a shared browser session, not independently authenticated mobile sessions. Recheck current authorization, prices, stock, variants, taxes and coupons when creating the order; return a review/reprice response when anything changes. Cart-level discounts are not allocated into VAT buckets, and amount fields are floats.
 
-Source: [owner resolution](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/Storage/DatabaseStorage.php), [CartResource](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/Resources/CartResource.php), [canonical executed example and resource assertion](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Feature/DocumentationExamplesTest.php).
+Source: [owner resolution](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/src/Storage/DatabaseStorage.php), [CartResource](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/src/Resources/CartResource.php), [canonical executed example and resource assertion](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Feature/DocumentationExamplesTest.php).

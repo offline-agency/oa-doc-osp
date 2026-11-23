@@ -18,7 +18,7 @@ Use the [pinned upstream UPGRADE guide](https://github.com/offline-agency/larave
 2. Pin `offline-agency/laravel-cart:4.0.3` while validating this documented contract. Review Composer changes and run the app's suite.
 3. Replace incompatible positional `add()` examples with arrays or actual named parameters. In v4, `subtitle` precedes quantity; options are the last parameter.
 4. Implement all getter-only Buyable methods, including `getWeight()`. Fiscal methods moved to FiscalBuyable. Put cart weight into item options.
-5. Review exception handling: package errors inherit CartException. Totals return floats; display formatting is separate. Legacy events remain enabled by default through `cart.use_legacy_events`.
+5. Review exception handling: package exception classes inherit CartException, while invalid item input still throws `InvalidArgumentException`. Totals return floats; display formatting is separate. Legacy events remain enabled by default through `cart.use_legacy_events`.
 6. Publish only the required migration tags. Existing legacy `cart` tables need missing coupons/meta columns; fresh live database storage uses separate `carts` / `cart_items` migrations. If you used prerelease schemas, compare actual columns/indexes against the tagged migrations before rollout.
 7. Test instances, login/session regeneration, snapshots, coupons, TTL, rounding and competing requests with your real configured driver. Revalidate fiscal and pricing assumptions.
 
@@ -60,9 +60,9 @@ The released guide also changes fake behavior to return CartFake and changes con
 
 ## Do not promote a merge to released documentation
 
-The [next preview](https://github.com/offline-agency/laravel-cart/pull/50) is pinned to PR #50 and remains unreleased. Stronger atomic mutation behavior, corrected repricing and opt-in guest transfer are not 4.0.3 features. A future release needs a verified tag, matching immutable commit and Packagist metadata before replacing default installation guidance. The maintainer release-update procedure and provenance checks live outside public content in `maintenance/README.md` of the site repository.
+[PR #50](https://github.com/offline-agency/laravel-cart/pull/50) was released in 4.1.0; see the [current 4.x documentation](/laravel-cart/v4/upgrading/). Stronger atomic mutation behavior, corrected repricing and opt-in guest transfer are not 4.0.3 features. A future release needs a verified tag, matching immutable commit and Packagist metadata before replacing default installation guidance. The maintainer release-update procedure and provenance checks live outside public content in `maintenance/README.md` of the site repository.
 
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).

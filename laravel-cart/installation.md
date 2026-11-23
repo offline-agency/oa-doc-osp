@@ -1,12 +1,15 @@
 ---
 title: "Installation"
 description: "Exact PHP, BCMath and Laravel requirements, Composer installation and separate config/live-cart/snapshot publishing commands."
-packageVersion: "4.1.0"
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+packageVersion: "4.2.0"
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/installation/
 ---
 
 # Installation
+
+Release 4.2.0 documentation: see the [capability map](/laravel-cart/capabilities/) for the release
+that introduced each feature.
 
 Requirements: PHP `~8.4.0 || ~8.5.0`, BCMath (`ext-bcmath`), and the declared
 Illuminate components `^12.69.2 || ^13.32`. PHP 8.3 is excluded by package policy,
@@ -15,7 +18,7 @@ before runtime: install your OS PHP BCMath package (for example `php8.4-bcmath`)
 or enable `bcmath` in your PHP image and verify `php --ri bcmath`.
 
 ```sh
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 php artisan vendor:publish --provider="OfflineAgency\LaravelCart\CartServiceProvider" --tag=config
 ```
 
@@ -37,4 +40,4 @@ create migrations on an already-created snapshot table. Translations use
 
 ---
 
-Imported from [docs/v4/installation.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/installation.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/installation.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/installation.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

@@ -63,7 +63,9 @@ for (const path of paths) {
   put(`${fixture}/${path}`, body)
 }
 const guides = paths.filter(p => /^docs\/v4\/[^/]+\.md$/.test(p))
-if (guides.length !== 14) throw new Error(`Expected 14 Cart v4 guides, found ${guides.length}`)
+// 4.2.0 added capabilities.md and post-discount-tax.md; recipes/ stay immutable GitHub links.
+const expectedGuides = 16
+if (guides.length !== expectedGuides) throw new Error(`Expected ${expectedGuides} Cart v4 guides, found ${guides.length}`)
 const guideRoute = path => `/laravel-cart/${posix.basename(path) === 'index.md' ? '' : posix.basename(path, '.md') + '/'}`
 const sourceURL = path => `${repository}/blob/${commit}/${path}`
 function links(body, sourcePath) {
@@ -79,22 +81,46 @@ function links(body, sourcePath) {
 }
 const outputs = []
 const pageDescriptions = {
- 'index': 'Laravel 12/13 shopping cart for PHP 8.4/8.5: installation, VAT, coupons, persistent carts and released 4.1 guarantees.',
+ 'index': 'Laravel 12/13 shopping cart for PHP 8.4/8.5: installation, VAT, coupons, persistent carts and released 4.x guarantees.',
+ 'capabilities': 'Which Laravel Cart release introduced each capability, with maintained examples, executed tests and documented limits.',
+ 'post-discount-tax': 'Since 4.2.0: read-only payableTaxBreakdown() allocating cart-coupon discounts to rows and VAT rates as decimal strings.',
  'installation': 'Exact PHP, BCMath and Laravel requirements, Composer installation and separate config/live-cart/snapshot publishing commands.',
  'configuration': 'Laravel Cart configuration for drivers, owners, TTL, rounding, limits, events and guest transfer.',
  'usage': 'Executable Laravel Cart quick start with named arguments, repricing, row coupons and expected float totals.',
  'reference': 'Public Laravel Cart methods, signatures, return types, models, resources, events, commands and exceptions.',
- 'money-and-tax': 'Net, gross, VAT, rounding and mixed tax rates; cart-coupon discounts are not allocated to payable VAT.',
+ 'money-and-tax': 'Net, gross, VAT, rounding and mixed tax rates; legacy VAT methods precede cart coupons, payableTaxBreakdown() allocates them since 4.2.0.',
  'coupons': 'Once-per-row item discounts and ordered cart coupons: eligibility, caps and redemption limits.',
  'storage': 'Persistent database and session carts: owner isolation, TTL, atomic mutation, PostgreSQL/MySQL concurrency and snapshots.',
  'authentication': 'Since 4.1: opt-in guest-to-user live database cart transfer, login regeneration and legacy snapshot middleware.',
  'testing': 'CartFake, executable examples, regression tests and contributing checks for Laravel Cart.',
- 'upgrading': 'Upgrade to released Laravel Cart 4.1 from earlier v4 or v3: requirements, migrations and changed guarantees.',
+ 'upgrading': 'Upgrade to released Laravel Cart 4.x from earlier v4 or v3: requirements, migrations and changed guarantees.',
  'troubleshooting': 'Diagnose invalid prices, cart limits, contention, failed transfer, missing rows and VAT discrepancies.',
  'alternatives': 'Dated primary-source alternatives and boundaries for choosing a Laravel shopping cart.',
  'agents': 'Optional Laravel Boost integration and neutral manual evaluation guidance; no runtime AI dependency.'
 }
-const releaseNote = '> **Release ' + packageVersion + '.** This guide describes the selected `' + packageVersion + '` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. These guarantees must not be assumed for the earlier 4.0.3 release. See [storage](/laravel-cart/storage/), [money and tax](/laravel-cart/money-and-tax/) and [authentication](/laravel-cart/authentication/). Public amounts remain floats; cart coupons do not allocate post-discount VAT per tax rate.\n\n'
+const releaseNote = '> **Release ' + packageVersion + '.** This guide describes the selected `' + packageVersion + '` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. **Since 4.2.0:** read-only [payableTaxBreakdown()](/laravel-cart/post-discount-tax/) post-discount allocation per row and VAT rate, and executable adoption recipes. These guarantees must not be assumed for the earlier 4.0.3 release. See the [capability map](/laravel-cart/capabilities/), [storage](/laravel-cart/storage/), [money and tax](/laravel-cart/money-and-tax/) and [authentication](/laravel-cart/authentication/). Public amounts remain floats; legacy VAT methods still precede cart coupons, and the allocation is not fiscal certification.\n\n'
+// The 4.2.0 tag was cut while its guides still labelled the PR #51 additions as unreleased.
+// Each correction must match the pinned text exactly, so a new release forces a review.
+const releaseLabelCorrections = packageVersion === '4.2.0' ? [
+  ['*', 'Development documentation: see the [capability map](capabilities.md) for released\nfeatures and unreleased additions.', 'Release 4.2.0 documentation: see the [capability map](capabilities.md) for the release\nthat introduced each feature.'],
+  ['docs/v4/index.md', '- [Post-discount tax allocation](post-discount-tax.md) (unreleased)', '- [Post-discount tax allocation](post-discount-tax.md) (since 4.2.0)'],
+  ['docs/v4/index.md', 'Latest published tag is 4.1.0, including PR #50. New allocation/recipes in this follow-up are unreleased.\nSee the capability map for per-feature availability. Public website deployment is pending.', 'These pages document released Laravel Cart `4.2.0` from the pinned tag. See the capability map for per-feature availability. The public documentation website is maintained separately from the package release.'],
+  ['docs/v4/capabilities.md', 'Verified 16 October 2026: latest published tag **4.1.0**, including merged PR #50\nat `b89d321`. This follow-up extends that release. **Unreleased means not available from a\nstable Composer release yet.** No guessed next version is assigned.', 'Release **4.2.0** (PR #51, `e24c589`) adds read-only post-discount allocation and the adoption\nrecipes to the 4.1.0 guarantees (PR #50, `b89d321`). Each row names the release that introduced\nthe capability.'],
+  ['docs/v4/capabilities.md', 'Core APIs verified in 3.1.5; current recipe unreleased', 'Core APIs verified in 3.1.5; recipe since 4.2.0'],
+  ['docs/v4/capabilities.md', '| Unreleased, this follow-up |', '| 4.2.0 |'],
+  ['docs/v4/capabilities.md', 'Recipes unreleased, no frontend runtime dependency', 'Recipes since 4.2.0, no frontend runtime dependency'],
+  ['docs/v4/capabilities.md', 'SessionStorage shipped in 4.0.0; recipe unreleased', 'SessionStorage shipped in 4.0.0; recipe since 4.2.0'],
+  ['docs/v4/capabilities.md', '4.1.0; allocation/recipe guidance updated here', '4.1.0; allocation/recipe guidance updated in 4.2.0'],
+  ['docs/v4/post-discount-tax.md', '# Post-discount tax allocation (unreleased)', '# Post-discount tax allocation'],
+  ['docs/v4/money-and-tax.md', 'The additive, unreleased [payableTaxBreakdown()](post-discount-tax.md)', 'Since 4.2.0, the additive [payableTaxBreakdown()](post-discount-tax.md)'],
+  ['docs/v4/reference.md', 'post-discount allocation (unreleased).', 'post-discount allocation (since 4.2.0).'],
+  ['docs/v4/troubleshooting.md', 'Unreleased `TaxAllocationException` means', '`TaxAllocationException` (since 4.2.0) means'],
+] : []
+for (const [file, old] of releaseLabelCorrections) if (file !== '*' && !sources.get(file)?.includes(old)) throw new Error(`Cart release-label correction needs review: ${file}`)
+function correctReleaseLabels(path, body) {
+  for (const [file, old, replacement] of releaseLabelCorrections) if (file === '*' || file === path) body = body.replaceAll(old, replacement)
+  return body
+}
 function page(path, title, body, sourcePath, description = pageDescriptions[posix.basename(sourcePath, '.md')] || `Laravel Cart ${packageVersion}: ${title}.`) {
   const permalink = path === 'laravel-cart.md' ? '/laravel-cart/' : `/laravel-cart/${posix.basename(path, '.md')}/`
   const value = `---\ntitle: ${JSON.stringify(title)}\ndescription: ${JSON.stringify(description)}\npackageVersion: ${JSON.stringify(packageVersion)}\nsourceCommit: ${commit}\npermalink: ${permalink}\n---\n\n${body.trim()}\n\n---\n\nImported from [${sourcePath}](${sourceURL(sourcePath)}) at \`${commit}\` (release \`${packageVersion}\`). Upstream [MIT license](${sourceURL('LICENSE')}) retained in the frozen import.\n`
@@ -102,16 +128,15 @@ function page(path, title, body, sourcePath, description = pageDescriptions[posi
   outputs.push({ path, sourcePath, sha256: hash(value) })
 }
 for (const path of guides) {
-  let body = links(sources.get(path), path)
+  let body = links(correctReleaseLabels(path, sources.get(path)), path)
   body = body.replace(/composer require offline-agency\/laravel-cart(?![:\w-])/g, 'composer require offline-agency/laravel-cart:' + packageVersion)
   const title = body.match(/^# (.+)/)?.[1]
   if (!title) throw new Error(`Missing Cart guide title: ${path}`)
   if (path === 'docs/v4/index.md') {
-    const old = 'These sources describe the proposed next v4 release. Public website deployment is pending.'
-    if (!body.includes(old)) throw new Error('Cart release-label correction needs review')
+    if (/proposed next v4 release|unreleased/i.test(body)) throw new Error('Cart release-label correction needs review')
     body += '\n\n- [Historical site documentation](/laravel-cart/legacy/)\n- [Archived 4.0.3 release documentation](/laravel-cart/4.0.3/)\n- [Site URL migration map](/laravel-cart/url-migration/)\n'
-    body = body.replace(old, `These pages document released Laravel Cart \`${packageVersion}\` from the pinned tag. The public documentation website is maintained separately from the package release.`)
   }
+  if (/\bunreleased\b/i.test(body)) throw new Error(`Unreviewed unreleased label in Cart ${packageVersion} guide: ${path}`)
   if (path === 'docs/v4/configuration.md') body += '\n\n## Released configuration defaults\n\nThis block is imported from the same release as this guide. Publish the config before changing application settings; configure owner schema before running its migrations. The [full API reference](/laravel-cart/reference/#configuration-reference) describes the related operations.\n\n```php\n' + sources.get('config/cart.php').trim() + '\n```\n'
   if (path === 'docs/v4/reference.md') {
     const old = 'Rows whose id is not in the list are removed, existing ids get the new quantity, and new ids are added.'
@@ -155,7 +180,7 @@ const evidence = {
   inputs: paths.map(path => ({ path, sha256: hash(sources.get(path)) })),
   adapters: adapters.map(path => ({ path, sha256: hash(get(path)) })), outputs,
   assets: [], upstreamRuntimeMounted: false,
-  transformations: ['Preserve all 14 docs/v4 Markdown guides and executable snippets.', 'Add English site metadata, exact release provenance and compatibility boundary.', 'Resolve guide links and fragments to site routes; source-only links to immutable GitHub blobs.', 'Correct stale proposed-release label in tagged index; retain dated alternatives and monetary limitations.', 'Copy reviewed maintenance/cart-adapters Markdown with pinned metadata.', 'Correct source reference sync identity from product-only to ID plus options using released runtime/tests.', 'Extract the marked executable quick-start snippet into the landing and link all site recipes.', 'Pin Composer commands to the documented release and embed actual released configuration defaults.'],
+  transformations: ['Preserve all 16 top-level docs/v4 Markdown guides and executable snippets; link recipes to immutable GitHub blobs.', 'Add English site metadata, exact release provenance and compatibility boundary.', 'Resolve guide links and fragments to site routes; source-only links to immutable GitHub blobs.', 'Correct stale unreleased/follow-up labels written before the 4.2.0 tag (index, capability map, post-discount tax, money, reference, troubleshooting, guide banners); retain dated alternatives and monetary limitations.', 'Copy reviewed maintenance/cart-adapters Markdown with pinned metadata.', 'Correct source reference sync identity from product-only to ID plus options using released runtime/tests.', 'Extract the marked executable quick-start snippet into the landing and link all site recipes.', 'Pin Composer commands to the documented release and embed actual released configuration defaults.'],
 }
 put(evidencePath, JSON.stringify(evidence, null, 2) + '\n')
 console.log(`${check ? 'Verified' : 'Imported'} ${guides.length} Cart guides and ${adapters.length} site adapters at ${commit}; ${paths.length} pinned inputs.`)

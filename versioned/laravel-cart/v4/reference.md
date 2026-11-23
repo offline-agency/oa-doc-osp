@@ -1,10 +1,10 @@
 ---
-title: Full API reference — v4 · 4.1.0
+title: Full API reference — v4 · 4.2.0
 description: >-
   Public Laravel Cart methods, signatures, return types, models, resources,
   events, commands and exceptions.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/reference/
 documentationSnapshot: true
 documentationKey: v4
@@ -13,7 +13,10 @@ documentationChannel: stable
 
 # Full API reference
 
-> **Release 4.1.0.** This guide describes the selected `4.1.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. These guarantees must not be assumed for the earlier 4.0.3 release. See [storage](/laravel-cart/v4/storage/), [money and tax](/laravel-cart/v4/money-and-tax/) and [authentication](/laravel-cart/v4/authentication/). Public amounts remain floats; cart coupons do not allocate post-discount VAT per tax rate.
+> **Release 4.2.0.** This guide describes the selected `4.2.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. **Since 4.2.0:** read-only [payableTaxBreakdown()](/laravel-cart/v4/post-discount-tax/) post-discount allocation per row and VAT rate, and executable adoption recipes. These guarantees must not be assumed for the earlier 4.0.3 release. See the [capability map](/laravel-cart/v4/capabilities/), [storage](/laravel-cart/v4/storage/), [money and tax](/laravel-cart/v4/money-and-tax/) and [authentication](/laravel-cart/v4/authentication/). Public amounts remain floats; legacy VAT methods still precede cart coupons, and the allocation is not fiscal certification.
+
+Release 4.2.0 documentation: see the [capability map](/laravel-cart/v4/capabilities/) for the release
+that introduced each feature.
 
 This is the expanded v4 reference retained from the README. For updated guarantees,
 read [money and tax](/laravel-cart/v4/money-and-tax/), [storage](/laravel-cart/v4/storage/), and
@@ -47,7 +50,7 @@ read [money and tax](/laravel-cart/v4/money-and-tax/), [storage](/laravel-cart/v
 ### Installation
 
 ```bash
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 ```
 
 The service provider and the `Cart` facade are auto-discovered. Publish what you need:
@@ -315,7 +318,7 @@ Cart::sync([
 ]);
 ```
 
-Sync identifies rows by product ID **and options**, not product ID alone. Matching rows receive the new quantity and keep existing prices; absent variants are removed and new variants are added. Supplying an ID without its previous options replaces that variant. Duplicate target identities are rejected. See [variants and wishlist](/laravel-cart/v4/variants-and-wishlist/) and the [released mutation tests](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Regression/MutationCorrectnessTest.php).
+Sync identifies rows by product ID **and options**, not product ID alone. Matching rows receive the new quantity and keep existing prices; absent variants are removed and new variants are added. Supplying an ID without its previous options replaces that variant. Duplicate target identities are rejected. See [variants and wishlist](/laravel-cart/v4/variants-and-wishlist/) and the [released mutation tests](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Regression/MutationCorrectnessTest.php).
 
 ---
 
@@ -364,7 +367,12 @@ Every amount is rounded with `format.decimals` and `format.rounding_mode`. The t
 Cart::numberFormat(Cart::total(), null, null, null); // "1,234.50" with the configured format
 ```
 
-#### VAT breakdown (fiscal receipts)
+#### VAT breakdown (before cart coupons)
+
+This legacy method is not a final fiscal receipt calculation after cart coupons.
+Use the additive [payableTaxBreakdown()](/laravel-cart/v4/post-discount-tax/) for the documented
+post-discount allocation (since 4.2.0).
+
 
 ```php
 Cart::vatBreakdown();
@@ -547,6 +555,8 @@ The user column is nullable and indexed. Its schema type comes from `cart.users.
 
 #### Custom drivers
 
+The following RedisCartStorage is **illustrative custom-driver code**, not a shipped Redis
+driver. Redis-backed sessions are a separate [recipe](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/recipes/redis-sessions.md).
 Implement `OfflineAgency\LaravelCart\Contracts\CartStorage`:
 
 ```php
@@ -744,26 +754,26 @@ composer analyse        # PHPStan (Larastan) at max level
 composer lint           # fix code style (Pint)
 ```
 
-See [CONTRIBUTING.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/CONTRIBUTING.md) for running the suite against PostgreSQL, lowest-dependency checks and pull request conventions, and [LARASTAN.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LARASTAN.md) for static analysis.
+See [CONTRIBUTING.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/CONTRIBUTING.md) for running the suite against PostgreSQL, lowest-dependency checks and pull request conventions, and [LARASTAN.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LARASTAN.md) for static analysis.
 
 ---
 
 ### Releases
 
-Every pull request merged into `main` gets its own SemVer tag (unprefixed, e.g. `4.0.0`) and GitHub Release once CI has passed on its merge commit. The bump comes from a `release:major|minor|patch` label or the Conventional Commit title. See [.github/RELEASING.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/.github/RELEASING.md). Changes are listed in [CHANGELOG.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/CHANGELOG.md).
+Every pull request merged into `main` gets its own SemVer tag (unprefixed, e.g. `4.0.0`) and GitHub Release once CI has passed on its merge commit. The bump comes from a `release:major|minor|patch` label or the Conventional Commit title. See [.github/RELEASING.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/.github/RELEASING.md). Changes are listed in [CHANGELOG.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/CHANGELOG.md).
 
 ---
 
 ### Upgrading
 
-See [UPGRADE.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/UPGRADE.md) for upgrading from 3.x to 4.x.
+See [UPGRADE.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/UPGRADE.md) for upgrading from 3.x to 4.x.
 
 ---
 
 ### License
 
-Open-source software licensed under the [MIT License](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE).
+Open-source software licensed under the [MIT License](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE).
 
 ---
 
-Imported from [docs/v4/reference.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/reference.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/reference.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/reference.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

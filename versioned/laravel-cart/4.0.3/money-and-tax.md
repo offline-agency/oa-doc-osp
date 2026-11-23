@@ -11,7 +11,7 @@ documentationSnapshot: true
 # Money, VAT, coupons and rounding
 
 ::: warning VAT is before cart-level coupons
-Stable 4.0.3 has no post-discount tax allocation API. `vat()` and `vatBreakdown()` do not allocate cart coupons to payable VAT. Do not print their sum as a tax-compliant discounted invoice without your own verified fiscal calculation. PR #50 also documents this limitation.
+Stable 4.0.3 has no post-discount tax allocation API. `vat()` and `vatBreakdown()` do not allocate cart coupons to payable VAT. Do not print their sum as a tax-compliant discounted invoice without your own verified fiscal calculation. Release 4.2.0 added the read-only [payableTaxBreakdown()](/laravel-cart/v4/post-discount-tax/) allocation; it is absent from 4.0.3.
 :::
 
 ## Net, VAT amount and gross
@@ -51,6 +51,7 @@ BCMath must be enabled for this path.
 
 ```php
 use OfflineAgency\LaravelCart\CartCoupon;
+use OfflineAgency\LaravelCart\Facades\Cart;
 
 Cart::addCoupon(new CartCoupon(
     hash: 'welcome-10', code: 'WELCOME10', type: 'percentage',
@@ -107,4 +108,4 @@ Keep currency per cart under application control. There is no currency conversio
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).

@@ -1,8 +1,8 @@
 ---
 title: Choosing Laravel Cart
-description: Fit, limits and dated alternatives for Laravel Cart 4.1.0.
-packageVersion: '4.1.0'
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+description: Fit, limits and dated alternatives for Laravel Cart 4.2.0.
+packageVersion: '4.2.0'
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 ---
 
 # Choosing Laravel Cart
@@ -12,7 +12,7 @@ Laravel Cart fits Laravel applications that need cart rows, variants, VAT amount
 Start with PHP `~8.4.0 || ~8.5.0`, BCMath and Illuminate `^12.69.2 || ^13.32`:
 
 ```sh
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 ```
 
 See [installation](/laravel-cart/installation/) for publishing configuration and the migrations appropriate to your chosen storage. Default session storage needs no package tables.
@@ -34,7 +34,7 @@ Amounts are floats with configurable calculation rounding. BCMath is required fo
 
 Cart rows are purchase intent. Revalidate owner authorization, current catalog prices, variant availability, stock, tax and coupon eligibility before checkout; reserve inventory and create orders in your application. Global coupon redemption quotas, tax jurisdiction decisions and payment settlement are outside this package.
 
-In 4.1.0, explicit array/Buyable updates recalculate net/VAT/gross while retaining row coupons, batches and sync stage logical mutations, and database package mutations lock before reading. The opt-in live database guest-transfer middleware handles login/session regeneration separately from saved snapshots. Older 4.0.x guidance that required an application lock solely to prevent lost package database adds does not describe 4.1.0. Application stock/order invariants still need their own concurrency design. See [storage](/laravel-cart/storage/) and [authentication](/laravel-cart/authentication/).
+Since 4.1.0, explicit array/Buyable updates recalculate net/VAT/gross while retaining row coupons, batches and sync stage logical mutations, and database package mutations lock before reading. The opt-in live database guest-transfer middleware handles login/session regeneration separately from saved snapshots. Older 4.0.x guidance that required an application lock solely to prevent lost package database adds does not describe 4.1.0 or later. Application stock/order invariants still need their own concurrency design. See [storage](/laravel-cart/storage/) and [authentication](/laravel-cart/authentication/).
 
 ## Alternatives checked 2026-10-16
 
@@ -42,11 +42,11 @@ These are declared capabilities and release metadata from primary package listin
 
 | Package | Evidence to evaluate |
 | --- | --- |
-| `offline-agency/laravel-cart` 4.1.0 | The source pinned here: VAT amounts, once-per-row coupons, cart coupons, session/database live carts and explicit snapshots. PHP 8.4/8.5; Laravel 12/13 at the floors above. |
+| `offline-agency/laravel-cart` 4.2.0 | The source pinned here: VAT amounts, once-per-row coupons, cart coupons, session/database live carts and explicit snapshots. PHP 8.4/8.5; Laravel 12/13 at the floors above. |
 | `wearepixel/laravel-cart` 3.0.0 | Its listing declares PHP `>=8.3` and Illuminate 11/12/13. Evaluate its documented conditions and storage model against your requirements. [Primary listing](https://packagist.org/packages/wearepixel/laravel-cart). |
 | `hardevine/shoppingcart` 3.4 | Its listing declares Illuminate support through 12 and documents item options, tax rates and explicit database persistence. [Primary listing](https://packagist.org/packages/hardevine/shoppingcart). |
 | `darryldecode/cart` 4.2.6 | Its listing declares PHP `>=7.3` and Illuminate support through 12; documentation covers conditions and session binding. [Primary listing](https://packagist.org/packages/darryldecode/cart). |
 
 The alternatives were not installed or integration-tested for this guide. If you need an order/inventory/payment platform, evaluate a commerce framework or dedicated services as a separate decision.
 
-Source: [4.1.0 installation contract](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/installation.md), [money/tax contract](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/money-and-tax.md), [mutation regressions](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Regression/MutationCorrectnessTest.php).
+Source: [4.2.0 installation contract](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/installation.md), [money/tax contract](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/money-and-tax.md), [mutation regressions](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Regression/MutationCorrectnessTest.php).

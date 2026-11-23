@@ -1,10 +1,10 @@
 ---
-title: 'Variants, wishlist and Buyable models — v4 · 4.1.0'
+title: 'Variants, wishlist and Buyable models — v4 · 4.2.0'
 description: >-
-  Validated options, product identity, wishlist instances and the released 4.1.0
+  Validated options, product identity, wishlist instances and the released 4.2.0
   Buyable contract.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/variants-and-wishlist/
 documentationSnapshot: true
 documentationKey: v4
@@ -16,7 +16,7 @@ documentationChannel: stable
 Requires PHP 8.4/8.5, BCMath and supported Laravel 12/13 dependencies:
 
 ```sh
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 ```
 
 Default session storage needs no package tables. For database carts, [publish the live-cart migrations](/laravel-cart/v4/installation/).
@@ -41,7 +41,7 @@ $cart->uniqueCount(); // 2 rows, though there is only one catalog product
 $cart->content()->pluck('id')->unique()->count(); // 1 distinct product id
 ```
 
-`update($rowId, ['options' => ...])` can change the row id and merge with an existing row. Resolve the original row from the current authorized owner's cart, validate its new variant and quantity, and use the returned item's row id. In 4.1.0, `sync()` preserves variants by product id plus options and rejects duplicate row identities. Existing sync rows receive absolute quantities while retaining their stored prices; use explicit updates to reprice.
+`update($rowId, ['options' => ...])` can change the row id and merge with an existing row. Resolve the original row from the current authorized owner's cart, validate its new variant and quantity, and use the returned item's row id. Since 4.1.0, `sync()` preserves variants by product id plus options and rejects duplicate row identities. Existing sync rows receive absolute quantities while retaining their stored prices; use explicit updates to reprice.
 
 ## Wishlist instance
 
@@ -74,7 +74,7 @@ $cart->instance('wishlist')->remove($selection->rowId);
 $cart->instance('shopping');
 ```
 
-Here `$validatedRowId` is an application-validated string from the request, used only to look up a row in the current owner's wishlist. Each mutation is atomic under the built-in 4.1.0 mutation contract, but the add-plus-remove sequence is not a package atomic transfer API. If removal fails after add, reconcile rather than blindly repeating the add; design idempotency/transaction behavior for your app. Do not use snapshot `store()`/`restore()` to imply a wishlist move.
+Here `$validatedRowId` is an application-validated string from the request, used only to look up a row in the current owner's wishlist. Each mutation is atomic under the built-in mutation contract (since 4.1.0), but the add-plus-remove sequence is not a package atomic transfer API. If removal fails after add, reconcile rather than blindly repeating the add; design idempotency/transaction behavior for your app. Do not use snapshot `store()`/`restore()` to imply a wishlist move.
 
 ## Buyable getters and model attributes
 
@@ -107,10 +107,10 @@ $product->setOptions(['size' => $validatedSize, 'weight' => (float) $product->we
 $item = Cart::instance('shopping')->add($product, $validatedQuantity);
 ```
 
-The second argument selects quantity (default 1), overriding `getQty()`. Options must come from `getOptions()`/`cartOptions` or an item attributes array; the third positional parameter is `subtitle`, not options. Adding a Buyable automatically associates its model, but association does not authorize access or keep amounts synchronized with the catalog. Existing-row adds retain stored base prices; explicit Buyable/array `update()` reprices in 4.1.0 and retains row coupons.
+The second argument selects quantity (default 1), overriding `getQty()`. Options must come from `getOptions()`/`cartOptions` or an item attributes array; the third positional parameter is `subtitle`, not options. Adding a Buyable automatically associates its model, but association does not authorize access or keep amounts synchronized with the catalog. Existing-row adds retain stored base prices; explicit Buyable/array `update()` reprices (since 4.1.0) and retains row coupons.
 
 `getVat()` returns an explicit float: zero VAT does not invoke the automatic default tax rate. `Cart::weight()` sums `options['weight'] * qty`; it does not call `getWeight()` automatically. Use one catalog weight unit. Implement `FiscalBuyable` for `getVatFcCode()` and `getProductFcCode()` if fiscal fields are required; a plain Buyable produces empty fiscal codes.
 
 Recheck current authorization, variant availability, stock, prices, tax and coupons at checkout. The package reserves no inventory. Cart-level coupons are not allocated into VAT buckets, and amounts are floats; see [money and tax](/laravel-cart/v4/money-and-tax/).
 
-Source: [Buyable contract](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/Contracts/Buyable.php), [CanBeBought getters](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/CanBeBought.php), [variant and repricing regressions](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Regression/MutationCorrectnessTest.php), [options tests](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Feature/CartOptionsTest.php).
+Source: [Buyable contract](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/src/Contracts/Buyable.php), [CanBeBought getters](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/src/CanBeBought.php), [variant and repricing regressions](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Regression/MutationCorrectnessTest.php), [options tests](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Feature/CartOptionsTest.php).

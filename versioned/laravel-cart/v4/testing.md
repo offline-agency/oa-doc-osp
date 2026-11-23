@@ -1,10 +1,10 @@
 ---
-title: Testing and documentation checks — v4 · 4.1.0
+title: Testing and documentation checks — v4 · 4.2.0
 description: >-
   CartFake, executable examples, regression tests and contributing checks for
   Laravel Cart.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/testing/
 documentationSnapshot: true
 documentationKey: v4
@@ -43,6 +43,11 @@ CartAssertions. Fakes do not prove transaction/concurrency behavior; use real dr
 for those contracts. The workflow tests PHP 8.4/8.5 and Laravel 12/13; lowest jobs
 are PHP 8.4 only, with actual versions printed in each job.
 
+The examples command now executes the canonical quick start, payable-tax fixture and
+shared adoption service. Six Node negative checks catch stale quick-start, recipe
+and tax snippets, invalid links/anchors and wrong publish tags. Optional real Redis
+session/lock verification is documented in [the Redis session recipe](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/recipes/redis-sessions.md).
+
 ---
 
-Imported from [docs/v4/testing.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/testing.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/testing.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/testing.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

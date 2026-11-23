@@ -39,7 +39,7 @@ Laravel auto-discovers the provider and `Cart` alias. Examples explicitly import
 | `cart-legacy-column-migrations` | Coupons and meta additions to an existing legacy table | Upgrade an existing snapshot table after checking its columns |
 | `laravel-cart-lang` | Translation overrides | Optional |
 
-Do not publish every migration tag. Live storage and legacy snapshots are separate features. Configure `cart.database.connection`, table names and `cart.users.foreign_key`, `foreign_key_type` and `table` **before** publishing/running database migrations.
+Do not publish every migration tag. Live storage and legacy snapshots are separate features. Configure `cart.database.connection`, table names and `cart.users.foreign_key` / `foreign_key_type` **before** publishing/running database migrations. `cart.users.table` is not read by 4.0.3 and no foreign key constraint is created.
 
 For a custom connection, use `php artisan migrate --database=your_connection` instead of the bare migration commands below, for both live tables and snapshots. The tagged migrations use the selected Artisan connection; setting `cart.database.connection` alone does not choose the migration connection.
 
@@ -78,4 +78,4 @@ After environment/config changes, refresh your deployment's Laravel configuratio
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).

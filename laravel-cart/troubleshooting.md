@@ -1,8 +1,8 @@
 ---
 title: "Troubleshooting"
 description: "Diagnose invalid prices, cart limits, contention, failed transfer, missing rows and VAT discrepancies."
-packageVersion: "4.1.0"
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+packageVersion: "4.2.0"
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/troubleshooting/
 ---
 
@@ -24,6 +24,12 @@ permalink: /laravel-cart/troubleshooting/
 - VAT breakdown differs from payable total: cart coupons have no final VAT allocation.
   See [money and tax](/laravel-cart/money-and-tax/).
 
+`TaxAllocationException` (since 4.2.0) means payableTaxBreakdown() cannot provide its
+documented reconciliation for the supplied amounts, precision or adjustment rows.
+Inspect the [supported allocation domain](/laravel-cart/post-discount-tax/), revalidate catalog
+amounts and handle legacy adjustments explicitly. Do not label the legacy
+vatBreakdown() as an equivalent final payable-tax fallback.
+
 ---
 
-Imported from [docs/v4/troubleshooting.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/troubleshooting.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/troubleshooting.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/troubleshooting.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

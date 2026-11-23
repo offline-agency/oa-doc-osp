@@ -1,10 +1,10 @@
 ---
-title: Laravel Cart v4 — v4 · 4.1.0
+title: Laravel Cart v4 — v4 · 4.2.0
 description: >-
   Laravel 12/13 shopping cart for PHP 8.4/8.5: installation, VAT, coupons,
-  persistent carts and released 4.1 guarantees.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+  persistent carts and released 4.x guarantees.
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/
 documentationSnapshot: true
 documentationKey: v4
@@ -13,13 +13,15 @@ documentationChannel: stable
 
 # Laravel Cart v4
 
-> **Release 4.1.0.** This guide describes the selected `4.1.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. These guarantees must not be assumed for the earlier 4.0.3 release. See [storage](/laravel-cart/v4/storage/), [money and tax](/laravel-cart/v4/money-and-tax/) and [authentication](/laravel-cart/v4/authentication/). Public amounts remain floats; cart coupons do not allocate post-discount VAT per tax rate.
+> **Release 4.2.0.** This guide describes the selected `4.2.0` release, pinned below. **Since 4.1.0:** built-in atomic live mutations, repricing that preserves and reapplies item coupons, and opt-in live guest-cart transfer. **Since 4.2.0:** read-only [payableTaxBreakdown()](/laravel-cart/v4/post-discount-tax/) post-discount allocation per row and VAT rate, and executable adoption recipes. These guarantees must not be assumed for the earlier 4.0.3 release. See the [capability map](/laravel-cart/v4/capabilities/), [storage](/laravel-cart/v4/storage/), [money and tax](/laravel-cart/v4/money-and-tax/) and [authentication](/laravel-cart/v4/authentication/). Public amounts remain floats; legacy VAT methods still precede cart coupons, and the allocation is not fiscal certification.
 
 A Laravel shopping cart with VAT, item/cart coupons, session or database persistence,
 resources and testing helpers. It fits applications that own their catalog and checkout.
 Choose a full commerce framework when you also need inventory, orders, payments,
 shipping or a redemption ledger. No production adoption or comparative performance is claimed.
 
+- [Capabilities and release availability](/laravel-cart/v4/capabilities/), [adoption recipes](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/recipes/index.md)
+- [Post-discount tax allocation](/laravel-cart/v4/post-discount-tax/) (since 4.2.0)
 - [Installation](/laravel-cart/v4/installation/) and [configuration](/laravel-cart/v4/configuration/)
 - [Usage and executable example](/laravel-cart/v4/usage/), [full API reference](/laravel-cart/v4/reference/)
 - [Money and tax](/laravel-cart/v4/money-and-tax/), [coupons](/laravel-cart/v4/coupons/)
@@ -27,7 +29,7 @@ shipping or a redemption ledger. No production adoption or comparative performan
 - [Testing](/laravel-cart/v4/testing/), [upgrading](/laravel-cart/v4/upgrading/), [troubleshooting](/laravel-cart/v4/troubleshooting/)
 - [Agent integration](/laravel-cart/v4/agents/), [dated alternatives](/laravel-cart/v4/alternatives/)
 
-These pages document released Laravel Cart `4.1.0` from the pinned tag. The public documentation website is maintained separately from the package release.
+These pages document released Laravel Cart `4.2.0` from the pinned tag. See the capability map for per-feature availability. The public documentation website is maintained separately from the package release.
 
 
 - [Historical site documentation](/laravel-cart/legacy/)
@@ -40,7 +42,7 @@ These pages document released Laravel Cart `4.1.0` from the pinned tag. The publ
 Requires PHP `~8.4.0 || ~8.5.0`, BCMath and Illuminate `^12.69.2 || ^13.32`.
 
 ```sh
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 ```
 
 In a configured Laravel application, use an isolated demo instance with synthetic trusted catalog values. The snippet below is extracted from the released executable example; its two-driver test verifies the expected total.
@@ -58,7 +60,7 @@ $cart->addCoupon(new CartCoupon(hash: 'welcome', code: 'WELCOME', type: 'fixed',
 $payable = $cart->total(); // 45.36; item tax breakdown is before this cart coupon.
 ```
 
-[Executable example](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/examples/quick-start.php) · [Session and database assertions](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Feature/DocumentationExamplesTest.php)
+[Executable example](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/examples/quick-start.php) · [Session and database assertions](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Feature/DocumentationExamplesTest.php)
 
 ## Choose a practical guide
 
@@ -70,4 +72,4 @@ $payable = $cart->total(); // 45.36; item tax breakdown is before this cart coup
 
 ---
 
-Imported from [docs/v4/index.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/index.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/index.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/index.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

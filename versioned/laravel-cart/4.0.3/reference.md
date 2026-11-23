@@ -66,7 +66,7 @@ Event::listen(CartItemAdded::class, function (CartItemAdded $event): void {
 
 Legacy string events remain enabled by default with `cart.use_legacy_events = true`. Item `cart.added`, `cart.updated`, `cart.removed` carry the CartItem; `cart.stored` and `cart.restored` have no payload. The legacy string event precedes its typed counterpart. Legacy coupon APIs also emit strings such as `cart.global_coupon_added`, `cart.global_coupon_removed`, `cart.coupon_removed` and `cart.coupons_cleared`; these are separate from typed cart-coupon events. Set the flag to false when migrating listeners to typed events. A typed item event is not an after-commit hook: removal dispatches before its storage write. Stable listeners and mutations do not promise transaction-wide rollback.
 
-All package exceptions extend CartException. Handle row-not-found, duplicate snapshot/coupon, invalid driver/configuration, cart limit and storage decoding failures as application errors. [Exception classes](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Exceptions) are the full reference. A defined class is not proof every driver throws it: stable database expiration treats carts as missing rather than throwing CartExpiredException. Stable failed mutations do not promise rollback of all in-memory or persisted state.
+All package exception classes extend CartException; invalid item input (ID, name, quantity, price, coupon type or options) throws PHP's `InvalidArgumentException` instead. Handle row-not-found, duplicate snapshot/coupon, invalid driver/configuration, cart limit and storage decoding failures as application errors. [Exception classes](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/src/Exceptions) are the full reference. A defined class is not proof every driver throws it: stable database expiration treats carts as missing rather than throwing CartExpiredException. Stable failed mutations do not promise rollback of all in-memory or persisted state.
 
 ## CLI and resources
 
@@ -93,4 +93,4 @@ Inspect your installed `php artisan <command> --help` before maintenance and sco
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).

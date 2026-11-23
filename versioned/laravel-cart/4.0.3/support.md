@@ -36,7 +36,7 @@ composer install
 composer check
 ```
 
-Those are upstream maintainer commands, not commands needed to build this VuePress website. A coverage threshold in a script is not a measured published coverage report; this site makes no coverage claim. Preview executable examples belong to the pinned PR; importing their Markdown is not proof this site executed the PHP examples.
+Those are upstream maintainer commands, not commands needed to build this VuePress website. A coverage threshold in a script is not a measured published coverage report; this site makes no coverage claim. Executable examples of later releases belong to those tags; importing their Markdown is not proof this site executed the PHP examples.
 
 The site change checks generated links, anchors, provenance and static HTML. Application recipes require your own integration tests for guards, sessions, database engine, concurrency and frontend stack.
 
@@ -67,17 +67,17 @@ $events = $fake->recorder()->recorded(CartItemAdded::class); // list of recorded
 
 Assertions use PHPUnit, so run this inside your Pest/PHPUnit test runtime. Use `assertDispatched($eventClass, ?callable $callback = null)`, `assertNotDispatched($eventClass)` and `assertDispatchedTimes($eventClass, int $times = 1)`. The recorder does not record legacy string events. `Cart::fake()` does not clear existing session cart state, and retained event payload objects may reflect later mutations.
 
-The repository's isolated `maintenance/fixtures/cart/run.sh` extracts the released source, overrides its PSR-4 map and checks that release classes actually load. Locally executed on PHP 8.5.10 / Laravel 13.35.0 with BCMath: quick start totals, row identity/quantity, item coupon 280, tax 122, cart coupon totals 265/216, rounding, metadata/snapshot, sync, limits and CartFake event assertions passed. It uses the actual SessionStorage with an array session, no database or external API. It does not replace application database, concurrency, OAuth/session or checkout tests.
+During the original 4.0.3 documentation pass, the isolated `maintenance/fixtures/cart/run.sh` (now pinned to a later release) extracted the 4.0.3 source, overrode its PSR-4 map and checked that release classes actually load. Executed then on PHP 8.5.10 / Laravel 13.35.0 with BCMath: quick start totals, row identity/quantity, item coupon 280, tax 122, cart coupon totals 265/216, rounding, metadata/snapshot, sync, limits and CartFake event assertions passed. It uses the actual SessionStorage with an array session, no database or external API. It does not replace application database, concurrency, OAuth/session or checkout tests.
 
 ## Explicit limitations and upstream handoff
 
 Stable 4.0.3 needs follow-up for undeclared BCMath dependency, cart coupon precision versus configurable rounding, incomplete repricing, concurrent mutation guarantees and misleading database logout comments. Snapshot identifiers need application authorization. Keep these limits visible until a verified release changes them.
 
-PR #50 proposes some corrections but not a final post-discount tax allocation API. Complete Livewire/Inertia and variants/wishlist recipes with executable examples are upstream follow-up work unless a later verified release adds them. The fragments here are not claimed as tested framework integrations.
+4.1.0 (PR #50) released some corrections; 4.2.0 (PR #51) added the read-only `payableTaxBreakdown()` post-discount allocation and executable Livewire/Inertia and variants/wishlist recipes. None of these exist in 4.0.3. The fragments here are not claimed as tested framework integrations.
 
 [MIT license](https://github.com/offline-agency/laravel-cart/blob/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16/LICENSE) · [Offline Agency](https://offlineagency.it)
 
 
 ---
 
-Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Unreleased preview](https://github.com/offline-agency/laravel-cart/pull/50) · [Historical site](/laravel-cart/legacy/).
+Source contract: [released 4.0.3 at `60eb100`](https://github.com/offline-agency/laravel-cart/tree/60eb1006c9c2b31ff50cebd7b8b677a1dd16cc16). [Stable overview](/laravel-cart/4.0.3/) · [Current 4.x documentation](/laravel-cart/v4/) · [Historical site](/laravel-cart/legacy/).

@@ -1,10 +1,10 @@
 ---
-title: Configuration — v4 · 4.1.0
+title: Configuration — v4 · 4.2.0
 description: >-
   Laravel Cart configuration for drivers, owners, TTL, rounding, limits, events
   and guest transfer.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/configuration/
 documentationSnapshot: true
 documentationKey: v4
@@ -13,7 +13,7 @@ documentationChannel: stable
 
 # Configuration
 
-The canonical defaults are [config/cart.php](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/config/cart.php). Configure the
+The canonical defaults are [config/cart.php](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/config/cart.php). Configure the
 storage driver, connection, `carts_table`, `cart_items_table`, snapshot `table`,
 user foreign key column/type, TTL in minutes, format decimals/rounding, tax defaults,
 limits and optional guest transfer. Use distinct instances for distinct carts;
@@ -218,4 +218,4 @@ return [
 
 ---
 
-Imported from [docs/v4/configuration.md](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/docs/v4/configuration.md) at `b89d3219202703203453890e2e46467e79ad415d` (release `4.1.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/LICENSE) retained in the frozen import.
+Imported from [docs/v4/configuration.md](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/configuration.md) at `e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2` (release `4.2.0`). Upstream [MIT license](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/LICENSE) retained in the frozen import.

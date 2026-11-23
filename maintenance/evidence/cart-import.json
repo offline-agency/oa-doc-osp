@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "verifiedOn": "2026-10-16",
+  "verifiedOn": "2026-11-23",
   "repository": "https://github.com/offline-agency/laravel-cart",
-  "commit": "b89d3219202703203453890e2e46467e79ad415d",
+  "commit": "e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2",
   "documentation": {
     "key": "v4",
-    "packageVersion": "4.1.0",
+    "packageVersion": "4.2.0",
     "strategy": "compatibility"
   },
   "inputs": [
@@ -15,7 +15,7 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "8778b3d6c935d6f52e0b699e2f80a40e1ca3a206f4e7c0385258f354690d7e16"
+      "sha256": "fa3009c2d59b55ccfd86796da451208c23eca6c16bb16d07bece40db63a23555"
     },
     {
       "path": "CONTRIBUTING.md",
@@ -31,15 +31,15 @@
     },
     {
       "path": "README.md",
-      "sha256": "4d77b8390084d225243abb5139774ed5f738e319ed012f35f9856889c95425d4"
+      "sha256": "6b3c265d0cc658902024a0fa6ffe516d71df21e0c8cc1a17cd64774fd2006a9b"
     },
     {
       "path": "UPGRADE.md",
-      "sha256": "0c1dbafa7d40c024848bb7ddcbc0415d3ed90e3cb3eac6269644939a2d0c6584"
+      "sha256": "fbf9f97ac096e1b15546fe6a849ead0eda5333657929fd285b6afac5492b75e6"
     },
     {
       "path": "composer.json",
-      "sha256": "15dc6fe91f7c041025eb60c827986fd91826f85849d77a4c17966ba4708867cd"
+      "sha256": "ce9963bb334825a265e6ac0d774b46fdd60cdc0cde3d4b84b27c3bd5f35bb7ab"
     },
     {
       "path": "config/cart.php",
@@ -75,7 +75,11 @@
     },
     {
       "path": "docs/v4/authentication.md",
-      "sha256": "c613cbe54d9879b918fe942ebe6e77ab93eb7fce9e4f1d5ba547faef37cf0540"
+      "sha256": "e104d12575b21054cec8f44f80ac8c6024f6aee2638fce5c5a122becc1d2488b"
+    },
+    {
+      "path": "docs/v4/capabilities.md",
+      "sha256": "efb82e50068353fa78edbd3d54140ab018b5dda9ed4e74b4b0c610474ed56518"
     },
     {
       "path": "docs/v4/configuration.md",
@@ -87,31 +91,59 @@
     },
     {
       "path": "docs/v4/index.md",
-      "sha256": "cf03b84f214eefae7423309d951c1a71c96bd5bde172bbd34a880998bcf2a779"
+      "sha256": "7abb21366770470029c756666df19723c5d005d5d6e390cc310f3a1b2b72826b"
     },
     {
       "path": "docs/v4/installation.md",
-      "sha256": "4ce978cd362a92d0ed59864a0f592bad84a17aedd6922477567d8c3dddb468f8"
+      "sha256": "ccc59c99b022caf1f2ca9b30111a6086a6d9b31e166fb9ef630dc9206ffbce2d"
     },
     {
       "path": "docs/v4/money-and-tax.md",
-      "sha256": "412a02cb98f1a72708903613d9e322afd5a9ca3c40a8efc49493cefd79089992"
+      "sha256": "9df41263539f006fe1e30a513ce097cf4e9db193e873d3e6d5211aa912ff406c"
+    },
+    {
+      "path": "docs/v4/post-discount-tax.md",
+      "sha256": "8f26f7a8f96d47d567a83e89cf431b510c1ece6a096e5a0d0aeb2f3bb54c3888"
+    },
+    {
+      "path": "docs/v4/recipes/api-mobile.md",
+      "sha256": "4bbb9ba37ca1bba28f6c3329ecc0da3b18c823d6267134589b78e0f8fd15aa9a"
+    },
+    {
+      "path": "docs/v4/recipes/index.md",
+      "sha256": "54e98a3ec16929677cc276348413979edbcf603011fde0bf5de16fd87f070464"
+    },
+    {
+      "path": "docs/v4/recipes/inertia-vue.md",
+      "sha256": "0db68684ab3003e9262cee82bb00721d17bb10e79b28f6c7747e3a4b657ecc9c"
+    },
+    {
+      "path": "docs/v4/recipes/livewire.md",
+      "sha256": "ab73f307508bbc61701df70a9dc67f8a925602155e0abfb691ab6e1681fcd31b"
+    },
+    {
+      "path": "docs/v4/recipes/redis-sessions.md",
+      "sha256": "3c6e0ba5f514e65fbc8d7b54f25a8df82e2ee250d75c6bf7c27c63bfb0fa33a6"
+    },
+    {
+      "path": "docs/v4/recipes/variants-wishlist.md",
+      "sha256": "466ba1672b8c3e1da3898746324d1761a7519fe1e880ab818b895140fb389d38"
     },
     {
       "path": "docs/v4/reference.md",
-      "sha256": "9f44e8894ac4e9476a4def63997996d10910fd02c9a4b6094df00cd85bb8f09a"
+      "sha256": "5ea2f54e7103209a5102f1f5f8981cf29e409763e9bb73c70f5ac1aacfe0abdc"
     },
     {
       "path": "docs/v4/storage.md",
-      "sha256": "69ced8e667bb0debf466af52337f4bea13b2da1a2b79af3ace42356abffc8120"
+      "sha256": "f13326ec9e53ff197bcf1b421cd3eecad895fe590692b9e6a34a52f9c6ebf367"
     },
     {
       "path": "docs/v4/testing.md",
-      "sha256": "57db3ece15a4a5fee85f92c6bfac9a60a2ac7b36c63a13a550f3e818071b70b9"
+      "sha256": "e26f613d7f1c35bc355e8909d0211d1c613c26d3e12dafe1876352490d6211c0"
     },
     {
       "path": "docs/v4/troubleshooting.md",
-      "sha256": "a7e3e7baf71324721cf17aae0a9116817abdbc2a80ebe71e84c489b45aa68c10"
+      "sha256": "1115bc910a22211e9a329b6931efe6122b3d1f798f202626236279f7314172f9"
     },
     {
       "path": "docs/v4/upgrading.md",
@@ -119,7 +151,19 @@
     },
     {
       "path": "docs/v4/usage.md",
-      "sha256": "194cfd53ccbcbf9b0c2b7d7320e57fc0ee7222fc37bba9bb60da0a76fe81f7ff"
+      "sha256": "5cd3c92a4bc1eafcfcaad5816ca05ef2150669483a9d1b86fea52d059b42a0a1"
+    },
+    {
+      "path": "examples/CartActions.php",
+      "sha256": "ca828afb41c014e0e6bcd554e75623cb2216c5f52edd91607b137a74435ac8c6"
+    },
+    {
+      "path": "examples/RedisSessionExample.php",
+      "sha256": "8f76e320f999d6e839d584b6beab9a4720ac88aa3cf334be4ea66d8ea04be4ef"
+    },
+    {
+      "path": "examples/payable-tax.php",
+      "sha256": "f863f6d4f7d6e54c73d7a2ad1ee9ee9eb5b609b5059b67c82978b7f351361a6a"
     },
     {
       "path": "examples/quick-start.php",
@@ -127,11 +171,11 @@
     },
     {
       "path": "resources/boost/guidelines/core.blade.php",
-      "sha256": "831e40bb14b59973096eb80960b2d6f1126f72ac261c98fb5c8ec19f5955c1f9"
+      "sha256": "e22463c63f0dfa0eab0605c344389f7a93e17fbc030f9dc6a25eadba08b886a4"
     },
     {
       "path": "resources/boost/skills/laravel-cart-development/SKILL.md",
-      "sha256": "8adcbb9925f9f264bb63eacfb80a1176dcd27a28a6e34afbf4a8712f53d73d04"
+      "sha256": "54eac70a533b7ff87e04ee7582776833823844305a60544def12a0f003bdd130"
     },
     {
       "path": "scripts/boost-smoke.php",
@@ -139,11 +183,11 @@
     },
     {
       "path": "scripts/consumer-smoke.mjs",
-      "sha256": "bfcc8d465560e7cbbbca55c836e95361ef7541856d3089deee7435197717a281"
+      "sha256": "9b7ed3d2935b312716f26baf0b18d9f06e4de897fcba329ef0d71fd93588e852"
     },
     {
       "path": "scripts/docs.mjs",
-      "sha256": "fa359167675650bdb736bea412860dc089cb05294ab459b3343aee8fd863884b"
+      "sha256": "ce28ef46dcb724efabc0fcb7776c2e5484ae3785a6281f7332560f3619f85207"
     },
     {
       "path": "scripts/release-dry-run.mjs",
@@ -151,7 +195,7 @@
     },
     {
       "path": "scripts/test/docs.test.mjs",
-      "sha256": "775ff71185cf7f22aa135dc2e332afbea04295932969526d1d1da2ebfbd49772"
+      "sha256": "408be8182ca3149f5d5c10131a43b7618147883729d8aa845d92a439e4b42114"
     },
     {
       "path": "src/CanBeBought.php",
@@ -159,7 +203,7 @@
     },
     {
       "path": "src/Cart.php",
-      "sha256": "91a225f636cb78693947ce449c1d1eb81e0b953c64f6bca936257bf5fdd60a83"
+      "sha256": "c157def5da6e306cdafe3efb8958cbf8ca78adf360b96b631047a7f79b944e1a"
     },
     {
       "path": "src/CartCoupon.php",
@@ -326,12 +370,16 @@
       "sha256": "72bfef265b17cdb2bc1115a8702b43e50ac047c5584cca27b0f9769c6256b7ac"
     },
     {
+      "path": "src/Exceptions/TaxAllocationException.php",
+      "sha256": "d2e90354845d44c6a8af896ecdef59ba21062ae5b3a853bfa0fbc267b64e691e"
+    },
+    {
       "path": "src/Exceptions/UnknownModelException.php",
       "sha256": "89990f168ae7a1b170d422570149b3a9ed97dfc3ceb2282e0293521a05ed5fcf"
     },
     {
       "path": "src/Facades/Cart.php",
-      "sha256": "2852e6abf9aade69d0d849900a57767cf54d9d86d57b6c40b08f0cace0c7c7fc"
+      "sha256": "a607580a2b65d09d0efb4eff39b0907699c49ac48405231617cc3c83df8a84bd"
     },
     {
       "path": "src/Http/Middleware/CartMergeMiddleware.php",
@@ -380,6 +428,14 @@
     {
       "path": "src/Support/CouponData.php",
       "sha256": "acc50afc9af45b9848afb0f950ecf18fc074c022043ef116706caaa0cc700d63"
+    },
+    {
+      "path": "src/Support/TaxAllocator.php",
+      "sha256": "2a1f7e6d778a567c7e395939c266a4bf241c84f7424f241e2a4bca843d7bff98"
+    },
+    {
+      "path": "src/TaxBreakdown.php",
+      "sha256": "b46dd2bf94aaac2a3c6b65fc4b0b6a71b2f26a742733c89f4628f2e531047032"
     },
     {
       "path": "src/Testing/CartFake.php",
@@ -466,6 +522,10 @@
       "sha256": "6e8958c04bbff5f03c61829e389a41cf418ca48c91f3dd63a6159b2a918ce267"
     },
     {
+      "path": "tests/Feature/AdoptionRecipesTest.php",
+      "sha256": "3b7052e5be5d26fb55bacc4e0ab223399a32bc50da6dcd50db9d9637844715c6"
+    },
+    {
       "path": "tests/Feature/CartCommandTest.php",
       "sha256": "220fde6c11925977f655899367ce50719795c769936f0acec89797e01335fd6a"
     },
@@ -527,7 +587,7 @@
     },
     {
       "path": "tests/Feature/DocumentationExamplesTest.php",
-      "sha256": "5ee1d22fe64775878828fd8a9182b8d1e4c6f8945c656d75a0b36dd508bcdbb8"
+      "sha256": "ab51a2c5fd52e73b40a8db17e2abf73a9d0697f3f615c0119462ab0f3e6d66a5"
     },
     {
       "path": "tests/Feature/GuestTransferPolicyTest.php",
@@ -536,6 +596,10 @@
     {
       "path": "tests/Feature/GuestTransferTest.php",
       "sha256": "12f0c4e3c9175dd158b8eedbac910d82f20289f5fe998780c75fc5138dc53ae7"
+    },
+    {
+      "path": "tests/Feature/PayableTaxBreakdownTest.php",
+      "sha256": "70f52532e502fe0bc6ac3bc01775d9e0adeb8734bed9196358fd9f6da793fad8"
     },
     {
       "path": "tests/FeatureTestCase.php",
@@ -669,129 +733,139 @@
   "adapters": [
     {
       "path": "maintenance/cart-adapters/api-and-mobile.md",
-      "sha256": "47c880056c98e5438ac900ef7fe8bf3da3718d39ca8d450e6b593e1ee02d0112"
+      "sha256": "3c8759161181842f51d45600c24630b440a4220db6a00507afc70c5c12ee7b0f"
     },
     {
       "path": "maintenance/cart-adapters/choosing.md",
-      "sha256": "8e7e32ca41660978267ae2dbe7ba36ffe515443c04af29d9c58cf77827f8047f"
+      "sha256": "707d9a82be2ca03f4411c88a44c482d35078faedd6bd6131782fb139a1c657e5"
     },
     {
       "path": "maintenance/cart-adapters/integrations.md",
-      "sha256": "f528b03249fb219ffae27f2bf4e7180b1c8f9ff6fd1c753463b3427964756ca9"
+      "sha256": "7f5925093eb8c0d47ad9b04b929126ef9d51b4217992a156080fa003c90e2851"
     },
     {
       "path": "maintenance/cart-adapters/redis-sessions.md",
-      "sha256": "d431063fe15a90754614e0d4d6a4440f35716c47f2cb84426002d53153ab5b20"
+      "sha256": "d3c0f8ded9deeb911612a01c1971d7529f5d0df8459d6b0b76043b22ed228671"
     },
     {
       "path": "maintenance/cart-adapters/variants-and-wishlist.md",
-      "sha256": "189a45265a15732bfea9c21b264166758d2ee10ef47f6af58c42bc974e7e045e"
+      "sha256": "f03a8684c439023038a9ca769ea7bb60a04e0dbe1949d017079b503c81284534"
     }
   ],
   "outputs": [
     {
       "path": "laravel-cart/agents.md",
       "sourcePath": "docs/v4/agents.md",
-      "sha256": "4481d4b79c9ef5cbe28d01cb13133711e9506668ef8462262b513f4868214a81"
+      "sha256": "9c8a2342ae84a3c982530463093b3db27eb9952a49de3c67589960df2932c88b"
     },
     {
       "path": "laravel-cart/alternatives.md",
       "sourcePath": "docs/v4/alternatives.md",
-      "sha256": "7177ce3feb5165a67a0c802f5bc873e8574a22758fa0fe5e6172e24898353e4a"
+      "sha256": "3aa70e3e1d13e9f45abb41eab477517897d52cfb6794ea172e55cf93cfe3a397"
     },
     {
       "path": "laravel-cart/authentication.md",
       "sourcePath": "docs/v4/authentication.md",
-      "sha256": "58d99f27709656e6756aa5bb248d01190a464fbce6e7372d01e4a7a9e0e8c6ee"
+      "sha256": "0b363cafc3648e4e0405ea95461ffab2a7ce440b90a40bf1cf0d0cf48261048c"
+    },
+    {
+      "path": "laravel-cart/capabilities.md",
+      "sourcePath": "docs/v4/capabilities.md",
+      "sha256": "68b9d06ddcbc727ec4901764a17bf562b42410baa7845505aafe45ab63b3b7bb"
     },
     {
       "path": "laravel-cart/configuration.md",
       "sourcePath": "docs/v4/configuration.md",
-      "sha256": "f6f19a172278143ba2f0d9cb2be1e5f6f18fb5bb31d6e6621b2d554c37e9b0cb"
+      "sha256": "44cc1ccaa9bf2fb71174456f170c442d4d67707782f8282adfd0c1d54cf2adab"
     },
     {
       "path": "laravel-cart/coupons.md",
       "sourcePath": "docs/v4/coupons.md",
-      "sha256": "4069bf22a2082f9715aae562aeea4a836f15bea4663705d19dcaa66435c7914c"
+      "sha256": "aedf7f1b758eb8ed8506d5f3000cafdc3e11d86978a8f07ccc7850c89847f3c8"
     },
     {
       "path": "laravel-cart.md",
       "sourcePath": "docs/v4/index.md",
-      "sha256": "48eb3c67ce258fb0b0bf756c9d9762cc8364cbc2e004b2991b1e73850955764b"
+      "sha256": "28a80d390b6665bbd83c69f968ad587a4df0197d39734252841cdc801fe2abf5"
     },
     {
       "path": "laravel-cart/installation.md",
       "sourcePath": "docs/v4/installation.md",
-      "sha256": "7ba2e4804f33a86afb6f1d96ef5366d943f77fbe25095c8a38d2f32c347ebf49"
+      "sha256": "bec8f75dbf3ea0616c214e5d8b6ca199b2ba7173d2b79773e607ac85c1795dd2"
     },
     {
       "path": "laravel-cart/money-and-tax.md",
       "sourcePath": "docs/v4/money-and-tax.md",
-      "sha256": "6b60e6bdb8afd0828d523501ba33d5265c0c08910324a21ec33763ddb5a60825"
+      "sha256": "b5824dac8d65dd4dcd4f62339cacf273fa51a5b488ca0005c5e556958611fa0d"
+    },
+    {
+      "path": "laravel-cart/post-discount-tax.md",
+      "sourcePath": "docs/v4/post-discount-tax.md",
+      "sha256": "8cb18a4292cc8fb3e89adab69dd927e31f03384d3a0fea3d228fc7108ee0b0e6"
     },
     {
       "path": "laravel-cart/reference.md",
       "sourcePath": "docs/v4/reference.md",
-      "sha256": "26aca4571f090301d8c2f066df02b26623cc277693e0fe3c90737718a139b770"
+      "sha256": "0e919fa938d307d7f21d216b0c3f117b0541d1b13e12c71aee8150af9df9e132"
     },
     {
       "path": "laravel-cart/storage.md",
       "sourcePath": "docs/v4/storage.md",
-      "sha256": "93ad74d987fdf09f91e1ecb3879146d120ac3ce752af10c97171707b76d2acb8"
+      "sha256": "3f859efb2e9f0441817fca633ffc31d2973dd110d76f837b331408b90e16eb23"
     },
     {
       "path": "laravel-cart/testing.md",
       "sourcePath": "docs/v4/testing.md",
-      "sha256": "fd514264fe97da7347cf8efd0cafa53ab947f813809cbca0b2ea9cd3d4d2533f"
+      "sha256": "0f30107a783002e82d80f0f3f12f4cbf8a690987f67575c0158d2f5bf363c392"
     },
     {
       "path": "laravel-cart/troubleshooting.md",
       "sourcePath": "docs/v4/troubleshooting.md",
-      "sha256": "f24921574e00bb77415a631194d34dcd85ee3b97fd9aa8bc296b0f981c60e490"
+      "sha256": "bca00a8fa8042c30124020208193654e62a62bd57881a61043f0b67543940449"
     },
     {
       "path": "laravel-cart/upgrading.md",
       "sourcePath": "docs/v4/upgrading.md",
-      "sha256": "0da91233c18d1a7d2e7855ba8c52931069ef907e9a6378c0c0ed29cb9d2a3da5"
+      "sha256": "8a7121eb019648ab9aa97596ec0c1b74373bf32c913407b54b899928afcc8842"
     },
     {
       "path": "laravel-cart/usage.md",
       "sourcePath": "docs/v4/usage.md",
-      "sha256": "ebce592374018ecf1c73df0c1901c0499bbe926576b44fcb5b46914ce4b0728e"
+      "sha256": "0e907df55cb8bed5c23042ee0cb85959e50b2aa5354c8a2b0742af5cdda1c1b3"
     },
     {
       "path": "laravel-cart/api-and-mobile.md",
       "adapterPath": "maintenance/cart-adapters/api-and-mobile.md",
-      "sha256": "47c880056c98e5438ac900ef7fe8bf3da3718d39ca8d450e6b593e1ee02d0112"
+      "sha256": "3c8759161181842f51d45600c24630b440a4220db6a00507afc70c5c12ee7b0f"
     },
     {
       "path": "laravel-cart/choosing.md",
       "adapterPath": "maintenance/cart-adapters/choosing.md",
-      "sha256": "8e7e32ca41660978267ae2dbe7ba36ffe515443c04af29d9c58cf77827f8047f"
+      "sha256": "707d9a82be2ca03f4411c88a44c482d35078faedd6bd6131782fb139a1c657e5"
     },
     {
       "path": "laravel-cart/integrations.md",
       "adapterPath": "maintenance/cart-adapters/integrations.md",
-      "sha256": "f528b03249fb219ffae27f2bf4e7180b1c8f9ff6fd1c753463b3427964756ca9"
+      "sha256": "7f5925093eb8c0d47ad9b04b929126ef9d51b4217992a156080fa003c90e2851"
     },
     {
       "path": "laravel-cart/redis-sessions.md",
       "adapterPath": "maintenance/cart-adapters/redis-sessions.md",
-      "sha256": "d431063fe15a90754614e0d4d6a4440f35716c47f2cb84426002d53153ab5b20"
+      "sha256": "d3c0f8ded9deeb911612a01c1971d7529f5d0df8459d6b0b76043b22ed228671"
     },
     {
       "path": "laravel-cart/variants-and-wishlist.md",
       "adapterPath": "maintenance/cart-adapters/variants-and-wishlist.md",
-      "sha256": "189a45265a15732bfea9c21b264166758d2ee10ef47f6af58c42bc974e7e045e"
+      "sha256": "f03a8684c439023038a9ca769ea7bb60a04e0dbe1949d017079b503c81284534"
     }
   ],
   "assets": [],
   "upstreamRuntimeMounted": false,
   "transformations": [
-    "Preserve all 14 docs/v4 Markdown guides and executable snippets.",
+    "Preserve all 16 top-level docs/v4 Markdown guides and executable snippets; link recipes to immutable GitHub blobs.",
     "Add English site metadata, exact release provenance and compatibility boundary.",
     "Resolve guide links and fragments to site routes; source-only links to immutable GitHub blobs.",
-    "Correct stale proposed-release label in tagged index; retain dated alternatives and monetary limitations.",
+    "Correct stale unreleased/follow-up labels written before the 4.2.0 tag (index, capability map, post-discount tax, money, reference, troubleshooting, guide banners); retain dated alternatives and monetary limitations.",
     "Copy reviewed maintenance/cart-adapters Markdown with pinned metadata.",
     "Correct source reference sync identity from product-only to ID plus options using released runtime/tests.",
     "Extract the marked executable quick-start snippet into the landing and link all site recipes.",

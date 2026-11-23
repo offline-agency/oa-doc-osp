@@ -1,10 +1,10 @@
 ---
-title: Livewire and Inertia recipes — v4 · 4.1.0
+title: Livewire and Inertia recipes — v4 · 4.2.0
 description: >-
   Minimal server actions and Vue UI scaffolding using the released Laravel Cart
-  4.1.0 API.
-packageVersion: 4.1.0
-sourceCommit: b89d3219202703203453890e2e46467e79ad415d
+  4.2.0 API.
+packageVersion: 4.2.0
+sourceCommit: e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2
 permalink: /laravel-cart/v4/integrations/
 documentationSnapshot: true
 documentationKey: v4
@@ -13,12 +13,12 @@ documentationChannel: stable
 
 # Livewire and Inertia recipes
 
-These are application scaffolding and UI fragments. They use the released 4.1.0 API; they are not installed endpoints or framework integrations tested in Livewire/Inertia. Use them inside an application that already has the chosen frontend stack configured. The package requires neither stack.
+These are application scaffolding and UI fragments. They use the released 4.2.0 API; they are not installed endpoints or framework integrations tested in Livewire/Inertia. Release 4.2.0 also ships upstream [Livewire](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/recipes/livewire.md) and [Inertia/Vue](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/docs/v4/recipes/inertia-vue.md) recipes whose shared service is tested; their UI and controller fragments are illustrative too. Use them inside an application that already has the chosen frontend stack configured. The package requires neither stack.
 
 Requires PHP 8.4/8.5, BCMath and supported Laravel 12/13 dependencies:
 
 ```sh
-composer require offline-agency/laravel-cart:4.1.0
+composer require offline-agency/laravel-cart:4.2.0
 ```
 
 See [installation](/laravel-cart/v4/installation/) for exact dependency floors and optional migrations. Default session carts need no package tables.
@@ -71,7 +71,7 @@ final class DemoCart
 
 `qty` is the quantity to add, not the desired final quantity. Repeated additions accumulate. The demo checks a per-request limit; configure `cart.limits.max_qty_per_item` for a cart-row cap. It does not model stock. A cart is not a reservation: revalidate catalog prices, variants, owner authorization, availability, tax and coupon eligibility at checkout, inside your application's order/inventory concurrency design.
 
-Adding an existing row retains its stored base prices and row coupons. In 4.1.0, use explicit `update($rowId, ['price' => ...])` or a complete trusted amount update to reprice; array/Buyable repricing recalculates net/VAT/gross while retaining row coupons. Notify the customer when checkout prices change. Cart-level discounts do not allocate back into VAT buckets, and amount fields are floats.
+Adding an existing row retains its stored base prices and row coupons. Since 4.1.0, use explicit `update($rowId, ['price' => ...])` or a complete trusted amount update to reprice; array/Buyable repricing recalculates net/VAT/gross while retaining row coupons. Notify the customer when checkout prices change. Cart-level discounts do not allocate back into VAT buckets, and amount fields are floats.
 
 ## Minimal Livewire action and view
 
@@ -175,7 +175,7 @@ Route::middleware('auth')->group(function () {
 });
 ```
 
-The `block()` call needs a lock-capable Laravel cache configuration; see [Redis sessions and blocking](/laravel-cart/v4/redis-sessions/). In 4.1.0, database driver package mutations already lock before reading across sessions. Inventory/checkout locks remain application work.
+The `block()` call needs a lock-capable Laravel cache configuration; see [Redis sessions and blocking](/laravel-cart/v4/redis-sessions/). Since 4.1.0, database driver package mutations already lock before reading across sessions. Inventory/checkout locks remain application work.
 
 Create `resources/js/Pages/Cart.vue` (adapt its location to your Inertia page resolver):
 
@@ -205,4 +205,4 @@ The POST redirects to GET `/cart`; Inertia receives newly calculated server prop
 
 For JSON responses and token guards use [API/mobile resources](/laravel-cart/v4/api-and-mobile/). For database login transitions use the opt-in [guest-transfer middleware](/laravel-cart/v4/authentication/), introduced in 4.1.0; saved `store()`/`restore()` snapshots are separate.
 
-Source: [canonical executable 4.1.0 example](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/examples/quick-start.php), [its two-driver tests](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/tests/Feature/DocumentationExamplesTest.php), [Cart API](https://github.com/offline-agency/laravel-cart/blob/b89d3219202703203453890e2e46467e79ad415d/src/Cart.php). The frontend scaffolding above is site-specific and has not been tested in Livewire or Inertia.
+Source: [canonical executable 4.2.0 example](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/examples/quick-start.php), [its two-driver tests](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/tests/Feature/DocumentationExamplesTest.php), [Cart API](https://github.com/offline-agency/laravel-cart/blob/e24c589d4ea02ae571c5c441a2e4886b3d9f2fd2/src/Cart.php). The frontend scaffolding above is site-specific and has not been tested in Livewire or Inertia.
