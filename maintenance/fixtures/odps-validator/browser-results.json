@@ -1,0 +1,16 @@
+{
+  "verifiedOn": "2026-10-16",
+  "release": "1.0.1",
+  "commit": "bed32b74b2cf353bfebb134aab9dfb41ac033d81",
+  "cases": [
+    "actual schema selector v3.0/v3.1",
+    "YAML success",
+    "numeric version rejected",
+    "primitive42 permissiveness confirmed",
+    "YAML parse error",
+    "schema404 surfaced"
+  ],
+  "pageErrors": [],
+  "externalNetworkBlocked": true,
+  "screenshotsSaved": false
+}

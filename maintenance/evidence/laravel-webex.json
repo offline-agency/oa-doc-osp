@@ -1,0 +1,54 @@
+{
+  "package": "offline-agency/laravel-webex",
+  "tag": "2.0.0",
+  "commit": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+  "composerRequirements": {
+    "php": "~8.4.0 || ~8.5.0",
+    "ext-json": "*",
+    "laravel/framework": "^12.69.2 || ^13.32"
+  },
+  "distribution": {
+    "version": "2.0.0",
+    "sourceRef": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+    "distRef": "c4aec48c1c416676cc411936fe7e905398f66b8c",
+    "verifiedOn": "2026-10-16",
+    "registry": "https://repo.packagist.org/p2/offline-agency/laravel-webex.json"
+  },
+  "defaultBranch": "main",
+  "releaseUrl": "https://github.com/offline-agency/laravel-webex/releases/tag/2.0.0",
+  "releasePublishedAt": "2026-10-13T21:13:05Z",
+  "sourcePaths": [
+    "composer.json",
+    "README.md",
+    "UPGRADE.md",
+    "config/webex.php",
+    "src/LaravelWebex.php",
+    "src/LaravelWebexFacade.php",
+    "src/Api/AbstractApi.php",
+    "src/Api/Meetings/Meeting.php",
+    "src/Api/Meetings/MeetingParticipant.php",
+    "src/Api/Messages/Messages.php",
+    "src/Api/Messages/Rooms.php",
+    "src/Contracts/TokenResolver.php",
+    "src/Entities/AbstractEntity.php",
+    "src/Entities/Error.php",
+    "src/Providers/LaravelWebexServiceProvider.php",
+    "Http/Controllers/AuthController.php",
+    "WEBEX_ENDPOINT_COVERAGE.md",
+    "tests/Feature/ReadmeExamplesTest.php",
+    "tests/Feature/AuthRouteAndEventsTest.php"
+  ],
+  "ciClaim": "No remote CI success claim; released tests and workflow definitions inspected only.",
+  "localVerification": {
+    "fixture": "maintenance/fixtures/webex/smoke.php",
+    "php": "8.5.10",
+    "laravel": "13.35.0",
+    "network": "mocked; preventStrayRequests enabled",
+    "result": "passed"
+  },
+  "unavailable": [
+    "Live Webex authentication and OAuth refresh were not exercised.",
+    "No full package test suite or platform matrix was run for this documentation change."
+  ],
+  "notes": "Le API pubbliche elencate sono ricavate dai 52 accessor realmente registrati, non dai conteggi riepilogativi del file di coverage; sorgente estratto dal commit rilasciato senza modificare il repository del pacchetto."
+}

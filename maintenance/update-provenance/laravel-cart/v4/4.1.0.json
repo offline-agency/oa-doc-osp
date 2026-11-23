@@ -1,0 +1,704 @@
+{
+  "name": "offline-agency/laravel-cart",
+  "repository": "https://github.com/offline-agency/laravel-cart",
+  "reference": "4.1.0",
+  "commit": "b89d3219202703203453890e2e46467e79ad415d",
+  "version": "4.1.0",
+  "documentationKey": "v4",
+  "verifiedOn": "2026-10-16",
+  "sourceFiles": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "23973afcb796ca9b9fa998ae10cd5ba4c476da7306db5efb65e542bf2a0f8724"
+    },
+    {
+      "path": ".github/workflows/release-metadata.yml",
+      "sha256": "ada695089a3e2ca943e3fdf74700f1e6f337ca917f71a1667ce622868d429b83"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "12ea95d6d7af6f22d17a8f66c6394040ddd0be3e8704711951f08837dd9dba6c"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "8778b3d6c935d6f52e0b699e2f80a40e1ca3a206f4e7c0385258f354690d7e16"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "13930868927440d0c6336165ec7f684c5fbc0289657755af1c3f0c111976bdd0"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "00a64ca19da2ef1d20cf7369f5d0cfc1bcd885947f3e905815d46449022e915b"
+    },
+    {
+      "path": "README.md",
+      "sha256": "4d77b8390084d225243abb5139774ed5f738e319ed012f35f9856889c95425d4"
+    },
+    {
+      "path": "UPGRADE.md",
+      "sha256": "0c1dbafa7d40c024848bb7ddcbc0415d3ed90e3cb3eac6269644939a2d0c6584"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "15dc6fe91f7c041025eb60c827986fd91826f85849d77a4c17966ba4708867cd"
+    },
+    {
+      "path": "config/cart.php",
+      "sha256": "b7dcbd64bca8652f230d333cf889f9fec46d9f63cd271d01c79c96d59a842667"
+    },
+    {
+      "path": "docs/v4/agents.md",
+      "sha256": "3d3eb01ff95bc9d1c5e0e5fb686598d3a4e5f943d6b599ca54e12ff9ecede859"
+    },
+    {
+      "path": "docs/v4/alternatives.md",
+      "sha256": "ebb0de69cf6f617b384ebc6e0d4979e76e2f24ba54d525093bc40a1c68a006a3"
+    },
+    {
+      "path": "docs/v4/authentication.md",
+      "sha256": "c613cbe54d9879b918fe942ebe6e77ab93eb7fce9e4f1d5ba547faef37cf0540"
+    },
+    {
+      "path": "docs/v4/configuration.md",
+      "sha256": "1ecf3bdb767c5516dfc5a84e62590915a786ada7970886afa1cdfb177b3fee06"
+    },
+    {
+      "path": "docs/v4/coupons.md",
+      "sha256": "6892806f161fd6b9b1addbe472ae5eba7ea2980b1c185a999c0d89f4ea599040"
+    },
+    {
+      "path": "docs/v4/index.md",
+      "sha256": "cf03b84f214eefae7423309d951c1a71c96bd5bde172bbd34a880998bcf2a779"
+    },
+    {
+      "path": "docs/v4/installation.md",
+      "sha256": "4ce978cd362a92d0ed59864a0f592bad84a17aedd6922477567d8c3dddb468f8"
+    },
+    {
+      "path": "docs/v4/money-and-tax.md",
+      "sha256": "412a02cb98f1a72708903613d9e322afd5a9ca3c40a8efc49493cefd79089992"
+    },
+    {
+      "path": "docs/v4/reference.md",
+      "sha256": "9f44e8894ac4e9476a4def63997996d10910fd02c9a4b6094df00cd85bb8f09a"
+    },
+    {
+      "path": "docs/v4/storage.md",
+      "sha256": "69ced8e667bb0debf466af52337f4bea13b2da1a2b79af3ace42356abffc8120"
+    },
+    {
+      "path": "docs/v4/testing.md",
+      "sha256": "57db3ece15a4a5fee85f92c6bfac9a60a2ac7b36c63a13a550f3e818071b70b9"
+    },
+    {
+      "path": "docs/v4/troubleshooting.md",
+      "sha256": "a7e3e7baf71324721cf17aae0a9116817abdbc2a80ebe71e84c489b45aa68c10"
+    },
+    {
+      "path": "docs/v4/upgrading.md",
+      "sha256": "95804e3200f511378ab01e9b59abdaf2deaf4d3f24d7d0023aaa2b8e88e6e870"
+    },
+    {
+      "path": "docs/v4/usage.md",
+      "sha256": "194cfd53ccbcbf9b0c2b7d7320e57fc0ee7222fc37bba9bb60da0a76fe81f7ff"
+    },
+    {
+      "path": "examples/quick-start.php",
+      "sha256": "d153023a98277fa6caa9fc016ff3cf71e5551a776c91fb1a94efdbe40f565d91"
+    },
+    {
+      "path": "scripts/consumer-smoke.mjs",
+      "sha256": "bfcc8d465560e7cbbbca55c836e95361ef7541856d3089deee7435197717a281"
+    },
+    {
+      "path": "scripts/docs.mjs",
+      "sha256": "fa359167675650bdb736bea412860dc089cb05294ab459b3343aee8fd863884b"
+    },
+    {
+      "path": "src/CanBeBought.php",
+      "sha256": "e42ad59852c988617c9bc20b366d8c6f355a8605ecd2326c0227cc6035174118"
+    },
+    {
+      "path": "src/Cart.php",
+      "sha256": "91a225f636cb78693947ce449c1d1eb81e0b953c64f6bca936257bf5fdd60a83"
+    },
+    {
+      "path": "src/CartCoupon.php",
+      "sha256": "8608bed71e2c28a9c9973702f98819086866f6d1f729604e36f27511bb7813f1"
+    },
+    {
+      "path": "src/CartItem.php",
+      "sha256": "9aacc910c543b7026d83c6744208a02d6250458816d2248d0b3f4f898766ed21"
+    },
+    {
+      "path": "src/CartItemOptions.php",
+      "sha256": "4fb5e4ad2dcdd6c2bb8a3b5db5e07c86e119a8212a2a135d2d7c8222011625a1"
+    },
+    {
+      "path": "src/CartServiceProvider.php",
+      "sha256": "4b9599bd4be901d6c4e25c9303e5a5916171244a030aa69b2d8fafa1a3131c80"
+    },
+    {
+      "path": "src/Console/CartClearCommand.php",
+      "sha256": "67dc86d7d88beaa379c4e380fde2ef0e2f55263417784fedf03e98c6ba6905b7"
+    },
+    {
+      "path": "src/Console/CartExportCommand.php",
+      "sha256": "5a71f850d1aa8a8589309957060d406e5cf2cade1cd87f55ea4d81af442bcca9"
+    },
+    {
+      "path": "src/Console/CartInspectCommand.php",
+      "sha256": "036ef762872f4a894be4faa7a6ac6e63bd364d99ddc249d35aba3b09b4b8fddf"
+    },
+    {
+      "path": "src/Console/CartListCommand.php",
+      "sha256": "080573c6017dab86cfec34263c93208d2ecb460e6d2715e9657c50ca0aaafe47"
+    },
+    {
+      "path": "src/Console/CartMigrateDriverCommand.php",
+      "sha256": "8ad4eac6fd8e932cfb2c3b0517ff59e6e48918b062d7dd0c91845646466ca5f7"
+    },
+    {
+      "path": "src/Console/CartPruneCommand.php",
+      "sha256": "77e710eb335a62656eff8e45555fcb0d931bedce5a5084f65cd90b0f0f39a707"
+    },
+    {
+      "path": "src/Console/CartStatsCommand.php",
+      "sha256": "e27199720867f5612f339dc13b7a9e97a3c8ba5031058286e4065c63a0563aad"
+    },
+    {
+      "path": "src/Console/Concerns/InteractsWithCartDatabase.php",
+      "sha256": "c4ac97820a8373c95214132b1524f67f69313d169622a1de6f0574c2fe13957e"
+    },
+    {
+      "path": "src/Contracts/Buyable.php",
+      "sha256": "bebe134c122ea1d40c07df10cdc2eea6a07ab1aa5936239912165c66acc30383"
+    },
+    {
+      "path": "src/Contracts/CartStorage.php",
+      "sha256": "8bc826d7294ef11f0857590267ba871053556018473f815405b4f92ba8ee575c"
+    },
+    {
+      "path": "src/Contracts/Couponable.php",
+      "sha256": "4c75cc5c088fb0b1e634af8a543dd5f7dc84a6b30a6ebb779cdaa58dce493b88"
+    },
+    {
+      "path": "src/Contracts/FiscalBuyable.php",
+      "sha256": "08d2261ec0b8d17df2fab29a3695e06c8750852367414a6eb2404a3e950c4c2b"
+    },
+    {
+      "path": "src/Enums/CartEventType.php",
+      "sha256": "9cbbb13455b72c46e50a214d77d5a133decb651d35b6c4c3318d24e2f5dc685b"
+    },
+    {
+      "path": "src/Enums/CouponType.php",
+      "sha256": "5784fbd5386133d174751716d332effe4188d71322546fad54ea9f21fc7eea72"
+    },
+    {
+      "path": "src/Events/CartItemAdded.php",
+      "sha256": "ad9d20b2c44984671ff4136fb3f661212f8e75297465fc9206a7fae5b937e1d2"
+    },
+    {
+      "path": "src/Events/CartItemRemoved.php",
+      "sha256": "e88f6b99a16b17fb076eac00fd0ad06e81ef3ce8b789f8addec9e73cca42d1cf"
+    },
+    {
+      "path": "src/Events/CartItemUpdated.php",
+      "sha256": "110fdd10220527a79099e94eaf7664146b3b821f25470a8d31a6667b03a6be4e"
+    },
+    {
+      "path": "src/Events/CartRestored.php",
+      "sha256": "5aab2b3e6715f905a182ebb4c92e27dd5907a8ae37f15c88065d419033ac0f65"
+    },
+    {
+      "path": "src/Events/CartStored.php",
+      "sha256": "cc93984efb1c4224bc4d1ca7e3b55d81ae855164d5aab87c0de62c531c508ee7"
+    },
+    {
+      "path": "src/Events/CouponApplied.php",
+      "sha256": "75853d96d58ff082e2aa13d5cad1acb90814a3265f2ef28307a198dcbf708f67"
+    },
+    {
+      "path": "src/Events/CouponRemoved.php",
+      "sha256": "9a9f5a3ace16918bfcaf46e52b5c6fbecf6287901252a3a1763ff71fcd3b9e96"
+    },
+    {
+      "path": "src/Exceptions/CartAlreadyStoredException.php",
+      "sha256": "4db0aa29e5a756f9fc5631397798a33d01131b17438a2a88286d534f3d1cc53c"
+    },
+    {
+      "path": "src/Exceptions/CartException.php",
+      "sha256": "254efe823567f29a104c5d7f9c2bfc503c14255da2eee6a40a04da27dc411e72"
+    },
+    {
+      "path": "src/Exceptions/CartExpiredException.php",
+      "sha256": "db1bb75831b20757cdaa728cd0cce29674f1012c6fbc1ca2e40af23fc5f0235a"
+    },
+    {
+      "path": "src/Exceptions/CartLimitExceededException.php",
+      "sha256": "49a9d989ccd04df4f5143c73b721413bdfd61492b980367df74eec1db95327b9"
+    },
+    {
+      "path": "src/Exceptions/CartStorageException.php",
+      "sha256": "2db03feb2643e51184fdc5960cdce8cc0f47db9726f1c5da2ed01a11bd33c83d"
+    },
+    {
+      "path": "src/Exceptions/CouponAlreadyAppliedException.php",
+      "sha256": "c8bc181b4757da79803339bd4c9d734a5f4ffab29261904180c4e8ffead05172"
+    },
+    {
+      "path": "src/Exceptions/CouponNotFoundException.php",
+      "sha256": "a30bf94506905587239f0cdcf4c1cff89847ce829ecff23e3e0a31541f4844eb"
+    },
+    {
+      "path": "src/Exceptions/InvalidConfigurationException.php",
+      "sha256": "68f93029e3b286b896137938c916b78069799aff38633b03326c3a86ff281f67"
+    },
+    {
+      "path": "src/Exceptions/InvalidCouponException.php",
+      "sha256": "121ea73797c31e0f6751b9fe18ff5db465a4355cb74cb0fa22ec75daa5d087e8"
+    },
+    {
+      "path": "src/Exceptions/InvalidCouponHashException.php",
+      "sha256": "70dceeee231d1cc71000956740a093650eb9f11ae0dda8c526226881de8a73ce"
+    },
+    {
+      "path": "src/Exceptions/InvalidDriverException.php",
+      "sha256": "79c65a07a94fb889f54402a2876ffbc9c33e229bdfdf6bcc038368d8e45a987e"
+    },
+    {
+      "path": "src/Exceptions/InvalidRowIDException.php",
+      "sha256": "72bfef265b17cdb2bc1115a8702b43e50ac047c5584cca27b0f9769c6256b7ac"
+    },
+    {
+      "path": "src/Exceptions/UnknownModelException.php",
+      "sha256": "89990f168ae7a1b170d422570149b3a9ed97dfc3ceb2282e0293521a05ed5fcf"
+    },
+    {
+      "path": "src/Facades/Cart.php",
+      "sha256": "2852e6abf9aade69d0d849900a57767cf54d9d86d57b6c40b08f0cace0c7c7fc"
+    },
+    {
+      "path": "src/Http/Middleware/CartMergeMiddleware.php",
+      "sha256": "fe690a165f7780829b88b5acb0cb93371ddda358a342bd3d69fc2c562c9eb77c"
+    },
+    {
+      "path": "src/Http/Middleware/CartRestoreMiddleware.php",
+      "sha256": "607a79e74cb979370611c53ccacf5a410d5028fbdf4bfe3df964ec553ec92364"
+    },
+    {
+      "path": "src/Resources/CartItemResource.php",
+      "sha256": "f049c2a490ac65520935a2a3d115f2027c87b4952979424526a961e2630f788d"
+    },
+    {
+      "path": "src/Resources/CartResource.php",
+      "sha256": "a98bdbcc4d82ec38ed9b9d952206c9b1d68e73f69a18082768ef204e266b80d5"
+    },
+    {
+      "path": "src/Storage/DatabaseStorage.php",
+      "sha256": "6093df515def9eb53fce0132bc181f03bfb865dfdcce2681f761bdd07074ccdb"
+    },
+    {
+      "path": "src/Storage/SessionStorage.php",
+      "sha256": "037d603c84536d4edeeca07bf63adf3dee31cbc5a14cca77205240f611f9e178"
+    },
+    {
+      "path": "src/Storage/StagedStorage.php",
+      "sha256": "80319b28a740e03635d588519340958ec3b9864a6c53a2fe028646f9e5d695d2"
+    },
+    {
+      "path": "src/Support/CartConfig.php",
+      "sha256": "80b71a2c058e08454ee7e766280e3f94f0707efe5f1da6ceb8d1320df6c0c217"
+    },
+    {
+      "path": "src/Support/CartContentCodec.php",
+      "sha256": "afc9eb1c77484fdc19e24aae72ad8372178dcac24d1e595cb8de9a91ee379b64"
+    },
+    {
+      "path": "src/Support/Coerce.php",
+      "sha256": "f35303e6367714bab3cfa481c9ccbc76cbca8afe9b6af556a9eb9886b08277a6"
+    },
+    {
+      "path": "src/Support/CouponData.php",
+      "sha256": "acc50afc9af45b9848afb0f950ecf18fc074c022043ef116706caaa0cc700d63"
+    },
+    {
+      "path": "src/Testing/CartFake.php",
+      "sha256": "511bd3cf5ab0f7165ba415177719332d54200c7395758c4a3632376e5db322e2"
+    },
+    {
+      "path": "src/Testing/RecordingDispatcher.php",
+      "sha256": "5b9d3e5d7de55d0e4b0b7027dccde8f09e14b6cce6a0edd0c077bfd4700b2656"
+    },
+    {
+      "path": "src/Traits/HasDiscount.php",
+      "sha256": "273c380058ea38eaa465ea903dfd86864929b4a311f1a6554fb984f0b5c1a3ca"
+    },
+    {
+      "path": "src/Traits/HasFiscalCodes.php",
+      "sha256": "2b780ece6075edb101f5429f0790a744b7cb280f481f4133f8b1cba7081f51d6"
+    },
+    {
+      "path": "tests/CartAssertions.php",
+      "sha256": "a131d6d6367043b25159554dab3f055618efa58e6e00960305c2c69d2f154fb4"
+    },
+    {
+      "path": "tests/CartItemTest.php",
+      "sha256": "422d0b642355f1a870f0a8895682e289a4d41301689d3737773390296eb2bcf7"
+    },
+    {
+      "path": "tests/CartServiceProviderTest.php",
+      "sha256": "fdd95697ae1a7ee423587d369a20de6e8fc1d48d42da98e65c09420e2c303a8b"
+    },
+    {
+      "path": "tests/CartTest.php",
+      "sha256": "08495d011ccc7a38a53feb680f286c6006071b9587dd53c38f6cd23995044f5c"
+    },
+    {
+      "path": "tests/Coverage/CanBeBoughtTest.php",
+      "sha256": "e28fdd1422eff929072ca585de6c8b5d2431476905c198e0215c0f64d1b102cd"
+    },
+    {
+      "path": "tests/Coverage/CartCoverageTest.php",
+      "sha256": "80af226e0cba0d41151c2ef101f4b3ffd2c1a6e695e440c3509e67649da97824"
+    },
+    {
+      "path": "tests/Coverage/CartExportCommandTest.php",
+      "sha256": "9326f495b0e9e5744f44d02e68c86aa6836cad13cd396110ea6ca216990dbd23"
+    },
+    {
+      "path": "tests/Coverage/CartFakeCoverageTest.php",
+      "sha256": "da01b25ec5289b77f60a27a35b65b411a41df62fbd0983ba7d9d1c69e480e816"
+    },
+    {
+      "path": "tests/Coverage/CartInspectCommandTest.php",
+      "sha256": "73035528a91e11076655c043ba210835b1994b294e281badb7551a6365754bc5"
+    },
+    {
+      "path": "tests/Coverage/CartItemExtraTest.php",
+      "sha256": "bff13816bd0de190469d779d24cd16152389c9240639a83eb83cd61fd381fb28"
+    },
+    {
+      "path": "tests/Coverage/CartListCommandTest.php",
+      "sha256": "e153b9ea1376479cd772fe662c9e3c299925a5b4e8c6477f9765cd08950514bb"
+    },
+    {
+      "path": "tests/Coverage/CartMigrateDriverCommandTest.php",
+      "sha256": "916d4b34010d9a910bf84a3171c52f521f2bcd2a242df294d15a13399d7884bc"
+    },
+    {
+      "path": "tests/Coverage/CartPruneCommandTest.php",
+      "sha256": "862907de144ee2e37bd3361d59321867029801ddd1ba34587988533fec081c2d"
+    },
+    {
+      "path": "tests/Coverage/CartStatsCommandTest.php",
+      "sha256": "a35661951ebe859f0ea7b12fc9b8c59e30814ddc1464c8f6710b1994f38351fa"
+    },
+    {
+      "path": "tests/Coverage/DatabaseStorageTest.php",
+      "sha256": "561ccd4b76f634aeedaaa6f96e4b607b9365f8a337df8effa79cdb90caaa8bad"
+    },
+    {
+      "path": "tests/Coverage/ExceptionsAndResourcesTest.php",
+      "sha256": "b30f31273a05616ed95e2dcd3c9372ff09a06597b522a0d672cda3eb2b439dd4"
+    },
+    {
+      "path": "tests/Coverage/MiddlewareTest.php",
+      "sha256": "6e8958c04bbff5f03c61829e389a41cf418ca48c91f3dd63a6159b2a918ce267"
+    },
+    {
+      "path": "tests/Feature/CartCommandTest.php",
+      "sha256": "220fde6c11925977f655899367ce50719795c769936f0acec89797e01335fd6a"
+    },
+    {
+      "path": "tests/Feature/CartCommandsTest.php",
+      "sha256": "79b277987ce19de38e5c8ffb2f1877393ac97cd3b3b6fbd3dbaf75660b5c78e0"
+    },
+    {
+      "path": "tests/Feature/CartCouponTest.php",
+      "sha256": "995a7cabb24b567072b490e745bddc9933dc8942c033814a815031b056926dc4"
+    },
+    {
+      "path": "tests/Feature/CartCouponableTest.php",
+      "sha256": "3d66ee016fe6dc7ec926b53bd11033baaf7f635a75d963bddf8c4ba5c3ce3f76"
+    },
+    {
+      "path": "tests/Feature/CartEventTest.php",
+      "sha256": "9295fea3a87bfba578178d8002c2b8aa2f8a1c003e4124ae2118868b22bbd296"
+    },
+    {
+      "path": "tests/Feature/CartFakeTest.php",
+      "sha256": "30c4308cd4d60b9641437077153133f1ff704a2c9291fbd06657b1e4648087cb"
+    },
+    {
+      "path": "tests/Feature/CartFiscalTest.php",
+      "sha256": "d16370503fbe33c5ea2f12193becc524546ed9862a974e435c3ae65f3691857f"
+    },
+    {
+      "path": "tests/Feature/CartGlobalCouponTest.php",
+      "sha256": "2e67afa74560b31c5bb2557bd6c8a0e9efc55301e90a91d417d0a84cad88ce86"
+    },
+    {
+      "path": "tests/Feature/CartLevelCouponTest.php",
+      "sha256": "3a88860f84eef3482a0a1f60430c43fc10c5c1cc54679d955b3e41cd6d8a1aa6"
+    },
+    {
+      "path": "tests/Feature/CartMiscMethodsTest.php",
+      "sha256": "5aed4b577a15cc7403ef8261cb161d1fc8b043ef91e33082ee286d5decdc4088"
+    },
+    {
+      "path": "tests/Feature/CartOptionsTest.php",
+      "sha256": "01b81ab28dc29e9c2d0d5c18f0d7b18a68f6daebcca08a99a3b204384f9d89bf"
+    },
+    {
+      "path": "tests/Feature/CartPersistenceTest.php",
+      "sha256": "3acec43d858d2805eecc9d791f685084017931faf4d5edb6cd1f44b69fecac8f"
+    },
+    {
+      "path": "tests/Feature/CartRoundingModeTest.php",
+      "sha256": "bef64a167ffe47b7549bfa2990842d093d6d6cd23e9a5e9b1045bdbcddd4fa71"
+    },
+    {
+      "path": "tests/Feature/CartSyncTest.php",
+      "sha256": "612ab58e2cf1a69a1f26535438ada1438496343cf35fa2635c94bd6fba7ce778"
+    },
+    {
+      "path": "tests/Feature/CartUtilityMethodsTest.php",
+      "sha256": "252326b35bb1adae326852b9307088a7cab15eb9b9ea08138ad2e5b709929896"
+    },
+    {
+      "path": "tests/Feature/DocumentationExamplesTest.php",
+      "sha256": "5ee1d22fe64775878828fd8a9182b8d1e4c6f8945c656d75a0b36dd508bcdbb8"
+    },
+    {
+      "path": "tests/Feature/GuestTransferPolicyTest.php",
+      "sha256": "deeaea27095e42ad100967a6d52f48d90074c5bdb4b06a4c33e80ea8f8d01a9f"
+    },
+    {
+      "path": "tests/Feature/GuestTransferTest.php",
+      "sha256": "12f0c4e3c9175dd158b8eedbac910d82f20289f5fe998780c75fc5138dc53ae7"
+    },
+    {
+      "path": "tests/FeatureTestCase.php",
+      "sha256": "8b9904eca14d17eab1fceb67aa26da4abede811147b305807ef7f18e7838fbfc"
+    },
+    {
+      "path": "tests/Fixtures/BareBuyable.php",
+      "sha256": "462d96fd211dde7bdf34bd8fc22dbd9178dd7cee0d22d400225b7ea785cf97d1"
+    },
+    {
+      "path": "tests/Fixtures/BuyableProduct.php",
+      "sha256": "327e4ad20c9eff7cf0bfa943d83499ee89095f286cbc402a1bedafd403da2dfb"
+    },
+    {
+      "path": "tests/Fixtures/Codec/CodecModel.php",
+      "sha256": "d98fa0f4e1519b6fa8d36878e9b6522bfce98539c430b8f4814220e2e51e931c"
+    },
+    {
+      "path": "tests/Fixtures/Codec/ExplodingBuyable.php",
+      "sha256": "5aaed4b10a5dfe00d11c6080da9057e064c6b81c6e3000fff48586d035d899a2"
+    },
+    {
+      "path": "tests/Fixtures/Codec/WakeupGadget.php",
+      "sha256": "a808857f8bfa32ee058efba2b28c51a74373572b699bcf94dcea2a0b279df4ff"
+    },
+    {
+      "path": "tests/Fixtures/PlainPromo.php",
+      "sha256": "e7c6c79813ea5b2b535522bf3095e192d14a0fc5f4dd13a3c64d0eb0f7109eca"
+    },
+    {
+      "path": "tests/Fixtures/ProductModel.php",
+      "sha256": "988e8d820c38854e71e95a4c5173fc373c15c5ac27f8b74725a8e07a64b6bf42"
+    },
+    {
+      "path": "tests/Fixtures/ProductWithTrait.php",
+      "sha256": "814a6c5adf50623a55a6ed5606cc3a704bcf137b1383c30850c02491bb452443"
+    },
+    {
+      "path": "tests/Fixtures/PromoModel.php",
+      "sha256": "c3553f2dfce9706cbe727f60a2a6d90c3a989efb706ddc4fb99b70d67c0070a9"
+    },
+    {
+      "path": "tests/Pest.php",
+      "sha256": "5e93fe4f9c619064b2efd440c2e6f7ecc37157e9aa9f1a927f1dd16d1fd1c484"
+    },
+    {
+      "path": "tests/Regression/CartLimitAtomicityTest.php",
+      "sha256": "77eed2bfa6e58e8faa65b7953e86f09030bcdeaf6867d3cdb7119065d62cf33d"
+    },
+    {
+      "path": "tests/Regression/CartReferenceOwnerTest.php",
+      "sha256": "27a36fb6ed0f58b085f9c636e0660f135be6e34a02571d4088f84b268358c1de"
+    },
+    {
+      "path": "tests/Regression/DatabaseStorageAtomicityTest.php",
+      "sha256": "f3f30d8cf6667c76ebc1eb75f5ea5039a188ff0f00e3d10ec1d047db2bc3bb08"
+    },
+    {
+      "path": "tests/Regression/DatabaseStorageCacheTest.php",
+      "sha256": "2533b5b0bf607e2e411a99376a453061b0a97cad78c9e470248ab2fb6d2c699a"
+    },
+    {
+      "path": "tests/Regression/DatabaseStorageOwnerTest.php",
+      "sha256": "f6fa5e27d17b776a6ea000983346bb78f04ce69503a9be6071830a15a7c5289a"
+    },
+    {
+      "path": "tests/Regression/DatabaseStorageRemoveTest.php",
+      "sha256": "817bd8455e3e82e44de97c5caaf8a87af0088cd8ab8999746a54946c18a12478"
+    },
+    {
+      "path": "tests/Regression/DatabaseStorageRoundTripTest.php",
+      "sha256": "8ee7b79b9836a65a613b611efb373366a01dfd3816b7622c24555fcd6ecf53b3"
+    },
+    {
+      "path": "tests/Regression/Issue35MinimalItemTest.php",
+      "sha256": "cffd43c85aa68b2769bacba314a86a9292bf48ce319f6be2335d65fd222d4c74"
+    },
+    {
+      "path": "tests/Regression/LegacyCartContentCodecTest.php",
+      "sha256": "a428c5a7be8cecd93ffb6c4ee91fb426093df46cc6e83d64f25af107747331dd"
+    },
+    {
+      "path": "tests/Regression/LegacyStoreInstancesTest.php",
+      "sha256": "2f62fc91002a038859cdd983b437595879d5c22a4eff4e931ccc568a5cdc8a59"
+    },
+    {
+      "path": "tests/Regression/MutationCorrectnessTest.php",
+      "sha256": "447f6d66d051db015f9baf88947a720214be782ca3b28c5480ca466b88dc5efc"
+    },
+    {
+      "path": "tests/Regression/PruneInstanceFilterTest.php",
+      "sha256": "7424418955cc2fdff24b2a50db38b493317994f15eb0d6b8acd661f41a654e85"
+    },
+    {
+      "path": "tests/Regression/PublishedMigrationsTest.php",
+      "sha256": "a2c33786743ebe350e2fb08d0c0ffacea55bd82d56bc76c150a23a1ee056f92c"
+    },
+    {
+      "path": "tests/Regression/ServerConcurrencyTest.php",
+      "sha256": "c839421b4ff2d6049a2d6fdcc13df78001a1313228a4e730f620fc6183c8420c"
+    },
+    {
+      "path": "tests/Regression/SnapshotMutationAtomicityTest.php",
+      "sha256": "2c68ca73f1f828de12249815a3367df92053e91e4cdf197ad0d005cfa2c59496"
+    },
+    {
+      "path": "tests/Regression/TypedBoundariesTest.php",
+      "sha256": "20dbe2907e53a2eca9d482de13062c7902d7917a3cbf564df254d495dd5d367f"
+    },
+    {
+      "path": "tests/Unit/CartCouponTest.php",
+      "sha256": "d3525bd049b20b826bb1cac3abe33a670117b6e35af368b97d523cfc74f77ea8"
+    },
+    {
+      "path": "tests/Unit/CouponTypeTest.php",
+      "sha256": "c838396749c2a9f10919c30c2935c8bff378e6cd85cc859bd3b036308c980467"
+    },
+    {
+      "path": "tests/Unit/HasDiscountTest.php",
+      "sha256": "846685a5d226968d736f28e973fbc9924351faf69fce2c14fdb565bc20a2275a"
+    },
+    {
+      "path": "tests/phpstan/pest-functions.stub",
+      "sha256": "a75170d4271e9902425d0d63e28cedf1b406c23c2d9bcc2f72f965b6cf4c554e"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/laravel-cart/v4/index.md",
+      "route": "/laravel-cart/v4/",
+      "sha256": "a0ab995d0936e24510bd775b893f5f3a50970a56c3ab643e64a7d8042a2c8c45"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/agents.md",
+      "route": "/laravel-cart/v4/agents/",
+      "sha256": "180a0b942870b1d620332a538d57ec7d41fd7f37e418b6a4cf31f8920260095e"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/alternatives.md",
+      "route": "/laravel-cart/v4/alternatives/",
+      "sha256": "3f7e3e7f674c964a79d63ba35a00c1229d63bfc4b5722b243bb82c8a407c1a80"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/api-and-mobile.md",
+      "route": "/laravel-cart/v4/api-and-mobile/",
+      "sha256": "adfe646e03269f841cddd0f5e4e430313d0c3eb83fc67400d5a87b641de109fb"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/authentication.md",
+      "route": "/laravel-cart/v4/authentication/",
+      "sha256": "2a8110c79a21638919ec2b88ed84dd763db92d1b827761dcae716da8015af39b"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/choosing.md",
+      "route": "/laravel-cart/v4/choosing/",
+      "sha256": "2842add42ee8d6dd44b7170a1e78e323457845d0bece1adb796bcbd2a9d34bda"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/configuration.md",
+      "route": "/laravel-cart/v4/configuration/",
+      "sha256": "b7d5e6c6270a04414a3d21031e21a081ceb4c9e9dceb326ab0d608b5228f0387"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/coupons.md",
+      "route": "/laravel-cart/v4/coupons/",
+      "sha256": "f7a6cd309ccbc56bbb5634cb1ac7e04dfcedc17c86839fdc3039adf8ec62c324"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/installation.md",
+      "route": "/laravel-cart/v4/installation/",
+      "sha256": "b0107b1d0b1a156851890e8a681b500d4423e7656ac65a128308b8d449bfe528"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/integrations.md",
+      "route": "/laravel-cart/v4/integrations/",
+      "sha256": "6cd6d2cc0d59a83ef549f9ec65e1da24bf8a695a60639d5e71aea4f7d993a7d2"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/money-and-tax.md",
+      "route": "/laravel-cart/v4/money-and-tax/",
+      "sha256": "6e98e6def800d986c774a867e7efa2c3bad24b92d4e3f55b12a3c0d1e049257a"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/redis-sessions.md",
+      "route": "/laravel-cart/v4/redis-sessions/",
+      "sha256": "6c38b6f8f7471d62c5b9c156ae67936cfffee4f4940ae58aab7a82eada67c354"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/reference.md",
+      "route": "/laravel-cart/v4/reference/",
+      "sha256": "63b7d6197ad03a092412f44f7cd62751b851050d7e90b2804db54397cdd4d7fc"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/storage.md",
+      "route": "/laravel-cart/v4/storage/",
+      "sha256": "28faf7d11108a53f57a96accb873e37009fff1072ec1d150a48d91e094b0f488"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/testing.md",
+      "route": "/laravel-cart/v4/testing/",
+      "sha256": "9ae81a29f1e640382fba4807cce20a60c4974acfd8893b13aefa3ca3da3aff29"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/troubleshooting.md",
+      "route": "/laravel-cart/v4/troubleshooting/",
+      "sha256": "774f7069752c1866dd9237989cbc6ec9060d5deea88f2a83d0b0750a399f84bf"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/upgrading.md",
+      "route": "/laravel-cart/v4/upgrading/",
+      "sha256": "5c74f957a22cc22e9ec7b023b33b37919f5435b8c50572a25ff73a3a7d1e035d"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/usage.md",
+      "route": "/laravel-cart/v4/usage/",
+      "sha256": "026b4be9d7634a5eaa231000584317c9ddac0724c676bce288a3da0c70932223"
+    },
+    {
+      "path": "versioned/laravel-cart/v4/variants-and-wishlist.md",
+      "route": "/laravel-cart/v4/variants-and-wishlist/",
+      "sha256": "fe9175aa97b5527b82098ab4c013ca2201b53ca86db83d8480a7f7d42eea1cc7"
+    }
+  ]
+}

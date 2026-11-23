@@ -1,0 +1,14 @@
+{
+  "result": "passed",
+  "checks": [
+    "client lifecycle",
+    "duplicate initialize guard",
+    "reinitialize",
+    "initialization error",
+    "hosted not-ready error",
+    "mock tokenization"
+  ],
+  "network": "none; SDK mocked",
+  "node": "v24.13.0",
+  "verifiedOn": "2026-10-16"
+}

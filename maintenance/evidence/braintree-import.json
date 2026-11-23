@@ -1,0 +1,233 @@
+{
+  "schemaVersion": 1,
+  "verifiedOn": "2026-10-16",
+  "repository": "https://github.com/offline-agency/braintree-vue3",
+  "commit": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+  "documentation": {
+    "key": "next",
+    "packageVersion": null,
+    "strategy": "development"
+  },
+  "distribution": {
+    "status": "source-only",
+    "manifestVersion": "0.1.0",
+    "githubTags": [],
+    "githubReleases": [],
+    "npmStatus": 404,
+    "refresh": [
+      "gh api --paginate repos/offline-agency/braintree-vue3/tags",
+      "gh api --paginate repos/offline-agency/braintree-vue3/releases",
+      "npm view braintree-vue3 --json --fetch-retries=0 --fetch-timeout=15000",
+      "git fetch origin"
+    ]
+  },
+  "inputs": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "b6678fe658d6aa163b0e07dd7388fdd6bfaa812a4106095c1e1fec7abb9904af"
+    },
+    {
+      "path": "README.md",
+      "sha256": "d187496ef1778066ca66fea1936e03ae306882ade834406272958b39595e851d"
+    },
+    {
+      "path": "docs/.vitepress/config.ts",
+      "sha256": "78d2a055fc0ef202581abacf202e29e70c7265ccf37ae01d30bc305ceccb0acb"
+    },
+    {
+      "path": "docs/.vitepress/theme/index.ts",
+      "sha256": "52b4d6b96fed2fabe65c5f534fc0d040e8ec5c36b274e7a55a4aaf61c0080273"
+    },
+    {
+      "path": "docs/guide/data-collector.md",
+      "sha256": "7f1bbc8f21f7d436ed7171495fb3fb923bc45cc21a18bb7bdb70651d34b1981f"
+    },
+    {
+      "path": "docs/guide/getting-started.md",
+      "sha256": "bce97fe1c36c27d9159db2e89321f9819a6f542ed4ca56f96af2735995b79aa8"
+    },
+    {
+      "path": "docs/guide/hosted-fields.md",
+      "sha256": "e3d37fcc20ddfe31e2e94bf7ad71708142556235925653950c9a58175fa87730"
+    },
+    {
+      "path": "docs/guide/installation.md",
+      "sha256": "543b106777a00cfdee6775b2b2f0ba46ad5d0a96d9bc20443d60789101a72d10"
+    },
+    {
+      "path": "docs/guide/paypal.md",
+      "sha256": "aeb9dcd0dc3d838ca4e6c712cc84cf639d6ce2789dff568d576e46755674a590"
+    },
+    {
+      "path": "docs/guide/three-d-secure.md",
+      "sha256": "289a7164970e7cb45f35de20618fde0bc9dc4bf9a684a0f5d8bffe8c8c7db942"
+    },
+    {
+      "path": "docs/guide/venmo.md",
+      "sha256": "fe2f26299daa612dc3c55adf180cc1ade9c65eb804e19b66275ebcaf2446597f"
+    },
+    {
+      "path": "docs/index.md",
+      "sha256": "e5ac942447df90f58e17161e4a9cd3d6e142e6f7f1acf5b3de88f8e4b51f6fe3"
+    },
+    {
+      "path": "package.json",
+      "sha256": "6bd09040f0e6a4a883293044fca2add6630c21c9c779eeeb10b2b9ff728059e3"
+    },
+    {
+      "path": "src/components/BraintreeHostedFields.vue",
+      "sha256": "77afbbb6e8e57914e1b4b791966937635b5335046b18208c364ee95ce48522ab"
+    },
+    {
+      "path": "src/components/BraintreeProvider.vue",
+      "sha256": "80618f16c0253077eb09bac6c20e51a703beecce4ac121751baf5af25a0a7833"
+    },
+    {
+      "path": "src/composables/useBraintreeClient.ts",
+      "sha256": "d6728365431eba61ca47b029cb3f9423400bbe527b08a8baa22fb5fadef9fdee"
+    },
+    {
+      "path": "src/composables/useDataCollector.ts",
+      "sha256": "6fcd469baa62da6ce423e51588b91aa3a62c979506c73c5823d049513d47e3c6"
+    },
+    {
+      "path": "src/composables/useHostedFields.ts",
+      "sha256": "0af7509f2f55350997a7b728e74d74a613a36126609948f3649b9f5e2b7d71d4"
+    },
+    {
+      "path": "src/composables/usePayPalCheckout.ts",
+      "sha256": "9c6c3f70ed160be817f42f0384dec8414a42b4e38f509fbc99c1d38ecdad8992"
+    },
+    {
+      "path": "src/composables/useThreeDSecure.ts",
+      "sha256": "388ea882a403c3472f60633aeb9edba69aa8ebbffe52412b342442ca9b4ccf04"
+    },
+    {
+      "path": "src/composables/useVenmo.ts",
+      "sha256": "784422ea0b256d5e0a48012d71e5b6f19ccf297b9c029f29e2f455f3efac08d1"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "15022502fa301f793c56610b66c3ddd109a3add86ab078d91cdf0129e5e398b3"
+    },
+    {
+      "path": "src/injection-keys.ts",
+      "sha256": "07e2c536d8b2e9d8ce2103d98196a606d43d437c3d1e7f1ba80b98311af74ffe"
+    },
+    {
+      "path": "src/types.ts",
+      "sha256": "cb87aa78b0d22be18b6e876c732858aa0639faf74f676cbf7f486dd54d08e521"
+    },
+    {
+      "path": "tests/BraintreeHostedFields.test.ts",
+      "sha256": "0b72b44e1a4319fcadb74c8b2aa71f3d8cac934ca0d4bfd72727bf049cd014a1"
+    },
+    {
+      "path": "tests/BraintreeProvider.test.ts",
+      "sha256": "57cb9a7c21515cbc924a63e79d637e3d7ea526168d237f22ded395f994f83b64"
+    },
+    {
+      "path": "tests/injection-keys.test.ts",
+      "sha256": "bd7d0cbbaa25dff08d6a99cebe8349456782844cd074b9b494bae2c49b46c921"
+    },
+    {
+      "path": "tests/setup.ts",
+      "sha256": "abbbe0ddb5ff5661ff87f9560b688cb5245ce4c1ef46aff34da06e19a01237a6"
+    },
+    {
+      "path": "tests/useBraintreeClient.test.ts",
+      "sha256": "0967be34d803f326b6081b9440e571b65b986d63d949122f1d6cfd9107fd699c"
+    },
+    {
+      "path": "tests/useDataCollector.test.ts",
+      "sha256": "ec7e85179ae7147ab005ecbe4481647f2ded6b7dfbafd9ab91aa8a646c4b8c1f"
+    },
+    {
+      "path": "tests/useHostedFields.test.ts",
+      "sha256": "fe2234cbdf42ad5cc26fbdf5edfd29354298bb8f3b5d93bdbba19c955b01cbb9"
+    },
+    {
+      "path": "tests/usePayPalCheckout.test.ts",
+      "sha256": "0ec315bcabbef65dbcbed4cf8cb1cd0238306e4a2b85b9b3ff2fb0b9c2fc424b"
+    },
+    {
+      "path": "tests/useThreeDSecure.test.ts",
+      "sha256": "bfa778c1b8dc9462ad54913f4b5fe3fa94f40c9031cc30a48580813b45962eb8"
+    },
+    {
+      "path": "tests/useVenmo.test.ts",
+      "sha256": "d7c78d2916c2ee12327b683a4984cd98de2d6fa79243fcad861ce04a244506e2"
+    },
+    {
+      "path": "tsconfig.app.json",
+      "sha256": "3ea46051ae020bf61167ab886ce79867108eac8aa2380a0e3def6efddcdc68fe"
+    },
+    {
+      "path": "typedoc.json",
+      "sha256": "ef4bc5595686082f6b8a99ede3c5857ae1d6f219c5adce0ce9b6d8484e891e12"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "braintree-vue3/data-collector.md",
+      "sourcePath": "docs/guide/data-collector.md",
+      "sha256": "395992527af0fb8980a00b0f189dbe0996e20f3bcfca7137e7bcb38cea22ece2"
+    },
+    {
+      "path": "braintree-vue3/getting-started.md",
+      "sourcePath": "docs/guide/getting-started.md",
+      "sha256": "a7d69faeaa59314fc3197ccc77b1b62f33985a1e47cf65bf7306f70ddbb05fe1"
+    },
+    {
+      "path": "braintree-vue3/hosted-fields.md",
+      "sourcePath": "docs/guide/hosted-fields.md",
+      "sha256": "1163b4faa92f6baec750a9554ec1b3f484a58735baf26c8091d0fc9349b055aa"
+    },
+    {
+      "path": "braintree-vue3/installation.md",
+      "sourcePath": "docs/guide/installation.md",
+      "sha256": "8d259a2044df44dbec0dd86cddb1312dae7622195cd4f3a064ec447bf0534b57"
+    },
+    {
+      "path": "braintree-vue3/paypal.md",
+      "sourcePath": "docs/guide/paypal.md",
+      "sha256": "279374295b58cdd43214a403789a6f7e20153bbe919d950f692a5a9e5406c05b"
+    },
+    {
+      "path": "braintree-vue3/three-d-secure.md",
+      "sourcePath": "docs/guide/three-d-secure.md",
+      "sha256": "542ab5ae66e00d26a27416d09455c3e6847553be3893633dc53b5cb35c3a95c4"
+    },
+    {
+      "path": "braintree-vue3/venmo.md",
+      "sourcePath": "docs/guide/venmo.md",
+      "sha256": "4a0b01bb928bb70c8ca0f1aba665a139e5a02f16b49b41754526184b1af5c9c0"
+    },
+    {
+      "path": "braintree-vue3/api.md",
+      "sourcePath": "src/index.ts",
+      "sha256": "f532e488bcad655287453c455e26948d5ceb00976b8612aaef5e0cd54cb6e1bb"
+    },
+    {
+      "path": "braintree-vue3.md",
+      "sourcePath": "docs/index.md",
+      "sha256": "543cbe35a2f116a71dfd155a32c9e963f632f540f164cde8f62c4cd8fe68d727"
+    }
+  ],
+  "adapters": [
+    {
+      "path": "braintree-vue3/integration.md",
+      "sha256": "a919e3ae943fdc83bbc462590724aa9017ceea14a1e154903ae4b14e5a28823d"
+    }
+  ],
+  "api": {
+    "strategy": "source-export-index",
+    "typedocExecuted": true,
+    "result": "failed",
+    "reason": "TypeDoc 0.28.14 + markdown 4.9.0 exits 3: TS2307 for both .vue component exports. No source shims or code modifications applied.",
+    "sourceTypecheck": "vue-tsc 3.1.1 passes with TypeScript 5.9.3; selected integration SFC also passes",
+    "toolchain": "maintenance/fixtures/braintree-vue3/import-toolchain/package-lock.json"
+  },
+  "assets": [],
+  "upstreamRuntimeMounted": false
+}

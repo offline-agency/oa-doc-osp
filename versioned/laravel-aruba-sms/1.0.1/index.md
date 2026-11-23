@@ -1,0 +1,303 @@
+---
+title: "Laravel Aruba SMS — 1.0.1"
+description: "Archived Laravel Aruba SMS 1.0.1 (commit 8a32cf0, 2026-02-20): requirements, changes since 1.0.0 and the README shipped with the tag."
+permalink: /laravel-aruba-sms/1.0.1/
+packageVersion: "1.0.1"
+sourceCommit: 8a32cf0376efdb54066d07d14723654a0a39ac2e
+documentationSnapshot: true
+documentationArchive: generated-tag
+---
+# Laravel Aruba SMS 1.0.1
+
+This archived page describes tag `1.0.1` of [offline-agency/laravel-aruba-sms](https://github.com/offline-agency/laravel-aruba-sms). It is generated from the repository at that tag: the manifest, the history since the previous tag and the README shipped with the release. It is not a reviewed guide; read the [current documentation](/laravel-aruba-sms/) for the maintained release (1.1.0).
+
+## Release
+
+| Fact | Value |
+| --- | --- |
+| Tag | [1.0.1](https://github.com/offline-agency/laravel-aruba-sms/releases/tag/1.0.1) |
+| Commit | [`8a32cf0376efdb54066d07d14723654a0a39ac2e`](https://github.com/offline-agency/laravel-aruba-sms/tree/8a32cf0376efdb54066d07d14723654a0a39ac2e) |
+| Commit date | 2026-02-20 |
+| Composer package | `offline-agency/laravel-aruba-sms` |
+| Packagist | Version `1.0.1`, source reference matches this commit (checked 2026-11-23) |
+| Declared license | MIT |
+
+## Requirements
+
+Declared in `composer.json` `require`:
+
+- `php`: `^8.4`
+- `illuminate/http`: `^12.0`
+- `illuminate/notifications`: `^12.0`
+- `illuminate/support`: `^12.0`
+
+## Changes since 1.0.0
+
+[Compare 1.0.0...1.0.1 on GitHub](https://github.com/offline-agency/laravel-aruba-sms/compare/1.0.0...1.0.1).
+
+3 non-merge commits and 3 changed files.
+
+Commits:
+
+- `8a32cf0` Add image banner to README
+- `e65f31c` Delete LICENSE.md
+- `f7020cc` Delete CHANGELOG.md
+
+Changed files:
+
+- deleted `CHANGELOG.md`
+- deleted `LICENSE.md`
+- modified `README.md`
+
+## README at 1.0.1
+
+Shipped as [`README.md`](https://github.com/offline-agency/laravel-aruba-sms/blob/8a32cf0376efdb54066d07d14723654a0a39ac2e/README.md). Headings are shifted one level, HTML markup is reduced to text and images, repository links are kept only when their target exists at this tag, and external links verified as unreachable are shown as text.
+
+::: v-pre
+### Laravel Aruba SMS
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/offline-agency/laravel-aruba-sms.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-aruba-sms)
+[![Tests](https://img.shields.io/github/actions/workflow/status/offline-agency/laravel-aruba-sms/ci.yml?branch=main&label=tests&style=flat-square)](https://github.com/offline-agency/laravel-aruba-sms/actions/workflows/ci.yml)
+[![PHPStan](https://img.shields.io/badge/PHPStan-level%206-brightgreen.svg?style=flat-square)](https://phpstan.org/)
+[![codecov](https://codecov.io/gh/offline-agency/laravel-aruba-sms/branch/main/graph/badge.svg)](https://codecov.io/gh/offline-agency/laravel-aruba-sms)
+[![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/laravel-aruba-sms.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-aruba-sms)
+[![License](https://img.shields.io/packagist/l/offline-agency/laravel-aruba-sms.svg?style=flat-square)](https://github.com/offline-agency/laravel-aruba-sms/blob/8a32cf0376efdb54066d07d14723654a0a39ac2e/LICENSE)
+
+Laravel notification channel and API client for the [Aruba SMS API Service](https://www.aruba.it/listino-sms.aspx). See the official API documentation.
+
+![Laravel Aruba SMS](https://banners.beyondco.de/Laravel%20Aruba%20SMS.png?theme=dark&packageManager=composer+require&packageName=offline-agency%2Flaravel-aruba-sms&pattern=aztec&style=style_2&description=Laravel+notification+channel+and+API+client+for+the+Aruba+SMS+API+Service&md=1&showWatermark=0&fontSize=100px&images=https%3A%2F%2Flaravel.com%2Fimg%2Flogomark.min.svg)
+
+#### Requirements
+
+- PHP ^8.4
+- Laravel ^12.0
+
+#### Installation
+
+##### From Packagist (when published)
+
+```bash
+composer require offline-agency/laravel-aruba-sms
+```
+
+##### Local development (path repository)
+
+Add to your project's `composer.json`:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/offline-agency/laravel-aruba-sms",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
+}
+```
+
+Then:
+
+```bash
+composer require offline-agency/laravel-aruba-sms
+```
+
+##### Publish config
+
+```bash
+php artisan vendor:publish --tag=aruba-sms-config
+```
+
+#### Configuration
+
+Copy `.env.example` or add these to your `.env`:
+
+```env
+# Required
+ARUBA_SMS_ID=your_username
+ARUBA_SMS_PASSWORD=your_password
+
+# Optional
+ARUBA_SMS_SENDER=YourBrand              # Default: Takeathome
+ARUBA_SMS_SANDBOX=true                  # Default: false (set true for dev/test)
+ARUBA_SMS_MINIMUM_SMS=50                # Low credit threshold
+ARUBA_SMS_LOW_CREDIT_RECIPIENTS=admin@example.com,dev@example.com
+```
+
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `ARUBA_SMS_ID` | Aruba SMS Panel username | (required) |
+| `ARUBA_SMS_PASSWORD` | Aruba SMS Panel password | (required) |
+| `ARUBA_SMS_BASE_URL` | API base URL | `https://smspanel.aruba.it/API/v1.0/REST/` |
+| `ARUBA_SMS_SENDER` | Sender name on recipient's device | `Takeathome` |
+| `ARUBA_SMS_MESSAGE_TYPE` | SMS type | `N` (Normal) |
+| `ARUBA_SMS_SANDBOX` | Log instead of sending | `false` |
+| `ARUBA_SMS_MINIMUM_SMS` | Low credit alert threshold | `50` |
+| `ARUBA_SMS_LOW_CREDIT_RECIPIENTS` | Comma-separated admin emails | (empty) |
+
+#### Usage
+
+##### Via Notification Channel
+
+Create a notification that uses the `aruba-sms` channel:
+
+```php
+use Illuminate\Notifications\Notification;
+use OfflineAgency\ArubaSms\ArubaSmsMessage;
+
+class OrderShippedNotification extends Notification
+{
+    public function via($notifiable): array
+    {
+        return ['aruba-sms'];
+    }
+
+    public function toArubaSms($notifiable): ArubaSmsMessage
+    {
+        return (new ArubaSmsMessage())
+            ->content("Your order #{$this->order->id} has been shipped")
+            ->to($notifiable->phone_number);
+    }
+}
+```
+
+##### Using the Built-in Generic Notification
+
+```php
+use OfflineAgency\ArubaSms\Notifications\SendSmsNotification;
+use Illuminate\Support\Facades\Notification;
+
+// Send to an on-demand notifiable (no User model needed)
+Notification::route('aruba-sms', null)
+    ->notify(new SendSmsNotification('Your message', '+393331234567'));
+
+// Or send via a notifiable model
+$user->notify(new SendSmsNotification('Your message', '+393331234567'));
+```
+
+##### Direct Client Usage
+
+```php
+use OfflineAgency\ArubaSms\ArubaSmsClient;
+use OfflineAgency\ArubaSms\ArubaSmsMessage;
+
+$client = app(ArubaSmsClient::class);
+$message = new ArubaSmsMessage('Hello!', '+393331234567');
+$response = $client->sendMessage($message);
+```
+
+##### Via Facade
+
+```php
+use OfflineAgency\ArubaSms\Facades\ArubaSms;
+use OfflineAgency\ArubaSms\ArubaSmsMessage;
+
+// Send a message
+$message = new ArubaSmsMessage('Hello!', '+393331234567');
+ArubaSms::sendMessage($message);
+
+// Check remaining credits
+$response = ArubaSms::checkSmsStatus();
+
+// Get sending history
+$response = ArubaSms::getSmsHistory('20260101000001');
+```
+
+##### Backward Compatibility (Legacy Pattern)
+
+Notifications with public `$message`, `$recipient`, `$message_type` properties work without implementing `toArubaSms()`:
+
+```php
+class LegacyNotification extends Notification
+{
+    public string $message = 'Hello';
+    public string $recipient = '+393331234567';
+    public string $message_type = 'N';
+
+    public function via($notifiable): array
+    {
+        return ['aruba-sms'];
+    }
+}
+```
+
+#### Artisan Commands
+
+##### `aruba:sms`
+
+Manage the Aruba SMS Panel from the command line:
+
+```bash
+# Check remaining SMS credits
+php artisan aruba:sms status
+
+# View sending history
+php artisan aruba:sms history --from=20260101000001 --to=20260201000001
+
+# View history for a specific recipient
+php artisan aruba:sms recipient-history --recipient=+393331234567 --from=20260101000001
+
+# Send a test SMS
+php artisan aruba:sms notification --phoneNumber=+393331234567
+
+# Get raw remaining credit count (for scripting)
+php artisan aruba:sms remaining-credit-raw
+```
+
+##### `aruba:check-remaining-sms`
+
+Check remaining credits and send email alerts if below threshold:
+
+```bash
+php artisan aruba:check-remaining-sms
+```
+
+Configure alert recipients via `ARUBA_SMS_LOW_CREDIT_RECIPIENTS` env variable.
+
+#### Phone Number Formatting
+
+The package provides a `PhoneNumberFormatter` utility for Italian phone numbers:
+
+```php
+use OfflineAgency\ArubaSms\Support\PhoneNumberFormatter;
+
+// Add +39 prefix and strip spaces
+PhoneNumberFormatter::format('333 123 4567');    // '+393331234567'
+PhoneNumberFormatter::format('+393331234567');   // '+393331234567' (unchanged)
+PhoneNumberFormatter::format('+447911123456');   // '+447911123456' (non-IT preserved)
+
+// Strip spaces only
+PhoneNumberFormatter::stripSpaces('+39 333 123 4567'); // '+393331234567'
+```
+
+#### Sandbox Mode
+
+When `ARUBA_SMS_SANDBOX=true`, SMS messages are logged to the Laravel log instead of being sent to the Aruba API. This is useful for development and testing:
+
+```
+[2026-02-19 10:30:00] local.INFO: *** Aruba SMS DEBUG ***
+[2026-02-19 10:30:00] local.INFO: Notification sent successfully!
+[2026-02-19 10:30:00] local.INFO: Recipient: +393331234567
+[2026-02-19 10:30:00] local.INFO: Message: Your code is 123456
+[2026-02-19 10:30:00] local.INFO: Message Type: N
+[2026-02-19 10:30:00] local.INFO: *** *** ***
+```
+
+#### Testing
+
+```bash
+composer test              # Run tests
+composer test:coverage     # Run with coverage (100% minimum)
+composer analyse           # PHPStan level 6
+composer format            # Fix code style (Pint)
+composer format:check      # Check code style without fixing
+```
+
+All tests use Pest with `Http::fake()` and never call the real Aruba API.
+
+#### License
+
+MIT
+:::

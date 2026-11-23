@@ -1,0 +1,80 @@
+{
+  "package": "offline-agency/laravel-aruba-sms",
+  "tag": "1.1.0",
+  "commit": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+  "checkedAt": "2026-10-16",
+  "composerRequirements": {
+    "php": "^8.4",
+    "illuminate/http": "^12.0|^13.0",
+    "illuminate/notifications": "^12.0|^13.0",
+    "illuminate/support": "^12.0|^13.0"
+  },
+  "distribution": {
+    "version": "1.1.0",
+    "sourceRef": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+    "distRef": "b090caba23f4882486619f2eaed90dfa9b7a2014",
+    "url": "https://api.github.com/repos/offline-agency/laravel-aruba-sms/zipball/b090caba23f4882486619f2eaed90dfa9b7a2014",
+    "publishedAt": "2026-04-07T09:44:15+00:00",
+    "checkedAt": "2026-10-16",
+    "downloadVerified": true,
+    "bytes": 43384,
+    "sha256": "98501a408baebaa0641042e808a40145180f3a01c17960daa7167dd3411834f4"
+  },
+  "github": {
+    "latestRelease": "1.1.0",
+    "defaultBranch": "main",
+    "head": "b090caba23f4882486619f2eaed90dfa9b7a2014"
+  },
+  "sourcePaths": [
+    "composer.json",
+    "config/aruba-sms.php",
+    "src/ArubaSmsServiceProvider.php",
+    "src/ArubaSmsMessage.php",
+    "src/ArubaSmsClient.php",
+    "src/ArubaSmsChannel.php",
+    "src/Facades/ArubaSms.php",
+    "src/Notifications/SendSmsNotification.php",
+    "src/Notifications/LowCreditNotification.php",
+    "src/Commands/ArubaSmsCommand.php",
+    "src/Commands/CheckRemainingSmsCommand.php",
+    "src/Events/SmsSent.php",
+    "src/Events/SmsFailed.php",
+    "src/Exceptions/ArubaSmsAuthException.php",
+    "src/Exceptions/ArubaSmsDeliveryException.php",
+    "src/Support/PhoneNumberFormatter.php",
+    "src/Support/SmsStatusResponse.php",
+    "tests/Unit/ArubaSmsClientTest.php",
+    "tests/Unit/ArubaSmsMessageTest.php",
+    "tests/Unit/ArubaSmsChannelTest.php",
+    "tests/Feature/ArubaSmsCommandTest.php",
+    "tests/Feature/CheckRemainingSmsCommandTest.php",
+    ".github/workflows/ci.yml",
+    "phpstan.neon"
+  ],
+  "ci": {
+    "declaredPhp": [
+      "8.4"
+    ],
+    "declaredLaravel": [
+      "12.*",
+      "13.*"
+    ],
+    "observedPhpstanLevel": 6
+  },
+  "checks": {
+    "fixture": "passed",
+    "fixturePath": "maintenance/fixtures/aruba/verify.php",
+    "php": "8.5.10",
+    "laravel": "13.35.0",
+    "dependencies": "vendor Laravel preesistente; nessuna installazione PHP nella root docs",
+    "network": "HTTP fake, preventStrayRequests, nessuna chiamata Aruba",
+    "phpLint": "passed",
+    "diffCheck": "passed"
+  },
+  "CIchecksUnavailable": [
+    "esiti GitHub Actions non interrogati",
+    "suite upstream completa e coverage non eseguiti",
+    "PHPStan/Pint/audit non eseguiti",
+    "matrice PHP8.4/Laravel12 non eseguita localmente"
+  ]
+}

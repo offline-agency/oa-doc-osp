@@ -1,0 +1,688 @@
+{
+  "checkedAt": "2026-10-16",
+  "pagination": "gh api --paginate --slurp; per_page=100; all pages fetched",
+  "repositories": {
+    "spid-laravel-trentino": {
+      "identity": {
+        "id": 998136118,
+        "fullName": "offline-agency/spid-laravel-trentino",
+        "url": "https://github.com/offline-agency/spid-laravel-trentino",
+        "defaultBranch": "master",
+        "defaultSha": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "archived": false
+      },
+      "tags": [
+        {
+          "tag": "v2.3.0",
+          "objectChain": [
+            {
+              "sha": "e4d14330ff15dbfa26e478c48df95048d1a8b78a",
+              "type": "tag",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/tags/e4d14330ff15dbfa26e478c48df95048d1a8b78a"
+            },
+            {
+              "sha": "0fdb1e870606e471a39d35c144cde58158e023d6",
+              "type": "commit",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/commits/0fdb1e870606e471a39d35c144cde58158e023d6"
+            }
+          ],
+          "commit": "0fdb1e870606e471a39d35c144cde58158e023d6"
+        },
+        {
+          "tag": "v2.2.0",
+          "objectChain": [
+            {
+              "sha": "c1719126ccb1332cadaeaf771482497e39012c2e",
+              "type": "tag",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/tags/c1719126ccb1332cadaeaf771482497e39012c2e"
+            },
+            {
+              "sha": "2b7f3d28c6979bae53034537c5390b6aec05ec8d",
+              "type": "commit",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/commits/2b7f3d28c6979bae53034537c5390b6aec05ec8d"
+            }
+          ],
+          "commit": "2b7f3d28c6979bae53034537c5390b6aec05ec8d"
+        },
+        {
+          "tag": "v2.1.0",
+          "objectChain": [
+            {
+              "sha": "03b3f3536ed377271ef23f0abb9966758e83d3bd",
+              "type": "tag",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/tags/03b3f3536ed377271ef23f0abb9966758e83d3bd"
+            },
+            {
+              "sha": "3a2f93f119cf4f42de8d84d9dfff212bb6450678",
+              "type": "commit",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/commits/3a2f93f119cf4f42de8d84d9dfff212bb6450678"
+            }
+          ],
+          "commit": "3a2f93f119cf4f42de8d84d9dfff212bb6450678"
+        },
+        {
+          "tag": "v2.0.0",
+          "objectChain": [
+            {
+              "sha": "df5f522d6a6e790383504d3726ebcc05c7c72c0b",
+              "type": "tag",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/tags/df5f522d6a6e790383504d3726ebcc05c7c72c0b"
+            },
+            {
+              "sha": "28944c619e1f2c78370676405772a9a669185eba",
+              "type": "commit",
+              "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/git/commits/28944c619e1f2c78370676405772a9a669185eba"
+            }
+          ],
+          "commit": "28944c619e1f2c78370676405772a9a669185eba"
+        }
+      ],
+      "releases": [
+        {
+          "id": 406168751,
+          "tag_name": "v2.3.0",
+          "draft": false,
+          "prerelease": false,
+          "published_at": "2026-10-07T21:12:49Z",
+          "html_url": "https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.3.0",
+          "target_commitish": "master",
+          "assets": []
+        },
+        {
+          "id": 405670292,
+          "tag_name": "v2.2.0",
+          "draft": false,
+          "prerelease": false,
+          "published_at": "2026-10-07T11:06:00Z",
+          "html_url": "https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.2.0",
+          "target_commitish": "master",
+          "assets": []
+        },
+        {
+          "id": 405652639,
+          "tag_name": "v2.1.0",
+          "draft": false,
+          "prerelease": false,
+          "published_at": "2026-10-07T10:41:33Z",
+          "html_url": "https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.1.0",
+          "target_commitish": "master",
+          "assets": []
+        },
+        {
+          "id": 405622109,
+          "tag_name": "v2.0.0",
+          "draft": false,
+          "prerelease": false,
+          "published_at": "2026-10-07T10:01:42Z",
+          "html_url": "https://github.com/offline-agency/spid-laravel-trentino/releases/tag/v2.0.0",
+          "target_commitish": "master",
+          "assets": []
+        }
+      ],
+      "sourceAudit": {
+        "v2.3.0": {
+          "commit": "0fdb1e870606e471a39d35c144cde58158e023d6",
+          "require": {
+            "php": "^8.4",
+            "illuminate/auth": "^12.69|^13.30",
+            "illuminate/cache": "^12.69|^13.30",
+            "illuminate/config": "^12.69|^13.30",
+            "illuminate/console": "^12.69|^13.30",
+            "illuminate/contracts": "^12.69|^13.30",
+            "illuminate/database": "^12.69|^13.30",
+            "illuminate/encryption": "^12.69|^13.30",
+            "illuminate/events": "^12.69|^13.30",
+            "illuminate/http": "^12.69|^13.30",
+            "illuminate/log": "^12.69|^13.30",
+            "illuminate/routing": "^12.69|^13.30",
+            "illuminate/session": "^12.69|^13.30",
+            "illuminate/support": "^12.69|^13.30",
+            "illuminate/view": "^12.69|^13.30",
+            "jumbojett/openid-connect-php": "^1.0.2"
+          }
+        },
+        "v2.2.0": {
+          "commit": "2b7f3d28c6979bae53034537c5390b6aec05ec8d",
+          "require": {
+            "php": "^8.4",
+            "illuminate/auth": "^12.69|^13.30",
+            "illuminate/cache": "^12.69|^13.30",
+            "illuminate/config": "^12.69|^13.30",
+            "illuminate/console": "^12.69|^13.30",
+            "illuminate/contracts": "^12.69|^13.30",
+            "illuminate/database": "^12.69|^13.30",
+            "illuminate/encryption": "^12.69|^13.30",
+            "illuminate/events": "^12.69|^13.30",
+            "illuminate/http": "^12.69|^13.30",
+            "illuminate/log": "^12.69|^13.30",
+            "illuminate/routing": "^12.69|^13.30",
+            "illuminate/session": "^12.69|^13.30",
+            "illuminate/support": "^12.69|^13.30",
+            "illuminate/view": "^12.69|^13.30",
+            "jumbojett/openid-connect-php": "^1.0.2"
+          }
+        },
+        "v2.1.0": {
+          "commit": "3a2f93f119cf4f42de8d84d9dfff212bb6450678",
+          "require": {
+            "php": "^8.4",
+            "illuminate/auth": "^12.69|^13.30",
+            "illuminate/cache": "^12.69|^13.30",
+            "illuminate/config": "^12.69|^13.30",
+            "illuminate/contracts": "^12.69|^13.30",
+            "illuminate/database": "^12.69|^13.30",
+            "illuminate/events": "^12.69|^13.30",
+            "illuminate/http": "^12.69|^13.30",
+            "illuminate/log": "^12.69|^13.30",
+            "illuminate/routing": "^12.69|^13.30",
+            "illuminate/session": "^12.69|^13.30",
+            "illuminate/support": "^12.69|^13.30",
+            "illuminate/view": "^12.69|^13.30",
+            "jumbojett/openid-connect-php": "^1.0.2"
+          }
+        },
+        "v2.0.0": {
+          "commit": "28944c619e1f2c78370676405772a9a669185eba",
+          "require": {
+            "php": "^8.4",
+            "illuminate/auth": "^12.69|^13.30",
+            "illuminate/cache": "^12.69|^13.30",
+            "illuminate/config": "^12.69|^13.30",
+            "illuminate/contracts": "^12.69|^13.30",
+            "illuminate/database": "^12.69|^13.30",
+            "illuminate/events": "^12.69|^13.30",
+            "illuminate/http": "^12.69|^13.30",
+            "illuminate/log": "^12.69|^13.30",
+            "illuminate/routing": "^12.69|^13.30",
+            "illuminate/session": "^12.69|^13.30",
+            "illuminate/support": "^12.69|^13.30",
+            "illuminate/view": "^12.69|^13.30",
+            "jumbojett/openid-connect-php": "^1.0.2"
+          }
+        }
+      },
+      "cloneStatusAfterVerification": "",
+      "priorDistributionAudit": {
+        "type": "composer",
+        "version": "v2.3.0",
+        "sourceRef": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "distRef": "0fdb1e870606e471a39d35c144cde58158e023d6",
+        "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/zipball/0fdb1e870606e471a39d35c144cde58158e023d6",
+        "publishedAt": "2026-10-07T21:12:51+00:00",
+        "downloadVerified": true,
+        "bytes": 95747,
+        "sha256": "2d90d203389961fd2a5971a8ad03a4f887e6b4cdff376fb207206b3b3dcd5b6f"
+      }
+    },
+    "pgr_dmmsy": {
+      "identity": {
+        "id": 1041686710,
+        "fullName": "offline-agency/pgr_dmmsy",
+        "url": "https://github.com/offline-agency/pgr_dmmsy",
+        "defaultBranch": "main",
+        "defaultSha": "f8de14341094b1e2d74ed48d4d76a19e66c4cf36",
+        "archived": false
+      },
+      "tags": [
+        {
+          "tag": "v0.1.0",
+          "objectChain": [
+            {
+              "sha": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+              "type": "commit",
+              "url": "https://api.github.com/repos/offline-agency/pgr_dmmsy/git/commits/86b21b8efd8edd0c2851ba2b433b4481d0c37de9"
+            }
+          ],
+          "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9"
+        }
+      ],
+      "releases": [
+        {
+          "id": 291841985,
+          "tag_name": "v0.1.0",
+          "draft": false,
+          "prerelease": false,
+          "published_at": "2026-03-01T20:28:10Z",
+          "html_url": "https://github.com/offline-agency/pgr_dmmsy/releases/tag/v0.1.0",
+          "target_commitish": "main",
+          "assets": [
+            {
+              "id": 364817631,
+              "name": "pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+              "size": 53878,
+              "digest": "sha256:78346bbc7c2ee1ea6687da3112bbcf5149a78878803d1eb0bf042aaf1cead7e1",
+              "browser_download_url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz"
+            },
+            {
+              "id": 364817629,
+              "name": "pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+              "size": 7774,
+              "digest": "sha256:aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc",
+              "browser_download_url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-macos-arm64.tar.gz"
+            },
+            {
+              "id": 364817630,
+              "name": "pgr_dmmsy-v0.1.0-source.tar.gz",
+              "size": 32003,
+              "digest": "sha256:e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8",
+              "browser_download_url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-source.tar.gz"
+            }
+          ]
+        }
+      ],
+      "sourceAudit": {
+        "v0.1.0": {
+          "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9"
+        }
+      },
+      "cloneStatusAfterVerification": "",
+      "priorDistributionAudit": {
+        "type": "github-release-assets",
+        "release": "v0.1.0",
+        "publishedAt": "2026-03-01T20:28:10Z",
+        "assets": [
+          {
+            "name": "pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+            "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-linux-x86_64.tar.gz",
+            "bytes": 53878,
+            "sha256": "78346bbc7c2ee1ea6687da3112bbcf5149a78878803d1eb0bf042aaf1cead7e1",
+            "downloadVerified": true,
+            "githubDigestMatched": true,
+            "archiveContents": [
+              ".",
+              "./pgr_dmmsy.control",
+              "./pgr_dmmsy.so",
+              "./pgr_dmmsy--0.1.0.sql"
+            ],
+            "recheckedSha256": "78346bbc7c2ee1ea6687da3112bbcf5149a78878803d1eb0bf042aaf1cead7e1",
+            "refreshedGitHubDigestMatches": true
+          },
+          {
+            "name": "pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+            "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-macos-arm64.tar.gz",
+            "bytes": 7774,
+            "sha256": "aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc",
+            "downloadVerified": true,
+            "githubDigestMatched": true,
+            "archiveContents": [
+              ".",
+              "./pgr_dmmsy.control",
+              "./pgr_dmmsy--0.1.0.sql",
+              "./pgr_dmmsy.dylib"
+            ],
+            "recheckedSha256": "aa1a37bc36fdd76017f122d31d5e22cebf14b012d5334e72676d1a3f9c78a3cc",
+            "refreshedGitHubDigestMatches": true
+          },
+          {
+            "name": "pgr_dmmsy-v0.1.0-source.tar.gz",
+            "url": "https://github.com/offline-agency/pgr_dmmsy/releases/download/v0.1.0/pgr_dmmsy-v0.1.0-source.tar.gz",
+            "bytes": 32003,
+            "sha256": "e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8",
+            "downloadVerified": true,
+            "githubDigestMatched": true,
+            "archiveContents": [
+              "pgr_dmmsy-0.1.0/src",
+              "pgr_dmmsy-0.1.0/src/minheap.h",
+              "pgr_dmmsy-0.1.0/src/dmmsy.c",
+              "pgr_dmmsy-0.1.0/src/dmmsy.h",
+              "pgr_dmmsy-0.1.0/src/ds_blocklist.c",
+              "pgr_dmmsy-0.1.0/src/graph.c",
+              "pgr_dmmsy-0.1.0/src/minheap.c",
+              "pgr_dmmsy-0.1.0/src/dmmsy_algorithm.c",
+              "pgr_dmmsy-0.1.0/src/graph.h",
+              "pgr_dmmsy-0.1.0/src/ds_blocklist.h",
+              "pgr_dmmsy-0.1.0/sql",
+              "pgr_dmmsy-0.1.0/sql/pgr_dmmsy--0.1.0.sql",
+              "pgr_dmmsy-0.1.0/verify",
+              "pgr_dmmsy-0.1.0/verify/tests",
+              "pgr_dmmsy-0.1.0/verify/tests/03_negative.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/run_all.sh",
+              "pgr_dmmsy-0.1.0/verify/tests/06_performance.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/05_weights.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/04_topology.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/01_correctness.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/08_invariants.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/07_integration.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/09_api_contract.sql",
+              "pgr_dmmsy-0.1.0/verify/tests/02_predecessors.sql",
+              "pgr_dmmsy-0.1.0/verify/sql",
+              "pgr_dmmsy-0.1.0/verify/sql/00_setup.sql",
+              "pgr_dmmsy-0.1.0/verify/sql/01_generators.sql",
+              "pgr_dmmsy-0.1.0/verify/sql/02_stub.sql",
+              "pgr_dmmsy-0.1.0/Makefile",
+              "pgr_dmmsy-0.1.0/pgr_dmmsy.control",
+              "pgr_dmmsy-0.1.0/README.md",
+              "pgr_dmmsy-0.1.0/COMPILE.md"
+            ],
+            "recheckedSha256": "e32b83565280f88bda3b1dcbd87990075734fa161c424dbb4d4fc6b189cb2ac8",
+            "refreshedGitHubDigestMatches": true
+          }
+        ],
+        "missingAdvertisedAsset": "Windows x86_64 is mentioned in release notes but not present in the release asset list",
+        "composerOrNpmManifest": false
+      }
+    }
+  },
+  "packagist": {
+    "minified": "composer/2.0",
+    "packages": {
+      "offline-agency/spid-laravel-trentino": [
+        {
+          "name": "offline-agency/spid-laravel-trentino",
+          "description": "SPID authentication for Laravel through AAC Trentino (OpenID Connect with PKCE)",
+          "keywords": [
+            "laravel",
+            "SPiD",
+            "oidc",
+            "aac",
+            "openid-connect",
+            "pkce",
+            "pubblica-amministrazione",
+            "trentino"
+          ],
+          "homepage": "https://github.com/offline-agency/spid-laravel-trentino",
+          "version": "v2.3.0",
+          "version_normalized": "2.3.0.0",
+          "license": [
+            "MIT"
+          ],
+          "authors": [
+            {
+              "name": "Offline Agency",
+              "email": "support@offlineagency.it",
+              "homepage": "https://offlineagency.it",
+              "role": "Developer"
+            }
+          ],
+          "source": {
+            "url": "https://github.com/offline-agency/spid-laravel-trentino.git",
+            "type": "git",
+            "reference": "0fdb1e870606e471a39d35c144cde58158e023d6"
+          },
+          "dist": {
+            "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/zipball/0fdb1e870606e471a39d35c144cde58158e023d6",
+            "type": "zip",
+            "shasum": "",
+            "reference": "0fdb1e870606e471a39d35c144cde58158e023d6"
+          },
+          "type": "library",
+          "support": {
+            "issues": "https://github.com/offline-agency/spid-laravel-trentino/issues",
+            "security": "https://github.com/offline-agency/spid-laravel-trentino/security/policy",
+            "source": "https://github.com/offline-agency/spid-laravel-trentino"
+          },
+          "funding": [],
+          "time": "2026-10-07T21:12:38+00:00",
+          "published-time": "2026-10-07T21:12:51+00:00",
+          "autoload": {
+            "psr-4": {
+              "OfflineAgency\\SpidLaravelTrentino\\": "src/"
+            }
+          },
+          "extra": {
+            "laravel": {
+              "aliases": {
+                "SpidTrentino": "OfflineAgency\\SpidLaravelTrentino\\SpidTrentinoFacade"
+              },
+              "providers": [
+                "OfflineAgency\\SpidLaravelTrentino\\SpidTrentinoServiceProvider"
+              ]
+            }
+          },
+          "require": {
+            "php": "^8.4",
+            "illuminate/auth": "^12.69|^13.30",
+            "illuminate/cache": "^12.69|^13.30",
+            "illuminate/config": "^12.69|^13.30",
+            "illuminate/console": "^12.69|^13.30",
+            "illuminate/contracts": "^12.69|^13.30",
+            "illuminate/database": "^12.69|^13.30",
+            "illuminate/encryption": "^12.69|^13.30",
+            "illuminate/events": "^12.69|^13.30",
+            "illuminate/http": "^12.69|^13.30",
+            "illuminate/log": "^12.69|^13.30",
+            "illuminate/routing": "^12.69|^13.30",
+            "illuminate/session": "^12.69|^13.30",
+            "illuminate/support": "^12.69|^13.30",
+            "illuminate/view": "^12.69|^13.30",
+            "jumbojett/openid-connect-php": "^1.0.2"
+          },
+          "require-dev": {
+            "firebase/php-jwt": "^7.2",
+            "larastan/larastan": "^3.12",
+            "laravel/pint": "^1.32",
+            "orchestra/testbench": "^10.2|^11.0",
+            "pestphp/pest": "^4.3|^5.0"
+          }
+        },
+        {
+          "version": "v2.2.0",
+          "version_normalized": "2.2.0.0",
+          "source": {
+            "url": "https://github.com/offline-agency/spid-laravel-trentino.git",
+            "type": "git",
+            "reference": "2b7f3d28c6979bae53034537c5390b6aec05ec8d"
+          },
+          "dist": {
+            "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/zipball/2b7f3d28c6979bae53034537c5390b6aec05ec8d",
+            "type": "zip",
+            "shasum": "",
+            "reference": "2b7f3d28c6979bae53034537c5390b6aec05ec8d"
+          },
+          "time": "2026-10-07T11:05:48+00:00",
+          "published-time": "2026-10-07T11:06:02+00:00"
+        },
+        {
+          "version": "v2.1.0",
+          "version_normalized": "2.1.0.0",
+          "source": {
+            "url": "https://github.com/offline-agency/spid-laravel-trentino.git",
+            "type": "git",
+            "reference": "3a2f93f119cf4f42de8d84d9dfff212bb6450678"
+          },
+          "dist": {
+            "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/zipball/3a2f93f119cf4f42de8d84d9dfff212bb6450678",
+            "type": "zip",
+            "shasum": "",
+            "reference": "3a2f93f119cf4f42de8d84d9dfff212bb6450678"
+          },
+          "time": "2026-10-07T10:41:19+00:00",
+          "published-time": "2026-10-07T10:41:33+00:00",
+          "require": {
+            "php": "^8.4",
+            "illuminate/auth": "^12.69|^13.30",
+            "illuminate/cache": "^12.69|^13.30",
+            "illuminate/config": "^12.69|^13.30",
+            "illuminate/contracts": "^12.69|^13.30",
+            "illuminate/database": "^12.69|^13.30",
+            "illuminate/events": "^12.69|^13.30",
+            "illuminate/http": "^12.69|^13.30",
+            "illuminate/log": "^12.69|^13.30",
+            "illuminate/routing": "^12.69|^13.30",
+            "illuminate/session": "^12.69|^13.30",
+            "illuminate/support": "^12.69|^13.30",
+            "illuminate/view": "^12.69|^13.30",
+            "jumbojett/openid-connect-php": "^1.0.2"
+          }
+        },
+        {
+          "version": "v2.0.0",
+          "version_normalized": "2.0.0.0",
+          "source": {
+            "url": "https://github.com/offline-agency/spid-laravel-trentino.git",
+            "type": "git",
+            "reference": "28944c619e1f2c78370676405772a9a669185eba"
+          },
+          "dist": {
+            "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/zipball/28944c619e1f2c78370676405772a9a669185eba",
+            "type": "zip",
+            "shasum": "",
+            "reference": "28944c619e1f2c78370676405772a9a669185eba"
+          },
+          "time": "2026-10-07T10:01:30+00:00",
+          "published-time": "2026-10-07T10:04:19+00:00"
+        }
+      ]
+    },
+    "security-advisories": []
+  },
+  "compatibilityLines": {
+    "spid-laravel-trentino": [
+      {
+        "line": "v2",
+        "latestStable": "v2.3.0",
+        "route": "/spid-laravel-trentino/v2/",
+        "support": "Upstream support/EOL duration not documented",
+        "availableSince": {
+          "v2.0.0": [
+            "OIDC PKCE S256",
+            "routes",
+            "provider",
+            "middleware",
+            "DTO",
+            "mock",
+            "publish config/views/user migration"
+          ],
+          "v2.1.0": [
+            "session_fallback"
+          ],
+          "v2.2.0": [
+            "transaction logs",
+            "prune command",
+            "console/encryption dependency"
+          ],
+          "v2.3.0": [
+            "fail_closed",
+            "TransactionLogUnavailable",
+            "check-logs command"
+          ]
+        }
+      }
+    ],
+    "pgr_dmmsy": [
+      {
+        "line": "v0.1",
+        "latestStable": "v0.1.0",
+        "route": "/pgr_dmmsy/v0.1/",
+        "support": "Pre-1.0 research/evaluation; support/EOL duration not documented"
+      }
+    ]
+  },
+  "checks": {
+    "spid": {
+      "status": "passed",
+      "tags": [
+        "v2.0.0",
+        "v2.3.0"
+      ],
+      "fixture": "maintenance/fixtures/spid-laravel-trentino/verify.php",
+      "php": "8.5.10",
+      "laravel": "13.35.0",
+      "autoload": "Existing isolated compatible laravel-webex vendor, not modified",
+      "checks": [
+        "DTO claims and JSON",
+        "malformed claims",
+        "keyed log redaction",
+        "token response normalization",
+        "session expiry"
+      ],
+      "network": false,
+      "database": false,
+      "limitations": [
+        "Not full upstream suite",
+        "No live AAC or real signature interoperability",
+        "No database-backed local-user/controller or transaction-log integration",
+        "No PHP8.4/Laravel12 matrix"
+      ],
+      "phpLint": "passed"
+    },
+    "pgrC": {
+      "status": "passed",
+      "tag": "v0.1.0",
+      "checks": 38,
+      "suites": {
+        "graph": 8,
+        "minheap": 8,
+        "algorithm": 11,
+        "edgeCases": 11
+      },
+      "sourceCopy": "git archive v0.1.0; temporary build copy; no upstream edits"
+    },
+    "pgrSQL": {
+      "status": "passed",
+      "sourceCommit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+      "fixture": "maintenance/fixtures/pgr_dmmsy/verify.sql",
+      "postgresql": "17.11 (Debian 17.11-1.pgdg12+2)",
+      "postgis": "3.5.7",
+      "pgrouting": "4.0.1",
+      "architecture": "Linux aarch64",
+      "compiler": "gcc12.2.0 plus clang19 bitcode",
+      "baseImageId": "5368a5388137",
+      "builtImageSha256": "9d1c6fccef26de9af083eb76275f44e5e66b95b4eabe748ccb728922da3d4cc3",
+      "isolation": "new initdb cluster under container tmpfs; --rm --network none; no host database mounts or ports",
+      "quickstartRows": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          2,
+          2,
+          2,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          3,
+          3,
+          -1,
+          0,
+          2
+        ]
+      ],
+      "columns": [
+        "seq",
+        "path_seq",
+        "node",
+        "edge",
+        "cost",
+        "agg_cost"
+      ],
+      "assertions": [
+        "quickstart path nodes [1,2,3] agg_cost [0,1,2]",
+        "reverse directed unreachable",
+        "missing target unreachable",
+        "omitted target empty",
+        "NULL target empty",
+        "max_levels0 empty",
+        "undirected reverse nodes [3,2,1] agg_cost [0,1,2]"
+      ],
+      "limitations": [
+        "Only one runtime; pgRouting4 exceeds declared3.x prerequisite",
+        "PostgreSQL14/15/16 and pgRouting3 not executed",
+        "Release binaries not loaded",
+        "Broad upstream verify/installcheck, performance and sanitizers not executed"
+      ],
+      "shellSyntax": "passed"
+    }
+  },
+  "upstreamDefects": {
+    "spid": [
+      "Old log HMAC integrity uses current APP_KEY after rotation; previous-key decryption does not preserve old-key HMAC verification",
+      "Migration user table is fixed users while auth model can be configured"
+    ],
+    "pgr": [
+      "NULL/omitted target returns no SQL rows contrary to all-target README/comment claim",
+      "constant_degree accepted but unused in released core",
+      "No positive cap applied to param_k/param_t",
+      "Windows asset advertised but absent",
+      "No LICENSE at selected tag despite README link"
+    ]
+  }
+}

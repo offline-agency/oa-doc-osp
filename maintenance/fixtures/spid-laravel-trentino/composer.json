@@ -1,0 +1,5 @@
+{
+  "name": "offline-agency/docs-spid-fixture",
+  "private": true,
+  "require": { "php": "^8.4", "laravel/framework": "^12.69|^13.30" }
+}

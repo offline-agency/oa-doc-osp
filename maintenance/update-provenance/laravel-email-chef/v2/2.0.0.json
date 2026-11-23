@@ -1,0 +1,134 @@
+{
+  "name": "offline-agency/laravel-email-chef",
+  "repository": "https://github.com/offline-agency/laravel-email-chef",
+  "reference": "2.0.0",
+  "commit": "eff422c06f89f61f00eae5293e703e49638285d1",
+  "version": "2.0.0",
+  "documentationKey": "v2",
+  "verifiedOn": "2026-10-19",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "1294e654b0135af2cdbe4ee73c27ccff8439b857489891e41a47fa70fe60a40e"
+    },
+    {
+      "path": "composer.json",
+      "sha256": "eccc46a36d8378230316d9792400275eac260624cb21e654edee77c22298dfb1"
+    },
+    {
+      "path": "config/email-chef.php",
+      "sha256": "98f032c217bd57f666aef11ed7a25cca4d700c5924631506f8e67b7b222661c4"
+    },
+    {
+      "path": ".env.example",
+      "sha256": "dc3915a44568b0ad65e9cdbda5db7bb30941d67091b8a5d6a089f916ed1ac7c1"
+    },
+    {
+      "path": "src/LaravelEmailChef.php",
+      "sha256": "fb176de5e6fce4d87324009078970bfe4ee15cc01451bae823df3f71db3ffeb6"
+    },
+    {
+      "path": "src/LaravelEmailChefServiceProvider.php",
+      "sha256": "34df630d551043075783c74bfabea5bf5476dbd11a8cae201657206b0d990e60"
+    },
+    {
+      "path": "src/LaravelEmailChefFacade.php",
+      "sha256": "c4aad72bfdf838368d343b94636c9f23e38c38b635da95fcc1f00e9ba379994b"
+    },
+    {
+      "path": "src/Api/Api.php",
+      "sha256": "110805736327bec5ee17e2e672064ed868e88ae563123cb989e6ff7efe36b613"
+    },
+    {
+      "path": "src/Api/Resources/AccountApi.php",
+      "sha256": "00900f6dba894220a27bc20a62020e6493228546ec1cd40e8954916831ca19f8"
+    },
+    {
+      "path": "src/Api/Resources/AccountInfosApi.php",
+      "sha256": "ef39f11872413a378384af3277d1af93bf590d9ba126a9c8084352a9139ea7f6"
+    },
+    {
+      "path": "src/Api/Resources/AutorespondersApi.php",
+      "sha256": "e15e8619cca2f8d3e8e52531a0427eae1b4a5089a0d22f9343336fd9b83aecfb"
+    },
+    {
+      "path": "src/Api/Resources/BlockingsApi.php",
+      "sha256": "8add9049702deb549ce3dcf307f5d7e094c980c265b15e0303493f582c6f71e2"
+    },
+    {
+      "path": "src/Api/Resources/CampaignsApi.php",
+      "sha256": "1513b97fa572cdd5d69879ae3134008ad9498c77d10f72f27bd3d84365dfdd3a"
+    },
+    {
+      "path": "src/Api/Resources/ContactsApi.php",
+      "sha256": "42a9c3bac53486145eafbe089050d8cd187d17e15655ebd7c3689ff7fe529d50"
+    },
+    {
+      "path": "src/Api/Resources/CustomFieldsApi.php",
+      "sha256": "58d142030804b7758053b1c9b3553f2692fe373572442a21a3ab98d1d226cd60"
+    },
+    {
+      "path": "src/Api/Resources/ImportTasksApi.php",
+      "sha256": "86297ccfbe54abf39e841706ad5cb809b22bef41e82e90ef2bcc9c2e4bfddfa6"
+    },
+    {
+      "path": "src/Api/Resources/ListsApi.php",
+      "sha256": "53acce3cc29f838fa2db3136f413ba45f035bfae74604b522c6a065cab122fca"
+    },
+    {
+      "path": "src/Api/Resources/PredefinedFieldsApi.php",
+      "sha256": "d26757ed51af5fd5ce2eb960eb6e738c995c80ceb381af30bc4982c1012fdd84"
+    },
+    {
+      "path": "src/Api/Resources/SegmentsApi.php",
+      "sha256": "ae431b417f1573b9eef3de7f8da47da6a86e979e50692b36415a8b2cc8633a21"
+    },
+    {
+      "path": "src/Api/Resources/SendEmailApi.php",
+      "sha256": "b51a79678c9506820e331701789931c49d0c428ec8d502e1745c0392640b32ba"
+    },
+    {
+      "path": "src/Api/Resources/SMSApi.php",
+      "sha256": "f18f92b16f78c7eac8020bfbd367b1fa72b67aca193f2e908d8b729c7a3a3801"
+    },
+    {
+      "path": "src/Api/Resources/SubscriptionApi.php",
+      "sha256": "bfeff0f3c7d6a438704b01d7cebed13fac8a7c9bd1d3d53c692b07c2b3a5b2b6"
+    },
+    {
+      "path": "src/Entities/Error.php",
+      "sha256": "8ebd4121cafa5c9dac33d95b4d5fe9ad90d499a051f58edade1a8ec38d0f317f"
+    },
+    {
+      "path": "src/Entities/Hydratable.php",
+      "sha256": "298b6b770b746a89be287b489ed74f8adbb01366cd5cdf7e67db9f3b94abe82c"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "a3f923dab971933cfac7100716e460437aa3a8bb702cb11618841fa0ee761f8e"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "46c72d06adb58233966f0e62de921554f7ee511ee252341e22289632f4947b12"
+    },
+    {
+      "path": ".github/SECURITY.md",
+      "sha256": "b923e218b88861953f7d76f3644809f6d41e6b78783fad65332ff3e67fa2e2be"
+    },
+    {
+      "path": "LICENSE.md",
+      "sha256": "5bc3d3806ee3661c4143c9b85bcf33ba89aee7a66decb95d301863784bfa2a2b"
+    },
+    {
+      "path": ".github/workflows/main.yml",
+      "sha256": "085f79175708b820ce25b0509c0b5db17aa8fd8cfc17e66b474bc1d30b20f19e"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/laravel-email-chef/v2/index.md",
+      "route": "/laravel-email-chef/v2/",
+      "sha256": "a48da855dc74fc566bc716d82b85673ca5e95da290c531b050ffe7d166fcc767"
+    }
+  ]
+}

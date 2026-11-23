@@ -1,0 +1,26 @@
+{
+  "verifiedOn": "2026-10-16",
+  "repository": "https://github.com/offline-agency/vue3-burger-menu",
+  "tag": "1.1.2",
+  "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+  "inputs": [
+    {
+      "path": "src/components/Menu.vue",
+      "sha256": "0c48fb1532c50ff6c97c3532eb8be49bdfcd7d6435c1782e294fd762facc4a50"
+    },
+    {
+      "path": "src/components/index.js",
+      "sha256": "d805ad8c368a2b5436f9e7b0610ee74b5ef3ea0d9b9b156f8667d1fe9fb8f1f8"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "565b422ce011536776f02f7760f1dc17cb64ca76779dc350536ab9914bb52591"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "vue3-burger-menu/reference.md",
+      "sha256": "6da793c05b049d2392d8a8b3416b8ed545ce9087139f4d6e5154e126e7ace30f"
+    }
+  ]
+}

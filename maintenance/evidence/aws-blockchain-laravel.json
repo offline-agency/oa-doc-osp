@@ -1,0 +1,83 @@
+{
+  "checkedAt": "2026-10-19",
+  "repository": {
+    "fullName": "offline-agency/aws-blockchain-laravel",
+    "url": "https://github.com/offline-agency/aws-blockchain-laravel",
+    "defaultBranch": "main",
+    "archived": false,
+    "lastPush": "2025-11-12T21:59:39Z",
+    "license": "MIT (LICENSE at the release commit)",
+    "formerName": "offline-agency/aws-laravel-blockchain (redirects; still used in README badges and issue link)"
+  },
+  "release": {
+    "tag": "0.0.4",
+    "commit": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+    "commitDate": "2025-11-12",
+    "githubRelease": "https://github.com/offline-agency/aws-blockchain-laravel/releases/tag/0.0.4",
+    "publishedAt": "2025-11-12T21:59:39Z",
+    "otherReleases": ["0.0.1", "0.0.2", "0.0.3"],
+    "prereleases": []
+  },
+  "packagist": {
+    "url": "https://repo.packagist.org/p2/offline-agency/aws-blockchain-laravel.json",
+    "version": "0.0.4",
+    "sourceReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+    "distReference": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+    "time": "2025-11-12T21:58:19+00:00"
+  },
+  "installability": "Composer 2.10.2 dry-run and install (platform PHP 8.4, 2026-10-19) resolved 0.0.4 with aws/aws-sdk-php 3.401.3 and illuminate/support v12.70.0. Laravel 13 is outside the illuminate ^11|^12 constraints.",
+  "ci": {
+    "commit": "d06245ab1aded65d6f5a19c62e6c86416b2fce23",
+    "runs": [
+      { "workflow": "Tests", "run": 19313153502, "conclusion": "success", "jobs": "PHP 8.3/8.4 x Laravel 11/12, Static Analysis, Security Check" },
+      { "workflow": "Code Style", "run": 19313153513, "conclusion": "success" }
+    ],
+    "note": "Tests inject mocked AWS clients. A later Dependabot run on the same SHA (24618943741) failed; it is not a release workflow."
+  },
+  "offlineProbe": {
+    "sdk": "aws/aws-sdk-php 3.401.3",
+    "results": [
+      "class_exists(Aws\\QLDB\\QLDBClient) = false; class_exists(Aws\\QLDBSession\\QLDBSessionClient) = false",
+      "ManagedBlockchainDriver::recordEvent threw InvalidArgumentException: Operation not found: Invoke",
+      "ManagedBlockchainDriver::getEvent returned null; verifyIntegrity returned false",
+      "ManagedBlockchainDriver::deployContract returned status success without any AWS request",
+      "QldbDriver::recordEvent threw Error: Call to undefined method class@anonymous::sendCommand()",
+      "QldbDriver::isAvailable returned false (stub: 'QLDB client not available in test environment')"
+    ],
+    "managedBlockchainApiOperations": "CreateAccessor CreateMember CreateNetwork CreateNode CreateProposal DeleteAccessor DeleteMember DeleteNode GetAccessor GetMember GetNetwork GetNode GetProposal ListAccessors ListInvitations ListMembers ListNetworks ListNodes ListProposalVotes ListProposals ListTagsForResource RejectInvitation TagResource UntagResource UpdateMember UpdateNode VoteOnProposal (no Invoke, DescribeNetwork, GetTransaction)",
+    "qldbInOlderSdk": "aws-sdk-php 3.336.0: QLDB control plane has no SendCommand; QLDBSession ValueHolder members are IonBinary/IonText (no StringValue)"
+  },
+  "externalStatus": {
+    "awsSdkQldbRemoval": "aws/aws-sdk-php 3.359.8 (2025-11-07) changelog: 'Removes QLDB, QLDBSession, ... services, which have been deprecated.' https://github.com/aws/aws-sdk-php/blob/3.360.0/CHANGELOG.md",
+    "managedBlockchainEndOfSupport": "AWS docs (fetched 2026-10-19): AMB stops accepting new customers on October 29, 2026; access ends September 29, 2027. https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/what-is-managed-blockchain.html",
+    "qldbProductPages": "https://aws.amazon.com/qldb/ redirects to the Aurora page and the QLDB developer guide returns 404 (2026-10-19); no end-of-support date is claimed on the site."
+  },
+  "repositorySecurity": {
+    "privateVulnerabilityReporting": false,
+    "securityPolicy": "none at the tag"
+  },
+  "verifiedAgainstSource": [
+    "Service bindings blockchain, blockchain.public, blockchain.private; no mergeConfigFrom",
+    "Publish tags aws-blockchain-laravel-config, aws-blockchain-laravel-migrations",
+    "BlockchainManager creates only mock, managed_blockchain, qldb types",
+    "Ten blockchain:* command signatures",
+    "EvmDriver recordEvent/getEvent/verifyIntegrity placeholders (verifyIntegrity always true)",
+    "VerifyContractCommand sleeps 2s and reports success",
+    "ContractUpgrader placeholder proxy bytecode and no-op runMigration",
+    "ContractInteractor SHA-256 selector without parameters for transactions",
+    "data_categories config key unused in src"
+  ],
+  "upstreamWordingIssues": [
+    "README config shows a drivers.evm entry absent from the published config; the manager rejects type evm",
+    "README claims automatic public/private data categorization; data_categories is not read",
+    "README documents blockchain:deploy --upgradeable; the option does not exist",
+    "README links CHANGELOG.md, CONTRIBUTING.md, SECURITY.md, none present at the tag",
+    "README credits italia/spid-laravel, unrelated to this package",
+    "README presents ManagedBlockchainDriver as for 'production blockchain operations'"
+  ],
+  "notRun": [
+    "Site-owned PHP fixture",
+    "Any live AWS, Ethereum node or block-explorer interaction",
+    "Upstream Pest suite"
+  ]
+}

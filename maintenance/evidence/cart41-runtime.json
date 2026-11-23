@@ -1,0 +1,93 @@
+{
+  "checkedAt": "2026-10-16",
+  "release": "4.1.0",
+  "commit": "b89d3219202703203453890e2e46467e79ad415d",
+  "baseline": "4.0.3",
+  "upstreamCloneClean": true,
+  "runtime": {
+    "php": "8.5.10",
+    "laravel": "13.35.0",
+    "pest": "5.3.2",
+    "testbench": "11.3.0",
+    "bcmath": true,
+    "pcntl": true
+  },
+  "results": {
+    "smoke": {
+      "exitCode": 0
+    },
+    "sqlite": {
+      "exitCode": 0,
+      "tests": 638,
+      "passed": 636,
+      "skipped": 2,
+      "assertions": 1796
+    },
+    "postgres": {
+      "exitCode": 0,
+      "tests": 638,
+      "passed": 636,
+      "skipped": 2,
+      "assertions": 1814,
+      "realConcurrencyCasesPassed": 2
+    },
+    "mysql": {
+      "exitCode": 0,
+      "tests": 638,
+      "passed": 637,
+      "skipped": 1,
+      "assertions": 1816,
+      "realConcurrencyCasesPassed": 2
+    }
+  },
+  "commands": [
+    "CART_PACKAGE_REPO=/private/tmp/oa-laravel-cart-reference CART_VENDOR_AUTOLOAD=/Users/gfabbian/projects/laravel-cart/vendor/autoload.php bash maintenance/fixtures/cart/run.sh",
+    "CART_PACKAGE_REPO=/private/tmp/oa-laravel-cart-reference CART_VENDOR_AUTOLOAD=/Users/gfabbian/projects/laravel-cart/vendor/autoload.php bash maintenance/fixtures/cart/run-upstream.sh",
+    "docker compose -p oa-doc-cart41-verify -f /private/tmp/cart41-runtime-release/compose.test.yaml up -d --wait",
+    "cd /private/tmp/cart41-runtime-release && CART_TEST_DB_DRIVER=pgsql CART_TEST_DB_PORT=18471 CART_TEST_DB_PASSWORD=cart_test php vendor/pestphp/pest/bin/pest --colors=never --compact",
+    "cd /private/tmp/cart41-runtime-release && CART_TEST_DB_DRIVER=mysql CART_TEST_DB_PORT=18472 CART_TEST_DB_USERNAME=root CART_TEST_DB_PASSWORD=cart_test php vendor/pestphp/pest/bin/pest --colors=never --compact",
+    "docker compose -p oa-doc-cart41-verify -f /private/tmp/cart41-runtime-release/compose.test.yaml down"
+  ],
+  "serverHarness": "Exact git archive export; vendor/autoload.php wrapper remapped package and test PSR4 to export and reflected Cart file; copied Pest launcher resolves export as root; copied Testbench skeleton and set APP_BASE_PATH to isolated app. Same mechanism is preserved in run-upstream.sh.",
+  "skips": {
+    "sqlite": [
+      "ServerConcurrencyTest: two cases require disposable server"
+    ],
+    "postgres": [
+      "LegacyCartContentCodecTest: PostgreSQL cannot hold raw serialize() payload",
+      "CartInspectCommandTest: JSON columns reject invalid JSON"
+    ],
+    "mysql": [
+      "CartInspectCommandTest: JSON columns reject invalid JSON"
+    ]
+  },
+  "logs": {
+    "smoke": {
+      "path": "maintenance/fixtures/cart/results/smoke.log",
+      "sha256": "81e0ffff61fc508147b94f4a026c77516e49abe8a419304aae6b40918b88c212"
+    },
+    "sqlite": {
+      "path": "maintenance/fixtures/cart/results/sqlite.log",
+      "sha256": "18660cb714a103cacb3e9e07ae0a6d44f1dc5349c13b08d766db838293f591ff"
+    },
+    "postgres": {
+      "path": "maintenance/fixtures/cart/results/postgres.log",
+      "sha256": "63e77b1a0f88705aa9eeffe21a078d8faec4dbe2f86bb35da89f5299d1ef274a"
+    },
+    "mysql": {
+      "path": "maintenance/fixtures/cart/results/mysql.log",
+      "sha256": "4b627d8257f9eebdea17aa57d1efb7e098fd16b6678ad137e14f143b84b7be1c"
+    }
+  },
+  "limitations": [
+    "Only PHP8.5/Laravel13 dependency combination executed; PHP8.4/Laravel12 full matrix not executed.",
+    "Actual queue/Octane workers and optional frontend integrations not executed; scoped provider declarations checked in source.",
+    "No coverage threshold, PHPStan, Composer dependency resolution/install, consumer smoke, deployment, or release publishing run.",
+    "No claim of fiscal certification or post-cart-coupon mixed-rate VAT allocation; release documents allocation as roadmap."
+  ],
+  "notes": [
+    "Initial external Pest root lookup and external Testbench writes were harness setup errors, corrected using isolated launcher/app before recorded successful runs.",
+    "Sandbox blocked localhost database connections; successful server runs used approved escalation against dedicated local test containers.",
+    "String scalar product IDs work in released 4.1.0 and direct source inspection shows same support in4.0.3; no string/getId bug reproduced."
+  ]
+}

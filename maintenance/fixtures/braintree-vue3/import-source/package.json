@@ -1,0 +1,78 @@
+{
+  "name": "braintree-vue3",
+  "version": "0.1.0",
+  "description": "Vue 3 composables wrapping the Braintree Web SDK",
+  "type": "module",
+  "license": "MIT",
+  "author": "",
+  "keywords": ["vue", "vue3", "braintree", "composable", "payment"],
+  "files": ["dist", "README.md"],
+  "main": "./dist/braintree-vue3.cjs",
+  "module": "./dist/braintree-vue3.js",
+  "types": "./dist/braintree-vue3.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/braintree-vue3.d.ts",
+        "default": "./dist/braintree-vue3.js"
+      },
+      "require": {
+        "types": "./dist/braintree-vue3.d.cts",
+        "default": "./dist/braintree-vue3.cjs"
+      }
+    }
+  },
+  "sideEffects": false,
+  "scripts": {
+    "dev": "vite build --watch",
+    "build": "vue-tsc --noEmit -p tsconfig.app.json && vite build",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.app.json",
+    "lint": "publint && attw --pack",
+    "lint:publint": "publint",
+    "prepublishOnly": "npm run build && npm run lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "docs:api": "typedoc",
+    "docs:dev": "npm run docs:api && vitepress dev docs",
+    "docs:build": "npm run docs:api && vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "peerDependencies": {
+    "braintree-web": "^3.x",
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "^0.18.2",
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@semantic-release/changelog": "^6.0.0",
+    "@semantic-release/commit-analyzer": "^13.0.0",
+    "@semantic-release/exec": "^6.0.0",
+    "@semantic-release/git": "^10.0.0",
+    "@semantic-release/github": "^10.0.0",
+    "@semantic-release/npm": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^14.0.0",
+    "@types/braintree-web": "^3.96.17",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vitest/coverage-v8": "^2.0.0",
+    "@vitest/ui": "^2.0.0",
+    "@vue/test-utils": "^2.4.0",
+    "braintree-web": "^3.138.0",
+    "conventional-changelog-conventionalcommits": "^8.0.0",
+    "jsdom": "^25.0.0",
+    "publint": "^0.3.0",
+    "semantic-release": "^24.0.0",
+    "typedoc": "^0.28.0",
+    "typedoc-plugin-markdown": "^4.2.0",
+    "typedoc-vitepress-theme": "^1.0.0",
+    "typescript": "^5.5.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.0.0",
+    "vitepress": "^1.4.0",
+    "vitest": "^2.0.0",
+    "vue": "^3.5.0",
+    "vue-tsc": "^2.0.0"
+  }
+}

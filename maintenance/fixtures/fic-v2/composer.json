@@ -1,0 +1,12 @@
+{
+  "name": "offline-agency/docs-fic-v2-fixture",
+  "type": "project",
+  "require": {
+    "php": "^8.4",
+    "guzzlehttp/guzzle": "^7.9",
+    "illuminate/config": "^13.0",
+    "illuminate/http": "^13.0",
+    "illuminate/support": "^13.0",
+    "illuminate/validation": "^13.0"
+  }
+}

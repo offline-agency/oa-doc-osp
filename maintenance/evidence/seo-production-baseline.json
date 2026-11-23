@@ -1,0 +1,21 @@
+{
+  "crawledAt": "2026-10-17T00:07+02:00",
+  "method": "curl GET with redirects, initial HTML only, no JavaScript; ordinary user agent",
+  "origin": "https://docs.offlineagency.com",
+  "pages": [
+    {"route": "/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "Documentation | OFFLINE Agency"},
+    {"route": "/laravel-cart/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "laravel-cart | Documentation | OFFLINE Agency"},
+    {"route": "/laravel-mongo-auto-sync/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "Laravel MongoDB Relationships | Documentation | OFFLINE Agency"},
+    {"route": "/laravel-fatture-in-cloud/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "Documentation | OFFLINE Agency"},
+    {"route": "/laravel-fatture-in-cloud-v2/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "laravel-fatture-in-cloud-v2 | Documentation | OFFLINE Agency"},
+    {"route": "/laravel-webex/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "laravel-webex | Documentation | OFFLINE Agency"},
+    {"route": "/laravel-aruba-sms/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "laravel-aruba-sms | Documentation | OFFLINE Agency"},
+    {"route": "/laravel-moneta-online/", "status": 200, "lang": "English", "canonical": 0, "openGraph": 0, "jsonLd": 0, "title": "laravel-moneta-online | Documentation | OFFLINE Agency"},
+    {"route": "/laravel-cart/v4/", "status": 404},
+    {"route": "/spid-laravel-trentino/", "status": 404},
+    {"route": "/open-source-philosophy/", "status": 404},
+    {"route": "/sitemap.xml", "status": 404},
+    {"route": "/llms.txt", "status": 404},
+    {"route": "/robots.txt", "status": 200}
+  ]
+}

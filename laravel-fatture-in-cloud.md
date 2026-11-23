@@ -1,291 +1,132 @@
 ---
-meta:
-  - name: description
-    content: This Laravel wrapper allows you to integrate a Laravel e-commerce platform with the invoicing program Fatture in Cloud using Api.
+title: Fatture in Cloud API v1 — historical integration
+description: Historical package 2.2.8 for the retired Fatture in Cloud API v1; migration to API v2 is required.
+packageVersion: "2.2.8"
+sourceCommit: b37155297538fa3dcbbcb16d633d926091734690
+packageStatus: historical-integration
 gitName: laravel-fatture-in-cloud
 ---
 
-::: tip
-A new version of laravel-fatture-in-cloud is available, you can find the documentation [here](https://docs.offlineagency.com/laravel-fatture-in-cloud-v2/)
+# Fatture in Cloud API v1
+
+::: danger Retired provider API — historical documentation
+Fatture in Cloud announced that API v1 would be dismissed starting **31 January 2023**. This wrapper targets that retired service. Do not start a new integration with it or expect the historical calls below to work today. Read the [official retirement notice](https://developers.fattureincloud.it/blog/v1-deprecation/) and the [current API v2 wrapper guide](/laravel-fatture-in-cloud-v2/).
 :::
 
-# laravel-fatture-in-cloud
+## Selected release and scope
 
-This Laravel wrapper allows you to integrate a Laravel e-commerce platform with the invoicing program [Fatture in Cloud](https://fattureincloud.it) using Api.
+This reference records package **2.2.8** at [`b37155297538fa3dcbbcb16d633d926091734690`](https://github.com/offline-agency/laravel-fatture-in-cloud/tree/b37155297538fa3dcbbcb16d633d926091734690). GitHub release and Packagist source/dist metadata were matched on **16 October 2026**. Availability of the old package does not make the provider API available. The provider's retirement is separate from the repository's archival metadata; this page does not claim the repository is archived.
 
-[![Github](./assets/icon/github.svg "Github Icon")](https://github.com/offline-agency/laravel-fatture-in-cloud)
-[![Latest Stable Version](https://poser.pugx.org/offline-agency/laravel-fatture-in-cloud/v/stable)](https://packagist.org/packages/offline-agency/laravel-fatture-in-cloud)
-[![Total Downloads](https://img.shields.io/packagist/dt/offline-agency/laravel-fatture-in-cloud.svg?style=flat-square)](https://packagist.org/packages/offline-agency/laravel-fatture-in-cloud)
-[![Build Status](https://img.shields.io/github/workflow/status/offline-agency/laravel-fatture-in-cloud/CI)](https://github.com/offline-agency/laravel-fatture-in-cloud/actions)
-[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/offline-agency/laravel-fatture-in-cloud/master.svg?style=flat-square)](https://travis-ci.org/offline-agency/laravel-fatture-in-cloud)
-[![StyleCI](https://github.styleci.io/repos/167236902/shield)](https://styleci.io/repos/167236902)
-[![codecov](https://codecov.io/gh/offline-agency/laravel-fatture-in-cloud/branch/master/graph/badge.svg?token=0BHADJQYAW)](https://codecov.io/gh/offline-agency/laravel-fatture-in-cloud)
+Its declared constraints are PHP `>=7.1`, `ext-json`, and Illuminate support/container `^5.8|^6.0|^7.0|^8.0|^9.0`. These historical constraints are not recommended platforms or a current tested support promise. Use a currently supported PHP/Laravel combination allowed by the replacement wrapper when migrating.
 
 ## Installation and setup
 
 ### Basic installation
 
-You can install this package via composer using:
+For forensic reproduction of an existing legacy application only:
 
-``` bash 
-composer require offline-agency/laravel-fatture-in-cloud
+```sh
+composer require offline-agency/laravel-fatture-in-cloud:2.2.8
+php artisan vendor:publish --provider="OfflineAgency\FattureInCloud\FattureInCloudServiceProvider" --tag=config
 ```
 
-The package will automatically register its service provider.
+The provider merges configuration under `fatture-in-cloud`, publishes **`config/fatture-in-cloud.php`** and auto-discovers the provider/facade. The previous `config/backup.php` instruction was copied from another package and was wrong.
 
-To publish the config file to `config/backup.php` run:
+### Configuration reference
 
-``` bash 
-php artisan vendor:publish --provider="OfflineAgency\FattureInCloud\FattureInCloudServiceProvider" --tag="config"    
-```
+| Key under `fatture-in-cloud` | Historical default / meaning |
+| --- | --- |
+| `api_uid` | `FATTURE_CLOUD_API_UID` |
+| `api_key` | `FATTURE_CLOUD_API_KEY` |
+| `endpoint` | `https://api.fattureincloud.it/v1/`, the retired API |
+| `errors` | Mapping of old provider error codes to status/message metadata |
+| `timeout-errors-codes` | `[2002]`, old throttle response code |
+| `times` | `3`, retry ceiling used by the Auth instance |
+| `sleep-seconds` | `5000000` in the config, but the tagged throttle path does not read this key |
 
-## Test Environment
+See the exact [configuration](https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/config/fatture-in-cloud.php) and [provider](https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/src/FattureInCloudServiceProvider.php).
 
-- Go to [Fatture in Cloud](https://www.fattureincloud.it) website.
-- Create an account and a test environment. The new account has 15 trial days.
-- Go to section and get **API UID** and **API KEY**
+### Test environment
 
-![Fatture in Cloud API section](./assets/images/fatture-in-cloud-api-section.png "Fatture in Cloud API section")
+No live API v1 quickstart is offered: the upstream service was retired. Tests and payload validation can be studied in an isolated legacy application; do not put old production credentials into documentation examples. The historical suite has not been executed by this site change.
 
-## Basic Usage
-Create a new invoice on FC
+## Basic usage
 
+The following is **historical application code**, for recognizing a legacy integration during migration. It is not a runnable current-service quickstart:
 
+```php
+use OfflineAgency\FattureInCloud\Entities\Clienti;
 
-``` php
-$invoiceRequest = [
-  'id_cliente' => '0',
-  'id_fornitore' => '0',
-  'nome' => 'Mario Rossi',
-  'indirizzo_via' => 'Via delle Betulle, 123',
-  'indirizzo_cap' => '21012',
-  'indirizzo_citta' => 'Curno',
-  'indirizzo_provincia' => 'BG',
-  'indirizzo_extra' => '',
-  'paese' => 'Italia',
-  'paese_iso' => 'IT',
-  'lingua' => 'it',
-  'piva' => 'IT1234567890',
-  'cf' => 'ABCDEF12G34H567I',
-  'autocompila_anagrafica' => false,
-  'salva_anagrafica' => false,
-  'numero' => '1a',
-  'data' => '21/01/2021',
-  'valuta' => 'EUR',
-  'valuta_cambio' => 1,
-  'prezzi_ivati' => false,
-  'rivalsa' => 0,
-  'cassa' => 0,
-  'rit_acconto' => 0,
-  'imponibile_ritenuta' => 0,
-  'rit_altra' => 0,
-  'marca_bollo' => 0,
-  'oggetto_visibile' => '',
-  'oggetto_interno' => '',
-  'centro_ricavo' => '',
-  'centro_costo' => '',
-  'note' => '',
-  'nascondi_scadenza' => false,
-  'ddt' => false,
-  'ftacc' => false,
-  'id_template' => '0',
-  'ddt_id_template' => '0',
-  'ftacc_id_template' => '0',
-  'mostra_info_pagamento' => false,
-  'metodo_pagamento' => 'Bonifico',
-  'metodo_titoloN' => 'IBAN',
-  'metodo_descN' => 'IT01A2345678900000000001234',
-  'mostra_totali' => 'tutti',
-  'mostra_bottone_paypal' => false,
-  'mostra_bottone_bonifico' => false,
-  'mostra_bottone_notifica' => false,
-  'lista_articoli' => 
-  [
-    0 => 
-    [
-      'id' => '0',
-      'codice' => '',
-      'nome' => 'Articolo 1',
-      'um' => '',
-      'quantita' => 1,
-      'descrizione' => '',
-      'categoria' => '',
-      'prezzo_netto' => 0,
-      'prezzo_lordo' => 0,
-      'cod_iva' => 0,
-      'tassabile' => true,
-      'sconto' => 0,
-      'applica_ra_contributi' => true,
-      'ordine' => 0,
-      'sconto_rosso' => 0,
-      'in_ddt' => false,
-      'magazzino' => true,
-    ],
-  ],
-  'lista_pagamenti' => 
-  [
-    0 => 
-    [
-      'data_scadenza' => '21/01/2021',
-      'importo' => 0,
-      'metodo' => 'not',
-      'data_saldo' => '21/01/2021',
-    ],
-  ],
-  'ddt_numero' => '',
-  'ddt_data' => '21/01/2021',
-  'ddt_colli' => '',
-  'ddt_peso' => '',
-  'ddt_causale' => '',
-  'ddt_luogo' => '',
-  'ddt_trasportatore' => '',
-  'ddt_annotazioni' => '',
-  'PA' => false,
-  'PA_tipo_cliente' => 'PA',
-  'PA_tipo' => 'nessuno',
-  'PA_numero' => '',
-  'PA_data' => '21/01/2021',
-  'PA_cup' => '',
-  'PA_cig' => '',
-  'PA_codice' => '',
-  'PA_pec' => '',
-  'PA_esigibilita' => 'N',
-  'PA_modalita_pagamento' => 'MP01',
-  'PA_istituto_credito' => '',
-  'PA_iban' => '',
-  'PA_beneficiario' => '',
-  'extra_anagrafica' => 
-  [
-    'mail' => 'info@mariorossi.it',
-    'tel' => '012345678',
-    'fax' => '012345678',
-  ],
-  'split_payment' => true,
-];
-
-$invoice = new Fatture;
-$invoiceResponse = $invoice->nuovo($invoiceRequest);
-
-if ($invoiceResponse->success) {//Invoice created
-    $doc_id = $invoiceResponse->new_id;
-} else {//Error
-    Log::error($invoiceResponse->error);
+// Historical API v1 call only; do not run against today's provider service.
+$clients = new Clienti();
+$result = $clients->lista(['pagina' => 1]);
+if (is_object($result) && ($result->success ?? null) === false) {
+    // Legacy error object: inspect error and code in your migration tooling.
 }
 ```
-## Entities
 
-### Account
+The constructor obtains UID/key from package configuration. Calls return decoded provider data, or legacy error objects with `success: false`, `error` and `code`; payload validation can throw before the request. Do not apply the API v2 wrapper's readonly Entity/Error types to this package. Its [Auth implementation](https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/src/Auth.php) uses PHP stream requests, not the modern Laravel HTTP client.
 
-``` php
-$account = new Account;
-$account->getInfo(['campi'=> ['key']])
-```
+## Entities and implemented API
 
-#### Available Methods
-- **getGenericInfo()**: it checks api key and return info about api rate limit
-- **getInfo()**: it returns info about (just pass the correct key instead of key see previous example ):
-    - Business name - *nome*
-    - Licence expiration : *durata_licenza*
-    - Licence type: *tipo_licenza*
-    - Currency list: *lista_valute*
-    - Vat list: *lista_iva*
-    - Country list: *lista_paesi*
-    - Template list: *lista_template*
-    - List of payment method for the sales: *lista_conti*
-    - List of payment method for the purchase: *lista_metodi_pagamento*
-    
+| Historical area | Tagged classes / behavior |
+| --- | --- |
+| Account | `Entities\Account` and `Requests\Account` |
+| Registry | `Clienti`, `Fornitori` inherit `Anagrafica`: `lista`, `nuovo`, `importa`, `modifica`, `elimina` |
+| Products | `Entities\Prodotti` implements old product paths; inspect the actual methods rather than inferring behavior from names |
+| Documents issued | `Fatture`, `Ndc`, `Ordini`, `Preventivi`, `Proforma`, `Rapporti`, `Ricevute`, `Ddt` and shared `Documenti` |
+| Purchases | `Acquisti`, `OrdiniFornitori` |
+| Compensation | `Corrispettivi` |
+| Warehouse | `Magazzino` |
+| Mail | `Mail` |
 
-### Registry
+This is a historical code inventory, not proof of endpoint availability or full provider coverage. Refer to the pinned [Entities](https://github.com/offline-agency/laravel-fatture-in-cloud/tree/b37155297538fa3dcbbcb16d633d926091734690/src/Entities) and [Requests](https://github.com/offline-agency/laravel-fatture-in-cloud/tree/b37155297538fa3dcbbcb16d633d926091734690/src/Requests). `Prodotti::importa()` actually calls the old product-details path; do not infer batch import semantics from that name.
 
-``` php
-//Aliases
-$customer = new Clienti;
-$supplier = new Fornitori;
-```
+### Operational constraints
 
-### Available Methods
-- **lista()**: return  a list of all customers/suppliers;
-- **nuovo()**: it allows to create a new customer/supplier
-- **importa()**: it allows to create a customer/supplier in batch
-- **modifica()**: it allows to edit a specific customer/supplier  
-- **elimina()**: it allows to delete a specific customer/supplier
+The old throttle path recognizes configured error code 2002, parses the Italian `Attendi … secondi` text and sleeps synchronously before retrying, up to the configured Auth-instance attempt ceiling. This is historical implementation behavior, not a current provider retry recommendation. The source includes fragile stream/header error handling; do not treat every transport failure as a reliable normalized result.
 
-### Products <Badge text="TO DO" type="warning"/>
+## Use cases and migration
 
-### Documents Issued
+Use this page to inventory legacy customer, product and invoice code, then implement the replacement against the current API. Old invoice-creation examples are intentionally not presented as working recipes.
 
-``` php
-//Aliases
-$invoice = new Fatture;
-$receipt = new Ricevuta;
-$quotation = new Preventivi;
-$order = new Ordini;
-$dealing = new Rapporti;
-$credit_note = new Ndc;
-$proforma_invoice = new Proforma;
-$supplier_order = new OrdiniFornitori; 
-$delivery_note = new Ddt;
-```
+The [official API migration guide](https://developers.fattureincloud.it/docs/api-v2-migration/) explains changes to authentication, HTTP methods, resources and payload shapes. API v1's per-company UID/key pair is not an API v2 bearer token. Renaming the Composer dependency alone does not migrate consent/token handling, field mappings, document calculations or endpoint behavior.
 
-The possible document are:
-- invoice
-- receipt
-- quotation
-- order
-- credit note
-- proforma invoice
-- dealing
-- order supplier
-- transportation document
+1. Inventory the old operations, credentials and persisted provider identifiers.
+2. Establish the API v2 authentication/authorization flow and token ownership in your application.
+3. Map old resources and payloads to the [released API v2 wrapper](/laravel-fatture-in-cloud-v2/) and verify which operations it actually implements.
+4. Test success/error flows using HTTP fakes or a verified provider sandbox, then plan the application rollout separately.
 
-#### Available Methods
-- **lista()**: return  a list of all documents;
-- **nuovo()**: it allows to create a new document
-- **importa()**: it allows to create document in batch
-- **modifica()**: it allows to edit a specific document
-- **elimina()**: it allows to delete a specific document
+For API v2 document downloads, URLs expire: the new guide explains re-fetching them rather than persisting them permanently. This site update does not migrate customer data or call the provider.
 
-### Purchases  <Badge text="TO DO" type="warning"/>
+## Sources, support and historical links
 
-### Compensation  <Badge text="TO DO" type="warning"/>
+[Release 2.2.8](https://github.com/offline-agency/laravel-fatture-in-cloud/releases/tag/2.2.8) · [Composer manifest](https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/composer.json) · [MIT license](https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/LICENSE.md) · [Contributing source](https://github.com/offline-agency/laravel-fatture-in-cloud/blob/b37155297538fa3dcbbcb16d633d926091734690/CONTRIBUTING.md).
 
-### Warehouse  <Badge text="TO DO" type="warning"/>
+Old links to invoice/customer/product recipes now land in this historical reference; they do not imply those calls still work. For package defects use its issue tracker without credentials/customer data; for provider API migration use the official developer support channel.
 
-### Mail <Badge text="TO DO" type="warning"/>
+## Compatibility anchors
 
-## Use Cases
+These anchors preserve historical links; read the status notice above before interpreting old examples.
 
-### Create an invoice
-Using Observer pattern to create an invoice on Fatture in Cloud after order creation in your E-commerce application.
-
-### Update a customer
-Using Observer pattern when update a customer propagate the change also in Fatture in Cloud
-
-### Add a new product
-Using a job you can publish a new product on your ecommerce from Fatture in Cloud
-
-### Update a product availability
-Using a job keep update a product avaiability on your ecommerce and also in Fatture in Cloud
-
-## Roadmap :rocket:
-- **Demo**: New repository with full examples and functionality. Synchronization from application and Fatture in Cloud and vice versa 
-- **Tests**: Add test to achieve 100% of test coverage
-- **More Validations**: Add more validations before send request to the API.
-- **L8 Compatibility**: Add Laravel 8 support
-
-## Questions & issues
-Find yourself stuck using the package? Found a bug? Do you have general questions or suggestions for improving the plugin? Feel free to create an issue on [GitHub](https://github.com/offline-agency/laravel-fatture-in-cloud/issues), we’ll try to address it as soon as possible.
-
-If you’ve found a bug regarding security please mail <support@offlineagency.com> instead of using the issue tracker.
-
-## About Us
-
-[Offline Agency](https://offlineagency.it) is an agency based in Padua, Italy.
-
-Open source software is used in all projects we deliver. This is just a few of the free pieces of software we use every single day. For this, we are very grateful. When we feel we have solved a problem in a way that can help other developers, we release our code as open source software on [GitHub](https://github.com/offline-agency).
-
-This package was made by [Giacomo Fabbian](https://github.com/Giacomo92). There are [many other contributors](https://github.com/offline-agency/laravel-fatture-in-cloud/graphs/contributors) who devoted time and effort to make this package better.
-
-
-[^1]: **FIC (Fatture in Cloud)**: it's a software that allow you to handle invoices from pc, smartphone or tablet.
+<span id="laravel-fatture-in-cloud"></span>
+<span id="entities"></span>
+<span id="account"></span>
+<span id="available-methods"></span>
+<span id="registry"></span>
+<span id="available-methods-2"></span>
+<span id="products"></span>
+<span id="documents-issued"></span>
+<span id="available-methods-3"></span>
+<span id="purchases"></span>
+<span id="compensation"></span>
+<span id="warehouse"></span>
+<span id="mail"></span>
+<span id="use-cases"></span>
+<span id="create-an-invoice"></span>
+<span id="update-a-customer"></span>
+<span id="add-a-new-product"></span>
+<span id="update-a-product-availability"></span>
+<span id="roadmap"></span>
+<span id="questions-issues"></span>
+<span id="about-us"></span>

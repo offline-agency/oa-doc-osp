@@ -1,0 +1,72 @@
+{
+  "verifiedOn": "2026-10-16",
+  "projectType": "vue-library",
+  "ciClaim": "Workflow/source inspection only; no remote CI success claim.",
+  "lockfile": null,
+  "name": "braintree-vue3",
+  "package": "braintree-vue3",
+  "docsPage": "braintree-vue3.md",
+  "route": "/braintree-vue3/",
+  "repository": "https://github.com/offline-agency/braintree-vue3",
+  "defaultBranch": "master",
+  "commit": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+  "status": "unreleased",
+  "manifestVersion": "0.1.0",
+  "packageManifest": "package.json",
+  "npmRequirements": {
+    "vue": "^3.3.0",
+    "braintree-web": "^3.x"
+  },
+  "dependencies": {
+    "peerDependencies": {
+      "vue": "^3.3.0",
+      "braintree-web": "^3.x"
+    }
+  },
+  "sourcePaths": [
+    "package.json",
+    "src/index.ts",
+    "src/types.ts",
+    "src/injection-keys.ts",
+    "src/components/BraintreeProvider.vue",
+    "src/components/BraintreeHostedFields.vue",
+    "src/composables/useBraintreeClient.ts",
+    "src/composables/useHostedFields.ts",
+    "src/composables/usePayPalCheckout.ts",
+    "src/composables/useVenmo.ts",
+    "src/composables/useThreeDSecure.ts",
+    "src/composables/useDataCollector.ts",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "tests/useBraintreeClient.test.ts",
+    "tests/useHostedFields.test.ts",
+    ".github/workflows/ci.yml"
+  ],
+  "distribution": {
+    "kind": "source-only",
+    "registry": "https://registry.npmjs.org/braintree-vue3",
+    "registryStatus": 404,
+    "sourceRef": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+    "githubReleases": [],
+    "githubTags": []
+  },
+  "localVerification": {
+    "fixture": "maintenance/fixtures/braintree-vue3/smoke.mjs",
+    "results": "maintenance/fixtures/braintree-vue3/results.json",
+    "node": "25.0.0",
+    "exampleSyntax": "Vue SFC parse, compileScript and compileTemplate passed using existing docs compiler; no package import/typecheck/browser assertion.",
+    "network": "none; SDK and Vue boundaries mocked",
+    "result": "passed",
+    "finalNode": "24.13.0"
+  },
+  "license": {
+    "manifest": "MIT",
+    "standaloneFile": false
+  },
+  "unavailable": [
+    "No public npm distribution or GitHub release/tag exists at verification date.",
+    "No upstream dependency installation, build or complete test suite was run.",
+    "No payment provider contacted; no live tokens, payment calls, PayPal/Venmo/3DS/data collection or browser integration tested."
+  ],
+  "notes": "Guida sorgente non rilasciata: 0.1.0 \u00e8 soltanto la versione nel manifest. Autorizzazione catturata come stringa; reinitialize non aggiorna il token; nessuna cancellazione della creazione SDK asincrona."
+}

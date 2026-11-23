@@ -1,0 +1,94 @@
+{
+  "name": "offline-agency/pgr_dmmsy",
+  "repository": "https://github.com/offline-agency/pgr_dmmsy",
+  "reference": "v0.1.0",
+  "commit": "86b21b8efd8edd0c2851ba2b433b4481d0c37de9",
+  "version": "v0.1.0",
+  "documentationKey": "v0.1",
+  "verifiedOn": "2026-10-16",
+  "sourceFiles": [
+    {
+      "path": "README.md",
+      "sha256": "d4f5eba561338d5ce11f1a56a810cc0d8bf66d6ae34c0f20bd09d6a5d1b1b813"
+    },
+    {
+      "path": "COMPILE.md",
+      "sha256": "4a41252fdb729dbd60689025e844e9e8eb51b432d93bb3191ee73a82c771ebb0"
+    },
+    {
+      "path": "INSTALL.md",
+      "sha256": "9631e4cd5c280a28acdd6230109e6d27c1c8a106aed8aef3dd8860cae958d394"
+    },
+    {
+      "path": "pgr_dmmsy.control",
+      "sha256": "d7184fa1135e1258962a6285b5fcd54fedf2cbf2b7c845cf1407752ccb8caf38"
+    },
+    {
+      "path": "Makefile",
+      "sha256": "456cf4a36db65037aebae44fe2f820be2c60a251c4713e75bbbdff1128ba7c84"
+    },
+    {
+      "path": "sql/pgr_dmmsy--0.1.0.sql",
+      "sha256": "a8b4f9f8b3f37ac86687234b85ed3cf08a91e66fa6018273845cbeb5e93d3ab4"
+    },
+    {
+      "path": "src/dmmsy.c",
+      "sha256": "9f04b72ed2ef1bbe379078fe52dd51fd643c13336987d983e31462f6fbc40529"
+    },
+    {
+      "path": "src/dmmsy_algorithm.c",
+      "sha256": "37ae7398e176ef549968c3bf791545bca5df0a9a3c5f7eabf2b635ba43bc4803"
+    },
+    {
+      "path": "src/graph.c",
+      "sha256": "9f605b7a12a70d277dda55d2253a03d97f0fa827c5f25ec0834c9853db785d21"
+    },
+    {
+      "path": "src/minheap.c",
+      "sha256": "aa1566dbf3cedf4cb8e45e145ba4406bd66a1ed594db66ba7ddb3b5fd936f12e"
+    },
+    {
+      "path": "src/ds_blocklist.c",
+      "sha256": "7108b0866899874e5d3a6ba53a80ca76239097d78aa785bbcb069d4a8e5ff6e3"
+    },
+    {
+      "path": "test/c/Makefile",
+      "sha256": "ef4eca19908011560fa948b700ea42edd65795e2cc345ab12a99618fabd3a630"
+    },
+    {
+      "path": "test/c/test_graph.c",
+      "sha256": "02f0ae4640fd485baebbfe1ffc2ad00201876b8834a2d1af2dd0da43252a1c53"
+    },
+    {
+      "path": "test/c/test_minheap.c",
+      "sha256": "c2c9a8eefc112ec593740c8a41c5ae829f00eab3035c10a02fc146fcb8fa5193"
+    },
+    {
+      "path": "test/c/test_algorithm.c",
+      "sha256": "6751eea317c5b8556f51734dfa71ef7b4264a8ed2a526a9c889f2fc69eac159b"
+    },
+    {
+      "path": "test/c/test_edge_cases.c",
+      "sha256": "22a8c50eb9f480bf0c4da570430e8c56e2f747131aff5f3c1aa414fd641284df"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "a3a46eebdb2409d70e3121c4ed77c88fbac20e8c4c97a21a8acccca4ce1b2044"
+    },
+    {
+      "path": ".github/workflows/release.yml",
+      "sha256": "72bc01a9f362da988fcb1af5d15d3aa387150f882b580dc2b0adb1d25c318e23"
+    },
+    {
+      "path": "docker/initdb/01_extensions.sql",
+      "sha256": "33bfd47d33252bf7d738dc89503ef4bd8f998a0bfe6f11858f8143f9e30b1dcc"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/pgr_dmmsy/v0.1/index.md",
+      "route": "/pgr_dmmsy/v0.1/",
+      "sha256": "3186cf03b1657808429b0844f4e5af70a3b30e2145770d862d74b439f012ccde"
+    }
+  ]
+}

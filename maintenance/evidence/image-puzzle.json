@@ -1,0 +1,88 @@
+{
+  "checkedAt": "2026-10-19",
+  "repository": {
+    "fullName": "offline-agency/php-image-puzzle",
+    "url": "https://github.com/offline-agency/php-image-puzzle",
+    "packagistName": "offline-agency/image-puzzle",
+    "defaultBranch": "main",
+    "archived": false,
+    "license": "MIT (LICENSE at the release commit)"
+  },
+  "release": {
+    "tag": "1.0.0",
+    "commit": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+    "commitDate": "2026-02-02",
+    "githubRelease": "https://github.com/offline-agency/php-image-puzzle/releases/tag/1.0.0",
+    "publishedAt": "2026-02-02T00:33:50Z",
+    "laterGithubTags": {
+      "1.0.1": {
+        "commit": "61b65940818f4cba52fc35e07c278ade481f9127",
+        "changes": "README only"
+      },
+      "1.0.2": {
+        "commit": "b114a4a2d0cc0b144e1c07b713142fd82717c74e",
+        "changes": "tests only; src, composer.json, config, docs and examples identical to 1.0.0"
+      }
+    },
+    "packagistGap": "Packagist lists only 1.0.0 and dev-main. composer.json hardcodes \"version\": \"1.0.0\" at every tag, the likely reason Packagist skipped 1.0.1/1.0.2 (not confirmed with Packagist)."
+  },
+  "packagist": {
+    "url": "https://repo.packagist.org/p2/offline-agency/image-puzzle.json",
+    "version": "1.0.0",
+    "sourceReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+    "distReference": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+    "time": "2026-02-02T00:22:34+00:00"
+  },
+  "ci": {
+    "commit": "e1c0138e92debd07f8a60f8648479f8dbe627dab",
+    "runs": [
+      {
+        "workflow": "CI",
+        "run": 21573111999,
+        "conclusion": "success",
+        "event": "push",
+        "jobs": "Tests (8.4), Tests (8.5), PHPStan (8.4), PHPStan (8.5)"
+      }
+    ]
+  },
+  "repositorySecurity": {
+    "privateVulnerabilityReporting": false,
+    "securityPolicy": "No SECURITY.md; README asks for email to support@offlineagency.com"
+  },
+  "executed": {
+    "date": "2026-10-19",
+    "composer": "2.10.2",
+    "install": "composer require offline-agency/image-puzzle:1.0.0 in an empty project resolved source and dist e1c0138",
+    "php": [
+      "8.5.10 (gd, pcntl)",
+      "8.4.25 (gd)"
+    ],
+    "results": [
+      "README quickstart with RoundedCornersStyle(4) on a 100x50 PNG, 2x3 grid: 6 PNG pieces + manifest.json; manifest keys source,rows,cols,sourceWidth,sourceHeight,pieces; column widths 33,33,34; row heights 25,25",
+      "generateAndExport with ExportOptions(format: FORMAT_JPEG, quality: 85): piece_*.jpg + manifest.json",
+      "EdgeStyleFactory::fromArray(config/edge-config.example.json) returns JigsawStyle",
+      "export() with a base directory outside the target throws ExportFailedException, but the target directory has already been created",
+      "filenamePattern containing '../' throws ImagePuzzle\\Exception\\InvalidArgumentException",
+      "PHP 8.5 emits 'Function imagedestroy() is deprecated' once per exported piece (Exporter.php line 57); none on 8.4",
+      "examples/generate.php from vendor/ exits with 'Run composer install first.' (it loads the package's own vendor/autoload.php)"
+    ]
+  },
+  "verifiedAgainstSource": [
+    "PuzzleGenerator constructor (edgeStyle, imageLoader, exporter, splitStrategy), generateFromFile, generateFromGd, static generateAndExport(input, output, rows, cols, ?edgeStyle, ?options)",
+    "Puzzle::export(directory, options, ?baseDirectory); Exporter::export and exportParallel(source, dir, rows, cols, options, workers=4, ?edgeStyle, ?baseDirectory) with sequential fallback without pcntl/CLI or workers<=1",
+    "ExportOptions constructor, FORMAT_PNG/FORMAT_JPEG, with*() methods, hooks",
+    "EdgeStyleFactory types and fromFile JSON-only",
+    "Exception classes and messages in ImageLoader"
+  ],
+  "upstreamWordingIssues": [
+    "README troubleshooting quotes 'cannot read from ...' and 'unsuported image type'; the code throws 'Image file is not readable: ...' and 'Unsupported image type: ...'",
+    "README links CONTRIBUTING.md and LICENSE.md; neither exists (license file is LICENSE)",
+    "README contributors link points to laravel-webex",
+    "CHANGELOG lists 1.0.0 as Unreleased and links gfabbian/php-image-puzzle v1.0.0; JSON schema $id values also use gfabbian/php-image-puzzle",
+    "README security email uses offlineagency.com; other OFFLINE packages use support@offlineagency.it"
+  ],
+  "notRun": [
+    "Upstream Pest suite and PHPStan locally",
+    "Parallel export with multiple workers"
+  ]
+}

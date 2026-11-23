@@ -1,0 +1,66 @@
+{
+  "checkedOn": "2026-11-23",
+  "note": "External links found in archived tag READMEs that no longer resolve (HTTP status with a browser user agent; Aruba also confirmed in Chrome). The archive generator renders them as plain text and drops dead badge images.",
+  "urls": [
+    {
+      "url": "https://styleci.io/repos/167277388",
+      "status": 404
+    },
+    {
+      "url": "https://github.styleci.io/repos/167277388/shield",
+      "status": 404
+    },
+    {
+      "url": "https://styleci.io/repos/470182449",
+      "status": 404
+    },
+    {
+      "url": "https://github.styleci.io/repos/470182449/shield",
+      "status": 404
+    },
+    {
+      "url": "https://styleci.io/repos/426968499",
+      "status": 404
+    },
+    {
+      "url": "https://github.styleci.io/repos/426968499/shield",
+      "status": 404
+    },
+    {
+      "url": "https://styleci.io/repos/557274815",
+      "status": 404
+    },
+    {
+      "url": "https://github.styleci.io/repos/557274815/shield",
+      "status": 404
+    },
+    {
+      "url": "https://scrutinizer-ci.com/g/offline-agency/laravel-fatture-in-cloud/",
+      "status": 404
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/actions/workflows/laravel.yml",
+      "status": 404
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/actions/workflows/laravel.yml/badge.svg?branch=main",
+      "status": 404
+    },
+    {
+      "url": "https://github.com/offline-agency/laravel-cart/actions/workflows/laravel.yml/badge.svg",
+      "status": 404
+    },
+    {
+      "url": "https://smspanel.aruba.it/API/v1.0/REST/doc/index.html",
+      "status": 405
+    },
+    {
+      "url": "https://github.com/mbj36/vue3-burger-menu/blob/master/LICENSE",
+      "status": 404
+    },
+    {
+      "url": "https://github.com/offlineagency/laravel-email-chef/actions?query=workflow%3A%22Check+%26+fix+styling%22+branch%3Amain",
+      "status": 404
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "name": "offline-agency/braintree-vue3",
+  "repository": "https://github.com/offline-agency/braintree-vue3",
+  "reference": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+  "commit": "ff99c39e9fd45e6fe43440f8c3b7bcda58e01775",
+  "version": null,
+  "documentationKey": "next",
+  "verifiedOn": "2026-10-16",
+  "sourceFiles": [
+    {
+      "path": "package.json",
+      "sha256": "6bd09040f0e6a4a883293044fca2add6630c21c9c779eeeb10b2b9ff728059e3"
+    },
+    {
+      "path": "src/index.ts",
+      "sha256": "15022502fa301f793c56610b66c3ddd109a3add86ab078d91cdf0129e5e398b3"
+    },
+    {
+      "path": "src/types.ts",
+      "sha256": "cb87aa78b0d22be18b6e876c732858aa0639faf74f676cbf7f486dd54d08e521"
+    },
+    {
+      "path": "src/injection-keys.ts",
+      "sha256": "07e2c536d8b2e9d8ce2103d98196a606d43d437c3d1e7f1ba80b98311af74ffe"
+    },
+    {
+      "path": "src/components/BraintreeProvider.vue",
+      "sha256": "80618f16c0253077eb09bac6c20e51a703beecce4ac121751baf5af25a0a7833"
+    },
+    {
+      "path": "src/components/BraintreeHostedFields.vue",
+      "sha256": "77afbbb6e8e57914e1b4b791966937635b5335046b18208c364ee95ce48522ab"
+    },
+    {
+      "path": "src/composables/useBraintreeClient.ts",
+      "sha256": "d6728365431eba61ca47b029cb3f9423400bbe527b08a8baa22fb5fadef9fdee"
+    },
+    {
+      "path": "src/composables/useHostedFields.ts",
+      "sha256": "0af7509f2f55350997a7b728e74d74a613a36126609948f3649b9f5e2b7d71d4"
+    },
+    {
+      "path": "src/composables/usePayPalCheckout.ts",
+      "sha256": "9c6c3f70ed160be817f42f0384dec8414a42b4e38f509fbc99c1d38ecdad8992"
+    },
+    {
+      "path": "src/composables/useVenmo.ts",
+      "sha256": "784422ea0b256d5e0a48012d71e5b6f19ccf297b9c029f29e2f455f3efac08d1"
+    },
+    {
+      "path": "src/composables/useThreeDSecure.ts",
+      "sha256": "388ea882a403c3472f60633aeb9edba69aa8ebbffe52412b342442ca9b4ccf04"
+    },
+    {
+      "path": "src/composables/useDataCollector.ts",
+      "sha256": "6fcd469baa62da6ce423e51588b91aa3a62c979506c73c5823d049513d47e3c6"
+    },
+    {
+      "path": "vite.config.ts",
+      "sha256": "bdeb743cdb35538a4aa6596fd4619e173c0786db1f448166220c06cff56b53f9"
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha256": "09445c4b275588553443cf7d9084416b81d7db87c8d48d229625eecc255fc893"
+    },
+    {
+      "path": "tests/useBraintreeClient.test.ts",
+      "sha256": "0967be34d803f326b6081b9440e571b65b986d63d949122f1d6cfd9107fd699c"
+    },
+    {
+      "path": "tests/useHostedFields.test.ts",
+      "sha256": "fe2234cbdf42ad5cc26fbdf5edfd29354298bb8f3b5d93bdbba19c955b01cbb9"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "8ae733976434cd236899fe1c4571f8340df2299b3d11b841a8e02ed2ec601880"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/braintree-vue3/next/index.md",
+      "route": "/braintree-vue3/next/",
+      "sha256": "6461ec8be09045635dbd63358224ed7dcbec09b41e8f7029685af145ca43808f"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/api.md",
+      "route": "/braintree-vue3/next/api/",
+      "sha256": "453e57e3ff2b1308c82e330469fd332c9f8cc4b857a7120dc6ea0ae87702d9e3"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/data-collector.md",
+      "route": "/braintree-vue3/next/data-collector/",
+      "sha256": "7cf540cced2f24cb9d9e02f470b2effc5b1a3fe9bf7317488a5a6edaf18ed7cf"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/getting-started.md",
+      "route": "/braintree-vue3/next/getting-started/",
+      "sha256": "fbfe5c10eee7cecb0a2089d53063f528d56015dccb0d798c1b98b1fa8226aef0"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/hosted-fields.md",
+      "route": "/braintree-vue3/next/hosted-fields/",
+      "sha256": "1d05fa87c433a2745821c1c24e38baad70f3d4396739b8b8669fb43644c662a8"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/installation.md",
+      "route": "/braintree-vue3/next/installation/",
+      "sha256": "e62091c2a556398d15f74eed7631ee11d50513c04d343d0100d07c00a39a2002"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/integration.md",
+      "route": "/braintree-vue3/next/integration/",
+      "sha256": "df4ab0a434191ffb5f92ca9dd757b0693e0b612e406235ac340925d5de32841e"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/paypal.md",
+      "route": "/braintree-vue3/next/paypal/",
+      "sha256": "f5d83c3189c723417841d004fe5f3d967ef969796a08ede05bf917fda7c4b3e0"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/three-d-secure.md",
+      "route": "/braintree-vue3/next/three-d-secure/",
+      "sha256": "5a9223485bc3d7ecfba3e7243b3e78532de81def9cfd259b0deb8453ab303345"
+    },
+    {
+      "path": "versioned/braintree-vue3/next/venmo.md",
+      "route": "/braintree-vue3/next/venmo/",
+      "sha256": "e17df85b0f36f29265dc551fc19cab32f71b3ed2275353d3a8056476ba3515ab"
+    }
+  ]
+}

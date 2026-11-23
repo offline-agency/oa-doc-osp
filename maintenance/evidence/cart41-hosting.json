@@ -1,0 +1,12 @@
+{
+  "verifiedOn":"2026-10-16",
+  "publicRequest":"HEAD https://docs.offlineagency.com/laravel-cart/",
+  "status":200,
+  "observedHeaders":{"server":"cloudflare","cache-status":"Netlify Edge","x-nf-request-id":"present"},
+  "interpretation":"The response exposes Cloudflare and Netlify Edge infrastructure. This does not identify the Netlify project/account, connected source branch or build settings.",
+  "githubPages":{"command":"gh api repos/offline-agency/oa-doc-osp/pages","httpStatus":404,"interpretation":"No Pages site accessible through this request; absence/ownership is not otherwise inferred."},
+  "repository":{"defaultBranch":"master","observedHead":"6404296f0dd38b1243e15ac1c444a505c2ece667"},
+  "localValidationWorkflow":".github/workflows/docs.yml",
+  "deploymentPerformed":false,
+  "unresolved":["Actual hosting project/account and publication owner","Connected repository/branch and whether old Bitbucket job is operational","Production Node/build command/artifact directory and 404/atomic publication settings"]
+}

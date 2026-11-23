@@ -1,0 +1,71 @@
+{
+  "name": "offline-agency/vue3-burger-menu",
+  "repository": "https://github.com/offline-agency/vue3-burger-menu",
+  "reference": "1.1.2",
+  "commit": "27ed3fe184f55de51401590f3975011c4131f65a",
+  "version": "1.1.2",
+  "documentationKey": "v1",
+  "verifiedOn": "2026-10-16",
+  "sourceFiles": [
+    {
+      "path": "package.json",
+      "sha256": "7fbef42fbdc06ec19de7defcc817431ee654025db1f597f2a0219c661c11abf9"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f9539b887e236050409538cb46b35d6258ccee6d36c9c568828a9c3bd8799b94"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "565b422ce011536776f02f7760f1dc17cb64ca76779dc350536ab9914bb52591"
+    },
+    {
+      "path": "vue.config.js",
+      "sha256": "a9c1e376bc4899c244bd42c124bec2622ad2f8f3aad8f4e85a4df897dba6daa7"
+    },
+    {
+      "path": "src/components/index.js",
+      "sha256": "d805ad8c368a2b5436f9e7b0610ee74b5ef3ea0d9b9b156f8667d1fe9fb8f1f8"
+    },
+    {
+      "path": "src/components/Menu.vue",
+      "sha256": "0c48fb1532c50ff6c97c3532eb8be49bdfcd7d6435c1782e294fd762facc4a50"
+    },
+    {
+      "path": "src/components/Menu/slide.vue",
+      "sha256": "ee9f10a4367fb2223462e1264d10bada3ba867c6a4fd5b2127b57cf2ca30eaf9"
+    },
+    {
+      "path": "src/components/Menu/push.vue",
+      "sha256": "9421320d4b5daeb95f82dcbc9966901cc227966662e77355a8c4c7eb7724c6e8"
+    },
+    {
+      "path": "src/components/Menu/reveal.vue",
+      "sha256": "df8bae5b15d522b4d606a1b6c354a8baa892ccd1d68c2f36f52076b7c5eb9ae1"
+    },
+    {
+      "path": "src/components/Menu/pushRotate.vue",
+      "sha256": "b523c2ef547a4071dae923b749c05d5a12aed2bf8241c40c31575553551c4062"
+    },
+    {
+      "path": "src/components/Menu/scaleDown.vue",
+      "sha256": "5d11d9ae2895baf66a8af93bf9e3b0c412a92d42f37c7bdd889fc81f924da38a"
+    },
+    {
+      "path": "src/components/Menu/scaleRotate.vue",
+      "sha256": "2a1ee63eac529930dd019b59d4b332fa013388954428630b8a8bcd6415240b77"
+    }
+  ],
+  "generatedPages": [
+    {
+      "path": "versioned/vue3-burger-menu/v1/index.md",
+      "route": "/vue3-burger-menu/v1/",
+      "sha256": "27389ab5e8f300c906fdb9f86a10ec0af90cd389c61fc5b86ee497fb80358e0a"
+    },
+    {
+      "path": "versioned/vue3-burger-menu/v1/reference.md",
+      "route": "/vue3-burger-menu/v1/reference/",
+      "sha256": "93cf42ef06defdc8cdf3f78dabdf0fc777ee520d68334a3e2c65f20b02dd6a91"
+    }
+  ]
+}

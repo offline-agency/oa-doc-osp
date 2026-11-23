@@ -1,0 +1,68 @@
+{
+  "checkedAt": "2026-10-19",
+  "repository": {
+    "fullName": "offline-agency/laravel-email-chef",
+    "url": "https://github.com/offline-agency/laravel-email-chef",
+    "defaultBranch": "main",
+    "defaultBranchSha": "eff422c06f89f61f00eae5293e703e49638285d1",
+    "archived": false,
+    "license": "MIT (LICENSE.md at both documented commits)"
+  },
+  "releases": [
+    { "tag": "2.0.0", "commit": "eff422c06f89f61f00eae5293e703e49638285d1", "commitDate": "2026-04-07", "publishedAt": "2026-04-07T11:06:13Z" },
+    { "tag": "1.0.5", "commit": "3c8c81bba981d368e6c484d3cc172068e2fd856c", "commitDate": "2025-01-16", "publishedAt": "2025-01-16T16:06:42Z" },
+    { "tag": "1.0.4", "commit": "69bce04d4299636db5933cf9e4163a8aaccf5731" },
+    { "tag": "1.0.3", "commit": "b60579b80dafe44c9ea49df135be0dce96ec6e8c" },
+    { "tag": "1.0.2", "commit": "7fff0ddd8a2efeff581b893bff9f52f08ba67ff2" },
+    { "tag": "1.0.1", "commit": "a8718d54e0abe7af8873709efae2239284b56baf" },
+    { "tag": "1.0.0", "commit": "5244b9101d561ac3909a919d41f6507e85400eb6" }
+  ],
+  "prereleases": [],
+  "packagist": {
+    "url": "https://repo.packagist.org/p2/offline-agency/laravel-email-chef.json",
+    "2.0.0": { "sourceReference": "eff422c06f89f61f00eae5293e703e49638285d1", "distReference": "eff422c06f89f61f00eae5293e703e49638285d1", "time": "2026-04-07T11:05:28+00:00" },
+    "1.0.5": { "sourceReference": "3c8c81bba981d368e6c484d3cc172068e2fd856c", "distReference": "3c8c81bba981d368e6c484d3cc172068e2fd856c", "time": "2025-01-16T16:05:27+00:00" }
+  },
+  "ci": {
+    "commit": "eff422c06f89f61f00eae5293e703e49638285d1",
+    "runs": [
+      { "workflow": "run-tests", "run": 24078142855, "event": "push", "conclusion": "success", "jobs": "PHP 8.4/8.5 x Laravel 12/13; each job runs Pint --test, PHPStan and Pest with --coverage --min=80" }
+    ],
+    "olderLine": "CI results for 1.0.5 not queried"
+  },
+  "repositorySecurity": {
+    "privateVulnerabilityReporting": false,
+    "securityPolicy": ".github/SECURITY.md: report by email to a named maintainer address; no supported versions or response times"
+  },
+  "composerChecks": {
+    "tool": "Composer 2.10.2, PHP 8.5.10 with config.platform.php overrides",
+    "2.0.0 (platform 8.4.0)": "resolves",
+    "1.0.5 alone (platform 8.1.0, 8.2.0)": "resolves; install at 8.2 picked illuminate/* 9.52.16, guzzlehttp/guzzle 7.16.0; composer audit: no advisories",
+    "1.0.5 + illuminate/support ^10.0": "fails: 1.0.5 requires illuminate/support <=9",
+    "1.0.5 + laravel/framework ^9.0": "fails: Composer does not load laravel/framework 9.x releases affected by security advisories"
+  },
+  "verifiedAgainstSource": [
+    "2.0.0: public method signatures of all 14 classes in src/Api/Resources",
+    "2.0.0: config/email-chef.php keys incl. limits; list_id/contact_id not read in src/",
+    "2.0.0: provider publish tag 'config'; facade accessor resolves LaravelEmailChef base client",
+    "2.0.0: constructor login, Exception on missing/wrong credentials, Error entity on non-200, validator errors returned",
+    "2.0.0: retry on 403/429 discards the recursive result (also asserted by tests/Unit/Api/ApiThrottleTest.php); post() has no retry",
+    "2.0.0: ListsApi::unsubscribe malformed query string and fixed return text; ContactsApi::delete fixed return text",
+    "1.0.5: only ListsApi and ContactsApi; int ID parameters; no limits keys in config while waitThrottle reads them; no declare(strict_types)"
+  ],
+  "upstreamWordingIssues": [
+    "2.0.0 README: publish tag laravel-email-chef-config; provider registers 'config'",
+    "2.0.0 README: a 'Proposed Improvements' section marked 'review aid for PR #11, will be removed before merging' is still present in the release",
+    "2.0.0 README config example omits the limits keys",
+    "2.0.0 README security email differs from .github/SECURITY.md",
+    "CHANGELOG.md at both tags holds only a placeholder '1.0.0 - 202X-XX-XX' entry",
+    "composer.json homepage points to github.com/offlineagency/laravel-email-chef (organisation is offline-agency)",
+    "1.0.5 README: wrong publish tag, nonexistent migrations tag, echoPhrase() example and invalid variable name, integer IDs for unsubscribe()"
+  ],
+  "notRun": [
+    "Site-owned PHP fixture",
+    "Any request to the EmailChef API",
+    "Upstream test suite locally",
+    "CI result lookup for 1.x tags"
+  ]
+}

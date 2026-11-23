@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-16",
+  "status": "released",
+  "checksUnavailable": [
+    "GitHub Actions outcomes not queried",
+    "Complete upstream suites and coverage not executed"
+  ],
+  "name": "offline-agency/spid-laravel-trentino",
+  "docsPage": "spid-laravel-trentino.md",
+  "route": "/spid-laravel-trentino.html",
+  "repository": "https://github.com/offline-agency/spid-laravel-trentino",
+  "defaultBranch": "master",
+  "selectedTag": "v2.3.0",
+  "tag": "v2.3.0",
+  "commit": "0fdb1e870606e471a39d35c144cde58158e023d6",
+  "projectType": "composer-library",
+  "manifests": [
+    "composer.json"
+  ],
+  "dependencies": {
+    "php": "^8.4",
+    "illuminate/auth": "^12.69|^13.30",
+    "illuminate/cache": "^12.69|^13.30",
+    "illuminate/config": "^12.69|^13.30",
+    "illuminate/console": "^12.69|^13.30",
+    "illuminate/contracts": "^12.69|^13.30",
+    "illuminate/database": "^12.69|^13.30",
+    "illuminate/encryption": "^12.69|^13.30",
+    "illuminate/events": "^12.69|^13.30",
+    "illuminate/http": "^12.69|^13.30",
+    "illuminate/log": "^12.69|^13.30",
+    "illuminate/routing": "^12.69|^13.30",
+    "illuminate/session": "^12.69|^13.30",
+    "illuminate/support": "^12.69|^13.30",
+    "illuminate/view": "^12.69|^13.30",
+    "jumbojett/openid-connect-php": "^1.0.2"
+  },
+  "sourcePaths": [
+    "README.md",
+    "composer.json",
+    "config/spid-laravel-trentino.php",
+    "routes/spid-trentino-auth.php",
+    "src/SpidTrentinoServiceProvider.php",
+    "src/SpidTrentino.php",
+    "src/SpidTrentinoUser.php",
+    "src/Traits/SpidAuthenticatesUsers.php",
+    "src/Http/Controllers/SpidAuthController.php",
+    "src/Http/Middleware/EnsureValidSpidToken.php",
+    "src/Http/Middleware/RefreshSpidTokenIfNeeded.php",
+    "src/Support/TokenResponse.php",
+    "src/Support/SessionExpiry.php",
+    "src/Support/LogRedactor.php",
+    "src/Console/Commands/CheckSpidTransactionLogs.php",
+    "src/Console/Commands/PruneSpidTransactionLogs.php",
+    "database/migrations/add_spid_trentino_columns_to_users_table.php",
+    "database/migrations/create_spid_transaction_logs_table.php",
+    "docs/transaction-log.md",
+    "docs/known-issues.md",
+    "src/Testing/MockOpenIDConnectClient.php",
+    "tests/Feature/TransactionLogFailClosedTest.php",
+    "LICENSE.md"
+  ],
+  "github": {
+    "latestRelease": "v2.3.0",
+    "head": "0fdb1e870606e471a39d35c144cde58158e023d6"
+  },
+  "distribution": {
+    "type": "composer",
+    "version": "v2.3.0",
+    "sourceRef": "0fdb1e870606e471a39d35c144cde58158e023d6",
+    "distRef": "0fdb1e870606e471a39d35c144cde58158e023d6",
+    "url": "https://api.github.com/repos/offline-agency/spid-laravel-trentino/zipball/0fdb1e870606e471a39d35c144cde58158e023d6",
+    "publishedAt": "2026-10-07T21:12:51+00:00",
+    "downloadVerified": true,
+    "bytes": 95747,
+    "sha256": "2d90d203389961fd2a5971a8ad03a4f887e6b4cdff376fb207206b3b3dcd5b6f"
+  },
+  "license": "MIT",
+  "checks": {
+    "fixture": "passed",
+    "fixturePath": "maintenance/fixtures/spid-laravel-trentino/verify.php",
+    "php": "8.5.10",
+    "laravel": "13.35.0",
+    "dependencies": "Existing isolated vendor; no docs-root PHP dependencies",
+    "network": "No HTTP or identity/login requests; DTO/token/session support only",
+    "database": "No database access",
+    "phpLint": "passed"
+  },
+  "unavailableChecks": [
+    "Live AAC authentication and signature interoperability",
+    "User persistence/controller and transaction-log database integration",
+    "PHPStan/Pint",
+    "PHP8.4 and Laravel12 matrix"
+  ]
+}
