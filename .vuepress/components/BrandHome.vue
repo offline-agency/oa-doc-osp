@@ -148,7 +148,7 @@ const projectSlug = link => link.replace(/^\/|\/$/g, '')
       <section v-if="data.work" class="our-work" aria-labelledby="our-work">
         <h2 id="our-work">From our work</h2>
         <div class="work-grid">
-          <a v-for="item in data.work" :key="item.product" class="work-card" :href="item.link">
+          <a v-for="item in data.work" :key="item.product" class="work-card" :href="item.link" target="_blank" rel="noopener">
             <span class="work-media">
               <img :src="withBase(item.image)" :alt="item.imageAlt" loading="lazy">
               <span class="work-logo"><img :src="withBase(item.logo)" :alt="item.product"></span>

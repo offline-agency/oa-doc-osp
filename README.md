@@ -49,7 +49,7 @@ projects:
     type: Current project
     maintenanceStatus: maintained
     ecosystem: php
-    release: v4.1.0
+    release: v4.2.0
     requirements: Laravel 12 / 13
     github: offline-agency/laravel-cart
     packagist: offline-agency/laravel-cart
@@ -229,7 +229,7 @@ work:
   - title: Environmental monitoring for major infrastructure
     product: R3Ambiente
     link: >-
-      https://offlineagency.it/?utm_source=docs&utm_medium=referral&utm_campaign=r3ambiente
+      https://offlineagency.it/blog/r3ambiente-si-rinnova-il-software-di-monitoraggio-ambientale-per-grandi-opere-e-piu-sicuro-moderno-e-accessibile-23/?utm_source=docs&utm_medium=referral&utm_campaign=r3ambiente
     image: /images/work/r3ambiente.jpg
     imageAlt: Aerial view of a port construction site with cranes and containers
     logo: /images/work/r3ambiente-logo.svg
@@ -244,7 +244,7 @@ work:
   - title: Integrated land management for public administrations
     product: UrbanSpaces
     link: >-
-      https://offlineagency.it/?utm_source=docs&utm_medium=referral&utm_campaign=urbanspaces
+      https://offlineagency.it/blog/urban-spaces-al-pitch-day-ditedi-10/?utm_source=docs&utm_medium=referral&utm_campaign=urbanspaces
     image: /images/work/urbanspaces.jpg
     imageAlt: Panoramic view of a town with green fields and mountains
     logo: /images/work/urbanspaces-logo.png
